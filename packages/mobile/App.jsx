@@ -1,20 +1,20 @@
 import React from 'react';
 import Layout from './components/layout';
 import { Router, Screen } from './router';
-import Home from './screens/home';
 import Login from './screens/login';
 
-const App = () => (
-    <Layout>
-        <Router initialScreen='home'>
-            <Screen name='home'>
-                <Home />
-            </Screen>
-            <Screen name='login'>
-                <Login />
-            </Screen>
-        </Router>
-    </Layout>
-);
+const App = () => {
+    const initialScreen = localStorage.getItem('auth_token') ? 'feed' : 'login';
+
+    return (
+        <Layout>
+            <Router initialScreen={initialScreen}>
+                <Screen name='login'>
+                    <Login />
+                </Screen>
+            </Router>
+        </Layout>
+    );
+};
 
 export default App;

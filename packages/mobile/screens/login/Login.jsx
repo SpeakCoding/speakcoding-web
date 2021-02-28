@@ -1,15 +1,15 @@
 import React from 'react';
 import { useRouter } from '../../router';
+import Logo from '../../components/logo';
+import s from './login.css';
 
 const Login = () => {
-    const { goBack } = useRouter();
+    const { navigate } = useRouter();
 
     return (
-        <div>
-            Login
-            <div>
-                <button onClick={() => goBack()}>go back</button>
-            </div>
+        <div className={s.box}>
+            <Logo />
+            <div className={s.title}>Log in</div>
         </div>
     );
 };
