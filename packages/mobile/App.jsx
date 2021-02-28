@@ -1,11 +1,20 @@
 import React from 'react';
-import { Icon } from '@sc/ui/mobile';
 import Layout from './components/layout';
+import { Router, Screen } from './router';
+import Home from './screens/home';
+import Login from './screens/login';
 
 const App = () => (
-    <div>
-        <Layout />
-    </div>
+    <Layout>
+        <Router initialScreen='home'>
+            <Screen name='home'>
+                <Home />
+            </Screen>
+            <Screen name='login'>
+                <Login />
+            </Screen>
+        </Router>
+    </Layout>
 );
 
 export default App;

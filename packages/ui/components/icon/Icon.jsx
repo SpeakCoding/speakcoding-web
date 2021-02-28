@@ -22,8 +22,6 @@ mobile.keys().forEach(filename => {
     icons[id] = { viewBox };
 });
 
-console.log(icons);
-
 const Icon = ({ name, size }) => {
     if (!icons[name]) return null;
 

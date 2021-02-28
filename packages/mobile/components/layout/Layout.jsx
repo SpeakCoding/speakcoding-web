@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './layout.css';
 
-const Layout = () => (
+const Layout = ({ children }) => (
     <div className={s.box}>
-        <div className={s.content}>ssdsdsd</div>
+        <div className={s.content}>{children}</div>
     </div>
 );
 
