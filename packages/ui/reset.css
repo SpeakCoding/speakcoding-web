@@ -1,0 +1,13 @@
+/* reset some of sanitizer defaults */
+
+html {
+    word-break: initial;
+}
+
+*, ::before, ::after {
+    box-sizing: initial;
+}
+
+ul, ol {
+    padding-left: 0;
+}

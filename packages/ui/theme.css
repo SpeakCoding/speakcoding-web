@@ -1,0 +1,13 @@
+@import "./sanitize.css";
+@import "./reset.css";
+
+@import "./theme/animation.css";
+@import "./theme/colors.css";
+@import "./theme/fonts.css";
+@import "./theme/layers.css";
+
+body {
+    font: var(--t-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
