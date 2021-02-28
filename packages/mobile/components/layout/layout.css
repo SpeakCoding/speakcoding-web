@@ -1,0 +1,36 @@
+.box {
+    display: inline-block;
+    position: relative;
+    padding: 25px 27px;
+}
+
+.box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 429px;
+    height: 862px;
+    background-image: url(./img/iphone-11-pro.svg);
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    width: 375px;
+    height: 812px;
+    padding-top: 44px;
+    box-sizing: border-box;
+    background-color: var(--c-white);
+}
+
+.content::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 375px;
+    height: 812px;
+    background-image: url(./img/screen-elements.svg);
+    pointer-events: none;
+}

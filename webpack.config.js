@@ -11,7 +11,7 @@ const dev = process.env.NODE_ENV === 'development',
 
 module.exports = {
     mode: dev ? 'development' : 'production',
-    entry: mobile ? './packages/mobile/demo.js' : './packages/web/index.js',
+    entry: mobile ? './packages/mobile/demo/index.js' : './packages/web/index.js',
     output: {
         path: path.resolve(__dirname, dev ? 'assets' : 'dist/assets'),
         publicPath: '/assets/',
@@ -36,7 +36,7 @@ module.exports = {
         new CompressionPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: mobile ? 'packages/mobile/demo.html' : 'packages/web/index.html'
+            template: mobile ? 'packages/mobile/demo/index.html' : 'packages/web/index.html'
         })
     ],
     devServer: {
