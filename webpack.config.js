@@ -1,33 +1,29 @@
 const webpack = require('webpack'),
     path = require('path'),
-    fs = require('fs'),
-    express = require('express'),
     CompressionPlugin = require('compression-webpack-plugin'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     { CleanWebpackPlugin } = require('clean-webpack-plugin'),
-    CopyWebpackPlugin = require('copy-webpack-plugin'),
     MiniCssExtractPlugin = require('mini-css-extract-plugin'),
-    ReplaceInFileWebpackPlugin = require('replace-in-file-webpack-plugin'),
     loaders = require('./utils/loaders');
 
-const isDev = process.env.NODE_ENV === 'development',
-    landingInject = fs.readFileSync(path.resolve(__dirname, 'landing-inject.html')).toString();
+const dev = process.env.NODE_ENV === 'development',
+    mobile = !!process.env.MOBILE;
 
 module.exports = {
-    mode: isDev ? 'development' : 'production',
-    entry: './packages/web/index.js',
+    mode: dev ? 'development' : 'production',
+    entry: mobile ? './packages/mobile/demo.js' : './packages/web/index.js',
     output: {
-        path: path.resolve(__dirname, isDev ? 'assets' : 'build/assets'),
+        path: path.resolve(__dirname, dev ? 'assets' : 'dist/assets'),
         publicPath: '/assets/',
-        filename: isDev ? '[name].js' : '[name].[contenthash].js'
+        filename: dev ? '[name].js' : '[name].[contenthash].js'
     },
     module: {
         rules: [
             loaders.jsx(),
-            loaders.css({ prod: !isDev }),
+            loaders.css({ prod: !dev }),
             loaders.glyph(),
-            loaders.file(),
-            loaders.emoji()
+            loaders.mobileglyph(),
+            loaders.file()
         ]
     },
     plugins: [
@@ -36,31 +32,12 @@ module.exports = {
             API: process.env.API
         }),
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({ filename: isDev ? '[name].css' : '[name].[contenthash].css' }),
+        new MiniCssExtractPlugin({ filename: dev ? '[name].css' : '[name].[contenthash].css' }),
         new CompressionPlugin(),
         new HtmlWebpackPlugin({
-            // filename: isDev ? 'index.html' : path.resolve(__dirname, 'build/index.html'),
             filename: 'index.html',
-            template: 'packages/web/index.html'
-        }),
-        new CopyWebpackPlugin({
-            patterns: [
-                { from: './static', to: './' },
-                { from: './landing/**/*', to: '../' }
-            ]
-        }),
-        new ReplaceInFileWebpackPlugin([
-            {
-                dir: 'build/landing',
-                files: ['index.html'],
-                rules: [
-                    {
-                        search: '<head>',
-                        replace: `<head>${landingInject}`
-                    }
-                ]
-            }
-        ])
+            template: mobile ? 'packages/mobile/demo.html' : 'packages/web/index.html'
+        })
     ],
     devServer: {
         before(app) {
@@ -68,12 +45,6 @@ module.exports = {
                 req.url = '/assets/index.html';
                 next();
             });
-
-            app.get('/l', (req, res) => {
-                res.sendFile(path.resolve(__dirname, 'build/landing/index.html'));
-            });
-
-            app.use(express.static('build/landing'));
 
             app.get('*', (req, res, next) => {
                 if (!/assets/.test(req.url)) req.url = '/assets/index.html';

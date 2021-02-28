@@ -42,11 +42,25 @@ module.exports = {
             include: /ui\/components\/icon\/glyphs/
         };
     },
+    mobileglyph() {
+        return {
+            test: /\.svg$/,
+            use: [
+                {
+                    loader: 'svg-sprite-loader',
+                    options: {
+                        symbolId: filePath => `m/${path.basename(filePath, '.svg')}`
+                    }
+                }
+            ],
+            include: /ui\/mobile\/icon\/glyphs/
+        };
+    },
     file() {
         return {
             test: /\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/,
             use: 'file-loader?name=[hash].[ext]',
-            exclude: [/ui\/components\/icon\/glyphs/]
+            exclude: [/ui\/components\/icon\/glyphs/, /ui\/mobile\/icon\/glyphs/]
         };
     },
     emoji() {

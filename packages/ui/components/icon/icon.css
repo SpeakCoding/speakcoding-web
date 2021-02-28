@@ -1,0 +1,20 @@
+@import '../../theme.css';
+
+.container {
+    display: inline-flex;
+    align-items: center;
+    font-size: inherit;
+    vertical-align: top;
+}
+
+.container::before {
+    content: '\a0';
+    display: inline-block;
+    width: 0;
+}
+
+.svg {
+    position: relative;
+    width: 1em;
+    height: 1em;
+}

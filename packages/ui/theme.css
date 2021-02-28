@@ -8,6 +8,7 @@
 
 body {
     font: var(--t-base);
+    color: var(--c-black);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
