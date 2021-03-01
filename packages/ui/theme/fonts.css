@@ -4,9 +4,9 @@
     --t-h1: 700 38px / 44px var(--font-family);
     --t-h2: 700 32px / 36px var(--font-family);
     --t-h3: 24px / 30px var(--font-family);
-    --t-large:   20px / 24px var(--font-family);
+    --t-large: 20px / 24px var(--font-family);
     --t-base: 18px / 32px var(--font-family);
-    --t-small:   14px / 20px var(--font-family);
+    --t-small: 14px / 20px var(--font-family);
 }
 
 @font-face {

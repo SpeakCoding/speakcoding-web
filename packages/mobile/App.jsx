@@ -1,7 +1,8 @@
 import React from 'react';
 import Layout from './components/layout';
 import { Router, Screen } from './router';
-import Login from './screens/login';
+import LogIn from './screens/auth/LogIn';
+import SignUp from './screens/auth/SignUp';
 
 const App = () => {
     const initialScreen = localStorage.getItem('auth_token') ? 'feed' : 'login';
@@ -10,7 +11,10 @@ const App = () => {
         <Layout>
             <Router initialScreen={initialScreen}>
                 <Screen name='login'>
-                    <Login />
+                    <LogIn />
+                </Screen>
+                <Screen name='signup'>
+                    <SignUp />
                 </Screen>
             </Router>
         </Layout>

@@ -1,0 +1,21 @@
+.box {
+    margin: 80px 16px 0;
+    text-align: center;
+}
+
+.title {
+    margin: 40px 0 25px;
+    font: 700 var(--t-h3);
+}
+
+.field {
+    margin-bottom: 12px;
+}
+
+.submit {
+    margin: 40px 0;
+}
+
+.message {
+    font: var(--t-base);
+}
