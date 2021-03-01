@@ -19,6 +19,11 @@
     background-color: var(--c-primary-500);
     color: var(--c-white);
     user-select: none;
+    transition: background-color 0.12s var(--animation-timing-function);
+}
+
+.default:active {
+    background-color: var(--c-grey-300);
 }
 
 .text {
