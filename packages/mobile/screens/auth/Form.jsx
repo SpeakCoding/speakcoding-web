@@ -2,29 +2,41 @@ import React, { useCallback, useState } from 'react';
 import pt from 'prop-types';
 import { Button, TextInput } from '@sc/ui/mobile';
 import { useAPI } from '../../tools';
+import { parseError } from './utils';
 import s from './auth.css';
 
 const Form = ({ action, submitText, onSubmit }) => {
     const fetch = useAPI(),
-        [loading, setLoading] = useState(false);
+        [loading, setLoading] = useState(false),
+        [error, setError] = useState(null);
 
     const handleSubmit = useCallback(
         async event => {
             event.preventDefault();
-            setLoading(true);
 
+            const email = event.target.elements.email.value,
+                password = event.target.elements.password.value;
+
+            if (!email || !password) {
+                setError({
+                    type: 'required',
+                    email: !email,
+                    password: !password
+                });
+                return;
+            }
+
+            setLoading(true);
             const res = await fetch(action, {
                 method: 'POST',
-                body: {
-                    user: {
-                        email: event.target.elements.email.value,
-                        password: event.target.elements.password.value
-                    }
-                }
+                body: { user: { email, password } }
             });
-
             setLoading(false);
-            console.log(res);
+
+            setError(parseError(res.errors?.[0]));
+            if (res.data) onSubmit(res.data);
+            if (res.meta?.authentication_token)
+                localStorage.setItem('auth_token', res.meta.authentication_token);
         },
         [action]
     );
@@ -32,16 +44,34 @@ const Form = ({ action, submitText, onSubmit }) => {
     return (
         <form onSubmit={handleSubmit}>
             <div className={s.field}>
-                <TextInput name='email' placeholder='Email address' required type='email' />
+                <TextInput
+                    invalid={error?.email}
+                    name='email'
+                    placeholder='Email address'
+                    type='email'
+                />
             </div>
             <div className={s.field}>
-                <TextInput name='password' placeholder='Password' required type='password' />
+                <TextInput
+                    invalid={error?.password}
+                    name='password'
+                    placeholder='Password'
+                    type='password'
+                />
             </div>
             <div className={s.submit}>
                 <Button loading={loading} type='submit'>
                     {submitText}
                 </Button>
             </div>
+            {error && (
+                <div className={s.error}>
+                    {error.type === 'required' && 'Please fill in all fields'}
+                    {error.type === 'match' && 'Wrong email or password'}
+                    {error.type === 'taken' && 'User already exists'}
+                    {error.type === 'unknown' && 'Something went wrong'}
+                </div>
+            )}
         </form>
     );
 };

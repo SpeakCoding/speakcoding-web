@@ -51,7 +51,7 @@ module.exports = {
                 next();
             });
         },
-        port: 3000,
+        port: 4000,
         publicPath: '/assets/'
     }
 };

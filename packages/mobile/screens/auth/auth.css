@@ -13,9 +13,17 @@
 }
 
 .submit {
-    margin: 40px 0;
+    margin: 40px 0 32px;
+}
+
+.error {
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--c-red-500);
 }
 
 .message {
+    margin-top: 8px;
     font: var(--t-base);
 }
