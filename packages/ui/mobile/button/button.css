@@ -22,11 +22,32 @@
     transition: background-color 0.12s var(--animation-timing-function);
 }
 
-.default:active {
+.default:not(:disabled):active {
     background-color: var(--c-grey-300);
 }
 
 .text {
     composes: reset;
     color: var(--c-primary-500);
+}
+
+.loader {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.circle {
+    stroke: currentColor;
+    stroke-width: 6;
+    fill: none;
+    stroke-dasharray: 46px;
+    stroke-linecap: round;
+    animation: loader-rotate 0.6s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes loader-rotate {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
 }

@@ -1,15 +1,17 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import pt from 'prop-types';
 import { Button, TextInput } from '@sc/ui/mobile';
 import { useAPI } from '../../tools';
 import s from './auth.css';
 
 const Form = ({ action, submitText, onSubmit }) => {
-    const fetch = useAPI();
+    const fetch = useAPI(),
+        [loading, setLoading] = useState(false);
 
     const handleSubmit = useCallback(
         async event => {
             event.preventDefault();
+            setLoading(true);
 
             const res = await fetch(action, {
                 method: 'POST',
@@ -21,6 +23,7 @@ const Form = ({ action, submitText, onSubmit }) => {
                 }
             });
 
+            setLoading(false);
             console.log(res);
         },
         [action]
@@ -35,7 +38,9 @@ const Form = ({ action, submitText, onSubmit }) => {
                 <TextInput name='password' placeholder='Password' required type='password' />
             </div>
             <div className={s.submit}>
-                <Button type='submit'>{submitText}</Button>
+                <Button loading={loading} type='submit'>
+                    {submitText}
+                </Button>
             </div>
         </form>
     );
