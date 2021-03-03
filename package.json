@@ -4,6 +4,7 @@
     "scripts": {
         "dev": "NODE_ENV=development webpack serve",
         "mobile": "NODE_ENV=development MOBILE=1 webpack serve",
+        "demo": "git pull && npm i && npm run bootstrap && npm run mobile",
         "build": "rm -rf build/landing && NODE_ENV=production webpack",
         "bootstrap": "lerna clean --yes && lerna bootstrap --ignore-scripts",
         "lint": "eslint --ext js,jsx --quiet",
