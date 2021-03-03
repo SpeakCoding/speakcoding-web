@@ -1,10 +1,15 @@
+import { useContext, useEffect } from 'react';
 import pt from 'prop-types';
-import { useRouter } from './utils';
+import { context } from './utils';
 
 const Screen = ({ name, children }) => {
-    const { route } = useRouter();
+    const { register } = useContext(context);
 
-    return name === route.name ? children : null;
+    useEffect(() => {
+        register(name, children);
+    }, []);
+
+    return null;
 };
 
 Screen.propTypes = {

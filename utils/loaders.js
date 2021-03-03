@@ -13,11 +13,11 @@ module.exports = {
             }
         };
     },
-    css({ prod = true, extract = true } = {}) {
+    css({ prod = true } = {}) {
         return {
             test: /\.css$/,
             use: [
-                extract ? MiniCssExtractPlugin.loader : 'style-loader',
+                MiniCssExtractPlugin.loader,
                 {
                     loader: 'css-loader',
                     options: {
@@ -61,12 +61,6 @@ module.exports = {
             test: /\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/,
             use: 'file-loader?name=[hash].[ext]',
             exclude: [/ui\/components\/icon\/glyphs/, /ui\/mobile\/icon\/glyphs/]
-        };
-    },
-    emoji() {
-        return {
-            test: /emoji-mart\.css/,
-            use: [MiniCssExtractPlugin.loader, 'css-loader']
         };
     }
 };

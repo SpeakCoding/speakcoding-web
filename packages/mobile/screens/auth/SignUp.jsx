@@ -6,9 +6,9 @@ import Form from './Form';
 import s from './auth.css';
 
 const SignUp = () => {
-    const { navigate } = useRouter();
+    const { navigate, goBack } = useRouter();
 
-    const toLogIn = useCallback(() => navigate('login'), []),
+    const toLogIn = useCallback(() => goBack(), []),
         next = useCallback(() => navigate('profile-edit'), []);
 
     return (
