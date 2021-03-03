@@ -4,12 +4,13 @@ import classNames from 'classnames';
 import { router } from './utils';
 import s from './router.css';
 
-const Page = ({ pos, current, route, navigate, goBack, children }) => {
-    const value = useMemo(() => ({ route, navigate, goBack }), []),
+const Page = ({ pos, current, route, navigate, goBack, reset, children }) => {
+    const value = useMemo(() => ({ route, navigate, goBack, reset }), []),
         [ready, setReady] = useState(pos === 0);
 
     useEffect(() => {
-        setTimeout(() => setReady(true), 20);
+        const timer = setTimeout(() => setReady(true), 20);
+        return () => clearTimeout(timer);
     }, []);
 
     return (
@@ -31,7 +32,8 @@ Page.propTypes = {
     current: pt.number.isRequired,
     route: pt.object.isRequired,
     navigate: pt.func.isRequired,
-    goBack: pt.func.isRequired
+    goBack: pt.func.isRequired,
+    reset: pt.func.isRequired
 };
 
 export default Page;
