@@ -1,26 +1,20 @@
-import React, { useCallback } from 'react';
-import { Button } from '@sc/ui/mobile';
-import { useAPI, useRouter } from '../../tools';
+import React, { useEffect } from 'react';
+import { useAPI } from '../../tools';
 
 const Feed = () => {
-    const fetch = useAPI(),
-        { reset } = useRouter();
+    const fetch = useAPI();
 
-    const handleLogOut = useCallback(() => {
-        fetch('/users/forget.json', { method: 'POST' });
-        localStorage.removeItem('auth_token');
-        reset();
+    const init = async () => {
+        const res = await fetch('/posts.json', { method: 'GET' });
+
+        console.log(res);
+    };
+
+    useEffect(() => {
+        init();
     }, []);
 
-    return (
-        <>
-            Feed
-            <br />
-            <Button variant='text' onClick={handleLogOut}>
-                Log out
-            </Button>
-        </>
-    );
+    return <>Feed</>;
 };
 
 export default Feed;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import Layout from './components/layout';
 import { Router, Screen } from './router';
 import Feed from './screens/feed';
@@ -7,10 +7,11 @@ import ProfileEdit from './screens/profile-edit';
 import SignUp from './screens/auth/SignUp';
 
 const App = () => {
-    const initialScreen = localStorage.getItem('auth_token') ? 'feed' : 'login';
+    const [initialScreen, update] = useState(localStorage.getItem('auth_token') ? 'feed' : 'login'),
+        reset = useCallback(() => update('login'), []);
 
     return (
-        <Layout>
+        <Layout key={initialScreen} reset={reset}>
             <Router initialScreen={initialScreen}>
                 <Screen name='login'>
                     <LogIn />
