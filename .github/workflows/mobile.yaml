@@ -1,0 +1,32 @@
+name: Deploy Web Instagram App to Netlify
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 15.x
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: node-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Deploy to Netlify
+        uses: jsmrcaga/action-netlify-deploy@master
+        with:
+          NETLIFY_AUTH_TOKEN: zrlMDe85DFaiPaEKzi7QEDSwgj-nRUFZ0ssu5xX965Q
+          NETLIFY_SITE_ID: 73b2cb25-b99a-4f29-a932-ae4d0fc667e3
+          NETLIFY_DEPLOY_TO_PROD: true
+          build_directory: build
+          install_command: yarn && yarn bootstrap
+          build_command: yarn build:mobile

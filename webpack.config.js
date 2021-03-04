@@ -13,7 +13,7 @@ module.exports = {
     mode: dev ? 'development' : 'production',
     entry: mobile ? './packages/mobile/demo/index.js' : './packages/web/index.js',
     output: {
-        path: path.resolve(__dirname, dev ? 'assets' : 'dist/assets'),
+        path: path.resolve(__dirname, dev ? 'assets' : 'build/assets'),
         publicPath: '/assets/',
         filename: dev ? '[name].js' : '[name].[contenthash].js'
     },
@@ -28,14 +28,14 @@ module.exports = {
     },
     plugins: [
         new webpack.EnvironmentPlugin({
-            NODE_ENV: process.env.NODE_ENV,
-            API: process.env.API
+            NODE_ENV: process.env.NODE_ENV
+            // API: process.env.API
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({ filename: dev ? '[name].css' : '[name].[contenthash].css' }),
         new CompressionPlugin(),
         new HtmlWebpackPlugin({
-            filename: 'index.html',
+            filename: dev ? 'index.html' : '../index.html',
             template: mobile ? 'packages/mobile/demo/index.html' : 'packages/web/index.html'
         })
     ],
