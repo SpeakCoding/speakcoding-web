@@ -26,11 +26,6 @@ const Router = ({ initialScreen, children }) => {
         setTimeout(() => setHistory(data => data.slice(0, -1)), 400);
     }, [current]);
 
-    const reset = useCallback(() => {
-        setCurrent(0);
-        setHistory([createRoute('login')]);
-    }, []);
-
     const register = (name, content) => {
         setScreens(data => ({ ...data, [name]: () => content }));
     };
@@ -51,7 +46,6 @@ const Router = ({ initialScreen, children }) => {
                             route={item}
                             navigate={navigate}
                             goBack={goBack}
-                            reset={reset}
                         >
                             {Content && <Content />}
                         </Page>

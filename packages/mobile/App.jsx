@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import { useAPI } from './tools';
 import Layout from './components/layout';
 import { Router, Screen } from './router';
 import Feed from './screens/feed';
@@ -7,12 +8,21 @@ import ProfileEdit from './screens/profile-edit';
 import SignUp from './screens/auth/SignUp';
 
 const App = () => {
-    const [initialScreen, update] = useState(localStorage.getItem('auth_token') ? 'feed' : 'login'),
-        reset = useCallback(() => update('login'), []);
+    const fetch = useAPI(),
+        [key, setKey] = useState(0),
+        initialScreen = localStorage.getItem('auth_token') ? 'feed' : 'login';
+
+    const handleReset = useCallback(() => {
+        if (!window.confirm('Are you sure you want to log out?')) return;
+
+        fetch('/users/forget.json', { method: 'POST' });
+        localStorage.removeItem('auth_token');
+        setKey(Math.random());
+    }, []);
 
     return (
-        <Layout key={initialScreen} reset={reset}>
-            <Router initialScreen={initialScreen}>
+        <Layout onReset={handleReset}>
+            <Router key={key} initialScreen={initialScreen}>
                 <Screen name='login'>
                     <LogIn />
                 </Screen>
