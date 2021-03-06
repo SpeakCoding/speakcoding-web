@@ -1,0 +1,118 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 14px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    padding: 0 10px;
+}
+
+.info {
+    flex: 1;
+    margin: 0 12px;
+}
+
+.name {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 12px;
+}
+
+.location {
+    margin-top: 2px;
+    font-size: 10px;
+    line-height: 11px;
+}
+
+.more {
+    cursor: pointer;
+}
+
+.image {
+    width: 100%;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 0 16px;
+}
+
+@keyframes toggle-in {
+    0% { transform: scale(0.8) }
+    50% { transform: scale(1.1) }
+    100% { transform: scale(1) }
+}
+
+@keyframes toggle-out {
+    0% { transform: scale(0.8) }
+    50% { transform: scale(1.1) }
+    100% { transform: scale(1) }
+}
+
+.action {
+    line-height: 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.action.active {
+    animation: toggle-in 200ms linear forwards;
+}
+
+.action.inactive {
+    animation: toggle-out 200ms linear forwards;
+}
+
+.action.freeze {
+    animation: none;
+}
+
+.heart {
+    margin-right: 16px;
+}
+
+.heart .action.active {
+    color: var(--c-red-500);
+}
+
+.gap {
+    flex: 1;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    height: 16px;
+    padding: 0 10px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 12px;
+}
+
+.caption {
+    margin: 4px 0 5px;
+    padding: 0 10px;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.comments {
+    margin-bottom: 2px;
+    padding: 0 10px;
+    font-size: 12px;
+    line-height: 15px;
+    color: var(--c-grey-500);
+}
+
+.date {
+    padding: 0 10px;
+    font-size: 10px;
+    line-height: 12px;
+    color: var(--c-grey-500);
+}

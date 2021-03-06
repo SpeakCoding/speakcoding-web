@@ -5,6 +5,7 @@
     align-items: center;
     font-size: inherit;
     vertical-align: top;
+    line-height: 1em;
 }
 
 .container::before {

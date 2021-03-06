@@ -1,3 +1,3 @@
 export Button from './button';
-export Icon from '../components/icon';
+export ScrollView from './scrollview';
 export TextInput from './textinput';
