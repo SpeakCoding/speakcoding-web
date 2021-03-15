@@ -1,0 +1,17 @@
+.box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: stretch;
+    height: 44px;
+    margin: 0 -2px;
+    padding-bottom: 34px;
+    border-top: 1px solid var(--c-grey-200);
+    background-color: var(--c-white);
+    cursor: pointer;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

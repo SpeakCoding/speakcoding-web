@@ -3,6 +3,7 @@ import { ScrollView } from '@sc/ui/mobile';
 import { useAPI } from '../../tools';
 import Header from '../../components/header';
 import Post from './Post';
+import Tabs from '../../components/tabs';
 import s from './feed.css';
 
 const Feed = () => {
@@ -41,6 +42,8 @@ const Feed = () => {
                     <Post key={post.id} data={post} update={updatePost} />
                 ))}
             </ScrollView>
+
+            <Tabs />
         </>
     );
 };
