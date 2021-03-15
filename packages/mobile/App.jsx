@@ -22,19 +22,11 @@ const App = () => {
 
     return (
         <Layout onReset={handleReset}>
-            <Router key={key} initialScreen={initialScreen}>
-                <Screen name='login'>
-                    <LogIn />
-                </Screen>
-                <Screen name='signup'>
-                    <SignUp />
-                </Screen>
-                <Screen name='feed'>
-                    <Feed />
-                </Screen>
-                <Screen name='profile-edit'>
-                    <ProfileEdit />
-                </Screen>
+            <Router key={key} initialScreen={initialScreen} initialTab='home'>
+                <Screen name='login' component={LogIn} />
+                <Screen name='signup' component={SignUp} />
+                <Screen name='feed' component={Feed} />
+                <Screen name='profile-edit' component={ProfileEdit} view='modal' />
             </Router>
         </Layout>
     );

@@ -1,12 +1,10 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
-import { router } from './utils';
 import s from './router.css';
 
-const Page = ({ pos, current, route, navigate, goBack, children }) => {
-    const value = useMemo(() => ({ route, navigate, goBack }), []),
-        [ready, setReady] = useState(pos === 0);
+const Page = ({ pos, pointer, view, children }) => {
+    const [ready, setReady] = useState(pos === 0);
 
     useEffect(() => {
         const timer = setTimeout(() => setReady(true), 20);
@@ -14,25 +12,27 @@ const Page = ({ pos, current, route, navigate, goBack, children }) => {
     }, []);
 
     return (
-        <router.Provider value={value}>
-            <div
-                className={classNames(s.screen, {
-                    [s.current]: ready && pos === current,
-                    [s.prev]: pos === current - 1
-                })}
-            >
-                {children}
-            </div>
-        </router.Provider>
+        <div
+            className={classNames(s.screen, {
+                [s.default]: view === 'default',
+                [s.modal]: view === 'modal',
+                [s.current]: ready && pos === pointer,
+                [s.prev]: pos === pointer - 1
+            })}
+        >
+            {children}
+        </div>
     );
 };
 
 Page.propTypes = {
     pos: pt.number.isRequired,
-    current: pt.number.isRequired,
-    route: pt.object.isRequired,
-    navigate: pt.func.isRequired,
-    goBack: pt.func.isRequired
+    pointer: pt.number.isRequired,
+    view: pt.string
+};
+
+Page.defaultProps = {
+    view: undefined
 };
 
 export default Page;
