@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import pt from 'prop-types';
 import { DateTime, Icon } from '@sc/ui';
-import { useAPI } from '../../tools';
+import { useAPI, useRouter } from '../../tools';
 import Userpic from '../../components/userpic';
 import ActionIcon from './ActionIcon';
 import s from './post.css';
@@ -10,7 +10,8 @@ const msInMin = 60 * 1000,
     msInDay = 24 * 60 * 60 * 1000;
 
 const Post = ({ data, update }) => {
-    const fetch = useAPI();
+    const fetch = useAPI(),
+        { navigate } = useRouter();
 
     const toggleLike = useCallback(() => {
         const url = data.liked ? `/posts/${data.id}/unlike.json` : `/posts/${data.id}/like.json`;
@@ -30,10 +31,14 @@ const Post = ({ data, update }) => {
         update(data.id, { saved: !data.saved });
     }, [data.id, data.saved, update]);
 
+    const goToProfile = useCallback(() => {
+        navigate('profile', { id: data.id });
+    }, [data.id]);
+
     return (
         <div className={s.box}>
             <div className={s.title}>
-                <Userpic href={data.user?.profile_picture} size={36} />
+                <Userpic href={data.user?.profile_picture} size={36} onClick={goToProfile} />
 
                 <div className={s.info}>
                     <div className={s.name}>{data.user?.user_name}</div>

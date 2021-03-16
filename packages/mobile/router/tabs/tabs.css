@@ -1,4 +1,7 @@
 .box {
+    flex: 1;
+    align-self: flex-end;
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: stretch;
@@ -8,6 +11,7 @@
     border-top: 1px solid var(--c-grey-200);
     background-color: var(--c-white);
     cursor: pointer;
+    z-index: 1;
 }
 
 .tab {

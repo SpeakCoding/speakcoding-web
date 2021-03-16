@@ -1,0 +1,28 @@
+.display {
+    flex: 1;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.tab.hidden {
+    display: none;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 79px;
+    background-color: var(--c-white);
+    overflow: hidden;
+}
+
+.screen.modal {
+    padding-bottom: 0;
+    z-index: 2;
+}

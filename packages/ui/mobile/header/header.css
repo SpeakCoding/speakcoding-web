@@ -18,11 +18,16 @@
     bottom: 0;
 }
 
+.left.active, .right.active {
+    cursor: pointer;
+}
+
 .left {
     left: 0;
+    padding-left: 16px;
 }
 
 .right {
     right: 0;
+    padding-right: 16px;
 }
-

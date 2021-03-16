@@ -2,7 +2,8 @@ import React, { useCallback, useMemo } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
 import { context, router, useRouterState } from './utils';
-import Page from './Page';
+import Page from './page';
+import Tabs from './tabs';
 import s from './router.css';
 
 const Router = ({ initialScreen, initialScreenParams, initialTab, children }) => {
@@ -30,7 +31,7 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                 {tabs.map(({ name, history, pointer }) => (
                     <div key={name} className={classNames(s.tab, name !== state.tab && s.hidden)}>
                         {history.map((item, i) => {
-                            const { Content } = state.screens[item.name] || {},
+                            const { Content, view } = state.screens[item.name] || {},
                                 pageContext = {
                                     tab: state.tab,
                                     route: item,
@@ -40,11 +41,16 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                                 };
 
                             const active = history[Math.min(pointer + 1, history.length - 1)],
-                                { view } = state.screens[active.name] || {};
+                                { view: animation } = state.screens[active.name] || {};
 
                             return (
                                 <router.Provider key={item.key} value={pageContext}>
-                                    <Page pos={i} pointer={pointer} view={view}>
+                                    <Page
+                                        pos={i}
+                                        pointer={pointer}
+                                        view={view}
+                                        animation={animation}
+                                    >
                                         {Content && <Content />}
                                     </Page>
                                 </router.Provider>
@@ -52,6 +58,7 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                         })}
                     </div>
                 ))}
+                <Tabs tab={state.tab} switchTab={switchTab} />
             </div>
             {children}
         </context.Provider>

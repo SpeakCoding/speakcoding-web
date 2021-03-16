@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
-import s from './router.css';
+import a from './animation.css';
+import s from './page.css';
 
-const Page = ({ pos, pointer, view, children }) => {
+const Page = ({ pos, pointer, view, animation, children }) => {
     const [ready, setReady] = useState(pos === 0);
 
     useEffect(() => {
@@ -13,11 +14,9 @@ const Page = ({ pos, pointer, view, children }) => {
 
     return (
         <div
-            className={classNames(s.screen, {
-                [s.default]: view === 'default',
-                [s.modal]: view === 'modal',
-                [s.current]: ready && pos === pointer,
-                [s.prev]: pos === pointer - 1
+            className={classNames(s.screen, s[view], a.box, a[animation], {
+                [a.current]: ready && pos === pointer,
+                [a.prev]: pos === pointer - 1
             })}
         >
             {children}
@@ -28,11 +27,13 @@ const Page = ({ pos, pointer, view, children }) => {
 Page.propTypes = {
     pos: pt.number.isRequired,
     pointer: pt.number.isRequired,
-    view: pt.string
+    view: pt.string,
+    animation: pt.string
 };
 
 Page.defaultProps = {
-    view: undefined
+    view: undefined,
+    animation: undefined
 };
 
 export default Page;

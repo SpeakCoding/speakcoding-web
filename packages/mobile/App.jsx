@@ -4,7 +4,9 @@ import Layout from './components/layout';
 import { Router, Screen } from './router';
 import Feed from './screens/feed';
 import LogIn from './screens/auth/LogIn';
+import Profile from './screens/profile';
 import ProfileEdit from './screens/profile-edit';
+import Search from './screens/search';
 import SignUp from './screens/auth/SignUp';
 
 const App = () => {
@@ -26,6 +28,8 @@ const App = () => {
                 <Screen name='login' component={LogIn} />
                 <Screen name='signup' component={SignUp} />
                 <Screen name='feed' component={Feed} />
+                <Screen name='search' component={Search} />
+                <Screen name='profile' component={Profile} />
                 <Screen name='profile-edit' component={ProfileEdit} view='modal' />
             </Router>
         </Layout>
