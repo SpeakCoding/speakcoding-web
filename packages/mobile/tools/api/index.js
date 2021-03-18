@@ -1,4 +1,4 @@
-const apigw = 'http://130.193.44.149:3000';
+const apigw = 'https://api.speakcoding.co';
 
 async function fetch(url, options) {
     const { body, anonymous, ...rest } = options || {},
