@@ -32,7 +32,7 @@ const Post = ({ data, update }) => {
     }, [data.id, data.saved, update]);
 
     const goToProfile = useCallback(() => {
-        navigate('profile', { id: data.id });
+        navigate('profile', { userid: data.user.id });
     }, [data.id]);
 
     return (

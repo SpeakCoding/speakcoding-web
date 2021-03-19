@@ -1,13 +1,14 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Header, ScrollView } from '@sc/ui/mobile';
-import { useAPI } from '../../tools';
+import { useAPI, useCache } from '../../tools';
 import Post from './Post';
 import s from './feed.css';
 
 const Feed = () => {
     const fetch = useAPI(),
         [posts, setPosts] = useState([]),
-        ready = useRef(false);
+        ready = useRef(false),
+        { set } = useCache();
 
     const init = async () => {
         const res = await fetch('/posts.json', { method: 'GET' });
@@ -15,6 +16,12 @@ const Feed = () => {
         if (res.data) {
             setPosts(res.data);
             ready.current = true;
+
+            res.data.forEach(post => {
+                set('user', post.user.id, post.user);
+                if (post.liker_followee) set('user', post.liker_followee.id, post.liker_followee);
+                post.comments.forEach(comment => set('user', comment.user.id, comment.user));
+            });
         }
     };
 

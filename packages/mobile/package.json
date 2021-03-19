@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "private": true,
     "dependencies": {
+        "@sc/tools": "1.0.0",
         "@sc/ui": "1.0.0"
     }
 }

@@ -60,7 +60,7 @@ const Form = ({ action, submitText, onSubmit }) => {
                 />
             </div>
             <div className={s.submit}>
-                <Button loading={loading} type='submit'>
+                <Button block loading={loading} type='submit'>
                     {submitText}
                 </Button>
             </div>

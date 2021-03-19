@@ -8,21 +8,46 @@
     font-family: var(--font-family);
 }
 
-.default {
+.contained {
     composes: reset;
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 20px;
-    border-radius: 6px;
     background-color: var(--c-primary-500);
     color: var(--c-white);
     user-select: none;
     transition: background-color 0.12s var(--animation-timing-function);
 }
 
-.default:not(:disabled):active {
+.outlined {
+    composes: reset;
+    box-shadow: 0 0 0 1px var(--c-grey-300) inset;
+    user-select: none;
+    transition: background-color 0.12s var(--animation-timing-function);
+}
+
+.contained.block,
+.outlined.block {
+    width: 100%;
+}
+
+.contained.small,
+.outlined.small {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    border-radius: 4px;
+}
+
+.contained.medium,
+.outlined.medium {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    border-radius: 6px;
+}
+
+.contained:not(:disabled):active,
+.outlined:not(:disabled):active {
     background-color: var(--c-grey-300);
 }
 

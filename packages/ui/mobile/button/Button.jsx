@@ -1,10 +1,16 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
 import pt from 'prop-types';
+import classNames from 'classnames';
 import s from './button.css';
 
-const Button = ({ children, loading, type, variant, onClick }) => (
-    <button className={s[variant]} disabled={loading} type={type} onClick={onClick}>
+const Button = ({ block, children, loading, size, type, variant, onClick }) => (
+    <button
+        className={classNames(s[variant], s[size], block && s.block)}
+        disabled={loading}
+        type={type}
+        onClick={onClick}
+    >
         {loading && (
             <div className={s.loader}>
                 <svg width='100%' height='100%' viewBox='0 0 48 48'>
@@ -17,16 +23,20 @@ const Button = ({ children, loading, type, variant, onClick }) => (
 );
 
 Button.propTypes = {
+    block: pt.bool,
     loading: pt.bool,
+    size: pt.oneOf(['medium', 'small']),
     type: pt.oneOf(['button', 'submit']),
-    variant: pt.oneOf(['default', 'text']),
+    variant: pt.oneOf(['contained', 'outlined', 'text']),
     onClick: pt.func
 };
 
 Button.defaultProps = {
+    block: false,
     loading: false,
+    size: 'medium',
     type: 'button',
-    variant: 'default',
+    variant: 'contained',
     onClick: () => {}
 };
 
