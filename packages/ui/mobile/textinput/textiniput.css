@@ -1,19 +1,27 @@
+.box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: var(--c-grey-100);
+    box-shadow: 0 0 0 1px var(--c-grey-200) inset;
+    transition: box-shadow var(--animation);
+}
+
 .control {
     flex: 1;
     width: 100%;
-    padding: 12px;
+    padding: 0;
     font-family: var(--font-family);
     font-size: 16px;
     line-height: 20px;
-    border-radius: 6px;
-    box-sizing: border-box;
     border: none;
-    background-color: var(--c-grey-100);
-    box-shadow: 0 0 0 1px var(--c-grey-200) inset;
+    background: none;
     outline: none;
     text-overflow: ellipsis;
-    transition: var(--animation);
-    transition-property: color, box-shadow;
 }
 
 .control::-ms-reveal {
@@ -33,6 +41,19 @@
     color: var(--c-grey-500);
 }
 
-.control.invalid {
+.box.invalid {
     box-shadow: 0 0 0 1px var(--c-red-500) inset;
+}
+
+.box.ios {
+    padding: 8px 14px;
+    background-color: var(--c-grey-200);
+    box-shadow: none;
+    border-radius: 10px;
+}
+
+.icon {
+    height: 16px;
+    margin-right: 14px;
+    color: var(--c-grey-500);
 }

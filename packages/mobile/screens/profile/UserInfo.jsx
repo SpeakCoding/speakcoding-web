@@ -10,9 +10,6 @@ const UserInfo = ({ user, update }) => {
     const fetch = useAPI();
 
     const toggleFollow = useCallback(() => {
-        // TODO: Disabled until Search tab is ready
-        return;
-
         const url = user.is_followee
             ? `/users/${user.id}/unfollow.json`
             : `/users/${user.id}/follow.json`;
