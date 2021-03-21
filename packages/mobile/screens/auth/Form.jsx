@@ -36,7 +36,10 @@ const Form = ({ action, submitText, onSubmit }) => {
             setError(parseError(res.errors?.[0]));
             if (res.meta?.authentication_token)
                 localStorage.setItem('auth_token', res.meta.authentication_token);
-            if (res.data) onSubmit(res.data);
+            if (res.data) {
+                localStorage.setItem('userid', res.data.id);
+                onSubmit(res.data);
+            }
         },
         [action]
     );

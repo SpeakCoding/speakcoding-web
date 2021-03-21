@@ -19,6 +19,7 @@ const App = () => {
 
         fetch('/users/forget.json', { method: 'POST' });
         localStorage.removeItem('auth_token');
+        localStorage.removeItem('userid');
         setKey(Math.random());
     }, []);
 

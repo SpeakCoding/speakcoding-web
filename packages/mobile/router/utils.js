@@ -5,7 +5,9 @@ export const context = createContext({
 });
 
 export const router = createContext({
+    tab: undefined,
     route: {},
+    prevRoute: null,
     navigate: () => {},
     goBack: () => {},
     switchTab: () => {}

@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
 import s from './userpic.css';
+import placeholder from './placeholder.svg';
 
-const Userpic = ({ href, size, onClick }) => (
-    <img
-        className={classNames(s.box, !!onClick && s.active)}
-        style={{
-            width: size && `${size}px`,
-            height: size && `${size}px`
-        }}
-        src={href}
-        alt=''
-        onClick={onClick}
-    />
-);
+const Userpic = ({ href, size, onClick }) => {
+    const [src, setSrc] = useState(href || placeholder);
+
+    const handleError = useCallback(() => setSrc(placeholder), []);
+
+    return (
+        <img
+            className={classNames(s.box, !!onClick && s.active)}
+            style={{
+                width: size && `${size}px`,
+                height: size && `${size}px`
+            }}
+            src={src}
+            alt=''
+            loading='lazy'
+            onClick={onClick}
+            onError={handleError}
+        />
+    );
+};
 
 Userpic.propTypes = {
     href: pt.string,
@@ -23,7 +32,7 @@ Userpic.propTypes = {
 };
 
 Userpic.defaultProps = {
-    href: undefined,
+    href: placeholder,
     size: undefined,
     onClick: undefined
 };

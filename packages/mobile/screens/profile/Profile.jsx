@@ -7,12 +7,13 @@ import UserInfo from './UserInfo';
 import s from './profile.css';
 
 const Profile = () => {
-    const { route, goBack } = useRouter(),
+    const { route, prevRoute, goBack } = useRouter(),
         fetch = useAPI(),
         { get, set } = useCache(),
         [user, setUser] = useState(get('user', route.params.userid)),
         [tab, setTab] = useState('posts'),
-        [data, setData] = useState({ posts: [], tags: [] });
+        [data, setData] = useState({ posts: [], tags: [] }),
+        self = route.params.userid?.toString() === localStorage.getItem('userid');
 
     const initProfile = async () => {
         const res = await fetch(`/users/${route.params.userid}.json`, { method: 'GET' });
@@ -53,20 +54,24 @@ const Profile = () => {
     return (
         <>
             <Header>
-                <Header.Left onClick={goBack}>
-                    <Icon name='m/arrow-left' size={24} />
-                </Header.Left>
+                {prevRoute && (
+                    <Header.Left onClick={goBack}>
+                        <Icon name='m/arrow-left' size={24} />
+                    </Header.Left>
+                )}
 
                 {user?.user_name}
 
-                <Header.Right>
-                    <Icon name='m/dots-horizontal' size={24} />
-                </Header.Right>
+                {self && (
+                    <Header.Right>
+                        <Icon name='m/dots-horizontal' size={24} />
+                    </Header.Right>
+                )}
             </Header>
 
             {user && (
                 <>
-                    <UserInfo user={user} update={update} />
+                    <UserInfo user={user} self={self} update={update} />
 
                     <div className={s.tabs}>
                         <div
@@ -86,7 +91,13 @@ const Profile = () => {
                     <ScrollView>
                         <div className={s.grid}>
                             {data[tab].map(item => (
-                                <img key={item.id} src={item.image} alt='' className={s.tile} />
+                                <img
+                                    key={item.id}
+                                    src={item.image}
+                                    alt=''
+                                    className={s.tile}
+                                    loading='lazy'
+                                />
                             ))}
                         </div>
                         {data[tab].length === 0 && <div className={s.empty}>No posts yet</div>}

@@ -6,7 +6,7 @@ import { useAPI } from '../../tools';
 import Userpic from '../../components/userpic';
 import s from './profile.css';
 
-const UserInfo = ({ user, update }) => {
+const UserInfo = ({ user, self, update }) => {
     const fetch = useAPI();
 
     const toggleFollow = useCallback(() => {
@@ -17,6 +17,8 @@ const UserInfo = ({ user, update }) => {
         fetch(url, { method: 'POST' });
         update({ is_followee: !user.is_followee });
     }, [user, update]);
+
+    const openEdit = useCallback(() => {}, [user]);
 
     return (
         <div className={s.user}>
@@ -39,15 +41,23 @@ const UserInfo = ({ user, update }) => {
             </div>
             <div className={s.name}>{user.user_name}</div>
             <div className={s.bio}>{user.bio}</div>
-            <div className={s.follow}>
-                <Button
-                    block
-                    variant={user.is_followee ? 'outlined' : 'contained'}
-                    size='small'
-                    onClick={toggleFollow}
-                >
-                    {user.is_followee ? 'Following' : 'Follow'}
-                </Button>
+            <div className={s.action}>
+                {self && (
+                    <Button block variant='outlined' size='small' onClick={openEdit}>
+                        Edit profile
+                    </Button>
+                )}
+
+                {!self && (
+                    <Button
+                        block
+                        variant={user.is_followee ? 'outlined' : 'contained'}
+                        size='small'
+                        onClick={toggleFollow}
+                    >
+                        {user.is_followee ? 'Following' : 'Follow'}
+                    </Button>
+                )}
             </div>
         </div>
     );
@@ -55,7 +65,13 @@ const UserInfo = ({ user, update }) => {
 
 UserInfo.propTypes = {
     user: pt.object.isRequired,
-    update: pt.func.isRequired
+    self: pt.bool,
+    update: pt.func
+};
+
+UserInfo.defaultProps = {
+    self: false,
+    update: () => {}
 };
 
 export default UserInfo;

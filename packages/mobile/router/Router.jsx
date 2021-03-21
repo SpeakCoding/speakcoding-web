@@ -35,6 +35,7 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                                 pageContext = {
                                     tab: state.tab,
                                     route: item,
+                                    prevRoute: history[i - 1],
                                     navigate,
                                     goBack,
                                     switchTab

@@ -35,8 +35,9 @@
     color: var(--c-grey-600);
 }
 
-.follow {
-    width: 94px;
+.action {
+    display: inline-block;
+    min-width: 94px;
 }
 
 .tabs {
