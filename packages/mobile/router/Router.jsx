@@ -12,16 +12,17 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
             state.tabs
         ]);
 
+    const screen = useMemo(() => {
+        const { pointer, history } = state.tabs[state.tab],
+            { key, name } = history[pointer] || {};
+
+        return { key, ...state.screens[name] };
+    }, [state]);
+
     const navigate = useCallback((name, params) => dispatch({ type: 'push', name, params }), []),
         goBack = useCallback(() => dispatch({ type: 'back' }), []),
-        register = useCallback(
-            (name, component, view) => dispatch({ type: 'screen', name, component, view }),
-            []
-        ),
-        switchTab = useCallback(
-            (tab, screen, params) => dispatch({ type: 'tab', tab, screen, params }),
-            []
-        );
+        register = useCallback(options => dispatch({ ...options, type: 'screen' }), []),
+        switchTab = useCallback((tab, options) => dispatch({ ...options, type: 'tab', tab }), []);
 
     const value = useMemo(() => ({ register }), []);
 
@@ -36,6 +37,7 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                                     tab: state.tab,
                                     route: item,
                                     prevRoute: history[i - 1],
+                                    focused: item.key === screen.key,
                                     navigate,
                                     goBack,
                                     switchTab
@@ -59,7 +61,7 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                         })}
                     </div>
                 ))}
-                <Tabs tab={state.tab} switchTab={switchTab} />
+                {screen?.tabs && <Tabs tab={state.tab} switchTab={switchTab} />}
             </div>
             {children}
         </context.Provider>

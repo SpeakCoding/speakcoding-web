@@ -8,6 +8,7 @@ export const router = createContext({
     tab: undefined,
     route: {},
     prevRoute: null,
+    focused: false,
     navigate: () => {},
     goBack: () => {},
     switchTab: () => {}
@@ -41,7 +42,8 @@ function reducer(state, action) {
                     ...state.screens,
                     [action.name]: {
                         Content: action.component,
-                        view: action.view
+                        view: action.view,
+                        tabs: action.tabs
                     }
                 }
             };

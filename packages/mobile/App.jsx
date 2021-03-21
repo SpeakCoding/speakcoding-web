@@ -26,8 +26,8 @@ const App = () => {
     return (
         <Layout onReset={handleReset}>
             <Router key={key} initialScreen={initialScreen} initialTab='home'>
-                <Screen name='login' component={LogIn} />
-                <Screen name='signup' component={SignUp} />
+                <Screen name='login' component={LogIn} tabs={false} />
+                <Screen name='signup' component={SignUp} tabs={false} />
                 <Screen name='feed' component={Feed} />
                 <Screen name='search' component={Search} />
                 <Screen name='profile' component={Profile} />

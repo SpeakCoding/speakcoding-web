@@ -2,12 +2,13 @@ import React, { useCallback } from 'react';
 import pt from 'prop-types';
 import { round } from '@sc/tools/number';
 import { Button } from '@sc/ui/mobile';
-import { useAPI } from '../../tools';
+import { useAPI, useRouter } from '../../tools';
 import Userpic from '../../components/userpic';
 import s from './profile.css';
 
 const UserInfo = ({ user, self, update }) => {
-    const fetch = useAPI();
+    const fetch = useAPI(),
+        { navigate } = useRouter();
 
     const toggleFollow = useCallback(() => {
         const url = user.is_followee
@@ -18,7 +19,9 @@ const UserInfo = ({ user, self, update }) => {
         update({ is_followee: !user.is_followee });
     }, [user, update]);
 
-    const openEdit = useCallback(() => {}, [user]);
+    const openEdit = useCallback(() => {
+        navigate('profile-edit', { user });
+    }, [user]);
 
     return (
         <div className={s.user}>

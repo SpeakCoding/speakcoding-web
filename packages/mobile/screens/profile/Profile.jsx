@@ -7,7 +7,7 @@ import UserInfo from './UserInfo';
 import s from './profile.css';
 
 const Profile = () => {
-    const { route, prevRoute, goBack } = useRouter(),
+    const { route, prevRoute, focused, goBack } = useRouter(),
         fetch = useAPI(),
         { get, set } = useCache(),
         [user, setUser] = useState(get('user', route.params.userid)),
@@ -15,14 +15,14 @@ const Profile = () => {
         [data, setData] = useState({ posts: [], tags: [] }),
         self = route.params.userid?.toString() === localStorage.getItem('userid');
 
-    const initProfile = async () => {
+    const initProfile = useCallback(async () => {
         const res = await fetch(`/users/${route.params.userid}.json`, { method: 'GET' });
 
         if (res.data) {
             setUser(res.data);
             set('user', res.data.id, res.data);
         }
-    };
+    }, []);
 
     const initPosts = async () => {
         const res = await Promise.all([
@@ -47,9 +47,13 @@ const Profile = () => {
 
     useEffect(() => {
         if (!route.params.userid) return;
-        initProfile();
+        if (!self) initProfile();
         initPosts();
     }, []);
+
+    useEffect(() => {
+        if (self && focused) initProfile();
+    }, [self, focused]);
 
     return (
         <>

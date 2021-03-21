@@ -5,21 +5,24 @@ import s from './tabs.css';
 
 const Tabs = ({ tab, switchTab }) => {
     const goToProfile = useCallback(() => {
-        switchTab('profile', 'profile', { userid: localStorage.getItem('userid') });
+        switchTab('profile', {
+            screen: 'profile',
+            params: { userid: localStorage.getItem('userid') }
+        });
     }, []);
 
     return (
         <div className={s.box}>
-            <div className={s.tab} onClick={() => switchTab('home', 'feed')}>
+            <div className={s.tab} onClick={() => switchTab('home', { screen: 'feed' })}>
                 <Icon name={tab === 'home' ? 'm/home-filled' : 'm/home'} size={24} />
             </div>
-            <div className={s.tab} onClick={() => switchTab('search', 'search')}>
+            <div className={s.tab} onClick={() => switchTab('search', { screen: 'search' })}>
                 <Icon name={tab === 'search' ? 'm/search' : 'm/search'} size={24} />
             </div>
             <div className={s.tab}>
                 <Icon name='m/plus' size={24} />
             </div>
-            <div className={s.tab} onClick={() => switchTab('likes', 'likes')}>
+            <div className={s.tab} onClick={() => switchTab('likes', { screen: 'likes' })}>
                 <Icon name={tab === 'likes' ? 'm/heart-filled' : 'm/heart'} size={24} />
             </div>
             <div className={s.tab} onClick={goToProfile}>

@@ -1,16 +1,23 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
 import s from './userpic.css';
 import placeholder from './placeholder.svg';
 
 const Userpic = ({ href, size, onClick }) => {
-    const [src, setSrc] = useState(href || placeholder);
+    const [src, setSrc] = useState(href || placeholder),
+        initial = useRef(true);
 
     const handleError = useCallback(() => setSrc(placeholder), []);
 
+    useEffect(() => {
+        if (!initial.current) setSrc(href);
+        initial.current = false;
+    }, [href]);
+
     return (
         <img
+            key={src}
             className={classNames(s.box, !!onClick && s.active)}
             style={{
                 width: size && `${size}px`,
