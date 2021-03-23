@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import pt from 'prop-types';
 import { DateTime, Icon } from '@sc/ui';
 import { useAPI, useRouter } from '../../tools';
-import Userpic from '../../components/userpic';
+import { Userpic } from '../../components';
 import ActionIcon from './ActionIcon';
 import s from './post.css';
 

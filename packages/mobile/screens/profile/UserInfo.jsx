@@ -3,7 +3,7 @@ import pt from 'prop-types';
 import { round } from '@sc/tools/number';
 import { Button } from '@sc/ui/mobile';
 import { useAPI, useRouter } from '../../tools';
-import Userpic from '../../components/userpic';
+import { Userpic } from '../../components';
 import s from './profile.css';
 
 const UserInfo = ({ user, self, update }) => {
@@ -32,11 +32,15 @@ const UserInfo = ({ user, self, update }) => {
                         <div className={s.count}>{round(user.posts_count)}</div>
                         {user.posts_count > 1 ? 'Posts' : 'Post'}
                     </div>
-                    <div>
+                    <div
+                        onClick={() => navigate('followers', { userid: user.id, tab: 'followers' })}
+                    >
                         <div className={s.count}>{round(user.followers_count)}</div>
                         {user.followers_count > 1 ? 'Followers' : 'Follower'}
                     </div>
-                    <div>
+                    <div
+                        onClick={() => navigate('followers', { userid: user.id, tab: 'followees' })}
+                    >
                         <div className={s.count}>{round(user.followees_count)}</div>
                         Following
                     </div>

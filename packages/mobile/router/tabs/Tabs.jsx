@@ -17,7 +17,7 @@ const Tabs = ({ tab, switchTab }) => {
                 <Icon name={tab === 'home' ? 'm/home-filled' : 'm/home'} size={24} />
             </div>
             <div className={s.tab} onClick={() => switchTab('search', { screen: 'search' })}>
-                <Icon name={tab === 'search' ? 'm/search' : 'm/search'} size={24} />
+                <Icon name={tab === 'search' ? 'm/search-filled' : 'm/search'} size={24} />
             </div>
             <div className={s.tab}>
                 <Icon name='m/plus' size={24} />

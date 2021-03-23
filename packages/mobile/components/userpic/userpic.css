@@ -2,7 +2,8 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: var(--c-grey-200);
+    background-image: url(./placeholder.svg);
+    background-size: contain;
     object-fit: cover;
 }
 

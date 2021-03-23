@@ -3,7 +3,7 @@ import { convertToJPEGBase64 } from '@sc/tools/image';
 import { Button, Header } from '@sc/ui/mobile';
 import { FileUpload } from '@sc/ui';
 import { useAPI, useRouter } from '../../tools';
-import Userpic from '../../components/userpic';
+import { Userpic } from '../../components';
 import s from './profile-edit.css';
 
 const ProfileEdit = () => {

@@ -1,0 +1,11 @@
+.box {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    font-size: 17px;
+    line-height: 20px;
+}
+
+.cancel {
+    margin-left: 12px;
+}

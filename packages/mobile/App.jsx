@@ -1,8 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import { useAPI } from './tools';
-import Layout from './components/layout';
+import { Layout } from './components';
 import { Router, Screen } from './router';
 import Feed from './screens/feed';
+import Followers from './screens/followers';
 import LogIn from './screens/auth/LogIn';
 import Profile from './screens/profile';
 import ProfileEdit from './screens/profile-edit';
@@ -32,6 +33,7 @@ const App = () => {
                 <Screen name='search' component={Search} />
                 <Screen name='profile' component={Profile} />
                 <Screen name='profile-edit' component={ProfileEdit} view='modal' />
+                <Screen name='followers' component={Followers} />
             </Router>
         </Layout>
     );

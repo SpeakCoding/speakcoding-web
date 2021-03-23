@@ -4,10 +4,13 @@
     justify-content: center;
     position: relative;
     height: 46px;
-    border-bottom: 1px solid var(--c-grey-200);
     font-size: 17px;
     font-weight: 600;
     line-height: 20px;
+}
+
+.box.border {
+    border-bottom: 1px solid var(--c-grey-200);
 }
 
 .left, .right {
