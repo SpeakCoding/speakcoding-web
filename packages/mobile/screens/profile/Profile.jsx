@@ -36,15 +36,6 @@ const Profile = () => {
         });
     };
 
-    const update = useCallback(
-        fields => {
-            const next = { ...user, ...fields };
-            setUser(next);
-            set(user.id, next);
-        },
-        [user]
-    );
-
     useEffect(() => {
         if (!route.params.userid) return;
         if (!self) initProfile();
@@ -75,7 +66,7 @@ const Profile = () => {
 
             {user && (
                 <>
-                    <UserInfo user={user} self={self} update={update} />
+                    <UserInfo user={user} self={self} />
 
                     <div className={s.tabs}>
                         <div

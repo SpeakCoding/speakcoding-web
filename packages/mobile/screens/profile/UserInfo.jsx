@@ -2,22 +2,12 @@ import React, { useCallback } from 'react';
 import pt from 'prop-types';
 import { round } from '@sc/tools/number';
 import { Button } from '@sc/ui/mobile';
-import { useAPI, useRouter } from '../../tools';
-import { Userpic } from '../../components';
+import { useRouter } from '../../tools';
+import { Follow, Userpic } from '../../components';
 import s from './profile.css';
 
-const UserInfo = ({ user, self, update }) => {
-    const fetch = useAPI(),
-        { navigate } = useRouter();
-
-    const toggleFollow = useCallback(() => {
-        const url = user.is_followee
-            ? `/users/${user.id}/unfollow.json`
-            : `/users/${user.id}/follow.json`;
-
-        fetch(url, { method: 'POST' });
-        update({ is_followee: !user.is_followee });
-    }, [user, update]);
+const UserInfo = ({ user, self }) => {
+    const { navigate } = useRouter();
 
     const openEdit = useCallback(() => {
         navigate('profile-edit', { user });
@@ -48,24 +38,16 @@ const UserInfo = ({ user, self, update }) => {
             </div>
             <div className={s.name}>{user.user_name}</div>
             <div className={s.bio}>{user.bio}</div>
-            <div className={s.action}>
-                {self && (
+
+            {self && (
+                <div className={s.action}>
                     <Button block variant='outlined' size='small' onClick={openEdit}>
                         Edit profile
                     </Button>
-                )}
+                </div>
+            )}
 
-                {!self && (
-                    <Button
-                        block
-                        variant={user.is_followee ? 'outlined' : 'contained'}
-                        size='small'
-                        onClick={toggleFollow}
-                    >
-                        {user.is_followee ? 'Following' : 'Follow'}
-                    </Button>
-                )}
-            </div>
+            {!self && <Follow userid={user.id} />}
         </div>
     );
 };

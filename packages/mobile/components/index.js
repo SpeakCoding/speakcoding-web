@@ -1,3 +1,4 @@
+export Follow from './follow';
 export Layout from './layout';
 export Logo from './logo';
 export QueryFilter from './query-filter';

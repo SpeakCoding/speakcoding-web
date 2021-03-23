@@ -1,11 +1,12 @@
 import React from 'react';
 import pt from 'prop-types';
 import { ScrollView } from '@sc/ui/mobile';
+import Follow from '../follow';
 import Userpic from '../userpic';
 import { useRouter } from '../../router';
 import s from './users-list.css';
 
-const UsersList = ({ items }) => {
+const UsersList = ({ items, follow }) => {
     const { navigate } = useRouter();
 
     return (
@@ -21,6 +22,7 @@ const UsersList = ({ items }) => {
                         <div className={s.name}>{item.user_name}</div>
                         <div className={s.bio}>{item.bio}</div>
                     </div>
+                    {follow && <Follow userid={item.id} />}
                 </div>
             ))}
         </ScrollView>
@@ -28,11 +30,13 @@ const UsersList = ({ items }) => {
 };
 
 UsersList.propTypes = {
-    items: pt.array
+    items: pt.array,
+    follow: pt.bool
 };
 
 UsersList.defaultProps = {
-    items: []
+    items: [],
+    follow: false
 };
 
 export default UsersList;

@@ -10,7 +10,7 @@ import s from './followers.css';
 const Followers = () => {
     const fetch = useAPI(),
         { route, goBack } = useRouter(),
-        { get } = useCache(),
+        { get, set } = useCache(),
         { userid, tab: initial } = route.params,
         [tab, setTab] = useState(initial),
         [user, setUser] = useState(get('user', userid)),
@@ -34,6 +34,10 @@ const Followers = () => {
             fetch(`/users/${userid}/followers.json`, { method: 'GET' }),
             fetch(`/users/${userid}/followees.json`, { method: 'GET' })
         ]);
+
+        [...(res[1]?.data || []), ...(res[2]?.data || [])].forEach(item => {
+            set('user', item.id, item);
+        });
 
         setUser(res[0]?.data);
         setData({
@@ -77,7 +81,7 @@ const Followers = () => {
                         <QueryFilter key={tab} placeholder='Search' onChange={setQuery} />
                     </div>
 
-                    <UsersList items={list} />
+                    <UsersList items={list} follow />
                 </>
             )}
         </>
