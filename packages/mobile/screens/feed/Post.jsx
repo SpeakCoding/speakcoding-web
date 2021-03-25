@@ -31,14 +31,14 @@ const Post = ({ data, update }) => {
         update(data.id, { saved: !data.saved });
     }, [data.id, data.saved, update]);
 
-    const goToProfile = useCallback(() => {
-        navigate('profile', { userid: data.user.id });
-    }, [data.id]);
-
     return (
         <div className={s.box}>
             <div className={s.title}>
-                <Userpic href={data.user?.profile_picture} size={36} onClick={goToProfile} />
+                <Userpic
+                    href={data.user?.profile_picture}
+                    size={36}
+                    onClick={() => navigate('profile', { userid: data.user.id })}
+                />
 
                 <div className={s.info}>
                     <div className={s.name}>{data.user?.user_name}</div>
@@ -78,7 +78,7 @@ const Post = ({ data, update }) => {
             </div>
 
             {data.likes_count > 0 && (
-                <div className={s.likes}>
+                <div className={s.likes} onClick={() => navigate('likes', { postid: data.id })}>
                     {data.likes_count} {data.likes_count > 1 ? 'likes' : 'like'}
                 </div>
             )}

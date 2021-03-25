@@ -4,6 +4,7 @@ import { Layout } from './components';
 import { Router, Screen } from './router';
 import Feed from './screens/feed';
 import Followers from './screens/followers';
+import Likes from './screens/likes';
 import LogIn from './screens/auth/LogIn';
 import Profile from './screens/profile';
 import ProfileEdit from './screens/profile-edit';
@@ -34,6 +35,7 @@ const App = () => {
                 <Screen name='profile' component={Profile} />
                 <Screen name='profile-edit' component={ProfileEdit} view='modal' />
                 <Screen name='followers' component={Followers} />
+                <Screen name='likes' component={Likes} />
             </Router>
         </Layout>
     );
