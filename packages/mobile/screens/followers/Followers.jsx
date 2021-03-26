@@ -3,17 +3,16 @@ import classNames from 'classnames';
 import { round } from '@sc/tools/number';
 import { Header } from '@sc/ui/mobile';
 import { Icon } from '@sc/ui';
-import { useAPI, useCache, useRouter } from '../../tools';
+import { useAPI, useCacheState, useRouter } from '../../tools';
 import { QueryFilter, UsersList } from '../../components';
 import s from './followers.css';
 
 const Followers = () => {
     const fetch = useAPI(),
         { route, goBack } = useRouter(),
-        { get, set } = useCache(),
         { userid, tab: initial } = route.params,
+        [user, updateUser] = useCacheState('user', userid),
         [tab, setTab] = useState(initial),
-        [user, setUser] = useState(get('user', userid)),
         [data, setData] = useState({ followers: [], followees: [] }),
         [query, setQuery] = useState('');
 
@@ -35,11 +34,7 @@ const Followers = () => {
             fetch(`/users/${userid}/followees.json`, { method: 'GET' })
         ]);
 
-        [...(res[1]?.data || []), ...(res[2]?.data || [])].forEach(item => {
-            set('user', item.id, item);
-        });
-
-        setUser(res[0]?.data);
+        updateUser(res[0].data);
         setData({
             followers: res[1]?.data || [],
             followees: res[2]?.data || []

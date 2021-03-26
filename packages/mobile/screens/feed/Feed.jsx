@@ -1,14 +1,14 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Header, ScrollView } from '@sc/ui/mobile';
+import React, { useEffect, useRef, useState } from 'react';
+import { Header } from '@sc/ui/mobile';
 import { useAPI, useCache } from '../../tools';
-import Post from './Post';
+import { PostsList } from '../../components';
 import s from './feed.css';
 
 const Feed = () => {
     const fetch = useAPI(),
         [posts, setPosts] = useState([]),
         ready = useRef(false),
-        { set } = useCache();
+        { add } = useCache();
 
     const init = async () => {
         const res = await fetch('/posts.json', { method: 'GET' });
@@ -18,19 +18,12 @@ const Feed = () => {
             ready.current = true;
 
             res.data.forEach(post => {
-                set('user', post.user.id, post.user);
-                if (post.liker_followee) set('user', post.liker_followee.id, post.liker_followee);
-                post.comments.forEach(comment => set('user', comment.user.id, comment.user));
+                const users = [post.user, ...post.comments.map(comment => comment.user)];
+                if (post.liker_followee) users.push(post.liker_followee);
+                add('user', users);
             });
         }
     };
-
-    const updatePost = useCallback(
-        (id, fields) => {
-            setPosts(posts.map(post => (post.id === id ? { ...post, ...fields } : post)));
-        },
-        [posts]
-    );
 
     useEffect(() => {
         init();
@@ -42,11 +35,7 @@ const Feed = () => {
                 <div className={s.logo} />
             </Header>
 
-            <ScrollView>
-                {posts.map(post => (
-                    <Post key={post.id} data={post} update={updatePost} />
-                ))}
-            </ScrollView>
+            <PostsList items={posts} />
         </>
     );
 };

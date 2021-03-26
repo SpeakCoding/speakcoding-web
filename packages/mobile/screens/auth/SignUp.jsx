@@ -8,7 +8,7 @@ const SignUp = () => {
     const { navigate, goBack } = useRouter();
 
     const toLogIn = useCallback(() => goBack(), []),
-        next = useCallback(() => navigate('profile-edit'), []);
+        next = useCallback(user => navigate('profile-edit', { user, initial: true }), []);
 
     return (
         <div className={s.box}>

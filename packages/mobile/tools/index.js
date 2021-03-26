@@ -1,3 +1,3 @@
 export { useAPI } from './api';
-export { useCache } from './cache';
+export { useCache, useCacheState } from './cache';
 export { useRouter } from '../router';

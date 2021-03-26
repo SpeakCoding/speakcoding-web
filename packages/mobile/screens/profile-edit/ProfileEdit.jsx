@@ -7,26 +7,31 @@ import { Userpic } from '../../components';
 import s from './profile-edit.css';
 
 const ProfileEdit = () => {
-    const { route, goBack } = useRouter(),
+    const { route, navigate, goBack } = useRouter(),
         fetch = useAPI(),
-        { user } = route.params,
+        { user, initial } = route.params,
         [img, setImg] = useState('');
 
-    const handleSubmit = useCallback(async event => {
-        event.preventDefault();
+    const handleSubmit = useCallback(
+        async event => {
+            event.preventDefault();
 
-        const fields = event.target.elements;
+            const fields = event.target.elements;
 
-        const data = {
-            user_name: fields.user_name.value,
-            bio: fields.bio.value
-        };
+            const data = {
+                user_name: fields.user_name.value,
+                bio: fields.bio.value
+            };
 
-        if (fields.profile_picture.value) data.profile_picture = fields.profile_picture.value;
+            if (fields.profile_picture.value) data.profile_picture = fields.profile_picture.value;
 
-        await fetch(`/users/${user.id}.json`, { method: 'PUT', body: { user: data } });
-        goBack();
-    }, []);
+            await fetch(`/users/${user.id}.json`, { method: 'PUT', body: { user: data } });
+
+            if (initial) navigate('feed');
+            else goBack();
+        },
+        [initial]
+    );
 
     const handleChooseImage = useCallback(async files => {
         const jpeg = await convertToJPEGBase64(files[0]);
@@ -36,8 +41,8 @@ const ProfileEdit = () => {
     return (
         <form onSubmit={handleSubmit}>
             <Header>
-                <Header.Left onClick={goBack}>Cancel</Header.Left>
-                Edit profile
+                {!initial && <Header.Left onClick={goBack}>Cancel</Header.Left>}
+                {initial ? 'Create profile' : 'Edit profile'}
                 <Header.Right>
                     <Button type='submit' variant='text'>
                         Done

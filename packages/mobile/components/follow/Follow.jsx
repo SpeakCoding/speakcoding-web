@@ -1,19 +1,18 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import pt from 'prop-types';
 import { Button } from '@sc/ui/mobile';
-import { useAPI, useCache } from '../../tools';
+import { useAPI, useCacheState } from '../../tools';
 import s from './follow.css';
 
 const Follow = ({ userid, onClick }) => {
     const fetch = useAPI(),
-        { get, set } = useCache(),
-        [user, setUser] = useState(get('user', userid)),
+        [user, updateUser] = useCacheState('user', userid),
         self = userid.toString() === localStorage.getItem('userid');
 
     const init = async () => {
         if (user) return;
         const res = await fetch(`/users/${userid}.json`, { method: 'GET' });
-        setUser(res.data);
+        updateUser(res.data);
     };
 
     const toggle = useCallback(
@@ -26,10 +25,8 @@ const Follow = ({ userid, onClick }) => {
 
             fetch(url, { method: 'POST' });
 
-            const next = { ...user, is_followee: !user.is_followee };
-            set('user', user.id, next);
-            setUser(next);
-            onClick(next.is_followee);
+            updateUser({ is_followee: !user.is_followee });
+            onClick(!user.is_followee);
         },
         [user]
     );

@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import pt from 'prop-types';
 import { ScrollView } from '@sc/ui/mobile';
 import Follow from '../follow';
 import Userpic from '../userpic';
 import { useRouter } from '../../router';
+import { useCache } from '../../tools';
 import s from './users-list.css';
 
 const UsersList = ({ items, follow }) => {
-    const { navigate } = useRouter();
+    const { navigate } = useRouter(),
+        { add } = useCache();
+
+    useEffect(() => {
+        add('user', items);
+    }, [items]);
 
     return (
         <ScrollView>

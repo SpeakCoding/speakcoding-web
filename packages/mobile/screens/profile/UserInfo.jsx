@@ -6,7 +6,7 @@ import { useRouter } from '../../tools';
 import { Follow, Userpic } from '../../components';
 import s from './profile.css';
 
-const UserInfo = ({ user, self }) => {
+const UserInfo = ({ user, self, goToPosts }) => {
     const { navigate } = useRouter();
 
     const openEdit = useCallback(() => {
@@ -18,7 +18,7 @@ const UserInfo = ({ user, self }) => {
             <div className={s.main}>
                 <Userpic href={user?.profile_picture} size={86} />
                 <div className={s.counters}>
-                    <div>
+                    <div onClick={() => goToPosts()}>
                         <div className={s.count}>{round(user.posts_count)}</div>
                         {user.posts_count > 1 ? 'Posts' : 'Post'}
                     </div>
@@ -55,12 +55,12 @@ const UserInfo = ({ user, self }) => {
 UserInfo.propTypes = {
     user: pt.object.isRequired,
     self: pt.bool,
-    update: pt.func
+    goToPosts: pt.func
 };
 
 UserInfo.defaultProps = {
     self: false,
-    update: () => {}
+    goToPosts: () => {}
 };
 
 export default UserInfo;

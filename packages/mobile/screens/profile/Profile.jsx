@@ -1,27 +1,23 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { Header, ScrollView } from '@sc/ui/mobile';
+import { Header } from '@sc/ui/mobile';
 import { Icon } from '@sc/ui';
-import { useAPI, useCache, useRouter } from '../../tools';
+import { useAPI, useCacheState, useRouter } from '../../tools';
 import UserInfo from './UserInfo';
+import { PostsGrid } from '../../components';
 import s from './profile.css';
 
 const Profile = () => {
-    const { route, prevRoute, focused, goBack } = useRouter(),
+    const { route, prevRoute, focused, navigate, goBack } = useRouter(),
         fetch = useAPI(),
-        { get, set } = useCache(),
-        [user, setUser] = useState(get('user', route.params.userid)),
+        [user, updateUser] = useCacheState('user', route.params.userid),
         [tab, setTab] = useState('posts'),
         [data, setData] = useState({ posts: [], tags: [] }),
         self = route.params.userid?.toString() === localStorage.getItem('userid');
 
     const initProfile = useCallback(async () => {
         const res = await fetch(`/users/${route.params.userid}.json`, { method: 'GET' });
-
-        if (res.data) {
-            setUser(res.data);
-            set('user', res.data.id, res.data);
-        }
+        updateUser(res.data);
     }, []);
 
     const initPosts = async () => {
@@ -35,6 +31,8 @@ const Profile = () => {
             tags: res[1]?.data || []
         });
     };
+
+    const goToPosts = id => navigate('posts', { items: data[tab], scrollTo: id });
 
     useEffect(() => {
         if (!route.params.userid) return;
@@ -66,7 +64,7 @@ const Profile = () => {
 
             {user && (
                 <>
-                    <UserInfo user={user} self={self} />
+                    <UserInfo user={user} self={self} goToPosts={goToPosts} />
 
                     <div className={s.tabs}>
                         <div
@@ -83,20 +81,11 @@ const Profile = () => {
                         </div>
                     </div>
 
-                    <ScrollView>
-                        <div className={s.grid}>
-                            {data[tab].map(item => (
-                                <img
-                                    key={item.id}
-                                    src={item.image}
-                                    alt=''
-                                    className={s.tile}
-                                    loading='lazy'
-                                />
-                            ))}
-                        </div>
-                        {data[tab].length === 0 && <div className={s.empty}>No posts yet</div>}
-                    </ScrollView>
+                    <PostsGrid
+                        items={data[tab]}
+                        placeholder='No posts yet'
+                        onClickPost={goToPosts}
+                    />
                 </>
             )}
         </>

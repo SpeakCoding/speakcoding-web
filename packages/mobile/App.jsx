@@ -2,10 +2,12 @@ import React, { useCallback, useState } from 'react';
 import { useAPI } from './tools';
 import { Layout } from './components';
 import { Router, Screen } from './router';
+import { CacheProvider } from './tools/cache';
 import Feed from './screens/feed';
 import Followers from './screens/followers';
 import Likes from './screens/likes';
 import LogIn from './screens/auth/LogIn';
+import Posts from './screens/posts';
 import Profile from './screens/profile';
 import ProfileEdit from './screens/profile-edit';
 import Search from './screens/search';
@@ -26,18 +28,21 @@ const App = () => {
     }, []);
 
     return (
-        <Layout onReset={handleReset}>
-            <Router key={key} initialScreen={initialScreen} initialTab='home'>
-                <Screen name='login' component={LogIn} tabs={false} />
-                <Screen name='signup' component={SignUp} tabs={false} />
-                <Screen name='feed' component={Feed} />
-                <Screen name='search' component={Search} />
-                <Screen name='profile' component={Profile} />
-                <Screen name='profile-edit' component={ProfileEdit} view='modal' />
-                <Screen name='followers' component={Followers} />
-                <Screen name='likes' component={Likes} />
-            </Router>
-        </Layout>
+        <CacheProvider>
+            <Layout onReset={handleReset}>
+                <Router key={key} initialScreen={initialScreen} initialTab='home'>
+                    <Screen name='login' component={LogIn} tabs={false} />
+                    <Screen name='signup' component={SignUp} tabs={false} />
+                    <Screen name='feed' component={Feed} />
+                    <Screen name='search' component={Search} />
+                    <Screen name='profile' component={Profile} />
+                    <Screen name='profile-edit' component={ProfileEdit} view='modal' />
+                    <Screen name='followers' component={Followers} />
+                    <Screen name='likes' component={Likes} />
+                    <Screen name='posts' component={Posts} />
+                </Router>
+            </Layout>
+        </CacheProvider>
     );
 };
 
