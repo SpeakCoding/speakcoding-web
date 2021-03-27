@@ -1,51 +1,56 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { Header } from '@sc/ui/mobile';
-import { Icon } from '@sc/ui';
+import React, { useEffect, useState } from 'react';
+import { Header, ScrollView } from '@sc/ui/mobile';
+import { DateTime } from '@sc/ui';
 import { useAPI, useRouter } from '../../tools';
-import { QueryFilter, UsersList } from '../../components';
+import Userpic from '../../components/userpic';
 import s from './likes.css';
+
+const msInMin = 60 * 1000,
+    msInDay = 24 * 60 * 60 * 1000;
 
 const Likes = () => {
     const fetch = useAPI(),
-        { route, goBack } = useRouter(),
-        { postid } = route.params,
-        [data, setData] = useState([]),
-        [query, setQuery] = useState('');
-
-    const list = useMemo(() => {
-        let res = data;
-
-        if (query) {
-            const re = new RegExp(query, 'i');
-            res = res.filter(item => re.test(item.user_name));
-        }
-
-        return res;
-    }, [data, query]);
+        { route, navigate } = useRouter(),
+        { userid } = route.params,
+        [data, setData] = useState([]);
 
     const init = async () => {
-        const res = await fetch(`/posts/${postid}/likers.json`, { method: 'GET' });
+        const res = await fetch(`/users/${userid}/whats_new.json`, { method: 'GET' });
         setData(res?.data || []);
     };
 
     useEffect(() => {
         init();
-    }, [postid]);
+    }, [userid]);
 
     return (
         <>
-            <Header>
-                <Header.Left onClick={goBack}>
-                    <Icon name='m/arrow-left' size={24} />
-                </Header.Left>
-                Likes
-            </Header>
-
-            <div className={s.filter}>
-                <QueryFilter placeholder='Search' onChange={setQuery} />
-            </div>
-
-            <UsersList items={list} follow />
+            <Header>Likes</Header>
+            <ScrollView>
+                {data.map(({ user, post, created_at: time }) => (
+                    <div key={`${user.id}-${post.id}`} className={s.item}>
+                        <Userpic
+                            href={user.profile_picture}
+                            size={44}
+                            onClick={() => navigate('profile', { userid: user.id })}
+                        />
+                        <div>
+                            <div className={s.name}>{user.user_name}</div>
+                            <div className={s.date}>
+                                {Date.now() - time * 1000 <= msInMin && 'Just now'}
+                                {Date.now() - time * 1000 > msInMin && (
+                                    <DateTime
+                                        value={time * 1000}
+                                        format='MMM D, YYYY [at] h:mm A'
+                                        relative={msInDay}
+                                    />
+                                )}
+                            </div>
+                        </div>
+                        <img className={s.pic} src={post.image} loading='lazy' alt='' />
+                    </div>
+                ))}
+            </ScrollView>
         </>
     );
 };

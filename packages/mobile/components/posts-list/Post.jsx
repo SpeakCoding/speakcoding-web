@@ -94,7 +94,7 @@ const Post = ({ id, scroll }) => {
             </div>
 
             {post.likes_count > 0 && (
-                <div className={s.likes} onClick={() => navigate('likes', { postid: post.id })}>
+                <div className={s.likes} onClick={() => navigate('likers', { postid: post.id })}>
                     {post.likes_count} {post.likes_count > 1 ? 'likes' : 'like'}
                 </div>
             )}

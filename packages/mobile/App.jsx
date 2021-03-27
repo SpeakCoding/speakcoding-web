@@ -7,6 +7,7 @@ import { app } from './tools/app';
 import Feed from './screens/feed';
 import Followers from './screens/followers';
 import Likes from './screens/likes';
+import Likers from './screens/likers';
 import LogIn from './screens/auth/LogIn';
 import Posts from './screens/posts';
 import Profile from './screens/profile';
@@ -48,9 +49,10 @@ const App = () => {
                         <Screen name='profile' component={Profile} />
                         <Screen name='profile-edit' component={ProfileEdit} view='modal' />
                         <Screen name='followers' component={Followers} />
-                        <Screen name='likes' component={Likes} />
+                        <Screen name='likers' component={Likers} />
                         <Screen name='posts' component={Posts} />
                         <Screen name='saved' component={Saved} />
+                        <Screen name='likes' component={Likes} />
                     </Router>
                 </Layout>
             </CacheProvider>

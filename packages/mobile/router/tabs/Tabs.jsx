@@ -4,6 +4,13 @@ import { Icon } from '@sc/ui';
 import s from './tabs.css';
 
 const Tabs = ({ tab, switchTab }) => {
+    const goToLikes = useCallback(() => {
+        switchTab('likes', {
+            screen: 'likes',
+            params: { userid: localStorage.getItem('userid') }
+        });
+    }, []);
+
     const goToProfile = useCallback(() => {
         switchTab('profile', {
             screen: 'profile',
@@ -22,7 +29,7 @@ const Tabs = ({ tab, switchTab }) => {
             <div className={s.tab}>
                 <Icon name='m/plus' size={24} />
             </div>
-            <div className={s.tab} onClick={() => switchTab('likes', { screen: 'likes' })}>
+            <div className={s.tab} onClick={goToLikes}>
                 <Icon name={tab === 'likes' ? 'm/heart-filled' : 'm/heart'} size={24} />
             </div>
             <div className={s.tab} onClick={goToProfile}>
