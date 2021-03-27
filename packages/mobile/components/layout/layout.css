@@ -4,6 +4,7 @@
     display: inline-block;
     position: relative;
     padding: 25px 27px;
+    user-select: none;
 }
 
 .box::after {
@@ -15,7 +16,7 @@
     height: 862px;
     background-image: url(./img/iphone-11-pro.svg);
     pointer-events: none;
-    z-index: var(--l-drawer);
+    z-index: var(--l-modal);
 }
 
 .content {
@@ -27,6 +28,7 @@
     padding-top: 44px;
     box-sizing: border-box;
     background-color: var(--c-white);
+    overflow: hidden;
 }
 
 .content::after {
@@ -38,7 +40,7 @@
     height: 812px;
     background-image: url(./img/screen-elements.svg);
     pointer-events: none;
-    z-index: var(--l-drawer);
+    z-index: var(--l-modal);
 }
 
 .reset {

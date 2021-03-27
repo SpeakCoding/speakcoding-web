@@ -1,0 +1,59 @@
+.root {
+    z-index: var(--l-modal);
+}
+
+.box {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    left: 15px;
+    padding-bottom: 35px;
+    font-size: 16px;
+    line-height: 19px;
+    transform: translateY(100%);
+    transition: transform var(--animation);
+}
+
+.box.opened {
+    transform: translateY(0);
+}
+
+.section {
+    margin-top: 8px;
+    border-radius: 12px;
+    background-color: var(--c-white);
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+    border-bottom: 1px solid var(--c-grey-200);
+    cursor: pointer;
+}
+
+.item:active {
+    opacity: 0.3;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--c-white-0);
+    visibility: hidden;
+    transition: var(--animation);
+    transition-property: visibility, background-color;
+}
+
+.overlay.opened {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.24);
+}

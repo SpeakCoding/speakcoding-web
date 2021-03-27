@@ -4,7 +4,9 @@ import s from './layout.css';
 
 const Layout = ({ children, onReset }) => (
     <div className={s.box}>
-        <div className={s.content}>{children}</div>
+        <div id='mobile-layout' className={s.content}>
+            {children}
+        </div>
         <div className={s.reset} onClick={onReset} />
     </div>
 );
