@@ -32,16 +32,18 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                 {tabs.map(({ name, history, pointer }) => (
                     <div key={name} className={classNames(s.tab, name !== state.tab && s.hidden)}>
                         {history.map((item, i) => {
-                            const { Content, view } = state.screens[item.name] || {},
-                                pageContext = {
-                                    tab: state.tab,
-                                    route: item,
-                                    prevRoute: history[i - 1],
-                                    focused: item.key === screen.key,
-                                    navigate,
-                                    goBack,
-                                    switchTab
-                                };
+                            const { Content, view, tabs: withTabs } =
+                                state.screens[item.name] || {};
+
+                            const pageContext = {
+                                tab: state.tab,
+                                route: item,
+                                prevRoute: history[i - 1],
+                                focused: item.key === screen.key,
+                                navigate,
+                                goBack,
+                                switchTab
+                            };
 
                             const active = history[Math.min(pointer + 1, history.length - 1)],
                                 { view: animation } = state.screens[active.name] || {};
@@ -53,6 +55,7 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                                         pointer={pointer}
                                         view={view}
                                         animation={animation}
+                                        tabs={withTabs}
                                     >
                                         {Content && <Content />}
                                     </Page>
@@ -61,7 +64,9 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                         })}
                     </div>
                 ))}
-                {screen?.tabs && <Tabs tab={state.tab} switchTab={switchTab} />}
+                {screen.tabs !== undefined && (
+                    <Tabs tab={state.tab} hidden={!screen.tabs} switchTab={switchTab} />
+                )}
             </div>
             {children}
         </context.Provider>

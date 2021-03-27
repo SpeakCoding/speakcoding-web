@@ -1,5 +1,5 @@
 .box {
-    transition: transform 200ms ease-out;
+    transition: var(--screen-transition);
 }
 
 .box.default {

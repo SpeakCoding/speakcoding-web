@@ -1,9 +1,10 @@
 import React, { useCallback } from 'react';
 import pt from 'prop-types';
+import classNames from 'classnames';
 import { Icon } from '@sc/ui';
 import s from './tabs.css';
 
-const Tabs = ({ tab, switchTab }) => {
+const Tabs = ({ tab, hidden, switchTab }) => {
     const goToLikes = useCallback(() => {
         switchTab('likes', {
             screen: 'likes',
@@ -19,7 +20,7 @@ const Tabs = ({ tab, switchTab }) => {
     }, []);
 
     return (
-        <div className={s.box}>
+        <div key={tab} className={classNames(s.box, hidden && s.hidden)}>
             <div className={s.tab} onClick={() => switchTab('home', { screen: 'feed' })}>
                 <Icon name={tab === 'home' ? 'm/home-filled' : 'm/home'} size={24} />
             </div>
@@ -41,7 +42,12 @@ const Tabs = ({ tab, switchTab }) => {
 
 Tabs.propTypes = {
     tab: pt.string.isRequired,
-    switchTab: pt.func.isRequired
+    switchTab: pt.func.isRequired,
+    hidden: pt.bool
+};
+
+Tabs.defaultProps = {
+    hidden: false
 };
 
 export default Tabs;

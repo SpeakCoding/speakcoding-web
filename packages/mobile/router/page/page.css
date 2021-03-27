@@ -17,9 +17,12 @@
     left: 0;
     display: flex;
     flex-direction: column;
-    padding-bottom: 79px;
     background-color: var(--c-white);
     overflow: hidden;
+}
+
+.screen.tabs {
+    padding-bottom: 79px;
 }
 
 .screen.modal {

@@ -5,10 +5,10 @@ import Form from './Form';
 import s from './auth.css';
 
 const LogIn = () => {
-    const { navigate } = useRouter();
+    const { navigate, switchTab } = useRouter();
 
     const toSignUp = useCallback(() => navigate('signup'), []),
-        next = useCallback(() => navigate('feed'), []);
+        next = useCallback(() => switchTab('home', { screen: 'feed' }), []);
 
     return (
         <div className={s.box}>

@@ -7,7 +7,7 @@ import { Userpic } from '../../components';
 import s from './profile-edit.css';
 
 const ProfileEdit = () => {
-    const { route, navigate, goBack } = useRouter(),
+    const { route, switchTab, goBack } = useRouter(),
         fetch = useAPI(),
         { user, initial } = route.params,
         [img, setImg] = useState('');
@@ -27,7 +27,7 @@ const ProfileEdit = () => {
 
             await fetch(`/users/${user.id}.json`, { method: 'PUT', body: { user: data } });
 
-            if (initial) navigate('feed');
+            if (initial) switchTab('home', { screen: 'feed' });
             else goBack();
         },
         [initial]

@@ -1,3 +1,7 @@
+:root {
+    --screen-transition: transform 200ms ease-out;
+}
+
 .display {
     flex: 1;
     display: flex;

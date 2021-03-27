@@ -19,7 +19,7 @@ import SignUp from './screens/auth/SignUp';
 const App = () => {
     const fetch = useAPI(),
         [key, setKey] = useState(0),
-        initialScreen = localStorage.getItem('auth_token') ? 'feed' : 'login';
+        auth = !!localStorage.getItem('auth_token');
 
     const context = useMemo(
         () => ({
@@ -41,7 +41,11 @@ const App = () => {
         <app.Provider value={context}>
             <CacheProvider>
                 <Layout onReset={handleReset}>
-                    <Router key={key} initialScreen={initialScreen} initialTab='home'>
+                    <Router
+                        key={key}
+                        initialTab={auth ? 'home' : 'auth'}
+                        initialScreen={auth ? 'feed' : 'login'}
+                    >
                         <Screen name='login' component={LogIn} tabs={false} />
                         <Screen name='signup' component={SignUp} tabs={false} />
                         <Screen name='feed' component={Feed} />
