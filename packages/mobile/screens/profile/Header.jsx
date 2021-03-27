@@ -1,11 +1,11 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import pt from 'prop-types';
 import { ActionSheet, Header } from '@sc/ui/mobile';
 import { Icon } from '@sc/ui';
 import { useApp, useRouter } from '../../tools';
 
 const ProfileHeader = ({ self, children }) => {
-    const { prevRoute, goBack } = useRouter(),
+    const { prevRoute, navigate, goBack } = useRouter(),
         { reset } = useApp(),
         [actions, setActions] = useState(false);
 
@@ -28,7 +28,9 @@ const ProfileHeader = ({ self, children }) => {
             </Header>
 
             <ActionSheet opened={actions} onClose={() => setActions(false)}>
-                <ActionSheet.Option>Show Saved Posts</ActionSheet.Option>
+                <ActionSheet.Option onClick={() => navigate('saved')}>
+                    Show Saved Posts
+                </ActionSheet.Option>
                 <ActionSheet.Option onClick={reset}>Log Out</ActionSheet.Option>
             </ActionSheet>
         </>

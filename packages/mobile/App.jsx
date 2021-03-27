@@ -11,6 +11,7 @@ import LogIn from './screens/auth/LogIn';
 import Posts from './screens/posts';
 import Profile from './screens/profile';
 import ProfileEdit from './screens/profile-edit';
+import Saved from './screens/saved';
 import Search from './screens/search';
 import SignUp from './screens/auth/SignUp';
 
@@ -49,6 +50,7 @@ const App = () => {
                         <Screen name='followers' component={Followers} />
                         <Screen name='likes' component={Likes} />
                         <Screen name='posts' component={Posts} />
+                        <Screen name='saved' component={Saved} />
                     </Router>
                 </Layout>
             </CacheProvider>
