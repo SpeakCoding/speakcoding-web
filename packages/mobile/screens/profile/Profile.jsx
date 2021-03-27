@@ -1,14 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { Header } from '@sc/ui/mobile';
 import { Icon } from '@sc/ui';
 import { useAPI, useCacheState, useRouter } from '../../tools';
+import Header from './Header';
 import UserInfo from './UserInfo';
 import { PostsGrid } from '../../components';
 import s from './profile.css';
 
 const Profile = () => {
-    const { route, prevRoute, focused, navigate, goBack } = useRouter(),
+    const { route, focused, navigate } = useRouter(),
         fetch = useAPI(),
         [user, updateUser] = useCacheState('user', route.params.userid),
         [tab, setTab] = useState('posts'),
@@ -32,7 +32,8 @@ const Profile = () => {
         });
     };
 
-    const goToPosts = id => navigate('posts', { items: data[tab], scrollTo: id });
+    const goToPosts = id =>
+        navigate('posts', { title: user.user_name, items: data[tab], scrollTo: id });
 
     useEffect(() => {
         if (!route.params.userid) return;
@@ -46,21 +47,7 @@ const Profile = () => {
 
     return (
         <>
-            <Header>
-                {prevRoute && (
-                    <Header.Left onClick={goBack}>
-                        <Icon name='m/arrow-left' size={24} />
-                    </Header.Left>
-                )}
-
-                {user?.user_name}
-
-                {self && (
-                    <Header.Right>
-                        <Icon name='m/dots-horizontal' size={24} />
-                    </Header.Right>
-                )}
-            </Header>
+            <Header self={self}>{user?.user_name}</Header>
 
             {user && (
                 <>

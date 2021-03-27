@@ -6,7 +6,7 @@ import { useRouter } from '../../tools';
 
 const Posts = () => {
     const { route, goBack } = useRouter(),
-        { items, scrollTo } = route.params;
+        { title, items, scrollTo } = route.params;
 
     return (
         <>
@@ -14,7 +14,7 @@ const Posts = () => {
                 <Header.Left onClick={goBack}>
                     <Icon name='m/arrow-left' size={24} />
                 </Header.Left>
-                Posts
+                {title || 'Posts'}
             </Header>
             <PostsList items={items} scrollTo={scrollTo} />
         </>
