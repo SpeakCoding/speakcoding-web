@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import pt from 'prop-types';
 import classNames from 'classnames';
@@ -7,22 +7,36 @@ import s from './action-sheet.css';
 
 const $root = document.createElement('div');
 $root.classList.add(s.root);
-let ready = false;
+let rootReady = false;
 
 const ActionSheet = ({ opened, children, onClose }) => {
-    const value = useMemo(() => ({ close: onClose }), [onClose]);
+    const value = useMemo(() => ({ close: onClose }), [onClose]),
+        [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        if (!ready) {
+        if (!rootReady) {
             document.getElementById('mobile-layout').append($root);
-            ready = true;
+            rootReady = true;
         }
     }, []);
 
+    useEffect(() => {
+        const timer = setTimeout(() => setMounted(opened), opened ? 40 : 400);
+
+        return () => {
+            clearTimeout(timer);
+        };
+    }, [opened]);
+
+    if (!opened && !mounted) return null;
+
     return createPortal(
         <>
-            <div className={classNames(s.overlay, opened && s.opened)} onClick={onClose} />
-            <div className={classNames(s.box, opened && s.opened)}>
+            <div
+                className={classNames(s.overlay, opened && mounted && s.opened)}
+                onClick={onClose}
+            />
+            <div className={classNames(s.box, opened && mounted && s.opened)}>
                 <div className={s.section}>
                     <context.Provider value={value}>{children}</context.Provider>
                 </div>
