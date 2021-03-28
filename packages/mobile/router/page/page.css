@@ -19,10 +19,12 @@
     flex-direction: column;
     background-color: var(--c-white);
     overflow: hidden;
+    z-index: 2;
 }
 
 .screen.tabs {
     padding-bottom: 79px;
+    z-index: 1;
 }
 
 .screen.modal {

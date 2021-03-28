@@ -6,8 +6,7 @@ import ActionIcon from './ActionIcon';
 import Userpic from '../userpic';
 import s from './post.css';
 
-const msInMin = 60 * 1000,
-    msInDay = 24 * 60 * 60 * 1000;
+const msInDay = 24 * 60 * 60 * 1000;
 
 const Post = ({ id, scroll }) => {
     const fetch = useAPI(),
@@ -82,7 +81,7 @@ const Post = ({ id, scroll }) => {
                         onClick={toggleLike}
                     />
                 </div>
-                <div className={s.action}>
+                <div className={s.action} onClick={() => navigate('comments', { postid: post.id })}>
                     <Icon name='m/bubble' size={24} />
                 </div>
                 <div className={s.gap} />
@@ -102,7 +101,10 @@ const Post = ({ id, scroll }) => {
             {post.caption && <div className={s.caption}>{post.caption}</div>}
 
             {post.comments?.length > 0 && (
-                <div className={s.comments}>
+                <div
+                    className={s.comments}
+                    onClick={() => navigate('comments', { postid: post.id })}
+                >
                     {post.comments.length > 1
                         ? `View all ${post.comments.length} comments`
                         : 'View 1 comment'}
@@ -110,14 +112,11 @@ const Post = ({ id, scroll }) => {
             )}
 
             <div className={s.date}>
-                {Date.now() - post.created_at * 1000 <= msInMin && 'Just now'}
-                {Date.now() - post.created_at * 1000 > msInMin && (
-                    <DateTime
-                        value={post.created_at * 1000}
-                        format='MMM D, YYYY [at] h:mm A'
-                        relative={msInDay}
-                    />
-                )}
+                <DateTime
+                    value={post.created_at * 1000}
+                    format='MMM D, YYYY [at] h:mm A'
+                    relative={msInDay}
+                />
             </div>
         </div>
     );

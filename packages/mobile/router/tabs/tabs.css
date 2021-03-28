@@ -11,29 +11,12 @@
     border-top: 1px solid var(--c-grey-200);
     background-color: var(--c-white);
     cursor: pointer;
-    z-index: 1;
     transition: var(--screen-transition);
+    z-index: 1;
 }
 
 .box.hidden {
     transform: translateX(-30%);
-    pointer-events: none;
-}
-
-.box::after {
-    content: "";
-    position: absolute;
-    top: -1px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: var(--c-white);
-    transform: translateX(100%);
-    transition: var(--screen-transition);
-}
-
-.box.hidden::after {
-    transform: translateX(30%);
 }
 
 .tab {

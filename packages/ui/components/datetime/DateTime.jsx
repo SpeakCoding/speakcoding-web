@@ -4,10 +4,16 @@ import RelativeTime from 'dayjs/plugin/relativeTime';
 
 dayjs.extend(RelativeTime);
 
+const msInMin = 60 * 1000;
+
 const DateTime = ({ format, relative, value }) => {
     if (relative === true) return dayjs().to(value);
 
-    if (relative && Math.abs(Date.now() - value) <= relative) return dayjs().to(value);
+    if (relative) {
+        const diff = Math.abs(Date.now() - value);
+        if (diff < msInMin) return 'Just now';
+        if (diff <= relative) return dayjs().to(value);
+    }
 
     return dayjs(value).format(format);
 };

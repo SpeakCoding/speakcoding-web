@@ -5,8 +5,7 @@ import { useAPI, useRouter } from '../../tools';
 import Userpic from '../../components/userpic';
 import s from './likes.css';
 
-const msInMin = 60 * 1000,
-    msInDay = 24 * 60 * 60 * 1000;
+const msInDay = 24 * 60 * 60 * 1000;
 
 const Likes = () => {
     const fetch = useAPI(),
@@ -37,14 +36,11 @@ const Likes = () => {
                         <div>
                             <div className={s.name}>{user.user_name}</div>
                             <div className={s.date}>
-                                {Date.now() - time * 1000 <= msInMin && 'Just now'}
-                                {Date.now() - time * 1000 > msInMin && (
-                                    <DateTime
-                                        value={time * 1000}
-                                        format='MMM D, YYYY [at] h:mm A'
-                                        relative={msInDay}
-                                    />
-                                )}
+                                <DateTime
+                                    value={time * 1000}
+                                    format='MMM D, YYYY [at] h:mm A'
+                                    relative={msInDay}
+                                />
                             </div>
                         </div>
                         <img className={s.pic} src={post.image} loading='lazy' alt='' />

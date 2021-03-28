@@ -4,6 +4,7 @@ import { Layout } from './components';
 import { Router, Screen } from './router';
 import { CacheProvider } from './tools/cache';
 import { app } from './tools/app';
+import Comments from './screens/comments';
 import Feed from './screens/feed';
 import Followers from './screens/followers';
 import Likes from './screens/likes';
@@ -57,6 +58,7 @@ const App = () => {
                         <Screen name='posts' component={Posts} />
                         <Screen name='saved' component={Saved} />
                         <Screen name='likes' component={Likes} />
+                        <Screen name='comments' component={Comments} tabs={false} />
                     </Router>
                 </Layout>
             </CacheProvider>
