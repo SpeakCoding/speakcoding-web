@@ -40,11 +40,7 @@ function reducer(state, action) {
                 ...state,
                 screens: {
                     ...state.screens,
-                    [action.name]: {
-                        Content: action.component,
-                        view: action.view,
-                        tabs: action.tabs
-                    }
+                    [action.options.name]: action.options
                 }
             };
 
@@ -86,7 +82,7 @@ function reducer(state, action) {
             if (!state.tabs[action.tab])
                 next.tabs = {
                     ...state.tabs,
-                    [action.tab]: createTab(action.screen, action.params)
+                    [action.tab]: createTab(action.options.screen, action.options.params)
                 };
 
             return next;

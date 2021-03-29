@@ -37,6 +37,6 @@
     padding-right: 16px;
 }
 
-.left:active, .right:active {
+.left.active:active, .right.active:active {
     opacity: 0.3;
 }

@@ -27,7 +27,16 @@
     z-index: 1;
 }
 
-.screen.modal {
+/* Screen Emergence */
+
+.screen.slide {}
+
+.screen.sheet {
+    padding-bottom: 0;
+    z-index: 2;
+}
+
+.screen.fade {
     padding-bottom: 0;
     z-index: 2;
 }

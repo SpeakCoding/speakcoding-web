@@ -10,6 +10,7 @@ import Followers from './screens/followers';
 import Likes from './screens/likes';
 import Likers from './screens/likers';
 import LogIn from './screens/auth/LogIn';
+import PostEdit from './screens/post-edit';
 import Posts from './screens/posts';
 import Profile from './screens/profile';
 import ProfileEdit from './screens/profile-edit';
@@ -52,13 +53,14 @@ const App = () => {
                         <Screen name='feed' component={Feed} />
                         <Screen name='search' component={Search} />
                         <Screen name='profile' component={Profile} />
-                        <Screen name='profile-edit' component={ProfileEdit} view='modal' />
+                        <Screen name='profile-edit' component={ProfileEdit} emergence='sheet' />
                         <Screen name='followers' component={Followers} />
                         <Screen name='likers' component={Likers} />
                         <Screen name='posts' component={Posts} />
                         <Screen name='saved' component={Saved} />
                         <Screen name='likes' component={Likes} />
                         <Screen name='comments' component={Comments} tabs={false} />
+                        <Screen name='post-edit' component={PostEdit} emergence='fade' />
                     </Router>
                 </Layout>
             </CacheProvider>

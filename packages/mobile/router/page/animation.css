@@ -2,26 +2,37 @@
     transition: var(--screen-transition);
 }
 
-.box.default {
+.box.slide {
     transform: translateX(100%);
 }
 
-.box.default.prev {
+.box.slide.prev {
     transform: translateX(-30%);
 }
 
-.box.default.current {
+.box.slide.current {
     transform: translateX(0);
 }
 
-.box.modal {
+.box.sheet {
     transform: translateY(100%);
 }
 
-.box.modal.prev {
+.box.sheet.prev {
     transform: translateY(0);
 }
 
-.box.modal.current {
+.box.sheet.current {
     transform: translateY(0);
+}
+
+.box.fade {
+    visibility: hidden;
+    opacity: 0;
+    transition-property: visibility, opacity;
+}
+
+.box.fade.current {
+    visibility: visible;
+    opacity: 1;
 }

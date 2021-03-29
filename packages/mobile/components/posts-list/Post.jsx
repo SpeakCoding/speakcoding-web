@@ -1,5 +1,6 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import pt from 'prop-types';
+import { ActionSheet } from '@sc/ui/mobile';
 import { DateTime, Icon } from '@sc/ui';
 import { useAPI, useCacheState, useRouter } from '../../tools';
 import ActionIcon from './ActionIcon';
@@ -13,7 +14,9 @@ const Post = ({ id, scroll }) => {
         { navigate } = useRouter(),
         [post, updatePost] = useCacheState('post', id),
         $node = useRef(null),
-        scrolled = useRef(false);
+        scrolled = useRef(false),
+        [menu, setMenu] = useState(false),
+        self = post?.user.id.toString() === localStorage.getItem('userid');
 
     const toggleLike = useCallback(() => {
         const url = post.liked ? `/posts/${post.id}/unlike.json` : `/posts/${post.id}/like.json`;
@@ -47,7 +50,7 @@ const Post = ({ id, scroll }) => {
     if (!post) return null;
 
     return (
-        <div ref={$node} id={`post-${id}`} className={s.box}>
+        <div ref={$node} className={s.box}>
             <div className={s.title}>
                 <Userpic
                     href={post.user?.profile_picture}
@@ -60,7 +63,7 @@ const Post = ({ id, scroll }) => {
                     {post.location && <div className={s.location}>{post.location}</div>}
                 </div>
 
-                <div className={s.more}>
+                <div className={s.more} onClick={() => setMenu(true)}>
                     <Icon name='m/dots-horizontal' size={24} />
                 </div>
             </div>
@@ -118,6 +121,25 @@ const Post = ({ id, scroll }) => {
                     relative={msInDay}
                 />
             </div>
+
+            <ActionSheet opened={menu} onClose={() => setMenu(false)}>
+                {self && (
+                    <ActionSheet.Option onClick={() => navigate('post-edit', { postid: id })}>
+                        Edit
+                    </ActionSheet.Option>
+                )}
+
+                {!self && (
+                    <>
+                        <ActionSheet.Option onClick={toggleLike}>
+                            {post.liked ? 'Unlike' : 'Like'}
+                        </ActionSheet.Option>
+                        <ActionSheet.Option onClick={toggleSaved}>
+                            {post.saved ? 'Remove from Saved' : 'Save'}
+                        </ActionSheet.Option>
+                    </>
+                )}
+            </ActionSheet>
         </div>
     );
 };

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import a from './animation.css';
 import s from './page.css';
 
-const Page = ({ pos, pointer, view, animation, tabs, children }) => {
+const Page = ({ pos, pointer, settings, animation, children }) => {
     const [ready, setReady] = useState(pos === 0);
 
     useEffect(() => {
@@ -14,10 +14,10 @@ const Page = ({ pos, pointer, view, animation, tabs, children }) => {
 
     return (
         <div
-            className={classNames(s.screen, s[view], a.box, a[animation], {
+            className={classNames(s.screen, s[settings.emergence], a.box, a[animation], {
                 [a.current]: ready && pos === pointer,
                 [a.prev]: pos === pointer - 1,
-                [s.tabs]: tabs
+                [s.tabs]: settings.tabs
             })}
         >
             {children}
@@ -28,15 +28,13 @@ const Page = ({ pos, pointer, view, animation, tabs, children }) => {
 Page.propTypes = {
     pos: pt.number.isRequired,
     pointer: pt.number.isRequired,
-    view: pt.string,
-    animation: pt.string,
-    tabs: pt.bool
+    settings: pt.object,
+    animation: pt.string
 };
 
 Page.defaultProps = {
-    view: undefined,
-    animation: undefined,
-    tabs: undefined
+    settings: undefined,
+    animation: undefined
 };
 
 export default Page;

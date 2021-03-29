@@ -21,8 +21,8 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
 
     const navigate = useCallback((name, params) => dispatch({ type: 'push', name, params }), []),
         goBack = useCallback(() => dispatch({ type: 'back' }), []),
-        register = useCallback(options => dispatch({ ...options, type: 'screen' }), []),
-        switchTab = useCallback((tab, options) => dispatch({ ...options, type: 'tab', tab }), []);
+        register = useCallback(options => dispatch({ type: 'screen', options }), []),
+        switchTab = useCallback((tab, options) => dispatch({ type: 'tab', tab, options }), []);
 
     const value = useMemo(() => ({ register }), []);
 
@@ -32,7 +32,7 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                 {tabs.map(({ name, history, pointer }) => (
                     <div key={name} className={classNames(s.tab, name !== state.tab && s.hidden)}>
                         {history.map((item, i) => {
-                            const { Content, view, tabs: withTabs } =
+                            const { component: Component, ...settings } =
                                 state.screens[item.name] || {};
 
                             const pageContext = {
@@ -46,18 +46,17 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                             };
 
                             const active = history[Math.min(pointer + 1, history.length - 1)],
-                                { view: animation } = state.screens[active.name] || {};
+                                { emergence: animation } = state.screens[active.name] || {};
 
                             return (
                                 <router.Provider key={item.key} value={pageContext}>
                                     <Page
                                         pos={i}
                                         pointer={pointer}
-                                        view={view}
+                                        settings={settings}
                                         animation={animation}
-                                        tabs={withTabs}
                                     >
-                                        {Content && <Content />}
+                                        {Component && <Component />}
                                     </Page>
                                 </router.Provider>
                             );

@@ -2,11 +2,11 @@ import { useContext, useEffect } from 'react';
 import pt from 'prop-types';
 import { context } from './utils';
 
-const Screen = ({ name, component, view, tabs }) => {
+const Screen = props => {
     const { register } = useContext(context);
 
     useEffect(() => {
-        register({ name, component, view, tabs });
+        register(props);
     }, []);
 
     return null;
@@ -15,12 +15,12 @@ const Screen = ({ name, component, view, tabs }) => {
 Screen.propTypes = {
     name: pt.string.isRequired,
     component: pt.func.isRequired,
-    view: pt.oneOf(['default', 'modal']),
+    emergence: pt.oneOf(['slide', 'sheet', 'fade']),
     tabs: pt.bool
 };
 
 Screen.defaultProps = {
-    view: 'default',
+    emergence: 'slide',
     tabs: true
 };
 

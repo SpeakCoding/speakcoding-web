@@ -33,6 +33,10 @@
     cursor: pointer;
 }
 
+.item.emphasis {
+    color: var(--c-red-500);
+}
+
 .item:active {
     opacity: 0.3;
 }

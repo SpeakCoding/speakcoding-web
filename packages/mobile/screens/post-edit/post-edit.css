@@ -1,0 +1,48 @@
+.title {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    padding: 0 10px;
+}
+
+.info {
+    flex: 1;
+    margin: 0 12px;
+}
+
+.name {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 12px;
+}
+
+.location {
+    margin-top: 2px;
+    font-size: 10px;
+    line-height: 11px;
+}
+
+.image {
+    width: 100%;
+    background-color: var(--c-grey-200);
+}
+
+.tags {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    column-gap: 4px;
+    align-items: center;
+    height: 48px;
+    padding: 0 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.caption {
+    padding: 0 10px;
+    font-size: 12px;
+    line-height: 14px;
+    border: none;
+    outline: none;
+    resize: none;
+}
