@@ -15,12 +15,18 @@ const PostEdit = () => {
         $caption = useRef(null),
         fields = useRef({ caption: post.caption, tags: copy(post.tags) });
 
-    const moveTag = (userid, pos) => {
-        const tag = fields.current.tags.find(item => item.user.id === userid);
-        if (tag) {
+    const changeTag = (user, pos) => {
+        const tag = fields.current.tags.find(item => item.user.id === user.id);
+
+        if (tag && pos) {
             tag.top = pos.top;
             tag.left = pos.left;
         }
+
+        if (tag && !pos)
+            fields.current.tags = fields.current.tags.filter(item => item.user.id !== user.id);
+
+        if (!tag && pos) fields.current.tags.push({ user, ...pos });
     };
 
     const handleChangeCaption = useCallback(event => {
@@ -72,7 +78,11 @@ const PostEdit = () => {
             <div
                 className={s.tags}
                 onClick={() =>
-                    navigate('tag-people', { pic: post.image, tags: fields.current.tags, moveTag })
+                    navigate('tag-people', {
+                        pic: post.image,
+                        tags: fields.current.tags,
+                        changeTag
+                    })
                 }
             >
                 <Icon name='m/user-tag' size={16} />

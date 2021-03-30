@@ -16,6 +16,7 @@ import Profile from './screens/profile';
 import ProfileEdit from './screens/profile-edit';
 import Saved from './screens/saved';
 import Search from './screens/search';
+import SelectUser from './screens/select-user';
 import SignUp from './screens/auth/SignUp';
 import TagPeople from './screens/tag-people';
 
@@ -63,6 +64,7 @@ const App = () => {
                         <Screen name='comments' component={Comments} tabs={false} />
                         <Screen name='post-edit' component={PostEdit} emergence='fade' />
                         <Screen name='tag-people' component={TagPeople} tabs={false} />
+                        <Screen name='select-user' component={SelectUser} tabs={false} />
                     </Router>
                 </Layout>
             </CacheProvider>

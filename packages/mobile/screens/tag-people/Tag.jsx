@@ -3,22 +3,30 @@ import pt from 'prop-types';
 import { addDragHandlers, getCursorPosition } from './utils';
 import s from './tag-people.css';
 
-const Tag = ({ top, left, children, onMove }) => {
+const bounds = { x: { min: 0, max: 1 }, y: { min: 0, max: 1 } };
+
+const Tag = ({ top, left, children, onChange }) => {
     const $node = useRef(null),
-        delta = useRef({});
+        delta = useRef({}),
+        next = useRef({ top, left });
 
     function watchCursor(event) {
         const { x, y } = getCursorPosition(event),
             rect = $node.current.parentElement.getBoundingClientRect();
 
-        const next = {
-            top: Math.min(Math.max((y - delta.current.y - rect.y) / rect.height, 0), 1),
-            left: Math.min(Math.max((x - delta.current.x - rect.x) / rect.width, 0), 1)
+        next.current = {
+            top: Math.min(
+                Math.max((y - delta.current.y - rect.y) / rect.height, bounds.y.min),
+                bounds.y.max
+            ),
+            left: Math.min(
+                Math.max((x - delta.current.x - rect.x) / rect.width, bounds.x.min),
+                bounds.x.max
+            )
         };
 
-        $node.current.style.top = `${next.top * 100}%`;
-        $node.current.style.left = `${next.left * 100}%`;
-        onMove(next);
+        $node.current.style.top = `${next.current.top * 100}%`;
+        $node.current.style.left = `${next.current.left * 100}%`;
     }
 
     const handleDragStart = useCallback(
@@ -29,9 +37,12 @@ const Tag = ({ top, left, children, onMove }) => {
                 point = $node.current.getBoundingClientRect();
 
             delta.current = { x: cursor.x - point.x, y: cursor.y - point.y };
-            addDragHandlers(watchCursor);
+            next.current = null;
+            addDragHandlers(watchCursor, () => {
+                onChange(next.current);
+            });
         },
-        [onMove]
+        [onChange]
     );
 
     return (
@@ -54,11 +65,11 @@ const Tag = ({ top, left, children, onMove }) => {
 Tag.propTypes = {
     top: pt.number.isRequired,
     left: pt.number.isRequired,
-    onMove: pt.func
+    onChange: pt.func
 };
 
 Tag.defaultProps = {
-    onMove: () => {}
+    onChange: () => {}
 };
 
 export default Tag;
