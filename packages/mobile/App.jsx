@@ -17,6 +17,7 @@ import ProfileEdit from './screens/profile-edit';
 import Saved from './screens/saved';
 import Search from './screens/search';
 import SignUp from './screens/auth/SignUp';
+import TagPeople from './screens/tag-people';
 
 const App = () => {
     const fetch = useAPI(),
@@ -61,6 +62,7 @@ const App = () => {
                         <Screen name='likes' component={Likes} />
                         <Screen name='comments' component={Comments} tabs={false} />
                         <Screen name='post-edit' component={PostEdit} emergence='fade' />
+                        <Screen name='tag-people' component={TagPeople} tabs={false} />
                     </Router>
                 </Layout>
             </CacheProvider>

@@ -5,13 +5,23 @@ import { useAPI, useCacheState, useRouter } from '../../tools';
 import { Userpic } from '../../components';
 import s from './post-edit.css';
 
+const copy = tags => tags.map(item => ({ ...item }));
+
 const PostEdit = () => {
     const fetch = useAPI(),
-        { route, goBack } = useRouter(),
+        { route, navigate, goBack } = useRouter(),
         { postid } = route.params,
         [post, updatePost] = useCacheState('post', postid),
         $caption = useRef(null),
-        fields = useRef({ caption: post.caption });
+        fields = useRef({ caption: post.caption, tags: copy(post.tags) });
+
+    const moveTag = (userid, pos) => {
+        const tag = fields.current.tags.find(item => item.user.id === userid);
+        if (tag) {
+            tag.top = pos.top;
+            tag.left = pos.left;
+        }
+    };
 
     const handleChangeCaption = useCallback(event => {
         fields.current.caption = event.target.value.trim();
@@ -19,11 +29,16 @@ const PostEdit = () => {
 
     const handleSubmit = useCallback(() => {
         const payload = {
-            caption: fields.current.caption
+            caption: fields.current.caption,
+            tags: fields.current.tags.map(item => ({
+                user_id: item.user.id,
+                top: item.top,
+                left: item.left
+            }))
         };
 
         fetch(`/posts/${postid}.json`, { method: 'PUT', body: { post: payload } });
-        updatePost(payload);
+        updatePost(fields.current);
         goBack();
     }, [postid]);
 
@@ -54,7 +69,12 @@ const PostEdit = () => {
 
             <img className={s.image} src={post.image} loading='lazy' alt='' />
 
-            <div className={s.tags}>
+            <div
+                className={s.tags}
+                onClick={() =>
+                    navigate('tag-people', { pic: post.image, tags: fields.current.tags, moveTag })
+                }
+            >
                 <Icon name='m/user-tag' size={16} />
                 <span>Tag people</span>
             </div>
