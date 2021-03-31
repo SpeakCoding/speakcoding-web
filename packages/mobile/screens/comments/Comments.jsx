@@ -1,12 +1,9 @@
 import React, { useCallback, useRef } from 'react';
 import { Header, ScrollView } from '@sc/ui/mobile';
-import { DateTime, Icon } from '@sc/ui';
-import { Userpic } from '../../components';
+import { Icon } from '@sc/ui';
 import { useCacheState, useRouter } from '../../tools';
+import Comment from './Comment';
 import Footer from './Footer';
-import s from './comments.css';
-
-const msInDay = 24 * 60 * 60 * 1000;
 
 const Comments = () => {
     const { route, goBack } = useRouter(),
@@ -36,44 +33,16 @@ const Comments = () => {
             </Header>
 
             <ScrollView>
-                <div className={s.item}>
-                    <Userpic href={post.user.profile_picture} size={32} />
-                    <div>
-                        <div className={s.message}>
-                            <div className={s.name}>{post.user.user_name}</div> {post.caption}
-                        </div>
-                        <div className={s.sub}>
-                            <DateTime
-                                value={post.created_at * 1000}
-                                format='MMM D, YYYY [at] h:mm A'
-                                relative={msInDay}
-                            />
-                        </div>
-                    </div>
-                </div>
+                <Comment userid={post.user.id} text={post.caption} time={post.created_at} />
 
                 {post.comments.map(item => (
-                    <div key={item.id} className={s.item}>
-                        <Userpic href={item.user.profile_picture} size={32} />
-                        <div>
-                            <div className={s.message}>
-                                <div className={s.name}>{item.user.user_name}</div> {item.text}
-                            </div>
-                            <div className={s.sub}>
-                                <DateTime
-                                    value={item.created_at * 1000}
-                                    format='MMM D, YYYY [at] h:mm A'
-                                    relative={msInDay}
-                                />
-                                <div
-                                    className={s.reply}
-                                    onClick={() => addReply(item.user.user_name)}
-                                >
-                                    Reply
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <Comment
+                        key={item.id}
+                        userid={item.user.id}
+                        text={item.text}
+                        time={item.created_at}
+                        addReply={addReply}
+                    />
                 ))}
             </ScrollView>
 

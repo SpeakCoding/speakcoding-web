@@ -2,14 +2,15 @@ import React, { useCallback, useState } from 'react';
 import { convertToJPEGBase64 } from '@sc/tools/image';
 import { Button, Header } from '@sc/ui/mobile';
 import { FileUpload } from '@sc/ui';
-import { useAPI, useRouter } from '../../tools';
+import { useAPI, useCacheState, useRouter } from '../../tools';
 import { Userpic } from '../../components';
 import s from './profile-edit.css';
 
 const ProfileEdit = () => {
     const { route, switchTab, goBack } = useRouter(),
         fetch = useAPI(),
-        { user, initial } = route.params,
+        { userid, initial } = route.params,
+        [user, updateUser] = useCacheState('user', userid),
         [img, setImg] = useState('');
 
     const handleSubmit = useCallback(
@@ -25,7 +26,11 @@ const ProfileEdit = () => {
 
             if (fields.profile_picture.value) data.profile_picture = fields.profile_picture.value;
 
-            await fetch(`/users/${user.id}.json`, { method: 'PUT', body: { user: data } });
+            const res = await fetch(`/users/${user.id}.json`, {
+                method: 'PUT',
+                body: { user: data }
+            });
+            updateUser(res.data);
 
             if (initial) switchTab('home', { screen: 'feed' });
             else goBack();

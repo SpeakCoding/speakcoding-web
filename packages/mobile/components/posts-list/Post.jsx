@@ -4,7 +4,7 @@ import { ActionSheet } from '@sc/ui/mobile';
 import { DateTime, Icon } from '@sc/ui';
 import { useAPI, useCacheState, useRouter } from '../../tools';
 import ActionIcon from './ActionIcon';
-import Userpic from '../userpic';
+import User from './User';
 import s from './post.css';
 
 const msInDay = 24 * 60 * 60 * 1000;
@@ -52,16 +52,9 @@ const Post = ({ id, scroll }) => {
     return (
         <div ref={$node} className={s.box}>
             <div className={s.title}>
-                <Userpic
-                    href={post.user?.profile_picture}
-                    size={36}
-                    onClick={() => navigate('profile', { userid: post.user.id })}
-                />
-
-                <div className={s.info}>
-                    <div className={s.name}>{post.user?.user_name}</div>
+                <User id={post.user.id}>
                     {post.location && <div className={s.location}>{post.location}</div>}
-                </div>
+                </User>
 
                 <div className={s.more} onClick={() => setMenu(true)}>
                     <Icon name='m/dots-horizontal' size={24} />

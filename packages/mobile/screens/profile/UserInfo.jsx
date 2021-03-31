@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import pt from 'prop-types';
 import { round } from '@sc/tools/number';
 import { Button } from '@sc/ui/mobile';
@@ -8,10 +8,6 @@ import s from './profile.css';
 
 const UserInfo = ({ user, self, goToPosts }) => {
     const { navigate } = useRouter();
-
-    const openEdit = useCallback(() => {
-        navigate('profile-edit', { user });
-    }, [user]);
 
     return (
         <div className={s.user}>
@@ -41,7 +37,12 @@ const UserInfo = ({ user, self, goToPosts }) => {
 
             {self && (
                 <div className={s.action}>
-                    <Button block variant='outlined' size='small' onClick={openEdit}>
+                    <Button
+                        block
+                        variant='outlined'
+                        size='small'
+                        onClick={() => navigate('profile-edit', { userid: user.id })}
+                    >
                         Edit profile
                     </Button>
                 </div>

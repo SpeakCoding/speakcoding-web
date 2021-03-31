@@ -8,7 +8,7 @@ import { PostsGrid } from '../../components';
 import s from './profile.css';
 
 const Profile = () => {
-    const { route, focused, navigate } = useRouter(),
+    const { route, navigate } = useRouter(),
         fetch = useAPI(),
         [user, updateUser] = useCacheState('user', route.params.userid),
         [tab, setTab] = useState('posts'),
@@ -37,13 +37,9 @@ const Profile = () => {
 
     useEffect(() => {
         if (!route.params.userid) return;
-        if (!self) initProfile();
+        initProfile();
         initPosts();
     }, []);
-
-    useEffect(() => {
-        if (self && focused) initProfile();
-    }, [self, focused]);
 
     return (
         <>
