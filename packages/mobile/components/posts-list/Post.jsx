@@ -36,6 +36,10 @@ const Post = ({ id, scroll }) => {
         updatePost({ saved: !post.saved });
     }, [post]);
 
+    const handleDelete = useCallback(() => {
+        fetch(`/posts/${id}.json`, { method: 'DELETE' });
+    }, [id]);
+
     useEffect(() => {
         if (scroll && $node.current && !scrolled.current) {
             const $parent = $node.current.parentElement,
@@ -117,9 +121,14 @@ const Post = ({ id, scroll }) => {
 
             <ActionSheet opened={menu} onClose={() => setMenu(false)}>
                 {self && (
-                    <ActionSheet.Option onClick={() => navigate('post-edit', { postid: id })}>
-                        Edit
-                    </ActionSheet.Option>
+                    <>
+                        <ActionSheet.Option onClick={() => navigate('post-edit', { postid: id })}>
+                            Edit
+                        </ActionSheet.Option>
+                        <ActionSheet.Option emphasis onClick={handleDelete}>
+                            Delete
+                        </ActionSheet.Option>
+                    </>
                 )}
 
                 {!self && (
