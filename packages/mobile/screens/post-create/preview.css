@@ -1,0 +1,12 @@
+.box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    width: 100%;
+    min-height: 375px;
+    background-color: var(--c-grey-200);
+    object-fit: cover;
+}

@@ -77,7 +77,20 @@ function reducer(state, action) {
         }
 
         case 'tab': {
-            const next = { ...state, tab: action.tab };
+            const next = { ...state },
+                tab = next.tabs[action.tab];
+
+            if ((state.tab === action.tab && tab.pointer > 0) || action.options.reset) {
+                next.tabs = {
+                    ...next.tabs,
+                    [action.tab]: {
+                        history: [tab.history[0], tab.history[tab.pointer]],
+                        pointer: 0
+                    }
+                };
+            }
+
+            next.tab = action.tab;
 
             if (!state.tabs[action.tab])
                 next.tabs = {

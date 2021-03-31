@@ -1,0 +1,48 @@
+.info {
+    display: grid;
+    grid-template-columns: 64px auto;
+    column-gap: 12px;
+    margin-bottom: 16px;
+    padding: 16px;
+}
+
+.img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+}
+
+.caption {
+    padding: 7px 0;
+    font-size: 16px;
+    line-height: 19px;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.location {
+    margin-bottom: 20px;
+    padding: 0 16px;
+}
+
+.people {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 46px;
+    padding: 0 16px;
+    border: solid var(--c-grey-200);
+    border-width: 1px 0;
+    font-size: 16px;
+    line-height: 19px;
+    cursor: pointer;
+}
+
+.people:active {
+    opacity: 0.3;
+}
+
+.arrow {
+    color: var(--c-grey-400);
+}

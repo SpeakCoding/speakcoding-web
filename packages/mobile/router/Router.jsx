@@ -64,7 +64,12 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                     </div>
                 ))}
                 {screen.tabs !== undefined && (
-                    <Tabs tab={state.tab} hidden={!screen.tabs} switchTab={switchTab} />
+                    <Tabs
+                        tab={state.tab}
+                        hidden={!screen.tabs}
+                        switchTab={switchTab}
+                        navigate={navigate}
+                    />
                 )}
             </div>
             {children}

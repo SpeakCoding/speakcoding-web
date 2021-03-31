@@ -31,17 +31,20 @@ const TagPeople = () => {
         [tags]
     );
 
-    const handleClickImage = useCallback(event => {
-        const cursor = getCursorPosition(event),
-            box = $box.current.getBoundingClientRect();
+    const handleClickImage = useCallback(
+        event => {
+            const cursor = getCursorPosition(event),
+                box = $box.current.getBoundingClientRect();
 
-        newTag.current = {
-            top: (cursor.y - box.y) / box.height,
-            left: (cursor.x - box.x) / box.width
-        };
+            newTag.current = {
+                top: (cursor.y - box.y) / box.height,
+                left: (cursor.x - box.x) / box.width
+            };
 
-        navigate('select-user', { onSelect: handleAddTag });
-    }, []);
+            navigate('user-select', { onSelect: handleAddTag });
+        },
+        [tags]
+    );
 
     return (
         <>
