@@ -12,7 +12,7 @@ const msInDay = 24 * 60 * 60 * 1000;
 const Post = ({ id, scroll }) => {
     const fetch = useAPI(),
         { navigate } = useRouter(),
-        [post, updatePost] = useCacheState('post', id),
+        [post, updatePost, deletePost] = useCacheState('post', id),
         $node = useRef(null),
         scrolled = useRef(false),
         [menu, setMenu] = useState(false),
@@ -38,6 +38,7 @@ const Post = ({ id, scroll }) => {
 
     const handleDelete = useCallback(() => {
         fetch(`/posts/${id}.json`, { method: 'DELETE' });
+        deletePost();
     }, [id]);
 
     useEffect(() => {

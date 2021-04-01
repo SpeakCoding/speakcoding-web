@@ -8,7 +8,7 @@ import { PostsGrid } from '../../components';
 import s from './profile.css';
 
 const Profile = () => {
-    const { route, navigate } = useRouter(),
+    const { route, focused, navigate } = useRouter(),
         fetch = useAPI(),
         [user, updateUser] = useCacheState('user', route.params.userid),
         [tab, setTab] = useState('posts'),
@@ -36,10 +36,11 @@ const Profile = () => {
         navigate('posts', { title: user.user_name, items: data[tab], scrollTo: id });
 
     useEffect(() => {
-        if (!route.params.userid) return;
-        initProfile();
-        initPosts();
-    }, []);
+        if (focused && route.params.userid) {
+            initProfile();
+            initPosts();
+        }
+    }, [focused]);
 
     return (
         <>

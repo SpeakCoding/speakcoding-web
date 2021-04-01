@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Header } from '@sc/ui/mobile';
-import { useAPI, useCache } from '../../tools';
+import { useAPI, useCache, useRouter } from '../../tools';
 import { PostsList } from '../../components';
 import s from './feed.css';
 
 const Feed = () => {
     const fetch = useAPI(),
+        { focused } = useRouter(),
         [posts, setPosts] = useState([]),
         ready = useRef(false),
         { add } = useCache();
@@ -26,8 +27,8 @@ const Feed = () => {
     };
 
     useEffect(() => {
-        init();
-    }, []);
+        if (focused) init();
+    }, [focused]);
 
     return (
         <>

@@ -5,7 +5,8 @@ const cache = new Map();
 const context = createContext({
     get: () => {},
     update: () => {},
-    add: () => {}
+    add: () => {},
+    remove: () => {}
 });
 
 export const CacheProvider = ({ children }) => {
@@ -33,6 +34,10 @@ export const CacheProvider = ({ children }) => {
                     });
                     setRand(Math.random());
                 }
+            },
+            remove(category, id) {
+                cache.delete(`${category}/${id}`);
+                setRand(Math.random());
             }
         }),
         [rand]
@@ -46,8 +51,9 @@ export function useCache() {
 }
 
 export function useCacheState(category, id) {
-    const { get, update } = useContext(context),
-        updateItem = useCallback(fields => update(category, id, fields), [category, id]);
+    const { get, update, remove } = useContext(context),
+        updateItem = useCallback(fields => update(category, id, fields), [category, id]),
+        deletePost = useCallback(() => remove(category, id), [category, id]);
 
-    return [get(category, id), updateItem];
+    return [get(category, id), updateItem, deletePost];
 }

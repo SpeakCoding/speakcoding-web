@@ -39,7 +39,7 @@
 
 .image {
     width: 100%;
-    min-height: 375px;
+    height: 375px;
     background-color: var(--c-grey-200);
     object-fit: cover;
 }
