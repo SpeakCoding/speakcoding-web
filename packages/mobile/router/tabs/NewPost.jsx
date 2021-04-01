@@ -5,7 +5,8 @@ import { Icon } from '@sc/ui';
 import s from './tabs.css';
 
 const NewPost = ({ navigate }) => {
-    const [actions, setActions] = useState(false);
+    const [actions, setActions] = useState(false),
+        hasCamera = !!navigator.mediaDevices?.getUserMedia;
 
     return (
         <>
@@ -14,7 +15,12 @@ const NewPost = ({ navigate }) => {
             </div>
 
             <ActionSheet opened={actions} onClose={() => setActions(false)}>
-                <ActionSheet.Option onClick={() => navigate('post-upload', { open: true })}>
+                {hasCamera && (
+                    <ActionSheet.Option onClick={() => navigate('post-camera')}>
+                        Take a photo
+                    </ActionSheet.Option>
+                )}
+                <ActionSheet.Option onClick={() => navigate('post-upload', { openFile: true })}>
                     Upload from Library
                 </ActionSheet.Option>
             </ActionSheet>

@@ -1,6 +1,7 @@
 import React, { useCallback, useRef } from 'react';
 import pt from 'prop-types';
-import { addDragHandlers, getCursorPosition } from './utils';
+import { getCursorPosition } from '@sc/tools/dom';
+import { addDragHandlers } from './utils';
 import s from './tag-people.css';
 
 const bounds = { x: { min: 0, max: 1 }, y: { min: 0, max: 1 } };

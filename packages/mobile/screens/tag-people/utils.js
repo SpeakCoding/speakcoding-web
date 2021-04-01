@@ -1,8 +1,4 @@
-function addEventListener(event, handler) {
-    document.addEventListener(event, handler);
-
-    return () => document.removeEventListener(event, handler);
-}
+import { addEventListener } from '@sc/tools/dom';
 
 export function addDragHandlers(watchCursor, onFinish) {
     let subscribers = [];
@@ -15,20 +11,6 @@ export function addDragHandlers(watchCursor, onFinish) {
         addEventListener('touchend', unsubscribe),
         onFinish
     ];
-}
-
-export function getCursorPosition(event) {
-    if (event.touches && event.touches.length) {
-        return {
-            x: event.touches[0].clientX,
-            y: event.touches[0].clientY
-        };
-    }
-
-    return {
-        x: event.clientX,
-        y: event.clientY
-    };
 }
 
 export function fitTag($tag, $box) {

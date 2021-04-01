@@ -1,8 +1,8 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { Header } from '@sc/ui/mobile';
 import { Icon } from '@sc/ui';
+import { getCursorPosition } from '@sc/tools/dom';
 import { useRouter } from '../../router';
-import { getCursorPosition } from './utils';
 import Tag from './Tag';
 import s from './tag-people.css';
 

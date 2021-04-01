@@ -7,7 +7,7 @@ import s from './preview.css';
 
 const ImagePreview = () => {
     const { route, navigate, goBack } = useRouter(),
-        { open, image: initial } = route.params,
+        { openFile, image: initial } = route.params,
         [image, setImage] = useState(initial),
         $file = useRef();
 
@@ -17,8 +17,8 @@ const ImagePreview = () => {
     }, []);
 
     useEffect(() => {
-        if (open) $file.current.click();
-    }, [open]);
+        if (openFile) $file.current.click();
+    }, [openFile]);
 
     return (
         <>
@@ -31,7 +31,7 @@ const ImagePreview = () => {
                 </Header.Right>
             </Header>
 
-            {open && (
+            {openFile && (
                 <FileUpload accept='image/*' onChange={handleChooseImage}>
                     <input ref={$file} hidden type='button' />
                 </FileUpload>

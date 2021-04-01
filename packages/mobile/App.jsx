@@ -4,6 +4,9 @@ import { Layout } from './components';
 import { Router, Screen } from './router';
 import { CacheProvider } from './tools/cache';
 import { app } from './tools/app';
+
+// Screens
+import Camera from './screens/post-create/Camera';
 import Comments from './screens/comments';
 import Feed from './screens/feed';
 import Followers from './screens/followers';
@@ -70,6 +73,7 @@ const App = () => {
                         <Screen name='post-upload' component={ImagePreview} emergence='sheet' />
                         <Screen name='post-preview' component={ImagePreview} tabs={false} />
                         <Screen name='post-form' component={PostForm} tabs={false} />
+                        <Screen name='post-camera' component={Camera} emergence='sheet' />
                     </Router>
                 </Layout>
             </CacheProvider>
