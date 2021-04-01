@@ -21,13 +21,16 @@ const Post = ({ id, scroll }) => {
     const toggleLike = useCallback(() => {
         const url = post.liked ? `/posts/${post.id}/unlike.json` : `/posts/${post.id}/like.json`;
         fetch(url, { method: 'POST' });
-        updatePost({ liked: !post.liked });
+        updatePost({
+            liked: !post.liked,
+            likes_count: post.liked ? Math.max(post.likes_count - 1, 0) : post.likes_count + 1
+        });
     }, [post]);
 
     const setLike = useCallback(() => {
         if (post.liked) return;
         fetch(`/posts/${post.id}/like.json`, { method: 'POST' });
-        updatePost({ liked: true });
+        updatePost({ liked: true, likes_count: post.likes_count + 1 });
     }, [post]);
 
     const toggleSaved = useCallback(() => {
