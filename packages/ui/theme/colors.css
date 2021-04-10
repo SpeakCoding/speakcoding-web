@@ -41,6 +41,8 @@
     --c-white: #FFFFFF;
     --c-white-0: rgba(255, 255, 255, 0);
 
+    --c-primary-500-rgb: 42, 92, 255;
+
     --bg-orange: #FFE173;
     --bg-green: var(--c-green-500);
     --bg-blue: #C8E0FF;

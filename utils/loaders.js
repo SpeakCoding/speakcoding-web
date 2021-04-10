@@ -35,6 +35,13 @@ module.exports = {
             exclude: /node_modules/
         };
     },
+    globalCSS() {
+        return {
+            test: /\.css$/,
+            use: [MiniCssExtractPlugin.loader, 'css-loader'],
+            include: /node_modules/
+        };
+    },
     glyph() {
         return {
             test: /\.svg$/,

@@ -21,6 +21,7 @@ module.exports = {
         rules: [
             loaders.jsx(),
             loaders.css({ prod: !dev }),
+            loaders.globalCSS(),
             loaders.glyph(),
             loaders.mobileglyph(),
             loaders.file()

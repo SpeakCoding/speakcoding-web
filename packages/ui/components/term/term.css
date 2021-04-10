@@ -1,0 +1,9 @@
+.word {
+    background-color: rgba(var(--c-primary-500-rgb), 0.1);
+    border-bottom: 1px dashed var(--c-primary-500);
+    cursor: help;
+}
+
+:global(.tippy-svg-arrow) svg {
+    fill: #333;
+}
