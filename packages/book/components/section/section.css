@@ -1,0 +1,30 @@
+.box {
+    display: flex;
+    max-width: 1260px;
+    margin: 0 auto 64px;
+    padding: 40px 0 0 80px;
+}
+
+.main {
+    flex: 1;
+    padding-right: 80px;
+}
+
+.main p {
+    margin: 0 0 16px;
+}
+
+.side {
+    flex: 0 0 45%;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
+.divider {
+    height: 8px;
+    background-color: var(--c-grey-100);
+}
+
+.sticky {
+    position: sticky;
+}

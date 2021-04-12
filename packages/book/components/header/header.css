@@ -1,0 +1,13 @@
+.box {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 56px;
+    height: 56px;
+    padding: 0 80px;
+    border-bottom: 1px solid var(--c-grey-200);
+    box-sizing: border-box;
+    background-color: var(--c-white);
+}
