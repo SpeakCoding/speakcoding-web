@@ -5,7 +5,9 @@
 
 .title {
     margin-bottom: 56px;
-    font: 700 var(--t-h3);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
 }
 
 .field {
@@ -25,5 +27,6 @@
 
 .message {
     margin-top: 8px;
-    font: var(--t-base);
+    font-size: 18px;
+    line-height: 32px;
 }

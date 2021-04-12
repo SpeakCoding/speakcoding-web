@@ -7,3 +7,8 @@
 :global(.tippy-svg-arrow) svg {
     fill: #333;
 }
+
+:global(.tippy-box) {
+    font: 500 var(--t-small);
+    letter-spacing: 0.03em;
+}

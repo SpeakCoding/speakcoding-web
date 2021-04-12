@@ -1,12 +1,12 @@
 :root {
     --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-    --t-h1: 700 38px / 44px var(--font-family);
-    --t-h2: 700 32px / 36px var(--font-family);
-    --t-h3: 24px / 30px var(--font-family);
-    --t-large: 20px / 24px var(--font-family);
-    --t-base: 18px / 32px var(--font-family);
-    --t-small: 14px / 20px var(--font-family);
+    --t-h1: 700 32px / 40px var(--font-family);
+    --t-h2: 700 24px / 40px var(--font-family);
+    --t-h3: 22px / 1.4em var(--font-family);
+    --t-base: 18px / 1.8em var(--font-family);
+    --t-small: 14px / 18px var(--font-family);
+    --t-tiny: 12px / 14px var(--font-family);
 }
 
 @font-face {
