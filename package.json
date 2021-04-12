@@ -51,7 +51,7 @@
         "html-webpack-plugin": "5.3.1",
         "lerna": "4.0.0",
         "mini-css-extract-plugin": "1.4.1",
-        "postcss": "8.2.9",
+        "postcss": "8.2.10",
         "postcss-loader": "5.2.0",
         "postcss-normalize": "9.0.0",
         "postcss-preset-env": "6.7.0",
@@ -61,7 +61,7 @@
         "style-loader": "2.0.0",
         "svg-sprite-loader": "6.0.5",
         "url-loader": "4.1.1",
-        "webpack": "5.31.2",
+        "webpack": "5.32.0",
         "webpack-cli": "4.6.0",
         "webpack-dev-server": "3.11.2"
     },
