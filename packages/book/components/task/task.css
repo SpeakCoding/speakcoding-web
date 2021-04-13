@@ -1,0 +1,15 @@
+.box {
+    margin: 24px 0;
+    padding: 16px 24px;
+    background-color: var(--c-grey-100);
+    border-radius: 6px;
+}
+
+.title {
+    margin-bottom: 4px;
+    font: var(--t-h2);
+}
+
+.button {
+    margin-top: 20px;
+}

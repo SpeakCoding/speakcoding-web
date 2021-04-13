@@ -28,3 +28,17 @@
 .sticky {
     position: sticky;
 }
+
+.badge {
+    margin-bottom: 8px;
+    font: var(--t-tiny);
+    color: var(--c-grey-500);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.title {
+    margin-bottom: 24px;
+    font: var(--t-h1);
+}
+
