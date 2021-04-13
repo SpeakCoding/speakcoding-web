@@ -1,0 +1,47 @@
+.box {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background-color: var(--c-primary-500);
+    font: 500 var(--t-small);
+    color: var(--c-white);
+    cursor: pointer;
+    transition: background-color var(--animation);
+}
+
+.box:hover {
+    background-color: var(--c-primary-600);
+}
+
+.box:active {
+    background-color: var(--c-primary-500);
+}
+
+.box.small {
+    padding: 10px 12px;
+}
+
+.box.rounded {
+    padding: 0 12px;
+    border-radius: 16px;
+    background-color: var(--bg-plum);
+    font: var(--t-base);
+    color: var(--c-black);
+}
+
+.box.rounded:hover {
+    background-color: var(--bg-plum-hover);
+}
+
+.box.rounded:active {
+    background-color: var(--bg-plum);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}

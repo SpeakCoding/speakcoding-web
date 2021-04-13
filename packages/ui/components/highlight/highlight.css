@@ -1,0 +1,15 @@
+.box {
+    display: inline-block;
+    padding: 0 6px;
+    border-radius: 4px;
+    background-color: var(--c-grey-200);
+    transition: background-color var(--animation);
+    cursor: help;
+
+    --bg-color: var(--c-white);
+}
+
+.box:hover,
+.box.active {
+    background-color: var(--bg-color);
+}

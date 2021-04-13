@@ -1,5 +1,5 @@
 import React from 'react';
-import { Callout, Term } from '@sc/ui';
+import { Callout, Highlight, Hint } from '@sc/ui';
 import { Header, Layout, Section } from './components';
 
 const P = () => (
@@ -17,7 +17,7 @@ const App = () => {
 
             <Section>
                 <Section.Main>
-                    {[...Array(3)].map((_, i) => (
+                    {[...Array(2)].map((_, i) => (
                         <P key={i} />
                     ))}
                     <Callout>
@@ -25,22 +25,35 @@ const App = () => {
                         tempor
                     </Callout>
                     <p>
+                        Lorem ipsum <Highlight label='l1'>dolor</Highlight> sit amet, consectetur
+                        adipiscing elit,{' '}
+                        <Highlight color='blue' label='l2'>
+                            sed
+                        </Highlight>{' '}
+                        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud{' '}
+                        <Highlight color='blue' label='l2'>
+                            exercitation
+                        </Highlight>{' '}
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <p>
                         Lorem ipsum dolor sit amet,{' '}
-                        <Term>
+                        <Hint>
                             consectetur
-                            <Term.Tooltip>
+                            <Hint.Tooltip>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
                                 ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                                 aliquip ex ea commodo consequat. <br />
                                 <a href='#'>Glossary</a>
-                            </Term.Tooltip>
-                        </Term>{' '}
+                            </Hint.Tooltip>
+                        </Hint>{' '}
                         adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                         nisi ut aliquip ex ea commodo consequat.
                     </p>
-                    {[...Array(5)].map((_, i) => (
+                    {[...Array(2)].map((_, i) => (
                         <P key={i} />
                     ))}
                 </Section.Main>
@@ -51,26 +64,7 @@ const App = () => {
             <Section.Divider />
             <Section>
                 <Section.Main>
-                    {[...Array(3)].map((_, i) => (
-                        <P key={i} />
-                    ))}
-                    <p>
-                        Lorem ipsum dolor sit amet,{' '}
-                        <Term>
-                            consectetur
-                            <Term.Tooltip>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat. <br />
-                                <a href='#'>Glossary</a>
-                            </Term.Tooltip>
-                        </Term>{' '}
-                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    {[...Array(5)].map((_, i) => (
+                    {[...Array(10)].map((_, i) => (
                         <P key={i} />
                     ))}
                 </Section.Main>

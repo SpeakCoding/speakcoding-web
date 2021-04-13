@@ -9,9 +9,9 @@ import 'tippy.js/dist/tippy.css';
 import 'tippy.js/dist/svg-arrow.css';
 import 'tippy.js/animations/scale.css';
 
-import s from './term.css';
+import s from './hint.css';
 
-const Term = ({ children }) => {
+const Hint = ({ children }) => {
     const [content, setContent] = useState(''),
         value = useMemo(() => ({ setContent }), []);
 
@@ -24,4 +24,4 @@ const Term = ({ children }) => {
     );
 };
 
-export default Term;
+export default Hint;

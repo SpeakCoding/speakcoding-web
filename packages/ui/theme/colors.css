@@ -50,6 +50,7 @@
     --bg-aquamarine: #73FFE5;
     --bg-steel-blue: #CEC0FF;
     --bg-turquoise: #97EEFF;
+    --bg-light-sky-blue: #AFDAFF;
     --bg-sandy-brown: #FFAE58;
     --bg-green-yellow: #E5FF73;
     --bg-wheat: #DDD6B7;
@@ -57,5 +58,5 @@
     --bg-thistle: #EBD1DC;
     --bg-floral-white: #FFFBED;
     --bg-plum: #F9BFFF;
-    --bg-light-sky-blue: #AFDAFF;
+    --bg-plum-hover: #F9B2FF;
 }
