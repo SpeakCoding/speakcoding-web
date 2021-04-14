@@ -1,17 +1,16 @@
 .box {
-    display: flex;
     max-width: 1260px;
     margin: 0 auto 64px;
     padding: 40px 0 0 80px;
 }
 
+.block {
+    display: flex;
+}
+
 .main {
     flex: 1;
     padding-right: 80px;
-}
-
-.main p {
-    margin: 0 0 16px;
 }
 
 .side {
@@ -37,8 +36,11 @@
     letter-spacing: 1px;
 }
 
-.title {
-    margin-bottom: 24px;
+.main h1 {
+    margin: 0 0 24px;
     font: var(--t-h1);
 }
 
+.main p {
+    margin: 0 0 16px;
+}

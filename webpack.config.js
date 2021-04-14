@@ -24,7 +24,8 @@ module.exports = {
             loaders.globalCSS(),
             loaders.glyph(),
             loaders.mobileglyph(),
-            loaders.file()
+            loaders.font(),
+            loaders.image()
         ]
     },
     plugins: [

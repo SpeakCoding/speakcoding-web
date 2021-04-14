@@ -63,10 +63,16 @@ module.exports = {
             include: /ui\/mobile\/icon\/glyphs/
         };
     },
-    file() {
+    font() {
         return {
-            test: /\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/,
-            use: 'file-loader?name=[hash].[ext]',
+            test: /\.ttf$/,
+            type: 'asset/resource'
+        };
+    },
+    image() {
+        return {
+            test: /\.(svg|png)$/,
+            type: 'asset',
             exclude: [/ui\/components\/icon\/glyphs/, /ui\/mobile\/icon\/glyphs/]
         };
     }
