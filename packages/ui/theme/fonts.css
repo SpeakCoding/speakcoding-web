@@ -1,5 +1,6 @@
 :root {
     --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-family-mono: RobotoMono, sans-serif;
 
     --t-h1: 700 32px / 40px var(--font-family);
     --t-h2: 700 24px / 40px var(--font-family);
@@ -14,4 +15,30 @@
     font-style: normal;
     font-weight: 400;
     src: url(../fonts/RobotoMono-Regular.ttf) format("truetype");
+}
+
+h1 {
+    margin: 0;
+    font: var(--t-h1);
+}
+
+h2 {
+    margin: 0;
+    font: var(--t-h2);
+}
+
+h3 {
+    margin: 0;
+    font: var(--t-h3);
+}
+
+h4 {
+    margin: 0;
+    font: bold var(--t-base);
+}
+
+pre {
+    margin: 0;
+    font: var(--t-base);
+    font-family: var(--font-family-mono);
 }

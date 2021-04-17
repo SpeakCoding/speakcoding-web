@@ -1,3 +1,5 @@
+@import "../../theme.css";
+
 .box {
     margin: 24px 0;
     padding: 16px 24px;
@@ -5,11 +7,14 @@
     border-radius: 6px;
 }
 
-.title {
+.box > h2 {
     margin-bottom: 4px;
-    font: var(--t-h2);
 }
 
 .button {
     margin-top: 20px;
+}
+
+.box > h2 + .button {
+    margin-top: 12px;
 }

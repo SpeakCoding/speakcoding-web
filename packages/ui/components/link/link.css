@@ -1,0 +1,7 @@
+@import "../../theme.css";
+
+.box {
+    color: currentColor;
+    text-decoration: none;
+    outline: none;
+}

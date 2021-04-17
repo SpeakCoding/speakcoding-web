@@ -1,0 +1,58 @@
+.box {
+    display: flex;
+    margin-top: 32px;
+}
+
+.step {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    color: var(--c-grey-300);
+    cursor: pointer;
+    transition: color var(--animation);
+}
+
+.step:last-child {
+    flex: 0 0 24px;
+}
+
+.step.active {
+    color: var(--c-primary-500);
+}
+
+.circle {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+.circle::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 11px;
+    width: 15px;
+    height: 22px;
+    margin-bottom: 9px;
+    background-image: url(./flag.svg);
+    opacity: 0;
+    transition: opacity var(--animation);
+}
+
+.step.current .circle::before {
+    opacity: 1;
+}
+
+.bar {
+    flex: 1;
+    height: 4px;
+    margin: 0 16px;
+    border-radius: 2px;
+    background-color: currentColor;
+}
+
+.step:last-child .bar {
+    display: none;
+}

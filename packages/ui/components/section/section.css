@@ -1,3 +1,5 @@
+@import "../../theme.css";
+
 .box {
     max-width: 1260px;
     margin: 0 auto 64px;
@@ -36,11 +38,23 @@
     letter-spacing: 1px;
 }
 
-.main h1 {
-    margin: 0 0 24px;
-    font: var(--t-h1);
+.main > h1 {
+    margin-bottom: 24px;
 }
 
-.main p {
+.main > h2 {
+    margin-bottom: 16px;
+}
+
+.main > p {
     margin: 0 0 16px;
+}
+
+.main ul {
+    margin: 0 0 16px 0;
+    padding: 0 0 0 24px;
+}
+
+.main li {
+    margin-bottom: 8px;
 }

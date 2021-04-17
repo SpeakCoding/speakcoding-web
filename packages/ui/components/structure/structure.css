@@ -1,0 +1,35 @@
+@import "../../theme.css";
+
+.box {
+    margin-bottom: 16px;
+    font: var(--t-base);
+}
+
+.box.bordered {
+    padding: 16px 32px;
+    border: 1px solid var(--c-grey-200);
+    border-radius: 6px;
+}
+
+.box h4 {
+    display: block;
+}
+
+.box ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.box ul li {
+    margin: 0;
+}
+
+.box ul li::before {
+    content: "↳ ";
+    color: var(--c-grey-300);
+}
+
+.box ul + h4 {
+    margin-top: 8px;
+}

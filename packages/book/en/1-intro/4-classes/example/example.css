@@ -1,0 +1,25 @@
+.box {
+    display: grid;
+    grid-template-areas:
+            "code  img"
+            "flags flags";
+    grid-template-columns: 1fr 400px;
+    grid-template-rows: 560px auto;
+    margin-bottom: 80px;
+    padding: 32px 56px;
+    border: 1px solid var(--c-grey-200);
+    border-radius: 12px;
+}
+
+.code {
+    grid-area: code;
+}
+
+.img {
+    grid-area: img;
+}
+
+.flags {
+    grid-area: flags;
+    margin: 24px 0 56px;
+}
