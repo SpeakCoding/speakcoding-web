@@ -1,0 +1,11 @@
+.people {
+    margin-bottom: 16px;
+}
+
+.people > div {
+    padding-left: 24px;
+}
+
+.people > div:first-child {
+    padding-left: 0;
+}

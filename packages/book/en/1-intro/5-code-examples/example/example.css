@@ -24,10 +24,12 @@
     position: sticky;
     top: 56px;
     height: 56px;
-    margin-bottom: 24px;
+    background-color: var(--c-white);
+    z-index: 1;
 }
 
 .structure {
     position: sticky;
     top: 136px;
+    margin-top: 24px;
 }

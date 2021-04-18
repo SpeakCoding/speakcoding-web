@@ -1,14 +1,15 @@
 import React, { useCallback } from 'react';
 import pt from 'prop-types';
+import classNames from 'classnames';
 import s from './highlight.css';
 
-const Highlight = ({ color, label, children }) => {
+const Highlight = ({ active, color, label, children }) => {
     const handleMouseEnter = useCallback(() => {
         if (!label) return;
 
         const items = document.querySelectorAll(`[data-highlight-label="${label}"]`);
 
-        [...items].forEach($item => $item.classList.add(s.active));
+        [...items].forEach($item => $item.classList.add(s.hover));
     }, [label]);
 
     const handleMouseLeave = useCallback(() => {
@@ -16,12 +17,12 @@ const Highlight = ({ color, label, children }) => {
 
         const items = document.querySelectorAll(`[data-highlight-label="${label}"]`);
 
-        [...items].forEach($item => $item.classList.remove(s.active));
+        [...items].forEach($item => $item.classList.remove(s.hover));
     }, [label]);
 
     return (
         <span
-            className={s.box}
+            className={classNames(s.box, active && s.active)}
             data-highlight-label={label}
             style={{ '--bg-color': `var(--bg-${color})` }}
             onMouseEnter={handleMouseEnter}
@@ -33,6 +34,7 @@ const Highlight = ({ color, label, children }) => {
 };
 
 Highlight.propTypes = {
+    active: pt.bool,
     color: pt.oneOf([
         'orange',
         'green',
@@ -56,6 +58,7 @@ Highlight.propTypes = {
 };
 
 Highlight.defaultProps = {
+    active: false,
     color: 'orange',
     label: undefined
 };
