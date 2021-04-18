@@ -9,4 +9,6 @@ export Icon from './components/icon';
 export Link from './components/link';
 export Section from './components/section';
 export Structure from './components/structure';
+export Tabs from './components/tabs';
+export Tag from './components/tag';
 export Task from './components/task';

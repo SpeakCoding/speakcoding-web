@@ -1,0 +1,21 @@
+@import "../../theme.css";
+
+.box {
+    display: inline-flex;
+    align-items: center;
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 18px;
+    font: 500 var(--t-small);
+    letter-spacing: 0.03em;
+}
+
+.box.blue {
+    background-color: var(--c-primary-500);
+    color: var(--c-white);
+}
+
+.box.grey {
+    background-color: var(--c-grey-100);
+    color: var(--c-grey-500);
+}

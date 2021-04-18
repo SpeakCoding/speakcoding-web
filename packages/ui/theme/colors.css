@@ -59,4 +59,5 @@
     --bg-floral-white: #FFFBED;
     --bg-plum: #F9BFFF;
     --bg-plum-hover: #F9B2FF;
+    --bg-grey: var(--c-grey-400);
 }

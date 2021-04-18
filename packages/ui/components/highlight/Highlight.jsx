@@ -38,7 +38,7 @@ Highlight.propTypes = {
         'green',
         'blue',
         'red',
-        'aquamarine:',
+        'aquamarine',
         'steel-blue',
         'turquoise:',
         'light-sky-blue',
@@ -49,7 +49,8 @@ Highlight.propTypes = {
         'thistle',
         'floral-white',
         'plum',
-        'plum-hover'
+        'plum-hover',
+        'grey'
     ]),
     label: pt.string
 };

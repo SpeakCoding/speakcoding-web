@@ -1,0 +1,29 @@
+@import "../../theme.css";
+
+.controls {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: 56px;
+    background-color: var(--c-white);
+}
+
+.button {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.content {
+    transition: opacity 200ms var(--animation-timing-function);
+}
+
+.content.entered {
+    opacity: 1;
+}
+
+.content.entering,
+.content.exiting,
+.content.exited {
+    opacity: 0;
+}
