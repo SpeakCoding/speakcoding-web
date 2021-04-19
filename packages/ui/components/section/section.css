@@ -1,12 +1,15 @@
 @import "../../theme.css";
 
 .box {
+    display: flex;
+    flex-wrap: wrap;
     max-width: 1260px;
     margin: 0 auto 64px;
     padding: 40px 0 0 80px;
 }
 
 .block {
+    flex-basis: 100%;
     display: flex;
 }
 
