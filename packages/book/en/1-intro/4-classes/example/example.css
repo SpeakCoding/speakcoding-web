@@ -15,8 +15,15 @@
     grid-area: code;
 }
 
-.img {
+.view {
     grid-area: img;
+    padding-top: 40px;
+}
+
+.img {
+    height: 466px;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px 0 #d3dbe6;
 }
 
 .flags {

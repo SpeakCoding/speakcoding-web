@@ -6,6 +6,7 @@ export FileUpload from './components/fileupload';
 export HL from './components/highlight';
 export Hint from './components/hint';
 export Icon from './components/icon';
+export Img from './components/img';
 export Link from './components/link';
 export Section from './components/section';
 export Structure from './components/structure';

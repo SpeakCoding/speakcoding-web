@@ -9,3 +9,7 @@
 .people > div:first-child {
     padding-left: 0;
 }
+
+.img1 {
+    max-width: 85%;
+}

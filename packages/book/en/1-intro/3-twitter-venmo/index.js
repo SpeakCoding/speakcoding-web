@@ -1,5 +1,6 @@
 import React from 'react';
-import { Section, Structure, Task } from '@sc/ui';
+import { Img, Section, Structure, Task } from '@sc/ui';
+import img from '../../../assets/2-class-post.png';
 
 export default () => (
     <Section>
@@ -96,7 +97,9 @@ export default () => (
             </Task>
         </Section.Main>
         <Section.Side>
-            <Section.Sticky>img</Section.Sticky>
+            <Section.Sticky center>
+                <Img src={img} width={392} />
+            </Section.Sticky>
         </Section.Side>
     </Section>
 );

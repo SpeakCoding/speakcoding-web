@@ -59,9 +59,7 @@ export default () => (
                     function; instead, you can import and use the standard class.
                 </p>
             </Section.Main>
-            <Section.Side>
-                <Section.Sticky>img</Section.Sticky>
-            </Section.Side>
+            <Section.Side />
         </Section>
         <Section>
             <Section.Main>

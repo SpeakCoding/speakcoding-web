@@ -1,5 +1,6 @@
 import React from 'react';
-import { Callout, Section } from '@sc/ui';
+import { Callout, Img, Section } from '@sc/ui';
+import img from '../../../assets/1-numbers.svg';
 
 export default () => (
     <Section>
@@ -44,7 +45,9 @@ export default () => (
             </Callout>
         </Section.Main>
         <Section.Side>
-            <Section.Sticky>img</Section.Sticky>
+            <Section.Sticky>
+                <Img src={img} />
+            </Section.Sticky>
         </Section.Side>
     </Section>
 );

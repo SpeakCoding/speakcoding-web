@@ -75,8 +75,6 @@ export default () => (
                 <Task.Button icon='question'>Complete quiz</Task.Button>
             </Task>
         </Section.Main>
-        <Section.Side>
-            <Section.Sticky>img</Section.Sticky>
-        </Section.Side>
+        <Section.Side />
     </Section>
 );

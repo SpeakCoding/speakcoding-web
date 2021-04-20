@@ -30,7 +30,17 @@
 }
 
 .sticky {
+    display: flex;
     position: sticky;
+}
+
+.sticky.center {
+    justify-content: center;
+}
+
+.sticky img {
+    position: sticky;
+    top: 0;
 }
 
 .badge {
