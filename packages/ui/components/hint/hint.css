@@ -13,4 +13,5 @@
 :global(.tippy-box) {
     font: 500 var(--t-small);
     letter-spacing: 0.03em;
+    white-space: pre-wrap;
 }

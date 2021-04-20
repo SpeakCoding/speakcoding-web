@@ -61,3 +61,7 @@
 .main li {
     margin-bottom: 8px;
 }
+
+.main > pre {
+    margin: 0 0 16px;
+}

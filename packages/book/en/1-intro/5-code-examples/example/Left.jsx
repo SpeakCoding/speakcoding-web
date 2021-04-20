@@ -9,7 +9,7 @@ const Left = () => (
         </div>
         <div className={s.structure}>
             {/* prettier-ignore */}
-            <Structure>
+            <Structure bordered={false}>
                 <HL color='orange' label='c1-b1-1'>Feed</HL>
                 <ul>
                     <li><HL color='light-sky-blue' label='c1-b1-2'>Set of Posts</HL></li>

@@ -2,6 +2,7 @@
 import React, { useMemo } from 'react';
 import pt from 'prop-types';
 import { HL } from '@sc/ui';
+import s from './example.css';
 
 function parseCode(code) {
     return code
@@ -31,7 +32,7 @@ const Code = ({ value }) => {
     const parsed = useMemo(() => parseCode(value), [value]);
 
     return (
-        <>
+        <div className={s.tab}>
             {parsed.map((parts, i) => (
                 <pre key={i}>
                     {parts.map((item, j) => {
@@ -45,7 +46,7 @@ const Code = ({ value }) => {
                     })}
                 </pre>
             ))}
-        </>
+        </div>
     );
 };
 

@@ -2,11 +2,11 @@
 
 .box {
     margin-bottom: 16px;
+    padding: 16px 32px;
     font: var(--t-base);
 }
 
 .box.bordered {
-    padding: 16px 32px;
     border: 1px solid var(--c-grey-200);
     border-radius: 6px;
 }

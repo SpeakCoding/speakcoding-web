@@ -30,6 +30,10 @@
 
 .structure {
     position: sticky;
-    top: 136px;
+    top: 120px;
+    margin-top: 8px;
+}
+
+.tab {
     margin-top: 24px;
 }
