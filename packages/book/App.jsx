@@ -1,17 +1,19 @@
 import React from 'react';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Header, Layout } from './components';
+import Home from './Home';
 import EN from './en';
 
 const App = () => (
-    <Layout>
-        <Header>azaza</Header>
-        <BrowserRouter>
+    <BrowserRouter>
+        <Layout>
+            <Header>Breadcrumbs</Header>
             <Switch>
+                <Route path='/' exact component={Home} />
                 <EN />
             </Switch>
-        </BrowserRouter>
-    </Layout>
+        </Layout>
+    </BrowserRouter>
 );
 
 export default App;

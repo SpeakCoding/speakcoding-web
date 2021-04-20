@@ -5,8 +5,8 @@
         "dev": "NODE_ENV=development webpack serve",
         "mobile": "NODE_ENV=development MOBILE=true webpack serve",
         "demo": "git pull && npm i && npm run bootstrap && npm run mobile",
-        "build:mobile": "NODE_ENV=production MOBILE=true webpack",
         "build": "NODE_ENV=production webpack",
+        "build:mobile": "NODE_ENV=production MOBILE=true webpack",
         "bootstrap": "lerna clean --yes && lerna bootstrap --ignore-scripts",
         "lint": "eslint --ext js,jsx --quiet",
         "prettier": "prettier --check ."

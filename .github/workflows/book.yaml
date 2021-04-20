@@ -1,0 +1,32 @@
+name: Deploy Book to Netlify
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 15.x
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: node-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Deploy to Netlify
+        uses: jsmrcaga/action-netlify-deploy@master
+        with:
+          NETLIFY_AUTH_TOKEN: zrlMDe85DFaiPaEKzi7QEDSwgj-nRUFZ0ssu5xX965Q
+          NETLIFY_SITE_ID: 8d39c018-2b7f-4d55-aaa7-067f51fa1a76
+          NETLIFY_DEPLOY_TO_PROD: true
+          build_directory: build
+          install_command: yarn && yarn bootstrap
+          build_command: yarn build
