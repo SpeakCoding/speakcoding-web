@@ -22,7 +22,7 @@ export default () => (
                 <ul>
                     <li>Set of Tweets</li>
                 </ul>
-                <h4>Tweets, в свою очередь, состоят из</h4>
+                <h4>Tweet</h4>
                 <ul>
                     <li>User</li>
                     <li>Text</li>

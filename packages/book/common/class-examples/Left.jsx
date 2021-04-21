@@ -1,11 +1,12 @@
 import React from 'react';
+import pt from 'prop-types';
 import { HL, Structure, Tag } from '@sc/ui';
 import s from './example.css';
 
-const Left = () => (
+const Left = ({ label }) => (
     <>
         <div className={s.writing}>
-            <Tag color='blue'>In writing</Tag>
+            <Tag color='blue'>{label}</Tag>
         </div>
         <div className={s.structure}>
             {/* prettier-ignore */}
@@ -38,5 +39,9 @@ const Left = () => (
         </div>
     </>
 );
+
+Left.propTypes = {
+    label: pt.string.isRequired
+};
 
 export default Left;

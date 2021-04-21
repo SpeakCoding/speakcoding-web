@@ -6,7 +6,7 @@ export default () => (
     <>
         <Section>
             <Section.Main>
-                <Example />
+                <Example label='Описание текстом' />
             </Section.Main>
         </Section>
         <Section>

@@ -25,7 +25,7 @@ export default () => (
                 <ul>
                     <li>Set of Tweets</li>
                 </ul>
-                <h4>Tweets in turn comprise:</h4>
+                <h4>Tweet</h4>
                 <ul>
                     <li>User</li>
                     <li>Text</li>

@@ -1,12 +1,27 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
 import pt from 'prop-types';
 import s from './code.css';
+import { context } from './utils';
+
+const Code = ({ step, children }) => {
+    const { step: current } = useContext(context);
+
+    return step === current ? children : null;
+};
+
+Code.propTypes = {
+    step: pt.number
+};
+
+Code.defaultProps = {
+    step: 1
+};
 
 const H = ({ children }) => <span className={s.hl}>{children}</span>;
 
-const Step1 = () => (
-    <>
+export const Step1 = ({ children }) => (
+    <Code step={1}>
         <pre>
             Post <br />
             {'  '}User <br />
@@ -18,12 +33,12 @@ const Step1 = () => (
             {'  '}Caption <br />
             {'  '}Set of Comments <br />{' '}
         </pre>
-        <div className={s.hint}>Post structure in simple writing</div>
-    </>
+        <div className={s.hint}>{children}</div>
+    </Code>
 );
 
-const Step2 = () => (
-    <>
+export const Step2 = ({ children }) => (
+    <Code step={2}>
         <pre>
             Post <br />
             {'  '}User <br />
@@ -38,14 +53,12 @@ const Step2 = () => (
             {'  '}
             <H>[]</H>Comments <br />{' '}
         </pre>
-        <div className={s.hint}>
-            All <b>"Set of..."</b> components are written in code as square brackets
-        </div>
-    </>
+        <div className={s.hint}>{children}</div>
+    </Code>
 );
 
-const Step3 = () => (
-    <>
+export const Step3 = ({ children }) => (
+    <Code step={3}>
         <pre>
             <H>Class</H> Post <H>{'{'}</H>
             <br />
@@ -59,11 +72,8 @@ const Step3 = () => (
             {'  '}[]Comments <br />
             <H>{'}'}</H>
         </pre>
-        <div className={s.hint}>
-            To identify a class definition, the keyword ‘class’ appears at the beginning of a new
-            line; all content is then written on indented lines and framed in curly brackets {'{}'}.
-        </div>
-    </>
+        <div className={s.hint}>{children}</div>
+    </Code>
 );
 
 const N = ({ children }) => (
@@ -76,8 +86,8 @@ const N = ({ children }) => (
     </>
 );
 
-const Step4 = () => (
-    <>
+export const Step4 = ({ children }) => (
+    <Code step={4}>
         <pre>
             Class Post {'{'}
             <br />
@@ -91,28 +101,6 @@ const Step4 = () => (
             <N>setOfComments</N>[]Comments <br />
             {'}'}
         </pre>
-        <div className={s.hint}>
-            Each component is assigned not only a Class, but also a title. A more detailed
-            explanation is given in the next chapter below.
-        </div>
-    </>
+        <div className={s.hint}>{children}</div>
+    </Code>
 );
-
-const Code = ({ step }) => (
-    <div className={s.box} data-step={step}>
-        {step === 1 && <Step1 />}
-        {step === 2 && <Step2 />}
-        {step === 3 && <Step3 />}
-        {step === 4 && <Step4 />}
-    </div>
-);
-
-Code.propTypes = {
-    step: pt.number
-};
-
-Code.defaultProps = {
-    step: 1
-};
-
-export default Code;

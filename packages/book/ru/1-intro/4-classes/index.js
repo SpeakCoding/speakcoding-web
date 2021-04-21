@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section } from '@sc/ui';
-import ClassExample from '../../../common/text-to-class';
+import TextToCode from '../../../common/text-to-class';
 import Term from '../../glossary/Term';
 
 export default () => (
@@ -33,7 +33,21 @@ export default () => (
         </Section>
         <Section>
             <Section.Main>
-                <ClassExample />
+                <TextToCode>
+                    <TextToCode.Step1>Структурное описание класса Post текстом</TextToCode.Step1>
+                    <TextToCode.Step2>
+                        Все <b>Set of</b> - записываются в коде как квадратные скобки []
+                    </TextToCode.Step2>
+                    <TextToCode.Step3>
+                        Для того, чтобы выделить описание класса, например, в начале стоит ключевое
+                        слово “class”, все содержимое пишется с отступом и обрамлено фигурными
+                        скобками {'{}'}
+                    </TextToCode.Step3>
+                    <TextToCode.Step4>
+                        Для каждой составляющей будет задан не только ее Класс, но и Имя. Более
+                        подробное объяснение этого вы найдете дальше в тексте главы.
+                    </TextToCode.Step4>
+                </TextToCode>
             </Section.Main>
         </Section>
         <Section>

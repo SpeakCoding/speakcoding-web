@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section } from '@sc/ui';
-import ClassExample from '../../../common/text-to-class';
+import TextToCode from '../../../common/text-to-class';
 import Term from '../../glossary/Term';
 
 export default () => (
@@ -32,7 +32,21 @@ export default () => (
         </Section>
         <Section>
             <Section.Main>
-                <ClassExample />
+                <TextToCode>
+                    <TextToCode.Step1>Post structure in simple writing</TextToCode.Step1>
+                    <TextToCode.Step2>
+                        All <b>"Set of..."</b> components are written in code as square brackets
+                    </TextToCode.Step2>
+                    <TextToCode.Step3>
+                        To identify a class definition, the keyword ‘class’ appears at the beginning
+                        of a new line; all content is then written on indented lines and framed in
+                        curly brackets {'{}'}.
+                    </TextToCode.Step3>
+                    <TextToCode.Step4>
+                        Each component is assigned not only a Class, but also a title. A more
+                        detailed explanation is given in the next chapter below.
+                    </TextToCode.Step4>
+                </TextToCode>
             </Section.Main>
         </Section>
         <Section>
