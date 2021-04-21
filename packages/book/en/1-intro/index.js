@@ -1,5 +1,6 @@
 import React from 'react';
 import { Section } from '@sc/ui';
+import Page from '../Page';
 import Part1 from './1-intro';
 import Part2 from './2-instagram';
 import Part3 from './3-twitter-venmo';
@@ -9,7 +10,7 @@ import Part6 from './6-components-properties';
 import Part7 from './7-using-classes';
 
 export default () => (
-    <>
+    <Page>
         <Part1 />
         <Section.Divider />
         <Part2 />
@@ -21,5 +22,5 @@ export default () => (
         <Part5 />
         <Part6 />
         <Part7 />
-    </>
+    </Page>
 );
