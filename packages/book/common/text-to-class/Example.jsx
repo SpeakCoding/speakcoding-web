@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Img } from '@sc/ui';
 import Code from './Code';
 import Flags from './Flags';
-import img1 from '../../../../assets/3-skeleton.png';
-import img2 from '../../../../assets/4-instagram.png';
+import img1 from '../../assets/3-skeleton.png';
+import img2 from '../../assets/4-instagram.png';
 import s from './example.css';
 
 const Example = () => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Section } from '@sc/ui';
-import ClassExample from './example';
+import ClassExample from '../../../common/text-to-class';
+import Term from '../../glossary/Term';
 
 export default () => (
     <>
@@ -11,14 +12,15 @@ export default () => (
                     Instagram allows users to create specific instances of certain elements,
                     including creating <i>specific</i> posts and registering <i>specific</i> new
                     users. So, the coding process begins by defining, in general terms, each{' '}
-                    <b>class</b> of these elements (e.g. the post, comment, and user classes). In
-                    programming, the definition of an entity in general terms is called <b>class</b>
-                    . And specific posts and users are called <b>instances of a class</b>. You can
-                    think of a class as a category of things. Let’s say you have a car, a blue BMW.
-                    It belongs to the car Class. The class describes general characteristics and
-                    properties of cars, but is not an example of a specific car. To describe a
-                    specific car – your blue BMW – we need to create an actual instance of the car
-                    Class and write down its properties and characteristics.
+                    <Term id='class'>class</Term> of these elements (e.g. the post, comment, and
+                    user classes). In programming, the definition of an entity in general terms is
+                    called <Term id='class'>class</Term>. And specific posts and users are called{' '}
+                    <Term id='instance'>instances of a class</Term>. You can think of a class as a
+                    category of things. Let’s say you have a car, a blue BMW. It belongs to the car
+                    Class. The class describes general characteristics and properties of cars, but
+                    is not an example of a specific car. To describe a specific car – your blue BMW
+                    – we need to create an actual instance of the car Class and write down its
+                    properties and characteristics.
                 </p>
                 <h2>Defining classes in code</h2>
                 <p>
