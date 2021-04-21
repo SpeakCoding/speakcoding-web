@@ -1,0 +1,13 @@
+.item {
+    max-width: 960px;
+    padding: 56px 0;
+    border-top: 1px solid var(--c-grey-200);
+}
+
+.item p {
+    margin: 0 0 16px 0;
+}
+
+.item p:last-child {
+    margin: 0;
+}

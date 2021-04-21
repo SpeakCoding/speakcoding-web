@@ -5,7 +5,7 @@ import Item from './Item';
 const Glossary = () => (
     <Section>
         <Section.Main>
-            <h1>Glossary</h1>
+            <h1>Глоссарий</h1>
             <Item id='class' />
             <Item id='instance' />
             <Item id='component' />

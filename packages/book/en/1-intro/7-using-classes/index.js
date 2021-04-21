@@ -105,7 +105,7 @@ export default () => (
                     Another essential aspect of defining <Term id='class'>classes</Term> is to list
                     the actions that can be performed in relation to them. To do this, the code uses
                     a third structural element, another ‘part’ of its ‘language’, namely the{' '}
-                    <Term id='class'>function</Term>.
+                    <Term id='function'>function</Term>.
                 </p>
                 <Achievement>
                     <h2>New skill!</h2>
