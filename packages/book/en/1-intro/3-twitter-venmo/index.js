@@ -78,21 +78,6 @@ export default () => (
             </Structure>
             <Task>
                 <h2>Assignment #1</h2>
-                Open the Spotify app and describe what it consists of. You could start by writing
-                this in text form, then in a structured format (in the style of Instagram, Twitter
-                or Venmo). We will then look at your description and discuss it at the end of this
-                section. <br /> A structured description does not include everything that you see on
-                your screen or in the program’s interface. Looking closely at what a Post comprises,
-                you will notice new ‘components’ that were not present in the structural description
-                of a Post from the first chapter. For example, the interface contains a comment
-                counter or a bookmark icon. These components are specific to what we want to show to
-                the user on the display, though when creating a structural definition of an app, we
-                need to focus on what the program is structured around: a set of audio files that
-                can later be saved or bundled together to create an album, payments made from one
-                user to another, or a message exchange. All additional functions, such as showing
-                which friends liked a post or displaying a heart icon, are usually added at later
-                stages of product development on the initiative of the product manager rather than
-                the developer.
                 <Task.Button icon='chevron-right'>Start assignment</Task.Button>
             </Task>
         </Section.Main>

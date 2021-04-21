@@ -1,14 +1,14 @@
 import React from 'react';
 
 export const id = 'property',
-    name = 'Property';
+    name = 'Характеристика';
 
 export const Definition = () => (
     <>
-        a quality or characteristic that distinguishes a particular class. For example, let’s assume
-        that we have a green book: its color is one of its properties. The Book class has the Color
-        property. When defining classes in code, their properties are written in the same way as
-        their components. So, when compiling the definition of a book, we present this as the Book
-        having a component called Color that belongs to the Color class.
+        качество/признак, составляющий отличительную особенность класса. Например, у нас есть
+        зеленая книга, и ее цвет - это ее характеристика. У класса Книга есть характеристика Цвет. В
+        программировании при описании классов их характеристики записывают так же, как их
+        составляющие. Т.е при составлении описания Книги, мы скажем это так, будто у Книги есть
+        составляющая Цвет класса Цвета.
     </>
 );

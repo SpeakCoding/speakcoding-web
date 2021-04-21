@@ -141,22 +141,6 @@ export default () => (
                     </Task>
                     <Task>
                         <h2>Assignment #2</h2>
-                        <p>
-                            Create a structured definition of the components and properties for the
-                            Post class in Instagram, including as much detail as possible. Assign a
-                            title and class to each component.
-                        </p>
-                        <p>Below is an example of a detailed definition of components:</p>
-                        <Structure>
-                            <h4>Comment</h4>
-                            <ul>
-                                <li>user (of class User)</li>
-                                <li>creationTime (class Time)</li>
-                                <li>text(class Text)</li>
-                                <li>set of Likes (of class Likes)</li>
-                                <li>(optional) set of Replies (class Comment)</li>
-                            </ul>
-                        </Structure>
                         <Task.Button icon='chevron-right'>Start assignment</Task.Button>
                     </Task>
                 </Section.Main>

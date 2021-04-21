@@ -68,7 +68,7 @@ export default () => (
                 <p>
                     Для описания некоторых <Term id='class'>классов</Term>, кроме списка{' '}
                     <Term id='component'>составляющих</Term>, также может потребоваться список
-                    потенциальных характеристик этих объектов.
+                    потенциальных <Term id='property'>характеристик</Term> этих объектов.
                 </p>
                 <p>
                     Например, у User (Аккаунта) может быть характеристика публичность/закрытость,
@@ -85,52 +85,52 @@ export default () => (
         <Section>
             <Section.Block>
                 <Section.Main>
-                    <h2>Example</h2>
+                    <h2>Пример</h2>
                     <div className={s.people}>
                         <div>
                             <HL color='light-sky-blue' active>
-                                People
+                                Люди
                             </HL>
                         </div>
-                        <div>// Components</div>
+                        <div>// составляющие</div>
                         <div>
                             <HL color='plum' active>
-                                Arms
+                                Руки
                             </HL>
                         </div>
                         <div>
                             <HL color='orange' active>
-                                Legs
+                                Ноги
                             </HL>
                         </div>
                         <div>...</div>
-                        <div>// Properties (recorded the same way as components)</div>
+                        <div>характеристики (записываются так же, как и составляющие)</div>
                         <div>
-                            <HL color='aquamarine'>Age</HL>
+                            <HL color='aquamarine'>Возраст</HL>
                         </div>
                         <div>
-                            <HL color='green-yellow'>Height</HL>
+                            <HL color='green-yellow'>Рост</HL>
                         </div>
                         <div>
-                            <HL color='thistle'>Gender</HL>
+                            <HL color='thistle'>Пол</HL>
                         </div>
                         <div>...</div>
                     </div>
                     <p>
-                        In programming languages, <Term id='component'>components</Term> are defined
-                        in the same way as their classes.
+                        При этом в языках программирования при описании классов об их{' '}
+                        <Term id='property'>характеристиках</Term> пишут так же, как об их{' '}
+                        <Term id='component'>составляющих</Term>.
                     </p>
                     <p>
-                        For example, let’s say that we have a green book: its color is one of its{' '}
-                        <Term id='property'>properties</Term>. So the Book{' '}
-                        <Term id='class'>class</Term> has the Color{' '}
-                        <Term id='property'>property</Term>. When describing a book, we present this
-                        as the Book having a color <Term id='component'>component</Term> of the
-                        Color <Term id='class'>class</Term>. If you wish, you may start by writing
-                        down the class and components separately for your own reference; when you
-                        come to rewrite them into a programming language, you will need to describe
-                        them in the same way as you did for the other{' '}
-                        <Term id='component'>components</Term> of the class.
+                        Например, у нас есть зеленая книга, и ее цвет - это ее{' '}
+                        <Term id='property'>характеристика</Term>. Т.е у{' '}
+                        <Term id='class'>класса</Term> Книга есть{' '}
+                        <Term id='property'>характеристика</Term> Цвет. При составлении ее описания,
+                        мы скажем это так, будто у Книги есть{' '}
+                        <Term id='component'>составляющая</Term> Цвет (класса Цвета). Если так
+                        удобнее, можете сначала, для себя, записать их отдельно, а позже, когда вы
+                        перепишите их на языке программирования, их запись будет такой же, как у
+                        других <Term id='component'>составляющих</Term> класса.
                     </p>
                 </Section.Main>
                 <Section.Side>
@@ -147,22 +147,6 @@ export default () => (
                     </Task>
                     <Task>
                         <h2>Assignment #2</h2>
-                        <p>
-                            Create a structured definition of the components and properties for the
-                            Post class in Instagram, including as much detail as possible. Assign a
-                            title and class to each component.
-                        </p>
-                        <p>Below is an example of a detailed definition of components:</p>
-                        <Structure>
-                            <h4>Comment</h4>
-                            <ul>
-                                <li>user (of class User)</li>
-                                <li>creationTime (class Time)</li>
-                                <li>text(class Text)</li>
-                                <li>set of Likes (of class Likes)</li>
-                                <li>(optional) set of Replies (class Comment)</li>
-                            </ul>
-                        </Structure>
                         <Task.Button icon='chevron-right'>Start assignment</Task.Button>
                     </Task>
                 </Section.Main>
