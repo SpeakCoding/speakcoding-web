@@ -2,13 +2,14 @@ import React from 'react';
 import pt from 'prop-types';
 import s from './glossary.css';
 
-const Item = ({ data }) => {
+const Item = ({ id, data }) => {
     if (!data) return null;
 
     const { name, Definition, Additional } = data;
 
     return (
         <div className={s.item}>
+            <div id={id} className={s.anchor} />
             <p>
                 <b>
                     <i>{name}</i>
@@ -21,6 +22,7 @@ const Item = ({ data }) => {
 };
 
 Item.propTypes = {
+    id: pt.string.isRequired,
     data: pt.object.isRequired
 };
 
