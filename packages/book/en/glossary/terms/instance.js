@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const id = 'instance',
-    name = 'Instance of a class';
+    name = 'Instance of a class (object)';
 
 export const Definition = () => (
     <>

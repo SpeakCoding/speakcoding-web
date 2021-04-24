@@ -4,6 +4,10 @@
     border-top: 1px solid var(--c-grey-200);
 }
 
+.item.first {
+    margin-top: 36px;
+}
+
 .item p {
     margin: 0 0 16px 0;
 }

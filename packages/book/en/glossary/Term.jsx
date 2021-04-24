@@ -1,12 +1,12 @@
 import React from 'react';
 import pt from 'prop-types';
 import terms from './terms';
-import { Term as GlossaryTerm } from '../../components';
+import { Glossary } from '../../components';
 
 const Term = ({ id, children }) => (
-    <GlossaryTerm data={terms[id]} link='Open glossary' href={`/en/glossary/#${id}`}>
+    <Glossary.Term data={terms[id]} link='Open glossary' href={`/en/glossary/#${id}`}>
         {children}
-    </GlossaryTerm>
+    </Glossary.Term>
 );
 
 Term.propTypes = {

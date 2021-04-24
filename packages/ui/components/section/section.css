@@ -63,7 +63,8 @@
     margin: 0 0 16px;
 }
 
-.main ul {
+.main ul,
+.main ol {
     margin: 0 0 16px 0;
     padding: 0 0 0 24px;
 }

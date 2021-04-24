@@ -28,7 +28,7 @@ export const Additional = () => (
         <p>Example:</p>
         <Structure>
             <pre>
-                class Period <br />
+                Period class <br />
                 {'    '}component{' '}
                 <HL color='powder-blue' label='g-class-1'>
                     startDate

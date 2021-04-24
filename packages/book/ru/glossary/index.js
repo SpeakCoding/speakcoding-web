@@ -1,21 +1,18 @@
 import React from 'react';
 import { Section } from '@sc/ui';
 import Page from '../Page';
-import Item from './Item';
+import { Glossary } from '../../components';
+import terms from './terms';
 
-const Glossary = () => (
+const GlossaryPage = () => (
     <Page>
         <Section>
             <Section.Main>
                 <h1>Глоссарий</h1>
-                <Item id='class' />
-                <Item id='instance' />
-                <Item id='component' />
-                <Item id='property' />
-                <Item id='function' />
+                <Glossary data={terms} />
             </Section.Main>
         </Section>
     </Page>
 );
 
-export default Glossary;
+export default GlossaryPage;
