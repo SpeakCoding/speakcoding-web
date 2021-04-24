@@ -1,28 +1,31 @@
 import React from 'react';
 
 export const id = 'function',
-    name = 'Function';
+    name = 'Функция';
 
 export const Definition = () => (
     <>
-        a definition of the actions that can be performed with instances of a class. For example,
-        when defining the Post class, you may assign a function that allows the user to change the
-        text of the Post or to display how many times that post has been saved.
+        описание того, какие действия можно делать с экземплярами классов. Например, при описании
+        класса Постов вы можете задать функцию, которая позволит изменить текст этого Поста, или
+        сообщит, сколько раз этот пост был сохранен.
     </>
 );
 
 export const Additional = () => (
     <>
         <p>
-            Each function, whether it appears within a component class or independently, will
-            include the following elements in its definition:
+            У каждой функции, будь она внутри описания какого-то класса или сама по себе, будут
+            следующие элементы описания:
         </p>
         <ul>
-            <li>Title</li>
-            <li>Class to which it belongs</li>
-            <li>Sequences/list of operations executed when this function is performed</li>
-            <li>Arguments essential to the function being performed</li>
-            <li>Value class that it returns (e.g. number/text)</li>
+            <li>Название</li>
+            <li>Класс к которому она относится</li>
+            <li>
+                Последовательности/список операций, которые совершаются при выполнении этой функции
+                (их также называют телом функции)
+            </li>
+            <li>Вводные, которые необходимы для выполнения этой функции</li>
+            <li>Класс значения, которое она передает (число/текст/и тд)</li>
         </ul>
     </>
 );

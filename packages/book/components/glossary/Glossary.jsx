@@ -7,8 +7,8 @@ const Glossary = ({ data }) => {
     const ordered = useMemo(
         () =>
             Object.values(data).sort((a, b) => {
-                const nameA = a.name.replace(/[^\w]/g, ''),
-                    nameB = b.name.replace(/[^\w]/g, '');
+                const nameA = a.name.replace(/[^a-zа-яё\s]/gi, ''),
+                    nameB = b.name.replace(/[^a-zа-яё\s]/gi, '');
 
                 return nameA.localeCompare(nameB);
             }),
