@@ -22,6 +22,7 @@
 }
 
 .link {
+    margin-top: 4px;
     color: var(--bg-orange);
     text-decoration: underline;
 }

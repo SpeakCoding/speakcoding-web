@@ -1,4 +1,5 @@
 export Achievement from './components/achievement';
+export Breadcrumbs from './components/breadcrumbs';
 export Button from './components/button';
 export Callout from './components/callout';
 export DateTime from './components/datetime';

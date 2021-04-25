@@ -10,7 +10,7 @@ import Part6 from './6-components-properties';
 import Part7 from './7-using-classes';
 
 export default () => (
-    <Page>
+    <Page nav='Вводное слово'>
         <Part1 />
         <Section.Divider />
         <Part2 />

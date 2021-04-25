@@ -10,7 +10,8 @@
     fill: #333;
 }
 
-:global(.tippy-box) {
+:global(.tippy-content) {
+    padding: 16px;
     font: 500 var(--t-small);
     letter-spacing: 0.03em;
     white-space: pre-wrap;

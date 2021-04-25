@@ -1,0 +1,23 @@
+.box {
+    display: flex;
+    align-items: center;
+    font: var(--t-small);
+}
+
+.item {
+    font-weight: bold;
+}
+
+.item:last-of-type {
+    font-weight: normal;
+}
+
+.arrow {
+    height: 16px;
+    margin: 0 3px;
+    color: var(--c-primary-500);
+}
+
+.arrow:last-child {
+    display: none;
+}
