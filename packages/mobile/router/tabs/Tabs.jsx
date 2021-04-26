@@ -4,19 +4,22 @@ import classNames from 'classnames';
 import { Icon } from '@sc/ui';
 import NewPost from './NewPost';
 import s from './tabs.css';
+import { useApp } from '../../tools';
 
 const Tabs = ({ tab, hidden, switchTab, navigate }) => {
+    const { profile } = useApp();
+
     const goToLikes = useCallback(() => {
         switchTab('likes', {
             screen: 'likes',
-            params: { userid: localStorage.getItem('userid') }
+            params: { userid: profile.id }
         });
     }, []);
 
     const goToProfile = useCallback(() => {
         switchTab('profile', {
             screen: 'profile',
-            params: { userid: localStorage.getItem('userid') }
+            params: { userid: profile.id }
         });
     }, []);
 

@@ -1,13 +1,14 @@
 import React, { useCallback, useEffect } from 'react';
 import pt from 'prop-types';
 import { Button } from '@sc/ui/mobile';
-import { useAPI, useCacheState } from '../../tools';
+import { useAPI, useApp, useCacheState } from '../../tools';
 import s from './follow.css';
 
 const Follow = ({ userid, onClick }) => {
     const fetch = useAPI(),
+        { profile } = useApp(),
         [user, updateUser] = useCacheState('user', userid),
-        self = userid.toString() === localStorage.getItem('userid');
+        self = userid === profile.id;
 
     const init = async () => {
         if (user) return;

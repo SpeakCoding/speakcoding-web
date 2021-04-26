@@ -1,22 +1,15 @@
 /* eslint-disable no-param-reassign */
-import React, { forwardRef, useCallback, useEffect, useState } from 'react';
+import React, { forwardRef, useCallback, useState } from 'react';
 import pt from 'prop-types';
 import { Button } from '@sc/ui/mobile';
 import { Userpic } from '../../components';
-import { useAPI, useCacheState } from '../../tools';
+import { useAPI, useApp } from '../../tools';
 import s from './footer.css';
 
 const Footer = forwardRef(({ postid, onSubmit }, ref) => {
     const fetch = useAPI(),
-        userid = localStorage.getItem('userid'),
-        [user, updateUser] = useCacheState('user', userid),
+        { profile } = useApp(),
         [empty, setEmpty] = useState(true);
-
-    const init = async () => {
-        if (user) return;
-        const res = await fetch(`/users/${userid}/posts.json`, { method: 'GET' });
-        updateUser(res.data);
-    };
 
     const handleChange = useCallback(event => {
         setEmpty(event.target.value.trim().length === 0);
@@ -37,18 +30,14 @@ const Footer = forwardRef(({ postid, onSubmit }, ref) => {
             ref.current.value = '';
             setEmpty(true);
         },
-        [postid, user, onSubmit]
+        [postid, onSubmit]
     );
 
-    useEffect(() => {
-        init();
-    }, []);
-
-    if (!user) return null;
+    if (!profile) return null;
 
     return (
         <div className={s.box}>
-            <Userpic href={user.profile_picture} size={44} />
+            <Userpic href={profile.profile_picture} size={44} />
             <form className={s.form} onSubmit={handleSubmit}>
                 <input
                     ref={ref}

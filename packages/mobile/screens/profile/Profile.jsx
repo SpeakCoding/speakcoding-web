@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Icon } from '@sc/ui';
-import { useAPI, useCacheState, useRouter } from '../../tools';
+import { useAPI, useApp, useCacheState, useRouter } from '../../tools';
 import Header from './Header';
 import UserInfo from './UserInfo';
 import { PostsGrid } from '../../components';
@@ -10,10 +10,11 @@ import s from './profile.css';
 const Profile = () => {
     const { route, focused, navigate } = useRouter(),
         fetch = useAPI(),
+        { profile } = useApp(),
         [user, updateUser] = useCacheState('user', route.params.userid),
         [tab, setTab] = useState('posts'),
         [data, setData] = useState({ posts: [], tags: [] }),
-        self = route.params.userid?.toString() === localStorage.getItem('userid');
+        self = route.params.userid === profile.id;
 
     const initProfile = useCallback(async () => {
         const res = await fetch(`/users/${route.params.userid}.json`, { method: 'GET' });

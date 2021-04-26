@@ -2,7 +2,7 @@ const apigw = 'https://api.speakcoding.co';
 
 async function fetch(url, options) {
     const { body, anonymous, ...rest } = options || {},
-        token = localStorage.getItem('auth_token');
+        token = localStorage.getItem('mobile_auth_token');
 
     const init = {
         ...rest,

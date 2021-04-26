@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import pt from 'prop-types';
 import { ActionSheet } from '@sc/ui/mobile';
 import { DateTime, Icon } from '@sc/ui';
-import { useAPI, useCacheState, useRouter } from '../../tools';
+import { useAPI, useApp, useCacheState, useRouter } from '../../tools';
 import ActionIcon from './ActionIcon';
 import User from './User';
 import s from './post.css';
@@ -11,12 +11,13 @@ const msInDay = 24 * 60 * 60 * 1000;
 
 const Post = ({ id, scroll }) => {
     const fetch = useAPI(),
+        { profile } = useApp(),
         { navigate } = useRouter(),
         [post, updatePost, deletePost] = useCacheState('post', id),
         $node = useRef(null),
         scrolled = useRef(false),
         [menu, setMenu] = useState(false),
-        self = post?.user.id.toString() === localStorage.getItem('userid');
+        self = post?.user.id === profile.id;
 
     const toggleLike = useCallback(() => {
         const url = post.liked ? `/posts/${post.id}/unlike.json` : `/posts/${post.id}/like.json`;

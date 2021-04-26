@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useAPI } from './tools';
 import { Layout } from './components';
 import { Router, Screen } from './router';
@@ -28,23 +28,35 @@ import TagPeople from './screens/tag-people';
 const App = () => {
     const fetch = useAPI(),
         [key, setKey] = useState(0),
-        auth = !!localStorage.getItem('auth_token');
+        auth = !!localStorage.getItem('mobile_auth_token'),
+        [profile, setProfile] = useState(null);
 
     const context = useMemo(
         () => ({
+            profile,
             reset: () => {
                 fetch('/users/forget.json', { method: 'POST' });
-                localStorage.removeItem('auth_token');
-                localStorage.removeItem('userid');
+                localStorage.removeItem('mobile_auth_token');
                 setKey(Math.random());
             }
         }),
-        []
+        [profile]
     );
 
     const handleReset = useCallback(() => {
         if (window.confirm('Are you sure you want to log out?')) context.reset();
     }, []);
+
+    const initProfile = async () => {
+        const { data } = await fetch('/users/me.json', { method: 'GET' });
+        setProfile(data);
+    };
+
+    useEffect(() => {
+        if (auth) initProfile();
+    }, [auth]);
+
+    if (auth && !profile) return null;
 
     return (
         <app.Provider value={context}>
