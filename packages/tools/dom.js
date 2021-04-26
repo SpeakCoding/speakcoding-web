@@ -17,3 +17,17 @@ export function getCursorPosition(event) {
         y: event.clientY
     };
 }
+
+export function injectScript(src, dest = document.body) {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+
+        script.src = src;
+        script.async = true;
+        script.type = 'text/javascript';
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error(`${src} load failed`));
+
+        dest.appendChild(script);
+    });
+}
