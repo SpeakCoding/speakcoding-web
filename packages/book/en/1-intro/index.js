@@ -10,7 +10,7 @@ import Part6 from './6-components-properties';
 import Part7 from './7-using-classes';
 
 export default () => (
-    <Page nav='Introduction'>
+    <Page nav='Coding is a language. Parts of speech: classes and components'>
         <Part1 />
         <Section.Divider />
         <Part2 />

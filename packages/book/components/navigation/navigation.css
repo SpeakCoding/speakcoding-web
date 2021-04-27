@@ -10,7 +10,7 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    width: 561px;
+    min-width: 561px;
     margin: -13px 0 0 -64px;
     padding: 16px 0;
     border-radius: 10px;
@@ -63,7 +63,12 @@
     cursor: pointer;
 }
 
-.item:hover {
+.item.disabled {
+    color: var(--c-grey-500);
+    cursor: not-allowed;
+}
+
+.item:not(.disabled):hover {
     background-color: var(--c-grey-100);
 }
 
