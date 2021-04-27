@@ -14,9 +14,7 @@ export default () => (
         <Part1 />
         <Section.Divider />
         <Part2 />
-        <Section.Divider />
         <Part3 />
-        <Section.Divider />
         <Part4 />
         <Section.Divider />
         <Part5 />

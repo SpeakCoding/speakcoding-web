@@ -1,5 +1,5 @@
 import React from 'react';
-import { Achievement, Hint, Section, Structure } from '@sc/ui';
+import { Card, Hint, Section, Structure } from '@sc/ui';
 import Term from '../../glossary/Term';
 import s from './style.css';
 
@@ -107,14 +107,14 @@ export default () => (
                     a third structural element, another ‘part’ of its ‘language’, namely the{' '}
                     <Term id='function'>function</Term>.
                 </p>
-                <Achievement>
-                    <h2>New skill!</h2>
-                    You can now add detail to your structured program description to make it more
-                    comprehensive. You can assign a class and title to each component described,
-                    thus fully defining the ‘skeleton’ of the product-to-be.
-                </Achievement>
             </Section.Main>
             <Section.Side />
         </Section>
+        <Card mode='skill'>
+            <h2>New skill!</h2>
+            You can now add detail to your structured program description to make it more
+            comprehensive. You can assign a class and title to each component described, thus fully
+            defining the ‘skeleton’ of the product-to-be.
+        </Card>
     </>
 );

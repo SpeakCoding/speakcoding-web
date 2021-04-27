@@ -2,6 +2,7 @@ export Achievement from './components/achievement';
 export Breadcrumbs from './components/breadcrumbs';
 export Button from './components/button';
 export Callout from './components/callout';
+export Card from './components/card';
 export DateTime from './components/datetime';
 export FileUpload from './components/fileupload';
 export HL from './components/highlight';

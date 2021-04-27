@@ -49,18 +49,5 @@ export default () => (
                 </TextToCode>
             </Section.Main>
         </Section>
-        <Section>
-            <Section.Main>
-                <p>
-                    Please ignore unfamiliar words. Instead,{' '}
-                    <b>
-                        note how the text from the structured definition (left column) is
-                        transformed into code (right column)
-                    </b>
-                    ; this is the essence of programming.
-                </p>
-            </Section.Main>
-            <Section.Side />
-        </Section>
     </>
 );

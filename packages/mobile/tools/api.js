@@ -1,7 +1,7 @@
 import { createAPI } from '@sc/tools/api';
 
 const fetch = createAPI({
-    apigw: 'https://api.speakcoding.co',
+    apigw: 'https://instagram.speakcoding.co',
     tokenName: 'mobile_auth_token'
 });
 

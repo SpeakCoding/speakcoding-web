@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react';
-import { HL, Img, Section, Structure, Task } from '@sc/ui';
+import { Card, HL, Img, Section, Structure } from '@sc/ui';
 import Term from '../../glossary/Term';
-import img1 from '../../../assets/5-class-period.svg';
+import img1 from '../../../assets/5-class-period-ru.svg';
 import img2 from '../../../assets/6-human.svg';
 import s from './style.css';
 
@@ -68,7 +68,7 @@ export default () => (
                 <p>
                     Для описания некоторых <Term id='class'>классов</Term>, кроме списка{' '}
                     <Term id='component'>составляющих</Term>, также может потребоваться список
-                    потенциальных <Term id='property'>характеристик</Term> этих объектов.
+                    потенциальных <Term id='characteristic'>характеристик</Term> этих объектов.
                 </p>
                 <p>
                     Например, у User (Аккаунта) может быть характеристика публичность/закрытость,
@@ -83,75 +83,76 @@ export default () => (
             </Section.Side>
         </Section>
         <Section>
-            <Section.Block>
-                <Section.Main>
-                    <h2>Пример</h2>
-                    <div className={s.people}>
-                        <div>
-                            <HL color='light-sky-blue' active>
-                                Люди
-                            </HL>
-                        </div>
-                        <div>// составляющие</div>
-                        <div>
-                            <HL color='plum' active>
-                                Руки
-                            </HL>
-                        </div>
-                        <div>
-                            <HL color='orange' active>
-                                Ноги
-                            </HL>
-                        </div>
-                        <div>...</div>
-                        <div>характеристики (записываются так же, как и составляющие)</div>
-                        <div>
-                            <HL color='aquamarine'>Возраст</HL>
-                        </div>
-                        <div>
-                            <HL color='green-yellow'>Рост</HL>
-                        </div>
-                        <div>
-                            <HL color='thistle'>Пол</HL>
-                        </div>
-                        <div>...</div>
+            <Section.Main>
+                <h2>Пример</h2>
+                <div className={s.people}>
+                    <div>
+                        <HL color='light-sky-blue' active>
+                            Люди
+                        </HL>
                     </div>
-                    <p>
-                        При этом в языках программирования при описании классов об их{' '}
-                        <Term id='property'>характеристиках</Term> пишут так же, как об их{' '}
-                        <Term id='component'>составляющих</Term>.
-                    </p>
-                    <p>
-                        Например, у нас есть зеленая книга, и ее цвет - это ее{' '}
-                        <Term id='property'>характеристика</Term>. Т.е у{' '}
-                        <Term id='class'>класса</Term> Книга есть{' '}
-                        <Term id='property'>характеристика</Term> Цвет. При составлении ее описания,
-                        мы скажем это так, будто у Книги есть{' '}
-                        <Term id='component'>составляющая</Term> Цвет (класса Цвета). Если так
-                        удобнее, можете сначала, для себя, записать их отдельно, а позже, когда вы
-                        перепишите их на языке программирования, их запись будет такой же, как у
-                        других <Term id='component'>составляющих</Term> класса.
-                    </p>
-                </Section.Main>
-                <Section.Side>
-                    <Section.Sticky center>
-                        <Img src={img2} />
-                    </Section.Sticky>
-                </Section.Side>
-            </Section.Block>
-            <Section.Block>
-                <Section.Main>
-                    <Task>
-                        <h2>Quiz #2</h2>
-                        <Task.Button icon='question'>Complete quiz</Task.Button>
-                    </Task>
-                    <Task>
-                        <h2>Assignment #2</h2>
-                        <Task.Button icon='chevron-right'>Start assignment</Task.Button>
-                    </Task>
-                </Section.Main>
-                <Section.Side />
-            </Section.Block>
+                    <div>// составляющие</div>
+                    <div>
+                        <HL color='plum' active>
+                            Руки
+                        </HL>
+                    </div>
+                    <div>
+                        <HL color='orange' active>
+                            Ноги
+                        </HL>
+                    </div>
+                    <div>...</div>
+                    <div>характеристики (записываются так же, как и составляющие)</div>
+                    <div>
+                        <HL color='aquamarine'>Возраст</HL>
+                    </div>
+                    <div>
+                        <HL color='green-yellow'>Рост</HL>
+                    </div>
+                    <div>
+                        <HL color='thistle'>Пол</HL>
+                    </div>
+                    <div>...</div>
+                </div>
+                <p>
+                    При этом в языках программирования при описании классов об их{' '}
+                    <Term id='characteristic'>характеристиках</Term> пишут так же, как об их{' '}
+                    <Term id='component'>составляющих</Term>.
+                </p>
+                <p>
+                    Например, у нас есть зеленая книга, и ее цвет - это ее{' '}
+                    <Term id='characteristic'>характеристика</Term>. Т.е у{' '}
+                    <Term id='class'>класса</Term> Книга есть{' '}
+                    <Term id='characteristic'>характеристика</Term> Цвет. При составлении ее
+                    описания, мы скажем это так, будто у Книги есть{' '}
+                    <Term id='component'>составляющая</Term> Цвет (класса Цвета). Если так удобнее,
+                    можете сначала, для себя, записать их отдельно, а позже, когда вы перепишите их
+                    на языке программирования, их запись будет такой же, как у других{' '}
+                    <Term id='component'>составляющих</Term> класса.
+                </p>
+            </Section.Main>
+            <Section.Side>
+                <Section.Sticky center>
+                    <Img src={img2} />
+                </Section.Sticky>
+            </Section.Side>
         </Section>
+        <Card mode='quiz'>
+            <h2>Тест №2</h2>
+            Описание класса, составляющие и характеристики
+            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLScoo1vkiq4bAjJsU5kyDeLAr4PnHPIFssLbOXpYURCfrBOIiA/viewform?usp=sf_link'>
+                Пройти
+            </Card.Button>
+        </Card>
+        <Card mode='assignment'>
+            <h2>Задание №2</h2>
+            Опишите в структурном виде максимально детальный список составляющих и характеристик{' '}
+            <b>для класса Post</b> в Инстаграме. Для всех составляющих и характеристик придумайте их
+            названия и классы.
+            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLSf30DDnjNqIXlkSQ4rrlpifm_mF96mcD0WfYKTTcDnaZ5Gniw/viewform?usp=sf_link'>
+                Пройти
+            </Card.Button>
+        </Card>
     </>
 );

@@ -5,6 +5,7 @@ import { Header, Layout, Navigation } from '../components';
 
 const Page = ({ nav, children }) => (
     <Layout>
+        <Layout.GlossaryLink href='/ru/glossary'>Глоссарий</Layout.GlossaryLink>
         <Header>
             <Breadcrumbs>
                 <Breadcrumbs.Item>

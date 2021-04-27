@@ -50,14 +50,5 @@ export default () => (
                 </TextToCode>
             </Section.Main>
         </Section>
-        <Section>
-            <Section.Main>
-                <p>
-                    !Не обращайте внимания на слова, которых вы не знаете. Просто заметьте как текст
-                    из описания превращается в код!
-                </p>
-            </Section.Main>
-            <Section.Side />
-        </Section>
     </>
 );

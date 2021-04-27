@@ -7,14 +7,14 @@ class [[Feed]](orange c1-b1-1) {
 }
 
 class [[Post]](green c1-b1-3) {
-    [[user]](wheat c1-b1-4) [[User]](wheat c1-b1-4)
-    [[time]](green-yellow c1-b1-9) [[Time]](green-yellow c1-b1-9)
-    [[image]](aquamarine c1-b1-5) [[Image]](aquamarine c1-b1-5)
-    [[setOfImages]](aquamarine c1-b1-5) [[[]Image]](aquamarine c1-b1-5)
-    [[video]](aquamarine c1-b1-5) [[Video]](aquamarine c1-b1-5)
-    [[setOfLikes]](steel-blue c1-b1-8) [[[]Like]](steel-blue c1-b1-8)
-    [[caption]](grey c1-b1-6) [[Text]](grey c1-b1-6)
-    [[setOfComments]](green-yellow c1-b1-7) [[[]Comment]](green-yellow c1-b1-7)
+    [[user]](wheat c1-b1-4) User
+    [[time]](green-yellow c1-b1-9) Time
+    [[image]](aquamarine c1-b1-5) Image
+    [[setOfImages]](aquamarine c1-b1-5) []Image
+    [[video]](aquamarine c1-b1-5) Video
+    [[setOfLikes]](steel-blue c1-b1-8) []Like
+    [[caption]](grey c1-b1-6) Text
+    [[setOfComments]](green-yellow c1-b1-7) []Comment
 }
 
 class [[Image]](aquamarine c1-b1-10) {
