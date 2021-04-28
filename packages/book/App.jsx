@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useAPI } from './tools';
+import { getDefaultCourse } from './tools/course';
 import Home from './Home';
 import Login from './auth/Login';
 import * as EN from './en';
@@ -13,24 +14,33 @@ const App = () => {
 
     const initProfile = async () => {
         const { data } = await fetch('/users/me.json', { method: 'GET' });
+
+        if (!data.last_course_id) {
+            data.last_course_id = getDefaultCourse();
+            fetch('/users/me.json', {
+                method: 'PUT',
+                body: { user: { last_course_id: data.last_course_id } }
+            });
+        }
+
         setProfile(data);
     };
 
     useEffect(() => {
-        if (auth) initProfile();
-    }, [auth]);
+        if (auth && !profile) initProfile();
+    }, [auth, profile]);
 
-    // if (!auth) return <Login onSuccess={initProfile} />;
-    // if (!profile) return null;
+    if (!auth) return <Login onSuccess={initProfile} />;
+    if (!profile) return null;
 
     return (
         <BrowserRouter>
             <Switch>
-                <Route path='/' exact component={Home} />
                 <Route path='/en/chapter-1' component={EN.Intro} />
                 <Route path='/en/glossary' component={EN.Glossary} />
                 <Route path='/ru/chapter-1' component={RU.Intro} />
                 <Route path='/ru/glossary' component={RU.Glossary} />
+                <Route component={Home} />
             </Switch>
         </BrowserRouter>
     );
