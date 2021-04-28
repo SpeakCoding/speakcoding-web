@@ -1,0 +1,77 @@
+@import "../../theme.css";
+
+:root {
+    --drawer-animation-in: 400ms var(--animation-timing-function);
+    --drawer-animation-out: var(--animation);
+}
+
+.root {
+    position: absolute;
+    z-index: var(--l-drawer);
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    transition: visibility var(--drawer-animation-out);
+}
+
+.container.in {
+    visibility: visible;
+    transition: visibility var(--drawer-animation-in);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: opacity var(--drawer-animation-out);
+}
+
+.container.in .overlay {
+    opacity: 1;
+    transition: opacity var(--drawer-animation-in);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 400px;
+    transform: translateX(100%);
+    padding: 0 40px;
+    box-sizing: border-box;
+    background-color: var(--c-white);
+    transition: transform var(--drawer-animation-out);
+    font: var(--t-base);
+}
+
+.container.in .content {
+    transform: translateX(0);
+    transition: transform var(--drawer-animation-in);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: opacity var(--animation);
+}
+
+.close:hover {
+    opacity: 1;
+}

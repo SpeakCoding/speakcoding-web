@@ -1,6 +1,14 @@
-export function getDefaultCourse() {
-    const supported = ['en', 'ru'],
-        lang = window.navigator.language.slice(0, 2);
+const scheme = {
+    en: {
+        ch1: { q1: false, a1: false, q2: false, a2: false }
+    },
+    ru: {
+        ch1: { q1: false, a1: false, q2: false, a2: false }
+    }
+};
 
-    return supported.includes(lang) ? lang : supported[0];
+export function getDefaultCourse() {
+    const lang = window.navigator.language.slice(0, 2);
+
+    return lang in scheme ? lang : 'en';
 }

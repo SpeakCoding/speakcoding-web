@@ -10,5 +10,13 @@
     border-bottom: 1px solid var(--c-grey-200);
     box-sizing: border-box;
     background-color: var(--c-white);
-    z-index: var(--l-notification);
+    z-index: var(--l-drawer);
+}
+
+.bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: var(--c-primary-500);
 }

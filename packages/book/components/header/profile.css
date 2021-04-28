@@ -1,0 +1,51 @@
+.control {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font: 700 var(--t-small);
+    cursor: pointer;
+}
+
+.userpic {
+    width: 32px;
+    height: 32px;
+    margin: 2px 2px 2px 10px;
+    border: 2px solid var(--c-white);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--c-primary-500);
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ava {
+    width: 120px;
+    height: 120px;
+    margin: 80px 0 32px;
+    border-radius: 50%;
+}
+
+.name {
+    margin-bottom: 8px;
+    font: var(--t-h1);
+}
+
+.email {
+    flex: 1;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--c-grey-500);
+}
+
+.logout {
+    margin-bottom: 40px;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--c-grey-500);
+    cursor: pointer;
+}
