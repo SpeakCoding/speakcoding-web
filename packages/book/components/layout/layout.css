@@ -18,10 +18,7 @@
 }
 
 .logo {
-    width: 44px;
-    height: 44px;
-    margin: 6px;
-    background-image: url(./logo.svg);
+    padding: 6px;
 }
 
 .glossary {

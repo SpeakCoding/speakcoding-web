@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Icon, Link } from '@sc/ui';
+import Logo from '../logo';
 import { context } from './utils';
 import s from './layout.css';
 
@@ -18,7 +19,9 @@ const Layout = ({ children }) => {
             </div>
             <div className={s.menu}>
                 <Link href='/'>
-                    <div className={s.logo} />
+                    <div className={s.logo}>
+                        <Logo size={44} />
+                    </div>
                 </Link>
                 <div ref={$menu} />
                 <div className={s.help}>

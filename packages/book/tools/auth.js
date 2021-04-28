@@ -8,9 +8,7 @@ export async function init() {
     const { gapi } = window;
 
     gapi.load('auth2', () => {
-        gapi.auth2.init({ client_id: clientid }).then(GoogleAuth => {
-            console.log(GoogleAuth);
-        });
+        gapi.auth2.init({ client_id: clientid });
     });
 }
 
@@ -22,7 +20,7 @@ export async function signIn() {
         scope: 'profile email'
     });
 
-    console.log(user);
+    return user.getAuthResponse().id_token;
 }
 
 export function signOut() {
