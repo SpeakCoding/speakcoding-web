@@ -6,19 +6,19 @@ import s from './glossary.css';
 const Term = ({ data, link, href, children }) => {
     if (!data) return children;
 
-    const { name, Definition } = data;
+    const { Definition } = data;
 
     return (
         <Hint>
             {children}
             <Hint.Tooltip>
-                {name}: <Definition />
+                <div className={s.tooltip}>
+                    <Definition />
+                </div>
                 {href && link && (
-                    <div>
-                        <Link href={href}>
-                            <div className={s.link}>{link}</div>
-                        </Link>
-                    </div>
+                    <Link href={href}>
+                        <div className={s.link}>{link}</div>
+                    </Link>
                 )}
             </Hint.Tooltip>
         </Hint>

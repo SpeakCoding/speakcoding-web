@@ -4,7 +4,10 @@ export const id = 'interface',
     name = 'Interface';
 
 export const Definition = () => (
-    <>a number of display files (Views & ViewControllers) relate to the interface.</>
+    <p>
+        <em>{name}</em> - a number of display files (Views & ViewControllers) relate to the
+        interface.
+    </p>
 );
 
 export const Additional = () => (

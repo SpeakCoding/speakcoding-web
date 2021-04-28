@@ -1,16 +1,16 @@
 import React from 'react';
 
 export const id = 'constructor',
-    name = 'Creation (constructor) function for an instance of a class';
+    name = 'Creation (constructor) function';
 
 export const Definition = () => (
-    <>
-        a function, with a hardcoded title, into which data about a particular instance of a
-        previously defined class is transferred via inputs (arguments). The function’s title is
-        hardcoded for each particular language. In some languages it takes the class’s title, while
-        in others it uses a different word; for example, in Python it is called __init__. This can
-        be Googled for the specific language being used.
-    </>
+    <p>
+        <em>{name}</em> for an instance of a class - a function, with a hardcoded title, into which
+        data about a particular instance of a previously defined class is transferred via inputs
+        (arguments). The function’s title is hardcoded for each particular language. In some
+        languages it takes the class’s title, while in others it uses a different word; for example,
+        in Python it is called __init__. This can be Googled for the specific language being used.
+    </p>
 );
 
 export const Additional = () => (

@@ -17,15 +17,10 @@ const Glossary = ({ data }) => {
 
     return (
         <>
-            {ordered.map(({ id, name, Definition, Additional }, i) => (
+            {ordered.map(({ id, Definition, Additional }, i) => (
                 <div key={id} className={classNames(s.item, i === 0 && s.first)}>
                     <div id={id} className={s.anchor} />
-                    <p>
-                        <b>
-                            <i>{name}</i>
-                        </b>{' '}
-                        - <Definition />
-                    </p>
+                    <Definition />
                     {Additional && <Additional />}
                 </div>
             ))}

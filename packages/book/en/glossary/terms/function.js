@@ -4,11 +4,11 @@ export const id = 'function',
     name = 'Function';
 
 export const Definition = () => (
-    <>
-        a definition of the actions that can be performed with instances of a class. For example,
-        when defining the Post class, you may assign a function that allows the user to change the
-        text of the Post or to display how many times that post has been saved.
-    </>
+    <p>
+        <em>{name}</em> - a definition of the actions that can be performed with instances of a
+        class. For example, when defining the Post class, you may assign a function that allows the
+        user to change the text of the Post or to display how many times that post has been saved.
+    </p>
 );
 
 export const Additional = () => (

@@ -4,11 +4,11 @@ export const id = 'long-term-data-storage',
     name = 'Long-term data storage';
 
 export const Definition = () => (
-    <>
-        data storage that a program can access to ‘restore’ any requisite information about the
-        program’s most recent state. For example, in Instagram we store information about the latest
-        posts that have received comments.
-    </>
+    <p>
+        <em>{name}</em> - data storage that a program can access to ‘restore’ any requisite
+        information about the program’s most recent state. For example, in Instagram we store
+        information about the latest posts that have received comments.
+    </p>
 );
 
 export const Additional = () => (

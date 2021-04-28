@@ -4,7 +4,11 @@ import { Structure } from '@sc/ui';
 export const id = 'function-call',
     name = 'Вызов (обращение к) функции';
 
-export const Definition = () => <>место в коде, где мы вызываем ранее описанную функцию.</>;
+export const Definition = () => (
+    <>
+        <em>{name}</em> - место в коде, где мы вызываем ранее описанную функцию.
+    </>
+);
 
 export const Additional = () => (
     <>

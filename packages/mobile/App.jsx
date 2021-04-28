@@ -34,6 +34,7 @@ const App = () => {
     const context = useMemo(
         () => ({
             profile,
+            setProfile,
             reset: () => {
                 fetch('/users/forget.json', { method: 'POST' });
                 localStorage.removeItem('mobile_auth_token');

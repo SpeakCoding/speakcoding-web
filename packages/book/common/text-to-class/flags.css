@@ -56,3 +56,35 @@
 .step:last-child .bar {
     display: none;
 }
+
+.hint {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-top: 12px;
+    padding: 9px 16px;
+    border-radius: 5px;
+    background-color: var(--bg-orange);
+    font-size: 17px;
+    line-height: 20px;
+    color: var(--c-black);
+    white-space: nowrap;
+    transform: translateX(-50%);
+    animation: hint-oscillate 800ms ease-in-out alternate infinite;
+}
+
+.hint::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    width: 13px;
+    height: 6px;
+    margin-left: -7px;
+    background-image: url(./hint-triangle.svg);
+}
+
+@keyframes hint-oscillate {
+    0% { margin-top: 12px; }
+    100% { margin-top: 20px; }
+}

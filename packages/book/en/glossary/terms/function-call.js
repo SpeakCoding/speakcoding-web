@@ -5,7 +5,9 @@ export const id = 'function-call',
     name = 'Function call';
 
 export const Definition = () => (
-    <>a point in the code where we call a previously described function.</>
+    <p>
+        <em>{name}</em> - a point in the code where we call a previously described function.
+    </p>
 );
 
 export const Additional = () => (

@@ -5,7 +5,10 @@ export const id = 'function-description',
     name = 'Function description';
 
 export const Definition = () => (
-    <>a point in the code where we describe a function’s key elements and steps in detail.</>
+    <p>
+        <em>{name}</em> - a point in the code where we describe a function’s key elements and steps
+        in detail.
+    </p>
 );
 
 export const Additional = () => (

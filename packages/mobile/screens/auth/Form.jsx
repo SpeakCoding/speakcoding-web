@@ -1,12 +1,13 @@
 import React, { useCallback, useState } from 'react';
 import pt from 'prop-types';
 import { Button, TextInput } from '@sc/ui/mobile';
-import { useAPI } from '../../tools';
+import { useAPI, useApp } from '../../tools';
 import { parseError } from './utils';
 import s from './auth.css';
 
 const Form = ({ action, submitText, onSubmit }) => {
     const fetch = useAPI(),
+        { setProfile } = useApp(),
         [loading, setLoading] = useState(false),
         [error, setError] = useState(null);
 
@@ -37,6 +38,7 @@ const Form = ({ action, submitText, onSubmit }) => {
             if (res.meta?.authentication_token)
                 localStorage.setItem('mobile_auth_token', res.meta.authentication_token);
             if (res.data) {
+                setProfile(res.data);
                 onSubmit(res.data);
             }
         },
