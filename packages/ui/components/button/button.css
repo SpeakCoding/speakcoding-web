@@ -9,7 +9,6 @@
     border-radius: 8px;
     background-color: var(--c-primary-500);
     font: 500 var(--t-small);
-    color: var(--c-white);
     cursor: pointer;
     transition: background-color var(--animation);
 }
@@ -20,6 +19,12 @@
 
 .box:active {
     background-color: var(--c-primary-500);
+}
+
+.box.white,
+.box.white:hover,
+.box.white:active {
+    background-color: var(--c-white);
 }
 
 .box.small {

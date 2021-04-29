@@ -6,11 +6,11 @@ import s from './tag.css';
 const Tag = ({ color, children }) => <div className={classNames(s.box, s[color])}>{children}</div>;
 
 Tag.propTypes = {
-    color: pt.oneOf(['blue', 'grey'])
+    color: pt.oneOf(['primary', 'grey'])
 };
 
 Tag.defaultProps = {
-    color: 'blue'
+    color: 'primary'
 };
 
 export default Tag;

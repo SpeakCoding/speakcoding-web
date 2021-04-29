@@ -38,11 +38,6 @@
     justify-content: center;
 }
 
-.sticky img {
-    position: sticky;
-    top: 0;
-}
-
 .badge {
     margin-bottom: 8px;
     font: var(--t-tiny);

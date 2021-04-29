@@ -9,7 +9,7 @@ const Button = ({ value, children }) => {
 
     return (
         <div className={s.button} onClick={() => setTab(value)}>
-            <Tag color={tab === value ? 'blue' : 'grey'}>{children}</Tag>
+            <Tag color={tab === value ? 'primary' : 'grey'}>{children}</Tag>
         </div>
     );
 };

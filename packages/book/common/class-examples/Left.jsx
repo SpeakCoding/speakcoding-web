@@ -6,7 +6,7 @@ import s from './example.css';
 const Left = ({ label }) => (
     <>
         <div className={s.writing}>
-            <Tag color='blue'>{label}</Tag>
+            <Tag>{label}</Tag>
         </div>
         <div className={s.structure}>
             {/* prettier-ignore */}

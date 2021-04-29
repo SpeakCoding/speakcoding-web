@@ -35,11 +35,11 @@
 }
 
 .box.assignment {
-    background-color: var(--bg-turquoise);
+    background-color: var(--bg-aquamarine);
 }
 
 .box.quiz {
-    background-color: var(--bg-plum);
+    background-color: var(--c-primary-500);
 }
 
 .box.skill {

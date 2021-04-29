@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { Drawer } from '@sc/ui';
 import { useApp } from '../../tools';
-// import { signOut } from '../../tools/auth';
+import L from '../localize';
 import s from './profile.css';
 
 const Profile = () => {
@@ -30,7 +30,8 @@ const Profile = () => {
                     <div className={s.name}>{profile.name}</div>
                     <div className={s.email}>{profile.email}</div>
                     <div className={s.logout} onClick={logout}>
-                        Log out
+                        <L book='en'>Log out</L>
+                        <L book='ru'>Выйти</L>
                     </div>
                 </div>
             </Drawer>

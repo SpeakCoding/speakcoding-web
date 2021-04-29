@@ -18,7 +18,7 @@ const Button = ({ icon, size, variant, children }) => (
 Button.propTypes = {
     icon: pt.string,
     size: pt.oneOf(['default', 'small']),
-    variant: pt.oneOf(['contained', 'rounded'])
+    variant: pt.oneOf(['contained', 'rounded', 'white'])
 };
 
 Button.defaultProps = {

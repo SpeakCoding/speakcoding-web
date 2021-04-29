@@ -65,7 +65,7 @@ module.exports = {
     },
     font() {
         return {
-            test: /\.ttf$/,
+            test: /\.(ttf|otf)$/,
             type: 'asset/resource'
         };
     },

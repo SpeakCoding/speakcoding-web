@@ -1,1 +1,3 @@
-export const z = 1;
+import App from './App';
+
+export default App;

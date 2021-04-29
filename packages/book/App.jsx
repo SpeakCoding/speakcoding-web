@@ -34,7 +34,6 @@ const App = () => {
     }, [auth, profile]);
 
     if (!auth) return <Login onSuccess={initProfile} />;
-    if (!profile) return null;
 
     return (
         <app.Provider value={context}>

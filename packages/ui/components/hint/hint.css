@@ -1,7 +1,7 @@
 @import "../../theme.css";
 
 .word {
-    background-color: rgba(var(--c-primary-500-rgb), 0.1);
+    background-color: rgba(var(--c-primary-500-rgb), 0.2);
     border-bottom: 1px dashed var(--c-primary-500);
     cursor: help;
 }

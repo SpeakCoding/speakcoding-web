@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Img, Section, Structure } from '@sc/ui';
-import img from '../../../assets/2-class-post.png';
+import img from '../../../assets/2-class-tweet.svg';
 
 export default () => (
     <>

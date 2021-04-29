@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card, Hint, Section, Structure } from '@sc/ui';
+import { Card, Hint, Img, Section, Structure } from '@sc/ui';
 import Term from '../../glossary/Term';
+import img from '../../../assets/8-var-types-ru.svg';
 import s from './style.css';
 
 export default () => (
@@ -59,7 +60,11 @@ export default () => (
                     кнопок, можно импортировать стандартный класс и использовать его.
                 </p>
             </Section.Main>
-            <Section.Side />
+            <Section.Side>
+                <Section.Sticky>
+                    <Img src={img} />
+                </Section.Sticky>
+            </Section.Side>
         </Section>
         <Section>
             <Section.Main>

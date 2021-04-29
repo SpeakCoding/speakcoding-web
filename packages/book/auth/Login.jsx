@@ -37,7 +37,9 @@ const Login = ({ onSuccess }) => {
 
     return (
         <div className={s.box}>
-            <Logo size={80} />
+            <div className={s.logo}>
+                Speak <Logo size={80} /> Coding
+            </div>
             <div className={s.content}>
                 <div className={s.title}>Sign in</div>
                 <div className={s.message}>

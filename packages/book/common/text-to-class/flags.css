@@ -64,7 +64,7 @@
     margin-top: 12px;
     padding: 9px 16px;
     border-radius: 5px;
-    background-color: var(--bg-orange);
+    background-color: var(--c-primary-500);
     font-size: 17px;
     line-height: 20px;
     color: var(--c-black);

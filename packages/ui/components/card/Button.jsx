@@ -14,7 +14,7 @@ const CardButton = ({ href, children }) => {
     return createPortal(
         <div className={s.action}>
             <Link href={href} blank>
-                <Button icon='chevron-right' size='small'>
+                <Button icon='chevron-right' size='small' variant='white'>
                     {children}
                 </Button>
             </Link>
