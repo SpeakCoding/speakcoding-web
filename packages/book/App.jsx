@@ -33,8 +33,8 @@ const App = () => {
         if (auth && !profile) initProfile();
     }, [auth, profile]);
 
-    // if (!auth) return <Login onSuccess={initProfile} />;
-    // if (!profile) return null;
+    if (!auth) return <Login onSuccess={initProfile} />;
+    if (!profile) return null;
 
     return (
         <app.Provider value={context}>

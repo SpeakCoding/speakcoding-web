@@ -16,7 +16,7 @@ const Login = ({ onSuccess }) => {
 
             const res = await fetch('/sign_in/google.json', {
                 method: 'POST',
-                body: { user: { id_token: googleToken } }
+                body: { id_token: googleToken }
             });
 
             if (res.meta?.authentication_token)
