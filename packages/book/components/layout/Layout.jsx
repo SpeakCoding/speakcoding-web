@@ -30,6 +30,7 @@ const Layout = ({ phone, children }) => {
                     <Icon name='lifebuoy' size={24} />
                 </div>
             </div>
+            {/*{phone && <Phone />}*/}
         </div>
     );
 };

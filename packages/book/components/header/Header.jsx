@@ -2,15 +2,14 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import pt from 'prop-types';
 import { debounce, throttle } from '@sc/tools/function';
 import { useLocationState } from '@sc/ui/hooks';
-import { useAPI, useApp } from '../../tools';
+import { useApp } from '../../tools';
 import Profile from './Profile';
 import s from './header.css';
 
 const $html = document.getElementsByTagName('html')[0];
 
 const Header = ({ chapter, bar, children }) => {
-    const { profile, courses, updateCourse } = useApp(),
-        fetch = useAPI(),
+    const { profile, updateProfile, courses, updateCourse } = useApp(),
         $bar = useRef(),
         [{ params }] = useLocationState({ path: '/:id' }),
         course = courses[params.id];
@@ -48,12 +47,8 @@ const Header = ({ chapter, bar, children }) => {
         if (!chapter) window.scrollTo(0, 0);
         if (chapter && chapter === course?.pos?.chapter) window.scrollTo(0, course.pos.top);
 
-        if (chapter && params.id !== profile.last_course_id) {
-            fetch('/users/me.json', {
-                method: 'PUT',
-                body: { user: { last_course_id: params.id } }
-            });
-        }
+        if (chapter && params.id !== profile.last_course_id)
+            updateProfile({ last_course_id: params.id });
     }, []);
 
     return (

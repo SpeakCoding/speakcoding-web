@@ -13,7 +13,23 @@ const App = () => {
         [profile, setProfile] = useState(null),
         { courses, defaultCourse, loadCourses, updateCourse } = useCourses();
 
-    const context = useMemo(() => ({ profile, courses, updateCourse }), [profile, courses]);
+    const updateProfile = async payload => {
+        const { data } = await fetch('/users/me.json', {
+            method: 'PUT',
+            body: { user: payload }
+        });
+        setProfile(data);
+    };
+
+    const context = useMemo(
+        () => ({
+            profile,
+            updateProfile,
+            courses,
+            updateCourse
+        }),
+        [profile, courses]
+    );
 
     const initProfile = async () => {
         const [{ data }] = await Promise.all([
@@ -21,15 +37,8 @@ const App = () => {
             loadCourses()
         ]);
 
-        if (!data.last_course_id) {
-            data.last_course_id = defaultCourse;
-            fetch('/users/me.json', {
-                method: 'PUT',
-                body: { user: { last_course_id: data.last_course_id } }
-            });
-        }
-
-        setProfile(data);
+        if (data.last_course_id) setProfile(data);
+        else updateProfile({ last_course_id: defaultCourse });
     };
 
     useEffect(() => {
