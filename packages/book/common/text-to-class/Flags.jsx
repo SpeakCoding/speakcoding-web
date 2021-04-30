@@ -2,11 +2,19 @@
 import React, { useState } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
+import { L } from '../../components';
 import s from './flags.css';
 
 const Step = ({ active, current, hint, onClick }) => (
     <div className={classNames(s.step, active && s.active, current && s.current)} onClick={onClick}>
-        <div className={s.circle}>{hint && <div className={s.hint}>Click here</div>}</div>
+        <div className={s.circle}>
+            {hint && (
+                <div className={s.hint}>
+                    <L book='en'>Click here</L>
+                    <L book='ru'>Нажми сюда</L>
+                </div>
+            )}
+        </div>
         <div className={s.bar} />
     </div>
 );

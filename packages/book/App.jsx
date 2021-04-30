@@ -13,14 +13,7 @@ const App = () => {
         [profile, setProfile] = useState(null),
         { courses, defaultCourse, loadCourses, updateCourse } = useCourses();
 
-    const context = useMemo(
-        () => ({
-            profile,
-            course: courses[profile?.last_course_id],
-            updateCourse
-        }),
-        [profile, courses]
-    );
+    const context = useMemo(() => ({ profile, courses, updateCourse }), [profile, courses]);
 
     const initProfile = async () => {
         const [{ data }] = await Promise.all([

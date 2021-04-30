@@ -1,24 +1,24 @@
 import React, { useCallback, useEffect, useRef } from 'react';
 import pt from 'prop-types';
 import { debounce, throttle } from '@sc/tools/function';
-import { useApp } from '../../tools';
+import { useLocationState } from '@sc/ui/hooks';
+import { useAPI, useApp } from '../../tools';
 import Profile from './Profile';
 import s from './header.css';
 
 const $html = document.getElementsByTagName('html')[0];
 
 const Header = ({ chapter, bar, children }) => {
-    const { profile, course, updateCourse } = useApp(),
-        pos = useRef({ id: null, chapter: null, top: 0 }),
-        $bar = useRef();
-
-    pos.current.id = profile?.last_course_id;
-    pos.current.chapter = chapter;
+    const { profile, courses, updateCourse } = useApp(),
+        fetch = useAPI(),
+        $bar = useRef(),
+        [{ params }] = useLocationState({ path: '/:id' }),
+        course = courses[params.id];
 
     const savePosition = useCallback(
         debounce(() => {
-            const { id, chapter: nextChapter, top } = pos.current;
-            if (id && nextChapter) updateCourse(id, 'pos', { chapter: nextChapter, top });
+            if (params.id && chapter)
+                updateCourse(params.id, 'pos', { chapter, top: $html.scrollTop });
         }, 500),
         []
     );
@@ -28,7 +28,6 @@ const Header = ({ chapter, bar, children }) => {
             const width = (($html.scrollTop + window.innerHeight) / $html.scrollHeight) * 100;
 
             $bar.current.style.width = `${width}%`;
-            pos.current.top = $html.scrollTop;
             savePosition();
         }, 25),
         []
@@ -48,6 +47,13 @@ const Header = ({ chapter, bar, children }) => {
     useEffect(() => {
         if (!chapter) window.scrollTo(0, 0);
         if (chapter && chapter === course?.pos?.chapter) window.scrollTo(0, course.pos.top);
+
+        if (chapter && params.id !== profile.last_course_id) {
+            fetch('/users/me.json', {
+                method: 'PUT',
+                body: { user: { last_course_id: params.id } }
+            });
+        }
     }, []);
 
     return (
