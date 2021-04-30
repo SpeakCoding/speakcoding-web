@@ -3,7 +3,7 @@ import { useApp } from '../../tools';
 
 const Localize = ({ book, children }) => {
     const { profile } = useApp(),
-        bookId = profile.last_course_id;
+        bookId = profile?.last_course_id;
 
     if (bookId !== book) return null;
 

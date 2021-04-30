@@ -8,18 +8,19 @@ const timeout = 200;
 
 const Content = ({ tab, children }) => {
     const { tab: selected } = useContext(context),
-        [phase, setPhase] = useState('exited');
+        [phase, setPhase] = useState(tab === selected ? 'entered' : 'exited');
 
     useEffect(() => {
         let timer;
 
-        if (tab === selected) {
+        if (tab === selected && phase !== 'entered') {
             timer = setTimeout(() => {
                 setPhase('entering');
                 timer = setTimeout(() => setPhase('entered'), 20);
             }, timeout);
-        } else {
-            if (phase === 'exited') return undefined;
+        }
+
+        if (tab !== selected && phase !== 'exited') {
             setPhase('exiting');
             timer = setTimeout(() => setPhase('exited'), timeout);
         }

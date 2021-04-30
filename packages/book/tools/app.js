@@ -1,7 +1,9 @@
 import { createContext, useContext } from 'react';
 
 export const app = createContext({
-    profile: null
+    profile: null,
+    course: {},
+    updateCourse: () => {}
 });
 
 export function useApp() {

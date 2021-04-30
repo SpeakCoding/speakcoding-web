@@ -3,10 +3,10 @@ import pt from 'prop-types';
 import { Breadcrumbs } from '@sc/ui';
 import { Header, Layout, Navigation } from '../components';
 
-const Page = ({ nav, bar, phone, children }) => (
+const Page = ({ chapter, nav, bar, phone, children }) => (
     <Layout phone={phone}>
         <Layout.GlossaryLink href='/en/glossary'>Glossary</Layout.GlossaryLink>
-        <Header bar={bar}>
+        <Header chapter={chapter} bar={bar}>
             <Breadcrumbs>
                 <Breadcrumbs.Item>
                     <Navigation>
@@ -48,12 +48,14 @@ const Page = ({ nav, bar, phone, children }) => (
 );
 
 Page.propTypes = {
+    chapter: pt.number,
     nav: pt.string,
     bar: pt.bool,
     phone: pt.bool
 };
 
 Page.defaultProps = {
+    chapter: undefined,
     nav: undefined,
     bar: undefined,
     phone: undefined

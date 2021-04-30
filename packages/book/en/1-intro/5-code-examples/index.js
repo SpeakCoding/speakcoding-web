@@ -19,7 +19,7 @@ export default () => (
         </Section>
         <Section>
             <Section.Main>
-                <Example label='In writing' />
+                <Example />
             </Section.Main>
         </Section>
         <Section>

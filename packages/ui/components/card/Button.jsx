@@ -1,27 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import pt from 'prop-types';
-import { createPortal } from 'react-dom';
 import Button from '../button';
 import Link from '../link';
-import { context } from './utils';
 import s from './card.css';
 
-const CardButton = ({ href, children }) => {
-    const { $action } = useContext(context);
-
-    if (!$action) return null;
-
-    return createPortal(
-        <div className={s.action}>
-            <Link href={href} blank>
-                <Button icon='chevron-right' size='small' variant='white'>
-                    {children}
-                </Button>
-            </Link>
-        </div>,
-        $action
-    );
-};
+const CardButton = ({ href, children }) => (
+    <div className={s.action}>
+        <Link href={href} blank>
+            <Button icon='chevron-right' size='small' variant='white'>
+                {children}
+            </Button>
+        </Link>
+    </div>
+);
 
 CardButton.propTypes = {
     href: pt.string.isRequired

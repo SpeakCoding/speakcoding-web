@@ -1,8 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useAPI } from './tools';
+import { useAPI, useCourses } from './tools';
 import { app } from './tools/app';
-import { getDefaultCourse } from './tools/course';
 import Home from './Home';
 import Login from './auth/Login';
 import * as EN from './en';
@@ -11,15 +10,26 @@ import * as RU from './ru';
 const App = () => {
     const fetch = useAPI(),
         auth = !!localStorage.getItem('book_auth_token'),
-        [profile, setProfile] = useState(null);
+        [profile, setProfile] = useState(null),
+        { courses, defaultCourse, loadCourses, updateCourse } = useCourses();
 
-    const context = useMemo(() => ({ profile }), [profile]);
+    const context = useMemo(
+        () => ({
+            profile,
+            course: courses[profile?.last_course_id],
+            updateCourse
+        }),
+        [profile, courses]
+    );
 
     const initProfile = async () => {
-        const { data } = await fetch('/users/me.json', { method: 'GET' });
+        const [{ data }] = await Promise.all([
+            fetch('/users/me.json', { method: 'GET' }),
+            loadCourses()
+        ]);
 
         if (!data.last_course_id) {
-            data.last_course_id = getDefaultCourse();
+            data.last_course_id = defaultCourse;
             fetch('/users/me.json', {
                 method: 'PUT',
                 body: { user: { last_course_id: data.last_course_id } }
@@ -34,6 +44,7 @@ const App = () => {
     }, [auth, profile]);
 
     if (!auth) return <Login onSuccess={initProfile} />;
+    if (!profile) return null;
 
     return (
         <app.Provider value={context}>

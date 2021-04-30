@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
+import pt from 'prop-types';
 import { Icon, Link } from '@sc/ui';
 import Logo from '../logo';
+import Phone from '../../phone';
 import { context } from './utils';
 import s from './layout.css';
 
-const Layout = ({ children }) => {
+const Layout = ({ phone, children }) => {
     const $menu = useRef(),
         [value, setValue] = useState({ $menu: null });
 
@@ -30,6 +32,14 @@ const Layout = ({ children }) => {
             </div>
         </div>
     );
+};
+
+Layout.propTypes = {
+    phone: pt.bool
+};
+
+Layout.defaultProps = {
+    phone: true
 };
 
 export default Layout;
