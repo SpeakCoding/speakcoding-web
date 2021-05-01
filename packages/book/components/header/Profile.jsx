@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { Drawer } from '@sc/ui';
 import { useApp } from '../../tools';
 import L from '../localize';
+import Dev from './Dev';
 import s from './profile.css';
 
 const Profile = () => {
@@ -29,6 +30,7 @@ const Profile = () => {
                     <img src={profile.picture} alt='' className={s.ava} />
                     <div className={s.name}>{profile.name}</div>
                     <div className={s.email}>{profile.email}</div>
+                    <Dev />
                     <div className={s.logout} onClick={logout}>
                         <L book='en'>Log out</L>
                         <L book='ru'>Выйти</L>

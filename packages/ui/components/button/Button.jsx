@@ -4,8 +4,8 @@ import classNames from 'classnames';
 import Icon from '../icon';
 import s from './button.css';
 
-const Button = ({ icon, size, variant, children }) => (
-    <button className={classNames(s.box, s[size], s[variant])} type='button'>
+const Button = ({ icon, size, variant, children, onClick }) => (
+    <button className={classNames(s.box, s[size], s[variant])} type='button' onClick={onClick}>
         {icon && (
             <div className={s.icon}>
                 <Icon name={icon} size={24} />
@@ -18,13 +18,15 @@ const Button = ({ icon, size, variant, children }) => (
 Button.propTypes = {
     icon: pt.string,
     size: pt.oneOf(['default', 'small']),
-    variant: pt.oneOf(['contained', 'rounded', 'white'])
+    variant: pt.oneOf(['contained', 'rounded', 'white']),
+    onClick: pt.func
 };
 
 Button.defaultProps = {
     icon: undefined,
     size: 'default',
-    variant: 'contained'
+    variant: 'contained',
+    onClick: () => {}
 };
 
 export default Button;

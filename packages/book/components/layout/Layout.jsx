@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import pt from 'prop-types';
 import { Icon, Link } from '@sc/ui';
 import Logo from '../logo';
-import Phone from '../../phone';
+import { Phone } from '../../phone';
 import { context } from './utils';
 import s from './layout.css';
 
@@ -30,7 +30,7 @@ const Layout = ({ phone, children }) => {
                     <Icon name='lifebuoy' size={24} />
                 </div>
             </div>
-            {/*{phone && <Phone />}*/}
+            {phone && <Phone />}
         </div>
     );
 };
