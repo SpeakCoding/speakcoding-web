@@ -28,7 +28,7 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
 
     return (
         <context.Provider value={value}>
-            <div className={s.display}>
+            <div className={s.display} data-control='display'>
                 {tabs.map(({ name, history, pointer }) => (
                     <div key={name} className={classNames(s.tab, name !== state.tab && s.hidden)}>
                         {history.map((item, i) => {
@@ -48,6 +48,9 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                             const active = history[Math.min(pointer + 1, history.length - 1)],
                                 { emergence: animation } = state.screens[active.name] || {};
 
+                            const control =
+                                i === pointer && name === state.tab ? 'screen' : undefined;
+
                             return (
                                 <router.Provider key={item.key} value={pageContext}>
                                     <Page
@@ -55,6 +58,7 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                                         pointer={pointer}
                                         settings={settings}
                                         animation={animation}
+                                        data-control={control}
                                     >
                                         {Component && <Component />}
                                     </Page>

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import a from './animation.css';
 import s from './page.css';
 
-const Page = ({ pos, pointer, settings, animation, children }) => {
+const Page = ({ pos, pointer, settings, animation, children, ...props }) => {
     const [ready, setReady] = useState(pos === 0);
 
     useEffect(() => {
@@ -19,6 +19,7 @@ const Page = ({ pos, pointer, settings, animation, children }) => {
                 [a.prev]: pos === pointer - 1,
                 [s.tabs]: settings.tabs
             })}
+            data-control={props['data-control']}
         >
             {children}
         </div>
@@ -29,12 +30,14 @@ Page.propTypes = {
     pos: pt.number.isRequired,
     pointer: pt.number.isRequired,
     settings: pt.object,
-    animation: pt.string
+    animation: pt.string,
+    'data-control': pt.string
 };
 
 Page.defaultProps = {
     settings: undefined,
-    animation: undefined
+    animation: undefined,
+    'data-control': undefined
 };
 
 export default Page;

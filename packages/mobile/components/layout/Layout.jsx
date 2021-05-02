@@ -3,7 +3,7 @@ import pt from 'prop-types';
 import s from './layout.css';
 
 const Layout = ({ children, onReset }) => (
-    <div className={s.box}>
+    <div className={s.box} data-control='device'>
         <div id='mobile-layout' className={s.content}>
             {children}
         </div>

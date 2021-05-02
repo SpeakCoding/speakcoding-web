@@ -19,6 +19,16 @@ const Container = () => {
                     localStorage.setItem('mobile_auth_token', payload.token);
                     setKey(Math.random());
                     break;
+                case 'logout':
+                    localStorage.removeItem('mobile_auth_token');
+                    setKey(Math.random());
+                    break;
+                case 'open':
+                    setOpened(true);
+                    break;
+                case 'close':
+                    setOpened(false);
+                    break;
                 default:
             }
         };

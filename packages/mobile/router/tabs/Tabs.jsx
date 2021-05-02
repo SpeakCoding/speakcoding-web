@@ -24,18 +24,26 @@ const Tabs = ({ tab, hidden, switchTab, navigate }) => {
     }, []);
 
     return (
-        <div key={tab} className={classNames(s.box, hidden && s.hidden)}>
-            <div className={s.tab} onClick={() => switchTab('home', { screen: 'feed' })}>
+        <div key={tab} className={classNames(s.box, hidden && s.hidden)} data-control='tabs'>
+            <div
+                className={s.tab}
+                data-tab='home'
+                onClick={() => switchTab('home', { screen: 'feed' })}
+            >
                 <Icon name={tab === 'home' ? 'm/home-filled' : 'm/home'} size={24} />
             </div>
-            <div className={s.tab} onClick={() => switchTab('search', { screen: 'search' })}>
+            <div
+                className={s.tab}
+                data-tab='search'
+                onClick={() => switchTab('search', { screen: 'search' })}
+            >
                 <Icon name={tab === 'search' ? 'm/search-filled' : 'm/search'} size={24} />
             </div>
             <NewPost navigate={navigate} />
-            <div className={s.tab} onClick={goToLikes}>
+            <div className={s.tab} data-tab='likes' onClick={goToLikes}>
                 <Icon name={tab === 'likes' ? 'm/heart-filled' : 'm/heart'} size={24} />
             </div>
-            <div className={s.tab} onClick={goToProfile}>
+            <div className={s.tab} data-tab='profile' onClick={goToProfile}>
                 <Icon name={tab === 'profile' ? 'm/user-filled' : 'm/user'} size={24} />
             </div>
         </div>

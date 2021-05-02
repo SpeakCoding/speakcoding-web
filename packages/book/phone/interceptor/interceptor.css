@@ -1,0 +1,7 @@
+[data-interceptor=on] [data-lock=on] {
+    pointer-events: none;
+}
+
+[data-interceptor=on] [data-lock=off] {
+    pointer-events: initial;
+}
