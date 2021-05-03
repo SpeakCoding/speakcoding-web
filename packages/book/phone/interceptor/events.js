@@ -3,10 +3,13 @@ function emitEvent(type, payload = {}) {
 }
 
 export function setSession(token) {
-    emitEvent('set-session', { token });
+    if (localStorage.getItem('mobile_auth_token') === token) return;
+    localStorage.setItem('mobile_auth_token', token);
+    emitEvent('session-set');
 }
 
 export function logout() {
+    localStorage.removeItem('mobile_auth_token');
     emitEvent('logout');
 }
 

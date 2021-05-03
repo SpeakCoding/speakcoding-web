@@ -3,6 +3,7 @@ import { Card, Section, Structure } from '@sc/ui';
 import { InterceptorView } from '../../../phone';
 
 const handleOpenPhone = interceptor => {
+    interceptor.open();
     interceptor.on();
     interceptor.lockDisplay();
     interceptor.switchTab('home');
@@ -11,6 +12,7 @@ const handleOpenPhone = interceptor => {
 };
 
 const handleClosePhone = interceptor => {
+    interceptor.close();
     interceptor.reset();
     interceptor.unlockDisplay();
     interceptor.off();
@@ -20,7 +22,7 @@ export default () => (
     <>
         <Section>
             <Section.Main>
-                <InterceptorView onOpen={handleOpenPhone} onClose={handleClosePhone}>
+                <InterceptorView onEnter={handleOpenPhone} onExit={handleClosePhone}>
                     <p>
                         Here is how it could be defined. Instagram consists of two main components:
                         feed of posts and feed of stories.

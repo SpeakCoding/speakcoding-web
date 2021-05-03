@@ -12,15 +12,11 @@ const Container = () => {
 
     useEffect(() => {
         const handler = event => {
-            const { type, payload } = event.detail;
+            const { type } = event.detail;
 
             switch (type) {
-                case 'set-session':
-                    localStorage.setItem('mobile_auth_token', payload.token);
-                    setKey(Math.random());
-                    break;
+                case 'session-set':
                 case 'logout':
-                    localStorage.removeItem('mobile_auth_token');
                     setKey(Math.random());
                     break;
                 case 'open':
