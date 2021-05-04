@@ -38,14 +38,12 @@
 }
 
 .device {
-    /*transform: scale(0.75);*/
-    transform-origin: right;
     filter: drop-shadow(0px 5px 177px rgba(0, 0, 0, 0.35));
 }
 
 .close {
     position: absolute;
-    top: 60px;
+    top: -20px;
     right: -20px;
     width: 40px;
     height: 40px;
