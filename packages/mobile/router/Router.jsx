@@ -77,6 +77,7 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                 )}
             </div>
             {children}
+            <div className={s.overlay} />
         </context.Provider>
     );
 };

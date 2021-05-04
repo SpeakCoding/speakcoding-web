@@ -1,28 +1,54 @@
-import React from 'react';
-import { Card, Section, Structure } from '@sc/ui';
-import { InterceptorView } from '../../../phone';
+import React, { useMemo } from 'react';
+import pt from 'prop-types';
+import { Card, HL, Section, Structure } from '@sc/ui';
+import { interceptor, InterceptorView } from '../../../phone';
 
-const handleOpenPhone = interceptor => {
-    interceptor.open();
-    interceptor.on();
-    interceptor.lockDisplay();
-    interceptor.switchTab('home');
-    interceptor.switchTab('home');
-    interceptor.scrollToTop();
+const colorsMap = {
+    red: ['post-userpic', { margin: 4, radius: '50%' }],
+    plum: ['post-name'],
+    'green-yellow': ['post-date'],
+    aquamarine: ['post-image', { margin: 0, radius: 0, stroke: 4 }],
+    'steel-blue': ['post-likes'],
+    grey: ['post-caption'],
+    orange: ['post-comments']
 };
 
-const handleClosePhone = interceptor => {
-    interceptor.close();
-    interceptor.reset();
-    interceptor.unlockDisplay();
-    interceptor.off();
+const handleHover = color => {
+    if (!colorsMap[color]) return;
+    const [role, options] = colorsMap[color];
+    interceptor.highlightElement(role, { ...(options || {}), color });
+};
+
+const handleLeave = color => {
+    if (!colorsMap[color]) return;
+    const [role] = colorsMap[color];
+    interceptor.unhighlightElement(role);
+};
+
+const hlCache = new Map([['_', 0]]);
+
+const H = ({ c, children }) => {
+    const l = useMemo(() => {
+        if (!hlCache.has(c)) hlCache.set(c, Math.max(...hlCache.values()) + 1);
+        return hlCache.get(c);
+    }, [c]);
+
+    return (
+        <HL color={c} label={`c1-b2-${l}`} onHover={handleHover} onLeave={handleLeave}>
+            {children}
+        </HL>
+    );
+};
+
+H.propTypes = {
+    c: pt.string.isRequired
 };
 
 export default () => (
     <>
         <Section>
             <Section.Main>
-                <InterceptorView onEnter={handleOpenPhone} onExit={handleClosePhone}>
+                <InterceptorView onEnter={interceptor.open} onExit={interceptor.close}>
                     <p>
                         Here is how it could be defined. Instagram consists of two main components:
                         feed of posts and feed of stories.
@@ -31,21 +57,24 @@ export default () => (
                         <li>The feed of Posts consists of a Set of Posts.</li>
                         <ul>
                             <li>
-                                The Posts in turn are made up of: the user (profile pictures [or
-                                most recent story] and username); a creation timestamp; pictures,
-                                videos, or a set of pictures; ‘likes’; the caption of the post; and
-                                comments.
+                                The Posts in turn are made up of: the user (
+                                <H c='red'>profile pictures</H> [or most recent story] and{' '}
+                                <H c='plum'>username</H>);{' '}
+                                <H c='green-yellow'>a creation timestamp</H>;{' '}
+                                <H c='aquamarine'>pictures</H>, videos, or a set of pictures;{' '}
+                                <H c='steel-blue'>‘likes’</H>; the <H c='grey'>caption</H> of the
+                                post; and <H c='orange'>comments</H>.
                             </li>
                             <ul>
                                 <li>
-                                    The Pictures comprise: the picture itself; and (optionally) a
-                                    set of tags.
+                                    The <H c='aquamarine'>Pictures</H> comprise: the picture itself;
+                                    and (optionally) a set of tags.
                                 </li>
                                 <li>
-                                    The Comments consist of: the user (profile picture [or most
-                                    recent story] and username); text; and (optionally) a set of
-                                    likes relating to the commentary (which can be responses to
-                                    previous comments).
+                                    The <H c='orange'>Comments</H> consist of: the user (profile
+                                    picture [or most recent story] and username); text; and
+                                    (optionally) a set of likes relating to the commentary (which
+                                    can be responses to previous comments).
                                 </li>
                             </ul>
                         </ul>

@@ -75,6 +75,7 @@ const Post = ({ id, scroll }) => {
                 src={post.image}
                 loading='lazy'
                 alt=''
+                data-role='post-image'
                 onDoubleClick={setLike}
             />
 
@@ -97,31 +98,42 @@ const Post = ({ id, scroll }) => {
                 />
             </div>
 
-            {post.likes_count > 0 && (
-                <div className={s.likes} onClick={() => navigate('likers', { postid: post.id })}>
-                    {post.likes_count} {post.likes_count > 1 ? 'likes' : 'like'}
+            <div className={s.body}>
+                {post.likes_count > 0 && (
+                    <div
+                        className={s.likes}
+                        data-role='post-likes'
+                        onClick={() => navigate('likers', { postid: post.id })}
+                    >
+                        {post.likes_count} {post.likes_count > 1 ? 'likes' : 'like'}
+                    </div>
+                )}
+
+                {post.caption && (
+                    <div className={s.caption} data-role='post-caption'>
+                        {post.caption}
+                    </div>
+                )}
+
+                {post.comments?.length > 0 && (
+                    <div
+                        className={s.comments}
+                        data-role='post-comments'
+                        onClick={() => navigate('comments', { postid: post.id })}
+                    >
+                        {post.comments.length > 1
+                            ? `View all ${post.comments.length} comments`
+                            : 'View 1 comment'}
+                    </div>
+                )}
+
+                <div className={s.date} data-role='post-date'>
+                    <DateTime
+                        value={post.created_at * 1000}
+                        format='MMM D, YYYY [at] h:mm A'
+                        relative={msInDay}
+                    />
                 </div>
-            )}
-
-            {post.caption && <div className={s.caption}>{post.caption}</div>}
-
-            {post.comments?.length > 0 && (
-                <div
-                    className={s.comments}
-                    onClick={() => navigate('comments', { postid: post.id })}
-                >
-                    {post.comments.length > 1
-                        ? `View all ${post.comments.length} comments`
-                        : 'View 1 comment'}
-                </div>
-            )}
-
-            <div className={s.date}>
-                <DateTime
-                    value={post.created_at * 1000}
-                    format='MMM D, YYYY [at] h:mm A'
-                    relative={msInDay}
-                />
             </div>
 
             <ActionSheet opened={menu} onClose={() => setMenu(false)}>

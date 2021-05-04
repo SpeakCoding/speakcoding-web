@@ -38,7 +38,7 @@
 }
 
 .image {
-    width: 100%;
+    width: 375px;
     height: 375px;
     background-color: var(--c-grey-200);
     object-fit: cover;
@@ -93,11 +93,14 @@
     flex: 1;
 }
 
+.body {
+    padding: 0 10px;
+}
+
 .likes {
     display: flex;
     align-items: center;
     height: 16px;
-    padding: 0 10px;
     font-size: 12px;
     font-weight: 700;
     line-height: 12px;
@@ -105,15 +108,13 @@
 }
 
 .caption {
-    margin: 4px 0 5px;
-    padding: 0 10px;
+    padding: 4px 0 5px;
     font-size: 12px;
     line-height: 14px;
 }
 
 .comments {
     margin-bottom: 2px;
-    padding: 0 10px;
     font-size: 12px;
     line-height: 15px;
     color: var(--c-grey-500);
@@ -121,7 +122,6 @@
 }
 
 .date {
-    padding: 0 10px;
     font-size: 10px;
     line-height: 12px;
     color: var(--c-grey-500);

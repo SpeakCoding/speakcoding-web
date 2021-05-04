@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import s from './userpic.css';
 import placeholder from './placeholder.svg';
 
-const Userpic = ({ href, size, onClick }) => {
+const Userpic = ({ href, size, onClick, ...props }) => {
     const [src, setSrc] = useState(href || placeholder),
         initial = useRef(true);
 
@@ -26,6 +26,7 @@ const Userpic = ({ href, size, onClick }) => {
             src={src}
             alt=''
             loading='lazy'
+            data-role={props['data-role']}
             onClick={onClick}
             onError={handleError}
         />
@@ -35,12 +36,14 @@ const Userpic = ({ href, size, onClick }) => {
 Userpic.propTypes = {
     href: pt.string,
     size: pt.number,
+    'data-role': pt.string,
     onClick: pt.func
 };
 
 Userpic.defaultProps = {
     href: placeholder,
     size: undefined,
+    'data-role': undefined,
     onClick: undefined
 };
 

@@ -5,3 +5,19 @@
 [data-interceptor=on] [data-lock=off] {
     pointer-events: initial;
 }
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: var(--l-modal);
+}
+
+.clone {
+    position: fixed;
+    margin: 0 -4px;
+    padding: 0 4px;
+    border-radius: 4px;
+    background-color: var(--c-white);
+    z-index: var(--l-notification);
+}

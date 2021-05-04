@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import pt from 'prop-types';
 import { useAPI } from './tools';
 import { Layout } from './components';
 import { Router, Screen } from './router';
@@ -25,7 +26,7 @@ import SelectUser from './screens/select-user';
 import SignUp from './screens/auth/SignUp';
 import TagPeople from './screens/tag-people';
 
-const App = () => {
+const App = ({ onReady }) => {
     const fetch = useAPI(),
         [key, setKey] = useState(0),
         auth = !!localStorage.getItem('mobile_auth_token'),
@@ -56,6 +57,10 @@ const App = () => {
     useEffect(() => {
         if (auth) initProfile();
     }, [auth]);
+
+    useEffect(() => {
+        if (profile) onReady();
+    }, [profile]);
 
     if (auth && !profile) return null;
 
@@ -92,6 +97,14 @@ const App = () => {
             </CacheProvider>
         </app.Provider>
     );
+};
+
+App.propTypes = {
+    onReady: pt.func
+};
+
+App.defaultProps = {
+    onReady: () => {}
 };
 
 export default App;

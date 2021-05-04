@@ -1,4 +1,4 @@
-function emitEvent(type, payload = {}) {
+export function emitEvent(type, payload = {}) {
     document.dispatchEvent(new CustomEvent('sc-phone-event', { detail: { type, payload } }));
 }
 

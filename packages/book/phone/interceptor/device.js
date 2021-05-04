@@ -1,6 +1,14 @@
 /* eslint-disable no-param-reassign */
 import * as dom from './dom';
 
+export async function init() {
+    return new Promise(resolve => {
+        document.addEventListener('sc-phone-event', event => {
+            if (event.detail.type === 'ready') resolve();
+        });
+    });
+}
+
 export function on() {
     dom.getDevice().setAttr('interceptor', 'on');
 }

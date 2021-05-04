@@ -13,11 +13,14 @@ const User = ({ id, children }) => {
             <Userpic
                 href={user?.profile_picture}
                 size={36}
+                data-role='post-userpic'
                 onClick={() => navigate('profile', { userid: user.id })}
             />
 
             <div className={s.info}>
-                <div className={s.name}>{user?.user_name}</div>
+                <div className={s.name} data-role='post-name'>
+                    {user?.user_name}
+                </div>
                 {children}
             </div>
         </>

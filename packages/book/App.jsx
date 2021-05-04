@@ -44,8 +44,18 @@ const App = () => {
         interceptor.setSession(data.instagram_app_authentication_token);
     };
 
+    const initPhone = async () => {
+        await interceptor.init();
+        interceptor.on();
+        interceptor.lockDisplay();
+        interceptor.switchTab('home');
+        interceptor.switchTab('home');
+        interceptor.scrollToTop();
+    };
+
     useEffect(() => {
         if (auth && !profile) initProfile();
+        if (profile) initPhone();
     }, [auth, profile]);
 
     if (!auth) return <Login onSuccess={initProfile} />;

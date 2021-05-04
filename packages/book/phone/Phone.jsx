@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
 import { Icon } from '@sc/ui';
 import MobilePhone from '@sc/mobile';
+import * as interceptor from './interceptor';
 import s from './phone.css';
 
 const Phone = ({ opened, close }) => {
+    const handleReady = useCallback(() => {
+        interceptor.emitEvent('ready');
+    }, []);
+
     return (
         <div className={classNames(s.box, opened && s.opened)}>
-            <MobilePhone />
+            <div className={s.device}>
+                <MobilePhone onReady={handleReady} />
+            </div>
             <div className={s.close} onClick={close}>
                 <Icon name='times' size={24} />
             </div>
