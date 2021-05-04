@@ -26,9 +26,11 @@ const Layout = ({ phone, children }) => {
                     </div>
                 </Link>
                 <div ref={$menu} />
-                <div className={s.help}>
-                    <Icon name='lifebuoy' size={24} />
-                </div>
+                <Link href='mailto:team@speakcoding.co' blank>
+                    <div className={s.help}>
+                        <Icon name='lifebuoy' size={24} />
+                    </div>
+                </Link>
             </div>
             {phone && <Phone />}
         </div>

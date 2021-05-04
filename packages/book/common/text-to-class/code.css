@@ -1,5 +1,5 @@
 .hl {
-    background-color: var(--bg-steel-blue);
+    background-color: var(--bg-orange);
 }
 
 .name {
@@ -9,5 +9,4 @@
 
 .hint {
     margin-top: 40px;
-    color: var(--c-primary-500);
 }
