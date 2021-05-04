@@ -25,7 +25,8 @@ function useLocationState({ path } = {}) {
             match: !!match
         },
         history.push,
-        history.replace
+        history.replace,
+        history.goBack
     ];
 }
 

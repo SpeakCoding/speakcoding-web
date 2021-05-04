@@ -34,6 +34,7 @@
     writing-mode: vertical-lr;
     text-orientation: mixed;
     transform: rotate(-180deg);
+    cursor: pointer;
 }
 
 .help {
