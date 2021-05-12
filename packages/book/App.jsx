@@ -4,7 +4,8 @@ import { useAPI, useCourses } from './tools';
 import { app } from './tools/app';
 import { interceptor } from './phone';
 import Home from './Home';
-import Login from './auth/Login';
+import Login from './auth';
+import Payment from './payment';
 import * as EN from './en';
 import * as RU from './ru';
 
@@ -60,6 +61,7 @@ const App = () => {
 
     if (!auth) return <Login onSuccess={initProfile} />;
     if (!profile) return null;
+    if (!profile.is_paid) return <Payment />;
 
     return (
         <app.Provider value={context}>

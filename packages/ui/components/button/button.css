@@ -3,6 +3,7 @@
 .box {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     padding: 12px;
     border: none;
     outline: none;
@@ -45,6 +46,11 @@
 
 .box.rounded:active {
     background-color: var(--bg-plum);
+}
+
+.box.block {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .icon {

@@ -1,0 +1,40 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 32px 0 112px;
+    box-sizing: border-box;
+}
+
+.box::after {
+    content: "";
+}
+
+.content {
+    width: 462px;
+    text-align: center;
+}
+
+.logo {
+    font: var(--t-brand);
+    font-size: 24px;
+}
+
+.title {
+    margin-bottom: 12px;
+    font: var(--t-brand);
+    font-size: 48px;
+}
+
+.message {
+    margin-bottom: 24px;
+    line-height: 22px;
+    color: var(--c-grey-500);
+}
+
+.action {
+    display: inline-block;
+    width: 230px;
+}
