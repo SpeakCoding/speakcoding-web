@@ -1,0 +1,33 @@
+.box {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 34px;
+    background-color: var(--c-grey-500);
+    z-index: var(--l-notification);
+}
+
+.content {
+    max-width: 386px;
+    padding: 136px 40px 24px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: var(--c-white);
+    font-size: 18px;
+    line-height: 29px;
+    text-align: center;
+    background-image: url(./pic-desktop.svg);
+    background-position: center 24px;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 1024px) {
+    .box {
+        display: flex;
+    }
+}
