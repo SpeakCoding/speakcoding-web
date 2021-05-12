@@ -20,7 +20,8 @@ const Shape = ({ label, variant, children }) => {
             $clone = document.createElement('div'),
             $item = basic ? $ref.current : $ref.current.children[0],
             box = $layout.getBoundingClientRect(),
-            item = $item.getBoundingClientRect();
+            item = $item.getBoundingClientRect(),
+            k = window.highlightShapeScale || 1;
 
         if (!document.getElementById($overlay.id)) $layout.append($overlay);
 
@@ -29,10 +30,10 @@ const Shape = ({ label, variant, children }) => {
         $shape.dataset.passive = 'true';
 
         $clone.classList.add(s.clone, s[variant]);
-        $clone.style.top = `${item.top - box.top}px`;
-        $clone.style.left = `${item.left - box.left}px`;
-        $clone.style.width = `${item.width}px`;
-        $clone.style.height = `${item.height}px`;
+        $clone.style.top = `${(item.top - box.top) / k}px`;
+        $clone.style.left = `${(item.left - box.left) / k}px`;
+        $clone.style.width = `${item.width / k}px`;
+        $clone.style.height = `${item.height / k}px`;
 
         $clone.append($item.cloneNode(true));
         $shape.append($clone);
