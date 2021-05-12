@@ -3,20 +3,22 @@ import pt from 'prop-types';
 import classNames from 'classnames';
 import s from './highlight.css';
 
-const Highlight = ({ active, color, label, children, onHover, onLeave }) => {
+const Highlight = ({ active, color, label, children }) => {
     const handleMouseEnter = useCallback(() => {
         if (!label) return;
         const items = document.querySelectorAll(`[data-highlight-label="${label}"]`);
-        [...items].forEach($item => $item.classList.add(s.hover));
-        onHover(color, label);
-    }, [color, label, onHover]);
+        [...items].forEach($item => {
+            if ($item.dataset.passive)
+                $item.setAttribute('style', `--bg-color: var(--bg-${color})`);
+            $item.classList.add(s.hover);
+        });
+    }, [color, label]);
 
     const handleMouseLeave = useCallback(() => {
         if (!label) return;
         const items = document.querySelectorAll(`[data-highlight-label="${label}"]`);
         [...items].forEach($item => $item.classList.remove(s.hover));
-        onLeave(color, label);
-    }, [color, label, onLeave]);
+    }, [label]);
 
     return (
         <span
@@ -52,17 +54,13 @@ Highlight.propTypes = {
         'plum-hover',
         'grey'
     ]),
-    label: pt.string,
-    onHover: pt.func,
-    onLeave: pt.func
+    label: pt.string
 };
 
 Highlight.defaultProps = {
     active: false,
     color: 'orange',
-    label: undefined,
-    onHover: () => {},
-    onLeave: () => {}
+    label: undefined
 };
 
 export default Highlight;

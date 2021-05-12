@@ -1,15 +1,16 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, {  useCallback, useEffect, useRef, useState } from 'react';
 import pt from 'prop-types';
 import { ActionSheet } from '@sc/ui/mobile';
-import { DateTime, Icon } from '@sc/ui';
+import { DateTime, HL, Icon } from '@sc/ui';
 import { useAPI, useApp, useCacheState, useRouter } from '../../tools';
 import ActionIcon from './ActionIcon';
 import User from './User';
 import s from './post.css';
 
-const msInDay = 24 * 60 * 60 * 1000;
+const msInDay = 24 * 60 * 60 * 1000,
+    Dummy = ({ children }) => children;
 
-const Post = ({ id, scroll }) => {
+const Post = ({ id, scroll, i }) => {
     const fetch = useAPI(),
         { profile } = useApp(),
         { navigate } = useRouter(),
@@ -17,7 +18,8 @@ const Post = ({ id, scroll }) => {
         $node = useRef(null),
         scrolled = useRef(false),
         [menu, setMenu] = useState(false),
-        self = post?.user.id === profile.id;
+        self = post?.user.id === profile.id,
+        Shape = i === 0 ? HL.Shape : Dummy;
 
     const toggleLike = useCallback(() => {
         const url = post.liked ? `/posts/${post.id}/unlike.json` : `/posts/${post.id}/like.json`;
@@ -61,7 +63,7 @@ const Post = ({ id, scroll }) => {
     return (
         <div ref={$node} className={s.box}>
             <div className={s.title}>
-                <User id={post.user.id}>
+                <User id={post.user.id} Shape={Shape}>
                     {post.location && <div className={s.location}>{post.location}</div>}
                 </User>
 
@@ -70,14 +72,15 @@ const Post = ({ id, scroll }) => {
                 </div>
             </div>
 
-            <img
-                className={s.image}
-                src={post.image}
-                loading='lazy'
-                alt=''
-                data-role='post-image'
-                onDoubleClick={setLike}
-            />
+            <Shape label='post-image' variant='inset'>
+                <img
+                    className={s.image}
+                    src={post.image}
+                    loading='lazy'
+                    alt=''
+                    onDoubleClick={setLike}
+                />
+            </Shape>
 
             <div className={s.actions}>
                 <div className={s.heart}>
@@ -100,40 +103,55 @@ const Post = ({ id, scroll }) => {
 
             <div className={s.body}>
                 {post.likes_count > 0 && (
-                    <div
-                        className={s.likes}
-                        data-role='post-likes'
-                        onClick={() => navigate('likers', { postid: post.id })}
-                    >
-                        {post.likes_count} {post.likes_count > 1 ? 'likes' : 'like'}
-                    </div>
+                    <>
+                        <Shape label='post-likes'>
+                            <div
+                                className={s.likes}
+                                onClick={() => navigate('likers', { postid: post.id })}
+                            >
+                                {post.likes_count} {post.likes_count > 1 ? 'likes' : 'like'}
+                            </div>
+                        </Shape>
+                        <br />
+                    </>
                 )}
 
                 {post.caption && (
-                    <div className={s.caption} data-role='post-caption'>
-                        {post.caption}
-                    </div>
+                    <>
+                        <div className={s.captionWrapper}>
+                            <Shape label='post-caption'>
+                                <span className={s.caption}>{post.caption}</span>
+                            </Shape>
+                        </div>
+                    </>
                 )}
 
                 {post.comments?.length > 0 && (
-                    <div
-                        className={s.comments}
-                        data-role='post-comments'
-                        onClick={() => navigate('comments', { postid: post.id })}
-                    >
-                        {post.comments.length > 1
-                            ? `View all ${post.comments.length} comments`
-                            : 'View 1 comment'}
-                    </div>
+                    <>
+                        <div className={s.commentsWrapper}>
+                            <Shape label='post-comments'>
+                                <span
+                                    className={s.comments}
+                                    onClick={() => navigate('comments', { postid: post.id })}
+                                >
+                                    {post.comments.length > 1
+                                        ? `View all ${post.comments.length} comments`
+                                        : 'View 1 comment'}
+                                </span>
+                            </Shape>
+                        </div>
+                    </>
                 )}
 
-                <div className={s.date} data-role='post-date'>
-                    <DateTime
-                        value={post.created_at * 1000}
-                        format='MMM D, YYYY [at] h:mm A'
-                        relative={msInDay}
-                    />
-                </div>
+                <Shape label='post-date'>
+                    <div className={s.date}>
+                        <DateTime
+                            value={post.created_at * 1000}
+                            format='MMM D, YYYY [at] h:mm A'
+                            relative={msInDay}
+                        />
+                    </div>
+                </Shape>
             </div>
 
             <ActionSheet opened={menu} onClose={() => setMenu(false)}>
@@ -165,11 +183,13 @@ const Post = ({ id, scroll }) => {
 
 Post.propTypes = {
     id: pt.number.isRequired,
-    scroll: pt.bool
+    scroll: pt.bool,
+    i: pt.number
 };
 
 Post.defaultProps = {
-    scroll: false
+    scroll: false,
+    i: undefined
 };
 
 export default Post;

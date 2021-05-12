@@ -13,8 +13,8 @@ const PostsList = ({ items, scrollTo }) => {
 
     return (
         <ScrollView data-role='screen-content'>
-            {items.map(post => (
-                <Post key={post.id} id={post.id} scroll={post.id === scrollTo} />
+            {items.map((post, i) => (
+                <Post key={post.id} id={post.id} scroll={post.id === scrollTo} i={i} />
             ))}
         </ScrollView>
     );

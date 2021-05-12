@@ -4,23 +4,26 @@ import { useCacheState, useRouter } from '../../tools';
 import Userpic from '../userpic';
 import s from './post.css';
 
-const User = ({ id, children }) => {
+const User = ({ id, Shape, children }) => {
     const [user] = useCacheState('user', id),
         { navigate } = useRouter();
 
     return (
         <>
-            <Userpic
-                href={user?.profile_picture}
-                size={36}
-                data-role='post-userpic'
-                onClick={() => navigate('profile', { userid: user.id })}
-            />
+            <Shape label='post-userpic' variant='circle'>
+                <Userpic
+                    href={user?.profile_picture}
+                    size={36}
+                    data-role='post-userpic'
+                    onClick={() => navigate('profile', { userid: user.id })}
+                />
+            </Shape>
 
             <div className={s.info}>
-                <div className={s.name} data-role='post-name'>
-                    {user?.user_name}
-                </div>
+                <Shape label='post-name'>
+                    <div className={s.name}>{user?.user_name}</div>
+                </Shape>
+
                 {children}
             </div>
         </>
@@ -28,7 +31,8 @@ const User = ({ id, children }) => {
 };
 
 User.propTypes = {
-    id: pt.number.isRequired
+    id: pt.number.isRequired,
+    Shape: pt.func.isRequired
 };
 
 export default User;

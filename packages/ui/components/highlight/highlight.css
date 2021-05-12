@@ -17,3 +17,71 @@
 .box.active {
     background-color: var(--bg-color);
 }
+
+.overlay {
+    z-index: var(--l-drawer);
+}
+
+.shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--animation);
+    transition-property: opacity, visibility;
+    z-index: 1;
+}
+
+.clone {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    background-color: var(--c-white);
+}
+
+.clone.rect {
+    margin: -2px 0 0 -4px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    box-shadow: 0 0 0 2px var(--bg-color);
+}
+
+.clone.circle {
+    box-shadow: 0 0 0 4px var(--c-white), 0 0 0 6px var(--bg-color);
+    border-radius: 50%;
+}
+
+.clone.inset {
+    margin: 0;
+    padding: 0;
+}
+
+.clone.inset::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 4px solid var(--bg-color);
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.48);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--animation);
+    transition-property: opacity, visibility;
+}
+
+.shape.hover,
+.shape.hover ~ .bg {
+    opacity: 1;
+    visibility: visible;
+}

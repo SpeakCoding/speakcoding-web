@@ -14,9 +14,12 @@
 .info {
     flex: 1;
     margin: 0 12px;
+    font-size: 0;
+    line-height: 1em;
 }
 
 .name {
+    display: inline-block;
     font-size: 12px;
     font-weight: 700;
     line-height: 12px;
@@ -95,10 +98,12 @@
 
 .body {
     padding: 0 10px;
+    font-size: 0;
+    line-height: 1em;
 }
 
 .likes {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     height: 16px;
     font-size: 12px;
@@ -107,14 +112,20 @@
     cursor: pointer;
 }
 
-.caption {
+.caption-wrapper {
     padding: 4px 0 5px;
+}
+
+.caption {
     font-size: 12px;
     line-height: 14px;
 }
 
-.comments {
+.comments-wrapper {
     margin-bottom: 2px;
+}
+
+.comments {
     font-size: 12px;
     line-height: 15px;
     color: var(--c-grey-500);
@@ -122,6 +133,7 @@
 }
 
 .date {
+    display: inline-block;
     font-size: 10px;
     line-height: 12px;
     color: var(--c-grey-500);
