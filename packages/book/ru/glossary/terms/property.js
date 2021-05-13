@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const id = 'characteristic',
+export const id = 'property',
     name = 'Характеристика';
 
 export const Definition = () => (

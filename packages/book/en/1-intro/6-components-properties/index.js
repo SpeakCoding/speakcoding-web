@@ -115,15 +115,14 @@ export default () => (
                 </p>
                 <p>
                     For example, let’s say that we have a green book: its color is one of its{' '}
-                    <Term id='characteristic'>properties</Term>. So the Book{' '}
-                    <Term id='class'>class</Term> has the Color{' '}
-                    <Term id='characteristic'>property</Term>. When describing a book, we present
-                    this as the Book having a color <Term id='component'>component</Term> of the
-                    Color <Term id='class'>class</Term>. If you wish, you may start by writing down
-                    the class and components separately for your own reference; when you come to
-                    rewrite them into a programming language, you will need to describe them in the
-                    same way as you did for the other <Term id='component'>components</Term> of the
-                    class.
+                    <Term id='property'>properties</Term>. So the Book <Term id='class'>class</Term>{' '}
+                    has the Color <Term id='property'>property</Term>. When describing a book, we
+                    present this as the Book having a color <Term id='component'>component</Term> of
+                    the Color <Term id='class'>class</Term>. If you wish, you may start by writing
+                    down the class and components separately for your own reference; when you come
+                    to rewrite them into a programming language, you will need to describe them in
+                    the same way as you did for the other <Term id='component'>components</Term> of
+                    the class.
                 </p>
             </Section.Main>
             <Section.Side>
