@@ -10,7 +10,7 @@ import Part6 from './6-components-properties';
 import Part7 from './7-using-classes';
 
 export default () => (
-    <Page chapter={1} nav='Язык программирования. Части речи: классы и составляющие'>
+    <Page chapter={1}>
         <Part1 />
         <Section.Divider />
         <Part2 />

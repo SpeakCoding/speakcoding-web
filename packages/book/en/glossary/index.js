@@ -5,7 +5,7 @@ import { Glossary } from '../../components';
 import terms from './terms';
 
 const GlossaryPage = () => (
-    <Page bar={false} phone={false}>
+    <Page>
         <Section>
             <Section.Main>
                 <h1>Glossary</h1>

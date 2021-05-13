@@ -8,7 +8,7 @@ import s from './header.css';
 
 const $html = document.getElementsByTagName('html')[0];
 
-const Header = ({ chapter, bar, children }) => {
+const Header = ({ chapter, children }) => {
     const { profile, updateProfile, courses, updateCourse } = useApp(),
         $bar = useRef(),
         [{ params }] = useLocationState({ path: '/:id' }),
@@ -33,7 +33,7 @@ const Header = ({ chapter, bar, children }) => {
     );
 
     useEffect(() => {
-        if (!bar) return undefined;
+        if (typeof chapter !== 'number') return undefined;
 
         window.addEventListener('scroll', handleScroll);
         handleScroll();
@@ -41,7 +41,7 @@ const Header = ({ chapter, bar, children }) => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [bar]);
+    }, [chapter]);
 
     useEffect(() => {
         if (!chapter) window.scrollTo(0, 0);
@@ -61,13 +61,11 @@ const Header = ({ chapter, bar, children }) => {
 };
 
 Header.propTypes = {
-    chapter: pt.number,
-    bar: pt.bool
+    chapter: pt.number
 };
 
 Header.defaultProps = {
-    chapter: undefined,
-    bar: true
+    chapter: undefined
 };
 
 export default Header;

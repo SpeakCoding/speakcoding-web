@@ -69,8 +69,10 @@ const App = () => {
                 <Switch>
                     <Route path='/en/chapter-1' component={EN.Intro} />
                     <Route path='/en/glossary' component={EN.Glossary} />
+
                     <Route path='/ru/chapter-1' component={RU.Intro} />
                     <Route path='/ru/glossary' component={RU.Glossary} />
+
                     <Route component={Home} />
                 </Switch>
             </BrowserRouter>

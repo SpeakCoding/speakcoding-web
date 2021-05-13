@@ -5,12 +5,14 @@ import { Link } from '@sc/ui';
 import s from './navigation.css';
 
 const Item = ({ href, children }) => {
-    if (!href) return <div className={classNames(s.item, s.disabled)}>{children}</div>;
+    if (!href) return <div className={classNames(s.item, s.text, s.disabled)}>{children}</div>;
 
     return (
-        <Link href={href}>
-            <div className={s.item}>{children}</div>
-        </Link>
+        <div className={s.item}>
+            <Link href={href}>
+                <div className={s.text}>{children}</div>
+            </Link>
+        </div>
     );
 };
 

@@ -3,6 +3,7 @@ import pt from 'prop-types';
 import { Icon, Link } from '@sc/ui';
 import Logo from '../logo';
 import { Phone } from '../../phone';
+import GlossaryLink from './GlossaryLink';
 import MobilePlaceholder from './MobilePlaceholder';
 import { context } from './utils';
 import s from './layout.css';
@@ -27,13 +28,16 @@ const Layout = ({ phone, children }) => {
                             <Logo size={44} />
                         </div>
                     </Link>
-                    <div ref={$menu} />
+
+                    <GlossaryLink />
+
                     <Link href='mailto:team@speakcoding.co' blank>
                         <div className={s.help}>
                             <Icon name='lifebuoy' size={24} />
                         </div>
                     </Link>
                 </div>
+
                 {phone && <Phone />}
             </div>
             <MobilePlaceholder />
