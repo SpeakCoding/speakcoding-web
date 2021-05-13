@@ -26,9 +26,10 @@ const Payment = () => {
                 Speak <Logo size={80} /> Coding
             </div>
             <div className={s.content}>
-                <div className={s.title}>Pay for the course</div>
+                <div className={s.title}>Payment processing</div>
                 <div className={s.message}>
-                    Please make the payment, after that you can <br /> enjoy the course
+                    When you click the button below, you'll be redirected to our Stripe account for
+                    secure payment. SpeakCoding does not store your information
                 </div>
                 <div className={s.action}>
                     <Button block onClick={handlePay}>
