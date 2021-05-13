@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Hint, Img, Section, Structure } from '@sc/ui';
 import Term from '../../glossary/Term';
-import img from '../../../assets/8-var-types-en.svg';
+import img from '../../../assets/1/8-var-types-en.svg';
 import s from './style.css';
 
 export default () => (
