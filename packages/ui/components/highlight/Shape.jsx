@@ -1,5 +1,6 @@
-import React, { cloneElement, useEffect, useRef } from 'react';
+import React, { cloneElement, useContext, useEffect, useRef, useState } from 'react';
 import pt from 'prop-types';
+import { shape } from './utils';
 import s from './highlight.css';
 
 const $overlay = document.createElement('div');
@@ -12,7 +13,9 @@ $overlay.append($bg);
 
 const Shape = ({ label, variant, children }) => {
     const $ref = useRef(),
-        basic = typeof children.type === 'string';
+        basic = typeof children.type === 'string',
+        { scale, refresh } = useContext(shape),
+        [rand, setRand] = useState(0);
 
     useEffect(() => {
         const $layout = document.getElementById('mobile-layout'),
@@ -20,8 +23,7 @@ const Shape = ({ label, variant, children }) => {
             $clone = document.createElement('div'),
             $item = basic ? $ref.current : $ref.current.children[0],
             box = $layout.getBoundingClientRect(),
-            item = $item.getBoundingClientRect(),
-            k = window.highlightShapeScale || 1;
+            item = $item.getBoundingClientRect();
 
         if (!document.getElementById($overlay.id)) $layout.append($overlay);
 
@@ -30,15 +32,25 @@ const Shape = ({ label, variant, children }) => {
         $shape.dataset.passive = 'true';
 
         $clone.classList.add(s.clone, s[variant]);
-        $clone.style.top = `${(item.top - box.top) / k}px`;
-        $clone.style.left = `${(item.left - box.left) / k}px`;
-        $clone.style.width = `${item.width / k}px`;
-        $clone.style.height = `${item.height / k}px`;
+        $clone.style.top = `${(item.top - box.top) / scale}px`;
+        $clone.style.left = `${(item.left - box.left) / scale}px`;
+        $clone.style.width = `${item.width / scale}px`;
+        $clone.style.height = `${item.height / scale}px`;
 
         $clone.append($item.cloneNode(true));
         $shape.append($clone);
         $overlay.prepend($shape);
-    }, [label]);
+
+        return () => {
+            $shape.remove();
+        };
+    }, [label, rand]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setRand(Math.random());
+        }, 300);
+    }, [scale, refresh]);
 
     if (basic) return cloneElement(children, { ref: $ref });
 

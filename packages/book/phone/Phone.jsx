@@ -1,22 +1,30 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
-import { Icon } from '@sc/ui';
+import { HL, Icon } from '@sc/ui';
 import MobilePhone from '@sc/mobile';
 import * as interceptor from './interceptor';
 import s from './phone.css';
 
-window.highlightShapeScale = 0.75;
+const highlightShapeScale = 0.75;
 
 const Phone = ({ opened, close }) => {
+    const [refresh, setRefresh] = useState(0);
+
     const handleReady = useCallback(() => {
         interceptor.emitEvent('ready');
     }, []);
 
+    useEffect(() => {
+        if (opened) setRefresh(Math.random());
+    }, [opened]);
+
     return (
         <div className={classNames(s.box, opened && s.opened)}>
-            <div className={s.device} style={{ '--scale': window.highlightShapeScale }}>
-                <MobilePhone onReady={handleReady} />
+            <div className={s.device} style={{ '--scale': highlightShapeScale }}>
+                <HL.Controller scale={highlightShapeScale} refresh={refresh}>
+                    <MobilePhone onReady={handleReady} />
+                </HL.Controller>
             </div>
             <div className={s.close} onClick={close}>
                 <Icon name='times' size={24} />
