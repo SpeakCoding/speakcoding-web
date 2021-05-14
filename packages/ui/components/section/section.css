@@ -38,6 +38,10 @@
     justify-content: center;
 }
 
+.sticky img {
+    transform: translateZ(0);
+}
+
 .badge {
     margin-bottom: 8px;
     font: var(--t-tiny);

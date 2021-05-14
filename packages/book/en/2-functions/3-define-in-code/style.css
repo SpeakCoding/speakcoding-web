@@ -1,0 +1,11 @@
+.slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 30vh;
+}
+
+.title {
+    margin-bottom: 8px;
+    font-weight: bold;
+}

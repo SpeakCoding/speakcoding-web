@@ -68,6 +68,7 @@ const App = () => {
             <BrowserRouter>
                 <Switch>
                     <Route path='/en/chapter-1' component={EN.Intro} />
+                    <Route path='/en/chapter-2' component={EN.Functions} />
                     <Route path='/en/glossary' component={EN.Glossary} />
 
                     <Route path='/ru/chapter-1' component={RU.Intro} />
