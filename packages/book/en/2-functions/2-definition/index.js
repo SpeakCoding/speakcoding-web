@@ -184,6 +184,7 @@ export default () => (
 
         <Card mode='quiz'>
             <h2>Quiz #3</h2>
+            The definition and description of functions
             <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLScQ0LcYbFp-br6S2mweAjw5M74El_nyzPDq5OoX9yFde6RcDw/viewform?usp=sf_link'>
                 Complete
             </Card.Button>

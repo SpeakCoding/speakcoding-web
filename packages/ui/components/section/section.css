@@ -72,6 +72,10 @@
     list-style-type: disc;
 }
 
+.main ol ol {
+    list-style-type: lower-alpha;
+}
+
 .main li {
     margin-bottom: 8px;
 }

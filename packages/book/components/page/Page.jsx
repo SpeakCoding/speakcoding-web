@@ -6,8 +6,8 @@ import L from '../localize';
 import Layout from '../layout';
 import Navigation from '../navigation';
 
-const Page = ({ chapter, chapters, children }) => (
-    <Layout phone={typeof chapter === 'number'}>
+const Page = ({ chapter, chapters, phone, children }) => (
+    <Layout phone={phone}>
         <Header chapter={chapter}>
             <Breadcrumbs>
                 <Breadcrumbs.Item>
@@ -37,12 +37,14 @@ const Page = ({ chapter, chapters, children }) => (
 );
 Page.propTypes = {
     chapter: pt.number,
-    chapters: pt.array
+    chapters: pt.array,
+    phone: pt.bool
 };
 
 Page.defaultProps = {
     chapter: undefined,
-    chapters: []
+    chapters: [],
+    phone: true
 };
 
 export default Page;
