@@ -93,7 +93,11 @@ export default () => (
                         <HL color='light-sky-blue' active>
                             the number
                         </HL>
-                        /new quantity of likes.
+                        /
+                        <HL color='plum' active>
+                            new quantity of likes
+                        </HL>
+                        .
                     </div>
                 </Section.Sticky>
             </Section.Side>

@@ -7,7 +7,7 @@ import s from './card.css';
 const CardButton = ({ href, children }) => (
     <div className={s.action}>
         <Link href={href} blank>
-            <Button icon='chevron-right' size='small' variant='white'>
+            <Button icon='chevron-right-square' size='small' variant='white'>
                 {children}
             </Button>
         </Link>

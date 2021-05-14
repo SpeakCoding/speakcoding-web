@@ -1,5 +1,5 @@
 import React from 'react';
-import Code from './Code';
+import { Code } from '@sc/ui';
 
 const code = `
 class [[Feed]](orange c1-b1-1) { 

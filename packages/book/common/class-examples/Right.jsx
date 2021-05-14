@@ -3,6 +3,7 @@ import { Tabs } from '@sc/ui';
 import PHP from './PHP';
 import Python from './Python';
 import Ruby from './Ruby';
+import s from './example.css';
 
 const Right = () => (
     <Tabs value='php'>
@@ -12,13 +13,19 @@ const Right = () => (
             <Tabs.Button value='ruby'>Ruby</Tabs.Button>
         </Tabs.Controls>
         <Tabs.Content tab='php'>
-            <PHP />
+            <div className={s.tab}>
+                <PHP />
+            </div>
         </Tabs.Content>
         <Tabs.Content tab='python'>
-            <Python />
+            <div className={s.tab}>
+                <Python />
+            </div>
         </Tabs.Content>
         <Tabs.Content tab='ruby'>
-            <Ruby />
+            <div className={s.tab}>
+                <Ruby />
+            </div>
         </Tabs.Content>
     </Tabs>
 );

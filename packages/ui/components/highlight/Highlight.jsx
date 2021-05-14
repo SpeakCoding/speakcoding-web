@@ -3,7 +3,7 @@ import pt from 'prop-types';
 import classNames from 'classnames';
 import s from './highlight.css';
 
-const Highlight = ({ active, color, label, children }) => {
+const Highlight = ({ active, color, inline, label, children }) => {
     const handleMouseEnter = useCallback(() => {
         if (!label) return;
         const items = document.querySelectorAll(`[data-highlight-label="${label}"]`);
@@ -22,9 +22,13 @@ const Highlight = ({ active, color, label, children }) => {
 
     return (
         <span
-            className={classNames(s.box, active && s.active)}
+            className={classNames(s.box, active && s.active, inline && s.inline)}
             data-highlight-label={label}
-            style={{ '--bg-color': `var(--bg-${color})` }}
+            style={{
+                '--bg-color': `var(--bg-${color})`,
+                paddingTop: inline && `${inline}px`,
+                paddingBottom: inline && `${inline}px`
+            }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
@@ -54,12 +58,14 @@ Highlight.propTypes = {
         'plum-hover',
         'grey'
     ]),
+    inline: pt.number,
     label: pt.string
 };
 
 Highlight.defaultProps = {
     active: false,
     color: 'orange',
+    inline: undefined,
     label: undefined
 };
 
