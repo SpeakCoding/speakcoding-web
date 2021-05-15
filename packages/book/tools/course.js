@@ -16,7 +16,7 @@ export function useCourses() {
     const loadCourses = useCallback(async () => {
         const res = await fetch('/courses.json', { method: 'GET' });
 
-        const next = res.data.reduce(
+        const next = res.data?.reduce(
             (memo, { course_id: id, data }) => ({
                 ...memo,
                 [id]: JSON.parse(data)

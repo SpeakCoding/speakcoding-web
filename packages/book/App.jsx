@@ -39,6 +39,12 @@ const App = () => {
             loadCourses()
         ]);
 
+        if (!data) {
+            localStorage.removeItem('book_auth_token');
+            window.location.reload();
+            return;
+        }
+
         if (data.last_course_id) setProfile(data);
         else updateProfile({ last_course_id: defaultCourse });
 
