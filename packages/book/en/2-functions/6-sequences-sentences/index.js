@@ -1,5 +1,6 @@
 import React from 'react';
-import { Callout, Card, HL, Section } from '@sc/ui';
+import { Callout, Card, Section } from '@sc/ui';
+import Term from '../../glossary/Term';
 
 export default () => (
     <>
@@ -7,11 +8,12 @@ export default () => (
             <Section.Main>
                 <h1>Sequences and Sentences</h1>
                 <p>
-                    Usually in a code’s definition of a function’s sequence of actions, each line
-                    equates to a specific action; this can be compared to a single sentence in
-                    regular text. In the programming languages of 20-30 years ago, sentences were
-                    separated from one another. However, more modern languages simply utilise a new
-                    line, akin to pressing the Enter key within a piece of text.
+                    Usually in a code’s definition of a <Term id='function'>function’s</Term>{' '}
+                    sequence of actions, each line equates to a specific action; this can be
+                    compared to a single <Term id='sentence'>sentence</Term> in regular text. In the
+                    programming languages of 20-30 years ago, <Term id='sentence'>sentences</Term>{' '}
+                    were separated from one another. However, more modern languages simply utilise a
+                    new line, akin to pressing the Enter key within a piece of text.
                 </p>
                 <p>
                     As with regular language, the more fluent you are, the more complex yet concise

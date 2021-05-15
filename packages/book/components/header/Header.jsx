@@ -44,8 +44,8 @@ const Header = ({ chapter, children }) => {
     }, [chapter]);
 
     useEffect(() => {
-        if (!chapter) window.scrollTo(0, 0);
         if (chapter && chapter === course?.pos?.chapter) window.scrollTo(0, course.pos.top);
+        else window.scrollTo(0, 0);
 
         if (chapter && params.id !== profile.last_course_id)
             updateProfile({ last_course_id: params.id });
