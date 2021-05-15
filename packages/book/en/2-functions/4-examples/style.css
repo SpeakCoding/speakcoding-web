@@ -19,6 +19,10 @@
     border-bottom: 1px solid var(--c-grey-200);
 }
 
+.cell pre {
+    white-space: pre-wrap;
+}
+
 .post {
     position: relative;
     height: 40px;

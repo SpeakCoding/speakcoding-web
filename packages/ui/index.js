@@ -11,6 +11,7 @@ export Hint from './components/hint';
 export Icon from './components/icon';
 export Img from './components/img';
 export Link from './components/link';
+export Lottie from './components/lottie';
 export Section from './components/section';
 export Structure from './components/structure';
 export Tabs from './components/tabs';

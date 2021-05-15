@@ -1,6 +1,7 @@
 import React from 'react';
-import { Section, Structure } from '@sc/ui';
+import { Lottie, Section, Structure } from '@sc/ui';
 import Term from '../../glossary/Term';
+import animationData from './img-lottie.json';
 import s from './style.css';
 
 const generalForm = `
@@ -80,7 +81,11 @@ export default () => (
                 </div>
             </Section.Main>
             <Section.Side>
-                <Section.Sticky>img</Section.Sticky>
+                <Lottie.ScrollBox>
+                    <Section.Sticky>
+                        <Lottie animationData={animationData} endFramesOffset={50} />
+                    </Section.Sticky>
+                </Lottie.ScrollBox>
             </Section.Side>
         </Section>
     </>

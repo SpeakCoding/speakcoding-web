@@ -1,6 +1,7 @@
 import React from 'react';
-import { Callout, Card, Section } from '@sc/ui';
+import { Callout, Card, Lottie, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
+import animationData from './img-lottie.json';
 
 export default () => (
     <>
@@ -66,7 +67,11 @@ export default () => (
                 </Callout>
             </Section.Main>
             <Section.Side>
-                <Section.Sticky>img</Section.Sticky>
+                <Lottie.IntersectionBox>
+                    <Section.Sticky>
+                        <Lottie animationData={animationData} />
+                    </Section.Sticky>
+                </Lottie.IntersectionBox>
             </Section.Side>
         </Section>
         <Card mode='skill'>
