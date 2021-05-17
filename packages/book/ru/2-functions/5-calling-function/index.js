@@ -59,7 +59,7 @@ export default () => (
         </Section>
         <Section>
             <Section.Main>
-                <p>Example of calling a function</p>
+                <p>Пример вызова функции</p>
                 <div className={s.table}>
                     <div className={s.cell}>
                         <b>Описание и пояснение функции текстом</b>

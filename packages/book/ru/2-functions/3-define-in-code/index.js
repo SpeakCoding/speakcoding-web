@@ -15,11 +15,6 @@ export default () => (
                     &nbsp;&nbsp;&nbsp;&nbsp;блок кода со списком действий функции <br />
                     {'}'}
                 </p>
-            </Section.Main>
-            <Section.Side />
-        </Section>
-        <Section>
-            <Section.Main>
                 <div className={s.slide}>
                     <div>
                         Хотя функции на разных языках записываются по-разному, отличительная черта,

@@ -16,11 +16,6 @@ export default () => (
                     <br />
                     {'}'}
                 </p>
-            </Section.Main>
-            <Section.Side />
-        </Section>
-        <Section>
-            <Section.Main>
                 <div className={s.slide}>
                     <div className={s.title}>Round brackets</div>
                     <div>

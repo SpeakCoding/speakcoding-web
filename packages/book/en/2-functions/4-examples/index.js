@@ -51,9 +51,7 @@ const CodePost = () => {
 export default () => (
     <Section>
         <Section.Main>
-            <p>
-                <b>Examples of a description of a function</b>
-            </p>
+            <h2>Examples of a description of a function</h2>
             <div className={s.table}>
                 <div className={s.cell}>
                     <b>The structure of a function’s definition</b>

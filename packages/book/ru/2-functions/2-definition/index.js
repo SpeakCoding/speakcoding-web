@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Hint, HL, Section } from '@sc/ui';
+import { Card, HL, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 import Slides, { useSlide } from '../../../common/function-definition-slides';
 import s from './style.css';
@@ -54,32 +54,24 @@ export default () => (
                     </Slides.Item>
                     <Slides.Item>
                         <div className={s.message}>
-                            <Hint>
-                                <HL color='green' active>
-                                    Класс
-                                </HL>
-                                <Hint.Tooltip>
-                                    Есть функции, которые не привязаны к классу и будут
-                                    переиспользованы в тексте дальше.
-                                </Hint.Tooltip>
-                            </Hint>
+                            <HL color='green' active>
+                                Класс
+                            </HL>
                             , к которому она относится
                         </div>
+                        Есть функции, которые не привязаны к классу и будут переиспользованы в
+                        тексте дальше.
                     </Slides.Item>
                     <Slides.Item>
                         <div className={s.message}>
-                            <Hint>
-                                <HL color='plum' active>
-                                    Последовательность/список операций
-                                </HL>
-                                <Hint.Tooltip>
-                                    Последовательность/список операций ничем не отличается от того,
-                                    как если бы вы описывали подробный план мероприятия, просто она
-                                    написана языком, который вам не знаком
-                                </Hint.Tooltip>
-                            </Hint>
+                            <HL color='plum' active>
+                                Последовательность/список операций
+                            </HL>
                             , которые совершается при выполнении этой функции для экземпляра
                         </div>
+                        Последовательность/список операций ничем не отличается от того, как если бы
+                        вы описывали подробный план мероприятия, просто она написана языком, который
+                        вам не знаком
                     </Slides.Item>
                     <Slides.Item>
                         <div className={s.message}>

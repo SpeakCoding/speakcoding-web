@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Hint, HL, Section } from '@sc/ui';
+import { Card, HL, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 import Slides, { useSlide } from '../../../common/function-definition-slides';
 import s from './style.css';
@@ -55,31 +55,23 @@ export default () => (
                     </Slides.Item>
                     <Slides.Item>
                         <div className={s.message}>
-                            <Hint>
-                                <HL color='green' active>
-                                    The class
-                                </HL>
-                                <Hint.Tooltip>
-                                    There are some functions that are not specific to a particular
-                                    class; we will revisit these later in this text.
-                                </Hint.Tooltip>
-                            </Hint>{' '}
+                            <HL color='green' active>
+                                The class
+                            </HL>{' '}
                             to which the function relates
                         </div>
+                        There are some functions that are not specific to a particular class; we
+                        will revisit these later in this text.
                     </Slides.Item>
                     <Slides.Item>
                         <div className={s.message}>
-                            <Hint>
-                                <HL color='plum' active>
-                                    The sequence/list of operations
-                                </HL>
-                                <Hint.Tooltip>
-                                    The sequence/list of operations is no different than if you were
-                                    to draw up a detailed event plan
-                                </Hint.Tooltip>
-                            </Hint>{' '}
+                            <HL color='plum' active>
+                                The sequence/list of operations
+                            </HL>
                             executed when performing this function for a particular instance
                         </div>
+                        The sequence/list of operations is no different than if you were to draw up
+                        a detailed event plan
                     </Slides.Item>
                     <Slides.Item>
                         <div className={s.message}>

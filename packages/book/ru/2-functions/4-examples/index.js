@@ -50,9 +50,7 @@ const CodePost = () => {
 export default () => (
     <Section>
         <Section.Main>
-            <p>
-                <b>Examples of a description of a function</b>
-            </p>
+            <h2>Примеры описания функции</h2>
             <div className={s.table}>
                 <div className={s.cell}>
                     <b>Структура описания функции</b>
@@ -67,7 +65,7 @@ export default () => (
                 <div className={s.cell} />
                 <div className={s.cell}>
                     <div className={s.hint}>
-                        <span>Functions are described at the same place where classes are</span>
+                        <span>Функции описываются там же, где класс</span>
                         <Icon name='arrow-right' size={24} />
                     </div>
                 </div>
