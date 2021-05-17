@@ -12,7 +12,7 @@ export default () => (
                 <p>General form of a definition</p>
                 <p>
                     function function_title (list_of_inputs) {'{'} <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp; block of code with a list of operations that it perform{' '}
+                    &nbsp;&nbsp;&nbsp;&nbsp;block of code with a list of operations that it perform
                     <br />
                     {'}'}
                 </p>

@@ -15,16 +15,15 @@ class Post {
     setOfComments   []Comment`;
 
 const codeFn1 = `
-func (post* [[Post]](orange _ 1)) [[Add Like]](green _ 1)([[user User]](aquamarine _ 1)) [[Number]](light-sky-blue _ 1) { 
+func (post* [[Post]](orange _ 1)) [[Add Like]](green _ 1)([[user User]](aquamarine _ 1)) { 
     [[new_like = new Like(user)]](plum _ 1)
-    [[post.likes.add(new_like)]](plum _ 1)
-    [[return count(post.likes)]](light-sky-blue _ 1)
+    [[self.setOfLikes.add(new_like)]](plum _ 1)
 }`;
 
 const codeFn2 = `
 func [[NumberOfLikes]](green _ 1)() [[Number]](light-sky-blue _ 1) { 
     [[number_of_likes = self.setOfLikes.length]](plum _ 1 3)
-    [[return number_of_likes]](light-sky-blue _ 1)
+    [[return]](plum _ 1) [[number_of_likes]](light-sky-blue _ 1)
 }`;
 
 const CodePost = () => {
@@ -56,13 +55,13 @@ export default () => (
             </p>
             <div className={s.table}>
                 <div className={s.cell}>
-                    <b>The structure of a function’s definition</b>
+                    <b>Структура описания функции</b>
                 </div>
                 <div className={s.cell}>
-                    <b>In text</b>
+                    <b>Описание функции текстом</b>
                 </div>
                 <div className={s.cell}>
-                    <b>What it looks like in code</b>
+                    <b>Описание функции кодом</b>
                 </div>
 
                 <div className={s.cell} />
@@ -82,59 +81,52 @@ export default () => (
                     <ul>
                         <li>
                             <HL color='green' active>
-                                Title
+                                Название
                             </HL>
                         </li>
                         <li>
                             <HL color='orange' active>
-                                Class
-                            </HL>{' '}
-                            to which it relates
+                                Класс
+                            </HL>
+                            , к которому она относится
                         </li>
                         <li>
                             <HL color='plum' active inline={3}>
-                                Sequences/list of operations
-                            </HL>{' '}
-                            that it performs
+                                Последовательность/список операций
+                            </HL>
+                            , которые она совершает
                         </li>
                         <li>
                             <HL color='aquamarine' active>
-                                Inputs
+                                Вводные
                             </HL>
                         </li>
                         <li>
                             <HL color='light-sky-blue' active>
-                                Class of the value
-                            </HL>{' '}
-                            that the function returns
+                                Значение
+                            </HL>
+                            , которое она передает
                         </li>
                     </ul>
                 </div>
 
                 <div className={s.cell}>
-                    A function of the class{' '}
+                    Функция класса{' '}
                     <HL color='orange' active inline={3}>
-                        Post
-                    </HL>{' '}
-                    that we call{' '}
+                        Пост
+                    </HL>
+                    , которую мы назовем{' '}
                     <HL color='green' active inline={3}>
-                        “Add Like”
+                        “Добавить Лайк”
                     </HL>
-                    ;{' '}
+                    , которая если ей{' '}
                     <HL color='aquamarine' active inline={3}>
-                        given a user
+                        указать пользователя
                     </HL>
-                    , the function{' '}
+                    ,{' '}
                     <HL color='plum' active inline={3}>
-                        creates a like from that user and adds it to that post’s list of likes, and
-                        communicates
-                    </HL>{' '}
-                    <HL color='light-sky-blue' active inline={3}>
-                        the number
-                    </HL>
-                    /
-                    <HL color='plum' active inline={3}>
-                        new quantity of likes
+                        создает лайк от этого пользователя и добавляет его в список лайков этого
+                        поста, и ничего не возвращает
                     </HL>
                     .
                 </div>
@@ -146,24 +138,24 @@ export default () => (
                 <div className={s.cell} />
 
                 <div className={s.cell}>
-                    Or a function of the class{' '}
+                    Или функция класса{' '}
                     <HL color='orange' active inline={3}>
-                        Post
-                    </HL>{' '}
-                    that we call{' '}
-                    <HL color='green' active inline={3}>
-                        “Number of Likes”
+                        Пост
                     </HL>
-                    ;{' '}
+                    , которую мы назовем{' '}
+                    <HL color='green' active inline={3}>
+                        “Количество Лайков”
+                    </HL>
+                    ,{' '}
                     <HL color='aquamarine' active inline={3}>
-                        it does not require any inputs
+                        которой не указывается никаких вводных
                     </HL>
                     ,{' '}
                     <HL color='plum' active inline={3}>
-                        it determines how many likes a post has
+                        проверяет количество лайков у поста и сообщает
                     </HL>{' '}
                     <HL color='light-sky-blue' active inline={3}>
-                        and communicates that number
+                        это число
                     </HL>
                     .
                 </div>

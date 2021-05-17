@@ -22,12 +22,10 @@ const Example = () => {
                 given a user
             </HL>
             , the function{' '}
-            <span className={s.multiline}>
-                <HL color='plum' active={slide >= 3}>
-                    creates a like from that user and adds it to that post’s list of likes, and
-                    communicates
-                </HL>
-            </span>{' '}
+            <HL color='plum' active={slide >= 3} inline={5}>
+                creates a like from that user and adds it to that post’s list of likes, and
+                communicates
+            </HL>{' '}
             <HL color='light-sky-blue' active={slide >= 5}>
                 the number
             </HL>

@@ -1,13 +1,14 @@
 import React from 'react';
-import { Code, HL, Section, Structure } from '@sc/ui';
+import { Code, HL, Section } from '@sc/ui';
 import s from './style.css';
 
 const codeUser = `
 class [[User]](orange _ 1) {
     ...
+
     func [[muteProfile]](green _ 1)() {
         [[posts = self.getPosts()]](plum _ 1)
-        [[stories =self.getStories()]](plum _ 1)
+        [[stories = self.getStories()]](plum _ 1)
         [[posts.mute()]](plum _ 1)
         [[stories.mute()]](plum _ 1)   
     }

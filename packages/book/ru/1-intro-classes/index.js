@@ -1,5 +1,6 @@
 import React from 'react';
 import { Section } from '@sc/ui';
+import { Next } from '../../components';
 import Page from '../Page';
 import Part1 from './1-intro';
 import Part2 from './2-instagram';
@@ -20,5 +21,6 @@ export default () => (
         <Part5 />
         <Part6 />
         <Part7 />
+        <Next href='/ru/chapter-2' />
     </Page>
 );
