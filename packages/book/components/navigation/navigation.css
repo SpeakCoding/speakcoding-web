@@ -70,7 +70,8 @@
     cursor: not-allowed;
 }
 
-.text:not(.disabled):hover {
+.text:not(.disabled):hover,
+.text.active {
     background-color: var(--c-primary-500);
 }
 
