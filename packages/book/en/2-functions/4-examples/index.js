@@ -63,7 +63,12 @@ export default () => (
                 </div>
 
                 <div className={s.cell} />
-                <div className={s.cell} />
+                <div className={s.cell}>
+                    <div className={s.hint}>
+                        <span>Functions are described at the same place where classes are</span>
+                        <Icon name='arrow-right' size={24} />
+                    </div>
+                </div>
 
                 <div className={s.cell}>
                     <CodePost />

@@ -36,3 +36,7 @@
 .tooltip p {
     margin: 0;
 }
+
+.simple {
+    border-bottom: 1px dashed var(--c-primary-500);
+}

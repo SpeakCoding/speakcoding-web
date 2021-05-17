@@ -54,3 +54,12 @@
 .post.expanded .expand {
     transform: rotate(-90deg);
 }
+
+.hint {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 16px;
+    font-size: 14px;
+    line-height: 16px;
+}

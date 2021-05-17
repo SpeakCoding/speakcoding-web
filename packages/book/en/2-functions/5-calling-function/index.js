@@ -19,13 +19,11 @@ export default () => (
             <Section.Main>
                 <h2>Calling a function</h2>
                 <p>General form of calling a function in code:</p>
-                <Structure>
-                    <pre>function_title (list_of_inputs)</pre>
-                </Structure>
+                <p>function_title (list_of_inputs)</p>
                 <ol>
                     <li>
                         Calling a function shares some common aspects with the function definition:
-                        <ol>
+                        <ul>
                             <li>
                                 Function calls can be identified readily by their round brackets.
                             </li>
@@ -37,11 +35,11 @@ export default () => (
                                 The input listing then appears, separated by commas (in the same
                                 order as in the function definition).
                             </li>
-                        </ol>
+                        </ul>
                     </li>
                     <li>
                         Meanwhile, there are also some differences versus the function definition:
-                        <ol>
+                        <ul>
                             <li>No keyword appears before the function title.</li>
                             <li>The title used has already been used earlier in the definition.</li>
                             <li>The input listing does not include classes.</li>
@@ -49,7 +47,7 @@ export default () => (
                                 There is no definition of the steps, and thus no curly brackets or
                                 colon after the round brackets.
                             </li>
-                        </ol>
+                        </ul>
                     </li>
                     <li>
                         The class function defines actions to be performed for particular instances

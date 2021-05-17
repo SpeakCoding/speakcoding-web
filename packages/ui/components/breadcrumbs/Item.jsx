@@ -6,7 +6,7 @@ const Item = ({ children }) => (
     <>
         <div className={s.item}>{children}</div>
         <span className={s.arrow}>
-            <Icon name='arrow-right' size={16} />
+            <Icon name='chevron-right-large' size={16} />
         </span>
     </>
 );

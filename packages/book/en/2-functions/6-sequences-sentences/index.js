@@ -60,8 +60,8 @@ export default () => (
                     <ul>
                         <li>create instances belonging to the classes that we defined;</li>
                         <li>
-                            change their properties. [The properties change as the functions that we
-                            defined are performed]
+                            change their properties (the properties change as the functions that we
+                            defined are performed).
                         </li>
                     </ul>
                 </Callout>

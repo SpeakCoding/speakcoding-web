@@ -1,16 +1,52 @@
 import React from 'react';
 import { Card, Hint, HL, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
+import Slides, { useSlide } from '../../../common/function-definition-slides';
 import s from './style.css';
 
+const Example = () => {
+    const slide = useSlide();
+
+    return (
+        <div className={s.example}>
+            A function of the class{' '}
+            <HL color='green' active={slide >= 2}>
+                Post
+            </HL>{' '}
+            that we call{' '}
+            <HL color='orange' active={slide >= 1}>
+                “Add Like”
+            </HL>
+            ;{' '}
+            <HL color='aquamarine' active={slide >= 4}>
+                given a user
+            </HL>
+            , the function{' '}
+            <span className={s.multiline}>
+                <HL color='plum' active={slide >= 3}>
+                    creates a like from that user and adds it to that post’s list of likes, and
+                    communicates
+                </HL>
+            </span>{' '}
+            <HL color='light-sky-blue' active={slide >= 5}>
+                the number
+            </HL>
+            /
+            <HL color='plum' active={slide >= 3}>
+                new quantity of likes
+            </HL>
+            .
+        </div>
+    );
+};
 export default () => (
     <>
-        <Section>
-            <Section.Main>
-                <h2>The definition of a function</h2>
-                <p>Defining all functions consists of the following:</p>
-                <div className={s.slides}>
-                    <div className={s.slide}>
+        <Slides>
+            <Section>
+                <Section.Main>
+                    <h2>The definition of a function</h2>
+                    <p>Defining all functions consists of the following:</p>
+                    <Slides.Item>
                         <div className={s.message}>
                             <HL color='orange' active>
                                 The Title
@@ -18,8 +54,8 @@ export default () => (
                         </div>
                         The particular name that the user selected for their convenience has no
                         bearing on the execution of the function
-                    </div>
-                    <div className={s.slide}>
+                    </Slides.Item>
+                    <Slides.Item>
                         <div className={s.message}>
                             <Hint>
                                 <HL color='green' active>
@@ -32,8 +68,8 @@ export default () => (
                             </Hint>{' '}
                             to which the function relates
                         </div>
-                    </div>
-                    <div className={s.slide}>
+                    </Slides.Item>
+                    <Slides.Item>
                         <div className={s.message}>
                             <Hint>
                                 <HL color='plum' active>
@@ -46,8 +82,8 @@ export default () => (
                             </Hint>{' '}
                             executed when performing this function for a particular instance
                         </div>
-                    </div>
-                    <div className={s.slide}>
+                    </Slides.Item>
+                    <Slides.Item>
                         <div className={s.message}>
                             <HL color='aquamarine' active>
                                 The inputs (arguments)
@@ -56,8 +92,8 @@ export default () => (
                         </div>
                         In some cases the function may not require arguments, in which case that
                         section will not appear in the definition
-                    </div>
-                    <div className={s.slide}>
+                    </Slides.Item>
+                    <Slides.Item>
                         <div className={s.message}>
                             <HL color='light-sky-blue' active>
                                 The class of the value
@@ -65,43 +101,15 @@ export default () => (
                             that the function returns
                         </div>
                         For example, a number or the text “The answer is yes”
-                    </div>
-                </div>
-            </Section.Main>
-            <Section.Side>
-                <Section.Sticky>
-                    <div className={s.example}>
-                        A function of the class{' '}
-                        <HL color='green' active>
-                            Post
-                        </HL>{' '}
-                        that we call{' '}
-                        <HL color='orange' active>
-                            “Add Like”
-                        </HL>
-                        ;{' '}
-                        <HL color='aquamarine' active>
-                            given a user
-                        </HL>
-                        , the function{' '}
-                        <span className={s.multiline}>
-                            <HL color='plum' active>
-                                creates a like from that user and adds it to that post’s list of
-                                likes, and communicates
-                            </HL>
-                        </span>{' '}
-                        <HL color='light-sky-blue' active>
-                            the number
-                        </HL>
-                        /
-                        <HL color='plum' active>
-                            new quantity of likes
-                        </HL>
-                        .
-                    </div>
-                </Section.Sticky>
-            </Section.Side>
-        </Section>
+                    </Slides.Item>
+                </Section.Main>
+                <Section.Side>
+                    <Section.Sticky>
+                        <Example />
+                    </Section.Sticky>
+                </Section.Side>
+            </Section>
+        </Slides>
 
         <Section>
             <Section.Block>
@@ -121,9 +129,27 @@ export default () => (
                             Example of a function that doesn’t return anything
                         </div>
                         <div>
-                            A function of the class Post, that we call “Archive Post”; given a user,
-                            the function archives an instance of a Post and does not return anything
-                            as a result.
+                            A function of the class{' '}
+                            <HL color='green' active>
+                                Post
+                            </HL>
+                            , that we call{' '}
+                            <HL color='orange' active>
+                                “Archive Post”
+                            </HL>
+                            ;{' '}
+                            <HL color='aquamarine' active>
+                                given a user
+                            </HL>
+                            , the function{' '}
+                            <HL color='plum' active>
+                                archives an instance of a Post
+                            </HL>{' '}
+                            and{' '}
+                            <HL color='light-sky-blue' active>
+                                does not return anything as a result
+                            </HL>
+                            .
                         </div>
                     </div>
                 </Section.Main>

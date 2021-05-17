@@ -1,13 +1,8 @@
 import React from 'react';
-import { Lottie, Section, Structure } from '@sc/ui';
+import { Lottie, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 import animationData from './img-lottie.json';
 import s from './style.css';
-
-const generalForm = `
-function function_title (list_of_inputs) {
-    block of code with a list of operations that it perform
-}`.trim();
 
 export default () => (
     <>
@@ -15,10 +10,14 @@ export default () => (
             <Section.Main>
                 <h2>Defining a function in code</h2>
                 <p>General form of a definition</p>
-                <Structure>
-                    <pre>{generalForm}</pre>
-                </Structure>
+                <p>
+                    function function_title (list_of_inputs) {'{'} <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp; block of code with a list of operations that it perform{' '}
+                    <br />
+                    {'}'}
+                </p>
             </Section.Main>
+            <Section.Side />
         </Section>
         <Section>
             <Section.Main>
