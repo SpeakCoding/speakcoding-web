@@ -5,7 +5,7 @@ import HL from '../highlight';
 
 function parseCode(code) {
     return code
-        .trim()
+        .replace(/^[ \n]+|[ \n]+$/g, '')
         .split('\n')
         .map(line => {
             const re =

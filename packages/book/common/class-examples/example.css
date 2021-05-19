@@ -1,39 +1,23 @@
-.box {
-    display: flex;
+.row {
+    display: grid;
+    grid-template-columns: minmax(30%, 400px) 1fr;
+    column-gap: 120px;
+    width: 100%;
 }
 
-.left {
-    width: 30%;
-    min-width: 480px;
-    padding-right: 80px;
-    box-sizing: border-box;
-}
-
-.right {
-    flex: 1;
-    padding-left: 40px;
-}
-
-.right pre {
+.row pre {
     white-space: pre-wrap;
 }
 
-.writing {
+.row > div {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.tabs {
     display: flex;
-    align-items: center;
-    position: sticky;
-    top: 56px;
-    height: 56px;
-    background-color: var(--c-white);
-    z-index: 1;
 }
 
-.structure {
-    position: sticky;
-    top: 120px;
-    margin-top: 8px;
-}
-
-.tab {
+.gap {
     margin-top: 24px;
 }

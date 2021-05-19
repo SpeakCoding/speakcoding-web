@@ -1,23 +1,27 @@
 import React from 'react';
-import { HL, Structure, Tag } from '@sc/ui';
-import { L } from '../../components';
+import pt from 'prop-types';
+import { Code, HL, Structure, Tabs } from '@sc/ui';
+import * as code from './code';
 import s from './example.css';
 
-const Left = () => (
-    <>
-        <div className={s.writing}>
-            <Tag>
-                <L book='en'>In writing</L>
-                <L book='ru'>Описание текстом</L>
-            </Tag>
-        </div>
-        <div className={s.structure}>
+const Content = ({ tab }) => (
+    <Tabs.Content tab={tab}>
+        <div className={s.row}>
             {/* prettier-ignore */}
             <Structure bordered={false}>
                 <HL color='orange' label='c1-b1-1'>Feed</HL>
                 <ul>
                     <li><HL color='light-sky-blue' label='c1-b1-2'>Set of Posts</HL></li>
                 </ul>
+            </Structure>
+            <div>
+                <Code value={code[tab][0]} />
+            </div>
+        </div>
+
+        <div className={s.row}>
+            {/* prettier-ignore */}
+            <Structure bordered={false}>
                 <HL color='green' label='c1-b1-3'>Post</HL>
                 <ul>
                     <li><HL color='wheat' label='c1-b1-4'>User</HL></li>
@@ -27,11 +31,29 @@ const Left = () => (
                     <li><HL color='grey' label='c1-b1-6'>Caption</HL></li>
                     <li><HL color='green-yellow' label='c1-b1-7'>Set of comments</HL></li>
                 </ul>
+            </Structure>
+            <div>
+                <Code value={code[tab][1]} />
+            </div>
+        </div>
+
+        <div className={s.row}>
+            {/* prettier-ignore */}
+            <Structure bordered={false}>
                 <HL color='aquamarine' label='c1-b1-10'>Image</HL>
                 <ul>
                     <li><HL color='aquamarine' label='c1-b1-10'>Image Link</HL></li>
                     <li><HL color='aquamarine' label='c1-b1-10'>Set of tags</HL></li>
                 </ul>
+            </Structure>
+            <div>
+                <Code value={code[tab][2]} />
+            </div>
+        </div>
+
+        <div className={s.row}>
+            {/* prettier-ignore */}
+            <Structure bordered={false}>
                 <HL color='wheat' label='c1-b1-11'>User</HL>
                 <ul>
                     <li><HL color='wheat' label='c1-b1-11'>Username</HL></li>
@@ -39,8 +61,15 @@ const Left = () => (
                     <li><HL color='wheat' label='c1-b1-11'>Image</HL></li>
                 </ul>
             </Structure>
+            <div>
+                <Code value={code[tab][3]} />
+            </div>
         </div>
-    </>
+    </Tabs.Content>
 );
 
-export default Left;
+Content.propTypes = {
+    tab: pt.string.isRequired
+};
+
+export default Content;
