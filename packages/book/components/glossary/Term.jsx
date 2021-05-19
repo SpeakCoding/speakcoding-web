@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import pt from 'prop-types';
 import { useLocationState } from '@sc/ui/hooks';
 import { Hint, Link } from '@sc/ui';
@@ -22,6 +22,13 @@ const Term = ({ data, link, href, children }) => {
 
         return false;
     }, [data?.id]);
+
+    useEffect(
+        () => () => {
+            delete cache[pathname];
+        },
+        [pathname]
+    );
 
     if (!data) return children;
 

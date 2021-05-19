@@ -36,15 +36,13 @@ export default () => (
                         <li>Set of Replies</li>
                         <li>Set of Likes</li>
                         <li>Set of Shares</li>
-                        <li>Picture/Gif</li>
+                        <li>Picture/GIF</li>
                         <li>Location</li>
                     </ul>
                     <h4>User</h4>
                     <ul>
                         <li>Profile Picture</li>
                         <li>Username</li>
-                        <li>Personal QR code</li>
-                        <li>Balance</li>
                     </ul>
                 </Structure>
                 <p>

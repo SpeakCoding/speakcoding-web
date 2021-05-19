@@ -21,11 +21,11 @@ const Left = () => (
                 <HL color='green' label='c1-b1-3'>Post</HL>
                 <ul>
                     <li><HL color='wheat' label='c1-b1-4'>User</HL></li>
+                    <li><HL color='green-yellow' label='c1-b1-9'>Time</HL></li>
                     <li><HL color='aquamarine' label='c1-b1-5'>Image / Set of images / Video</HL></li>
+                    <li><HL color='steel-blue' label='c1-b1-8'>Set of likes</HL></li>
                     <li><HL color='grey' label='c1-b1-6'>Caption</HL></li>
                     <li><HL color='green-yellow' label='c1-b1-7'>Set of comments</HL></li>
-                    <li><HL color='steel-blue' label='c1-b1-8'>Set of likes</HL></li>
-                    <li><HL color='green-yellow' label='c1-b1-9'>Time</HL></li>
                 </ul>
                 <HL color='aquamarine' label='c1-b1-10'>Image</HL>
                 <ul>

@@ -28,9 +28,9 @@ export default () => (
             <p>Functions are used to define how particular instances of a class may be used.</p>
             <p>
                 For example, what can a user do with posts? They can forward, like, or save them,
-                i.e. they can change particular instances of a class or define the makeup of these
+                i.e., they can change particular instances of a class or define the makeup of these
                 instances. When defining the Post <Term id='class'>class</Term>, you may assign a{' '}
-                <Term id='function'>functions</Term> that allows the user to change the Caption of
+                <Term id='function'>function</Term> that allows the user to change the Caption of
                 the Post or to display how many Likes that post has received.
             </p>
             <p>Defining a function is an integral part of defining a class.</p>
@@ -41,7 +41,7 @@ export default () => (
         </Section.Main>
         <Section.Side>
             <Section.Sticky>
-                <Img src={img} width={474} />
+                <Img src={img} width={474} height={454} />
             </Section.Sticky>
         </Section.Side>
     </Section>

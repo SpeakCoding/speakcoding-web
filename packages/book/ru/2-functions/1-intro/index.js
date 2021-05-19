@@ -39,7 +39,7 @@ export default () => (
         </Section.Main>
         <Section.Side>
             <Section.Sticky>
-                <Img src={img} width={474} />
+                <Img src={img} width={474} height={454} />
             </Section.Sticky>
         </Section.Side>
     </Section>

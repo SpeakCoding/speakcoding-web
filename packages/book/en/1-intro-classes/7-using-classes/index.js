@@ -26,9 +26,9 @@ export default () => (
                     Every programming language has a number of{' '}
                     <b>standard (“original”) classes, which do not need definitions</b>. These
                     include: string (text string); int [integer]/uint (unsigned, cannot be
-                    negative); float (number with a fractional part after the punctuator); and byte
-                    (unit of information). It is worth memorizing these, though they can be found
-                    using an internet search.
+                    negative); float (number with a fractional part after the punctuator); and bool
+                    (true or false). It is worth memorizing these, though they can be found using an
+                    internet search.
                 </p>
                 <p>
                     Int/uint, float, and byte are usually denoted in code by characters. If you see
@@ -75,8 +75,8 @@ export default () => (
                     </div>
                     <pre className={s.code}>import "Button"</pre>
                     <div className={s.phrase}>
-                        Create an instance of the Button class and record the characteristics for it
-                        that we will need:
+                        Create an instance of the Button class and record the properties for it that
+                        we will need:
                         <div className={s.gap} />
                     </div>
                     <pre className={s.code}>

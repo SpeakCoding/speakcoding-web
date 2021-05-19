@@ -7,7 +7,6 @@
     background-color: var(--c-grey-200);
     line-height: 1.6;
     transition: background-color var(--animation);
-    cursor: help;
 
     --bg-color: var(--c-white);
 }
