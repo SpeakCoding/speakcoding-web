@@ -1,8 +1,7 @@
 import React from 'react';
-import { Card, Hint, Img, Section, Structure } from '@sc/ui';
+import { Card, Grid, Hint, Img, Section, Structure } from '@sc/ui';
 import Term from '../../glossary/Term';
 import img from '../../../assets/1/8-var-types-ru.svg';
-import s from './style.css';
 
 export default () => (
     <>
@@ -68,40 +67,52 @@ export default () => (
         </Section>
         <Section>
             <Section.Main>
-                <div className={s.example}>
-                    <div className={s.phrase}>
+                <Grid>
+                    <Grid.Cell border='right'>
                         Импортируем описание стандартного класса Button
-                        <div className={s.gap} />
-                    </div>
-                    <pre className={s.code}>import "Button"</pre>
-                    <div className={s.phrase}>
+                    </Grid.Cell>
+                    <Grid.Cell>
+                        <pre>import "Button"</pre>
+                    </Grid.Cell>
+                    <Grid.Cell border='right' dense='top'>
                         Создаем экземпляр класса Button и записываем для него нужные нам
                         характеристики:
-                        <div className={s.gap} />
-                    </div>
-                    <pre className={s.code}>
-                        <Hint>
-                            new
-                            <Hint.Tooltip>
-                                Word 'new' here means that we create a new instance of a class (in
-                                this case, a new button of the Button class). These key words are
-                                reserved in each programming language, and you can't use this word
-                                to name a different component or function. In modern code editors
-                                these words are usually highlighted so you can always find them in
-                                code
-                            </Hint.Tooltip>
-                        </Hint>{' '}
-                        PostButton = new Button()
-                    </pre>
-                    <div className={s.phrase}>Меняем размер кнопки</div>
-                    <pre className={s.code}>newPostButton.Size(500, 20)</pre>
-                    <div className={s.phrase}>Меняем позицию кнопки на экране</div>
-                    <pre className={s.code}>newPostButton.Position(20, 20)</pre>
-                    <div className={s.phrase}>
+                    </Grid.Cell>
+                    <Grid.Cell dense='top'>
+                        <pre>
+                            <Hint>
+                                new
+                                <Hint.Tooltip>
+                                    Word 'new' here means that we create a new instance of a class
+                                    (in this case, a new button of the Button class). These key
+                                    words are reserved in each programming language, and you can't
+                                    use this word to name a different component or function. In
+                                    modern code editors these words are usually highlighted so you
+                                    can always find them in code
+                                </Hint.Tooltip>
+                            </Hint>{' '}
+                            PostButton = new Button()
+                        </pre>
+                    </Grid.Cell>
+                    <Grid.Cell border='right' dense>
+                        Меняем размер кнопки
+                    </Grid.Cell>
+                    <Grid.Cell dense>
+                        <pre>newPostButton.Size(500, 20)</pre>
+                    </Grid.Cell>
+                    <Grid.Cell border='right' dense>
+                        Меняем позицию кнопки на экране
+                    </Grid.Cell>
+                    <Grid.Cell dense>
+                        <pre>newPostButton.Position(20, 20)</pre>
+                    </Grid.Cell>
+                    <Grid.Cell border='right' dense='top'>
                         Вызываем функцию кнопки, которая отобразит ее на экране
-                    </div>
-                    <pre className={s.code}>newPostButton.Draw()</pre>
-                </div>
+                    </Grid.Cell>
+                    <Grid.Cell dense='top'>
+                        <pre>newPostButton.Draw()</pre>
+                    </Grid.Cell>
+                </Grid>
             </Section.Main>
         </Section>
         <Section>

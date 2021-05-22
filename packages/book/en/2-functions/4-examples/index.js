@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, HL, Icon, Section } from '@sc/ui';
+import { Code, Grid, HL, Icon, Section } from '@sc/ui';
 import Post from '../../../common/2/class-post';
 import s from './style.css';
 
@@ -20,31 +20,30 @@ export default () => (
     <Section>
         <Section.Main>
             <h2>Examples of a description of a function</h2>
-            <div className={s.table}>
-                <div className={s.cell}>
+            <Grid cols='25% 25% 50%'>
+                <Grid.Cell border='right bottom'>
                     <b>The structure of a function’s definition</b>
-                </div>
-                <div className={s.cell}>
+                </Grid.Cell>
+                <Grid.Cell border='right bottom'>
                     <b>In writing</b>
-                </div>
-                <div className={s.cell}>
+                </Grid.Cell>
+                <Grid.Cell border='bottom'>
                     <b>What it looks like in code</b>
-                </div>
+                </Grid.Cell>
 
-                <div className={s.cell} />
-                <div className={s.cell}>
+                <Grid.Cell border='right' />
+                <Grid.Cell border='right'>
                     <div className={s.hint}>
                         <span>Functions are described at the same place where classes are</span>
                         <Icon name='arrow-right' size={24} />
                     </div>
-                </div>
-
-                <div className={s.cell}>
+                </Grid.Cell>
+                <Grid.Cell>
                     <Post />
                     <pre>...</pre>
-                </div>
+                </Grid.Cell>
 
-                <div className={s.cell}>
+                <Grid.Cell border='right'>
                     <ul>
                         <li>
                             <HL color='green' active>
@@ -75,9 +74,8 @@ export default () => (
                             that the function returns
                         </li>
                     </ul>
-                </div>
-
-                <div className={s.cell}>
+                </Grid.Cell>
+                <Grid.Cell border='right'>
                     A function of the class{' '}
                     <HL color='orange' active inline={3}>
                         Post
@@ -103,15 +101,13 @@ export default () => (
                         new quantity of likes
                     </HL>
                     .
-                </div>
-
-                <div className={s.cell}>
+                </Grid.Cell>
+                <Grid.Cell>
                     <Code value={codeFn1} />
-                </div>
+                </Grid.Cell>
 
-                <div className={s.cell} />
-
-                <div className={s.cell}>
+                <Grid.Cell border='right' />
+                <Grid.Cell border='right'>
                     Or a function of the class{' '}
                     <HL color='orange' active inline={3}>
                         Post
@@ -132,12 +128,11 @@ export default () => (
                         and communicates that number
                     </HL>
                     .
-                </div>
-
-                <div className={s.cell}>
+                </Grid.Cell>
+                <Grid.Cell>
                     <Code value={codeFn2} />
-                </div>
-            </div>
+                </Grid.Cell>
+            </Grid>
         </Section.Main>
     </Section>
 );

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Code, HL, Section } from '@sc/ui';
-import s from './style.css';
+import { Code, Grid, HL, Section } from '@sc/ui';
 
 const codeUser = `
 class [[User]](orange _ 1) {
@@ -64,15 +63,15 @@ export default () => (
         <Section>
             <Section.Main>
                 <p>Example of calling a function</p>
-                <div className={s.table}>
-                    <div className={s.cell}>
+                <Grid>
+                    <Grid.Cell border='right bottom'>
                         <b>In writing</b>
-                    </div>
-                    <div className={s.cell}>
+                    </Grid.Cell>
+                    <Grid.Cell border='bottom'>
                         <b>What it looks like in code</b>
-                    </div>
+                    </Grid.Cell>
 
-                    <div className={s.cell}>
+                    <Grid.Cell border='right'>
                         A function that allows a user’s posts to be temporarily muted (not
                         displayed):
                         <br /> <br />A function of the class{' '}
@@ -92,12 +91,12 @@ export default () => (
                             mutes them
                         </HL>
                         .
-                    </div>
+                    </Grid.Cell>
 
-                    <div className={s.cell}>
+                    <Grid.Cell>
                         <Code value={codeUser} />
-                    </div>
-                </div>
+                    </Grid.Cell>
+                </Grid>
             </Section.Main>
         </Section>
     </>

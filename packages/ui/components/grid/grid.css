@@ -1,6 +1,5 @@
-.table {
+.box {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     margin: 24px 0;
     border-radius: 8px;
     border: 1px solid var(--c-grey-200);
@@ -10,10 +9,22 @@
     padding: 24px;
 }
 
-.cell:nth-child(2n + 1) {
+.cell.border-right {
     border-right: 1px solid var(--c-grey-200);
 }
 
-.cell:nth-child(-n + 2) {
+.cell.border-bottom {
     border-bottom: 1px solid var(--c-grey-200);
+}
+
+.cell.dense-top {
+    padding-top: 0;
+}
+
+.cell.dense-bottom {
+    padding-bottom: 0;
+}
+
+.cell pre {
+    white-space: pre-wrap;
 }

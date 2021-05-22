@@ -1,6 +1,5 @@
 import React from 'react';
-import { Code, HL, Section } from '@sc/ui';
-import s from './style.css';
+import { Code, Grid, HL, Section } from '@sc/ui';
 
 const codeUser = `
 class [[User]](orange _ 1) {
@@ -60,15 +59,15 @@ export default () => (
         <Section>
             <Section.Main>
                 <p>Пример вызова функции</p>
-                <div className={s.table}>
-                    <div className={s.cell}>
+                <Grid>
+                    <Grid.Cell border='right bottom'>
                         <b>Описание и пояснение функции текстом</b>
-                    </div>
-                    <div className={s.cell}>
+                    </Grid.Cell>
+                    <Grid.Cell border='bottom'>
                         <b>Как это выглядит в коде</b>
-                    </div>
+                    </Grid.Cell>
 
-                    <div className={s.cell}>
+                    <Grid.Cell border='right'>
                         Функция, которая позволяет временно перестать читать посты пользователя:
                         <br /> <br />
                         Функция{' '}
@@ -85,12 +84,12 @@ export default () => (
                             посты из твоего фида.
                         </HL>
                         .
-                    </div>
+                    </Grid.Cell>
 
-                    <div className={s.cell}>
+                    <Grid.Cell>
                         <Code value={codeUser} />
-                    </div>
-                </div>
+                    </Grid.Cell>
+                </Grid>
             </Section.Main>
         </Section>
     </>

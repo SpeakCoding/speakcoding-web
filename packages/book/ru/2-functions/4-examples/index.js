@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, HL, Icon, Section } from '@sc/ui';
+import { Code, Grid, HL, Icon, Section } from '@sc/ui';
 import Post from '../../../common/2/class-post';
 import s from './style.css';
 
@@ -19,31 +19,30 @@ export default () => (
     <Section>
         <Section.Main>
             <h2>Примеры описания функции</h2>
-            <div className={s.table}>
-                <div className={s.cell}>
+            <Grid cols='25% 25% 50%'>
+                <Grid.Cell border='right bottom'>
                     <b>Структура описания функции</b>
-                </div>
-                <div className={s.cell}>
+                </Grid.Cell>
+                <Grid.Cell border='right bottom'>
                     <b>Описание функции текстом</b>
-                </div>
-                <div className={s.cell}>
+                </Grid.Cell>
+                <Grid.Cell border='bottom'>
                     <b>Описание функции кодом</b>
-                </div>
+                </Grid.Cell>
 
-                <div className={s.cell} />
-                <div className={s.cell}>
+                <Grid.Cell border='right' />
+                <Grid.Cell border='right'>
                     <div className={s.hint}>
                         <span>Функции описываются там же, где класс</span>
                         <Icon name='arrow-right' size={24} />
                     </div>
-                </div>
-
-                <div className={s.cell}>
+                </Grid.Cell>
+                <Grid.Cell>
                     <Post />
                     <pre>...</pre>
-                </div>
+                </Grid.Cell>
 
-                <div className={s.cell}>
+                <Grid.Cell border='right'>
                     <ul>
                         <li>
                             <HL color='green' active>
@@ -74,9 +73,8 @@ export default () => (
                             , которое она передает
                         </li>
                     </ul>
-                </div>
-
-                <div className={s.cell}>
+                </Grid.Cell>
+                <Grid.Cell border='right'>
                     Функция класса{' '}
                     <HL color='orange' active inline={3}>
                         Пост
@@ -95,15 +93,13 @@ export default () => (
                         поста, и ничего не возвращает
                     </HL>
                     .
-                </div>
-
-                <div className={s.cell}>
+                </Grid.Cell>
+                <Grid.Cell>
                     <Code value={codeFn1} />
-                </div>
+                </Grid.Cell>
 
-                <div className={s.cell} />
-
-                <div className={s.cell}>
+                <Grid.Cell border='right' />
+                <Grid.Cell border='right'>
                     Или функция класса{' '}
                     <HL color='orange' active inline={3}>
                         Пост
@@ -124,12 +120,11 @@ export default () => (
                         это число
                     </HL>
                     .
-                </div>
-
-                <div className={s.cell}>
+                </Grid.Cell>
+                <Grid.Cell>
                     <Code value={codeFn2} />
-                </div>
-            </div>
+                </Grid.Cell>
+            </Grid>
         </Section.Main>
     </Section>
 );

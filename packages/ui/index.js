@@ -6,6 +6,7 @@ export Code from './components/code';
 export DateTime from './components/datetime';
 export Drawer from './components/drawer';
 export FileUpload from './components/fileupload';
+export Grid from './components/grid';
 export HL from './components/highlight';
 export Hint from './components/hint';
 export Icon from './components/icon';
