@@ -65,10 +65,12 @@ const App = () => {
                 <Switch>
                     <Route path='/en/chapter-1' component={EN.Intro} />
                     <Route path='/en/chapter-2' component={EN.Functions} />
+                    <Route path='/en/chapter-3' component={EN.Objects} />
                     <Route path='/en/glossary' component={EN.Glossary} />
 
                     <Route path='/ru/chapter-1' component={RU.Intro} />
                     <Route path='/ru/chapter-2' component={RU.Functions} />
+                    <Route path='/ru/chapter-3' component={EN.Objects} />
                     <Route path='/ru/glossary' component={RU.Glossary} />
 
                     <Route component={Home} />

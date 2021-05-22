@@ -7,7 +7,7 @@ const chapters = [
         href: '/en/chapter-1'
     },
     { title: 'Parts of speech: functions', href: '/en/chapter-2' },
-    { title: 'Create and update objects' },
+    { title: 'Create and update objects', href: '/en/chapter-3' },
     { title: 'Interface' },
     { title: 'Repositories and editors' },
     { title: 'Complex sentences' },

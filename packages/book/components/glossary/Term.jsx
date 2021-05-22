@@ -12,13 +12,12 @@ const Term = ({ data, link, href, children }) => {
     if (!cache[pathname]) cache[pathname] = {};
 
     const displayAsLink = useMemo(() => {
+        const key = `@@${data.id}`;
+
         if (!data?.id) return undefined;
+        if (cache[pathname][key]) return true;
 
-        if (cache[pathname][data.id]) {
-            return true;
-        }
-
-        cache[pathname][data.id] = true;
+        cache[pathname][key] = true;
 
         return false;
     }, [data?.id]);
