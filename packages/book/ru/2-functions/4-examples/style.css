@@ -23,38 +23,6 @@
     white-space: pre-wrap;
 }
 
-.post {
-    position: relative;
-    height: 40px;
-    padding: 4px 24px 8px;
-    box-sizing: border-box;
-    border-radius: 20px;
-    background-color: var(--bg-orange);
-    overflow: hidden;
-    transition: height var(--animation);
-    cursor: pointer;
-}
-
-.post.expanded {
-    height: 300px;
-    cursor: default;
-}
-
-.expand {
-    position: absolute;
-    top: 8px;
-    right: 16px;
-    width: 24px;
-    height: 24px;
-    transform: rotate(90deg);
-    transition: transform var(--animation);
-    cursor: pointer;
-}
-
-.post.expanded .expand {
-    transform: rotate(-90deg);
-}
-
 .hint {
     display: grid;
     grid-template-columns: 1fr auto;

@@ -66,7 +66,7 @@ export default () => (
                 <p>Example of calling a function</p>
                 <div className={s.table}>
                     <div className={s.cell}>
-                        <b>In text</b>
+                        <b>In writing</b>
                     </div>
                     <div className={s.cell}>
                         <b>What it looks like in code</b>

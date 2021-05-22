@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, HL, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
-import Slides, { useSlide } from '../../../common/function-definition-slides';
+import Slides, { useSlide } from '../../../common/2/function-definition-slides';
 import s from './style.css';
 
 const Example = () => {

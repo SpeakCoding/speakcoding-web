@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Section } from '@sc/ui';
-import Example from '../../../common/class-examples';
+import Example from '../../../common/1/class-examples';
 
 export default () => (
     <>

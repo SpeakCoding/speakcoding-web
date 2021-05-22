@@ -1,18 +1,7 @@
-import React, { useCallback, useState } from 'react';
-import classNames from 'classnames';
+import React from 'react';
 import { Code, HL, Icon, Section } from '@sc/ui';
+import Post from '../../../common/2/class-post';
 import s from './style.css';
-
-const codePost = `
-class Post {
-    user            User
-    time            Time
-    image           Image
-    setOfImages     []Image
-    video           Video
-    setOfLikes      []Like
-    caption         Text
-    setOfComments   []Comment`;
 
 const codeFn1 = `
 func (post* [[Post]](orange _ 1)) [[Add Like]](green _ 1)([[user User]](aquamarine _ 1)) { 
@@ -25,27 +14,6 @@ func [[NumberOfLikes]](green _ 1)() [[Number]](light-sky-blue _ 1) {
     [[number_of_likes = self.setOfLikes.length]](plum _ 1 3)
     [[return]](plum _ 1) [[number_of_likes]](light-sky-blue _ 1)
 }`;
-
-const CodePost = () => {
-    const [expanded, setExpanded] = useState(false);
-
-    const toggle = useCallback(event => {
-        event.stopPropagation();
-        setExpanded(current => !current);
-    }, []);
-
-    return (
-        <div
-            className={classNames(s.post, expanded && s.expanded)}
-            onClick={expanded ? undefined : toggle}
-        >
-            <Code value={codePost} />
-            <div className={s.expand} onClick={toggle}>
-                <Icon name='chevron-right' size={24} />
-            </div>
-        </div>
-    );
-};
 
 export default () => (
     <Section>
@@ -71,7 +39,7 @@ export default () => (
                 </div>
 
                 <div className={s.cell}>
-                    <CodePost />
+                    <Post />
                     <pre>...</pre>
                 </div>
 

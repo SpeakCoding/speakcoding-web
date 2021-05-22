@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tabs, Tag } from '@sc/ui';
-import { L } from '../../components';
+import { L } from '../../../components';
 import Content from './Content';
 import s from './example.css';
 

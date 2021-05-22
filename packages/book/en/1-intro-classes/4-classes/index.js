@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section } from '@sc/ui';
-import TextToCode from '../../../common/text-to-class';
+import TextToCode from '../../../common/1/text-to-class';
 import Term from '../../glossary/Term';
 
 export default () => (
