@@ -52,6 +52,7 @@ export default () => (
                     </ul>
                 </Callout>
             </Section.Main>
+            <Section.Side />
         </Section.Block>
     </>
 );

@@ -28,6 +28,7 @@ export default () => (
                     удаляется самостоятельно, но иногда нужна функция deinit.
                 </p>
             </Section.Main>
+            <Section.Side />
         </Section>
         <Card mode='skill'>
             <h2>Новый скил добавлен!</h2>

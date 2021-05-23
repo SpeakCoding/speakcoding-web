@@ -79,11 +79,6 @@ export default () => (
                         <Term id='component'>составляющую</Term> username вашего аккаунта (объекта
                         класса User).
                     </p>
-                </Section.Main>
-                <Section.Side />
-            </Section.Block>
-            <Section.Block>
-                <Section.Main>
                     <ul>
                         <li>
                             Можно заменять <Term id='component'>составляющие</Term> или менять{' '}
@@ -92,6 +87,12 @@ export default () => (
                             onClickSetButton.
                         </li>
                     </ul>
+                </Section.Main>
+                <Section.Side />
+            </Section.Block>
+
+            <Section.Block>
+                <Section.Main>
                     <Grid cols='36% 1fr'>
                         <Grid.Cell border='right bottom'>
                             <b>Пояснения к примеру</b>
@@ -145,6 +146,11 @@ export default () => (
                             <Code value={code13} />
                         </Grid.Cell>
                     </Grid>
+                </Section.Main>
+            </Section.Block>
+
+            <Section.Block>
+                <Section.Main>
                     <ul>
                         <li>
                             Или в <Term id='class'>классе</Term> может быть определена{' '}
@@ -152,6 +158,12 @@ export default () => (
                             <Term id='input'>вводные</Term> для того, чтобы изменить состояние.
                         </li>
                     </ul>
+                </Section.Main>
+                <Section.Side />
+            </Section.Block>
+
+            <Section.Block>
+                <Section.Main>
                     <Grid cols='36% 1fr'>
                         <Grid.Cell border='right bottom'>
                             <b>Пояснения к примеру</b>
@@ -180,6 +192,11 @@ export default () => (
                             <Code value={code22} />
                         </Grid.Cell>
                     </Grid>
+                </Section.Main>
+            </Section.Block>
+
+            <Section.Block>
+                <Section.Main>
                     <p>
                         В <Term id='function'>функциях</Term> мы описываем последовательность
                         действий, которые мы можем производить с конкретными{' '}
@@ -205,6 +222,12 @@ export default () => (
                         <Term id='input'>вводной</Term>, а сама <Term id='function'>функция</Term>{' '}
                         выглядит как последовательность следующих действий:
                     </p>
+                </Section.Main>
+                <Section.Side />
+            </Section.Block>
+
+            <Section.Block>
+                <Section.Main>
                     <div className={s.function}>
                         <Grid>
                             <Grid.Cell border='right'>
@@ -231,6 +254,11 @@ export default () => (
                             </Grid.Cell>
                         </Grid>
                     </div>
+                </Section.Main>
+            </Section.Block>
+
+            <Section.Block>
+                <Section.Main>
                     <p>
                         Как мы записали, Caption является составляющей класса Post. Поэтому, когда
                         мы создаем конкретный Post, у нас будет доступ ко все составляющим этого
@@ -243,8 +271,10 @@ export default () => (
                         (Caption) этого конкретного поста.
                     </p>
                 </Section.Main>
+                <Section.Side />
             </Section.Block>
         </Section>
+
         <Card mode='quiz'>
             <h2>Тест №6</h2>
             <Card.Button href='#'>Пройти</Card.Button>
