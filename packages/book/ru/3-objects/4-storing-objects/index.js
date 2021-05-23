@@ -29,6 +29,16 @@ const code23 = `\xa0
 
 export default () => (
     <>
+        <Card mode='skill'>
+            <h2>Новый скил добавлен!</h2>
+            Чтобы изменять объекты в коде, писать приложения, вам всегда нужно будет создавать
+            конкретные экземпляры (объекты) класса.
+        </Card>
+        <Card mode='quiz'>
+            <h2>Тест №4</h2>
+            <Card.Button href='#'>Пройти</Card.Button>
+        </Card>
+
         <Section>
             <Section.Block>
                 <Section.Main>

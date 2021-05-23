@@ -12,7 +12,7 @@ export default () => (
     <Section.Block>
         <Section.Main>
             <p>
-                <b>Example:</b> The Time <Term id='component'>components</Term> can be created when
+                <b>Example:</b> The Time <Term id='component'>component</Term> can be created when
                 the computer checks the time on its clock.
             </p>
             <Grid cols='36% 1fr'>

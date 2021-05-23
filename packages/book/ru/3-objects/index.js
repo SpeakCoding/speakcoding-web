@@ -12,8 +12,8 @@ export default () => (
         <Section>
             <Part1 />
             <Part2 />
+            <Part3 />
         </Section>
-        <Part3 />
         <Part4 />
         <Part5 />
     </Page>

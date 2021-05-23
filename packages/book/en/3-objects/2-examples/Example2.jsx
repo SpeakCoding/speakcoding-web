@@ -14,15 +14,11 @@ export default () => (
     <Section.Block>
         <Section.Main>
             <p>
-                The{' '}
-                <Term id='constructor'>
-                    <b>constructor function</b>
-                </Term>{' '}
-                <b>that creates</b> a specific object (<Term id='instance'>instance</Term>) of a
-                class should be titled in a specific way. The title is hardcoded for each language.
-                In some languages it takes the name of its class, while in others, such as Python,
-                it is titled __init__. This title can always be found by entering the relevant
-                language in a search engine.
+                The <Term id='constructor'>constructor function</Term> that creates a specific
+                object (<Term id='instance'>instance</Term>) of a class should be titled in a
+                specific way. The title is hardcoded for each language. In some languages it takes
+                the name of its class, while in others, such as Python, it is titled __init__. This
+                title can always be found by entering the relevant language in a search engine.
             </p>
             <p>
                 Now, having specified the constructor function, we can call it to create{' '}

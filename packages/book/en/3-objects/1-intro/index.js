@@ -18,7 +18,7 @@ export default () => (
                 in the program.
             </p>
             <p>
-                In a structured definition, we defined the User class and what it will consist of.
+                In a structured definition, we defined the User class and what it will consist of:
             </p>
             <p>
                 <HL color='orange' active>
@@ -59,10 +59,11 @@ export default () => (
                 <Term id='component'>components</Term> created beforehand.
             </p>
             <p>
-                To create a specific <Term id='instance'>object (instance)</Term>, we use a special
-                constructor function that lets us transfer the inputs needed to create this{' '}
-                <Term id='instance'>object (instance)</Term>. This constructor function is executed
-                when the object is created, and the data is transferred to it as inputs.
+                To create a specific <Term id='instance'>object (instance)</Term>, we use a special{' '}
+                <Term id='constructor'>constructor function</Term> that lets us transfer the inputs
+                needed to create this <Term id='instance'>object (instance)</Term>. This constructor
+                function is executed when the object is created, and the data is transferred to it
+                as inputs.
             </p>
             <p>
                 In the case of the Instagram user, we know a specific User always has a username,

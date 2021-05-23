@@ -29,6 +29,15 @@ const code23 = `\xa0
 
 export default () => (
     <>
+        <Card mode='skill'>
+            <h2>New skill!</h2>
+            To change objects in code or to write apps, you will always need to create specific
+            instances (objects) of the class.
+        </Card>
+        <Card mode='quiz'>
+            <h2>Quiz #4</h2>
+            <Card.Button href='#'>Complete</Card.Button>
+        </Card>
         <Section>
             <Section.Main>
                 <h1>Storing objects temporarily</h1>
