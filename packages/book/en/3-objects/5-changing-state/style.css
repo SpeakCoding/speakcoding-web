@@ -1,0 +1,11 @@
+.hint {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 16px;
+    margin-top: 16px;
+}
+
+.function {
+    margin: 80px 0;
+}
