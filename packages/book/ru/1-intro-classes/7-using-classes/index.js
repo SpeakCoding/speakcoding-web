@@ -83,12 +83,12 @@ export default () => (
                             <Hint>
                                 new
                                 <Hint.Tooltip>
-                                    Word 'new' here means that we create a new instance of a class
-                                    (in this case, a new button of the Button class). These key
-                                    words are reserved in each programming language, and you can't
-                                    use this word to name a different component or function. In
-                                    modern code editors these words are usually highlighted so you
-                                    can always find them in code
+                                    Слово new означает, что мы создаем новый экземпляр класса (в
+                                    данном случае, новую кнопку, Button). Эти ключевые слова
+                                    "заняты" для каждого языка, ты не можешь так называть
+                                    переменные/функции и т.д. Но в современных редакторов для работы
+                                    с кодом они подсвечиваются, поэтому ты всегда сможешь найти их в
+                                    коде
                                 </Hint.Tooltip>
                             </Hint>{' '}
                             PostButton = new Button()

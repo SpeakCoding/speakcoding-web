@@ -18,7 +18,9 @@ export default () => (
                     var numberOfLikes: Int; <br />
                     numberOfLikes = 0;
                 </Pre>
-                <p>Deinit</p>
+                <p>
+                    <b>Deinit</b>
+                </p>
                 <p>
                     When we delete a particular object belonging to a class, we sometimes need to
                     clean up the code. As we could access other public variables within this object,

@@ -30,3 +30,7 @@
 .cell pre {
     white-space: pre-wrap;
 }
+
+.cell > b {
+    font-weight: 600;
+}

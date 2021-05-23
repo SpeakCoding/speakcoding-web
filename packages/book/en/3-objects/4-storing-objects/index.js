@@ -34,7 +34,7 @@ export default () => (
                 <h1>Storing objects temporarily</h1>
                 <p>
                     We have discussed how to define what our program consists of (
-                    <Term id='class'>classes</Term>,<Term id='component'>components</Term>,{' '}
+                    <Term id='class'>classes</Term>, <Term id='component'>components</Term>,{' '}
                     <Term id='property'>properties</Term>) and how to create specific{' '}
                     <Term id='instance'>objects (instances)</Term> of these classes. We have also
                     examined what we need <Term id='function'>functions</Term> for. Computers and
@@ -53,7 +53,7 @@ export default () => (
                     <li>
                         We can use special temporary containers, or{' '}
                         <Term id='variables'>"variables"</Term> in which we save the data that we
-                        need.{' '}
+                        need.
                     </li>
                 </ul>
                 <Grid cols='36% 1fr'>
