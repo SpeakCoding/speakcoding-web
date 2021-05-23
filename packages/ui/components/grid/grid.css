@@ -1,3 +1,5 @@
+@import "../../theme.css";
+
 .box {
     display: grid;
     margin: 24px 0;

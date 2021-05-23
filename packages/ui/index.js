@@ -13,6 +13,7 @@ export Icon from './components/icon';
 export Img from './components/img';
 export Link from './components/link';
 export Lottie from './components/lottie';
+export Pre from './components/pre';
 export Section from './components/section';
 export Structure from './components/structure';
 export Tabs from './components/tabs';
