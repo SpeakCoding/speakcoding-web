@@ -1,9 +1,10 @@
 import React from 'react';
-import { Code, Grid, Hint, HL, Section } from '@sc/ui';
+import { Code, Grid, HL, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 
 const code = `
-\xa0   [[Post]](light-sky-blue _ 1)([[inputUser User, inputImage Image, inputText Text]](aquamarine _ 1)) {
+class [[Post]](orange _ 1) {
+    [[Post]](light-sky-blue _ 1)([[inputUser User, inputImage Image, inputText Text]](aquamarine _ 1)) {
         [[self.user = inputUser]](plum _ 1)
         [[self.image = inputImage]](plum _ 1)
         [[self.text = inputText]](plum _ 1)  
@@ -45,20 +46,6 @@ export default () => (
                     .
                 </Grid.Cell>
                 <Grid.Cell>
-                    <pre>
-                        class{' '}
-                        <Hint>
-                            <HL color='orange' active inline={3}>
-                                Post
-                            </HL>
-                            <Hint.Tooltip>
-                                In Javascript init function's title repeats the name of the class.
-                                You can find titles of these functions for each language on the
-                                Internet
-                            </Hint.Tooltip>
-                        </Hint>{' '}
-                        {'{'}
-                    </pre>
                     <Code value={code} />
                 </Grid.Cell>
             </Grid>
