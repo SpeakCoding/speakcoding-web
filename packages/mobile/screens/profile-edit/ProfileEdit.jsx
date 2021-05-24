@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { convertToJPEGBase64 } from '@sc/tools/image';
 import { Button, Header } from '@sc/ui/mobile';
-import { FileUpload } from '@sc/ui';
+import { FileUpload, HL } from '@sc/ui';
 import { useAPI, useCacheState, useRouter } from '../../tools';
 import { Userpic } from '../../components';
 import s from './profile-edit.css';
@@ -49,9 +49,11 @@ const ProfileEdit = () => {
                 {!initial && <Header.Left onClick={goBack}>Cancel</Header.Left>}
                 {initial ? 'Create profile' : 'Edit profile'}
                 <Header.Right>
-                    <Button type='submit' variant='text'>
-                        Done
-                    </Button>
+                    <HL.Shape variant='caption' caption='setButton' active>
+                        <Button type='submit' variant='text'>
+                            Done
+                        </Button>
+                    </HL.Shape>
                 </Header.Right>
             </Header>
 
@@ -66,25 +68,31 @@ const ProfileEdit = () => {
             </div>
 
             <div className={s.fields}>
-                <div className={s.label}>Name</div>
-                <input
-                    autoComplete='off'
-                    className={s.input}
-                    defaultValue={user.user_name || ''}
-                    name='user_name'
-                    placeholder='Name'
-                    type='text'
-                />
+                <HL.Shape variant='caption' caption='newUsernameField' active>
+                    <div className={s.field}>
+                        <div className={s.label}>Name</div>
+                        <input
+                            autoComplete='off'
+                            className={s.input}
+                            defaultValue={user.user_name || ''}
+                            name='user_name'
+                            placeholder='Name'
+                            type='text'
+                        />
+                    </div>
+                </HL.Shape>
 
-                <div className={s.label}>Bio</div>
-                <input
-                    autoComplete='off'
-                    className={s.input}
-                    defaultValue={user.bio || ''}
-                    name='bio'
-                    placeholder='Bio'
-                    type='text'
-                />
+                <div className={s.field}>
+                    <div className={s.label}>Bio</div>
+                    <input
+                        autoComplete='off'
+                        className={s.input}
+                        defaultValue={user.bio || ''}
+                        name='bio'
+                        placeholder='Bio'
+                        type='text'
+                    />
+                </div>
             </div>
         </form>
     );

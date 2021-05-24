@@ -41,6 +41,7 @@ const UserInfo = ({ user, self, goToPosts }) => {
                         block
                         variant='outlined'
                         size='small'
+                        data-control='profile-edit'
                         onClick={() => navigate('profile-edit', { userid: user.id })}
                     >
                         Edit profile

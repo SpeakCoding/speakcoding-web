@@ -27,6 +27,10 @@ const InterceptorView = ({ rootMargin, threshold, children, onEnter, onExit }) =
         };
     }, [onEnter, onExit]);
 
+    useEffect(() => {
+        interceptor.init();
+    }, []);
+
     return <div ref={$ref}>{children}</div>;
 };
 

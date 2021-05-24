@@ -21,3 +21,7 @@
     background-color: var(--c-white);
     z-index: var(--l-notification);
 }
+
+[data-interceptor=on] [data-role="phone-overlay"] {
+    display: initial;
+}

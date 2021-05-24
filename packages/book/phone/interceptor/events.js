@@ -2,8 +2,10 @@ export function emitEvent(type, payload = {}) {
     document.dispatchEvent(new CustomEvent('sc-phone-event', { detail: { type, payload } }));
 }
 
-export function setSession(token) {
-    if (localStorage.getItem('mobile_auth_token') === token) return;
+export function setSession(token, { soft = false } = {}) {
+    const current = localStorage.getItem('mobile_auth_token');
+
+    if ((current && soft) || current === token) return;
     localStorage.setItem('mobile_auth_token', token);
     emitEvent('session-set');
 }

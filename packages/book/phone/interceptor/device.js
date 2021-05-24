@@ -1,20 +1,27 @@
 /* eslint-disable no-param-reassign */
 import * as dom from './dom';
 
+let ready = false;
+
 export async function init() {
+    if (ready) return true;
+
     return new Promise(resolve => {
         document.addEventListener('sc-phone-event', event => {
-            if (event.detail.type === 'ready') resolve();
+            if (event.detail.type === 'ready') {
+                ready = true;
+                resolve();
+            }
         });
     });
 }
 
-export function on() {
-    dom.getDevice().setAttr('interceptor', 'on');
+export async function on() {
+    (await dom.getDevice())?.setAttr('interceptor', 'on');
 }
 
-export function off() {
-    dom.getDevice().setAttr('interceptor', 'off');
+export async function off() {
+    (await dom.getDevice())?.setAttr('interceptor', 'off');
 }
 
 export function reset() {
@@ -24,36 +31,37 @@ export function reset() {
     });
 }
 
-export function lockDisplay() {
-    dom.getControl('display')?.setAttr('lock', 'on');
+export async function lockDisplay() {
+    (await dom.getControl('display'))?.setAttr('lock', 'on');
 }
 
-export function unlockDisplay() {
-    dom.getControl('display')?.setAttr('lock', 'off');
+export async function unlockDisplay() {
+    (await dom.getControl('display'))?.setAttr('lock', 'off');
 }
 
-export function lockScreen() {
-    dom.getControl('screen')?.setAttr('lock', 'on');
+export async function lockScreen() {
+    (await dom.getControl('screen'))?.setAttr('lock', 'on');
 }
 
-export function unlockScreen() {
-    dom.getControl('screen')?.setAttr('lock', 'off');
+export async function unlockScreen() {
+    (await dom.getControl('screen'))?.setAttr('lock', 'off');
 }
 
-export function lockTabs() {
-    dom.getControl('tabs')?.setAttr('lock', 'on');
+export async function lockTabs() {
+    (await dom.getControl('tabs'))?.setAttr('lock', 'on');
 }
 
-export function unlockTabs() {
-    dom.getControl('tabs')?.setAttr('lock', 'off');
+export async function unlockTabs() {
+    (await dom.getControl('tabs'))?.setAttr('lock', 'off');
 }
 
-export function switchTab(name) {
-    const $tab = dom.getControl('tabs')?.querySelector(`[data-tab="${name}"]`);
+export async function switchTab(name, resetTab) {
+    const $tab = (await dom.getControl('tabs'))?.querySelector(`[data-tab="${name}"]`);
     $tab?.click();
+    if (resetTab) $tab?.click();
 }
 
-export function scrollToTop() {
-    const $content = dom.getControl('screen')?.querySelector('[data-role=screen-content]');
+export async function scrollToTop() {
+    const $content = (await dom.getControl('screen'))?.querySelector('[data-role=screen-content]');
     if ($content) $content.scrollTop = 0;
 }

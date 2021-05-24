@@ -22,7 +22,14 @@
 }
 
 .overlay {
-    z-index: var(--l-drawer);
+    display: none;
+    position: absolute;
+    top: 25px;
+    right: 27px;
+    bottom: 25px;
+    left: 27px;
+    z-index: var(--l-dropdown);
+    pointer-events: none;
 }
 
 .shape {
@@ -34,6 +41,7 @@
     transition: var(--animation);
     transition-property: opacity, visibility;
     z-index: 1;
+    pointer-events: none;
 }
 
 .clone {
@@ -70,6 +78,34 @@
     border: 4px solid var(--bg-color);
 }
 
+.clone.caption {
+    /*box-shadow: 0 0 0 10px var(--c-white-0), 0 0 0 11px var(--c-primary-500);*/
+}
+
+.clone.caption::before {
+    content: "";
+    position: absolute;
+    top: -18px;
+    right: -30px;
+    bottom: -18px;
+    left: -30px;
+    border: 1px solid var(--c-black);
+    border-radius: 8px;
+}
+
+.clone.caption::after {
+    content: attr(data-caption);
+    position: absolute;
+    top: -38px;
+    left: -16px;
+    padding: 0 8px;
+    border-radius: 4px 4px 0 0;
+    background-color: var(--c-black);
+    color: var(--c-white);
+    font-size: 12px;
+    line-height: 20px;
+}
+
 .bg {
     position: absolute;
     top: 0;
@@ -77,6 +113,7 @@
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.48);
+    border-radius: 40px;
     opacity: 0;
     visibility: hidden;
     transition: var(--animation);
@@ -84,6 +121,7 @@
 }
 
 .shape.hover,
+.shape.active,
 .shape.hover ~ .bg {
     opacity: 1;
     visibility: visible;
