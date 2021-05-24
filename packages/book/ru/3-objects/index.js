@@ -8,7 +8,7 @@ import Part4 from './4-storing-objects';
 import Part5 from './5-changing-state';
 
 export default () => (
-    <Page chapter={3} phone={false}>
+    <Page chapter={3}>
         <Section>
             <Part1 />
             <Part2 />
