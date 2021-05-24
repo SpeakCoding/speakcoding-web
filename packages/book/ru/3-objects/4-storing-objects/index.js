@@ -41,7 +41,7 @@ export default () => (
 
         <Section>
             <Section.Block>
-                <Section.Main>
+                <Section.Main narrow>
                     <h1>Временное хранение объектов</h1>
                     <p>
                         Мы поговорили о том, как описывать то, из чего состоит наша программа (
@@ -67,7 +67,6 @@ export default () => (
                         </li>
                     </ul>
                 </Section.Main>
-                <Section.Side />
             </Section.Block>
 
             <Section.Block>
@@ -99,7 +98,7 @@ export default () => (
             </Section.Block>
 
             <Section.Block>
-                <Section.Main>
+                <Section.Main narrow>
                     <ul>
                         <li>
                             Объекты классов (например, конкретный экземпляр Like), которые записаны
@@ -109,7 +108,6 @@ export default () => (
                         </li>
                     </ul>
                 </Section.Main>
-                <Section.Side />
             </Section.Block>
 
             <Section.Block>
@@ -154,7 +152,7 @@ export default () => (
             </Section.Block>
 
             <Section.Block>
-                <Section.Main>
+                <Section.Main narrow>
                     <p>
                         Если проводить аналогию с языком, то <Term id='variables'>переменные</Term>{' '}
                         (временные контейнеры) можно сравнить с отдельными главами во время
@@ -163,7 +161,6 @@ export default () => (
                         на конкретной странице.
                     </p>
                 </Section.Main>
-                <Section.Side />
             </Section.Block>
         </Section>
 

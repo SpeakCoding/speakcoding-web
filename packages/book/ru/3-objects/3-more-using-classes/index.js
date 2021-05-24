@@ -4,7 +4,7 @@ import s from './style.css';
 
 export default () => (
     <Section.Block>
-        <Section.Main>
+        <Section.Main narrow>
             <h2>Дополнительно (об использовании классов)</h2>
             <p>
                 Для создания новых объектов стандартных классов - string, Int/uint, float и bool,
@@ -27,6 +27,5 @@ export default () => (
                 позже при чтении кода.
             </p>
         </Section.Main>
-        <Section.Side />
     </Section.Block>
 );

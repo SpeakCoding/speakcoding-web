@@ -11,13 +11,12 @@ const code = `class [[Post]](orange _ 1) {
 export default () => (
     <>
         <Section.Block>
-            <Section.Main>
+            <Section.Main narrow>
                 <p>
                     <b>Пример:</b> <Term id='component'>Составляющая</Term> Time может быть создана
                     в момент проверки компьютером своих часов.
                 </p>
             </Section.Main>
-            <Section.Side />
         </Section.Block>
 
         <Section.Block>
@@ -49,7 +48,7 @@ export default () => (
         </Section.Block>
 
         <Section.Block>
-            <Section.Main>
+            <Section.Main narrow>
                 <p>
                     Так как в Инстаграме в описании класса Post есть составляющая Set of Comments
                     (набор комментариев), и при создании поста этот Set of Comments всегда пуст,
@@ -60,7 +59,6 @@ export default () => (
                     равенства, мы должны будем поместить его в соответствующую составляющую.
                 </p>
             </Section.Main>
-            <Section.Side />
         </Section.Block>
 
         <Section.Block>

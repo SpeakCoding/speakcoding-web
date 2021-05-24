@@ -13,7 +13,7 @@ const code = `[[func onClickCreateButton()]](green _ 1) {
 export default () => (
     <>
         <Section.Block>
-            <Section.Main>
+            <Section.Main narrow>
                 <p>
                     <Term id='constructor'>Функция-конструктор</Term>, создающая конкретный объект (
                     <Term id='instance'>экземпляр</Term>) класса, должна быть названа определенным
@@ -43,7 +43,6 @@ export default () => (
                     и выполнит последовательность шагов по созданию new User.
                 </p>
             </Section.Main>
-            <Section.Side />
         </Section.Block>
 
         <Section.Block>

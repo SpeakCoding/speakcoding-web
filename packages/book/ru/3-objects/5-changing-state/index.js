@@ -57,7 +57,7 @@ export default () => (
     <>
         <Section>
             <Section.Block>
-                <Section.Main>
+                <Section.Main narrow>
                     <h1>Изменение состояния объектов</h1>
                     <p>
                         Когда у нас появились <i>конкретные</i> <Term id='instance'>объекты</Term>{' '}
@@ -88,7 +88,6 @@ export default () => (
                         </li>
                     </ul>
                 </Section.Main>
-                <Section.Side />
             </Section.Block>
 
             <Section.Block>
@@ -150,7 +149,7 @@ export default () => (
             </Section.Block>
 
             <Section.Block>
-                <Section.Main>
+                <Section.Main narrow>
                     <ul>
                         <li>
                             Или в <Term id='class'>классе</Term> может быть определена{' '}
@@ -160,7 +159,6 @@ export default () => (
                         </li>
                     </ul>
                 </Section.Main>
-                <Section.Side />
             </Section.Block>
 
             <Section.Block>
@@ -197,7 +195,7 @@ export default () => (
             </Section.Block>
 
             <Section.Block>
-                <Section.Main>
+                <Section.Main narrow>
                     <p>
                         В <Term id='function'>функциях</Term> мы описываем последовательность
                         действий, которые можно производить с конкретными{' '}
@@ -224,7 +222,6 @@ export default () => (
                         выглядит как последовательность следующих действий:
                     </p>
                 </Section.Main>
-                <Section.Side />
             </Section.Block>
 
             <Section.Block>
@@ -259,7 +256,7 @@ export default () => (
             </Section.Block>
 
             <Section.Block>
-                <Section.Main>
+                <Section.Main narrow>
                     <p>
                         Как мы записали, Caption является составляющей класса Post. Поэтому, когда
                         мы создаем конкретный Post, у нас будет доступ ко всем составляющим этого
@@ -272,7 +269,6 @@ export default () => (
                         (Caption) этого конкретного поста.
                     </p>
                 </Section.Main>
-                <Section.Side />
             </Section.Block>
         </Section>
 

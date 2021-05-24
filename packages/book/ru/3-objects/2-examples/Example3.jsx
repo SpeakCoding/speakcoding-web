@@ -14,14 +14,13 @@ class [[Post]](orange _ 1) {
 export default () => (
     <>
         <Section.Block>
-            <Section.Main>
+            <Section.Main narrow>
                 <p>
                     <b>Еще пример:</b> в случае создания конкретного Поста нам понадобятся уже
                     заранее созданные <b>User</b>, <b>Image</b> и <b>Caption</b> Поста, которые
                     будут переданы как вводные в функцию-конструктор Post.
                 </p>
             </Section.Main>
-            <Section.Side />
         </Section.Block>
 
         <Section.Block>
@@ -61,7 +60,7 @@ export default () => (
         </Section.Block>
 
         <Section.Block>
-            <Section.Main>
+            <Section.Main narrow>
                 <p>
                     Некоторые <Term id='component'>составляющие</Term> не обязательно должны быть
                     созданы заранее, они могут быть созданы в момент создания{' '}
@@ -69,7 +68,6 @@ export default () => (
                     действия в функцию-конструктор.
                 </p>
             </Section.Main>
-            <Section.Side />
         </Section.Block>
     </>
 );

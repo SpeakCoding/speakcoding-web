@@ -4,7 +4,7 @@ import s from './style.css';
 
 export default () => (
     <Section.Block>
-        <Section.Main>
+        <Section.Main narrow>
             <h2>More about using classes</h2>
             <p>
                 To create new objects of the standard classes (string, Int/uint, float, and bool),

@@ -18,6 +18,10 @@
     padding-right: 80px;
 }
 
+.main.narrow {
+    flex: 0 0 70%;
+}
+
 .side {
     flex: 0 0 45%;
     padding-left: 40px;

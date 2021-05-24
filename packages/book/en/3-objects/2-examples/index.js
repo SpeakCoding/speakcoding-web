@@ -13,7 +13,7 @@ export default () => (
         <Example3 />
         <Example4 />
         <Section.Block>
-            <Section.Main>
+            <Section.Main narrow>
                 <p>
                     If the initial state of some of a class’s <Term id='component'>components</Term>{' '}
                     or <Term id='property'>properties</Term> is common to <b>all</b>{' '}

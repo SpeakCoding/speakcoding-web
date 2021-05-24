@@ -13,7 +13,7 @@ export default () => (
         <Example3 />
         <Example4 />
         <Section.Block>
-            <Section.Main>
+            <Section.Main narrow>
                 <p>
                     Если некоторые из <Term id='component'>составляющих</Term> или{' '}
                     <Term id='property'>характеристик</Term> для <b>всех</b>{' '}
@@ -52,7 +52,6 @@ export default () => (
                     </ul>
                 </Callout>
             </Section.Main>
-            <Section.Side />
         </Section.Block>
     </>
 );

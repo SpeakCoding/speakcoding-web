@@ -113,6 +113,7 @@ export default () => {
                     </Section.Main>
                     <Section.Side />
                 </Section.Block>
+
                 <Section.Block>
                     <Section.Main>
                         <Grid cols='36% 1fr'>
@@ -170,6 +171,11 @@ export default () => {
                                 <Code value={code13} />
                             </Grid.Cell>
                         </Grid>
+                    </Section.Main>
+                </Section.Block>
+
+                <Section.Block>
+                    <Section.Main narrow>
                         <ul>
                             <li>
                                 Or, within the <Term id='class'>class</Term>, we can define the{' '}
@@ -177,6 +183,11 @@ export default () => {
                                 state.
                             </li>
                         </ul>
+                    </Section.Main>
+                </Section.Block>
+
+                <Section.Block>
+                    <Section.Main>
                         <Grid cols='36% 1fr'>
                             <Grid.Cell border='right bottom'>
                                 <b>Example of changing a component value with the function</b>
@@ -206,6 +217,11 @@ export default () => {
                                 <Code value={code22} />
                             </Grid.Cell>
                         </Grid>
+                    </Section.Main>
+                </Section.Block>
+
+                <Section.Block>
+                    <Section.Main narrow>
                         <p>
                             Within <Term id='function'>functions</Term>, we define the sequence of
                             actions that we can perform with specific{' '}
@@ -233,6 +249,11 @@ export default () => {
                             <Term id='function'>function</Term> itself appears as a sequence of the
                             following actions:
                         </p>
+                    </Section.Main>
+                </Section.Block>
+
+                <Section.Block>
+                    <Section.Main>
                         <div className={s.function}>
                             <Grid>
                                 <Grid.Cell border='right'>
@@ -258,6 +279,11 @@ export default () => {
                                 </Grid.Cell>
                             </Grid>
                         </div>
+                    </Section.Main>
+                </Section.Block>
+
+                <Section.Block>
+                    <Section.Main narrow>
                         <p>
                             As we discussed, Caption is a component of the Post class. Therefore,
                             when we create a specific Post, we will have access to all components of
@@ -272,6 +298,7 @@ export default () => {
                     </Section.Main>
                 </Section.Block>
             </Section>
+
             <Card mode='quiz'>
                 <h2>Quiz #6</h2>
                 <Card.Button href='#'>Complete</Card.Button>
