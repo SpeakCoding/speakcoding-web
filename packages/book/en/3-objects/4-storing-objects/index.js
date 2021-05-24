@@ -36,7 +36,10 @@ export default () => (
         </Card>
         <Card mode='quiz'>
             <h2>Quiz #4</h2>
-            <Card.Button href='#'>Complete</Card.Button>
+            Creating objects and using Classes
+            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLSc-qD1PSkhKaWvfeUxVe9lYz6gOfrV5EMlUgJ5l3jcFVJf4xQ/viewform?usp=sf_link'>
+                Complete
+            </Card.Button>
         </Card>
 
         <Section>
@@ -165,7 +168,10 @@ export default () => (
 
         <Card mode='quiz'>
             <h2>Quiz #5</h2>
-            <Card.Button href='#'>Complete</Card.Button>
+            Storing objects temporarily
+            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLScSyBQIrovZ1oPYswY5i-BXIqplQHaZyf1_3eyfpadSUkO-aA/viewform?usp=sf_link'>
+                Complete
+            </Card.Button>
         </Card>
     </>
 );

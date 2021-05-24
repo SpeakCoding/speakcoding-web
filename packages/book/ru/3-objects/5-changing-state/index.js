@@ -301,7 +301,10 @@ export default () => {
 
             <Card mode='quiz'>
                 <h2>Тест №6</h2>
-                <Card.Button href='#'>Пройти</Card.Button>
+                Изменение состояния объектов
+                <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLScS7IJexsJzyeTEJU-DIIS2toc2QVV-O3P4qn1UMdwbhnk_vg/viewform?usp=sf_link'>
+                    Пройти
+                </Card.Button>
             </Card>
         </>
     );

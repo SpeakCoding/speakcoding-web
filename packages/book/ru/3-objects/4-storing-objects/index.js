@@ -36,7 +36,10 @@ export default () => (
         </Card>
         <Card mode='quiz'>
             <h2>Тест №4</h2>
-            <Card.Button href='#'>Пройти</Card.Button>
+            Создание объектов и использование классов
+            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLSdaegA6liC9_pNhJomVNT4WSeuk2wB6q2ePW7xRZD59JbAZ3w/viewform?usp=sf_link'>
+                Пройти
+            </Card.Button>
         </Card>
 
         <Section>
@@ -166,7 +169,10 @@ export default () => (
 
         <Card mode='quiz'>
             <h2>Тест №5</h2>
-            <Card.Button href='#'>Пройти</Card.Button>
+            Временное хранение объектов
+            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLScM50jfN89h754fv9PUvzn4Bo5ROEjO9ZzyaMuB57oS4g2R8g/viewform?usp=sf_link'>
+                Пройти
+            </Card.Button>
         </Card>
     </>
 );
