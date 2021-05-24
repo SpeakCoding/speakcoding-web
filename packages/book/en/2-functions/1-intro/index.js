@@ -1,7 +1,7 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
-import img from '../../../assets/2/1-post-people.png';
+import img from '../../../assets/2/1-post-people-en.svg';
 
 export default () => (
     <Section>

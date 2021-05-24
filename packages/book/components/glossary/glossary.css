@@ -38,5 +38,5 @@
 }
 
 .simple {
-    border-bottom: 1px dashed var(--c-primary-500);
+    border-bottom: 1px dotted var(--c-grey-500);
 }
