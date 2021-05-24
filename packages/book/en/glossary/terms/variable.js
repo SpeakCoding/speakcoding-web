@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const id = 'variables',
-    name = 'Variables';
+export const id = 'variable',
+    name = 'Variable';
 
 export const Definition = () => (
     <p>

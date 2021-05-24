@@ -36,7 +36,7 @@ class User {
     }
 }
 
-class newUsernameForm {
+class NewUsernameForm {
     newUsernameField    TextField
     setButton           Button
     currentUser         User
@@ -133,12 +133,12 @@ export default () => {
                             <Grid.Cell dense>
                                 <pre>
                                     <Hint>
-                                        class newUsernameForm
+                                        class NewUsernameForm
                                         <Hint.Tooltip>
                                             As you may have noticed, there is no username component
-                                            in the newUsernameForm class, but there is a
+                                            in the NewUsernameForm class, but there is a
                                             currentUser. Thus, despite the fact that the
-                                            descriptions of newUsernameForm and User classes will
+                                            descriptions of NewUsernameForm and User classes will
                                             exist in separate files in code, they will be connected
                                         </Hint.Tooltip>
                                     </Hint>

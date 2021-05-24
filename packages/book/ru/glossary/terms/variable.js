@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const id = 'variables',
-    name = 'Переменные';
+export const id = 'variable',
+    name = 'Переменная';
 
 export const Definition = () => (
     <>

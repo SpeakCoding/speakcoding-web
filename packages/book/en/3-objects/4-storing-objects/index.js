@@ -66,8 +66,8 @@ export default () => (
                     <ul>
                         <li>
                             We can use special temporary containers, or{' '}
-                            <Term id='variables'>"variables"</Term> in which we save the data that
-                            we need.
+                            <Term id='variable'>"variables"</Term> in which we save the data that we
+                            need.
                         </li>
                     </ul>
                 </Section.Main>
@@ -157,7 +157,7 @@ export default () => (
             <Section.Block>
                 <Section.Main narrow>
                     <p>
-                        Drawing an analogy with language, <Term id='variables'>variables</Term>{' '}
+                        Drawing an analogy with language, <Term id='variable'>variables</Term>{' '}
                         (temporary containers) are like chapters in a novel. Having been combined
                         into a single book, we no longer think of them as separate texts, but we can
                         always find them on a particular page.
