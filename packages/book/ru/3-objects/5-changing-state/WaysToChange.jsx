@@ -70,11 +70,10 @@ export default () => (
                             <Hint>
                                 class NewUsernameForm
                                 <Hint.Tooltip>
-                                    As you may have noticed, there is no username component in the
-                                    NewUsernameForm class, but there is a currentUser. Thus, despite
-                                    the fact that the descriptions of NewUsernameForm and User
-                                    classes will exist in separate files in code, they will be
-                                    connected
+                                    Как вы могли заметить, в классе NewUsernameForm нет составляющей
+                                    username, но есть currentUser. Таким образом, несмотря на то,
+                                    что описания классов NewUsernameForm и User будут находиться в
+                                    разных файлах, они будут связаны
                                 </Hint.Tooltip>
                             </Hint>
                             {' {'}
