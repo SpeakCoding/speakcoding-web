@@ -1,6 +1,7 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
+import { listen, emit } from '@sc/tools/phone-event';
 import { context, router, useRouterState } from './utils';
 import Page from './page';
 import Tabs from './tabs';
@@ -8,9 +9,10 @@ import s from './router.css';
 
 const Router = ({ initialScreen, initialScreenParams, initialTab, children }) => {
     const [state, dispatch] = useRouterState(initialScreen, initialScreenParams, initialTab),
-        tabs = useMemo(() => Object.keys(state.tabs).map(name => ({ ...state.tabs[name], name })), [
-            state.tabs
-        ]);
+        tabs = useMemo(
+            () => Object.keys(state.tabs).map(name => ({ ...state.tabs[name], name })),
+            [state.tabs]
+        );
 
     const screen = useMemo(() => {
         const { pointer, history } = state.tabs[state.tab],
@@ -22,9 +24,25 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
     const navigate = useCallback((name, params) => dispatch({ type: 'push', name, params }), []),
         goBack = useCallback(() => dispatch({ type: 'back' }), []),
         register = useCallback(options => dispatch({ type: 'screen', options }), []),
-        switchTab = useCallback((tab, options) => dispatch({ type: 'tab', tab, options }), []);
+        switchTab = useCallback((tab, options = {}) => dispatch({ type: 'tab', tab, options }), []);
 
     const value = useMemo(() => ({ register }), []);
+
+    useEffect(() => {
+        const handler = event => {
+            switch (event.detail.type) {
+                case 'get-state':
+                    emit('current-state', {
+                        tab: state.tab,
+                        screen: screen.name
+                    });
+                    break;
+                default:
+            }
+        };
+
+        return listen(handler);
+    }, [state, screen]);
 
     return (
         <context.Provider value={value}>

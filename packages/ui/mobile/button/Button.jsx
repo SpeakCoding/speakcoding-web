@@ -4,12 +4,12 @@ import pt from 'prop-types';
 import classNames from 'classnames';
 import s from './button.css';
 
-const Button = ({ block, disabled, children, loading, size, type, variant, onClick, ...props }) => (
+const Button = ({ block, children, disabled, id, loading, size, type, variant, onClick }) => (
     <button
         className={classNames(s[variant], s[size], block && s.block)}
         disabled={disabled || loading}
+        id={id}
         type={type}
-        data-control={props['data-control']}
         onClick={onClick}
     >
         {loading && (
@@ -26,22 +26,22 @@ const Button = ({ block, disabled, children, loading, size, type, variant, onCli
 Button.propTypes = {
     block: pt.bool,
     disabled: pt.bool,
+    id: pt.string,
     loading: pt.bool,
     size: pt.oneOf(['medium', 'small']),
     type: pt.oneOf(['button', 'submit']),
     variant: pt.oneOf(['contained', 'outlined', 'text']),
-    'data-control': pt.string,
     onClick: pt.func
 };
 
 Button.defaultProps = {
     block: false,
     disabled: false,
+    id: undefined,
     loading: false,
     size: 'medium',
     type: 'button',
     variant: 'contained',
-    'data-control': undefined,
     onClick: () => {}
 };
 

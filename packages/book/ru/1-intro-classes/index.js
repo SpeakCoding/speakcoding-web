@@ -16,13 +16,11 @@ export default () => {
     const { profile } = useApp();
 
     const initPhone = async () => {
-        interceptor.setSession(profile.instagram_app_authentication_token);
-        await interceptor.init();
-        interceptor.on();
-        interceptor.lockDisplay();
-        interceptor.switchTab('home');
-        interceptor.switchTab('home');
-        interceptor.scrollToTop();
+        await interceptor.on();
+        await interceptor.lock();
+        await interceptor.setSession(profile.instagram_app_authentication_token, { soft: true });
+        await interceptor.switchTab('home', { reset: true });
+        await interceptor.scrollToTop();
     };
 
     useEffect(() => {

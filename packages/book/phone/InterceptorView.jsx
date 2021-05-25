@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import pt from 'prop-types';
-import * as interceptor from './interceptor';
 
 const InterceptorView = ({ rootMargin, threshold, children, onEnter, onExit }) => {
     const $ref = useRef();
@@ -14,8 +13,8 @@ const InterceptorView = ({ rootMargin, threshold, children, onEnter, onExit }) =
             if (entry.isIntersecting === prev) return;
             prev = entry.isIntersecting;
 
-            if (entry.isIntersecting) onEnter(interceptor);
-            else onExit(interceptor);
+            if (entry.isIntersecting) onEnter();
+            else onExit();
         }
 
         const observer = new IntersectionObserver(handler, { rootMargin, threshold });
@@ -26,10 +25,6 @@ const InterceptorView = ({ rootMargin, threshold, children, onEnter, onExit }) =
             observer.disconnect();
         };
     }, [onEnter, onExit]);
-
-    useEffect(() => {
-        interceptor.init();
-    }, []);
 
     return <div ref={$ref}>{children}</div>;
 };

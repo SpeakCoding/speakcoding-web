@@ -2,4 +2,5 @@ import './interceptor.css';
 
 export * from './device';
 export * from './dom';
-export * from './events';
+export * from './session';
+export * from './shell';

@@ -14,14 +14,14 @@ const Tabs = ({ tab, hidden, switchTab, navigate }) => {
             screen: 'likes',
             params: { userid: profile.id }
         });
-    }, []);
+    }, [profile]);
 
     const goToProfile = useCallback(() => {
         switchTab('profile', {
             screen: 'profile',
             params: { userid: profile.id }
         });
-    }, []);
+    }, [profile]);
 
     return (
         <div key={tab} className={classNames(s.box, hidden && s.hidden)} data-control='tabs'>

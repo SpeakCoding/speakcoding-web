@@ -16,11 +16,10 @@ export default () => {
     const { profile } = useApp();
 
     const initPhone = async () => {
-        await interceptor.setSession(profile.instagram_app_authentication_token, { soft: true });
-        await interceptor.init();
         await interceptor.on();
-        await interceptor.lockDisplay();
-        await interceptor.switchTab('home', true);
+        await interceptor.lock();
+        await interceptor.setSession(profile.instagram_app_authentication_token, { soft: true });
+        await interceptor.switchTab('home', { reset: true });
         await interceptor.scrollToTop();
     };
 

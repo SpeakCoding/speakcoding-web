@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useAPI, useCourses } from './tools';
 import { app } from './tools/app';
-import { interceptor } from './phone';
 import Home from './Home';
 import Login from './auth';
 import Payment from './payment';
@@ -47,8 +46,6 @@ const App = () => {
 
         if (data.last_course_id) setProfile(data);
         else updateProfile({ last_course_id: defaultCourse });
-
-        interceptor.setSession(data.instagram_app_authentication_token);
     };
 
     useEffect(() => {

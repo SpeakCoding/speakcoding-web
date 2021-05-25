@@ -1,52 +1,26 @@
-/* eslint-disable no-param-reassign */
+import * as config from './config';
 
-const device = '[data-control=device]';
+export function getElement(selector = '', options = {}) {
+    const maxAttempts = Math.floor((options.timeout || config.timeout) / 100);
 
-export function setAttr($nodes, name, value) {
-    [...$nodes].forEach($node => {
-        $node.dataset[name] = value;
-    });
-}
-
-export function getElement(selector = '') {
     let attempts = 0;
 
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
         function find() {
             attempts++;
-            const $node = document.querySelector(`${device} ${selector}`);
-
+            const $node = document.querySelector(`${config.deviceSelector} ${selector}`);
             if ($node) {
-                $node.setAttr = setAttr.bind(null, $node ? [$node] : []);
                 resolve($node);
-            }
-
-            if (attempts < 100) {
-                setTimeout(find, 100);
                 return;
             }
-
-            resolve(null);
+            if (attempts <= maxAttempts) setTimeout(find, 100);
+            else reject(new Error(`getElement "${selector}" timeout`));
         }
 
         find();
     });
 }
 
-// export function getElements(selector) {
-//     const $nodes = [...document.querySelectorAll(`${device} ${selector}`)];
-//     $nodes.setAttr = setAttr.bind(null, $nodes);
-//     return $nodes;
-// }
-
 export function getControl(name) {
     return getElement(name === 'device' ? '' : `[data-control="${name}"]`);
-}
-
-// export function getControls(name) {
-//     return getElements(name === 'device' ? '' : `[data-control="${name}"]`);
-// }
-
-export function getDevice() {
-    return getControl('device');
 }

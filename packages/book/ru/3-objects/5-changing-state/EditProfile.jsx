@@ -8,18 +8,22 @@ export default () => {
     const { profile } = useApp();
 
     const onEnter = useCallback(async () => {
-        await interceptor.setSession(profile.instagram_app_authentication_token, { soft: true });
-        await interceptor.init();
         await interceptor.on();
-        await interceptor.lockDisplay();
-        await interceptor.switchTab('profile', true);
-        (await interceptor.getControl('profile-edit')).click();
+        await interceptor.lock();
+        const state = await interceptor.getState();
+        if (state.screen !== 'profile-edit') {
+            await interceptor.setSession(profile.instagram_app_authentication_token, {
+                soft: true
+            });
+            await interceptor.switchTab('profile', { reset: true });
+            (await interceptor.getElement('#profile-edit'))?.click();
+        }
         interceptor.open();
     }, [profile]);
 
     const onExit = useCallback(async () => {
-        await interceptor.off();
         interceptor.close();
+        await interceptor.off();
     }, [profile]);
 
     return (

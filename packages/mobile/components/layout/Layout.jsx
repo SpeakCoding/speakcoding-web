@@ -1,22 +1,22 @@
-import React from 'react';
-import pt from 'prop-types';
+import React, { useCallback } from 'react';
 import s from './layout.css';
+import { useApp } from '../../tools';
 
-const Layout = ({ children, onReset }) => (
-    <div className={s.box} data-control='device'>
-        <div id='mobile-layout' className={s.content}>
-            {children}
+const Layout = ({ children }) => {
+    const { reset } = useApp();
+
+    const handleReset = useCallback(() => {
+        if (window.confirm('Are you sure you want to log out?')) reset();
+    }, []);
+
+    return (
+        <div className={s.box} data-control='device'>
+            <div id='mobile-layout' className={s.content}>
+                {children}
+            </div>
+            <div className={s.reset} onClick={handleReset} />
         </div>
-        <div className={s.reset} onClick={onReset} />
-    </div>
-);
-
-Layout.propTypes = {
-    onReset: pt.func
-};
-
-Layout.defaultProps = {
-    onReset: () => {}
+    );
 };
 
 export default Layout;

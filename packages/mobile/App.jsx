@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import pt from 'prop-types';
+import { emit, listen } from '@sc/tools/phone-event';
 import { useAPI } from './tools';
 import { Layout } from './components';
 import { Router, Screen } from './router';
@@ -26,11 +26,21 @@ import SelectUser from './screens/select-user';
 import SignUp from './screens/auth/SignUp';
 import TagPeople from './screens/tag-people';
 
-const App = ({ onReady }) => {
+const App = () => {
     const fetch = useAPI(),
         [key, setKey] = useState(0),
         auth = !!localStorage.getItem('mobile_auth_token'),
         [profile, setProfile] = useState(null);
+
+    const resetApp = useCallback(session => {
+        if (session) {
+            localStorage.setItem('mobile_auth_token', session);
+        } else {
+            localStorage.removeItem('mobile_auth_token');
+            emit('profile-update', null);
+        }
+        setKey(Math.random());
+    }, []);
 
     const context = useMemo(
         () => ({
@@ -38,16 +48,11 @@ const App = ({ onReady }) => {
             setProfile,
             reset: () => {
                 fetch('/users/forget.json', { method: 'POST' });
-                localStorage.removeItem('mobile_auth_token');
-                setKey(Math.random());
+                resetApp();
             }
         }),
         [profile]
     );
-
-    const handleReset = useCallback(() => {
-        if (window.confirm('Are you sure you want to log out?')) context.reset();
-    }, []);
 
     const initProfile = async () => {
         const { data } = await fetch('/users/me.json', { method: 'GET' });
@@ -59,15 +64,30 @@ const App = ({ onReady }) => {
     }, [auth]);
 
     useEffect(() => {
-        if (profile) onReady();
+        if (profile) emit('profile-update', profile);
     }, [profile]);
+
+    useEffect(() => {
+        const handler = event => {
+            const { type, payload } = event.detail;
+
+            switch (type) {
+                case 'reset':
+                    resetApp(payload);
+                    break;
+                default:
+            }
+        };
+
+        return listen(handler);
+    }, []);
 
     if (auth && !profile) return null;
 
     return (
         <app.Provider value={context}>
             <CacheProvider>
-                <Layout onReset={handleReset}>
+                <Layout>
                     <Router
                         key={key}
                         initialTab={auth ? 'home' : 'auth'}
@@ -97,14 +117,6 @@ const App = ({ onReady }) => {
             </CacheProvider>
         </app.Provider>
     );
-};
-
-App.propTypes = {
-    onReady: pt.func
-};
-
-App.defaultProps = {
-    onReady: () => {}
 };
 
 export default App;

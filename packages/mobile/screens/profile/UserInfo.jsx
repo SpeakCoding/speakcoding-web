@@ -39,9 +39,9 @@ const UserInfo = ({ user, self, goToPosts }) => {
                 <div className={s.action}>
                     <Button
                         block
+                        id='profile-edit'
                         variant='outlined'
                         size='small'
-                        data-control='profile-edit'
                         onClick={() => navigate('profile-edit', { userid: user.id })}
                     >
                         Edit profile
