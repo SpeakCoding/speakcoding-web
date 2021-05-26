@@ -1,7 +1,6 @@
 import React from 'react';
 import { Code, Grid, HL, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
-import FunctionParts from '../../../common/3/function-parts';
 import s from './style.css';
 
 const code3 = `
@@ -60,9 +59,9 @@ export default () => (
                             </ol>
                         </Grid.Cell>
                         <Grid.Cell>
-                            <FunctionParts>
+                            <div className={s.example}>
                                 <Code value={code3} />
-                            </FunctionParts>
+                            </div>
                         </Grid.Cell>
                     </Grid>
                 </div>
