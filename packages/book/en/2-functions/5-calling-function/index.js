@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Grid, HL, Section } from '@sc/ui';
+import { Code, Grid, HL, Pre, Section } from '@sc/ui';
 
 const codeUser = `
 class [[User]](orange _ 1) {
@@ -19,7 +19,7 @@ export default () => (
             <Section.Main>
                 <h2>Calling a function</h2>
                 <p>General form of calling a function in code:</p>
-                <p>function_title (list_of_inputs)</p>
+                <Pre>function_title (list_of_inputs)</Pre>
                 <ol>
                     <li>
                         Calling a function shares some common aspects with the function definition:

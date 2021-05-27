@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Grid, Hint, Img, Section, Structure } from '@sc/ui';
+import { Card, Grid, Hint, Img, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 import img from '../../../assets/1/8-var-types-ru.svg';
 
@@ -15,12 +15,10 @@ export default () => (
                     класс, к которому она относится. Например, у класса Post есть составляющая
                     captionText, которая, в свою очередь, относится к классу Text.
                 </p>
-                <Structure>
-                    <pre>
-                        class Post <br />
-                        {'  '}caption Text
-                    </pre>
-                </Structure>
+                <Pre>
+                    class Post <br />
+                    {'  '}caption Text
+                </Pre>
                 <p>
                     Для каждого языка программирования есть некоторые стандартные (“изначальные”)
                     классы, которые не требуют описания: string (текстовая строка), int [целое
@@ -34,15 +32,13 @@ export default () => (
                     информацию в них машина будет читать как текст.
                 </p>
                 <p>Примеры кода:</p>
-                <Structure>
-                    <pre>
-                        var numberOfLikes: Int; <br />
-                        numberOfLikes = 0; <br />
-                        <br />
-                        var appName: String; <br />
-                        appName = "Instagram"; <br />
-                    </pre>
-                </Structure>
+                <Pre>
+                    var numberOfLikes: Int; <br />
+                    numberOfLikes = 0; <br />
+                    <br />
+                    var appName: String; <br />
+                    appName = "Instagram"; <br />
+                </Pre>
                 <p>
                     Как и в человеческом языке, многие классы объектов уже были описаны до тебя: вы
                     знаете, что такое машина, дом, стол, вам не нужно каждый раз описывать их
@@ -121,7 +117,10 @@ export default () => (
                     Для того, чтобы завершить описание <Term id='class'>классов</Term> необходимо
                     описать, какие действия могут быть произведены с их экземплярами. Для этого в
                     коде используется третий структурный элемент, еще одна “часть” его “речи” -{' '}
-                    <Term id='function'>функция</Term>, о которых мы расскажем в следующей части.
+                    <Term id='function' tooltip>
+                        функция
+                    </Term>
+                    , о которых мы расскажем в следующей части.
                 </p>
             </Section.Main>
             <Section.Side />

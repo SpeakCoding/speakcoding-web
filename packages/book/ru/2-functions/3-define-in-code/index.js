@@ -1,5 +1,5 @@
 import React from 'react';
-import { Lottie, Section } from '@sc/ui';
+import { Lottie, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 import animationData from './img-lottie.json';
 import s from './style.css';
@@ -10,11 +10,11 @@ export default () => (
             <Section.Main>
                 <h2>Пример записи описания функции в коде</h2>
                 <p>Общий вид описания:</p>
-                <p>
+                <Pre>
                     function имя_функции(список_вводных) {'{'} <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;блок кода со списком действий функции <br />
+                    {'    '}блок кода со списком действий функции <br />
                     {'}'}
-                </p>
+                </Pre>
                 <div className={s.slide}>
                     <div>
                         Хотя функции на разных языках записываются по-разному, отличительная черта,

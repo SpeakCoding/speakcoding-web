@@ -112,7 +112,10 @@ export default () => (
                     <li>
                         Или в <Term id='class'>классе</Term> может быть определена{' '}
                         <Term id='function'>функция</Term>, которая использует{' '}
-                        <Term id='input'>вводные</Term> для того, чтобы изменить состояние объекта.
+                        <Term id='input' tooltip>
+                            вводные
+                        </Term>{' '}
+                        для того, чтобы изменить состояние объекта.
                     </li>
                 </ul>
             </Section.Main>

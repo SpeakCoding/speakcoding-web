@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Grid, Hint, Img, Section, Structure } from '@sc/ui';
+import { Card, Grid, Hint, Img, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 import img from '../../../assets/1/8-var-types-en.svg';
 
@@ -15,12 +15,10 @@ export default () => (
                     second referred to the class to which the component belongs. For example, the
                     Post class has the component Caption, which in turn belongs to the Text class.
                 </p>
-                <Structure>
-                    <pre>
-                        class Post <br />
-                        {'  '}caption Text
-                    </pre>
-                </Structure>
+                <Pre>
+                    class Post <br />
+                    {'  '}caption Text
+                </Pre>
                 <p>
                     Every programming language has a number of{' '}
                     <b>standard (“original”) classes, which do not need definitions</b>. These
@@ -35,15 +33,13 @@ export default () => (
                     text.
                 </p>
                 <p>Examples of code:</p>
-                <Structure>
-                    <pre>
-                        var numberOfLikes: Int; <br />
-                        numberOfLikes = 0; <br />
-                        <br />
-                        var appName: String; <br />
-                        appName = "Instagram"; <br />
-                    </pre>
-                </Structure>
+                <Pre>
+                    var numberOfLikes: Int; <br />
+                    numberOfLikes = 0; <br />
+                    <br />
+                    var appName: String; <br />
+                    appName = "Instagram"; <br />
+                </Pre>
                 <p>
                     Like in human languages, many classes of objects were defined long ago, and we
                     can simply give a link to that class of objects (import its definition) rather
@@ -121,7 +117,10 @@ export default () => (
                     Another essential aspect of defining <Term id='class'>classes</Term> is to list
                     the actions that can be performed in relation to them. To do this, the code uses
                     a third structural element, another ‘part’ of its ‘language’, namely the{' '}
-                    <Term id='function'>function</Term>.
+                    <Term id='function' tooltip>
+                        function
+                    </Term>
+                    .
                 </p>
             </Section.Main>
             <Section.Side />

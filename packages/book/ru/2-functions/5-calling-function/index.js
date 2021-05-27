@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Grid, HL, Section } from '@sc/ui';
+import { Code, Grid, HL, Pre, Section } from '@sc/ui';
 
 const codeUser = `
 class [[User]](orange _ 1) {
@@ -19,7 +19,7 @@ export default () => (
             <Section.Main>
                 <h2>Пример записи обращения/вызова функции</h2>
                 <p>Общий вид обращения:</p>
-                <p>имя_функции(список_вводных)</p>
+                <Pre>имя_функции(список_вводных)</Pre>
                 <ol>
                     <li>
                         Обращение к функции также можно легко найти по круглым скобкам, они остаются

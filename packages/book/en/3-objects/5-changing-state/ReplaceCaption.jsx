@@ -25,7 +25,10 @@ export default () => (
                     the <Term id='instance'>object</Term> of a <Term id='class'>class</Term>{' '}
                     contains all of the <Term id='component'>components</Term> listed in the
                     definition of that class, we don’t need to add them as{' '}
-                    <Term id='input'>inputs</Term>. Let’s look at the example below.
+                    <Term id='input' tooltip>
+                        inputs
+                    </Term>
+                    . Let’s look at the example below.
                 </p>
                 <p>
                     Let’s say we want to edit a post’s text. To do this, we create the editCaption()

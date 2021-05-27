@@ -71,10 +71,14 @@ export default () => (
                 </p>
                 <p>
                     To create a specific <Term id='instance'>object (instance)</Term>, we use a
-                    special <Term id='constructor'>constructor function</Term> that lets us transfer
-                    the inputs needed to create this <Term id='instance'>object (instance)</Term>.
-                    This constructor function is executed when the object is created, and the data
-                    is transferred to it as inputs.
+                    special{' '}
+                    <Term id='constructor' tooltip>
+                        constructor function
+                    </Term>{' '}
+                    that lets us transfer the inputs needed to create this{' '}
+                    <Term id='instance'>object (instance)</Term>. This constructor function is
+                    executed when the object is created, and the data is transferred to it as
+                    inputs.
                 </p>
                 <p>
                     In the case of the Instagram user, we know a specific User always has a

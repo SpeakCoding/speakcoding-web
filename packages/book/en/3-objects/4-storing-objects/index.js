@@ -66,8 +66,10 @@ export default () => (
                     <ul>
                         <li>
                             We can use special temporary containers, or{' '}
-                            <Term id='variable'>"variables"</Term> in which we save the data that we
-                            need.
+                            <Term id='variable' variable>
+                                "variables"
+                            </Term>{' '}
+                            in which we save the data that we need.
                         </li>
                     </ul>
                 </Section.Main>

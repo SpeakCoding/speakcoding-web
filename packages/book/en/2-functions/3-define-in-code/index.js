@@ -1,5 +1,5 @@
 import React from 'react';
-import { Lottie, Section } from '@sc/ui';
+import { Lottie, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 import animationData from './img-lottie.json';
 import s from './style.css';
@@ -10,12 +10,12 @@ export default () => (
             <Section.Main>
                 <h2>Defining a function in code</h2>
                 <p>General form of a definition</p>
-                <p>
+                <Pre>
                     function function_title (list_of_inputs) {'{'} <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;block of code with a list of operations that it perform
-                    <br />
+                    {'    '}block of code with a list of operations <br />
+                    {'    '}that it perform <br />
                     {'}'}
-                </p>
+                </Pre>
                 <div className={s.slide}>
                     <div className={s.title}>Round brackets</div>
                     <div>

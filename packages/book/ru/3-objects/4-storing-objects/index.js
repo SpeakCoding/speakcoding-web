@@ -66,7 +66,10 @@ export default () => (
                     <ul>
                         <li>
                             Можно использовать специальные временные контейнеры -{' '}
-                            <Term id='variable'>"переменные"</Term>.
+                            <Term id='variable' tooltip>
+                                "переменные"
+                            </Term>
+                            .
                         </li>
                     </ul>
                 </Section.Main>
