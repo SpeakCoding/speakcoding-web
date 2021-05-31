@@ -8,6 +8,7 @@
 }
 
 .cell {
+    min-width: 0;
     padding: 24px;
 }
 
@@ -29,8 +30,4 @@
 
 .cell pre {
     white-space: pre-wrap;
-}
-
-.cell > b {
-    font-weight: 600;
 }

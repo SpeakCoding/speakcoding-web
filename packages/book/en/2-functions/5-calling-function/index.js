@@ -16,7 +16,7 @@ class [[User]](orange _ 1) {
 export default () => (
     <>
         <Section>
-            <Section.Main>
+            <Section.Main narrow>
                 <h2>Calling a function</h2>
                 <p>General form of calling a function in code:</p>
                 <Pre>function_title (list_of_inputs)</Pre>
@@ -58,7 +58,6 @@ export default () => (
                     </li>
                 </ol>
             </Section.Main>
-            <Section.Side />
         </Section>
         <Section>
             <Section.Main>

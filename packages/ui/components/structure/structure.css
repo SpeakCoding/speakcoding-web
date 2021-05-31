@@ -23,11 +23,17 @@
 
 .box ul li {
     margin: 0;
+    padding-left: 20px;
 }
 
 .box ul li::before {
     content: "↳ ";
+    margin-left: -20px;
     color: var(--c-grey-300);
+}
+
+.box ul > ul {
+    padding-left: 20px;
 }
 
 .box ul + h4 {

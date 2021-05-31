@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import React, { useMemo } from 'react';
+import React, { Fragment, useMemo } from 'react';
 import pt from 'prop-types';
 import HL from '../highlight';
 
@@ -37,7 +37,7 @@ const Code = ({ value }) => {
             {parsed.map((parts, i) => (
                 <pre key={i}>
                     {parts.map((item, j) => {
-                        if (typeof item === 'string') return <span key={j}>{item}</span>;
+                        if (typeof item === 'string') return <Fragment key={j}>{item}</Fragment>;
 
                         return (
                             <HL

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const id = 'child-class:',
+export const id = 'child-class',
     name = 'Child class';
 
 export const Definition = () => (

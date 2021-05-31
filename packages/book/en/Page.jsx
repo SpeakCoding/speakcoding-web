@@ -8,7 +8,7 @@ const chapters = [
     },
     { title: 'Parts of speech: functions', href: '/en/chapter-2' },
     { title: 'Create and update objects', href: '/en/chapter-3' },
-    { title: 'Interface' },
+    { title: 'Interface', href: '/en/chapter-4' },
     { title: 'Repositories and editors' },
     { title: 'Complex sentences' },
     { title: 'Libraries and how to find what you need' },

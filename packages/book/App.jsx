@@ -63,6 +63,7 @@ const App = () => {
                     <Route path='/en/chapter-1' component={EN.Intro} />
                     <Route path='/en/chapter-2' component={EN.Functions} />
                     <Route path='/en/chapter-3' component={EN.Objects} />
+                    <Route path='/en/chapter-4' component={EN.InputsOutputs} />
                     <Route path='/en/glossary' component={EN.Glossary} />
 
                     <Route path='/ru/chapter-1' component={RU.Intro} />

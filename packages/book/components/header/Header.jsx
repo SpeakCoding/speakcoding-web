@@ -24,8 +24,8 @@ const Header = ({ chapter, children }) => {
 
     const handleScroll = useCallback(
         throttle(() => {
+            if (!$bar.current) return;
             const width = (($html.scrollTop + window.innerHeight) / $html.scrollHeight) * 100;
-
             $bar.current.style.width = `${width}%`;
             savePosition();
         }, 25),

@@ -103,14 +103,13 @@ export default () => (
 
         <Section>
             <Section.Block>
-                <Section.Main>
+                <Section.Main narrow>
                     <p>
                         There are functions that do not return/pass any value as a result. It means
                         that the function changes the instance of a class, but we do not need to
                         remember these changed properties to continue the run of the program.
                     </p>
                 </Section.Main>
-                <Section.Side />
             </Section.Block>
             <Section.Block>
                 <Section.Main>
@@ -147,7 +146,7 @@ export default () => (
         </Section>
 
         <Section>
-            <Section.Main>
+            <Section.Main narrow>
                 <p>
                     Therefore each <Term id='function'>function</Term>, whether it appears within a
                     component <Term id='class'>class</Term> or independently, will include the
@@ -181,11 +180,10 @@ export default () => (
                     </li>
                 </ul>
             </Section.Main>
-            <Section.Side />
         </Section>
 
         <Section>
-            <Section.Main>
+            <Section.Main narrow>
                 <h2>Function calls</h2>
                 <p>
                     Having written the function, we can refer to it, or ‘call’ it, at various points
@@ -195,7 +193,6 @@ export default () => (
                     function.
                 </p>
             </Section.Main>
-            <Section.Side />
         </Section>
 
         <Card mode='quiz'>
