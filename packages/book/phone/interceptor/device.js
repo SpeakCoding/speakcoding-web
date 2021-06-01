@@ -1,3 +1,4 @@
+import { emit } from '@sc/tools/phone-event';
 import { getControl } from './dom';
 
 export async function lock() {
@@ -19,4 +20,8 @@ export async function switchTab(name, { reset } = {}) {
 export async function scrollToTop() {
     const $content = (await getControl('screen'))?.querySelector('[data-role=screen-content]');
     if ($content) $content.scrollTop = 0;
+}
+
+export async function navigate(name, params = {}) {
+    emit('navigate', { name, params });
 }

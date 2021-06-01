@@ -3,16 +3,11 @@ import { HL } from '@sc/ui';
 import pt from 'prop-types';
 
 const colorsMap = {
-    red: 'post-userpic',
-    plum: 'post-name',
-    'green-yellow': 'post-date',
-    aquamarine: 'post-image',
-    'steel-blue': 'post-likes',
-    grey: 'post-caption',
-    orange: 'post-comments',
-    'sandy-brown': 'post-like',
-    turquoise: 'post-comment',
-    wheat: 'post-save'
+    red: 'post-create-preview',
+    'green-yellow': 'post-create-caption',
+    plum: 'post-create-location',
+    aquamarine: 'post-create-tags',
+    orange: 'post-create-share'
 };
 
 const HLCustom = ({ c, children }) => (

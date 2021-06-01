@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from 'react';
 import { Button, Header, TextInput } from '@sc/ui/mobile';
-import { Icon } from '@sc/ui';
+import { HL, Icon } from '@sc/ui';
 import { useAPI, useRouter } from '../../tools';
 import s from './form.css';
 
@@ -55,35 +55,49 @@ const PostForm = () => {
                 </Header.Left>
                 New post
                 <Header.Right onClick={handleSubmit}>
-                    <Button variant='text'>Share</Button>
+                    <HL.Shape label='post-create-share'>
+                        <Button variant='text'>Share</Button>
+                    </HL.Shape>
                 </Header.Right>
             </Header>
 
             <div className={s.info}>
-                <img src={image} alt='' className={s.img} />
-                <textarea
-                    className={s.caption}
-                    placeholder='Write a caption...'
-                    rows='2'
-                    onChange={handleChangeCaption}
-                />
+                <HL.Shape label='post-create-preview'>
+                    <img src={image} alt='' className={s.img} />
+                </HL.Shape>
+                <HL.Shape label='post-create-caption'>
+                    <div>
+                        <textarea
+                            className={s.caption}
+                            placeholder='Write a caption...'
+                            rows='2'
+                            onChange={handleChangeCaption}
+                        />
+                    </div>
+                </HL.Shape>
             </div>
 
             <div className={s.location}>
-                <TextInput placeholder='Location' onChange={handleChangeLocation} />
+                <HL.Shape label='post-create-location'>
+                    <div className={s.locationInput}>
+                        <TextInput placeholder='Location' onChange={handleChangeLocation} />
+                    </div>
+                </HL.Shape>
             </div>
 
-            <div
-                className={s.people}
-                onClick={() =>
-                    navigate('tag-people', { pic: image, tags: fields.current.tags, changeTag })
-                }
-            >
-                <span>Tag people</span>
-                <div className={s.arrow}>
-                    <Icon name='m/chevron-right' size={20} />
+            <HL.Shape label='post-create-tags'>
+                <div
+                    className={s.people}
+                    onClick={() =>
+                        navigate('tag-people', { pic: image, tags: fields.current.tags, changeTag })
+                    }
+                >
+                    <span>Tag people</span>
+                    <div className={s.arrow}>
+                        <Icon name='m/chevron-right' size={20} />
+                    </div>
                 </div>
-            </div>
+            </HL.Shape>
         </>
     );
 };

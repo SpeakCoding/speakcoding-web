@@ -2,11 +2,13 @@ import React, { useCallback } from 'react';
 import { Section, Structure } from '@sc/ui';
 import { interceptor, InterceptorView } from '../../../phone';
 import { useApp } from '../../../tools';
-import HL from '../../../common/post-highlight';
+import HL from '../../../common/4/post-create-highlight';
+import image from './image.png';
 import s from './style.css';
 
 async function onExit() {
     interceptor.close();
+    await interceptor.switchTab('home');
     await interceptor.off();
 }
 
@@ -17,8 +19,7 @@ export default () => {
         await interceptor.on();
         await interceptor.lock();
         await interceptor.setSession(profile.instagram_app_authentication_token, { soft: true });
-        // await interceptor.switchTab('home', { reset: true });
-        // await interceptor.scrollToTop();
+        await interceptor.navigate('post-form', { image });
         interceptor.open();
     }, [profile]);
 
@@ -31,13 +32,23 @@ export default () => {
                         <Structure>
                             <h4>PostComposerView</h4>
                             <ul>
-                                <li>Post Image preview box</li>
-                                <li>Post Caption</li>
+                                <li>
+                                    <HL c='red'>Post Image preview box</HL>
+                                </li>
+                                <li>
+                                    <HL c='green-yellow'>Post Caption</HL>
+                                </li>
                                 <br />
-                                <li>Location Field</li>
-                                <li>Tag Label with Tag Count</li>
+                                <li>
+                                    <HL c='plum'>Location Field</HL>
+                                </li>
+                                <li>
+                                    <HL c='aquamarine'>Tag Label with Tag Count</HL>
+                                </li>
                                 <br />
-                                <li>Share Button</li>
+                                <li>
+                                    <HL c='orange'>Share Button</HL>
+                                </li>
                             </ul>
                         </Structure>
                     </div>

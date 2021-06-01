@@ -37,6 +37,11 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                         screen: screen.name
                     });
                     break;
+                case 'navigate': {
+                    const { name, params } = event.detail.payload;
+                    navigate(name, params);
+                    break;
+                }
                 default:
             }
         };

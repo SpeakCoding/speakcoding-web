@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { Section, Structure } from '@sc/ui';
 import { interceptor, InterceptorView } from '../../../phone';
 import { useApp } from '../../../tools';
-import HL from '../../../common/post-highlight';
+import HL from '../../../common/1/post-highlight';
 
 async function onExit() {
     interceptor.close();

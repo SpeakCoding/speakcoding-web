@@ -5,6 +5,7 @@
     position: relative;
     padding: 25px 27px;
     user-select: none;
+    --c-primary-500: #5A80FF;
 }
 
 .box::after {
