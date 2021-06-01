@@ -9,7 +9,10 @@ const colorsMap = {
     aquamarine: 'post-image',
     'steel-blue': 'post-likes',
     grey: 'post-caption',
-    orange: 'post-comments'
+    orange: 'post-comments',
+    'sandy-brown': 'post-like',
+    turquoise: 'post-comment',
+    wheat: 'post-save'
 };
 
 const HLCustom = ({ c, children }) => (

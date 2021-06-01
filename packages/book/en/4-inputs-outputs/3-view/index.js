@@ -1,47 +1,12 @@
 import React from 'react';
-import { Card, Section, Structure } from '@sc/ui';
+import { Card, Section } from '@sc/ui';
+import PostView from './PostView';
+import PostCreate from './PostCreate';
 
 export default () => (
     <>
         <Section>
-            <Section.Block>
-                <Section.Main>
-                    <h1>Breaking down the screen: what the View consists of</h1>
-                    <p>
-                        Let’s explore in detail the elements that make up the standard Post display
-                        screen (PostFeedView).
-                    </p>
-                    <Structure>
-                        <h4>PostFeedView</h4>
-                        <ul>
-                            <li>User Profile Picture in circle</li>
-                            <li>Username</li>
-                            <br />
-                            <li>Post Image</li>
-                            <br />
-                            <li>Like Button</li>
-                            <li>Comment Button</li>
-                            <li>Save Button</li>
-                            <br />
-                            <li>Likes Section (which opens a screen with a list of all likes)</li>
-                            <ul>
-                                <li>User Pics of some friends who liked</li>
-                                <li>Usernames of some friends who liked</li>
-                                <li>Number of Likes</li>
-                            </ul>
-                            <br />
-                            <li>
-                                Post Caption (shortened if too long, with “... more” to see full
-                                text)
-                            </li>
-                            <li>View all comments (with a number of comments)</li>
-                            <li>Post Time (in a special format)</li>
-                        </ul>
-                    </Structure>
-                </Section.Main>
-                <Section.Side />
-            </Section.Block>
-
+            <PostView />
             <Section.Block>
                 <Section.Main narrow>
                     <p>
@@ -54,26 +19,7 @@ export default () => (
                     </p>
                 </Section.Main>
             </Section.Block>
-
-            <Section.Block>
-                <Section.Main>
-                    <p>When creating a new post, you’ll see this screen:</p>
-                    <Structure>
-                        <h4>PostComposerView</h4>
-                        <ul>
-                            <li>Post Image preview box</li>
-                            <li>Post Caption</li>
-                            <br />
-                            <li>Location Field</li>
-                            <li>Tag Label with Tag Count</li>
-                            <br />
-                            <li>Share Button</li>
-                        </ul>
-                    </Structure>
-                </Section.Main>
-                <Section.Side />
-            </Section.Block>
-
+            <PostCreate />
             <Section.Block>
                 <Section.Main narrow>
                     <p>

@@ -1,4 +1,4 @@
-import React, {  useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import pt from 'prop-types';
 import { ActionSheet } from '@sc/ui/mobile';
 import { DateTime, HL, Icon } from '@sc/ui';
@@ -83,22 +83,34 @@ const Post = ({ id, scroll, i }) => {
             </Shape>
 
             <div className={s.actions}>
-                <div className={s.heart}>
-                    <ActionIcon
-                        name={post.liked ? 'm/heart-filled' : 'm/heart'}
-                        active={post.liked}
-                        onClick={toggleLike}
-                    />
-                </div>
-                <div className={s.action} onClick={() => navigate('comments', { postid: post.id })}>
-                    <Icon name='m/bubble' size={24} />
-                </div>
+                <Shape label='post-like' variant='circle'>
+                    <div className={s.heart}>
+                        <ActionIcon
+                            name={post.liked ? 'm/heart-filled' : 'm/heart'}
+                            active={post.liked}
+                            onClick={toggleLike}
+                        />
+                    </div>
+                </Shape>
+
+                <Shape label='post-comment' variant='circle'>
+                    <div
+                        className={s.action}
+                        onClick={() => navigate('comments', { postid: post.id })}
+                    >
+                        <Icon name='m/bubble' size={24} />
+                    </div>
+                </Shape>
+
                 <div className={s.gap} />
-                <ActionIcon
-                    name={post.saved ? 'm/bookmark-filled' : 'm/bookmark'}
-                    active={post.saved}
-                    onClick={toggleSaved}
-                />
+
+                <Shape label='post-save' variant='circle'>
+                    <ActionIcon
+                        name={post.saved ? 'm/bookmark-filled' : 'm/bookmark'}
+                        active={post.saved}
+                        onClick={toggleSaved}
+                    />
+                </Shape>
             </div>
 
             <div className={s.body}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Section, Structure } from '@sc/ui';
 import { interceptor, InterceptorView } from '../../../phone';
-import HL from '../../../common/1/post-highlight';
+import HL from '../../../common/post-highlight';
 
 export default () => (
     <>
