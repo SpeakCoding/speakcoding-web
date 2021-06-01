@@ -1,6 +1,7 @@
 import React from 'react';
-import { Grid, HL, Hint, Section, Card } from '@sc/ui';
+import { Card, Grid, HL, Hint, Img, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
+import xcode from '../../../assets/4/3-xcode.png';
 
 export default () => (
     <>
@@ -19,6 +20,17 @@ export default () => (
                             class):
                         </b>
                     </p>
+                </Section.Main>
+            </Section.Block>
+            <Section.Block>
+                <Section.Main>
+                    <p>
+                        <Img src={xcode} width='100%' />
+                    </p>
+                </Section.Main>
+            </Section.Block>
+            <Section.Block>
+                <Section.Main narrow>
                     <ul>
                         <li>Indented 15 pixels from the top and 15 pixels from the left</li>
                         <li>Its size is 64х64 pixels</li>
@@ -129,14 +141,20 @@ export default () => (
                                 with the likeButton.
                             </p>
                             <p>
-                                self – a link to the instance of PostFeedView for which these
-                                actions will be performed
+                                <HL color='sandy-brown' active inline={3}>
+                                    self
+                                </HL>{' '}
+                                – a link to the instance of PostFeedView for which these actions
+                                will be performed
                             </p>
                             <p>
-                                UIControl.Event – in the UIKit library in the UIControl class, a
-                                link to the simplified Event class; this lists, as components, the
-                                user actions to which standard interface elements can react. For
-                                example UIControl.Event.
+                                <HL color='green-yellow' active inline={3}>
+                                    UIControl.Event
+                                </HL>{' '}
+                                – in the UIKit library in the UIControl class, a link to the
+                                simplified Event class; this lists, as components, the user actions
+                                to which standard interface elements can react. For example
+                                UIControl.Event.
                                 <HL color='aquamarine' active inline={3}>
                                     touchUpInside
                                 </HL>{' '}
@@ -156,7 +174,11 @@ export default () => (
                                 <HL color='green' active>
                                     target
                                 </HL>
-                                : <b>self</b>,{' '}
+                                :{' '}
+                                <HL color='sandy-brown' active inline={3}>
+                                    self
+                                </HL>
+                                ,{' '}
                                 <HL color='light-sky-blue' active>
                                     action
                                 </HL>
@@ -164,15 +186,19 @@ export default () => (
                                 <HL color='plum' active>
                                     toggleLike
                                 </HL>
-                                , for: UIControl.Event.
+                                , for:{' '}
+                                <HL color='green-yellow' active inline={3}>
+                                    UIControl.Event
+                                </HL>
+                                .
                                 <HL color='aquamarine' active>
                                     touchUpInside
                                 </HL>
                                 ) -> <br /> <br />
-                                <b>class</b> PostFeedCell: UITableViewCell {'{'} <br />
+                                class PostFeedCell: UITableViewCell {'{'} <br />
                                 {'    ...'} <br /> <br />
                                 {'    '}
-                                <b>override func</b>{' '}
+                                override func{' '}
                                 <Hint>
                                     viewDidLoad()
                                     <Hint.Tooltip>
@@ -182,8 +208,7 @@ export default () => (
                                 </Hint>
                                 {' {'} <br />
                                 {'        '}super.viewDidLoad() <br /> <br />
-                                {'        '}likeButton.addTarget(<b>self</b>, action:{' '}
-                                <b>#selector</b>
+                                {'        '}likeButton.addTarget(self, action: #selector
                                 (toggleLike), for: UIControl.Event.touchUpInside) <br />
                                 {'    }'} <br />
                                 {'}'}

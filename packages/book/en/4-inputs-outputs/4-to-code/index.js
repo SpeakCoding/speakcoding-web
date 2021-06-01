@@ -1,6 +1,7 @@
 import React from 'react';
 import { HL, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
+import Addition from './Addition';
 
 export default () => (
     <Section>
@@ -55,5 +56,7 @@ export default () => (
                 </p>
             </Section.Main>
         </Section.Block>
+
+        <Addition />
     </Section>
 );

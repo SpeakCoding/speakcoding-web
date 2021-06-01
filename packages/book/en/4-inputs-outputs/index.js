@@ -5,9 +5,8 @@ import Part1 from './1-display';
 import Part2 from './2-all-displays';
 import Part3 from './3-view';
 import Part4 from './4-to-code';
-import Part5 from './5-addition';
-import Part6 from './6-changing-components';
-import Part7 from './7-another-example';
+import Part5 from './5-changing-components';
+import Part6 from './6-another-example';
 
 export default () => (
     <Page chapter={4}>
@@ -18,6 +17,5 @@ export default () => (
         <Part4 />
         <Part5 />
         <Part6 />
-        <Part7 />
     </Page>
 );

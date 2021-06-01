@@ -13,7 +13,7 @@ const Expand = ({ id, opened, children }) => {
 
     useEffect(() => {
         window.addEventListener('resize', init);
-        setTimeout(init, 1000);
+        setTimeout(init, 500);
         return () => {
             window.removeEventListener('resize', init);
         };
