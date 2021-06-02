@@ -1,5 +1,6 @@
 import React from 'react';
-import { Callout, Card, Lottie, Section } from '@sc/ui';
+import { Callout, Lottie, Section } from '@sc/ui';
+import { Assignment, Skill } from '../../../components';
 import Term from '../../glossary/Term';
 import animationData from './img-lottie.json';
 
@@ -78,18 +79,16 @@ export default () => (
                 </Lottie.IntersectionBox>
             </Section.Side>
         </Section>
-        <Card mode='skill'>
-            <h2>New skill!</h2>
+        <Skill>
             Understanding functions lets you evaluate and describe how the classes you defined in
             the structure can interact with one another, which actions can be performed with these
             classes, and how specific instances of classes can be altered.
-        </Card>
-        <Card mode='assignment'>
-            <h2>Assignment #3</h2>
+        </Skill>
+        <Assignment
+            number={3}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSff8V8v7z941DvCwAGAOVcNeOefRpfw3Jdw8CYAzcMBlnEyGA/viewform?usp=sf_link'
+        >
             In addition to the definition of the Post class, list all functions of this class.
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLSff8V8v7z941DvCwAGAOVcNeOefRpfw3Jdw8CYAzcMBlnEyGA/viewform?usp=sf_link'>
-                Complete
-            </Card.Button>
-        </Card>
+        </Assignment>
     </>
 );

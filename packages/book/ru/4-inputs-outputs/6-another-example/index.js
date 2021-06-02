@@ -30,29 +30,29 @@ export default () => (
         <Section.Block>
             <Section.Main>
                 <p>
-                    Another{' '}
+                    (Дополнительно) Еще один{' '}
                     <Expand.Control htmlFor='2-7-1'>
-                        <Button variant='rounded'>example ⤵</Button>
+                        <Button variant='rounded'>пример ⤵</Button>
                     </Expand.Control>
-                    ︎ in which we define visual element parameters in the code.
+                    , в котором мы задаем параметры визуальных элементов в коде.
                 </p>
 
                 <Expand id='2-7-1'>
                     <Grid cols='40% 1fr'>
                         <Grid.Cell border='right bottom'>
-                            <b>The description of the function in text</b>
+                            <b>Описание функции текстом</b>
                         </Grid.Cell>
                         <Grid.Cell border='bottom'>
-                            <b>What it looks like in code</b>
+                            <b>Как это отображается в коде</b>
                         </Grid.Cell>
                         <Grid.Cell border='right'>
-                            The private function{' '}
+                            Приватная функция{' '}
                             <HL color='red' active inline={3}>
-                                UpdateLikes
+                                ОбновитьЛайки
                             </HL>{' '}
-                            defines{' '}
+                            определит,{' '}
                             <HL color='wheat' active inline={3}>
-                                whether you liked this post
+                                лайкали ли вы этот пост
                             </HL>
                         </Grid.Cell>
                         <Grid.Cell>
@@ -60,13 +60,12 @@ export default () => (
                         </Grid.Cell>
 
                         <Grid.Cell border='right' dense='top'>
-                            and stores, in the{' '}
+                            а также сохранит в{' '}
                             <HL color='steel-blue' active inline={3}>
-                                variable likerFollowee
-                            </HL>
-                            ,{' '}
+                                переменной likerFollowee
+                            </HL>{' '}
                             <HL color='green' active inline={3}>
-                                one of the followers who liked that specific post
+                                одного из фолловеров, лайкнувших конкретный пост
                             </HL>
                         </Grid.Cell>
                         <Grid.Cell dense='top'>
@@ -74,26 +73,26 @@ export default () => (
                         </Grid.Cell>
 
                         <Grid.Cell border='right' dense='top'>
-                            and{' '}
+                            и,{' '}
                             <HL color='aquamarine' active inline={3}>
-                                if among those who liked the post in the feed a particular user,
-                                there are followers of that user
+                                если среди лайкнувших пост в ленте конкретного юзера есть фоловеры
+                                этого юзера
                             </HL>
-                            , the function will{' '}
+                            ,{' '}
                             <HL color='blue' active inline={3}>
-                                display the profile picture of the user who liked the post
-                            </HL>{' '}
-                            and the{' '}
+                                отобразит картинку его профиля
+                            </HL>
+                            , а также{' '}
                             <HL color='plum' active inline={3}>
-                                caption “Liked by {'{user}'} and {'{others}'}”
+                                надпись Liked by {'{user}'} and {'{others}'}
                             </HL>
                             ,{' '}
                             <HL color='green-yellow' active inline={3}>
-                                if there is more than one like
+                                если таких лайков больше одного
                             </HL>
-                            , or{' '}
+                            , или{' '}
                             <HL color='plum' active inline={3}>
-                                “Liked by {'{user}'}”
+                                Liked by {'{user}'}
                             </HL>
                         </Grid.Cell>
                         <Grid.Cell dense='top'>
@@ -101,29 +100,30 @@ export default () => (
                         </Grid.Cell>
 
                         <Grid.Cell border='right' dense='top'>
-                            To use{' '}
+                            Для того чтобы использовать{' '}
                             <HL color='orange' active inline={3}>
-                                text (textTemplate)
+                                текст (textTemplate)
                             </HL>{' '}
-                            in our interface, we need to create an example of a standard class{' '}
+                            в нашем интерфейсе, мы должны создать экземпляр стандартного класса{' '}
                             <HL color='sandy-brown' active inline={3}>
                                 NSMutableAttributedString
                             </HL>
                             ,{' '}
                             <HL color='light-sky-blue' active inline={3}>
-                                into which we place the text and specify
+                                в который мы передаем текст и задаем
                             </HL>{' '}
-                            the attributes of the display:{' '}
+                            атрибуты его отображения:{' '}
                             <HL color='powder-blue' active inline={3}>
-                                standard system font UIFont.systemFont
+                                стандартный системный шрифт UIFont.systemFont
                             </HL>{' '}
                             <HL color='light-sky-blue' active inline={3}>
-                                size 12
+                                12 размера
                             </HL>{' '}
+                            и{' '}
                             <HL color='grey' active inline={3}>
-                                standard thickness
-                            </HL>
-                            , and save the inserted text in this instance
+                                стандартной толщины
+                            </HL>{' '}
+                            и сохранить в нем
                         </Grid.Cell>
                         <Grid.Cell dense='top'>
                             <Code value={code4} />
@@ -135,8 +135,9 @@ export default () => (
         <Section.Block>
             <Section.Main narrow>
                 <p>
-                    To avoid the need to define all of the visual parameters of the interface
-                    elements in code, modern editing software uses integrated visual editors.
+                    Для того, чтобы не описывать все визуальные параметры элементов интерфейса
+                    кодом, в современных редакторах используются встроенные визуальные редакторы (о
+                    чем мы подробно напишем в конце следующей части).
                 </p>
             </Section.Main>
         </Section.Block>

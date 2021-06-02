@@ -69,6 +69,7 @@ const App = () => {
                     <Route path='/ru/chapter-1' component={RU.Intro} />
                     <Route path='/ru/chapter-2' component={RU.Functions} />
                     <Route path='/ru/chapter-3' component={RU.Objects} />
+                    <Route path='/ru/chapter-4' component={RU.InputsOutputs} />
                     <Route path='/ru/glossary' component={RU.Glossary} />
 
                     <Route component={Home} />

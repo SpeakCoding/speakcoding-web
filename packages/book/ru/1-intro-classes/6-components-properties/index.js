@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react';
-import { Card, HL, Img, Section, Structure } from '@sc/ui';
+import { HL, Img, Section, Structure } from '@sc/ui';
+import { Assignment, Quiz } from '../../../components';
 import Term from '../../glossary/Term';
 import img1 from '../../../assets/1/5-class-period-ru.svg';
 import img2 from '../../../assets/1/6-human.svg';
@@ -143,21 +144,19 @@ export default () => (
                 </Section.Sticky>
             </Section.Side>
         </Section>
-        <Card mode='quiz'>
-            <h2>Тест №2</h2>
+        <Quiz
+            number={2}
+            href='https://docs.google.com/forms/d/e/1FAIpQLScoo1vkiq4bAjJsU5kyDeLAr4PnHPIFssLbOXpYURCfrBOIiA/viewform?usp=sf_link'
+        >
             Описание класса, составляющие и характеристики
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLScoo1vkiq4bAjJsU5kyDeLAr4PnHPIFssLbOXpYURCfrBOIiA/viewform?usp=sf_link'>
-                Пройти
-            </Card.Button>
-        </Card>
-        <Card mode='assignment'>
-            <h2>Задание №2</h2>
+        </Quiz>
+        <Assignment
+            number={2}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSf30DDnjNqIXlkSQ4rrlpifm_mF96mcD0WfYKTTcDnaZ5Gniw/viewform?usp=sf_link'
+        >
             Опишите в структурном виде максимально детальный список составляющих и характеристик{' '}
             <b>для класса Post</b> в Инстаграме. Для всех составляющих и характеристик придумайте их
             названия и классы.
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLSf30DDnjNqIXlkSQ4rrlpifm_mF96mcD0WfYKTTcDnaZ5Gniw/viewform?usp=sf_link'>
-                Пройти
-            </Card.Button>
-        </Card>
+        </Assignment>
     </>
 );

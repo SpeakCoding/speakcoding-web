@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Code, Grid, HL, Section } from '@sc/ui';
+import { Code, Grid, HL, Section } from '@sc/ui';
+import { Quiz, Skill } from '../../../components';
 import Term from '../../glossary/Term';
 
 const code1 = `func onClickCreateButton() {
@@ -29,18 +30,16 @@ const code23 = `\xa0
 
 export default () => (
     <>
-        <Card mode='skill'>
-            <h2>New skill!</h2>
+        <Skill>
             To change objects in code or to write apps, you will always need to create specific
             instances (objects) of the class.
-        </Card>
-        <Card mode='quiz'>
-            <h2>Quiz #4</h2>
+        </Skill>
+        <Quiz
+            number={4}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSc-qD1PSkhKaWvfeUxVe9lYz6gOfrV5EMlUgJ5l3jcFVJf4xQ/viewform?usp=sf_link'
+        >
             Creating objects and using Classes
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLSc-qD1PSkhKaWvfeUxVe9lYz6gOfrV5EMlUgJ5l3jcFVJf4xQ/viewform?usp=sf_link'>
-                Complete
-            </Card.Button>
-        </Card>
+        </Quiz>
 
         <Section>
             <Section.Block>
@@ -168,12 +167,11 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Card mode='quiz'>
-            <h2>Quiz #5</h2>
+        <Quiz
+            number={5}
+            href='https://docs.google.com/forms/d/e/1FAIpQLScSyBQIrovZ1oPYswY5i-BXIqplQHaZyf1_3eyfpadSUkO-aA/viewform?usp=sf_link'
+        >
             Storing objects temporarily
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLScSyBQIrovZ1oPYswY5i-BXIqplQHaZyf1_3eyfpadSUkO-aA/viewform?usp=sf_link'>
-                Complete
-            </Card.Button>
-        </Card>
+        </Quiz>
     </>
 );

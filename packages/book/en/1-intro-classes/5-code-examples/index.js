@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Section } from '@sc/ui';
+import { Section } from '@sc/ui';
+import { Skill } from '../../../components';
 import Example from '../../../common/1/class-examples';
 
 export default () => (
@@ -29,10 +30,9 @@ export default () => (
             </Section.Main>
             <Section.Side />
         </Section>
-        <Card mode='skill'>
-            <h2>New skill!</h2>
+        <Skill>
             What you have learnt in this chapter will help you create a PRD - product requirement
             document
-        </Card>
+        </Skill>
     </>
 );

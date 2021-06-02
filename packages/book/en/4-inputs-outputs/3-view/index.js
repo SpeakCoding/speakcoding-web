@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Section } from '@sc/ui';
+import { Section } from '@sc/ui';
+import { Assignment, Quiz } from '../../../components';
 import PostView from './PostView';
 import PostCreate from './PostCreate';
 
@@ -35,19 +36,17 @@ export default () => (
                 </Section.Main>
             </Section.Block>
         </Section>
-        <Card mode='quiz'>
-            <h2>Quiz #8</h2>
+        <Quiz
+            number={8}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSdpI4z2RvMo1rFxU_YSc20Id2p7DCe5CJVU1WBaUHBIZ1YQ3Q/viewform?usp=sf_link'
+        >
             Breaking down the screen: what the View consists of
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLSdpI4z2RvMo1rFxU_YSc20Id2p7DCe5CJVU1WBaUHBIZ1YQ3Q/viewform?usp=sf_link'>
-                Complete
-            </Card.Button>
-        </Card>
-        <Card mode='assignment'>
-            <h2>Assignment #5</h2>
+        </Quiz>
+        <Assignment
+            number={5}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSfbevn7Ejqw9hjz9Cn3iHtcdASGI3HDgTcxtgyFRLFSjTrZ4g/viewform?usp=sf_link'
+        >
             Describe (list) what the user profile screen consists of.
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLSfbevn7Ejqw9hjz9Cn3iHtcdASGI3HDgTcxtgyFRLFSjTrZ4g/viewform?usp=sf_link'>
-                Complete
-            </Card.Button>
-        </Card>
+        </Assignment>
     </>
 );

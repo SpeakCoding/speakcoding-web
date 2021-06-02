@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, HL, Section } from '@sc/ui';
+import { HL, Section } from '@sc/ui';
+import { Quiz } from '../../../components';
 import Term from '../../glossary/Term';
 import Slides, { useSlide } from '../../../common/2/function-definition-slides';
 import s from './style.css';
@@ -189,12 +190,11 @@ export default () => (
             <Section.Side />
         </Section>
 
-        <Card mode='quiz'>
-            <h2>Тест №3</h2>
+        <Quiz
+            number={3}
+            href='https://docs.google.com/forms/d/e/1FAIpQLScefPJNRkiqL9gZEMlNK7I17lkLEo-LsehIvDGUIsVsQ-jc7A/viewform?usp=sf_link'
+        >
             Определение и описание функций
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLScefPJNRkiqL9gZEMlNK7I17lkLEo-LsehIvDGUIsVsQ-jc7A/viewform?usp=sf_link'>
-                Пройти
-            </Card.Button>
-        </Card>
+        </Quiz>
     </>
 );

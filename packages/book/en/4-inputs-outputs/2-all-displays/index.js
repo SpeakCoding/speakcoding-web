@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Card, Expand, Img, Section, Structure } from '@sc/ui';
+import { Button, Expand, Img, Section, Structure } from '@sc/ui';
+import { Assignment, Quiz } from '../../../components';
 import img1 from '../../../assets/4/2-instagram-1.png';
 import img2 from '../../../assets/4/2-instagram-2.png';
 import img3 from '../../../assets/4/2-instagram-3.png';
@@ -45,19 +46,21 @@ export default () => (
                             </h2>
                             <Img src={img2} width='100%' />
                         </div>
+                    </div>
 
+                    <p>
+                        Individual screens – and therefore classes – are needed to create and edit
+                        posts.
+                    </p>
+
+                    <div className={s.tiles}>
                         <div className={s.tile}>
-                            <h2 className={s.title}>
-                                Individual screens – and therefore classes – are needed to create
-                                and edit posts. PostComposerViewController
-                            </h2>
+                            <h2 className={s.title}>PostComposerViewController</h2>
                             <Img src={img3} width='100%' />
                         </div>
 
                         <div className={s.tile}>
-                            <h2 className={s.title}>
-                                PostEditorController <br /> <br /> <br />
-                            </h2>
+                            <h2 className={s.title}>PostEditorController</h2>
                             <Img src={img4} width='100%' />
                         </div>
                     </div>
@@ -128,19 +131,17 @@ export default () => (
                 </Section.Main>
             </Section.Block>
         </Section>
-        <Card mode='quiz'>
-            <h2>Quiz #7</h2>
+        <Quiz
+            number={7}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSfKomjRalw-S51hz2WZGHqeufzHMUe9DiOa1IDqfW9WSn7h_w/viewform?usp=sf_link'
+        >
             All post displays
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLSfKomjRalw-S51hz2WZGHqeufzHMUe9DiOa1IDqfW9WSn7h_w/viewform?usp=sf_link'>
-                Complete
-            </Card.Button>
-        </Card>
-        <Card mode='assignment'>
-            <h2>Assignment #4</h2>
+        </Quiz>
+        <Assignment
+            number={4}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSdELTGy7hi7DOUZhotEf1Y-jPu8pIcx1x6My_v3AycUySnyhQ/viewform?usp=sf_link'
+        >
             Consider which screens the User class will require (e.g. creation, editing, lists).
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLSdELTGy7hi7DOUZhotEf1Y-jPu8pIcx1x6My_v3AycUySnyhQ/viewform?usp=sf_link'>
-                Complete
-            </Card.Button>
-        </Card>
+        </Assignment>
     </>
 );

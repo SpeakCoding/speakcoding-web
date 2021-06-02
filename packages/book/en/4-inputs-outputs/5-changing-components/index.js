@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Grid, HL, Hint, Img, Section } from '@sc/ui';
+import { Grid, HL, Hint, Img, Section } from '@sc/ui';
+import { Quiz } from '../../../components';
 import Term from '../../glossary/Term';
 import xcode from '../../../assets/4/3-xcode.png';
 
@@ -145,7 +146,7 @@ export default () => (
                                     self
                                 </HL>{' '}
                                 – a link to the instance of PostFeedView for which these actions
-                                will be performed
+                                will be performed.
                             </p>
                             <p>
                                 <HL color='green-yellow' active inline={3}>
@@ -218,12 +219,11 @@ export default () => (
                 </Section.Main>
             </Section.Block>
         </Section>
-        <Card mode='quiz'>
-            <h2>Quiz #9</h2>
+        <Quiz
+            number={9}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSf4UHPNeAYQb8LW8V3y33-Q5pnVo7Y-GkdaheZ7IpUcQN594Q/viewform?usp=sf_link'
+        >
             Changing components and interacting with classes
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLSf4UHPNeAYQb8LW8V3y33-Q5pnVo7Y-GkdaheZ7IpUcQN594Q/viewform?usp=sf_link'>
-                Complete
-            </Card.Button>
-        </Card>
+        </Quiz>
     </>
 );

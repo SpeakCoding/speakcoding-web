@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react';
-import { Card, HL, Img, Section, Structure } from '@sc/ui';
+import { HL, Img, Section, Structure } from '@sc/ui';
+import { Assignment, Quiz } from '../../../components';
 import Term from '../../glossary/Term';
 import img1 from '../../../assets/1/5-class-period-en.svg';
 import img2 from '../../../assets/1/6-human.svg';
@@ -137,21 +138,19 @@ export default () => (
                 </Section.Sticky>
             </Section.Side>
         </Section>
-        <Card mode='quiz'>
-            <h2>Quiz #2</h2>
+        <Quiz
+            number={2}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSdapr5hZAVYw3OUgk3t7gfVNJ43eyiV25vtk5wTxYDVjHNAeg/viewform?usp=sf_link'
+        >
             Class description, components, and properties
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLSdapr5hZAVYw3OUgk3t7gfVNJ43eyiV25vtk5wTxYDVjHNAeg/viewform?usp=sf_link'>
-                Complete
-            </Card.Button>
-        </Card>
-        <Card mode='assignment'>
-            <h2>Assignment #2</h2>
+        </Quiz>
+        <Assignment
+            number={2}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSdrSAB4zTnD-Qzyy-V5E8KdHM5qCbWWIghQC5JD7C6H7S3dNw/viewform?usp=sf_link'
+        >
             Create a structured definition of the components and properties for the Post class in
             Instagram, including as much detail as possible. Assign a title and class to each
             component.
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLSdrSAB4zTnD-Qzyy-V5E8KdHM5qCbWWIghQC5JD7C6H7S3dNw/viewform?usp=sf_link'>
-                Complete
-            </Card.Button>
-        </Card>
+        </Assignment>
     </>
 );

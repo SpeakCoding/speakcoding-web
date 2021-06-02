@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Section, Structure } from '@sc/ui';
+import { Section, Structure } from '@sc/ui';
+import { Quiz } from '../../../components';
 import { interceptor, InterceptorView } from '../../../phone';
 import HL from '../../../common/1/post-highlight';
 
@@ -78,12 +79,12 @@ export default () => (
             </Section.Main>
             <Section.Side />
         </Section>
-        <Card mode='quiz'>
-            <h2>Тест №1</h2>
+
+        <Quiz
+            number={1}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSfZaUtfoPUolluT-ZUi32JG0rhzSdnmDlWYozt1Iafac6Ru7Q/viewform?usp=sf_link'
+        >
             Введение: проверьте, удалось ли разобраться
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLSfZaUtfoPUolluT-ZUi32JG0rhzSdnmDlWYozt1Iafac6Ru7Q/viewform?usp=sf_link'>
-                Пройти
-            </Card.Button>
-        </Card>
+        </Quiz>
     </>
 );

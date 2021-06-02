@@ -1,0 +1,25 @@
+.tiles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 40px 0;
+}
+
+.tile {
+    min-width: 0;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: var(--c-grey-100);
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 40px;
+    font: var(--t-h2);
+    line-height: 30px;
+}
+
+.tile img {
+    max-width: 320px;
+    aspect-ratio: 498/1000
+}

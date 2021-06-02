@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Section } from '@sc/ui';
+import { Section } from '@sc/ui';
+import { Skill } from '../../../components';
 import Example from '../../../common/1/class-examples';
 
 export default () => (
@@ -25,10 +26,9 @@ export default () => (
             </Section.Main>
             <Section.Side />
         </Section>
-        <Card mode='skill'>
-            <h2>Новый скил добавлен!</h2>
+        <Skill>
             То, чему ты сейчас научился пригодится тебе для составления технических спецификаций
             продукта
-        </Card>
+        </Skill>
     </>
 );

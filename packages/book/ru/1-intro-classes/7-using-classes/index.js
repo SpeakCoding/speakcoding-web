@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Grid, Hint, Img, Pre, Section } from '@sc/ui';
+import { Grid, Hint, Img, Pre, Section } from '@sc/ui';
+import { Skill } from '../../../components';
 import Term from '../../glossary/Term';
 import img from '../../../assets/1/8-var-types-ru.svg';
 
@@ -125,11 +126,10 @@ export default () => (
             </Section.Main>
             <Section.Side />
         </Section>
-        <Card mode='skill'>
-            <h2>Новый скил добавлен!</h2>
+        <Skill>
             Теперь ты сможешь сделать структурное описание своей будущей программы более подробным и
             осмысленным. Для всех составляющих, которые ты опишешь, ты сможешь добавить класс и
             название, в полной мере описав “скелет” будущего продукта.
-        </Card>
+        </Skill>
     </>
 );

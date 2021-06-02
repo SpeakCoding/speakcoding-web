@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Img, Section, Structure } from '@sc/ui';
+import { Img, Section, Structure } from '@sc/ui';
+import { Assignment } from '../../../components';
 import img from '../../../assets/1/2-class-tweet.svg';
 
 export default () => (
@@ -83,14 +84,13 @@ export default () => (
                 </Section.Sticky>
             </Section.Side>
         </Section>
-        <Card mode='assignment'>
-            <h2>Assignment #1</h2>
+        <Assignment
+            number={1}
+            href='https://docs.google.com/forms/d/e/1FAIpQLScl7et0belQssA8oe6dTO_gHiXyUGCmhZitHwLHFF34y6jtkQ/viewform?usp=sf_link'
+        >
             Open the Spotify app and describe what it consists of. You could start by writing this
             in text form, then in a structured format (in the style of Instagram, Twitter or Venmo).
             We will then look at your description and discuss it at the end of this section.
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLScl7et0belQssA8oe6dTO_gHiXyUGCmhZitHwLHFF34y6jtkQ/viewform?usp=sf_link'>
-                Complete
-            </Card.Button>
-        </Card>
+        </Assignment>
     </>
 );

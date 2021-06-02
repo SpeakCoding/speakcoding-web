@@ -1,5 +1,6 @@
 import React from 'react';
-import { Callout, Card, Lottie, Section } from '@sc/ui';
+import { Callout, Lottie, Section } from '@sc/ui';
+import { Assignment, Skill } from '../../../components';
 import Term from '../../glossary/Term';
 import animationData from './img-lottie.json';
 
@@ -41,18 +42,17 @@ export default () => (
                 </Lottie.IntersectionBox>
             </Section.Side>
         </Section>
-        <Card mode='skill'>
-            <h2>Новый скил добавлен!</h2>
+        <Skill>
             Понимание функций позволит тебе подумать и описать, как классы, которые ты определил в
             структуре, могут взаимодействовать между собой, какие действия можно производить с этими
             классами, как можно изменять изменять их экземпляры.
-        </Card>
-        <Card mode='assignment'>
-            <h2>Задание №3</h2>В дополнение к описанию класса Post, которое вы делали в предыдущем
-            задании, запишите все функции этого класса
-            <Card.Button href='https://docs.google.com/forms/d/e/1FAIpQLSdXL_PUc4UUiEIXsRX_s-zhT4UxH1ZWgD6UoXMOIiItJ0buKA/viewform?usp=sf_link'>
-                Пройти
-            </Card.Button>
-        </Card>
+        </Skill>
+        <Assignment
+            number={3}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSdXL_PUc4UUiEIXsRX_s-zhT4UxH1ZWgD6UoXMOIiItJ0buKA/viewform?usp=sf_link'
+        >
+            В дополнение к описанию класса Post, которое вы делали в предыдущем задании, запишите
+            все функции этого класса
+        </Assignment>
     </>
 );

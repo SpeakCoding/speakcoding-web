@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Grid, Hint, Img, Pre, Section } from '@sc/ui';
+import { Grid, Hint, Img, Pre, Section } from '@sc/ui';
+import { Skill } from '../../../components';
 import Term from '../../glossary/Term';
 import img from '../../../assets/1/8-var-types-en.svg';
 
@@ -125,11 +126,10 @@ export default () => (
             </Section.Main>
             <Section.Side />
         </Section>
-        <Card mode='skill'>
-            <h2>New skill!</h2>
+        <Skill>
             You can now add detail to your structured program description to make it more
             comprehensive. You can assign a class and title to each component described, thus fully
             defining the ‘skeleton’ of the product-to-be.
-        </Card>
+        </Skill>
     </>
 );

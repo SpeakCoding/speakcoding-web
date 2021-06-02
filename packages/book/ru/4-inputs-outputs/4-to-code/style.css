@@ -1,0 +1,6 @@
+.transformation {
+    display: grid;
+    grid-template-columns: 25% 16px 30% 16px 1fr;
+    column-gap: 8px;
+    align-items: center;
+}
