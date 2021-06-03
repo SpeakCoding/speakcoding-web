@@ -1,40 +1,21 @@
 import React from 'react';
 import pt from 'prop-types';
-import { Breadcrumbs } from '@sc/ui';
-import Header from '../header';
-import L from '../localize';
+import Header from './Header';
 import Layout from '../layout';
-import Navigation from '../navigation';
+import Title from './Title';
 
-const Page = ({ chapter, chapters, phone, children }) => (
-    <Layout phone={phone}>
-        <Header chapter={chapter}>
-            <Breadcrumbs>
-                <Breadcrumbs.Item>
-                    <Navigation>
-                        <L book='en'>All chapters</L>
-                        <L book='ru'>Все главы</L>
+const Page = ({ chapter, chapters, phone, children }) => {
+    const title = typeof chapter === 'number' && chapters[chapter - 1]?.title;
 
-                        <Navigation.Content>
-                            <Navigation.Items>
-                                {chapters.map(({ title, href }) => (
-                                    <Navigation.Item key={title} href={href}>
-                                        {title}
-                                    </Navigation.Item>
-                                ))}
-                            </Navigation.Items>
-                        </Navigation.Content>
-                    </Navigation>
-                </Breadcrumbs.Item>
+    return (
+        <Layout phone={phone}>
+            {title && <Title>{`${chapter}. ${title}`}</Title>}
+            <Header chapter={chapter} chapters={chapters} />
+            {children}
+        </Layout>
+    );
+};
 
-                {typeof chapter === 'number' && (
-                    <Breadcrumbs.Item>{chapters[chapter - 1]?.title}</Breadcrumbs.Item>
-                )}
-            </Breadcrumbs>
-        </Header>
-        {children}
-    </Layout>
-);
 Page.propTypes = {
     chapter: pt.number,
     chapters: pt.array,

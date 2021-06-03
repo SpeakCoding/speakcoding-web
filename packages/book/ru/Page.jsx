@@ -21,4 +21,6 @@ const chapters = [
 
 const RuPage = props => <Page {...props} chapters={chapters} />;
 
+RuPage.Title = Page.Title;
+
 export default RuPage;

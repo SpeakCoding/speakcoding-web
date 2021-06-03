@@ -8,7 +8,7 @@ import Part4 from './4-code-editors';
 import Part5 from './5-layout';
 
 export default () => (
-    <Page chapter={4} phone={false}>
+    <Page chapter={5} phone={false}>
         <Part1 />
         <Part2 />
         <Section.Divider />

@@ -6,6 +6,7 @@ import terms from './terms';
 
 const GlossaryPage = () => (
     <Page phone={false}>
+        <Page.Title>Glossary</Page.Title>
         <Section>
             <Section.Main>
                 <h1>Glossary</h1>

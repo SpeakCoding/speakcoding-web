@@ -21,4 +21,6 @@ const chapters = [
 
 const EnPage = props => <Page {...props} chapters={chapters} />;
 
+EnPage.Title = Page.Title;
+
 export default EnPage;
