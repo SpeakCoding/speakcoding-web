@@ -5,11 +5,12 @@ import s from './style.css';
 
 export default () => (
     <Section.Main>
-        <p>
+        <h2>
+            (Дополнительно) Наследование классов{' '}
             <Expand.Control htmlFor='2-5-1'>
-                <Button variant='rounded'>(Дополнительно) Наследование классов ⤵</Button>
+                <Button variant='rounded'>⤵</Button>
             </Expand.Control>
-        </p>
+        </h2>
 
         <Expand id='2-5-1'>
             <Section.Block>

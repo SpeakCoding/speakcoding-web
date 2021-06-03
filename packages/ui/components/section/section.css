@@ -91,3 +91,8 @@
 .main b {
     font-weight: 600;
 }
+
+.main p > a:is(:link, :visited, :hover, :active) {
+    color: var(--c-primary-alt-500);
+    text-decoration: underline;
+}

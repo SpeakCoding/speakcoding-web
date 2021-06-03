@@ -5,11 +5,12 @@ import s from './style.css';
 
 export default () => (
     <Section.Main>
-        <p>
+        <h2>
+            In addition (Class inheritance){' '}
             <Expand.Control htmlFor='2-5-1'>
-                <Button variant='rounded'>In addition (Class inheritance) ⤵</Button>
+                <Button variant='rounded'>⤵</Button>
             </Expand.Control>
-        </p>
+        </h2>
 
         <Expand id='2-5-1'>
             <Section.Block>

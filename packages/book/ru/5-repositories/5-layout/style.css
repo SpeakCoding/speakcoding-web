@@ -1,0 +1,27 @@
+.steps {
+    margin-bottom: 16px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.number {
+    margin-right: 24px;
+    padding: 8px 16px;
+    border-radius: 12px;
+    background-color: var(--c-primary-500);
+    white-space: nowrap;
+}
+
+.text {
+    padding: 8px 0;
+}
+
+.commands {
+    display: grid;
+    grid-template-columns: max-content auto;
+    column-gap: 16px;
+}

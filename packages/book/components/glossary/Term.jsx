@@ -26,9 +26,11 @@ const Term = ({ data, href, link, tooltip, children }) => {
         );
 
     return (
-        <Link href={href}>
-            <span className={s.simple}>{children}</span>
-        </Link>
+        <span>
+            <Link href={href}>
+                <span className={s.simple}>{children}</span>
+            </Link>
+        </span>
     );
 };
 
