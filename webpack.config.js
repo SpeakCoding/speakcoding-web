@@ -4,6 +4,7 @@ const webpack = require('webpack'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     { CleanWebpackPlugin } = require('clean-webpack-plugin'),
     MiniCssExtractPlugin = require('mini-css-extract-plugin'),
+    CopyWebpackPlugin = require('copy-webpack-plugin'),
     loaders = require('./utils/loaders');
 
 const dev = process.env.NODE_ENV === 'development',
@@ -39,7 +40,14 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: dev ? 'index.html' : '../index.html',
             template: mobile ? 'packages/mobile/demo/index.html' : 'packages/book/index.html'
-        })
+        }),
+        ...(dev
+            ? []
+            : [
+                  new CopyWebpackPlugin({
+                      patterns: [{ from: 'assets/favicon.png', to: '.' }]
+                  })
+              ])
     ],
     devServer: {
         before(app) {
