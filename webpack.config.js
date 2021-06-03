@@ -41,13 +41,9 @@ module.exports = {
             filename: dev ? 'index.html' : '../index.html',
             template: mobile ? 'packages/mobile/demo/index.html' : 'packages/book/index.html'
         }),
-        ...(dev
-            ? []
-            : [
-                  new CopyWebpackPlugin({
-                      patterns: [{ from: 'assets/favicon.png', to: '.' }]
-                  })
-              ])
+        new CopyWebpackPlugin({
+            patterns: [{ from: 'static/favicon.png', to: '.' }]
+        })
     ],
     devServer: {
         before(app) {
