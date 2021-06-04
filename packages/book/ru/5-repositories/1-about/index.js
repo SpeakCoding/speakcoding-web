@@ -43,7 +43,7 @@ export default () => (
             href='https://docs.google.com/forms/d/e/1FAIpQLScE2jaETYLtxlZMwULCcjSZrduav6Vyqi4lx6rF3G60twvqDA/viewform?usp=sf_link'
         >
             Найдите файл, описывающий контроллер, отвечающий за отображение PostFeedView, и
-            перечислите все его составляющие и функции.
+            перечислите все его составляющие и функции
         </Assignment>
     </>
 );

@@ -29,7 +29,7 @@ export default () => (
             number={7}
             href='https://docs.google.com/forms/d/e/1FAIpQLSd7gEAYgH21_rC21AXRNeENhMl5t2g7ahKfxoBy7iSPHmsOMQ/viewform?usp=sf_link'
         >
-            Сделайте локальную копию репозитория.
+            Сделайте локальную копию репозитория
         </Assignment>
 
         <Section>
@@ -74,7 +74,7 @@ export default () => (
                         <b>
                             <i>Push</i>
                         </b>{' '}
-                        - отправляет ваши локальные изменения в коде в основную версию (в GitHub).{' '}
+                        - отправляет ваши локальные изменения в коде в основную версию (в GitHub).
                     </p>
                     <p>
                         Все обновления кода записываются в истории. Вы можете просмотреть их в

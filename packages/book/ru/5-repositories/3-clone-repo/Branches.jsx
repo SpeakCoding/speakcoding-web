@@ -48,7 +48,7 @@ export default () => (
                         href='https://docs.google.com/forms/d/e/1FAIpQLSczLCE9N5_XL1nE0hrWmkXHbZelIF2Y6fcy9PMo3CKWSZy9xg/viewform?usp=sf_link'
                     >
                         Попробуйте создать свою ветку кода с названием Имя_Фамилия и перейдите на
-                        нее.
+                        нее
                     </Assignment>
 
                     <Section.Block>

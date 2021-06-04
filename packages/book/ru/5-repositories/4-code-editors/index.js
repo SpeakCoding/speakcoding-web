@@ -1,7 +1,7 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
-import xcode from '../../../assets/4/3-xcode.png';
+import xcode from '../../../assets/5/1-xcode.png';
 
 export default () => (
     <>
@@ -105,21 +105,15 @@ export default () => (
             number={11}
             href='https://docs.google.com/forms/d/e/1FAIpQLSdBmk6AmK_ENyUD1T8ax54q8lP2Z-0KXE_GJxus6FQrfd_RRg/viewform?usp=sf_link'
         >
-            Откройте проект в XCode. Внутри XCode есть симулятор запуска программы. Панель со
-            списком устройств находится над самым широким полем с кодом, в самом верху. Для запуска
-            выберите из списка устройств iPhone 11 Pro и нажмите кнопку, похожую на кнопку Play ⏯. В
-            профессиональных терминах это действие называется run a build. Оно компилирует
-            приложение и запускает его в виртуальном эмуляторе. Создайте в открывшейся эмуляции
-            приложения нового пользователя и откройте ленту постов.
+            Откройте проект SpeakCoding в Xcode и запустите эмулятор учебного приложения для
+            iPhone11 Pro
         </Assignment>
 
         <Assignment
             number={12}
             href='https://docs.google.com/forms/d/e/1FAIpQLSdDeNfDafdIeI0wMXtFGjdEW30eXJvFQ5tXLuXkm7Y3HmH0QA/viewform?usp=sf_link'
         >
-            Откройте копию скачанного репозитория в XCode. Подсоедините ваш телефон к устройству, на
-            котором открыт XCode. Для запуска на телефоне выберите свой телефон в списке устройств
-            (он должен отобразиться в списке после подключения).
+            Откройте проект SpeakCoding в Xcode и запустите приложение на своем телефоне.
         </Assignment>
 
         <Section>
@@ -141,8 +135,9 @@ export default () => (
             number={13}
             href='https://docs.google.com/forms/d/e/1FAIpQLSfa10XrOvGORqbLfbNK0lcmEQw9z4qLxRxkQeTLHKAPSSyIVg/viewform?usp=sf_link'
         >
-            Пройдитесь по всем файлам в списке файлов слева и опишите коротко, что описывает данный
-            файл. Например, в файле User.swift хранится описание класса User.
+            Пройдитесь по всем файлам в списке файлов в Xcode (самая левая колонка в редакторе) и
+            коротко опишите каждый файл. Например, в файле User.swift хранится описание класса User.
+            А в файле UserProfileView - описание отображения профиля пользователя.
         </Assignment>
     </>
 );

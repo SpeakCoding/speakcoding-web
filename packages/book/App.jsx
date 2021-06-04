@@ -8,6 +8,8 @@ import Payment from './payment';
 import * as EN from './en';
 import * as RU from './ru';
 
+const admin = localStorage.getItem('admin');
+
 const App = () => {
     const fetch = useAPI(),
         auth = !!localStorage.getItem('book_auth_token'),
@@ -64,13 +66,14 @@ const App = () => {
                     <Route path='/en/chapter-2' component={EN.Functions} />
                     <Route path='/en/chapter-3' component={EN.Objects} />
                     <Route path='/en/chapter-4' component={EN.InputsOutputs} />
+                    {admin && <Route path='/en/chapter-5' component={EN.Repositories} />}
                     <Route path='/en/glossary' component={EN.Glossary} />
 
                     <Route path='/ru/chapter-1' component={RU.Intro} />
                     <Route path='/ru/chapter-2' component={RU.Functions} />
                     <Route path='/ru/chapter-3' component={RU.Objects} />
                     <Route path='/ru/chapter-4' component={RU.InputsOutputs} />
-                    <Route path='/ru/chapter-5-1622717273382' component={RU.Repositories} />
+                    {admin && <Route path='/ru/chapter-5' component={RU.Repositories} />}
                     <Route path='/ru/glossary' component={RU.Glossary} />
 
                     <Route component={Home} />
