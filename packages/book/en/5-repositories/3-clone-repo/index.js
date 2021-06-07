@@ -25,7 +25,7 @@ export default () => (
 
         <Assignment
             number={7}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSfwyOk2osyigMwsUxJ27nmDGEH5ZlzfzohxqI3qCpxLb9S0xA/viewform'
+            href='https://docs.google.com/forms/d/e/1FAIpQLSfp-VlR7lnIdU-bdEBwQ1xvLho2n8VrdwzHDv4bhS_FWeP2gQ/viewform'
         >
             Create a local copy of the depository
         </Assignment>
