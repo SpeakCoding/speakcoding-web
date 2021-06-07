@@ -93,7 +93,10 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment number={14} href='#'>
+        <Assignment
+            number={14}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSdi6SnSbo_8KyIZgi4QKgt818K2LkCxvtF6yZDIyuAzyKxnsA/viewform'
+        >
             Unpack the .xib file for User Profile (UserProfileView.xib) into its constituent
             elements
         </Assignment>

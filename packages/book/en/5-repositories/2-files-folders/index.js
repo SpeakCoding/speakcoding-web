@@ -52,7 +52,10 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Quiz number={10} href='#'>
+        <Quiz
+            number={10}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSfwyOk2osyigMwsUxJ27nmDGEH5ZlzfzohxqI3qCpxLb9S0xA/viewform'
+        >
             Files & folders
         </Quiz>
 
