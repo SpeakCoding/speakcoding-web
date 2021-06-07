@@ -29,7 +29,7 @@ export default () => (
                 <p>
                     <b>Пример</b>: пример описания класса{' '}
                     <Link
-                        href='https://docs.google.com/document/d/1MQjyen7skmmOgViAZic_Gb8cMecpSPGZTmzrTQP9qH0/edit?usp=sharing'
+                        href='https://github.com/SpeakCoding/iphone/blob/main/App/Post.swift'
                         blank
                     >
                         Post

@@ -2,6 +2,7 @@ import React from 'react';
 import { Img, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import xcode from '../../../assets/4/3-xcode.png';
+import Term from '../../glossary/Term';
 import Terminal from './Terminal';
 import s from './style.css';
 
@@ -24,10 +25,13 @@ export default () => (
                 <Section.Main narrow>
                     <p>
                         To the left you will see a list of files containing descriptions of classes.
-                        The file with the visual editor for interface elements has the extension
-                        .xml/html/.xib (.xib are the same as .xml/html files – the .xib extension is
-                        specifically for iOS). These files allow you to define and edit the visual
-                        layout of the elements of a particular view.
+                        The file with the visual editor for interface elements has the extension{' '}
+                        <Term id='xib' tooltip>
+                            .xml/.html/.xib
+                        </Term>{' '}
+                        (.xib are the same as .xml/html files – the .xib extension is specifically
+                        for iOS). These files allow you to define and edit the visual layout of the
+                        elements of a particular view.
                     </p>
                     <p>
                         Clicking on any element of the PostFeedView interface (in the image or in

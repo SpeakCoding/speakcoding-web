@@ -2,7 +2,7 @@ import React from 'react';
 import { Section } from '@sc/ui';
 import Page from '../Page';
 import Part1 from './1-about';
-import Part2 from './2-files-directories';
+import Part2 from './2-files-folders';
 import Part3 from './3-clone-repo';
 import Part4 from './4-code-editors';
 import Part5 from './5-layout';

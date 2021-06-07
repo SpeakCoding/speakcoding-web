@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link, Section } from '@sc/ui';
+import { Img, Link, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
+import img from '../../../assets/5/1-git.svg';
 
 export default () => (
     <>
         <Section>
-            <Section.Main narrow>
+            <Section.Main>
                 <h1>Repositories</h1>
                 <p>
                     When you first start programming, you will probably spend most of your time
@@ -32,9 +33,14 @@ export default () => (
                     </Link>{' '}
                     has files and folders containing the code for the app described in our course.
                     For example, the App folder contains the Post.swift file, which contains the
-                    description of one of our main Post classes.
+                    description of the Post class.
                 </p>
             </Section.Main>
+            <Section.Side>
+                <Section.Sticky top='60px'>
+                    <Img src={img} width='100%' />
+                </Section.Sticky>
+            </Section.Side>
         </Section>
 
         <Assignment number={6} href='#'>

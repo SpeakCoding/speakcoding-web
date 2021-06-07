@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button, Expand, Section } from '@sc/ui';
+import { Button, Expand, Img, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
+import img from '../../../assets/5/3-terminal.png';
 import s from './style.css';
 
 export default () => (
@@ -20,7 +21,7 @@ export default () => (
             <Section.Main>
                 <Expand id='5-5-1'>
                     <Section.Block>
-                        <Section.Main narrow>
+                        <Section.Main>
                             <p>
                                 <Term id='command-prompt' tooltip>
                                     Командная строка
@@ -42,7 +43,8 @@ export default () => (
                                 много:
                             </p>
                             <p className={s.commands}>
-                                <code>ls</code> <span>- list - отобразить список папок</span>
+                                <code>ls</code>{' '}
+                                <span>- list - отобразить список файлов и папок</span>
                                 <code>cd</code> <span>- change directory</span>
                                 <code>git pull</code> <span>- скачать</span>
                                 <code>git push</code> <span>- отправить</span>
@@ -62,6 +64,11 @@ export default () => (
                                 командной строки.
                             </p>
                         </Section.Main>
+                        <Section.Side>
+                            <Section.Sticky top='60px'>
+                                <Img src={img} width='100%' />
+                            </Section.Sticky>
+                        </Section.Side>
                     </Section.Block>
                 </Expand>
             </Section.Main>

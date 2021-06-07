@@ -45,7 +45,7 @@ export default () => (
                                 It’s also easy to set synchronisation between the server and local
                                 versions via GitHub Desktop. Changes to the code, whether in the
                                 cloud or in your local version, cause a new ‘version’/branch of the
-                                code to be created when the ‘commit’ command is entered. Using
+                                code to be created when the ‘commit (update)’ is uploaded. Using
                                 GitHub Desktop, you can ‘roll back’ to the required version if the
                                 program stopped working when you added the new function.
                             </p>

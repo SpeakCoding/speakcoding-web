@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button, Expand, Section } from '@sc/ui';
+import { Button, Expand, Img, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
+import img from '../../../assets/5/3-terminal.png';
 import s from './style.css';
 
 export default () => (
@@ -20,7 +21,7 @@ export default () => (
             <Section.Main>
                 <Expand id='5-5-1'>
                     <Section.Block>
-                        <Section.Main narrow>
+                        <Section.Main>
                             <p>
                                 The{' '}
                                 <Term id='command-prompt' tooltip>
@@ -40,7 +41,8 @@ export default () => (
                             </p>
                             <p>There are only a few standard and commonly used text commands:</p>
                             <p className={s.commands}>
-                                <code>ls</code> <span>- list - displays a list of folders</span>
+                                <code>ls</code>{' '}
+                                <span>- list - displays a list of files and folders</span>
                                 <code>cd</code> <span>- change directory</span>
                                 <code>git pull</code> <span>- downloads something</span>
                                 <code>git push</code> <span>- uploads something</span>
@@ -55,6 +57,11 @@ export default () => (
                                 to code.
                             </p>
                         </Section.Main>
+                        <Section.Side>
+                            <Section.Sticky top='60px'>
+                                <Img src={img} width='100%' />
+                            </Section.Sticky>
+                        </Section.Side>
                     </Section.Block>
                 </Expand>
             </Section.Main>

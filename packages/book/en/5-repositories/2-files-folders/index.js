@@ -28,7 +28,7 @@ export default () => (
                 <p>
                     <b>Example</b>: A description of the{' '}
                     <Link
-                        href='https://docs.google.com/document/d/1MQjyen7skmmOgViAZic_Gb8cMecpSPGZTmzrTQP9qH0/edit?usp=sharing'
+                        href='https://github.com/SpeakCoding/iphone/blob/main/App/Post.swift'
                         blank
                     >
                         Post
@@ -59,8 +59,9 @@ export default () => (
         <Section>
             <Section.Main narrow>
                 <p>
-                    In addition to the key essential program files, this list contains several
-                    function files. These usually describe settings for the{' '}
+                    In addition to the key essential program files, there is a list of files in the
+                    repository that contains several function files. These usually describe settings
+                    for the{' '}
                     <Term id='compiler' tooltip>
                         compiler
                     </Term>{' '}
@@ -75,11 +76,11 @@ export default () => (
                     <Hint>
                         Xcode
                         <Hint.Tooltip>
-                            Xcode - редактор, используемый для написания приложений для MacOS. Если
-                            у вас другая операционная система, вы можете попробовать скачать
-                            редактор Visual Studio Code или просто смотреть на файлы, которые мы
-                            обсуждаем в этой главе, онлайн. Ссылка на репозиторий открыта и его
-                            может посмотреть любой человек.
+                            Xcode is an editor that is used for developing iOS applications. If you
+                            have a different operational system, you can try downloading Visual
+                            Studio Code or just look at files that are being discussed in this
+                            chapter online. The link to the SpeakCoding repository is open, and
+                            anyone can see it.
                         </Hint.Tooltip>
                     </Hint>{' '}
                     editor to create iOS apps.

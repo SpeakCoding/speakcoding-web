@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link, Section } from '@sc/ui';
+import { Img, Link, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
+import img from '../../../assets/5/1-git.svg';
 
 export default () => (
     <>
         <Section>
-            <Section.Main narrow>
+            <Section.Main>
                 <h1>О репозиториях</h1>
                 <p>
                     В начале вашего знакомства с программированием вы чаще всего будете смотреть на
@@ -36,6 +37,11 @@ export default () => (
                     хранится описание одного из наших основных классов Post.
                 </p>
             </Section.Main>
+            <Section.Side>
+                <Section.Sticky top='60px'>
+                    <Img src={img} width='100%' />
+                </Section.Sticky>
+            </Section.Side>
         </Section>
 
         <Assignment

@@ -2,6 +2,7 @@ import React from 'react';
 import { Img, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import xcode from '../../../assets/4/3-xcode.png';
+import Term from '../../glossary/Term';
 import Terminal from './Terminal';
 import s from './style.css';
 
@@ -24,10 +25,13 @@ export default () => (
                 <Section.Main narrow>
                     <p>
                         Здесь слева вы видите список файлов, в которых хранится описание классов.
-                        Файл с визуальным редактором элементов интерфейса имеет расширение
-                        .xml/html/.xib (.xib - это то же самое, что xml/html, расширение .xib
-                        специфично для iOS). Это файлы, позволяющие вам задавать и редактировать
-                        визуальное расположение элементов какого-либо view.
+                        Файл с визуальным редактором элементов интерфейса имеет расширение{' '}
+                        <Term id='xib' tooltip>
+                            .xml/.html/.xib
+                        </Term>{' '}
+                        (.xib - это то же самое, что xml/html, расширение .xib специфично для iOS).
+                        Это файлы, позволяющие вам задавать и редактировать визуальное расположение
+                        элементов какого-либо view.
                     </p>
                     <p>
                         Кликнув на любой элемент интерфейса PostFeedView (на картинке или в списке),
@@ -50,25 +54,25 @@ export default () => (
                     <div className={s.steps}>
                         <div className={s.step}>
                             <div className={s.number}>
-                                <b>Step 1:</b>
+                                <b>Шаг 1:</b>
                             </div>
                             <div className={s.text}>Добавил элемент в список</div>
                         </div>
                         <div className={s.step}>
                             <div className={s.number}>
-                                <b>Step 2:</b>
+                                <b>Шаг 2:</b>
                             </div>
                             <div className={s.text}>Добавил в layout</div>
                         </div>
                         <div className={s.step}>
                             <div className={s.number}>
-                                <b>Step 3:</b>
+                                <b>Шаг 3:</b>
                             </div>
                             <div className={s.text}>Задал необходимые визуальные параметры</div>
                         </div>
                         <div className={s.step}>
                             <div className={s.number}>
-                                <b>Step 4:</b>
+                                <b>Шаг 4:</b>
                             </div>
                             <div className={s.text}>
                                 После чего связал элементы из списка с описанными ранее
