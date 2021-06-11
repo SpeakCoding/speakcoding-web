@@ -1,9 +1,14 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
+import { hl } from './utils';
 import s from './highlight.css';
 
-const Highlight = ({ active, color, inline, label, children }) => {
+const Highlight = ({ color, label, children, ...props }) => {
+    const context = useContext(hl),
+        active = context.active || props.active,
+        inline = context.inline || props.inline;
+
     const handleMouseEnter = useCallback(() => {
         if (!label) return;
         const items = document.querySelectorAll(`[data-highlight-label="${label}"]`);
@@ -22,7 +27,10 @@ const Highlight = ({ active, color, inline, label, children }) => {
 
     return (
         <span
-            className={classNames(s.box, active && s.active, inline && s.inline)}
+            className={classNames(s.box, {
+                [s.active]: context.active || active,
+                [s.inline]: inline
+            })}
             data-highlight-label={label}
             style={{
                 '--bg-color': `var(--bg-${color})`,

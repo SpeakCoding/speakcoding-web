@@ -66,15 +66,17 @@ const App = () => {
                     <Route path='/en/chapter-1' component={EN.Intro} />
                     <Route path='/en/chapter-2' component={EN.Functions} />
                     <Route path='/en/chapter-3' component={EN.Objects} />
-                    <Route path='/en/chapter-4' component={EN.InputsOutputs} />
+                    <Route path='/en/chapter-4' component={EN.Interface} />
                     <Route path='/en/chapter-5' component={EN.Repositories} />
+                    {admin && <Route path='/en/chapter-6' component={EN.ComplexSentences} />}
                     <Route path='/en/glossary' component={EN.Glossary} />
 
                     <Route path='/ru/chapter-1' component={RU.Intro} />
                     <Route path='/ru/chapter-2' component={RU.Functions} />
                     <Route path='/ru/chapter-3' component={RU.Objects} />
-                    <Route path='/ru/chapter-4' component={RU.InputsOutputs} />
+                    <Route path='/ru/chapter-4' component={RU.Interface} />
                     <Route path='/ru/chapter-5' component={RU.Repositories} />
+                    {admin && <Route path='/ru/chapter-6' component={RU.ComplexSentences} />}
                     <Route path='/ru/glossary' component={RU.Glossary} />
 
                     <Route component={Home} />

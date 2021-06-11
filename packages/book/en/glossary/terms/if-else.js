@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const id = 'logical-operators',
+export const id = 'if-else',
     name = 'Logical operators (if/else)';
 
 export const Definition = () => (

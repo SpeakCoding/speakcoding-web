@@ -1,0 +1,32 @@
+.example-1 {
+    position: relative;
+}
+
+.block {
+    position: absolute;
+    font-size: 16px;
+    line-height: 1.2;
+    background-repeat: no-repeat;
+}
+
+.block-1-1 {
+    composes: block;
+    top: 0;
+    left: 264px;
+    width: 114px;
+    padding-left: 166px;
+    background-image: url(./arrow-1.svg);
+}
+
+.block-1-2 {
+    composes: block;
+    bottom: 8px;
+    left: 210px;
+    width: 126px;
+    padding-left: 158px;
+    background-image: url(./arrow-2.svg);
+}
+
+.code {
+    overflow-wrap: break-word;
+}
