@@ -1,5 +1,5 @@
 import React from 'react';
-import { HL, Section } from '@sc/ui';
+import { Grid, HL, Section } from '@sc/ui';
 import { Quiz } from '../../../components';
 import Term from '../../glossary/Term';
 import Slides, { useSlide } from '../../../common/2/function-definition-slides';
@@ -114,27 +114,17 @@ export default () => (
             </Section.Block>
             <Section.Block>
                 <Section.Main>
-                    <div className={s.noReturn}>
-                        <div className={s.label}>
+                    <Grid>
+                        <Grid.Cell border='right'>
                             Пример функции, в результате выполнения которой нам не нужно возвращать
                             никакого значения
-                        </div>
-                        <div>
-                            Функция класса{' '}
-                            <HL color='green' active>
-                                Пост
-                            </HL>
-                            , которую мы назовем{' '}
-                            <HL color='orange' active>
-                                “Архивировать Пост”
-                            </HL>
-                            , которой мы ничего не передаем,{' '}
-                            <HL color='plum' active>
-                                архивирует конкретный пост
-                            </HL>
-                            .
-                        </div>
-                    </div>
+                        </Grid.Cell>
+                        <Grid.Cell hlactive>
+                            Функция класса <HL color='green'>Пост</HL>, которую мы назовем{' '}
+                            <HL color='orange'>“Архивировать Пост”</HL>, которой мы ничего не
+                            передаем, <HL color='plum'>архивирует конкретный пост</HL>.
+                        </Grid.Cell>
+                    </Grid>
                 </Section.Main>
             </Section.Block>
         </Section>

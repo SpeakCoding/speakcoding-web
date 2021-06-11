@@ -5,13 +5,13 @@ import s from './style.css';
 
 const code11 = `
 class User {
-    [[username]](orange _ 1) Text
+    [[username]](orange) Text
     ...
 }
 \xa0`;
 
 const code12 = `
-\xa0   [[newUsernameField]](turquoise _ 1)    TextField
+\xa0   [[newUsernameField]](turquoise)    TextField
     setButton            Button
     currentUser          User
 `;
@@ -19,7 +19,7 @@ const code12 = `
 const code13 = `
 \xa0
     func onClickSetButton() {
-        currentUser.[[username]](orange _ 1) = [[newUsernameField.text]](green _ 1)
+        currentUser.[[username]](orange) = [[newUsernameField.text]](green)
     }
 }`;
 
@@ -28,7 +28,7 @@ class User {
     username Text
     ...
 
-    func [[SetUserName]](aquamarine _ 1) (newUsername Text) {
+    func [[SetUserName]](aquamarine) (newUsername Text) {
         self.username = newUsername
     }
 }
@@ -43,7 +43,7 @@ class NewUsernameForm {
 
 const code22 = `
 \xa0
-        currentUser.[[SetUserName]](aquamarine _ 1)([[newUsernameField.text]](light-sky-blue _ 1))
+        currentUser.[[SetUserName]](aquamarine)([[newUsernameField.text]](light-sky-blue))
     }
 }`;
 
@@ -60,7 +60,7 @@ export default () => (
                     </Grid.Cell>
 
                     <Grid.Cell border='right' dense='bottom' />
-                    <Grid.Cell dense='bottom'>
+                    <Grid.Cell dense='bottom' hlactive>
                         <Code value={code11} />
                     </Grid.Cell>
 
@@ -81,25 +81,22 @@ export default () => (
                     </Grid.Cell>
 
                     <Grid.Cell border='right' dense />
-                    <Grid.Cell dense>
+                    <Grid.Cell dense hlactive>
                         <Code value={code12} />
                     </Grid.Cell>
 
-                    <Grid.Cell border='right'>
+                    <Grid.Cell border='right' hlactive>
                         <div className={s.hint}>
                             <div>
-                                Составляющую{' '}
-                                <HL color='orange' active>
-                                    username
-                                </HL>{' '}
-                                <HL color='green' active inline={3}>
+                                Составляющую <HL color='orange'>username</HL>{' '}
+                                <HL color='green'>
                                     изменяем напрямую на введенное в поле формы имя
                                 </HL>
                             </div>
                             <Icon name='arrow-right' size={24} />
                         </div>
                     </Grid.Cell>
-                    <Grid.Cell>
+                    <Grid.Cell hlactive>
                         <Code value={code13} />
                     </Grid.Cell>
                 </Grid>
@@ -132,22 +129,19 @@ export default () => (
                     </Grid.Cell>
 
                     <Grid.Cell border='right' dense='bottom' />
-                    <Grid.Cell dense='bottom'>
+                    <Grid.Cell dense='bottom' hlactive>
                         <Code value={code21} />
                     </Grid.Cell>
 
-                    <Grid.Cell border='right' dense='top'>
+                    <Grid.Cell border='right' dense='top' hlactive>
                         <div className={s.hint}>
                             <div>
-                                Изменяем через функцию{' '}
-                                <HL color='aquamarine' active>
-                                    SetUserName
-                                </HL>
+                                Изменяем через функцию <HL color='aquamarine'>SetUserName</HL>
                             </div>
                             <Icon name='arrow-right' size={24} />
                         </div>
                     </Grid.Cell>
-                    <Grid.Cell dense='top'>
+                    <Grid.Cell dense='top' hlactive>
                         <Code value={code22} />
                     </Grid.Cell>
                 </Grid>

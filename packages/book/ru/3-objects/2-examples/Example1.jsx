@@ -2,11 +2,11 @@ import React from 'react';
 import { Code, Grid, HL, Section } from '@sc/ui';
 
 const code = `
-class [[User]](orange _ 1) {
-    [[User]](light-sky-blue _ 1)([[inputUsername Text, inputEmail Text, inputPassword Text]](aquamarine _ 1 3)) {
-        [[self.username = inputUsername]](plum _ 1)
-        [[self.email= inputEmail]](plum _ 1)
-        [[self.password= inputPassword]](plum _ 1)  
+class [[User]](orange) {
+    [[User]](light-sky-blue)([[inputUsername Text, inputEmail Text, inputPassword Text]](aquamarine)) {
+        [[self.username = inputUsername]](plum)
+        [[self.email= inputEmail]](plum)
+        [[self.password= inputPassword]](plum)  
     }
 }`;
 
@@ -20,26 +20,17 @@ export default () => (
                 <Grid.Cell border='bottom'>
                     <b>Как это выглядит в коде</b>
                 </Grid.Cell>
-                <Grid.Cell border='right'>
-                    Функция класса{' '}
-                    <HL color='orange' active inline={3}>
-                        User
-                    </HL>
-                    , которая вызывается при создании{' '}
-                    <HL color='light-sky-blue' active inline={3}>
-                        конкретного User
-                    </HL>
-                    , для которой{' '}
-                    <HL color='aquamarine' active inline={3}>
-                        указывается имя пользователя, его email и пароль,
-                    </HL>{' '}
-                    <HL color='plum' active inline={3}>
+                <Grid.Cell border='right' hlactive>
+                    Функция класса <HL color='orange'>User</HL>, которая вызывается при создании{' '}
+                    <HL color='light-sky-blue'>конкретного User</HL>, для которой{' '}
+                    <HL color='aquamarine'>указывается имя пользователя, его email и пароль,</HL>{' '}
+                    <HL color='plum'>
                         которая использует эти вводные, чтобы подставить значения для составляющих
                         этого экземпляра класса User
                     </HL>
                     .
                 </Grid.Cell>
-                <Grid.Cell>
+                <Grid.Cell hlactive>
                     <Code value={code} />
                 </Grid.Cell>
             </Grid>

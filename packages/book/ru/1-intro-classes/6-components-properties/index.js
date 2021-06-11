@@ -93,34 +93,30 @@ export default () => (
             <Section.Main>
                 <h2>Пример</h2>
                 <div className={s.people}>
-                    <div>
-                        <HL color='light-sky-blue' active>
-                            Люди
-                        </HL>
-                    </div>
-                    <div>// составляющие</div>
-                    <div>
-                        <HL color='plum' active>
-                            Руки
-                        </HL>
-                    </div>
-                    <div>
-                        <HL color='orange' active>
-                            Ноги
-                        </HL>
-                    </div>
-                    <div>...</div>
-                    <div>характеристики (записываются так же, как и составляющие)</div>
-                    <div>
-                        <HL color='aquamarine'>Возраст</HL>
-                    </div>
-                    <div>
-                        <HL color='green-yellow'>Рост</HL>
-                    </div>
-                    <div>
-                        <HL color='thistle'>Пол</HL>
-                    </div>
-                    <div>...</div>
+                    <HL.Context active>
+                        <div>
+                            <HL color='light-sky-blue'>Люди</HL>
+                        </div>
+                        <div>// составляющие</div>
+                        <div>
+                            <HL color='plum'>Руки</HL>
+                        </div>
+                        <div>
+                            <HL color='orange'>Ноги</HL>
+                        </div>
+                        <div>...</div>
+                        <div>// характеристики (записываются так же, как и составляющие)</div>
+                        <div>
+                            <HL color='aquamarine'>Возраст</HL>
+                        </div>
+                        <div>
+                            <HL color='green-yellow'>Рост</HL>
+                        </div>
+                        <div>
+                            <HL color='thistle'>Пол</HL>
+                        </div>
+                        <div>...</div>
+                    </HL.Context>
                 </div>
                 <p>
                     При этом в языках программирования при описании классов об их{' '}

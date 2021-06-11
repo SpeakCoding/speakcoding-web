@@ -2,14 +2,14 @@ import React from 'react';
 import { Code, Grid, HL, Pre, Section } from '@sc/ui';
 
 const codeUser = `
-class [[User]](orange _ 1) {
+class [[User]](orange) {
     ...
 
-    func [[muteProfile]](green _ 1)() {
-        [[posts = self.getPosts()]](plum _ 1)
-        [[stories = self.getStories()]](plum _ 1)
-        [[posts.mute()]](plum _ 1)
-        [[stories.mute()]](plum _ 1)   
+    func [[muteProfile]](green)() {
+        [[posts = self.getPosts()]](plum)
+        [[stories = self.getStories()]](plum)
+        [[posts.mute()]](plum)
+        [[stories.mute()]](plum)   
     }
 }`;
 
@@ -67,26 +67,19 @@ export default () => (
                         <b>Как это выглядит в коде</b>
                     </Grid.Cell>
 
-                    <Grid.Cell border='right'>
+                    <Grid.Cell border='right' hlactive>
                         Функция, которая позволяет временно перестать читать посты пользователя:
                         <br /> <br />
-                        Функция{' '}
-                        <HL color='orange' active inline={3}>
-                            класса User
-                        </HL>
-                        , которую мы назовем{' '}
-                        <HL color='green' active inline={3}>
-                            “перестать читать юзера”
-                        </HL>
-                        ,{' '}
-                        <HL color='plum' active inline={3}>
+                        Функция <HL color='orange'>класса User</HL>, которую мы назовем{' '}
+                        <HL color='green'>“перестать читать юзера”</HL>,{' '}
+                        <HL color='plum'>
                             идентифицирует посты и сториз этого юзера и последовательно исключает
                             посты из твоего фида.
                         </HL>
                         .
                     </Grid.Cell>
 
-                    <Grid.Cell>
+                    <Grid.Cell hlactive>
                         <Code value={codeUser} />
                     </Grid.Cell>
                 </Grid>

@@ -3,11 +3,11 @@ import { Code, Grid, HL, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 
 const code = `
-class [[Post]](orange _ 1) {
-    [[Post]](light-sky-blue _ 1)([[inputUser User, inputImage Image, inputText Text]](aquamarine _ 1)) {
-        [[self.user = inputUser]](plum _ 1)
-        [[self.image = inputImage]](plum _ 1)
-        [[self.text = inputText]](plum _ 1)  
+class [[Post]](orange) {
+    [[Post]](light-sky-blue)([[inputUser User, inputImage Image, inputText Text]](aquamarine)) {
+        [[self.user = inputUser]](plum)
+        [[self.image = inputImage]](plum)
+        [[self.text = inputText]](plum)  
     }
 }`;
 
@@ -32,27 +32,20 @@ export default () => (
                     <Grid.Cell border='bottom'>
                         <b>Как это выглядит в коде</b>
                     </Grid.Cell>
-                    <Grid.Cell border='right'>
-                        Функция класса{' '}
-                        <HL color='orange' active inline={3}>
-                            Пост
-                        </HL>
-                        , которая вызывается при создании{' '}
-                        <HL color='light-sky-blue' active inline={3}>
-                            конкретного Поста
-                        </HL>
-                        , для которой{' '}
-                        <HL color='aquamarine' active inline={3}>
+                    <Grid.Cell border='right' hlactive>
+                        Функция класса <HL color='orange'>Пост</HL>, которая вызывается при создании{' '}
+                        <HL color='light-sky-blue'>конкретного Поста</HL>, для которой{' '}
+                        <HL color='aquamarine'>
                             указывается пользователь, создающий пост, картинка и текст этого поста
                         </HL>
                         ,{' '}
-                        <HL color='plum' active inline={3}>
+                        <HL color='plum'>
                             которая использует эти вводные, чтобы задать соответствующие
                             составляющие этого экземпляра (объекта)
                         </HL>
                         .
                     </Grid.Cell>
-                    <Grid.Cell>
+                    <Grid.Cell hlactive>
                         <Code value={code} />
                     </Grid.Cell>
                 </Grid>

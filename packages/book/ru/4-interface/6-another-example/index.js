@@ -2,26 +2,26 @@ import React from 'react';
 import { Button, Code, Expand, Grid, HL, Section } from '@sc/ui';
 
 const code1 = `
-private func [[updateLikes]](red _ 1 3)() {
-    self.likeButton.isSelected = [[self.post.isLiked]](wheat _ 1 3)
+private func [[updateLikes]](red)() {
+    self.likeButton.isSelected = [[self.post.isLiked]](wheat)
 `;
 
 const code2 = `
-\xa0   let [[likerFollowee]](steel-blue _ 1 3) = [[self.post.likerFollowee]](green _ 1 3)
+\xa0   let [[likerFollowee]](steel-blue) = [[self.post.likerFollowee]](green)
 `;
 
 const code3 = `
-\xa0   [[if likerFollowee != nil]](aquamarine _ 1 3) {
+\xa0   [[if likerFollowee != nil]](aquamarine) {
         self.likerFolloweeProfilePictureView
-        .[[showImageAsynchronously(imageURL: likerFollowee?.profilePictureURL)]](blue _ 1 3)
+        .[[showImageAsynchronously(imageURL: likerFollowee?.profilePictureURL)]](blue)
 
         self.likerFolloweeProfilePictureView.isHidden = false
 
-        let textTemplate = (self.post.[[numberOfLikes > 1]](green-yellow _ 1 3)) ? [["Liked by {user} and {others}" : "Liked by {user}"]](plum _ 1 3)
+        let textTemplate = (self.post.[[numberOfLikes > 1]](green-yellow)) ? [["Liked by {user} and {others}" : "Liked by {user}"]](plum)
 `;
 
 const code4 = `
-\xa0       let [[text]](orange _ 1 3) = [[NSMutableAttributedString]](sandy-brown _ 1 3)([[string: textTemplate]](light-sky-blue _ 1 3), attributes: [[[NSAttributedString.Key.font: UIFont.systemFont]](powder-blue _ 1 3)([[ofSize: 12]](light-sky-blue _ 1 3), [[weight: UIFont.Weight.regular]](grey _ 1 3))])
+\xa0       let [[text]](orange) = [[NSMutableAttributedString]](sandy-brown)([[string: textTemplate]](light-sky-blue), attributes: [[[NSAttributedString.Key.font: UIFont.systemFont]](powder-blue)([[ofSize: 12]](light-sky-blue), [[weight: UIFont.Weight.regular]](grey))])
     }
 }`;
 
@@ -45,87 +45,53 @@ export default () => (
                         <Grid.Cell border='bottom'>
                             <b>Как это отображается в коде</b>
                         </Grid.Cell>
-                        <Grid.Cell border='right'>
-                            Приватная функция{' '}
-                            <HL color='red' active inline={3}>
-                                ОбновитьЛайки
-                            </HL>{' '}
-                            определит,{' '}
-                            <HL color='wheat' active inline={3}>
-                                лайкали ли вы этот пост
-                            </HL>
+
+                        <Grid.Cell border='right' hlactive>
+                            Приватная функция <HL color='red'>ОбновитьЛайки</HL> определит,{' '}
+                            <HL color='wheat'>лайкали ли вы этот пост</HL>
                         </Grid.Cell>
-                        <Grid.Cell>
+                        <Grid.Cell hlactive>
                             <Code value={code1} />
                         </Grid.Cell>
 
-                        <Grid.Cell border='right' dense='top'>
-                            а также сохранит в{' '}
-                            <HL color='steel-blue' active inline={3}>
-                                переменной likerFollowee
-                            </HL>{' '}
-                            <HL color='green' active inline={3}>
-                                одного из фолловеров, лайкнувших конкретный пост
-                            </HL>
+                        <Grid.Cell border='right' dense='top' hlactive>
+                            а также сохранит в <HL color='steel-blue'>переменной likerFollowee</HL>{' '}
+                            <HL color='green'>одного из фолловеров, лайкнувших конкретный пост</HL>
                         </Grid.Cell>
-                        <Grid.Cell dense='top'>
+                        <Grid.Cell dense='top' hlactive>
                             <Code value={code2} />
                         </Grid.Cell>
 
-                        <Grid.Cell border='right' dense='top'>
+                        <Grid.Cell border='right' dense='top' hlactive>
                             и,{' '}
-                            <HL color='aquamarine' active inline={3}>
+                            <HL color='aquamarine'>
                                 если среди лайкнувших пост в ленте конкретного юзера есть фоловеры
                                 этого юзера
                             </HL>
-                            ,{' '}
-                            <HL color='blue' active inline={3}>
-                                отобразит картинку его профиля
-                            </HL>
-                            , а также{' '}
-                            <HL color='plum' active inline={3}>
+                            , <HL color='blue'>отобразит картинку его профиля</HL>, а также{' '}
+                            <HL color='plum'>
                                 надпись Liked by {'{user}'} and {'{others}'}
                             </HL>
-                            ,{' '}
-                            <HL color='green-yellow' active inline={3}>
-                                если таких лайков больше одного
-                            </HL>
-                            , или{' '}
-                            <HL color='plum' active inline={3}>
-                                Liked by {'{user}'}
-                            </HL>
+                            , <HL color='green-yellow'>если таких лайков больше одного</HL>, или{' '}
+                            <HL color='plum'>Liked by {'{user}'}</HL>
                         </Grid.Cell>
-                        <Grid.Cell dense='top'>
+                        <Grid.Cell dense='top' hlactive>
                             <Code value={code3} />
                         </Grid.Cell>
 
-                        <Grid.Cell border='right' dense='top'>
-                            Для того чтобы использовать{' '}
-                            <HL color='orange' active inline={3}>
-                                текст (textTemplate)
-                            </HL>{' '}
+                        <Grid.Cell border='right' dense='top' hlactive>
+                            Для того чтобы использовать <HL color='orange'>текст (textTemplate)</HL>{' '}
                             в нашем интерфейсе, мы должны создать экземпляр стандартного класса{' '}
-                            <HL color='sandy-brown' active inline={3}>
-                                NSMutableAttributedString
-                            </HL>
-                            ,{' '}
-                            <HL color='light-sky-blue' active inline={3}>
-                                в который мы передаем текст и задаем
-                            </HL>{' '}
+                            <HL color='sandy-brown'>NSMutableAttributedString</HL>,{' '}
+                            <HL color='light-sky-blue'>в который мы передаем текст и задаем</HL>{' '}
                             атрибуты его отображения:{' '}
-                            <HL color='powder-blue' active inline={3}>
+                            <HL color='powder-blue'>
                                 стандартный системный шрифт UIFont.systemFont
                             </HL>{' '}
-                            <HL color='light-sky-blue' active inline={3}>
-                                12 размера
-                            </HL>{' '}
-                            и{' '}
-                            <HL color='grey' active inline={3}>
-                                стандартной толщины
-                            </HL>{' '}
-                            и сохранить в нем
+                            <HL color='light-sky-blue'>12 размера</HL> и{' '}
+                            <HL color='grey'>стандартной толщины</HL> и сохранить в нем
                         </Grid.Cell>
-                        <Grid.Cell dense='top'>
+                        <Grid.Cell dense='top' hlactive>
                             <Code value={code4} />
                         </Grid.Cell>
                     </Grid>

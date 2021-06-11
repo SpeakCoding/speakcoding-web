@@ -85,34 +85,30 @@ export default () => (
             <Section.Main>
                 <h2>Example</h2>
                 <div className={s.people}>
-                    <div>
-                        <HL color='light-sky-blue' active>
-                            People
-                        </HL>
-                    </div>
-                    <div>// Components</div>
-                    <div>
-                        <HL color='plum' active>
-                            Arms
-                        </HL>
-                    </div>
-                    <div>
-                        <HL color='orange' active>
-                            Legs
-                        </HL>
-                    </div>
-                    <div>...</div>
-                    <div>// Properties (recorded the same way as components)</div>
-                    <div>
-                        <HL color='aquamarine'>Age</HL>
-                    </div>
-                    <div>
-                        <HL color='green-yellow'>Height</HL>
-                    </div>
-                    <div>
-                        <HL color='thistle'>Gender</HL>
-                    </div>
-                    <div>...</div>
+                    <HL.Context active>
+                        <div>
+                            <HL color='light-sky-blue'>People</HL>
+                        </div>
+                        <div>// Components</div>
+                        <div>
+                            <HL color='plum'>Arms</HL>
+                        </div>
+                        <div>
+                            <HL color='orange'>Legs</HL>
+                        </div>
+                        <div>...</div>
+                        <div>// Properties (recorded the same way as components)</div>
+                        <div>
+                            <HL color='aquamarine'>Age</HL>
+                        </div>
+                        <div>
+                            <HL color='green-yellow'>Height</HL>
+                        </div>
+                        <div>
+                            <HL color='thistle'>Gender</HL>
+                        </div>
+                        <div>...</div>
+                    </HL.Context>
                 </div>
                 <p>
                     In programming languages, <Term id='component'>components</Term> are defined in

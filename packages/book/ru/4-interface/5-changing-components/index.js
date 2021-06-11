@@ -97,18 +97,12 @@ export default () => (
                         <Grid.Cell border='bottom'>
                             <b>Как это выглядит в коде</b>
                         </Grid.Cell>
-                        <Grid.Cell border='right'>
+                        <Grid.Cell border='right' hlactive>
                             <p>
-                                Здесь внутри{' '}
-                                <HL color='orange' active>
-                                    likeButton
-                                </HL>{' '}
-                                есть составляющая, в которой хранится функция{' '}
-                                <HL color='plum' active>
-                                    toggleLike
-                                </HL>
-                                . Этого не видно в этой строчке кода, но правым кликом мышки вы
-                                можете перейти в то место в коде, где это будет{' '}
+                                Здесь внутри <HL color='orange'>likeButton</HL> есть составляющая, в
+                                которой хранится функция <HL color='plum'>toggleLike</HL>. Этого не
+                                видно в этой строчке кода, но правым кликом мышки вы можете перейти
+                                в то место в коде, где это будет{' '}
                                 <Hint>
                                     описано
                                     <Hint.Tooltip>
@@ -132,72 +126,37 @@ export default () => (
                                 .
                             </p>
                             <p>
-                                <HL color='green' active>
-                                    target
-                                </HL>{' '}
-                                – то, с каким объектом мы произведем{' '}
-                                <HL color='light-sky-blue' active>
-                                    действие
-                                </HL>{' '}
-                                (функция класса PostFeedView) на{' '}
-                                <HL color='aquamarine' active>
-                                    такое действие
-                                </HL>{' '}
-                                с кнопкой likeButton.
+                                <HL color='green'>target</HL> – то, с каким объектом мы произведем{' '}
+                                <HL color='light-sky-blue'>действие</HL> (функция класса
+                                PostFeedView) на <HL color='aquamarine'>такое действие</HL> с
+                                кнопкой likeButton.
                             </p>
                             <p>
-                                <HL color='sandy-brown' active inline={3}>
-                                    self
-                                </HL>{' '}
-                                – ссылка на экземпляр PostFeedView, для которого будут производиться
-                                эти действия.
+                                <HL color='sandy-brown'>self</HL> – ссылка на экземпляр
+                                PostFeedView, для которого будут производиться эти действия.
                             </p>
                             <p>
-                                <HL color='green-yellow' active inline={3}>
-                                    UIControl.Event
-                                </HL>{' '}
-                                – в библиотеке UIKit в классе UIControl, ссылка на упрощенный класс
-                                Event, в котором как составляющие перечислены действия пользователя
-                                на которые могут реагировать стандартные элементы интерфейса.
-                                Например, UIControl.Event.
-                                <HL color='aquamarine' active inline={3}>
-                                    touchUpInside
-                                </HL>{' '}
-                                соответствует событию, когда пользователь отпустил палец все еще
-                                находясь над областью кнопки.
+                                <HL color='green-yellow'>UIControl.Event</HL> – в библиотеке UIKit в
+                                классе UIControl, ссылка на упрощенный класс Event, в котором как
+                                составляющие перечислены действия пользователя на которые могут
+                                реагировать стандартные элементы интерфейса. Например,
+                                UIControl.Event.
+                                <HL color='aquamarine'>touchUpInside</HL> соответствует событию,
+                                когда пользователь отпустил палец все еще находясь над областью
+                                кнопки.
                             </p>
                             Т.е. мы задаем параметры кнопки: описываем действия, которые она
                             выполнит для этого объекта при таком взаимодействии с ней пользователя.
                         </Grid.Cell>
-                        <Grid.Cell>
+                        <Grid.Cell hlactive>
                             <pre>
-                                <HL color='orange' active>
-                                    likeButton
-                                </HL>
+                                <HL color='orange'>likeButton</HL>
                                 .addTarget(
-                                <HL color='green' active>
-                                    target
-                                </HL>
-                                :{' '}
-                                <HL color='sandy-brown' active inline={3}>
-                                    self
-                                </HL>
-                                ,{' '}
-                                <HL color='light-sky-blue' active>
-                                    action
-                                </HL>
-                                :{' '}
-                                <HL color='plum' active>
-                                    toggleLike
-                                </HL>
-                                , for:{' '}
-                                <HL color='green-yellow' active inline={3}>
-                                    UIControl.Event
-                                </HL>
-                                .
-                                <HL color='aquamarine' active>
-                                    touchUpInside
-                                </HL>
+                                <HL color='green'>target</HL>: <HL color='sandy-brown'>self</HL>,{' '}
+                                <HL color='light-sky-blue'>action</HL>:{' '}
+                                <HL color='plum'>toggleLike</HL>, for:{' '}
+                                <HL color='green-yellow'>UIControl.Event</HL>.
+                                <HL color='aquamarine'>touchUpInside</HL>
                                 ) -> <br /> <br />
                                 class PostFeedCell: UITableViewCell {'{'} <br />
                                 {'    ...'} <br /> <br />

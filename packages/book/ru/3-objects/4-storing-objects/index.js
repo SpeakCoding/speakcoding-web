@@ -4,8 +4,8 @@ import { Quiz, Skill } from '../../../components';
 import Term from '../../glossary/Term';
 
 const code1 = `func onClickCreateButton() {
-    [[var newUser]](aquamarine _ 1) [[User]](light-sky-blue _ 1)
-    [[newUser]](aquamarine _ 1) = new User(usernameField.text, emailField.text, passwordField.text)
+    [[var newUser]](aquamarine) [[User]](light-sky-blue)
+    [[newUser]](aquamarine) = new User(usernameField.text, emailField.text, passwordField.text)
         ...
     }
 }`;
@@ -18,8 +18,8 @@ const code21 = `Post {
 
 const code22 = `
 \xa0   func addLike(user User) {
-        var [[newLike]](turquoise _ 1) Like 
-        [[newLike]](turquoise _ 1) = new [[Like]](orange _ 1)(user)
+        var [[newLike]](turquoise) Like 
+        [[newLike]](turquoise) = new [[Like]](orange)(user)
 `;
 
 const code23 = `\xa0
@@ -83,19 +83,15 @@ export default () => (
                         <Grid.Cell border='bottom'>
                             <b>Пример кода</b>
                         </Grid.Cell>
-                        <Grid.Cell border='right'>
+                        <Grid.Cell border='right' hlactive>
                             При сохранении информации в переменную (контейнер) мы должны придумать
-                            для нее{' '}
-                            <HL color='aquamarine' active>
-                                название
-                            </HL>{' '}
-                            и определить{' '}
-                            <HL color='light-sky-blue' active inline={3}>
+                            для нее <HL color='aquamarine'>название</HL> и определить{' '}
+                            <HL color='light-sky-blue'>
                                 класс объектов, которые в ней можно хранить
                             </HL>
                             .
                         </Grid.Cell>
-                        <Grid.Cell>
+                        <Grid.Cell hlactive>
                             <Code value={code1} />
                         </Grid.Cell>
                     </Grid>
@@ -130,18 +126,11 @@ export default () => (
                             <Code value={code21} />
                         </Grid.Cell>
 
-                        <Grid.Cell border='right' dense>
-                            Создали{' '}
-                            <HL color='orange' active>
-                                Like
-                            </HL>{' '}
-                            и поместили его в переменную (временный контейнер){' '}
-                            <HL color='turquoise' active>
-                                newLike
-                            </HL>
-                            .
+                        <Grid.Cell border='right' dense hlactive>
+                            Создали <HL color='orange'>Like</HL> и поместили его в переменную
+                            (временный контейнер) <HL color='turquoise'>newLike</HL>.
                         </Grid.Cell>
-                        <Grid.Cell dense>
+                        <Grid.Cell dense hlactive>
                             <Code value={code22} />
                         </Grid.Cell>
 

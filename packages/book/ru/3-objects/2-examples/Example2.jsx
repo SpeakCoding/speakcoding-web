@@ -2,11 +2,11 @@ import React from 'react';
 import { Code, Grid, HL, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 
-const code = `[[func onClickCreateButton()]](green _ 1) {
-    [[newUsername = textFieldUsername.text]](orange _ 1)
-    [[newEmail = textFieldEmail.text]](orange _ 1)
-    [[newPassword = textFieldPassword.text]](orange _ 1)
-    [[newUser = new User]](plum _ 1 3) [[(newUsername, newEmail, newPassword)]](aquamarine _ 3)
+const code = `[[func onClickCreateButton()]](green) {
+    [[newUsername = textFieldUsername.text]](orange)
+    [[newEmail = textFieldEmail.text]](orange)
+    [[newPassword = textFieldPassword.text]](orange)
+    [[newUser = new User]](plum) [[(newUsername, newEmail, newPassword)]](aquamarine)
     ...
 }`;
 
@@ -56,27 +56,14 @@ export default () => (
                     <Grid.Cell border='bottom'>
                         <b>Как это выглядит в коде</b>
                     </Grid.Cell>
-                    <Grid.Cell border='right'>
-                        Функция{' '}
-                        <HL color='green' active inline={3}>
-                            onClickCreateButton()
-                        </HL>
-                        , которая{' '}
-                        <HL color='plum' active inline={3}>
-                            будет вызываться при нажатии кнопки Submit, использует
-                        </HL>{' '}
-                        <HL color='orange' active inline={3}>
-                            все введенные в поля формы данные
-                        </HL>{' '}
-                        <HL color='plum' active inline={3}>
-                            и создаст
-                        </HL>{' '}
-                        <HL color='aquamarine' active inline={3}>
-                            экземпляр класса User
-                        </HL>
-                        .
+                    <Grid.Cell border='right' hlactive>
+                        Функция <HL color='green'>onClickCreateButton()</HL>, которая{' '}
+                        <HL color='plum'>будет вызываться при нажатии кнопки Submit, использует</HL>{' '}
+                        <HL color='orange'>все введенные в поля формы данные</HL>{' '}
+                        <HL color='plum'>и создаст</HL>{' '}
+                        <HL color='aquamarine'>экземпляр класса User</HL>.
                     </Grid.Cell>
-                    <Grid.Cell>
+                    <Grid.Cell hlactive>
                         <Code value={code} />
                     </Grid.Cell>
                 </Grid>
