@@ -1,5 +1,5 @@
 import React from 'react';
-import { HL, Section } from '@sc/ui';
+import { Grid, HL, Section } from '@sc/ui';
 import { Quiz } from '../../../components';
 import Term from '../../glossary/Term';
 import Slides, { useSlide } from '../../../common/2/function-definition-slides';
@@ -114,34 +114,18 @@ export default () => (
             </Section.Block>
             <Section.Block>
                 <Section.Main>
-                    <div className={s.noReturn}>
-                        <div className={s.label}>
+                    <Grid>
+                        <Grid.Cell border='right'>
                             Example of a function that doesn’t return anything
-                        </div>
-                        <div>
-                            A function of the class{' '}
-                            <HL color='green' active>
-                                Post
-                            </HL>
-                            , that we call{' '}
-                            <HL color='orange' active>
-                                “Archive Post”
-                            </HL>
-                            ;{' '}
-                            <HL color='aquamarine' active>
-                                given a user
-                            </HL>
-                            , the function{' '}
-                            <HL color='plum' active>
-                                archives an instance of a Post
-                            </HL>{' '}
-                            and{' '}
-                            <HL color='light-sky-blue' active>
-                                does not return anything as a result
-                            </HL>
-                            .
-                        </div>
-                    </div>
+                        </Grid.Cell>
+                        <Grid.Cell hlactive>
+                            A function of the class <HL color='green'>Post</HL>, that we call{' '}
+                            <HL color='orange'>“Archive Post”</HL>;{' '}
+                            <HL color='aquamarine'>given a user</HL>, the function{' '}
+                            <HL color='plum'>archives an instance of a Post</HL> and{' '}
+                            <HL color='light-sky-blue'>does not return anything as a result</HL>.
+                        </Grid.Cell>
+                    </Grid>
                 </Section.Main>
             </Section.Block>
         </Section>

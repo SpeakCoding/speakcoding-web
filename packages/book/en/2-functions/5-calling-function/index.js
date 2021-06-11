@@ -2,14 +2,14 @@ import React from 'react';
 import { Code, Grid, HL, Pre, Section } from '@sc/ui';
 
 const codeUser = `
-class [[User]](orange _ 1) {
+class [[User]](orange) {
     ...
 
-    func [[muteProfile]](green _ 1)() {
-        [[posts = self.getPosts()]](plum _ 1)
-        [[stories = self.getStories()]](plum _ 1)
-        [[posts.mute()]](plum _ 1)
-        [[stories.mute()]](plum _ 1)   
+    func [[muteProfile]](green)() {
+        [[posts = self.getPosts()]](plum)
+        [[stories = self.getStories()]](plum)
+        [[posts.mute()]](plum)
+        [[stories.mute()]](plum)
     }
 }`;
 
@@ -70,29 +70,16 @@ export default () => (
                         <b>What it looks like in code</b>
                     </Grid.Cell>
 
-                    <Grid.Cell border='right'>
+                    <Grid.Cell border='right' hlactive>
                         A function that allows a user’s posts to be temporarily muted (not
                         displayed):
-                        <br /> <br />A function of the class{' '}
-                        <HL color='orange' active inline={3}>
-                            User
-                        </HL>
-                        , that we call{' '}
-                        <HL color='green' active inline={3}>
-                            «mute user»
-                        </HL>
-                        ,{' '}
-                        <HL color='plum' active inline={3}>
-                            identifies this user’s posts and stories
-                        </HL>
-                        , and then{' '}
-                        <HL color='plum' active inline={3}>
-                            mutes them
-                        </HL>
-                        .
+                        <br /> <br />A function of the class <HL color='orange'>User</HL>, that we
+                        call <HL color='green'>«mute user»</HL>,{' '}
+                        <HL color='plum'>identifies this user’s posts and stories</HL>, and then{' '}
+                        <HL color='plum'>mutes them</HL>.
                     </Grid.Cell>
 
-                    <Grid.Cell>
+                    <Grid.Cell hlactive>
                         <Code value={codeUser} />
                     </Grid.Cell>
                 </Grid>

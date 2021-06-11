@@ -4,8 +4,8 @@ import { Quiz, Skill } from '../../../components';
 import Term from '../../glossary/Term';
 
 const code1 = `func onClickCreateButton() {
-    [[var newUser]](aquamarine _ 1) [[User]](light-sky-blue _ 1)
-    [[newUser]](aquamarine _ 1) = new User(usernameField.text, emailField.text, passwordField.text)
+    [[var newUser]](aquamarine) [[User]](light-sky-blue)
+    [[newUser]](aquamarine) = new User(usernameField.text, emailField.text, passwordField.text)
         ...
     }
 }`;
@@ -18,8 +18,8 @@ const code21 = `Post {
 
 const code22 = `
 \xa0   func addLike(user User) {
-        var [[newLike]](turquoise _ 1) Like 
-        [[newLike]](turquoise _ 1) = new [[Like]](orange _ 1)(user)
+        var [[newLike]](turquoise) Like 
+        [[newLike]](turquoise) = new [[Like]](orange)(user)
 `;
 
 const code23 = `\xa0
@@ -83,18 +83,15 @@ export default () => (
                         <Grid.Cell border='bottom'>
                             <b>What it looks like in code</b>
                         </Grid.Cell>
-                        <Grid.Cell border='right'>
+                        <Grid.Cell border='right' hlactive>
                             When saving information in a variable (container), we need to give it a{' '}
-                            <HL color='aquamarine' active>
-                                title
-                            </HL>{' '}
-                            and define the{' '}
-                            <HL color='light-sky-blue' active inline={3}>
+                            <HL color='aquamarine'>title</HL> and define the{' '}
+                            <HL color='light-sky-blue'>
                                 class of objects that can be stored in it
                             </HL>
                             .
                         </Grid.Cell>
-                        <Grid.Cell>
+                        <Grid.Cell hlactive>
                             <Code value={code1} />
                         </Grid.Cell>
                     </Grid>
@@ -129,18 +126,11 @@ export default () => (
                             <Code value={code21} />
                         </Grid.Cell>
 
-                        <Grid.Cell border='right' dense>
-                            Created{' '}
-                            <HL color='orange' active>
-                                Like
-                            </HL>
-                            , placed it in the variable (temporary container){' '}
-                            <HL color='turquoise' active>
-                                newLike
-                            </HL>
-                            .
+                        <Grid.Cell border='right' dense hlactive>
+                            Created <HL color='orange'>Like</HL>, placed it in the variable
+                            (temporary container) <HL color='turquoise'>newLike</HL>.
                         </Grid.Cell>
-                        <Grid.Cell dense>
+                        <Grid.Cell dense hlactive>
                             <Code value={code22} />
                         </Grid.Cell>
 

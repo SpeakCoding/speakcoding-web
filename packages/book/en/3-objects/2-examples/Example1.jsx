@@ -2,11 +2,11 @@ import React from 'react';
 import { Code, Grid, HL, Section } from '@sc/ui';
 
 const code = `
-class [[User]](orange _ 1) {
-    [[User]](light-sky-blue _ 1)([[inputUsername Text, inputEmail Text, inputPassword Text]](aquamarine _ 1 3)) {
-        [[self.username = inputUsername]](plum _ 1)
-        [[self.email= inputEmail]](plum _ 1)
-        [[self.password= inputPassword]](plum _ 1)  
+class [[User]](orange) {
+    [[User]](light-sky-blue)([[inputUsername Text, inputEmail Text, inputPassword Text]](aquamarine)) {
+        [[self.username = inputUsername]](plum)
+        [[self.email= inputEmail]](plum)
+        [[self.password= inputPassword]](plum)  
     }
 }`;
 
@@ -20,27 +20,17 @@ export default () => (
                 <Grid.Cell border='bottom'>
                     <b>What it looks like in code</b>
                 </Grid.Cell>
-                <Grid.Cell border='right'>
-                    A function of the class{' '}
-                    <HL color='orange' active inline={3}>
-                        User
-                    </HL>{' '}
-                    that is called when a{' '}
-                    <HL color='light-sky-blue' active inline={3}>
-                        specific User
-                    </HL>{' '}
-                    is created for which{' '}
-                    <HL color='aquamarine' active inline={3}>
-                        a username, email, and password are indicated
-                    </HL>
-                    , and{' '}
-                    <HL color='plum' active inline={3}>
+                <Grid.Cell border='right' hlactive>
+                    A function of the class <HL color='orange'>User</HL> that is called when a{' '}
+                    <HL color='light-sky-blue'>specific User</HL> is created for which{' '}
+                    <HL color='aquamarine'>a username, email, and password are indicated</HL>, and{' '}
+                    <HL color='plum'>
                         which uses these inputs to substitute values for the components of this
                         instance of the User class
                     </HL>
                     .
                 </Grid.Cell>
-                <Grid.Cell>
+                <Grid.Cell hlactive>
                     <Code value={code} />
                 </Grid.Cell>
             </Grid>

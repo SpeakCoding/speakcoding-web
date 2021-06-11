@@ -3,11 +3,11 @@ import { Code, Grid, HL, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 
 const code = `
-class [[Post]](orange _ 1) {
-    [[Post]](light-sky-blue _ 1)([[inputUser User, inputImage Image, inputText Text]](aquamarine _ 1)) {
-        [[self.user = inputUser]](plum _ 1)
-        [[self.image = inputImage]](plum _ 1)
-        [[self.text = inputText]](plum _ 1)  
+class [[Post]](orange) {
+    [[Post]](light-sky-blue)([[inputUser User, inputImage Image, inputText Text]](aquamarine)) {
+        [[self.user = inputUser]](plum)
+        [[self.image = inputImage]](plum)
+        [[self.text = inputText]](plum)  
     }
 }`;
 
@@ -32,27 +32,20 @@ export default () => (
                     <Grid.Cell border='bottom'>
                         <b>What it looks like in code</b>
                     </Grid.Cell>
-                    <Grid.Cell border='right'>
-                        A function of the class{' '}
-                        <HL color='orange' active inline={3}>
-                            Post
-                        </HL>{' '}
-                        that is called when a{' '}
-                        <HL color='light-sky-blue' active inline={3}>
-                            specific Post
-                        </HL>{' '}
-                        is created for which{' '}
-                        <HL color='aquamarine' active inline={3}>
+                    <Grid.Cell border='right' hlactive>
+                        A function of the class <HL color='orange'>Post</HL> that is called when a{' '}
+                        <HL color='light-sky-blue'>specific Post</HL> is created for which{' '}
+                        <HL color='aquamarine'>
                             the user that created the post, picture, and text for the post is
                             indicated;
                         </HL>{' '}
-                        <HL color='plum' active inline={3}>
+                        <HL color='plum'>
                             the function uses these inputs to specify the corresponding components
                             of that instance (object)
                         </HL>
                         .
                     </Grid.Cell>
-                    <Grid.Cell>
+                    <Grid.Cell hlactive>
                         <Code value={code} />
                     </Grid.Cell>
                 </Grid>

@@ -4,16 +4,16 @@ import Post from '../../../common/2/class-post';
 import s from './style.css';
 
 const codeFn1 = `
-func (post* [[Post]](orange _ 1)) [[Add Like]](green _ 1)([[user User]](aquamarine _ 1)) [[Number]](light-sky-blue _ 1) { 
-    [[new_like = new Like(user)]](plum _ 1)
-    [[post.likes.add(new_like)]](plum _ 1)
-    [[return count(post.likes)]](light-sky-blue _ 1)
+func (post* [[Post]](orange)) [[Add Like]](green)([[user User]](aquamarine)) [[Number]](light-sky-blue) { 
+    [[new_like = new Like(user)]](plum)
+    [[post.likes.add(new_like)]](plum)
+    [[return count(post.likes)]](light-sky-blue)
 }`;
 
 const codeFn2 = `
-func [[NumberOfLikes]](green _ 1)() [[Number]](light-sky-blue _ 1) { 
-    [[number_of_likes = self.setOfLikes.length]](plum _ 1 3)
-    [[return number_of_likes]](light-sky-blue _ 1)
+func [[NumberOfLikes]](green)() [[Number]](light-sky-blue) { 
+    [[number_of_likes = self.setOfLikes.length]](plum)
+    [[return number_of_likes]](light-sky-blue)
 }`;
 
 export default () => (
@@ -43,93 +43,50 @@ export default () => (
                     <pre>...</pre>
                 </Grid.Cell>
 
-                <Grid.Cell border='right'>
+                <Grid.Cell border='right' hlactive>
                     <ul>
                         <li>
-                            <HL color='green' active>
-                                Title
-                            </HL>
+                            <HL color='green'>Title</HL>
                         </li>
                         <li>
-                            <HL color='orange' active>
-                                Class
-                            </HL>{' '}
-                            to which it relates
+                            <HL color='orange'>Class</HL> to which it relates
                         </li>
                         <li>
-                            <HL color='plum' active inline={3}>
-                                Sequences/list of operations
-                            </HL>{' '}
-                            that it performs
+                            <HL color='plum'>Sequences/list of operations</HL> that it performs
                         </li>
                         <li>
-                            <HL color='aquamarine' active>
-                                Inputs
-                            </HL>
+                            <HL color='aquamarine'>Inputs</HL>
                         </li>
                         <li>
-                            <HL color='light-sky-blue' active>
-                                Class of the value
-                            </HL>{' '}
-                            that the function returns
+                            <HL color='light-sky-blue'>Class of the value</HL> that the function
+                            returns
                         </li>
                     </ul>
                 </Grid.Cell>
-                <Grid.Cell border='right'>
-                    A function of the class{' '}
-                    <HL color='orange' active inline={3}>
-                        Post
-                    </HL>{' '}
-                    that we call{' '}
-                    <HL color='green' active inline={3}>
-                        “Add Like”
-                    </HL>
-                    ;{' '}
-                    <HL color='aquamarine' active inline={3}>
-                        given a user
-                    </HL>
-                    , the function{' '}
-                    <HL color='plum' active inline={3}>
+                <Grid.Cell border='right' hlactive>
+                    A function of the class <HL color='orange'>Post</HL> that we call{' '}
+                    <HL color='green'>“Add Like”</HL>; <HL color='aquamarine'>given a user</HL>, the
+                    function{' '}
+                    <HL color='plum'>
                         creates a like from that user and adds it to that post’s list of likes, and
                         communicates
                     </HL>{' '}
-                    <HL color='light-sky-blue' active inline={3}>
-                        the number
-                    </HL>
-                    /
-                    <HL color='plum' active inline={3}>
-                        new quantity of likes
-                    </HL>
-                    .
+                    <HL color='light-sky-blue'>the number</HL>/
+                    <HL color='plum'>new quantity of likes</HL>.
                 </Grid.Cell>
-                <Grid.Cell>
+                <Grid.Cell hlactive>
                     <Code value={codeFn1} />
                 </Grid.Cell>
 
                 <Grid.Cell border='right' />
-                <Grid.Cell border='right'>
-                    Or a function of the class{' '}
-                    <HL color='orange' active inline={3}>
-                        Post
-                    </HL>{' '}
-                    that we call{' '}
-                    <HL color='green' active inline={3}>
-                        “Number of Likes”
-                    </HL>
-                    ;{' '}
-                    <HL color='aquamarine' active inline={3}>
-                        it does not require any inputs
-                    </HL>
-                    ,{' '}
-                    <HL color='plum' active inline={3}>
-                        it determines how many likes a post has
-                    </HL>{' '}
-                    <HL color='light-sky-blue' active inline={3}>
-                        and communicates that number
-                    </HL>
-                    .
+                <Grid.Cell border='right' hlactive>
+                    Or a function of the class <HL color='orange'>Post</HL> that we call{' '}
+                    <HL color='green'>“Number of Likes”</HL>;{' '}
+                    <HL color='aquamarine'>it does not require any inputs</HL>,{' '}
+                    <HL color='plum'>it determines how many likes a post has</HL>{' '}
+                    <HL color='light-sky-blue'>and communicates that number</HL>.
                 </Grid.Cell>
-                <Grid.Cell>
+                <Grid.Cell hlactive>
                     <Code value={codeFn2} />
                 </Grid.Cell>
             </Grid>

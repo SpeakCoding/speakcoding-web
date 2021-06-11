@@ -2,9 +2,9 @@ import React from 'react';
 import { Code, Grid, Hint, HL, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 
-const code = `class [[Post]](orange _ 1) {
-    [[Post]](light-sky-blue _ 1)([[inputUser User, inputImage Image, inputText Text]](aquamarine _ 1)) {
-        [[self.time = System.CurrentTime()]](plum _ 1)
+const code = `class [[Post]](orange) {
+    [[Post]](light-sky-blue)([[inputUser User, inputImage Image, inputText Text]](aquamarine)) {
+        [[self.time = System.CurrentTime()]](plum)
     }
 }`;
 
@@ -28,19 +28,16 @@ export default () => (
                     <Grid.Cell border='bottom'>
                         <b>What it looks like in code</b>
                     </Grid.Cell>
-                    <Grid.Cell border='right'>
-                        A function of the class{' '}
-                        <HL color='orange' active inline={3}>
-                            Post
-                        </HL>{' '}
-                        that is called when a specific Post is created;{' '}
-                        <HL color='plum' active inline={3}>
+                    <Grid.Cell border='right' hlactive>
+                        A function of the class <HL color='orange'>Post</HL> that is called when a
+                        specific Post is created;{' '}
+                        <HL color='plum'>
                             this function uses the current time on the device/phone being used to
                             create the post to specify what time the post was created
                         </HL>
                         .
                     </Grid.Cell>
-                    <Grid.Cell>
+                    <Grid.Cell hlactive>
                         <Code value={code} />
                     </Grid.Cell>
                 </Grid>
