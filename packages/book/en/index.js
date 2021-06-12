@@ -4,4 +4,5 @@ export Objects from './3-objects';
 export Interface from './4-interface';
 export Repositories from './5-repositories';
 export ComplexSentences from './6-complex-sentences';
+export OnlineSearch from './7-online-search';
 export Glossary from './glossary';

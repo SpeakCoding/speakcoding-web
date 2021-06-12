@@ -69,6 +69,7 @@ const App = () => {
                     <Route path='/en/chapter-4' component={EN.Interface} />
                     <Route path='/en/chapter-5' component={EN.Repositories} />
                     {admin && <Route path='/en/chapter-6' component={EN.ComplexSentences} />}
+                    {admin && <Route path='/en/chapter-7' component={EN.OnlineSearch} />}
                     <Route path='/en/glossary' component={EN.Glossary} />
 
                     <Route path='/ru/chapter-1' component={RU.Intro} />
@@ -77,6 +78,7 @@ const App = () => {
                     <Route path='/ru/chapter-4' component={RU.Interface} />
                     <Route path='/ru/chapter-5' component={RU.Repositories} />
                     {admin && <Route path='/ru/chapter-6' component={RU.ComplexSentences} />}
+                    {admin && <Route path='/ru/chapter-7' component={RU.OnlineSearch} />}
                     <Route path='/ru/glossary' component={RU.Glossary} />
 
                     <Route component={Home} />
