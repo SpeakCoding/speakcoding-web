@@ -102,8 +102,8 @@ export default () => (
                 <Section.Main narrow>
                     <ul>
                         <li>
-                            Objects of a class (e.g. the specific instance of a Like) that are
-                            written as components of a particular object of a different class (e.g.
+                            Objects of a class (e.g., the specific instance of a Like) that are
+                            written as components of a particular object of a different class (e.g.,
                             in a Set of Likes for a different Post) are saved for as long as the
                             object of a different class is stored (this instance of a Post).
                         </li>

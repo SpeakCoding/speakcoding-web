@@ -57,7 +57,7 @@ export default () => (
                 <p>
                     Right before the start of a <Term id='paragraph'>paragraph</Term> (before the
                     curly bracket) there may be a key word (which corresponds to a subordinate
-                    conjunction in regular language, e.g. if, then, etc.) that gives this paragraph
+                    conjunction in regular language, e.g., if, then, etc.) that gives this paragraph
                     special properties.
                 </p>
             </Section.Main>

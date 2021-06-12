@@ -20,17 +20,19 @@ export default () => (
                 <Term id='class'>class</Term>. They are known in programming as arrays.
             </p>
             <p>
-                As you may remember, standard sets in code are denoted by [] (i.e. square brackets [
-                ]). For example, when the []Comment <Term id='class'>class</Term> is assigned to{' '}
+                As you may remember, standard sets in code are denoted by [] (i.e., square brackets
+                [ ]). For example, when the []Comment <Term id='class'>class</Term> is assigned to{' '}
                 <Term id='component'>a component</Term>/<Term id='variable'>variable</Term>, this
-                should be read as a ‘set of comments’. If the maximum amount of objects in a Set is
-                limited to a certain number, for example to 10 objects, then when creating{' '}
+                should be read as a ‘set of comments’. If the maximum amount of{' '}
+                <Term id='instance'>objects</Term> in a Set is limited to a certain number, for
+                example to 10 <Term id='instance'>objects</Term>, then when creating{' '}
                 <Term id='set'>the set</Term>, this number is entered inside square brackets:
             </p>
             <Pre>var comments = Comment[10];</Pre>
             <p>
-                You may find the serial number of the object from this set useful for temporarily
-                storing an object in the set or reading a particular object from the set.
+                You may find the serial number of the <Term id='instance'>object</Term> from this
+                set useful for temporarily storing an object in the set or reading a particular
+                object from the set.
             </p>
             <p>
                 In programming, the numerical list of elements in a set starts from 0. For example,

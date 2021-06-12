@@ -11,9 +11,9 @@ export default () => (
             </h1>
             <h2>Display</h2>
             <p>
-                The interface displays examples of our structural classes (e.g. a post, its pictures
-                and caption) to the user, and includes tools to interact with these examples (to
-                create or edit posts).
+                The interface displays examples of our structural classes (e.g., a post, its
+                pictures and caption) to the user, and includes tools to interact with these
+                examples (to create or edit posts).
             </p>
             <p>
                 To create the interface, we need to add the classes that define the on-screen
@@ -28,7 +28,7 @@ export default () => (
             </Callout>
             <p>
                 The complete cycle of a user’s interaction with the program can be defined as
-                follows (also illustrated in the scheme to the right):
+                follows (also illustrated in the diagram to the right):
             </p>
             <ul>
                 <li>

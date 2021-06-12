@@ -33,7 +33,7 @@ export default () => (
             href='https://docs.google.com/forms/d/e/1FAIpQLSdrRxpjvEOEFBYJfKRGuOU4T4D6iRYgDKyrDPAy2Mk9mGG3Pg/viewform'
         >
             Install Xcode on your computer. Launch the editor and open a project, indicating the
-            folder into which you downloaded the repository (e.g. Documents/SpeakCoding/iphone/).
+            folder into which you downloaded the repository (e.g., Documents/SpeakCoding/iphone/).
         </Assignment>
 
         <Section>
@@ -56,7 +56,7 @@ export default () => (
                     </p>
                     <p>
                         When you select a file, its contents are displayed in the main central
-                        section, i.e. in the code editor. Every line in the editor is numbered to
+                        section, i.e., in the code editor. Every line in the editor is numbered to
                         make it easier for developers to read the code and spot any mistakes. The
                         editor also highlights function words. Right-clicking on any class gives the
                         option to Jump to Definition, which quickly takes you to the definition of

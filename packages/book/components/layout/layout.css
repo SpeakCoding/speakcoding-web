@@ -35,6 +35,11 @@
     text-orientation: mixed;
     transform: rotate(-180deg);
     cursor: pointer;
+    transition: color var(--animation);
+}
+
+.glossary:hover {
+    color: var(--c-black);
 }
 
 .help {

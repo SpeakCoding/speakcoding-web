@@ -88,7 +88,7 @@ export default () => (
                     </Hint>{' '}
                     editor to create iOS apps.
                 </p>
-                <p>In our depository you can also find:</p>
+                <p>In our repository you can also find:</p>
                 <ul>
                     <li>
                         The Asset folder, which contains the rendered visual elements used in the

@@ -62,7 +62,7 @@ export default () => (
                             to which the function relates
                         </div>
                         There are some functions that are not specific to a particular class; we
-                        will revisit these later in this text.
+                        will revisit these later in this text
                     </Slides.Item>
                     <Slides.Item>
                         <div className={s.message}>

@@ -86,7 +86,7 @@ export default () => (
                         <Expand.Control htmlFor='2-2-1'>
                             <Button variant='rounded'>how ⤴︎</Button>
                         </Expand.Control>{' '}
-                        to display data about a specific object (e.g. about the relevant post).
+                        to display data about a specific object (e.g., about the relevant post).
                     </p>
                     <Expand id='2-2-2'>
                         For example, for <i>the post creation screen</i> – PostComposerView – we
@@ -141,7 +141,7 @@ export default () => (
             number={4}
             href='https://docs.google.com/forms/d/e/1FAIpQLSdELTGy7hi7DOUZhotEf1Y-jPu8pIcx1x6My_v3AycUySnyhQ/viewform?usp=sf_link'
         >
-            Consider which screens the User class will require (e.g. creation, editing, lists).
+            Consider which screens the User class will require (e.g., creation, editing, lists).
         </Assignment>
     </>
 );

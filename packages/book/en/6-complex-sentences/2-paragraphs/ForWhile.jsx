@@ -48,7 +48,7 @@ export default () => (
                     <b>While</b>: if the condition (logical expression) shown in brackets is true,
                     then the code block in {'{}'} is executed, after which the program again returns
                     to checking the condition. The loop’s task is complete only when the condition
-                    (logical expression) in brackets (heading) ceases to be true, i.e. the
+                    (logical expression) in brackets (heading) ceases to be true, i.e., the
                     loop-execution condition is no longer met.
                 </p>
                 <p>

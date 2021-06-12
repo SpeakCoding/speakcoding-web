@@ -14,7 +14,7 @@ export default () => (
             </p>
             <ol>
                 <li>Identify the particular post</li>
-                <li>Ascertain the number of likes that that post currently has</li>
+                <li>Ascertain the number of likes that post currently has</li>
                 <li>Create a new like from the relevant user</li>
                 <li>Add that like to the number of existing likes</li>
                 <li>Save and display the new number of likes</li>
@@ -27,7 +27,7 @@ export default () => (
             </p>
             <p>Functions are used to define how particular instances of a class may be used.</p>
             <p>
-                For example, what can a user do with posts? They can forward, like, or save them,
+                For example, what can a user do with posts? They can forward, like or save them,
                 i.e., they can change particular instances of a class or define the makeup of these
                 instances. When defining the Post <Term id='class'>class</Term>, you may assign a{' '}
                 <Term id='function'>function</Term> that allows the user to change the Caption of

@@ -15,7 +15,7 @@ export default () => (
                     <Term id='class' tooltip>
                         class
                     </Term>{' '}
-                    of these elements (e.g. the post, comment, and user classes). In programming,
+                    of these elements (e.g., the post, comment, and user classes). In programming,
                     the definition of an entity in general terms is called{' '}
                     <Term id='class'>class</Term>. And specific posts and users are called{' '}
                     <Term id='instance' tooltip>

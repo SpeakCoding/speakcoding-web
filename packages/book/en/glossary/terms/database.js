@@ -6,6 +6,6 @@ export const id = 'database',
 export const Definition = () => (
     <p>
         <em>{name}</em> - a specific way of storing data; this can be thought of as an Excel table.
-        The data type (e.g. number or text string) is defined for each of the table’s columns.
+        The data type (e.g., number or text string) is defined for each of the table’s columns.
     </p>
 );

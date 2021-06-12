@@ -27,7 +27,7 @@ export default () => (
                 </Structure>
                 <p>
                     From the structural definition above, you see that Post is a class that is
-                    defined by a list of the components that make up each specific post (i.e. every
+                    defined by a list of the components that make up each specific post (i.e., every
                     instance) of this class. Each{' '}
                     <Term id='component' tooltip>
                         component

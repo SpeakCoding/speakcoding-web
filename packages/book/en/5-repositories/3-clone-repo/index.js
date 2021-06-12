@@ -13,7 +13,7 @@ export default () => (
                 <p>
                     In order to code, you will need to create a local copy of the repository (a
                     procedure known as cloning). The simplest way to do this is to use the GitHub
-                    Desktop program, providing a link to the repository (e.g.{' '}
+                    Desktop program, providing a link to the repository (e.g.,{' '}
                     <Link href='https://github.com/SpeakCoding/iphone' blank>
                         https://github.com/SpeakCoding/iphone
                     </Link>
@@ -27,7 +27,7 @@ export default () => (
             number={7}
             href='https://docs.google.com/forms/d/e/1FAIpQLSfp-VlR7lnIdU-bdEBwQ1xvLho2n8VrdwzHDv4bhS_FWeP2gQ/viewform'
         >
-            Create a local copy of the depository
+            Create a local copy of the repository
         </Assignment>
 
         <Section>

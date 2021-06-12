@@ -57,7 +57,7 @@ export default () => (
                         UITableViewCell class, and thus also inherits all of its properties. The
                         post can therefore be a cell in the UITableView table that we created in the
                         View part of the Feed (which we add to the definition of the FeedView class,
-                        i.e. the post feed that is displayed in the interface).
+                        i.e., the post feed that is displayed in the interface).
                     </p>
                 </Section.Main>
             </Section.Block>

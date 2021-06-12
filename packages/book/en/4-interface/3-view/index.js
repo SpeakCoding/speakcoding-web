@@ -13,10 +13,10 @@ export default () => (
                     <p>
                         As you can see, the display file components can differ from the components
                         that we’ve listed in the structural definition of a particular class. This
-                        is because they perform different tasks. The <b>display</b> defines the
-                        components that the user needs to interact with the program or to display
-                        particular data that we wish to share with the user (e.g. the number of
-                        followers or the comments section for a given post).
+                        is because they perform different tasks. The display defines the components
+                        that the user needs to interact with the program or to display particular
+                        data that we wish to share with the user (e.g., the number of followers or
+                        the comments section for a given post).
                     </p>
                 </Section.Main>
             </Section.Block>

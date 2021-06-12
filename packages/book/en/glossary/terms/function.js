@@ -22,7 +22,7 @@ export const Additional = () => (
             <li>Class to which it belongs</li>
             <li>Sequences/list of operations executed when this function is performed</li>
             <li>Inputs (arguments) essential to the function being performed</li>
-            <li>Value class that it returns (e.g. number/text)</li>
+            <li>Value class that it returns (e.g., number/text)</li>
         </ul>
     </>
 );

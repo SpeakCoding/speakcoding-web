@@ -23,12 +23,14 @@
     transition: var(--animation);
     transition-property: margin-top, opacity, visibility;
     z-index: var(--l-drawer);
+    pointer-events: none;
 }
 
 .box:hover .content {
     margin-top: -3px;
     opacity: 1;
     visibility: visible;
+    pointer-events: initial;
 }
 
 .content::before {

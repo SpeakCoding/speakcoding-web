@@ -1,10 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import pt from 'prop-types';
+import { expanded } from './utils';
 import s from './expand.css';
 
-const Expand = ({ id, opened, children }) => {
+const Expand = ({ id, opened: initial, children }) => {
     const [height, setHeight] = useState(),
         $ref = useRef();
+
+    if (!expanded.has(id)) expanded.set(id, initial);
+    const opened = expanded.get(id);
 
     const init = () => {
         const { height: next } = $ref.current.getBoundingClientRect();
