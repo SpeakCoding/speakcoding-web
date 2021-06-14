@@ -10,7 +10,7 @@ const chapters = [
     { title: 'Create and update objects', href: '/en/chapter-3' },
     { title: 'Interface', href: '/en/chapter-4' },
     { title: 'Repositories and editors', href: '/en/chapter-5' },
-    { title: 'Complex sentences' },
+    { title: 'Complex sentences', href: '/en/chapter-6' },
     { title: 'Libraries and how to find what you need' },
     { title: 'Long-term information storage' },
     { title: 'How programs interact with each other' },

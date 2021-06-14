@@ -91,24 +91,26 @@ export default () => (
                 <Section.Main narrow>
                     <p>To summarise, we would emphasize that:</p>
                     <Callout>
-                        <p>
-                            Attempting to remember everything that you might find useful in your
-                            work is inefficient. Avoid trying to memorise things that can quickly be
-                            found online.
-                        </p>
-                        <p>Focus on what you wish to create rather than on syntax.</p>
-                        <p>Google, ask, and learn from others’ mistakes.</p>
-                        <p>
-                            As we know, languages’ structures are all similar. And the less time you
-                            spend on syntax, the quicker and easier you will find it to learn new
-                            languages.
-                        </p>
-                        <p>
-                            Programming contains a great deal of information, which is constantly
-                            being updated: problem solving, technologies, frameworks. Nobody can
-                            know it all, and even the most experienced programmers are constantly
-                            learning as they work.
-                        </p>
+                        <ul>
+                            <li>
+                                Attempting to remember everything that you might find useful in your
+                                work is inefficient. Avoid trying to memorise things that can
+                                quickly be found online.
+                            </li>
+                            <li>Focus on what you wish to create rather than on syntax.</li>
+                            <li>Google, ask, and learn from others’ mistakes.</li>
+                            <li>
+                                As we know, languages’ structures are all similar. And the less time
+                                you spend on syntax, the quicker and easier you will find it to
+                                learn new languages.
+                            </li>
+                            <li>
+                                Programming contains a great deal of information, which is
+                                constantly being updated: problem solving, technologies, frameworks.
+                                Nobody can know it all, and even the most experienced programmers
+                                are constantly learning as they work.
+                            </li>
+                        </ul>
                     </Callout>
                 </Section.Main>
             </Section.Block>

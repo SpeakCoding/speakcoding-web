@@ -13,7 +13,7 @@ export default () => (
                 <p>
                     <b>For example:</b>
                 </p>
-                <p>Let’s say we want to find the last person to have liked your Instagram post.</p>
+                <p>Let’s say we want to find the last person who have liked your Instagram post.</p>
             </Section.Main>
         </Section.Block>
 

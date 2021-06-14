@@ -101,7 +101,7 @@ export default () => (
                     </Grid.Cell>
                     <Grid.Cell border='right' hlactive>
                         The <HL color='sandy-brown'>Refresh Likes</HL>{' '}
-                        <HL color='orange'>Function</HL> checks whether any of the likes for a{' '}
+                        <HL color='orange'>function</HL> checks whether any of the likes for a{' '}
                         <HL color='light-sky-blue'>particular post</HL>{' '}
                         <HL color='green'>are from friends of the user</HL> who is reading the post.
                         <br />
