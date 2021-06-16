@@ -79,6 +79,7 @@ const App = () => {
                     <Route path='/ru/chapter-5' component={RU.Repositories} />
                     <Route path='/ru/chapter-6' component={RU.ComplexSentences} />
                     {admin && <Route path='/ru/chapter-7' component={RU.OnlineSearch} />}
+                    {admin && <Route path='/ru/chapter-8' component={RU.Storage} />}
                     <Route path='/ru/glossary' component={RU.Glossary} />
 
                     <Route component={Home} />

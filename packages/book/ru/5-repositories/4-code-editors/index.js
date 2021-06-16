@@ -113,7 +113,7 @@ export default () => (
             number={12}
             href='https://docs.google.com/forms/d/e/1FAIpQLSdDeNfDafdIeI0wMXtFGjdEW30eXJvFQ5tXLuXkm7Y3HmH0QA/viewform?usp=sf_link'
         >
-            Откройте проект SpeakCoding в Xcode и запустите приложение на своем телефоне.
+            Откройте проект SpeakCoding в Xcode и запустите приложение на своем телефоне
         </Assignment>
 
         <Section>
