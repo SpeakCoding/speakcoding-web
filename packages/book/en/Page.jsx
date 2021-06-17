@@ -11,7 +11,7 @@ const chapters = [
     { title: 'Interface', href: '/en/chapter-4' },
     { title: 'Repositories and editors', href: '/en/chapter-5' },
     { title: 'Complex sentences', href: '/en/chapter-6' },
-    { title: 'Libraries and how to find what you need' },
+    { title: 'Libraries and how to find what you need', href: '/en/chapter-7' },
     { title: 'Long-term information storage' },
     { title: 'How programs interact with each other' },
     { title: 'What’s happening on the backend' },
