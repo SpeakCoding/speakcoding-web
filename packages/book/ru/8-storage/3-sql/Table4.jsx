@@ -26,7 +26,7 @@ export default () => (
                         <b>Уточнение описания</b>
                     </Grid.Cell>
                     <Grid.Cell border='bottom'>
-                        <b>Как это выглядит в коде</b>
+                        <b>Как это выглядит в коде (SQL)</b>
                     </Grid.Cell>
 
                     <Grid.Cell border='right'>Прочитать все данные о посте с id=1</Grid.Cell>

@@ -32,7 +32,7 @@ export default () => (
                         <b>Описание запроса словами</b>
                     </Grid.Cell>
                     <Grid.Cell border='bottom'>
-                        <b>Как это выглядит в коде</b>
+                        <b>Как это выглядит в коде (SQL)</b>
                     </Grid.Cell>
                     <Grid.Cell border='right' dense='bottom' hlactive>
                         <HL color='green'>Добавить в таблицу</HL> <HL color='red'>Постов</HL> новую

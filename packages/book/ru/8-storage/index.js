@@ -1,4 +1,5 @@
 import React from 'react';
+import { Section } from '@sc/ui';
 import Page from '../Page';
 import Part1 from './1-intro';
 import Part2 from './2-databases';
@@ -9,6 +10,7 @@ export default () => (
     <Page chapter={8} phone={false}>
         <Part1 />
         <Part2 />
+        <Section.Divider />
         <Part3 />
         <Part4 />
     </Page>

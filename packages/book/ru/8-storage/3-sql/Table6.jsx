@@ -23,7 +23,7 @@ export default () => (
                         <b>Описание запроса словами</b>
                     </Grid.Cell>
                     <Grid.Cell border='bottom'>
-                        <b>Как это выглядит в коде</b>
+                        <b>Как это выглядит в коде (SQL)</b>
                     </Grid.Cell>
                     <Grid.Cell border='right' hlactive>
                         <HL color='thistle'>Прочитать</HL> <HL color='sandy-brown'>все колонки</HL>{' '}

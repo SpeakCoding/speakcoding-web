@@ -20,12 +20,12 @@ export default () => (
 
         <Section.Block>
             <Section.Main>
-                <Grid>
+                <Grid cols='56% 1fr'>
                     <Grid.Cell border='right bottom'>
                         <b>Описание запроса словами</b>
                     </Grid.Cell>
                     <Grid.Cell border='bottom'>
-                        <b>Как это выглядит в коде</b>
+                        <b>Как это выглядит в коде (SQL)</b>
                     </Grid.Cell>
                     <Grid.Cell border='right' hlactive>
                         <HL color='thistle'>Вставить в таблицу</HL> <HL color='red'>posts</HL> новую
