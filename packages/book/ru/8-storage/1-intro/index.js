@@ -1,13 +1,14 @@
 import React from 'react';
-import { Grid, HL, Pre, Section } from '@sc/ui';
+import { Grid, HL, Img, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
+import img from '../../../assets/8/1-phone-cloud.svg';
 
 export default () => (
     <>
         <Section>
             <Section.Block>
-                <Section.Main narrow>
+                <Section.Main>
                     <h1>Долгосрочное хранение информации об объектах</h1>
                     <p>
                         Вы уже знаете, как сохранять объекты классов для работы с ними в коде.
@@ -76,6 +77,11 @@ export default () => (
                         }
                     </Pre>
                 </Section.Main>
+                <Section.Side>
+                    <Section.Sticky>
+                        <Img src={img} />
+                    </Section.Sticky>
+                </Section.Side>
             </Section.Block>
 
             <Section.Block>

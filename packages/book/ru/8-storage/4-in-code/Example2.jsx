@@ -10,15 +10,16 @@ const code2 = `
 \xa0   return result.first!["count(*)"] as! [[Int > 0]](aquamarine)
 }`;
 
-const code3 = `func hasTable (inputName: String) {
+const code3 = `func hasTable ([[inputName]](orange): String) {
     let query = """
         SELECT count(*) 
         FROM sqlite_master 
-        WHERE type=”table” AND name=?
+        WHERE type=”table” AND [[name=?]](orange)
         """
-
-    let result = database.executeQuery(sqlQuery: query, parameters: [inputName])
-
+    let result = database.executeQuery(
+        sqlQuery: query,
+        parameters: [\u200b[[inputName]](orange)]
+    )
     return result.first!["count(*)"] as! Int > 0
 }`;
 
@@ -72,11 +73,15 @@ export default () => (
 
         <Section.Block>
             <Section.Main narrow>
-                <p>
-                    Теперь сделаем то же самое только таким образом, чтобы мы могли поставить разные
-                    имена таблицы.
-                </p>
-                <Pre>{code3}</Pre>
+                <HL.Context active>
+                    <p>
+                        Теперь сделаем то же самое только таким образом, чтобы мы могли поставить{' '}
+                        <HL color='orange'>разные имена</HL> таблицы.
+                    </p>
+                    <Pre.Box>
+                        <Code value={code3} />
+                    </Pre.Box>
+                </HL.Context>
             </Section.Main>
         </Section.Block>
     </>

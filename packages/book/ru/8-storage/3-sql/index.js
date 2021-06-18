@@ -1,7 +1,8 @@
 import React from 'react';
-import { Section } from '@sc/ui';
+import { Img, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
+import img from '../../../assets/8/2-database.svg';
 import Table1 from './Table1';
 import Table2 from './Table2';
 import Table3 from './Table3';
@@ -9,12 +10,13 @@ import Table4 from './Table4';
 import Table5 from './Table5';
 import Table6 from './Table6';
 import Table7 from './Table7';
+import s from './style.css';
 
 export default () => (
     <>
         <Section>
             <Section.Block>
-                <Section.Main narrow>
+                <Section.Main>
                     <h1>Работа с базами данных в коде</h1>
                     <h2>Базы данных</h2>
                     <p>
@@ -46,6 +48,13 @@ export default () => (
                         такой базе данных — лист в Excel.
                     </p>
                 </Section.Main>
+                <Section.Side>
+                    <Section.Sticky>
+                        <div className={s.img}>
+                            <Img src={img} width='70%' />
+                        </div>
+                    </Section.Sticky>
+                </Section.Side>
             </Section.Block>
 
             <Table1 />
