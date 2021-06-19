@@ -4,17 +4,20 @@ import Term from '../../glossary/Term';
 
 const code21 = `
 class [[Post]](light-sky-blue) {
-...
-...
-func [[showCommentSection]](wheat) () {
-    [[commentsCount = post.comments.count()]](orange)
+    ...
+    ...
+    func [[showCommentSection]](wheat) () {
+        [[commentsCount =]](orange)
+        [[post.comments.count()]](orange)
 `;
 
-const code22 = `
-\xa0       [[commentSection.show()]](orange)
-    [[}]](orange)
-}
-`;
+const code22 = `\xa0       [[if (commentsCount > 0) {]](orange)`;
+
+const code23 = `
+\xa0           [[commentSection.show()]](orange)
+        [[}]](orange)
+    }
+}`;
 
 const code3 = `
 [[func toggleLike]](red)() {
@@ -67,19 +70,16 @@ export default () => (
                         .
                     </Grid.Cell>
                     <Grid.Cell border='bottom' hlactive>
-                        <Code value={code21} />
-                        <pre>
-                            {'    '}
-                            <Hint>
-                                <HL color='orange'>if (commentsCount > 0) {'{'}</HL>
-                                <Hint.Tooltip>
-                                    If the logical expression in the condition is true, then the
-                                    operation is executed once. Thereafter the program flow returns
-                                    to the main branch and executes the subsequent code strings.
-                                </Hint.Tooltip>
-                            </Hint>
-                        </pre>
-                        <Code value={code22} />
+                        <Code value={code21} tabs />
+                        <Hint>
+                            <Code value={code22} tabs />
+                            <Hint.Tooltip>
+                                If the logical expression in the condition is true, then the
+                                operation is executed once. Thereafter the program flow returns to
+                                the main branch and executes the subsequent code strings.
+                            </Hint.Tooltip>
+                        </Hint>
+                        <Code value={code23} tabs />
                     </Grid.Cell>
                     <Grid.Cell border='right' dense='bottom'>
                         A paragraph can sometimes contain multiple conditions simultaneously
@@ -94,7 +94,7 @@ export default () => (
                         <HL color='wheat'>sends this information to the server</HL>
                     </Grid.Cell>
                     <Grid.Cell hlactive>
-                        <Code value={code3} />
+                        <Code value={code3} tabs />
                     </Grid.Cell>
                 </Grid>
             </Section.Main>

@@ -1,0 +1,35 @@
+.tab {
+    position: relative;
+    display: inline-block;
+    margin: 1px;
+    border-radius: 2px;
+    border-right: 2px solid currentColor;
+}
+
+.tab::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+    background-color: currentColor;
+    opacity: 0.16;
+}
+
+.tab:nth-child(4n + 1) {
+    color: var(--bg-orange);
+}
+
+.tab:nth-child(4n + 2) {
+    color: var(--bg-aquamarine);
+}
+
+.tab:nth-child(4n + 3) {
+    color: var(--c-red-500);
+}
+
+.tab:nth-child(4n + 4) {
+    color: var(--c-grey-600);
+}

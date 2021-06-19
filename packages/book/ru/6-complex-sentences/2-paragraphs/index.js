@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section, Structure } from '@sc/ui';
+import { Code, Section, Structure } from '@sc/ui';
 import Term from '../../glossary/Term';
 import IfElse from './IfElse';
 import ForWhile from './ForWhile';
@@ -35,7 +35,7 @@ export default () => (
             <Section.Main>
                 <Structure>
                     <div className={s.example1}>
-                        <pre>{code1}</pre>
+                        <Code value={code1} tabs />
                         <div className={s.block11}>
                             Функция, позволяющая редактировать текст поста
                         </div>

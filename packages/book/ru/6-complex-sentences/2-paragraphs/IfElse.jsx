@@ -4,17 +4,20 @@ import Term from '../../glossary/Term';
 
 const code21 = `
 class [[Post]](light-sky-blue) {
-...
-...
-func [[showCommentSection]](wheat) () {
-    [[commentsCount = post.comments.count()]](orange)
+    ...
+    ...
+    func [[showCommentSection]](wheat) () {
+        [[commentsCount =]](orange)
+        [[post.comments.count()]](orange)
 `;
 
-const code22 = `
-\xa0       [[commentSection.show()]](orange)
-    [[}]](orange)
-}
-`;
+const code22 = `\xa0       [[if (commentsCount > 0) {]](orange)`;
+
+const code23 = `
+\xa0           [[commentSection.show()]](orange)
+        [[}]](orange)
+    }
+}`;
 
 const code3 = `
 [[func toggleLike]](red)() {
@@ -66,19 +69,16 @@ export default () => (
                         .
                     </Grid.Cell>
                     <Grid.Cell border='bottom' hlactive>
-                        <Code value={code21} />
-                        <pre>
-                            {'    '}
-                            <Hint>
-                                <HL color='orange'>if (commentsCount > 0) {'{'}</HL>
-                                <Hint.Tooltip>
-                                    Если логическое выражение в условии верно, то операция
-                                    выполняется один раз. После этого поток выполнения программы
-                                    возвращается в основную ветку и выполняет следующие строчки кода
-                                </Hint.Tooltip>
-                            </Hint>
-                        </pre>
-                        <Code value={code22} />
+                        <Code value={code21} tabs />
+                        <Hint>
+                            <Code value={code22} tabs />
+                            <Hint.Tooltip>
+                                Если логическое выражение в условии верно, то операция выполняется
+                                один раз. После этого поток выполнения программы возвращается в
+                                основную ветку и выполняет следующие строчки кода
+                            </Hint.Tooltip>
+                        </Hint>
+                        <Code value={code23} tabs />
                     </Grid.Cell>
                     <Grid.Cell border='right' dense='bottom'>
                         Иногда в абзаце может быть несколько условий одновременно:
@@ -93,7 +93,7 @@ export default () => (
                         <HL color='wheat'>отправит эту информацию на сервер</HL>
                     </Grid.Cell>
                     <Grid.Cell hlactive>
-                        <Code value={code3} />
+                        <Code value={code3} tabs />
                     </Grid.Cell>
                 </Grid>
             </Section.Main>

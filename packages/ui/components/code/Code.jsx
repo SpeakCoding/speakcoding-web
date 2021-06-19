@@ -2,6 +2,7 @@
 import React, { Fragment, useMemo } from 'react';
 import pt from 'prop-types';
 import HL from '../highlight';
+import s from './code.css';
 
 function parseCode(code) {
     return code
@@ -29,7 +30,7 @@ function parseCode(code) {
         });
 }
 
-const Code = ({ value }) => {
+const Code = ({ value, tabs }) => {
     const parsed = useMemo(() => parseCode(value), [value]);
 
     return (
@@ -37,6 +38,24 @@ const Code = ({ value }) => {
             {parsed.map((parts, i) => (
                 <pre key={i}>
                     {parts.map((item, j) => {
+                        if (tabs && j === 0 && typeof item === 'string') {
+                            const [, spaces, codeline] = /^(\s*)(.*)$/.exec(item);
+
+                            if (spaces.length > 0) {
+                                const blocks = spaces.match(/.{1,4}/g);
+                                return (
+                                    <Fragment key={j}>
+                                        {blocks.map((block, k) => (
+                                            <span key={k} className={s.tab}>
+                                                {block}
+                                            </span>
+                                        ))}
+                                        {codeline}
+                                    </Fragment>
+                                );
+                            }
+                        }
+
                         if (typeof item === 'string') return <Fragment key={j}>{item}</Fragment>;
 
                         return (
@@ -58,7 +77,12 @@ const Code = ({ value }) => {
 };
 
 Code.propTypes = {
+    tabs: pt.bool,
     value: pt.string.isRequired
+};
+
+Code.defaultProps = {
+    tabs: false
 };
 
 export default Code;
