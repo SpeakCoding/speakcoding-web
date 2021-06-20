@@ -6,4 +6,5 @@ export Repositories from './5-repositories';
 export ComplexSentences from './6-complex-sentences';
 export OnlineSearch from './7-online-search';
 export Storage from './8-storage';
+export API from './9-api';
 export Glossary from './glossary';
