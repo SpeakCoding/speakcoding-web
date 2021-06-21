@@ -144,10 +144,10 @@ export default () => (
                     components (we will revisit this topic later).
                 </p>
                 <p>
-                    A similar process is used to save data on servers. We translate the object data
+                    A similar process is used to save data on servers. We convert the object data
                     into text form, and, using standard functions found on the device’s operating
-                    system, transfer it to the server. A program that runs on the server (device),
-                    upon receiving a message, translates it from text back into an object and stores
+                    system, transfer it to the server. A program runs on the server (device) that,
+                    upon receiving a message, converts it from text back into object data and stores
                     it in the database.
                 </p>
                 <p>
