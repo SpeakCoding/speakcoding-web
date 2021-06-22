@@ -1,0 +1,115 @@
+import React from 'react';
+import { Code, Grid, HL, Pre, Section } from '@sc/ui';
+import { Assignment } from '../../../components';
+
+const code = `
+func signUp(emailAddress: String, password: String, completion: @escaping ((User?, Error?) -> Void)) {
+    let [[requestParameters]](green) = [\u200b[["user": ["email": emailAddress, "password": password]](light-sky-blue)\u200b]\u200b]
+    let request = makeRequest(method: HTTPMethod.[[POST]](orange), endpoint: "/users.json", authorized: false, parameters: [[requestParameters]](green))
+}`;
+
+export default () => (
+    <>
+        <Section>
+            <Section.Block>
+                <Section.Main>
+                    <h2>Creating and changing objects</h2>
+                    <p>The Post request is used to create (write) objects on the server.</p>
+                    <p>
+                        Let’s say we wish to add a new post. The device first saves, to its local
+                        database, the information that we enter into the interface, such as text and
+                        pictures for the post. As you remember, The files with which users interact
+                        are part of the interface, and are usually called 'view' files'; in this
+                        instance, the device saves the information to the View post file. To create
+                        the post (write information about the post) on the server, we convert it
+                        into text form and send it via a{' '}
+                        <HL color='light-sky-blue' active>
+                            Post
+                        </HL>{' '}
+                        request.
+                    </p>
+                    <Pre>
+                        <HL.Context active>
+                            let request = makeRequest(method: HTTPMethod.
+                            <HL color='light-sky-blue'>POST</HL>, endpoint: "/
+                            <HL color='green'>posts</HL>.json", authorized: true, parameters:
+                            requestParameters)
+                        </HL.Context>
+                    </Pre>
+                    <p>
+                        The process of changing an object is similar. The same POST request is used,
+                        though the parameters are changed for the new information about the object.
+                        To change the information about a particular object, we need its{' '}
+                        <HL color='green' active>
+                            id, which we add to the endpoint
+                        </HL>
+                        .
+                    </p>
+                    <Pre>
+                        <HL.Context active>
+                            let request = makeRequest(method: HTTP
+                            <HL color='light-sky-blue'>Method.POST</HL>, endpoint: "/
+                            <HL color='green'>posts/\(post.id)</HL>.json", authorized: true,
+                            parameters: requestParameters)
+                        </HL.Context>
+                    </Pre>
+                    <p>
+                        Returning to the example of the form that the user sees, the process goes
+                        thus: the program (client) creates a new object based on the data entered
+                        into the field, converts the object into a server request, then uses this
+                        request to communicate the new parameters.
+                    </p>
+                    <p>
+                        To delete an object, we take the same URL as in the previous request, with
+                        an id, and use the DELETE method. We don’t need to communicate any more
+                        parameters to delete the object, as the server performs the deletion.
+                    </p>
+                    <p>
+                        As you can see, the communication process between the device and the server
+                        is quite simple. An object is created in the program (such as an example of
+                        a class, e.g. a new post) → the serialization function records information
+                        about this object in a string and saves it in a local database → we send the
+                        string to the server → the server receives the string → the server converts
+                        the string into an object → the server saves the object into its database.
+                    </p>
+                </Section.Main>
+                <Section.Side>
+                    <Section.Sticky>img</Section.Sticky>
+                </Section.Side>
+            </Section.Block>
+
+            <Section.Block>
+                <Section.Main>
+                    <Grid>
+                        <Grid.Cell border='right bottom'>
+                            <b>Описание функции словами</b>
+                        </Grid.Cell>
+                        <Grid.Cell border='bottom'>
+                            <b>Как это выглядит в коде</b>
+                        </Grid.Cell>
+                        <Grid.Cell border='right' hlactive>
+                            For example, the Sign up function that we see on the relevant screen of
+                            the program interface is essentially no different from creating (
+                            <HL color='orange'>POST</HL>) an object of the User class. In the POST
+                            request, we send <HL color='green'>parameters</HL> such as{' '}
+                            <HL color='light-sky-blue'>email, password, and username </HL> to the
+                            server to create a user profile (the user enters these parameters into
+                            the signup form).
+                        </Grid.Cell>
+                        <Grid.Cell hlactive>
+                            <Code value={code} />
+                        </Grid.Cell>
+                    </Grid>
+                </Section.Main>
+            </Section.Block>
+        </Section>
+
+        <Assignment
+            number={25}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSf5tx7hEFvDZd9F_MTfToJ5ADHB1QCdAaneoETvHkARWTvEqA/viewform?usp=sf_link'
+        >
+            In ServerAPI.swift, find the function that sends requests to create posts to the server.
+            List (name) the function’s inputs.
+        </Assignment>
+    </>
+);

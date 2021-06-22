@@ -96,6 +96,7 @@ export default () => (
                         endpoint написано user.id.posts, сервер найдет в таблице постов все посты
                         конкретного пользователя по его id.
                     </p>
+                    <p>Далее мы подробно разберем примеры запросов на сервер.</p>
                 </Section.Main>
                 <Section.Side>
                     <Section.Sticky>img</Section.Sticky>
@@ -107,11 +108,5 @@ export default () => (
             Какой endpoint нужно добавить в запрос для того, чтобы прочитать список фолловеров
             пользователя?
         </Assignment>
-
-        <Section>
-            <Section.Main narrow>
-                <p>Далее мы подробно разберем примеры запросов на сервер.</p>
-            </Section.Main>
-        </Section>
     </>
 );
