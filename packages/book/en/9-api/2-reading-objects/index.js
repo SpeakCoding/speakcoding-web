@@ -1,5 +1,5 @@
 import React from 'react';
-import { Callout, Code, HL, Link, Pre, Section } from '@sc/ui';
+import { Callout, Code, HL, Hint, Link, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
 
@@ -69,8 +69,22 @@ export default () => (
                         let <HL color='green'>request</HL> = makeRequest(method:{' '}
                         <HL color='light-sky-blue'>HTTPMethod</HL>.GET,{' '}
                         <HL color='sandy-brown'>endpoint:</HL> "
-                        <HL color='sandy-brown'>/users/\(user.id)/posts</HL>.json", authorized:
-                        true, <HL color='turquoise'>parameters: nil</HL>)
+                        <HL color='sandy-brown'>
+                            /users/
+                            <Hint>
+                                \(user.id)
+                                <Hint.Tooltip>
+                                    In previous chapters, we combined various text values in a
+                                    string using the '+' symbol; here we have done so using the
+                                    backslash '\' symbol. This combines textual and numerical
+                                    designations and places them in the \ string. After the
+                                    backslash, brackets (...) sometimes appear, within which a
+                                    particular operation can be performed.
+                                </Hint.Tooltip>
+                            </Hint>
+                            /posts
+                        </HL>
+                        .json", authorized: true, <HL color='turquoise'>parameters: nil</HL>)
                     </Pre>
                     <p>
                         The GET request describes the operation that the server needs to perform,

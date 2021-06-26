@@ -30,12 +30,20 @@ export default () => (
                     </p>
                     <Pre>
                         <HL.Context active>
-                            let request = makeRequest(method: HTTPMethod.
-                            <HL color='light-sky-blue'>POST</HL>, endpoint: "/
+                            let request = makeRequest(method: HTTP
+                            <HL color='light-sky-blue'>Method.POST</HL>, endpoint: "/
                             <HL color='green'>posts</HL>.json", authorized: true, parameters:
                             requestParameters)
                         </HL.Context>
                     </Pre>
+                    <p>
+                        Let’s repeat the steps: we first create a post on the client. The client
+                        writes this information into a local database, then immediately converts it
+                        into text form and sends it via a Post request to the server. The server
+                        then writes the information into its corresponding database. As creating a
+                        post on the client entails saving the object's data on the server, these two
+                        aspects can be thought of as one and the same process
+                    </p>
                     <p>
                         The process of changing an object is similar. The same POST request is used,
                         though the parameters are changed for the new information about the object.
@@ -62,7 +70,8 @@ export default () => (
                     <p>
                         To delete an object, we take the same URL as in the previous request, with
                         an id, and use the DELETE method. We don’t need to communicate any more
-                        parameters to delete the object, as the server performs the deletion.
+                        parameters to delete the object, as the server performs the deletion by
+                        itself.
                     </p>
                     <p>
                         As you can see, the communication process between the device and the server
@@ -82,10 +91,10 @@ export default () => (
                 <Section.Main>
                     <Grid>
                         <Grid.Cell border='right bottom'>
-                            <b>Описание функции словами</b>
+                            <b>Function description</b>
                         </Grid.Cell>
                         <Grid.Cell border='bottom'>
-                            <b>Как это выглядит в коде</b>
+                            <b>How this is rendered in code</b>
                         </Grid.Cell>
                         <Grid.Cell border='right' hlactive>
                             For example, the Sign up function that we see on the relevant screen of
