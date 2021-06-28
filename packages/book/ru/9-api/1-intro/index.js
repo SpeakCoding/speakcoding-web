@@ -1,27 +1,20 @@
 import React from 'react';
-import { Section } from '@sc/ui';
+import { Img, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
+import img1 from '../../../assets/9/1-client-server-ru.svg';
+import img2 from '../../../assets/9/2-methods-ru.svg';
 
 export default () => (
     <>
         <Section>
             <Section.Block>
-                <Section.Main narrow>
+                <Section.Main>
                     <h1>Сервер API (application programming interface)</h1>
                     <p>
                         Как вы знаете, общение между клиентом и сервером представляет собой работу
                         двух программ.
                     </p>
-                    <p>
-                        Устройство (клиентская программа) ↹ Устройство (серверная программа) <br />
-                        Локальная база данных Серверная база данных
-                    </p>
-                </Section.Main>
-            </Section.Block>
-
-            <Section.Block>
-                <Section.Main>
                     <p>
                         Когда мы сохраняем конкретный пост или любой другой объект, мы сохраняем все
                         данные о посте в виде текстовой строки и отправляем ее на сервер. На сервере
@@ -51,7 +44,9 @@ export default () => (
                     </p>
                 </Section.Main>
                 <Section.Side>
-                    <Section.Sticky>img</Section.Sticky>
+                    <Section.Sticky>
+                        <Img src={img1} />
+                    </Section.Sticky>
                 </Section.Side>
             </Section.Block>
 
@@ -99,7 +94,9 @@ export default () => (
                     <p>Далее мы подробно разберем примеры запросов на сервер.</p>
                 </Section.Main>
                 <Section.Side>
-                    <Section.Sticky>img</Section.Sticky>
+                    <Section.Sticky>
+                        <Img src={img2} />
+                    </Section.Sticky>
                 </Section.Side>
             </Section.Block>
         </Section>

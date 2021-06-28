@@ -1,12 +1,13 @@
 import React from 'react';
-import { Hint, Section } from '@sc/ui';
+import { Hint, Img, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
+import img from '../../../assets/7/2-libraries-en.svg';
 
 export default () => (
     <>
         <Section>
-            <Section.Main narrow>
+            <Section.Main>
                 <h1>Libraries</h1>
                 <p>
                     <Term id='library' tooltip>
@@ -62,6 +63,11 @@ export default () => (
                     easily be performed using standard libraries.
                 </p>
             </Section.Main>
+            <Section.Side>
+                <Section.Sticky>
+                    <Img src={img} />
+                </Section.Sticky>
+            </Section.Side>
         </Section>
 
         <Assignment

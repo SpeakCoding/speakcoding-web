@@ -1,12 +1,13 @@
 import React from 'react';
-import { Hint, Section } from '@sc/ui';
+import { Hint, Img, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
+import img from '../../../assets/7/2-libraries-ru.svg';
 
 export default () => (
     <>
         <Section>
-            <Section.Main narrow>
+            <Section.Main>
                 <h1>Библиотеки</h1>
                 <p>
                     <Term id='library' tooltip>
@@ -63,6 +64,11 @@ export default () => (
                     библиотеками.
                 </p>
             </Section.Main>
+            <Section.Side>
+                <Section.Sticky>
+                    <Img src={img} />
+                </Section.Sticky>
+            </Section.Side>
         </Section>
 
         <Assignment

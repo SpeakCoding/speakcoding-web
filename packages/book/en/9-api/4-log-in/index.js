@@ -1,6 +1,7 @@
 import React from 'react';
-import { Section } from '@sc/ui';
+import { Img, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
+import img from '../../../assets/9/4-login-en.svg';
 
 export default () => (
     <>
@@ -45,7 +46,9 @@ export default () => (
                     </p>
                 </Section.Main>
                 <Section.Side>
-                    <Section.Sticky>img</Section.Sticky>
+                    <Section.Sticky>
+                        <Img src={img} />
+                    </Section.Sticky>
                 </Section.Side>
             </Section.Block>
         </Section>

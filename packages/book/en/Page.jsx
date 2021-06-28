@@ -13,7 +13,7 @@ const chapters = [
     { title: 'Complex sentences', href: '/en/chapter-6' },
     { title: 'Libraries and how to find what you need', href: '/en/chapter-7' },
     { title: 'Long-term information storage', href: '/en/chapter-8' },
-    { title: 'How programs interact with each other' },
+    { title: 'How programs interact with each other', href: '/en/chapter-9' },
     { title: 'What’s happening on the backend' },
     { title: 'Server' },
     { title: 'Launch your program: where does all processes start' }

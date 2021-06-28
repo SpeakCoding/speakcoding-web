@@ -1,27 +1,20 @@
 import React from 'react';
-import { Section } from '@sc/ui';
+import { Img, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
+import img1 from '../../../assets/9/1-client-server-en.svg';
+import img2 from '../../../assets/9/2-methods-en.svg';
 
 export default () => (
     <>
         <Section>
             <Section.Block>
-                <Section.Main narrow>
+                <Section.Main>
                     <h1>API (Application Programming Interface) servers</h1>
                     <p>
                         We know that a client and a server communicate with each other by way of two
                         programs cooperating.
                     </p>
-                    <p>
-                        Device (client program) ↹ Device (server program) <br />
-                        Local database Server database
-                    </p>
-                </Section.Main>
-            </Section.Block>
-
-            <Section.Block>
-                <Section.Main>
                     <p>
                         When we save a post (or indeed any other object), we save all data about
                         that post in the form of a text string, then send it to the server. A
@@ -50,7 +43,9 @@ export default () => (
                     </p>
                 </Section.Main>
                 <Section.Side>
-                    <Section.Sticky>img</Section.Sticky>
+                    <Section.Sticky>
+                        <Img src={img1} />
+                    </Section.Sticky>
                 </Section.Side>
             </Section.Block>
 
@@ -98,7 +93,9 @@ export default () => (
                     <p>We will now take a closer look at server requests.</p>
                 </Section.Main>
                 <Section.Side>
-                    <Section.Sticky>img</Section.Sticky>
+                    <Section.Sticky>
+                        <Img src={img2} />
+                    </Section.Sticky>
                 </Section.Side>
             </Section.Block>
         </Section>

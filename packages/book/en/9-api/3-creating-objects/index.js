@@ -1,10 +1,11 @@
 import React from 'react';
-import { Code, Grid, HL, Pre, Section } from '@sc/ui';
+import { Code, Grid, HL, Img, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
+import img from '../../../assets/9/3-serialization-en.svg';
 
 const code = `
 func signUp(emailAddress: String, password: String, completion: @escaping ((User?, Error?) -> Void)) {
-    let [[requestParameters]](green) = [\u200b[["user": ["email": emailAddress, "password": password]](light-sky-blue)\u200b]\u200b]
+    let [[requestParameters]](green) = [\u200b[["user": ["email": emailAddress, "password": password]]](light-sky-blue)\u200b]
     let request = makeRequest(method: HTTPMethod.[[POST]](orange), endpoint: "/users.json", authorized: false, parameters: [[requestParameters]](green))
 }`;
 
@@ -83,7 +84,9 @@ export default () => (
                     </p>
                 </Section.Main>
                 <Section.Side>
-                    <Section.Sticky>img</Section.Sticky>
+                    <Section.Sticky>
+                        <Img src={img} />
+                    </Section.Sticky>
                 </Section.Side>
             </Section.Block>
 
