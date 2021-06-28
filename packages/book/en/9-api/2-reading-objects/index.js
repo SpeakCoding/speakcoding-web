@@ -33,8 +33,8 @@ export default () => (
                         need to write, on the client device, a function and a special request
                         containing a long, detailed address string, similar to the one used in a
                         browser (
-                        <Link href='https://api.speakcoding.co/users/1/posts.json' blank>
-                            https://api.speakcoding.co/users/1/posts.json
+                        <Link href='https://instagram.speakcoding.co/users/1/posts.json' blank>
+                            https://instagram.speakcoding.co/users/1/posts.json
                         </Link>
                         ).
                     </p>

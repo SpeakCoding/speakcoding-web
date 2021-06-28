@@ -34,8 +34,8 @@ export default () => (
                         должны будем написать <HL color='orange'>функцию</HL> и специальный запрос,
                         который будет содержать длинную подробную адресную строку, похожую на строку
                         в браузере (
-                        <Link href='https://api.speakcoding.co/users/1/posts.json' blank>
-                            https://api.speakcoding.co/users/1/posts.json
+                        <Link href='https://instagram.speakcoding.co/users/1/posts.json' blank>
+                            https://instagram.speakcoding.co/users/1/posts.json
                         </Link>
                         ).
                     </p>
