@@ -51,7 +51,7 @@ export default () => (
 
             <Section.Block>
                 <Section.Main>
-                    <h2>Методы HTTP запроса</h2>
+                    <h2>HTTP request methods</h2>
                     <p>
                         <Term id='api' tooltip>
                             Server API
