@@ -27,7 +27,7 @@ export default () => (
                         determine the form of this communication for themselves. It eventually
                         became accepted practice to model communication between a client (a specific
                         device) and a server on interaction between a browser and a server hosting
-                        internet pages. We can think of the internet as an extensive network of
+                        Internet pages. We can think of the Internet as an extensive network of
                         interconnected storages (servers) that contain every page. When you click on
                         a link on a page, fill in a form, or perform a search, the browser sends the
                         server an HTTP request with a text string (URL). The server accepts this

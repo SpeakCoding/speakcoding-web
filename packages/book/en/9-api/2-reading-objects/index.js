@@ -150,7 +150,7 @@ export default () => (
                 <p>
                     The functions Makerequest (which creates an object) and performrequest (which
                     sends an object to the server) are typically standardized, and we can copy them
-                    from a repository or library on the internet. These functions convert the
+                    from a repository or library on the Internet. These functions convert the
                     parameters into a form used by the standard functions of the standard libraries
                     that communicate with the server.
                 </p>

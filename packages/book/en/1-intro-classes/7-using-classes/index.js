@@ -26,7 +26,7 @@ export default () => (
                     include: string (text string); int [integer]/uint (unsigned, cannot be
                     negative); float (number with a fractional part after the punctuator); and bool
                     (true or false). It is worth memorizing these, though they can be found using an
-                    internet search.
+                    Internet search.
                 </p>
                 <p>
                     Int/uint, float, and byte are usually denoted in code by characters. If you see
