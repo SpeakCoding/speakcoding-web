@@ -1,0 +1,6 @@
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0H600V600H0V0Z" fill="#EEEEEE"/>
+    <path d="M6 6L594 594" stroke="#AAAAAA" stroke-width="2"/>
+    <path d="M594 6L5.99999 594" stroke="#AAAAAA" stroke-width="2"/>
+    <path d="M0 0V-2H-2V0H0ZM600 0H602V-2H600V0ZM600 600V602H602V600H600ZM0 600H-2V602H0V600ZM0 2H600V-2H0V2ZM598 0V600H602V0H598ZM600 598H0V602H600V598ZM2 600V0H-2V600H2Z" fill="#AAAAAA"/>
+</svg>
