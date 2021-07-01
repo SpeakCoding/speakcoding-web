@@ -56,7 +56,9 @@ export default () => (
 
                         <Grid.Cell border='right' dense='top' hlactive>
                             а также сохранит в <HL color='steel-blue'>переменной likerFollowee</HL>{' '}
-                            <HL color='green'>одного из фолловеров, лайкнувших конкретный пост</HL>
+                            <HL color='green'>
+                                одного из читателей (фолловеров), лайкнувших конкретный пост
+                            </HL>
                         </Grid.Cell>
                         <Grid.Cell dense='top' hlactive>
                             <Code value={code2} />
@@ -65,8 +67,8 @@ export default () => (
                         <Grid.Cell border='right' dense='top' hlactive>
                             и,{' '}
                             <HL color='aquamarine'>
-                                если среди лайкнувших пост в ленте конкретного юзера есть фоловеры
-                                этого юзера
+                                если среди лайкнувших пост в ленте конкретного юзера есть читатели
+                                (фоловеры) этого юзера
                             </HL>
                             , <HL color='blue'>отобразит картинку его профиля</HL>, а также{' '}
                             <HL color='plum'>

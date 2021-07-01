@@ -52,7 +52,7 @@ export default () => (
                 <Section.Side>
                     <Section.Sticky>
                         <div className={s.img}>
-                            <Img src={img} width='70%' />
+                            <Img src={img} />
                         </div>
                     </Section.Sticky>
                 </Section.Side>

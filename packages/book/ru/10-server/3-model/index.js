@@ -1,6 +1,7 @@
 import React from 'react';
 import { HL, Img, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
+import img from '../../../assets/10/2-active-record-ru.svg';
 
 export default () => (
     <Section>
@@ -39,12 +40,12 @@ export default () => (
                 <p>
                     и это абсолютно верно. <b>def</b> здесь - ключевое слово вместо знакомого вам{' '}
                     <b>func</b>, которое пишется перед определением функции во многих языках,
-                    включая swift, используемого в нашем клиентском коде.
+                    включая Swift, используемого в нашем клиентском коде.
                 </p>
             </Section.Main>
             <Section.Side>
                 <Section.Sticky>
-                    <Img />
+                    <Img src={img} />
                 </Section.Sticky>
             </Section.Side>
         </Section.Block>
@@ -69,8 +70,8 @@ export default () => (
                     автоматически.
                 </p>
                 <p>
-                    То есть, если в базе данных серверной части есть нужные нам столбцы-составляющие
-                    в таблице, мы сможем обратиться к{' '}
+                    То есть, если в таблице базы данных серверной части есть нужные нам
+                    столбцы-составляющие, мы сможем обратиться к{' '}
                     <HL color='plum' inline={3}>
                         одноименным составляющим
                     </HL>{' '}

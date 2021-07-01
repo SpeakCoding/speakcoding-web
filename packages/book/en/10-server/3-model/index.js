@@ -1,6 +1,7 @@
 import React from 'react';
 import { HL, Img, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
+import img from '../../../assets/10/2-active-record-en.svg';
 
 export default () => (
     <Section>
@@ -42,12 +43,12 @@ export default () => (
                 <p>
                     … and that would be absolutely right. <b>def</b> here is a keyword that replaces
                     the familiar func. The word ‘func’ is written before a function definition in
-                    numerous languages, including swift, which we use in our client code.
+                    numerous languages, including Swift, which we use in our client code.
                 </p>
             </Section.Main>
             <Section.Side>
                 <Section.Sticky>
-                    <Img />
+                    <Img src={img} />
                 </Section.Sticky>
             </Section.Side>
         </Section.Block>

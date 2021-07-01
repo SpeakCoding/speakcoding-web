@@ -150,7 +150,7 @@ export default () => (
                         <Hint>
                             super.awakeFromNib()
                             <Hint.Tooltip>
-                                In swift, to call actions of the parent function in order to
+                                In Swift, to call actions of the parent function in order to
                                 correct/add something after the word “super”, we indicate the
                                 function’s full title. However, in some languages it is sufficient
                                 to write “super ( )” in the first line of the function that we wish

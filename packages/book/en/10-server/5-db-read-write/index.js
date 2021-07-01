@@ -21,7 +21,7 @@ export default () => (
                 The server receives <HL color='green'>a set of post parameters</HL> (data that the
                 user entered into the form on the client), calls the ActiveRecord class’s automatic
                 function <b>create</b>, then creates a post instance and saves it in its database.
-                The active record class means that rather than having to write the sql request
+                The active record class means that rather than having to write the SQL request
                 INSERT (used to add strings to databases), we can perform the operation
                 automatically via the inherited class functions.
             </p>
@@ -39,7 +39,7 @@ export default () => (
             </p>
             <p>
                 If we change a specific post, the static function <b>update</b> of the ActiveRecord
-                class makes an sql UPDATE request to the database and replaces the values with the{' '}
+                class makes an SQL UPDATE request to the database and replaces the values with the{' '}
                 <HL color='orange' inline={3}>
                     parameters received from the client
                 </HL>
@@ -69,7 +69,7 @@ export default () => (
                 </li>
                 <li>
                     We need these links as they allow us to write commands in code on one line by
-                    calling class functions and components, thus bypassing sql requests as per the
+                    calling class functions and components, thus bypassing SQL requests as per the
                     example below:
                 </li>
             </ul>

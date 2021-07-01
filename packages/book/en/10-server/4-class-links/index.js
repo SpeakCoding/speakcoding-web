@@ -144,12 +144,9 @@ export default () => (
                         </Section.Main>
                     </Section.Block>
 
-                    <Assignment number={27} href='#'>
+                    <Assignment number={27} href='https://forms.gle/vtVZMfFKyxXxM7B98'>
                         Find the file that describes the User class and see which links are defined
-                        between the user and other model classes. Describe them in basic terms.{' '}
-                        <br />
-                        Next, find all the functions that we define for this class (User), and
-                        describe in basic terms what you understand these functions to do.
+                        between the user and other model classes. Describe them in basic terms...
                     </Assignment>
                 </Expand>
             </Section.Main>

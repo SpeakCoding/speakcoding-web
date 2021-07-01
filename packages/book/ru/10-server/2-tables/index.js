@@ -1,6 +1,7 @@
 import React from 'react';
-import { Code, Grid, HL, Pre, Section } from '@sc/ui';
+import { Code, Grid, Hint, HL, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
+import s from './style.css';
 
 const code1 = `
 create_table("users") do |table_users|
@@ -70,9 +71,22 @@ export default () => (
                         <b>Разбор этой части кода</b>
                     </p>
                     <p>
-                        Функция create_table - статическая функция стандартной библиотеки
-                        ActiveRecord, она отвечает за создание таблицы в базе данных (формирует и
-                        выполняет SQL-запрос CREATE TABLE).
+                        Функция create_table - статическая функция стандартной{' '}
+                        <Hint>
+                            библиотеки ActiveRecord
+                            <Hint.Tooltip>
+                                <div className={s.hint}>
+                                    Язык, на котором написан код серверной части, позволяет опустить
+                                    упоминание библиотеки,
+                                    ActiveRecord::ConnectionAdapters::SchemaStatements.create_table
+                                    ("users"). Компилятор сам проверит все используемые в проекте
+                                    библиотеки на функцию с таким названием - create_table - и
+                                    возьмет ее описание оттуда.
+                                </div>
+                            </Hint.Tooltip>
+                        </Hint>
+                        , она отвечает за создание таблицы в базе данных (формирует и выполняет
+                        SQL-запрос CREATE TABLE).
                     </p>
                     <p>
                         У этой функции два входящих параметра: имя таблицы “users”, а также
@@ -81,11 +95,22 @@ export default () => (
                         параметры таблицы. Для того, чтобы добавить определение “closure” функции,
                         мы используем ключевое слово “do”, после которого в | | пишем вводную
                         table_users, экземпляр специального класса, с помощью функций которого можно
-                        указать, какие столбцы (поля) должны быть у этой таблицы. Для этого мы
-                        вызываем функции переменной table_users: <HL color='steel-blue'>string</HL>,
-                        integer, <HL color='sandy-brown'>bigint</HL>,{' '}
-                        <HL color='orange'>datetime</HL>, которые отвечают за создание столбцов
-                        соответствующих классов.
+                        указать, какие столбцы должны быть у этой таблицы. Для этого мы вызываем
+                        функции переменной{' '}
+                        <Hint>
+                            table_users
+                            <Hint.Tooltip>
+                                Вы вероятно помните эти названия из стандартных, не требующих
+                                описания классов, которые мы обсуждали в первой главе. В библиотеке
+                                ActiveRecord названия функций совпадают с типом данных, которые
+                                могут хранится в конкретном столбце. В эти функции, как вводная,
+                                передается название столбца и, в некоторых случаях, дополнительные
+                                параметры
+                            </Hint.Tooltip>
+                        </Hint>
+                        : <HL color='steel-blue'>string</HL>, integer,{' '}
+                        <HL color='sandy-brown'>bigint</HL>, <HL color='orange'>datetime</HL>,
+                        которые отвечают за создание столбцов соответствующих классов.
                     </p>
                     <p>
                         <b>Еще пример создания</b>
@@ -93,17 +118,21 @@ export default () => (
                     <p>
                         Давайте посмотрим на еще один пример таблицы, которую нам нужно будет
                         создать в базе данных на сервере. Например, если мы захотим передать на
-                        сервер посты пользователя, мы произведем те же операции для класса{' '}
+                        сервер посты пользователя, аналогично User, мы создадим таблицу для класса{' '}
                         <HL color='light-sky-blue'>Post</HL>.
                     </p>
                     <Pre.Box>
                         <Code value={code2} />
                     </Pre.Box>
                     <p>
-                        Как видите, есть поля, которые совпадают с составляющими класса, но ряд
-                        полей не сами значения, а id, которые ссылаются на другие таблицы. Так в
-                        таблице, куда сервер сохранит полученный набор постов, будет ячейка с id
-                        создавшего их пользователя:
+                        Как видите, есть поля, которые совпадают с составляющими класса (caption,
+                        location), но ряд полей не сами значения, а id, которые ссылаются на другие
+                        таблицы. Так в таблице, куда сервер сохранит полученный набор постов, будет
+                        ячейка с{' '}
+                        <HL color='orange' inline={3}>
+                            id создавшего их пользователя
+                        </HL>
+                        :
                     </p>
                 </Section.Main>
             </Section.Block>
@@ -115,7 +144,9 @@ export default () => (
                     </p>
                     <Grid cols='1fr 1fr 1fr 1fr'>
                         <Grid.Cell border='right bottom'>id</Grid.Cell>
-                        <Grid.Cell border='right bottom'>user_id</Grid.Cell>
+                        <Grid.Cell border='right bottom' hlactive>
+                            <HL color='orange'>user_id</HL>
+                        </Grid.Cell>
                         <Grid.Cell border='right bottom'>caption</Grid.Cell>
                         <Grid.Cell border='bottom'>created_at</Grid.Cell>
 
@@ -128,7 +159,7 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment number={26} href='#'>
+        <Assignment number={26} href='https://forms.gle/fUhZB24NPJqLAvzq6'>
             Найдите файл, в котором определено создание таблицы Comments, и подробно опишите, какие
             и какого типа поля мы в нем создаем.
         </Assignment>

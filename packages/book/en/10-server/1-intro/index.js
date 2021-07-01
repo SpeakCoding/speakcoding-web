@@ -1,5 +1,6 @@
 import React from 'react';
 import { HL, Img, Link, Pre, Section } from '@sc/ui';
+import img from '../../../assets/10/1-how-it-works-en.svg';
 
 export default () => (
     <Section>
@@ -74,7 +75,7 @@ export default () => (
         </Section.Main>
         <Section.Side>
             <Section.Sticky>
-                <Img />
+                <Img src={img} />
             </Section.Sticky>
         </Section.Side>
     </Section>

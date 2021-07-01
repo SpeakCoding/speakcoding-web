@@ -1,6 +1,7 @@
 import React from 'react';
-import { Code, Grid, HL, Pre, Section } from '@sc/ui';
+import { Code, Grid, HL, Hint, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
+import s from './style.css';
 
 const code1 = `
 create_table("users") do |table_users|
@@ -70,7 +71,20 @@ export default () => (
                         <b>Exploring this piece of code</b>
                     </p>
                     <p>
-                        The create_table function is a static function of the standard ActiveRecord
+                        The create_table function is a static function of the standard{' '}
+                        <Hint>
+                            ActiveRecord
+                            <Hint.Tooltip>
+                                <div className={s.hint}>
+                                    The language in which the server-side code is written allows us
+                                    to omit a reference to the library:
+                                    ActiveRecord::ConnectionAdapters::SchemaStatements.create_table
+                                    ("users"). The compiler itself checks all libraries used in the
+                                    project for a function with the name create_table and takes the
+                                    function's description from these libraries.
+                                </div>
+                            </Hint.Tooltip>
+                        </Hint>{' '}
                         library, and is responsible for creating tables in the database (it
                         configures and executes the SQL-request CREATE TABLE).
                     </p>
@@ -82,8 +96,18 @@ export default () => (
                         function, we use the keyword ‘do’, after which inside | | we write the
                         table_users input, which is an instance of the special class with the help
                         of whose function we indicate which columns (fields) this table should have.
-                        To indicate this, we call the functions of the table_users variable –{' '}
-                        <HL color='steel-blue'>string</HL>, integer,{' '}
+                        To indicate this, we call the functions of the{' '}
+                        <Hint>
+                            table_users
+                            <Hint.Tooltip>
+                                You may remember these names from the standard classes that don't
+                                require descriptions, which we covered in the first chapter. In the
+                                ActiveRecord library, function names correspond to the type of data
+                                stored in a particular column. The column names, and in some cases
+                                additional parameters, are given to these functions as inputs.
+                            </Hint.Tooltip>
+                        </Hint>{' '}
+                        variable – <HL color='steel-blue'>string</HL>, integer,{' '}
                         <HL color='sandy-brown'>bigint</HL>, and <HL color='orange'>datetime</HL> –
                         which are responsible for creating the columns of the corresponding classes.
                     </p>
@@ -104,7 +128,11 @@ export default () => (
                         As we can see, there are fields that correspond to class components;
                         however, some fields are not actual values, but rather ids that link to
                         other tables. So the table where the server stores the set of posts that it
-                        has received contains a cell with the id of the user who created the posts:
+                        has received contains a cell with the{' '}
+                        <HL color='orange' inline={3}>
+                            id of the user who created the posts
+                        </HL>
+                        :
                     </p>
                 </Section.Main>
             </Section.Block>
@@ -116,7 +144,9 @@ export default () => (
                     </p>
                     <Grid cols='1fr 1fr 1fr 1fr'>
                         <Grid.Cell border='right bottom'>id</Grid.Cell>
-                        <Grid.Cell border='right bottom'>user_id</Grid.Cell>
+                        <Grid.Cell border='right bottom' hlactive>
+                            <HL color='orange'>user_id</HL>
+                        </Grid.Cell>
                         <Grid.Cell border='right bottom'>caption</Grid.Cell>
                         <Grid.Cell border='bottom'>created_at</Grid.Cell>
 
@@ -129,7 +159,7 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment number={26} href='#'>
+        <Assignment number={26} href='https://forms.gle/TjLqzbzqx6DDrBrZA'>
             Find the file that defines how to create the Comments table, and describe which fields,
             and what type of fields, we create in this file.
         </Assignment>
