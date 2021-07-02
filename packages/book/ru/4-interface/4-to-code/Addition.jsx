@@ -143,11 +143,10 @@ export default () => (
                         <Hint>
                             super.awakeFromNib()
                             <Hint.Tooltip>
-                                In Swift, to call actions of the parent function in order to
-                                correct/add something after the word “super”, we indicate the
-                                function’s full title. However, in some languages it is sufficient
-                                to write “super ( )” in the first line of the function that we wish
-                                to edit using override.
+                                В Swift для вызова действий материнской функции с целью
+                                исправления/добавления после super мы указываем полное название
+                                функции. Но в некоторых языках достаточно написать super ( ) в
+                                первой строке функции, которую мы хотим редактировать через override
                             </Hint.Tooltip>
                         </Hint>
                         <br />

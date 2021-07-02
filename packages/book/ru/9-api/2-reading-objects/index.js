@@ -1,5 +1,5 @@
 import React from 'react';
-import { Callout, Code, HL, Link, Pre, Section } from '@sc/ui';
+import { Callout, Code, Hint, HL, Link, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
 
@@ -70,8 +70,21 @@ export default () => (
                         let <HL color='green'>request</HL> = makeRequest(method:{' '}
                         <HL color='light-sky-blue'>HTTPMethod</HL>.GET,{' '}
                         <HL color='sandy-brown'>endpoint:</HL> "
-                        <HL color='sandy-brown'>/users/\(user.id)/posts</HL>.json", authorized:
-                        true, <HL color='turquoise'>parameters: nil</HL>)
+                        <HL color='sandy-brown'>
+                            /users/
+                            <Hint>
+                                \(user.id)
+                                <Hint.Tooltip>
+                                    В предыдущих главах мы объединяли разные текстовые значения в
+                                    строку с помощью символа "+", а здесь через обратный знак дроби
+                                    "\" Он объединит текстовое и цифровое обозначение и вставит их в
+                                    строку \ Иногда после него могут стоять скобки (...), в них
+                                    могут выполняться те или иные операции.
+                                </Hint.Tooltip>
+                            </Hint>
+                            /posts
+                        </HL>
+                        .json", authorized: true, <HL color='turquoise'>parameters: nil</HL>)
                     </Pre>
                     <p>
                         Запрос GET является описанием операции, которую должен произвести сервер, и
