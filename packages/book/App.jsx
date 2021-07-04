@@ -85,6 +85,7 @@ const App = () => {
                     <Route path='/ru/chapter-8' component={RU.Storage} />
                     <Route path='/ru/chapter-9' component={RU.API} />
                     {admin && <Route path='/ru/chapter-10' component={RU.Backend} />}
+                    {admin && <Route path='/ru/chapter-11' component={RU.Server} />}
                     <Route path='/ru/glossary' component={RU.Glossary} />
 
                     <Route component={Home} />
