@@ -72,7 +72,7 @@ const App = () => {
                     <Route path='/en/chapter-7' component={EN.OnlineSearch} />
                     <Route path='/en/chapter-8' component={EN.Storage} />
                     <Route path='/en/chapter-9' component={EN.API} />
-                    {admin && <Route path='/en/chapter-10' component={EN.Server} />}
+                    {admin && <Route path='/en/chapter-10' component={EN.Backend} />}
                     <Route path='/en/glossary' component={EN.Glossary} />
 
                     <Route path='/ru/chapter-1' component={RU.Intro} />
@@ -84,7 +84,7 @@ const App = () => {
                     <Route path='/ru/chapter-7' component={RU.OnlineSearch} />
                     <Route path='/ru/chapter-8' component={RU.Storage} />
                     <Route path='/ru/chapter-9' component={RU.API} />
-                    {admin && <Route path='/ru/chapter-10' component={RU.Server} />}
+                    {admin && <Route path='/ru/chapter-10' component={RU.Backend} />}
                     <Route path='/ru/glossary' component={RU.Glossary} />
 
                     <Route component={Home} />
