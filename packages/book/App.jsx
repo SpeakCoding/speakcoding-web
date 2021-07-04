@@ -73,6 +73,7 @@ const App = () => {
                     <Route path='/en/chapter-8' component={EN.Storage} />
                     <Route path='/en/chapter-9' component={EN.API} />
                     {admin && <Route path='/en/chapter-10' component={EN.Backend} />}
+                    {admin && <Route path='/en/chapter-11' component={EN.Server} />}
                     <Route path='/en/glossary' component={EN.Glossary} />
 
                     <Route path='/ru/chapter-1' component={RU.Intro} />

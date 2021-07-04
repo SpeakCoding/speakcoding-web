@@ -8,4 +8,5 @@ export OnlineSearch from './7-online-search';
 export Storage from './8-storage';
 export API from './9-api';
 export Backend from './10-backend';
+export Server from './11-server';
 export Glossary from './glossary';
