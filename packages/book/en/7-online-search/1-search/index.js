@@ -116,10 +116,7 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment
-            number={15}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSe8jRKd1Q8tYx89FpYdr3ALD7SY7AsCemAzG83QN4i5lP0IyQ/viewform?usp=sf_link'
-        >
+        <Assignment number={15} href='https://forms.gle/hc9VmxYGkwojaNRh6'>
             Finding answers to questions
         </Assignment>
     </>
