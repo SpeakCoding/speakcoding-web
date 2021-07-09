@@ -78,9 +78,7 @@ export default () => (
                         Теперь сделаем то же самое только таким образом, чтобы мы могли поставить{' '}
                         <HL color='orange'>разные имена</HL> таблицы.
                     </p>
-                    <Pre.Box>
-                        <Code value={code3} />
-                    </Pre.Box>
+                    <Pre value={code3} />
                 </HL.Context>
             </Section.Main>
         </Section.Block>

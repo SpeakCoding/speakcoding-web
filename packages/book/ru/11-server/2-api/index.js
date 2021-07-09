@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Pre, Section } from '@sc/ui';
+import { Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
 
@@ -58,15 +58,11 @@ export default () => (
                     <b>member</b> будет означать, что описанные действия будут применены к
                     конкретному экземпляру:
                 </p>
-                <Pre.Box>
-                    <Code value={code1} />
-                </Pre.Box>
+                <Pre value={code1} />
                 <p>
                     функция <b>collection</b> - ко всему множеству объектов.
                 </p>
-                <Pre.Box>
-                    <Code value={code2} />
-                </Pre.Box>
+                <Pre value={code2} />
                 <p>
                     Обязательно убедитесь, что все классы (users/posts/ etc) и их контроллеры
                     называются так, как вы описали в функции (save/unsave).

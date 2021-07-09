@@ -80,9 +80,7 @@ export default () => (
                         We now do the same thing again, only this time in a way that lets us put in{' '}
                         <HL color='orange'>various table names</HL>.
                     </p>
-                    <Pre.Box>
-                        <Code value={code3} />
-                    </Pre.Box>
+                    <Pre value={code3} />
                 </HL.Context>
             </Section.Main>
         </Section.Block>

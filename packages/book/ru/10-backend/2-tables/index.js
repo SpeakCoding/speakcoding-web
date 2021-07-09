@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Grid, Hint, HL, Pre, Section } from '@sc/ui';
+import { Grid, Hint, HL, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import s from './style.css';
 
@@ -64,9 +64,7 @@ export default () => (
                         Если вы откроете файл db/migrate/create_users.rb в коде, то увидите описание
                         создания таблицы Users и ее столбцов в базе данных серверной части.
                     </p>
-                    <Pre.Box>
-                        <Code value={code1} />
-                    </Pre.Box>
+                    <Pre value={code1} />
                     <p>
                         <b>Разбор этой части кода</b>
                     </p>
@@ -121,9 +119,7 @@ export default () => (
                         сервер посты пользователя, аналогично User, мы создадим таблицу для класса{' '}
                         <HL color='light-sky-blue'>Post</HL>.
                     </p>
-                    <Pre.Box>
-                        <Code value={code2} />
-                    </Pre.Box>
+                    <Pre value={code2} />
                     <p>
                         Как видите, есть поля, которые совпадают с составляющими класса (caption,
                         location), но ряд полей не сами значения, а id, которые ссылаются на другие

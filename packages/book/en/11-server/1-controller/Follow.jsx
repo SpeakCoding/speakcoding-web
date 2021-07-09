@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Code, Expand, Pre, Section } from '@sc/ui';
+import { Button, Expand, Pre, Section } from '@sc/ui';
 
 const code1 = `
 def follow
@@ -37,9 +37,7 @@ export default () => (
                         "/users/\(id)/follow.json", and on the server side we add the UserController
                         follow function
                     </p>
-                    <Pre.Box>
-                        <Code value={code1} />
-                    </Pre.Box>
+                    <Pre value={code1} />
                     <p>
                         Standard functions responsible for interacting with the user are written in
                         the Controller, just as they are in the client. In the Controller, we define

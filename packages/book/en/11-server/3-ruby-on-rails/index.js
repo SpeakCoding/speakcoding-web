@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Code, Expand, Pre, Section } from '@sc/ui';
+import { Button, Expand, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 
 const code1 = `
@@ -99,36 +99,26 @@ export default () => (
                     profile (User). Your account information is stored in your device’s memory and
                     on the program server:
                 </p>
-                <Pre.Box>
-                    <Code value={code1} />
-                </Pre.Box>
+                <Pre value={code1} />
                 <p>
                     Having installed the app, you begin creating posts, information about which is
                     also stored:
                 </p>
-                <Pre.Box>
-                    <Code value={code2} />
-                </Pre.Box>
+                <Pre value={code2} />
                 <p>A list of the people you follow and who follow you is added to these posts:</p>
-                <Pre.Box>
-                    <Code value={code3} />
-                </Pre.Box>
+                <Pre value={code3} />
                 <p>
                     Thus you create your personal feed – a feed of posts created by the users you
                     follow
                 </p>
-                <Pre.Box>
-                    <Code value={code4} />
-                </Pre.Box>
+                <Pre value={code4} />
                 <p>
                     So we can think of a personal feed as a component of the User class or an
                     additional element of the Feed class in which we temporarily store a set of
                     filtered posts. As you may remember, these links are described thus in
                     server-side code:
                 </p>
-                <Pre.Box>
-                    <Code value={code5} />
-                </Pre.Box>
+                <Pre value={code5} />
                 <p>
                     Every time you open the program or update your post feed, you request your
                     personal feed (<Term id='instance'>an object of the Feed class</Term>) from the

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Callout, Code, HL, Hint, Link, Pre, Section } from '@sc/ui';
+import { Callout, HL, Hint, Link, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
 
@@ -105,9 +105,7 @@ export default () => (
                         performed when the server returns the information about the object (result)
                         or reports an <HL color='steel-blue'>error</HL> if no such object exists.
                     </p>
-                    <Pre.Box>
-                        <Code value={code} />
-                    </Pre.Box>
+                    <Pre value={code} />
                 </HL.Context>
                 <p>
                     The information that the server returns is first presented as a text string

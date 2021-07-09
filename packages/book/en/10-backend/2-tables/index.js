@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Grid, HL, Hint, Pre, Section } from '@sc/ui';
+import { Grid, HL, Hint, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import s from './style.css';
 
@@ -64,9 +64,7 @@ export default () => (
                         Opening the db/migrate/create_users.rb in code, you see a description of how
                         to create a Users table and its columns in the server-side database.
                     </p>
-                    <Pre.Box>
-                        <Code value={code1} />
-                    </Pre.Box>
+                    <Pre value={code1} />
                     <p>
                         <b>Exploring this piece of code</b>
                     </p>
@@ -121,9 +119,7 @@ export default () => (
                         <HL color='light-sky-blue'>Post</HL> class as we did to create the Users
                         table.
                     </p>
-                    <Pre.Box>
-                        <Code value={code2} />
-                    </Pre.Box>
+                    <Pre value={code2} />
                     <p>
                         As we can see, there are fields that correspond to class components;
                         however, some fields are not actual values, but rather ids that link to

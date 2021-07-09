@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Code, Expand, Pre, Section } from '@sc/ui';
+import { Button, Expand, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 
 const code1 = `
@@ -98,39 +98,29 @@ export default () => (
                     создаете пользователя (User). Информация о нем будет сохранена в памяти вашего
                     устройства и на сервере программы:
                 </p>
-                <Pre.Box>
-                    <Code value={code1} />
-                </Pre.Box>
+                <Pre value={code1} />
                 <p>
                     После установки вы начнете создавать посты, информация о которых будет также
                     сохранена:
                 </p>
-                <Pre.Box>
-                    <Code value={code2} />
-                </Pre.Box>
+                <Pre value={code2} />
                 <p>
                     К ним добавится список людей, на которых вы подпишетесь, и тех, кто подпишется
                     на вас:
                 </p>
-                <Pre.Box>
-                    <Code value={code3} />
-                </Pre.Box>
+                <Pre value={code3} />
                 <p>
                     Таким образом, у вас (как и у других пользователей) сформируется ваш personal
                     feed - лента постов, созданных теми, на кого вы подписаны
                 </p>
-                <Pre.Box>
-                    <Code value={code4} />
-                </Pre.Box>
+                <Pre value={code4} />
                 <p>
                     Получается, о personal feed можно думать как о составляющей класса User или как
                     о дополнительной сущности класса Feed, в которой мы будем временно хранить набор
                     отфильтрованных постов. Как вы помните, в серверном коде эти связи будут
                     описаны:
                 </p>
-                <Pre.Box>
-                    <Code value={code5} />
-                </Pre.Box>
+                <Pre value={code5} />
                 <p>
                     Получается, что каждый раз, когда вы входите в программу или обновляете ленту
                     постов, вы запрашиваете с сервера personal feed (

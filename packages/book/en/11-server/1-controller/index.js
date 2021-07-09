@@ -1,5 +1,5 @@
 import React from 'react';
-import { Callout, Code, HL, Img, Pre, Section } from '@sc/ui';
+import { Callout, HL, Img, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import img from '../../../assets/11/1-methods-functions-en.svg';
 import Additional1 from './SignUp-Update';
@@ -46,9 +46,7 @@ export default () => (
                         (model) of the main User class, we need to create a controller for this
                         class that determines how the server responds to client requests.
                     </p>
-                    <Pre.Box>
-                        <Code value={code1} />
-                    </Pre.Box>
+                    <Pre value={code1} />
                     <p>We inherit this controller from the standard ApplicationController class.</p>
                     <p>
                         We need to define the functions in this class that are called in response to
@@ -85,9 +83,7 @@ export default () => (
                         ‘/users/\(id).json is indicated in the endpoint, then the server calls the
                         show function.
                     </p>
-                    <Pre.Box>
-                        <Code value={code2} />
-                    </Pre.Box>
+                    <Pre value={code2} />
                 </Section.Main>
                 <Section.Side>
                     <Section.Sticky>
@@ -161,9 +157,7 @@ export default () => (
                         authentication/access token, and helps us find and send all information
                         about the current user:
                     </p>
-                    <Pre.Box>
-                        <Code value={code3} />
-                    </Pre.Box>
+                    <Pre value={code3} />
                 </Section.Main>
             </Section.Block>
 

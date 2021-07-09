@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Pre, Section } from '@sc/ui';
+import { Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
 
@@ -59,15 +59,11 @@ export default () => (
                     We need to indicate what custom functions apply to: the <b>member</b> function
                     indicates that the actions described will be applied to a particular instance.
                 </p>
-                <Pre.Box>
-                    <Code value={code1} />
-                </Pre.Box>
+                <Pre value={code1} />
                 <p>
                     The <b>collection</b> function will be applied to an entire array of objects.
                 </p>
-                <Pre.Box>
-                    <Code value={code2} />
-                </Pre.Box>
+                <Pre value={code2} />
                 <p>
                     Always ensure that all classes (users, posts etc.) and their controllers have
                     the same names that you indicated in the function (save/unsave).

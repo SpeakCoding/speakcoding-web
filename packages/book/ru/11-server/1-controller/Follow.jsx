@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Code, Expand, Pre, Section } from '@sc/ui';
+import { Button, Expand, Pre, Section } from '@sc/ui';
 
 const code1 = `
 def follow
@@ -36,9 +36,7 @@ export default () => (
                         Например, для запроса follow, endpoint “"/users/\(id)/follow.json", и на
                         стороне сервера добавляем функцию UserController follow.
                     </p>
-                    <Pre.Box>
-                        <Code value={code1} />
-                    </Pre.Box>
+                    <Pre value={code1} />
                     <p>
                         Как и на клиенте, в Controller описываются стандартные функции, отвечающие
                         за взаимодействие с пользователем. В нем мы определяем, что программа должна

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Code, Expand, Pre, Section } from '@sc/ui';
+import { Button, Expand, Pre, Section } from '@sc/ui';
 
 const code1 = `
 def create
@@ -49,9 +49,7 @@ export default () => (
                 </h2>
 
                 <Expand id='11-1-1'>
-                    <Pre.Box>
-                        <Code value={code1} />
-                    </Pre.Box>
+                    <Pre value={code1} />
                 </Expand>
 
                 <h2>
@@ -62,9 +60,7 @@ export default () => (
                 </h2>
 
                 <Expand id='11-1-2'>
-                    <Pre.Box>
-                        <Code value={code2} />
-                    </Pre.Box>
+                    <Pre value={code2} />
                 </Expand>
             </Section.Main>
         </Section.Block>

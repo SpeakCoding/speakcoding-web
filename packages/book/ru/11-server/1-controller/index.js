@@ -1,5 +1,5 @@
 import React from 'react';
-import { Callout, Code, HL, Img, Pre, Section } from '@sc/ui';
+import { Callout, HL, Img, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import img from '../../../assets/11/1-methods-functions-ru.svg';
 import Additional1 from './SignUp-Update';
@@ -47,9 +47,7 @@ export default () => (
                         него контроллер, который определит, каким образом сервер будет отвечать на
                         отправляемые с клиента запросы.
                     </p>
-                    <Pre.Box>
-                        <Code value={code1} />
-                    </Pre.Box>
+                    <Pre value={code1} />
                     <p>Его мы наследуем от стандартного класса ApplicationController.</p>
                     <p>
                         В этом классе мы должны задать функции, которые будут вызываться в ответ на
@@ -89,9 +87,7 @@ export default () => (
                         получит запрос method.GET и если в endpoint указан user_id:
                         "/users/\(id).json", то будет вызвана функция show.
                     </p>
-                    <Pre.Box>
-                        <Code value={code2} />
-                    </Pre.Box>
+                    <Pre value={code2} />
                 </Section.Main>
                 <Section.Side>
                     <Section.Sticky>
@@ -166,9 +162,7 @@ export default () => (
                         authentication/access token поможет нам найти и отправить всю информацию о
                         текущем пользователе:
                     </p>
-                    <Pre.Box>
-                        <Code value={code3} />
-                    </Pre.Box>
+                    <Pre value={code3} />
                 </Section.Main>
             </Section.Block>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Callout, Code, Hint, HL, Link, Pre, Section } from '@sc/ui';
+import { Callout, Hint, HL, Link, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
 
@@ -105,9 +105,7 @@ export default () => (
                         в тот момент, когда сервер вернет нам информацию об объекте (объект (result)
                         или выдаст <HL color='steel-blue'>ошибку</HL>, если такого объекта нет.
                     </p>
-                    <Pre.Box>
-                        <Code value={code} />
-                    </Pre.Box>
+                    <Pre value={code} />
                 </HL.Context>
                 <p>
                     Как мы обсуждали, информация, которую возвращает сервер, будет изначально
