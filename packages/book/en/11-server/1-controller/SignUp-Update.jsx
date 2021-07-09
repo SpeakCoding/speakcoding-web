@@ -42,7 +42,7 @@ export default () => (
         <Section.Block>
             <Section.Main narrow>
                 <h2>
-                    (Additional) creating a new user profile (or Sign up){' '}
+                    (Additional) Creating a new user profile (or Sign up){' '}
                     <Expand.Control htmlFor='11-1-1'>
                         <Button variant='rounded'>⤵</Button>
                     </Expand.Control>

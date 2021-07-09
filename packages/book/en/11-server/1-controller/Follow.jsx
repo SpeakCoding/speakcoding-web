@@ -30,7 +30,12 @@ export default () => (
                     <p>
                         If we need to add a custom request to the UserController controller, then on
                         the client side we add the name of this request to the endpoint, and on
-                        server-side we add a function with that same name to the controller.
+                        server side we add a function with that same name to the controller.
+                    </p>
+                    <p>
+                        For example, for a follow request the endpoint is
+                        "/users/\(id)/follow.json", and on the server side we add the UserController
+                        follow function
                     </p>
                     <Pre.Box>
                         <Code value={code1} />

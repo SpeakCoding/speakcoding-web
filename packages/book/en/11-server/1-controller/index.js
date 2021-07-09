@@ -1,8 +1,10 @@
 import React from 'react';
 import { Callout, Code, HL, Img, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
+import img from '../../../assets/11/1-methods-functions-en.svg';
 import Additional1 from './SignUp-Update';
 import Additional2 from './Follow';
+import s from './style.css';
 
 const code1 = `
 class UsersController < ApplicationController
@@ -53,15 +55,26 @@ export default () => (
                         requests from our client applications. The functions for the main standard
                         requests have standardized names:
                     </p>
-                    <p>
-                        <b>Show</b>: Responsible for receiving data (in this case, about the user);
-                        corresponds to GET requests <br />
-                        <b>Create</b>: Creates (in this case, the user profile); corresponds to POST
-                        requests <br />
-                        <b>Update</b>: Changes (in this case, the user profile); corresponds to
-                        PUT/PATCH requests <br />
-                        <b>Delete</b>: Deletes entries (in this case, about the user); corresponds
-                        to DELETE requests
+                    <p className={s.requests}>
+                        <b>Show:</b>{' '}
+                        <span>
+                            Responsible for receiving data (in this case, about the user);
+                            corresponds to GET requests
+                        </span>
+                        <b>Create:</b>{' '}
+                        <span>
+                            Creates (in this case, the user profile); corresponds to POST requests
+                        </span>
+                        <b>Update:</b>{' '}
+                        <span>
+                            Changes (in this case, the user profile); corresponds to PUT/PATCH
+                            requests
+                        </span>
+                        <b>Delete:</b>{' '}
+                        <span>
+                            Deletes entries (in this case, about the user); corresponds to DELETE
+                            requests
+                        </span>
                     </p>
                     <p>
                         When the server receives a request with the endpoint "/
@@ -78,7 +91,7 @@ export default () => (
                 </Section.Main>
                 <Section.Side>
                     <Section.Sticky>
-                        <Img />
+                        <Img src={img} />
                     </Section.Sticky>
                 </Section.Side>
             </Section.Block>
@@ -144,7 +157,7 @@ export default () => (
                     <p>
                         One thing the Controller is responsible for is checking whether the user can
                         perform a particular action on an object. This check is usually performed
-                        via the current user function. This function is a component of the
+                        via the <i>current user</i> function. This function is a component of the
                         authentication/access token, and helps us find and send all information
                         about the current user:
                     </p>

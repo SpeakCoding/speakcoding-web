@@ -39,7 +39,7 @@ export default () => (
                 <p>
                     As we’ve mentioned previously, the server employs the standard library framework{' '}
                     <Term id='ruby-on-rails'>Ruby On Rails</Term> (more on that a little later). As
-                    such, all of these actions can perform standard functions – we just need to
+                    such, all of these actions can perform standard function, we just need to
                     specify the ‘route’ (i.e. to which particular URLs the server program should
                     respond) and the actions required.
                 </p>

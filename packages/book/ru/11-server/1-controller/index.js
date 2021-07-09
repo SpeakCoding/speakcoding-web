@@ -1,8 +1,10 @@
 import React from 'react';
 import { Callout, Code, HL, Img, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
+import img from '../../../assets/11/1-methods-functions-ru.svg';
 import Additional1 from './SignUp-Update';
 import Additional2 from './Follow';
+import s from './style.css';
 
 const code1 = `
 class UsersController < ApplicationController
@@ -51,18 +53,33 @@ export default () => (
                     <p>Его мы наследуем от стандартного класса ApplicationController.</p>
                     <p>
                         В этом классе мы должны задать функции, которые будут вызываться в ответ на
-                        запросы, приходящие от наших клиентских приложений. У основных стандартных
+                        запросы, приходящие от клиента (нашего приложения). У основных стандартных
                         запросов функции имеют стандартные имена:
                     </p>
-                    <p>
-                        <b>show</b> - отвечает за то, чтобы получить данные (в данном случае, о
-                        пользователе); соответствует запросу GET <br />
-                        <b>create</b> - создать (в данном случае, пользователя); соответствует
-                        запросу POST <br />
-                        <b>update</b> - изменить (в данном случае, профиль пользователя);
-                        соответствует запросу PUT/PATCH <br />
-                        <b>delete</b> - удалить запись (в данном случае, о пользователе);
-                        соответствует запросу DELETE
+                    <p className={s.requests}>
+                        <b>show</b>
+                        <span>-</span>
+                        <span>
+                            отвечает за то, чтобы получить данные (в данном случае, о пользователе);
+                            соответствует запросу GET
+                        </span>
+                        <b>create</b>
+                        <span>-</span>
+                        <span>
+                            создать (в данном случае, пользователя); соответствует запросу POST
+                        </span>
+                        <b>update</b>
+                        <span>-</span>
+                        <span>
+                            изменить (в данном случае, профиль пользователя); соответствует запросу
+                            PUT/PATCH
+                        </span>
+                        <b>delete</b>
+                        <span>-</span>
+                        <span>
+                            удалить запись (в данном случае, о пользователе); соответствует запросу
+                            DELETE
+                        </span>
                     </p>
                     <p>
                         Когда на сервер приходит запрос с endpoint: "/
@@ -78,7 +95,7 @@ export default () => (
                 </Section.Main>
                 <Section.Side>
                     <Section.Sticky>
-                        <Img />
+                        <Img src={img} />
                     </Section.Sticky>
                 </Section.Side>
             </Section.Block>
@@ -92,7 +109,7 @@ export default () => (
                         Пришедший c клиента номер <HL color='steel-blue'>id</HL>, заданный в
                         endpoint, будет размещаться в проименованном наборе{' '}
                         <HL color='light-sky-blue'>params</HL> - params[:id], откуда мы его и
-                        получаем. (Также в наборе можно будет найти и другие параметры, переданные в
+                        получаем (также в наборе можно будет найти и другие параметры, переданные в
                         этом запросе).
                     </p>
                     <p>
