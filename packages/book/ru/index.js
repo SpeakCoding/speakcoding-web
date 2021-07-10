@@ -9,4 +9,5 @@ export Storage from './8-storage';
 export API from './9-api';
 export Backend from './10-backend';
 export Server from './11-server';
+export Launch from './12-launch';
 export Glossary from './glossary';
