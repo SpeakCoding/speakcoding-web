@@ -77,7 +77,7 @@ export default () => (
                 </Section.Main>
                 <Section.Side>
                     <Section.Sticky top='60px'>
-                        <Img src={img} />
+                        <Img src={img} width={474} height={365} />
                     </Section.Sticky>
                 </Section.Side>
             </Section.Block>

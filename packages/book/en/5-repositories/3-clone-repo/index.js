@@ -17,7 +17,7 @@ export default () => (
                     <Link href='https://github.com/SpeakCoding/iphone' blank>
                         https://github.com/SpeakCoding/iphone
                     </Link>
-                    ) and the local folder where files should be stored (for example you local
+                    ) and the local folder where files should be stored (for example your local
                     Documents folder).
                 </p>
             </Section.Main>

@@ -82,7 +82,7 @@ export default () => (
                 </Section.Main>
                 <Section.Side>
                     <Section.Sticky top='60px'>
-                        <Img src={img} />
+                        <Img src={img} width={474} height={365} />
                     </Section.Sticky>
                 </Section.Side>
             </Section.Block>
@@ -94,7 +94,7 @@ export default () => (
                         <ul>
                             <li>
                                 Attempting to remember everything that you might find useful in your
-                                work is inefficient. Avoid trying to memorise things that can
+                                work is inefficient. Avoid trying to memorize things that can
                                 quickly be found online.
                             </li>
                             <li>Focus on what you wish to create rather than on syntax.</li>

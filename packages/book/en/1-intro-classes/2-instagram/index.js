@@ -28,7 +28,7 @@ export default () => (
                             <ul>
                                 <li>
                                     The <HL c='aquamarine'>Pictures</HL> comprise: the picture
-                                    itself; and (optionally) a set of tags.
+                                    itself, and (optionally) a set of tags.
                                 </li>
                                 <li>
                                     The <HL c='orange'>Comments</HL> consist of: the user (profile
@@ -39,11 +39,11 @@ export default () => (
                             </ul>
                         </ul>
                         <li>
-                            The feed of Stories consists of: the user; and icons from the most
+                            The feed of Stories consists of: the user, and icons from the most
                             recent story in the story set.
                         </li>
                         <ul>
-                            <li>Stories comprise: timestamps; and pictures or videos.</li>
+                            <li>Stories comprise: timestamps, and pictures or videos.</li>
                         </ul>
                     </ul>
                     <p>Here’s how it looks if we rewrite it in a structured layout:</p>

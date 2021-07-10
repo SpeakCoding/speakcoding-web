@@ -26,7 +26,7 @@ export default () => (
                 </p>
                 <p>
                     <b>Break</b>: Stops running the loop altogether. <br />
-                    <b>Continue</b>: Stops the current iteration and starts again . <br />
+                    <b>Continue</b>: Stops the current iteration and starts again .<br />
                     These two are used only in loop descriptions, while <b>return</b> is used only
                     for functions.
                 </p>

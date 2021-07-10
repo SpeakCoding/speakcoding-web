@@ -10,9 +10,9 @@ export default () => (
             <h1>Sets</h1>
             <p>
                 Let’s explore sets using the example of comments on Instagram posts. You may
-                remember that comments are one of the Post{' '}
-                <Term id='component'>class’s components</Term>. We don’t know in advance how many
-                comments a particular post will have. In such situations, programming uses{' '}
+                remember that comments are one of the Post class’s{' '}
+                <Term id='component'>components</Term>. We don’t know in advance how many comments a
+                particular post will have. In such situations, programming uses{' '}
                 <Term id='set' tooltip>
                     the standard Set class
                 </Term>
@@ -25,8 +25,8 @@ export default () => (
                 <Term id='component'>a component</Term>/<Term id='variable'>variable</Term>, this
                 should be read as a ‘set of comments’. If the maximum amount of{' '}
                 <Term id='instance'>objects</Term> in a Set is limited to a certain number, for
-                example to 10 <Term id='instance'>objects</Term>, then when creating{' '}
-                <Term id='set'>the set</Term>, this number is entered inside square brackets:
+                example to 10 <Term id='instance'>objects</Term>, then when creating the{' '}
+                <Term id='set'>set</Term>, this number is entered inside square brackets:
             </p>
             <Pre>var comments = Comment[10];</Pre>
             <p>
