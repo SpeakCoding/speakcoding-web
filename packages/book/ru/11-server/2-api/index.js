@@ -70,7 +70,7 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Assignment number={29} href='#'>
+        <Assignment number={29} href='https://forms.gle/Epte4TU9sherEtKS9'>
             В серверном коде посмотрите на контроллер для класса User и соответствующую часть
             конфигурационного файла routes.rb, и напишите список запросов, которые сервер может
             обрабатывать для users, URL для этих запросов, а также их тип (GET/POST/etc.)

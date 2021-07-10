@@ -143,7 +143,7 @@ export default () => (
             <Additional1 />
         </Section>
 
-        <Assignment number={28} href='#'>
+        <Assignment number={28} href='https://forms.gle/MHeMuhvct2qqfeKA7'>
             Unpack the sign-up and update functions (above) in the show functions example.
         </Assignment>
 
