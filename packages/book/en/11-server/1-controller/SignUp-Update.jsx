@@ -2,8 +2,8 @@ import React from 'react';
 import { Button, Expand, Pre, Section } from '@sc/ui';
 
 const code1 = `
-def create
-    user = User.create(user_params)
+def [[create]](wheat)
+    user = [[User]](green).[[create]](wheat)([[user_params]](light-sky-blue))
     if user.save
         render json: {
             data: UserSerializer.new(user, self).serialize,
@@ -14,13 +14,13 @@ def create
     end
 end
     
-def user_params
+def [[user_params]](light-sky-blue)
     result = params.require(:user).permit(:email, :password, :user_name, :bio, :profile_picture)
 end`;
 
 const code2 = `
-def update()
-    user = User.find(params[:id])
+def [[update]](wheat)()
+    user = [[User]](green).[[find]](wheat)([[params[:id]\u200b]](light-sky-blue)))
 
     if user != current_user()
        render_unauthorized()
@@ -35,12 +35,22 @@ def update()
     else
         render_errors(user.errors)
     end
+end
+
+def render_unauthorized()
+    render json: {
+        errors: [
+            {
+                detail: "You're not authorized to access this data"
+            }
+        ]
+    }, status: 403
 end`;
 
 export default () => (
     <>
         <Section.Block>
-            <Section.Main narrow>
+            <Section.Main hlactive narrow>
                 <h2>
                     (Additional) Creating a new user profile (or Sign up){' '}
                     <Expand.Control htmlFor='11-1-1'>

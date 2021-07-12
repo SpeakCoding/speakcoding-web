@@ -21,18 +21,7 @@ const code3 = `
 def current_user()
     authentication_token = request.headers['Authentication-Token']
     return nil if authentication_token.blank?
-
     return User.find_by(authentication_token: authentication_token)
-end
-
-def render_unauthorized()
-    render json: {
-        errors: [
-            {
-                detail: "You're not authorized to access this data"
-            }
-        ]
-    }, status: 403
 end`;
 
 export default () => (

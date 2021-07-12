@@ -15,7 +15,7 @@ const chapters = [
     { title: 'Long-term information storage', href: '/en/chapter-8' },
     { title: 'How programs interact with each other', href: '/en/chapter-9' },
     { title: 'What’s happening on the backend', href: '/en/chapter-10' },
-    { title: 'Server' },
+    { title: 'Server', href: '/en/chapter-11' },
     { title: 'Launch your program: where does all processes start' }
 ];
 
