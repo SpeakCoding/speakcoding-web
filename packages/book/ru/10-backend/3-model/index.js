@@ -1,7 +1,7 @@
 import React from 'react';
 import { HL, Img, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
-import img from '../../../assets/10/2-active-record-ru.svg';
+import img from './active-record.svg';
 
 export default () => (
     <Section>

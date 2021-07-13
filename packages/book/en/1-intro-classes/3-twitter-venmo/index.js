@@ -1,7 +1,7 @@
 import React from 'react';
 import { Img, Section, Structure } from '@sc/ui';
 import { Assignment } from '../../../components';
-import img from '../../../assets/1/2-class-tweet.svg';
+import img from './class-tweet.svg';
 
 export default () => (
     <>

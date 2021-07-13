@@ -1,7 +1,7 @@
 import React from 'react';
 import { Code, Grid, HL, Img, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
-import img from '../../../assets/9/3-serialization-ru.svg';
+import img from './serialization.svg';
 
 const code = `
 func signUp(emailAddress: String, password: String, completion: @escaping ((User?, Error?) -> Void)) {

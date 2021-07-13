@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, HL, Img, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
-import img from '../../../assets/8/1-phone-cloud.svg';
+import img from './phone-cloud.svg';
 
 export default () => (
     <>

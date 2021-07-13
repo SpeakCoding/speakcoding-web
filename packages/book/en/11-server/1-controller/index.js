@@ -1,7 +1,7 @@
 import React from 'react';
 import { Callout, HL, Img, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
-import img from '../../../assets/11/1-methods-functions-en.svg';
+import img from './methods-functions.svg';
 import Additional1 from './SignUp-Update';
 import Additional2 from './Follow';
 import s from './style.css';

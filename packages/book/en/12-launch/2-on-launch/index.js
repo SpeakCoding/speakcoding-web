@@ -1,7 +1,7 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
-import img1 from '../../../assets/12/1-xcode.png';
-import img2 from '../../../assets/12/2-layers.svg';
+import img1 from './xcode.png';
+import img2 from './layers.svg';
 
 export default () => (
     <Section>

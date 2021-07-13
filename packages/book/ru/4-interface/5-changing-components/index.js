@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, HL, Hint, Img, Section } from '@sc/ui';
 import { Quiz } from '../../../components';
 import Term from '../../glossary/Term';
-import xcode from '../../../assets/4/3-xcode.png';
+import xcode from './xcode.png';
 
 export default () => (
     <>

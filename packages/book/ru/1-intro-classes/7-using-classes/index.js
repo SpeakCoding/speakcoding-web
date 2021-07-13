@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Hint, Img, Pre, Section } from '@sc/ui';
 import { Skill } from '../../../components';
 import Term from '../../glossary/Term';
-import img from '../../../assets/1/8-var-types-ru.svg';
+import img from './var-types.svg';
 
 export default () => (
     <>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Img, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
-import img from '../../../assets/8/2-database.svg';
+import img from './database.svg';
 import Table1 from './Table1';
 import Table2 from './Table2';
 import Table3 from './Table3';

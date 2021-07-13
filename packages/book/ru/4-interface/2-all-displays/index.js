@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button, Expand, Img, Section, Structure } from '@sc/ui';
 import { Assignment, Quiz } from '../../../components';
-import img1 from '../../../assets/4/2-instagram-1.png';
-import img2 from '../../../assets/4/2-instagram-2.png';
-import img3 from '../../../assets/4/2-instagram-3.png';
-import img4 from '../../../assets/4/2-instagram-4.png';
+import img1 from './instagram-1.png';
+import img2 from './instagram-2.png';
+import img3 from './instagram-3.png';
+import img4 from './instagram-4.png';
 import s from './style.css';
 
 export default () => (

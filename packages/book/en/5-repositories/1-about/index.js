@@ -1,7 +1,7 @@
 import React from 'react';
 import { Img, Link, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
-import img from '../../../assets/5/1-git-en.svg';
+import img from './git.svg';
 
 export default () => (
     <>

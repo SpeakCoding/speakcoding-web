@@ -3,8 +3,8 @@ import React from 'react';
 import { HL, Img, Section, Structure } from '@sc/ui';
 import { Assignment, Quiz } from '../../../components';
 import Term from '../../glossary/Term';
-import img1 from '../../../assets/1/5-class-period-en.svg';
-import img2 from '../../../assets/1/6-human.svg';
+import img1 from './class-period.svg';
+import img2 from './human.svg';
 import s from './style.css';
 
 export default () => (

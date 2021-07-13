@@ -1,7 +1,7 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
-import xcode from '../../../assets/4/3-xcode.png';
+import xcode from './xcode.png';
 import Term from '../../glossary/Term';
 import Terminal from './Terminal';
 import s from './style.css';

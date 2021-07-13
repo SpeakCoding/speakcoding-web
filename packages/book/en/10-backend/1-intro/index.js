@@ -1,6 +1,6 @@
 import React from 'react';
 import { HL, Img, Link, Pre, Section } from '@sc/ui';
-import img from '../../../assets/10/1-how-it-works-en.svg';
+import img from './how-it-works.svg';
 
 export default () => (
     <Section>

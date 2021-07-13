@@ -1,7 +1,7 @@
 import React from 'react';
 import { Code, Grid, HL, Img, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
-import img from '../../../assets/6/1-while-ru.svg';
+import img from './while.svg';
 
 const code4 = `
 func showComments(post Post) {

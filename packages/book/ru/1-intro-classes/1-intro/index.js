@@ -1,6 +1,6 @@
 import React from 'react';
 import { Callout, Img, Section } from '@sc/ui';
-import img from '../../../assets/1/1-numbers.svg';
+import img from './numbers.svg';
 
 export default () => (
     <Section>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Expand, Img, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
-import img from '../../../assets/5/3-terminal.png';
+import img from './terminal.png';
 import s from './style.css';
 
 export default () => (

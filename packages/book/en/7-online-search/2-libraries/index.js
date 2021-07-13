@@ -2,7 +2,7 @@ import React from 'react';
 import { Hint, Img, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
-import img from '../../../assets/7/2-libraries-en.svg';
+import img from './libraries.svg';
 
 export default () => (
     <>

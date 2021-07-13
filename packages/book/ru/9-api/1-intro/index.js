@@ -2,8 +2,8 @@ import React from 'react';
 import { Img, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
-import img1 from '../../../assets/9/1-client-server-ru.svg';
-import img2 from '../../../assets/9/2-methods-ru.svg';
+import img1 from './client-server.svg';
+import img2 from './methods.svg';
 
 export default () => (
     <>

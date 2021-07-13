@@ -1,7 +1,7 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
-import xcode from '../../../assets/5/2-xcode.png';
+import xcode from './xcode.png';
 
 export default () => (
     <>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Callout, Img, Link, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
-import img from '../../../assets/7/1-google-search.png';
+import img from './google-search.png';
 
 export default () => (
     <>

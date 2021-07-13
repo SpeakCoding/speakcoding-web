@@ -1,7 +1,7 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
-import img from '../../../assets/9/4-login-en.svg';
+import img from './login.svg';
 
 export default () => (
     <>
