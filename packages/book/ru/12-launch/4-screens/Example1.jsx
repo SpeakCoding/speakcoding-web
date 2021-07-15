@@ -1,5 +1,6 @@
 import React from 'react';
 import { Code, Grid, HL, Link, Section } from '@sc/ui';
+import s from './style.css';
 
 const code1 = `private func [[showAllPostsAsList]](light-sky-blue)(preselectedPostIndex: Int) {`;
 
@@ -39,10 +40,14 @@ export default () => (
                     >
                         UserProfileViewController
                     </Link>{' '}
-                    в UINavigationController, мы теперь можем обратиться к self.
-                    <HL color='green'>navigationController</HL> и воспользоваться его стандартной
-                    функций <HL color='steel-blue'>pushViewController</HL>, чтобы перейти к
-                    соответствующему экрану.
+                    в UINavigationController, мы теперь можем обратиться к{' '}
+                    <span className={s.nobr}>
+                        self.
+                        <HL color='green'>navigationController</HL>
+                    </span>{' '}
+                    и воспользоваться его стандартной функций{' '}
+                    <HL color='steel-blue'>pushViewController</HL>, чтобы перейти к соответствующему
+                    экрану.
                 </p>
             </Section.Main>
         </Section.Block>

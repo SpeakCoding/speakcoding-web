@@ -1,5 +1,6 @@
 import React from 'react';
 import { Code, Grid, HL, Link, Section } from '@sc/ui';
+import s from './style.css';
 
 const code1 = `private func [[showAllPostsAsList]](light-sky-blue)(preselectedPostIndex: Int) {`;
 
@@ -39,10 +40,13 @@ export default () => (
                     >
                         UserProfileViewController
                     </Link>{' '}
-                    into UINavigationController, we can now call the self.
-                    <HL color='green'>navigationController</HL> and use its standard function{' '}
-                    <HL color='steel-blue'>pushViewController</HL> to switch to the corresponding
-                    screen.
+                    into UINavigationController, we can now call the{' '}
+                    <span className={s.nobr}>
+                        self.
+                        <HL color='green'>navigationController</HL>
+                    </span>{' '}
+                    and use its standard function <HL color='steel-blue'>pushViewController</HL> to
+                    switch to the corresponding screen.
                 </p>
             </Section.Main>
         </Section.Block>

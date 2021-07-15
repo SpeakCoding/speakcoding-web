@@ -1,7 +1,9 @@
 import React from 'react';
-import { HL, Pre, Section } from '@sc/ui';
+import { HL, Img, Pre, Section } from '@sc/ui';
 import Example1 from './Example1';
 import Example2 from './Example2';
+import img from './app.jpeg';
+import s from './style.css';
 
 const code1 = `
 func [[showLoginView]](aquamarine)() {
@@ -48,9 +50,9 @@ export default () => (
                     <HL color='sandy-brown'>rootViewController</HL>, having first set
                     loginFlowNavigationController’s parameters: The screen takes up{' '}
                     <HL color='plum' inline={3}>
-                        he entire full screen space allocated to it
+                        the entire full screen space allocated to it
                     </HL>
-                    , and its <HL color='turquoise'>op menu is hidden by default</HL>.
+                    , and its <HL color='turquoise'>top menu is hidden by default</HL>.
                 </p>
                 <p>
                     When the user has logged in, the completion function opens the application’s
@@ -58,11 +60,7 @@ export default () => (
                     performing two of the steps we have already covered:
                 </p>
                 <ol>
-                    <li>
-                        When the user has logged in, the completion function opens the application’s
-                        root screen (in our case the screen with the five tabs), which entails
-                        performing two of the steps we have already covered:
-                    </li>
+                    <li>Calling the root screen’s setupUI function;</li>
                     <li>Placing the в tabbarcontroller component in the rootviewcontroller.</li>
                 </ol>
                 <p>
@@ -73,6 +71,11 @@ export default () => (
                     self.window.rootViewController. This means that the user sees the corresponding{' '}
                     <HL color='aquamarine'>root</HL> screen in the window.
                 </p>
+                <center>
+                    <div className={s.screen}>
+                        <Img src={img} width={320} />
+                    </div>
+                </center>
                 <p>
                     We’ve covered how each tab is an instance of the UINavigationController class.
                     The rootViewController component of this class contains an instance of the class

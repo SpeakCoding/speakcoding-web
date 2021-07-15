@@ -1,7 +1,9 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
 import img1 from './xcode.png';
-import img2 from './layers.svg';
+import img2 from './layers-1.png';
+import img3 from './layers-2.png';
+import img4 from './navigation.png';
 
 export default () => (
     <Section>
@@ -10,10 +12,11 @@ export default () => (
                 <h2>What happens upon launch</h2>
                 <p>
                     You can test this yourself by connecting your phone to the computer on which
-                    Xcode is installed and launching the SpeakCoding emulator. To do this, in the
-                    device list in the top menu of the editor, select the connected phone, then
-                    press the build button (this is a triangle similar to the play symbol, to the
-                    left of the device list). The SpeakCoding app will then appear on your phone.
+                    Xcode (or other code editor) is installed and launching the SpeakCoding
+                    emulator. To do this, in the device list in the top menu of the editor, select
+                    the connected phone, then press the build button (this is a triangle similar to
+                    the play symbol, to the left of the device list). The SpeakCoding app will then
+                    appear on your phone.
                 </p>
             </Section.Main>
         </Section.Block>
@@ -79,6 +82,9 @@ export default () => (
                     for our window.
                 </p>
                 <p>
+                    <Img src={img3} width={600} />
+                </p>
+                <p>
                     We can preliminarily place each of our Views in the NavigationView (an instance
                     of the UINavigationController class), which allows us thereafter to switch
                     easily to secondary screens.
@@ -91,6 +97,9 @@ export default () => (
                     pushViewController to switch to the new screen. The user can go back to the
                     previous screen via an option in the top menu. All of this interface logic is
                     implemented for us by functions of the standard class UINavigationController.
+                </p>
+                <p>
+                    <Img src={img4} width={600} />
                 </p>
             </Section.Main>
         </Section.Block>

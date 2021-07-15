@@ -1,7 +1,9 @@
 import React from 'react';
-import { HL, Pre, Section } from '@sc/ui';
+import { HL, Img, Pre, Section } from '@sc/ui';
 import Example1 from './Example1';
 import Example2 from './Example2';
+import s from './style.css';
+import img from './app.jpeg';
 
 const code1 = `
 func [[showLoginView]](aquamarine)() {
@@ -70,6 +72,11 @@ export default () => (
                     нашего окна. Это означает, что пользователь увидит в окне соответствующий экран
                     (корневой экран с пятью вкладками).
                 </p>
+                <center>
+                    <div className={s.screen}>
+                        <Img src={img} width={320} />
+                    </div>
+                </center>
                 <p>
                     Мы уже поговорили о том, что каждый tab - это экземпляр класса
                     UINavigationController, у которого в составляющую rootViewController помещен

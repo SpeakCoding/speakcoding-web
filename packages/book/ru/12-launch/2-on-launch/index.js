@@ -1,7 +1,9 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
 import img1 from './xcode.png';
-import img2 from './layers.svg';
+import img2 from './layers-1.png';
+import img3 from './layers-2.png';
+import img4 from './navigation.png';
 
 export default () => (
     <Section>
@@ -79,6 +81,9 @@ export default () => (
                     этот экземпляр как основной view для нашего окна.
                 </p>
                 <p>
+                    <Img src={img3} width={600} />
+                </p>
+                <p>
                     Каждый наш View мы также предварительно можем поместить в NavigationView
                     (экземпляр класса UINavigationController), в будущем это позволит нам
                     производить простые переходы к второстепенным экранам.
@@ -92,6 +97,9 @@ export default () => (
                     При этом в верхнем меню у пользователя остается возможность перейти обратно на
                     предыдущий экран. Все эта логика интерфейса будет реализована за нас функциями
                     стандартного класса UINavigationController.
+                </p>
+                <p>
+                    <Img src={img4} width={600} />
                 </p>
             </Section.Main>
         </Section.Block>
