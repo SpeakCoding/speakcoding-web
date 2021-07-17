@@ -5,7 +5,7 @@ import Part1 from './1-intro';
 import Part2 from './2-blocks';
 
 export default () => (
-    <Page chapter={13} phone={false}>
+    <Page phone={false}>
         <Part1 />
         <Section.Divider />
         <Part2 />
