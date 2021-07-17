@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@sc/ui';
 import Header from '../header';
 import L from '../localize';
 import Navigation from '../navigation';
+import s from './page.css';
 
 const PageHeader = ({ chapter, chapters }) => {
     const title = typeof chapter === 'number' && chapters[chapter - 1]?.title;
@@ -18,8 +19,11 @@ const PageHeader = ({ chapter, chapters }) => {
 
                         <Navigation.Content>
                             <Navigation.Items>
-                                {chapters.map(({ title: itemTitle, href }) => (
+                                {chapters.map(({ prefix, title: itemTitle, href }) => (
                                     <Navigation.Item key={itemTitle} href={href}>
+                                        {prefix && (
+                                            <span className={s.prefix}>{prefix}.&nbsp;</span>
+                                        )}
                                         {itemTitle}
                                     </Navigation.Item>
                                 ))}

@@ -15,7 +15,6 @@
     border-radius: 10px;
     background-color: var(--c-white);
     font: var(--t-base);
-    counter-reset: nav-item;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.13);
     opacity: 0;
     visibility: hidden;
@@ -75,11 +74,4 @@
 .text:not(.disabled):hover,
 .text.active {
     background-color: var(--c-primary-500);
-}
-
-.text::before {
-    counter-increment: nav-item;
-    content: counter(nav-item)".\a0";
-    font-weight: bold;
-    color: var(--c-grey-400);
 }
