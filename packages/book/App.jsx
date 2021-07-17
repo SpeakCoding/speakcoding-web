@@ -90,6 +90,7 @@ const App = () => {
                     <Route path='/ru/chapter-10' component={RU.Backend} />
                     <Route path='/ru/chapter-11' component={RU.Server} />
                     {admin && <Route path='/ru/chapter-12' component={RU.Launch} />}
+                    {admin && <Route path='/ru/handbook' component={RU.Handbook} />}
                     <Route path='/ru/glossary' component={RU.Glossary} />
 
                     <Route component={Home} />

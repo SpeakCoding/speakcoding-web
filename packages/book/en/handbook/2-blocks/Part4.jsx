@@ -64,7 +64,7 @@ export default () => (
         <div className={s.gap} />
 
         <p>
-            <b>for, while (cyclical operators) </b>
+            <b>for, while (cyclical operators)</b>
         </p>
         <p>
             <b>for/while</b>: Used when the actions described in a paragraph need to be repeated a

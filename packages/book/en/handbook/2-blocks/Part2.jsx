@@ -66,7 +66,7 @@ export default () => (
         </p>
         <p>
             If we wish to add more function-execution steps while leaving the original actions in
-            place, then in the child function we write a string containing the keyword super
+            place, then in the child function we write a string containing the keyword <b>super</b>{' '}
             (sometimes along with the function name, separated by a period). This keyword calls all
             the actions defined in the parent-class function.
         </p>

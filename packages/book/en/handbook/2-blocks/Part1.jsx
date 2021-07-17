@@ -19,11 +19,11 @@ export default () => (
         <p>
             <b>Class definition (description)</b>
         </p>
-        <Pre>class ClassName {}</Pre>
+        <Pre>class ClassName {'{}'}</Pre>
         <p>
             The word ‘class’ appears, followed by the class title (each word in the class title is
-            capitalized). The body of the class is written in curly {} brackets. Clicking on the
-            class name or one of the {} brackets while pressing the Command key (or the
+            capitalized). The body of the class is written in curly {'{ }'} brackets. Clicking on
+            the class name or one of the {'{ }'} brackets while pressing the Command key (or the
             Windows/Start key on laptop keyboards) displays all strings relating to the description.
         </p>
         <Pre>class ClassName : Inherited_Class, Another_Inherited_Class {'{}'}</Pre>
@@ -130,11 +130,11 @@ export default () => (
             }`}
         </Pre>
         <p>
-            Default values can also be defined by a sequence block in curly {} brackets. Every time
-            this component’s value is read, the steps are performed that are described in the block
-            with the keyword <b>get</b>. The value that is returned is the value that should be
-            returned (either with the keyword return, or simply the value received in the last line
-            of the block [after the keyword return]).
+            Default values can also be defined by a sequence block in curly {'{ }'} brackets. Every
+            time this component’s value is read, the steps are performed that are described in the
+            block with the keyword <b>get</b>. The value that is returned is the value that should
+            be returned (either with the keyword return, or simply the value received in the last
+            line of the block [after the keyword return]).
         </p>
         <div className={s.gap} />
     </>
