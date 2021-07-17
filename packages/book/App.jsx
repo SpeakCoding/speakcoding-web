@@ -75,6 +75,7 @@ const App = () => {
                     <Route path='/en/chapter-10' component={EN.Backend} />
                     <Route path='/en/chapter-11' component={EN.Server} />
                     {admin && <Route path='/en/chapter-12' component={EN.Launch} />}
+                    {admin && <Route path='/en/handbook' component={EN.Handbook} />}
                     <Route path='/en/glossary' component={EN.Glossary} />
 
                     <Route path='/ru/chapter-1' component={RU.Intro} />
