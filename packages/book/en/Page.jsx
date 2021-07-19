@@ -17,7 +17,11 @@ const chapters = [
     { prefix: 9, title: 'How programs interact with each other', href: '/en/chapter-9' },
     { prefix: 10, title: 'What’s happening on the backend', href: '/en/chapter-10' },
     { prefix: 11, title: 'Server', href: '/en/chapter-11' },
-    { prefix: 12, title: 'Launch your program: where does all processes start' }
+    {
+        prefix: 12,
+        title: 'Launch your program: where does all processes start',
+        href: '/en/chapter-12'
+    }
     // { prefix: 'Bonus', title: 'Handbook' }
 ];
 

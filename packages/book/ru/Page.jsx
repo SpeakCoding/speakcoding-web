@@ -17,7 +17,7 @@ const chapters = [
     { prefix: 9, title: 'Как программы взаимодействуют друг с другом', href: '/ru/chapter-9' },
     { prefix: 10, title: 'Что происходит на бекенде', href: '/ru/chapter-10' },
     { prefix: 11, title: 'Сервер', href: '/ru/chapter-11' },
-    { prefix: 12, title: 'Запуск программы: где запускаются все процессы' }
+    { prefix: 12, title: 'Запуск программы: где запускаются все процессы', href: '/ru/chapter-12' }
     // { prefix: 'Бонус', title: 'Справочник' }
 ];
 
