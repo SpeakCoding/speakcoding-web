@@ -2,8 +2,7 @@ import React from 'react';
 import { HL, Img, Pre, Section } from '@sc/ui';
 import Example1 from './Example1';
 import Example2 from './Example2';
-import s from './style.css';
-import img from './app.jpeg';
+import img from './app.png';
 
 const code1 = `
 func [[showLoginView]](aquamarine)() {
@@ -55,6 +54,11 @@ export default () => (
                     , и его <HL color='turquoise'>верхнее меню меню будет по умолчанию спрятано</HL>
                     .
                 </p>
+            </Section.Main>
+        </Section.Block>
+
+        <Section.Block>
+            <Section.Main hlactive>
                 <p>
                     После того, как пользователь вошел в приложение, completion функция откроет
                     корневой экран (в нашем случае - экран с пятью вкладками), для этого будут
@@ -72,11 +76,6 @@ export default () => (
                     нашего окна. Это означает, что пользователь увидит в окне соответствующий экран
                     (корневой экран с пятью вкладками).
                 </p>
-                <center>
-                    <div className={s.screen}>
-                        <Img src={img} width={320} />
-                    </div>
-                </center>
                 <p>
                     Мы уже поговорили о том, что каждый tab - это экземпляр класса
                     UINavigationController, у которого в составляющую rootViewController помещен
@@ -88,6 +87,11 @@ export default () => (
                     tag.
                 </p>
             </Section.Main>
+            <Section.Side>
+                <Section.Sticky>
+                    <Img src={img} />
+                </Section.Sticky>
+            </Section.Side>
         </Section.Block>
 
         <Example1 />

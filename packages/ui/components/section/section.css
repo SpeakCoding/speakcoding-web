@@ -66,10 +66,6 @@
     margin: 0 0 16px;
 }
 
-.main p:last-child {
-    margin: 0;
-}
-
 .main ul,
 .main ol {
     margin: 0 0 16px 0;

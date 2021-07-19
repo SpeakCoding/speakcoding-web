@@ -2,8 +2,7 @@ import React from 'react';
 import { HL, Img, Pre, Section } from '@sc/ui';
 import Example1 from './Example1';
 import Example2 from './Example2';
-import img from './app.jpeg';
-import s from './style.css';
+import img from './app.png';
 
 const code1 = `
 func [[showLoginView]](aquamarine)() {
@@ -54,6 +53,11 @@ export default () => (
                     </HL>
                     , and its <HL color='turquoise'>top menu is hidden by default</HL>.
                 </p>
+            </Section.Main>
+        </Section.Block>
+
+        <Section.Block>
+            <Section.Main hlactive>
                 <p>
                     When the user has logged in, the completion function opens the application’s
                     root screen (in our case the screen with the five tabs), which entails
@@ -71,11 +75,6 @@ export default () => (
                     self.window.rootViewController. This means that the user sees the corresponding{' '}
                     <HL color='aquamarine'>root</HL> screen in the window.
                 </p>
-                <center>
-                    <div className={s.screen}>
-                        <Img src={img} width={320} />
-                    </div>
-                </center>
                 <p>
                     We’ve covered how each tab is an instance of the UINavigationController class.
                     The rootViewController component of this class contains an instance of the class
@@ -86,6 +85,11 @@ export default () => (
                     when the tab is active and when it’s not), and to assign an identification tag.
                 </p>
             </Section.Main>
+            <Section.Side>
+                <Section.Sticky>
+                    <Img src={img} />
+                </Section.Sticky>
+            </Section.Side>
         </Section.Block>
 
         <Example1 />

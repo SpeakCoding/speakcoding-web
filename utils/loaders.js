@@ -71,7 +71,7 @@ module.exports = {
     },
     image() {
         return {
-            test: /\.(svg|png|jpeg)$/,
+            test: /\.(svg|png)$/,
             type: 'asset',
             exclude: [/ui\/components\/icon\/glyphs/, /ui\/mobile\/icon\/glyphs/]
         };

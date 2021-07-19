@@ -4,6 +4,7 @@ import img1 from './xcode.png';
 import img2 from './layers-1.png';
 import img3 from './layers-2.png';
 import img4 from './navigation.png';
+import s from './style.css';
 
 export default () => (
     <Section>
@@ -18,30 +19,20 @@ export default () => (
                     the play symbol, to the left of the device list). The SpeakCoding app will then
                     appear on your phone.
                 </p>
-            </Section.Main>
-        </Section.Block>
-
-        <Section.Block>
-            <Section.Main>
-                <p>
+                <p className={s.img}>
                     <Img src={img1} />
                 </p>
             </Section.Main>
         </Section.Block>
 
         <Section.Block>
-            <Section.Main narrow>
+            <Section.Main>
                 <p>
                     When you press the application button on your phone, you’ll see the login screen
                     if you’re opening the app for the first time, and the screen with the post feed
                     if you’re a registered user. To display LoginView on the screen, we first need
                     to create an instance of the standard system class UIWindow (window).
                 </p>
-            </Section.Main>
-        </Section.Block>
-
-        <Section.Block>
-            <Section.Main>
                 <p>
                     This window includes the set of elements visible on screen in its current static
                     state. It may help to think of the current state as being like the current
@@ -81,7 +72,7 @@ export default () => (
                     main view controllers for this instance, then save the instance as the main view
                     for our window.
                 </p>
-                <p>
+                <p className={s.img}>
                     <Img src={img3} width={600} />
                 </p>
                 <p>
@@ -98,7 +89,7 @@ export default () => (
                     previous screen via an option in the top menu. All of this interface logic is
                     implemented for us by functions of the standard class UINavigationController.
                 </p>
-                <p>
+                <p className={s.img}>
                     <Img src={img4} width={600} />
                 </p>
             </Section.Main>

@@ -4,6 +4,7 @@ import img1 from './xcode.png';
 import img2 from './layers-1.png';
 import img3 from './layers-2.png';
 import img4 from './navigation.png';
+import s from './style.css';
 
 export default () => (
     <Section>
@@ -17,19 +18,14 @@ export default () => (
                     нажмите кнопку build - треугольник, похожий на значок play слева от списка
                     устройств. После чего учебное приложение SpeakCoding появится у вас на телефоне.
                 </p>
-            </Section.Main>
-        </Section.Block>
-
-        <Section.Block>
-            <Section.Main>
-                <p>
+                <p className={s.img}>
                     <Img src={img1} />
                 </p>
             </Section.Main>
         </Section.Block>
 
         <Section.Block>
-            <Section.Main narrow>
+            <Section.Main>
                 <p>
                     Когда вы нажимаете на иконку приложения на своем телефоне, вы видите экран с
                     логином, если открываете это приложение впервые, и экран с лентой постов, если
@@ -37,11 +33,6 @@ export default () => (
                     экране, нам сначала необходимо создать экземпляр стандартного системного класса
                     UIWindow (окна).
                 </p>
-            </Section.Main>
-        </Section.Block>
-
-        <Section.Block>
-            <Section.Main>
                 <p>
                     Окно включает в себя набор элементов видимых на экране в текущем статическом
                     состоянии. Это становится понятнее, если представить себе текущее состояние как
@@ -80,7 +71,7 @@ export default () => (
                     UITabBarController, укажем для него пять основных view controllers, и сохраним
                     этот экземпляр как основной view для нашего окна.
                 </p>
-                <p>
+                <p className={s.img}>
                     <Img src={img3} width={600} />
                 </p>
                 <p>
@@ -98,7 +89,7 @@ export default () => (
                     предыдущий экран. Все эта логика интерфейса будет реализована за нас функциями
                     стандартного класса UINavigationController.
                 </p>
-                <p>
+                <p className={s.img}>
                     <Img src={img4} width={600} />
                 </p>
             </Section.Main>
