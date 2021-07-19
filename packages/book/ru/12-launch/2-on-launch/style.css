@@ -3,6 +3,8 @@
     text-align: center;
 }
 
-.img:last-child {
-    padding-bottom: 0;
+.last {
+    display: block;
+    margin-bottom: -56px;
+    text-align: center;
 }

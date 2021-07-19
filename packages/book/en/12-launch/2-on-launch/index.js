@@ -89,8 +89,10 @@ export default () => (
                     previous screen via an option in the top menu. All of this interface logic is
                     implemented for us by functions of the standard class UINavigationController.
                 </p>
-                <p className={s.img}>
-                    <Img src={img4} width={600} />
+                <p>
+                    <span className={s.last}>
+                        <Img src={img4} width={600} />
+                    </span>
                 </p>
             </Section.Main>
         </Section.Block>
