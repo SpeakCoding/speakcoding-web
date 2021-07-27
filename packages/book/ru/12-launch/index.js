@@ -1,5 +1,6 @@
 import React from 'react';
 import { Section } from '@sc/ui';
+import { Next } from '../../components';
 import Page from '../Page';
 import Part1 from './1-intro';
 import Part2 from './2-on-launch';
@@ -15,5 +16,6 @@ export default () => (
         <Part3 />
         <Section.Divider />
         <Part4 />
+        <Next href='/ru/handbook' />
     </Page>
 );

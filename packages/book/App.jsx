@@ -8,9 +8,6 @@ import Payment from './payment';
 import * as EN from './en';
 import * as RU from './ru';
 
-// FIXME: remove it when no longer needed
-const admin = localStorage.getItem('admin');
-
 const App = () => {
     const fetch = useAPI(),
         auth = !!localStorage.getItem('book_auth_token'),
@@ -75,7 +72,7 @@ const App = () => {
                     <Route path='/en/chapter-10' component={EN.Backend} />
                     <Route path='/en/chapter-11' component={EN.Server} />
                     <Route path='/en/chapter-12' component={EN.Launch} />
-                    {admin && <Route path='/en/handbook' component={EN.Handbook} />}
+                    <Route path='/en/handbook' component={EN.Handbook} />
                     <Route path='/en/glossary' component={EN.Glossary} />
 
                     <Route path='/ru/chapter-1' component={RU.Intro} />
@@ -90,7 +87,7 @@ const App = () => {
                     <Route path='/ru/chapter-10' component={RU.Backend} />
                     <Route path='/ru/chapter-11' component={RU.Server} />
                     <Route path='/ru/chapter-12' component={RU.Launch} />
-                    {admin && <Route path='/ru/handbook' component={RU.Handbook} />}
+                    <Route path='/ru/handbook' component={RU.Handbook} />
                     <Route path='/ru/glossary' component={RU.Glossary} />
 
                     <Route component={Home} />

@@ -21,8 +21,8 @@ const chapters = [
         prefix: 12,
         title: 'Launch your program: where does all processes start',
         href: '/en/chapter-12'
-    }
-    // { prefix: 'Bonus', title: 'Handbook' }
+    },
+    { prefix: 'Bonus', title: 'Handbook', href: '/en/handbook' }
 ];
 
 const EnPage = props => <Page {...props} chapters={chapters} />;
