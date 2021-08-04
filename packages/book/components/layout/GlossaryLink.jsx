@@ -2,11 +2,15 @@ import React, { useMemo } from 'react';
 import { useLocationState } from '@sc/ui/hooks';
 import { Link } from '@sc/ui';
 import L from '../localize';
+import { useApp } from '../../tools';
 import s from './layout.css';
 
 const GlossaryLink = () => {
-    const [{ pathname }, , , goBack] = useLocationState(),
+    const { profile } = useApp(),
+        [{ pathname }, , , goBack] = useLocationState(),
         glossary = useMemo(() => /\/(en|ru)\/glossary/.test(pathname), [pathname]);
+
+    if (!profile.is_paid) return null;
 
     return (
         <>

@@ -14,6 +14,7 @@ export Icon from './components/icon';
 export Img from './components/img';
 export Link from './components/link';
 export Lottie from './components/lottie';
+export Modal from './components/modal';
 export Pre from './components/pre';
 export Section from './components/section';
 export Structure from './components/structure';

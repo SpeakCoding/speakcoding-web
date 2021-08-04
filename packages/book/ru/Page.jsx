@@ -5,7 +5,8 @@ const chapters = [
     {
         prefix: 1,
         title: 'Язык программирования. Части речи: классы и составляющие',
-        href: '/ru/chapter-1'
+        href: '/ru/chapter-1',
+        free: true
     },
     { prefix: 2, title: 'Части речи: функции', href: '/ru/chapter-2' },
     { prefix: 3, title: 'Создание и обновление объектов', href: '/ru/chapter-3' },

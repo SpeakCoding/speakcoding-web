@@ -1,0 +1,92 @@
+@import "../../theme.css";
+
+.root {
+    position: absolute;
+    z-index: var(--l-modal);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 240ms var(--animation-timing-function) 160ms;
+    transition-property: opacity, visibility;
+}
+
+.container.in {
+    opacity: 1;
+    visibility: visible;
+    transition-duration: 400ms;
+    transition-delay: 0ms;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(var(--c-black-rgb), 0.24);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-height: 80vh;
+    padding: 24px 24px 40px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    background-color: var(--c-white);
+    font: var(--t-base);
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.88);
+}
+
+.container.in .content {
+    animation: modal-in 400ms var(--animation-timing-function) 160ms forwards;
+}
+
+.container.out .content {
+    animation: modal-out 240ms var(--animation-timing-function) forwards;
+}
+
+@keyframes modal-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.88);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes modal-out {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.88);
+    }
+}
+
+.close {
+    position: absolute;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    top: 16px;
+    right: 16px;
+}

@@ -54,7 +54,20 @@ const App = () => {
 
     if (!auth) return <Login onSuccess={initProfile} />;
     if (!profile) return null;
-    if (!profile.is_paid) return <Payment />;
+
+    if (!profile.is_paid)
+        return (
+            <app.Provider value={context}>
+                <BrowserRouter>
+                    <Switch>
+                        <Route path='/' exact component={Home} />
+                        <Route path='/en/chapter-1' component={EN.Preview} />
+                        <Route path='/ru/chapter-1' component={RU.Preview} />
+                        <Route component={Payment} />
+                    </Switch>
+                </BrowserRouter>
+            </app.Provider>
+        );
 
     return (
         <app.Provider value={context}>

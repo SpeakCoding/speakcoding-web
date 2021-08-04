@@ -5,7 +5,8 @@ const chapters = [
     {
         prefix: 1,
         title: 'Coding is a language. Parts of speech: classes and components',
-        href: '/en/chapter-1'
+        href: '/en/chapter-1',
+        free: true
     },
     { prefix: 2, title: 'Parts of speech: functions', href: '/en/chapter-2' },
     { prefix: 3, title: 'Create and update objects', href: '/en/chapter-3' },
