@@ -61,8 +61,8 @@ export default () => (
                         <b>How this is rendered in code</b>
                     </Grid.Cell>
                     <Grid.Cell border='right bottom' hlactive>
-                        The function “<HL color='wheat'>Show section with</HL>{' '}
-                        <HL color='light-sky-blue'>post</HL> <HL color='wheat'>comments</HL>”;{' '}
+                        The function "<HL color='wheat'>Show section with</HL>{' '}
+                        <HL color='light-sky-blue'>post</HL> <HL color='wheat'>comments</HL>";{' '}
                         <HL color='orange'>
                             if the number of comments in the Set of Comments is greater than 0, then
                             the function that displays the comments section is executed

@@ -56,7 +56,7 @@ export default () => (
                         <b>Example of changing a component value directly</b>
                     </Grid.Cell>
                     <Grid.Cell border='bottom'>
-                        <b>What it looks like in code</b>
+                        <b>How this is rendered in code</b>
                     </Grid.Cell>
 
                     <Grid.Cell border='right' dense='bottom' />
@@ -123,7 +123,7 @@ export default () => (
                         <b>Example of changing a component value with the function</b>
                     </Grid.Cell>
                     <Grid.Cell border='bottom'>
-                        <b>What it looks like in code</b>
+                        <b>How this is rendered in code</b>
                     </Grid.Cell>
 
                     <Grid.Cell border='right' dense='bottom' />

@@ -77,6 +77,15 @@ export default () => (
                         <li>Balance</li>
                     </ul>
                 </Structure>
+                <p>
+                    Please remember that a structured description does not normally include
+                    everything that you see on your screen or in the program’s interface. In order
+                    to create a description of a program, we need to focus on what the program is
+                    structured around: a set of audio files that can later be saved or bundled
+                    together to create an album, payments made from one user to another, or a
+                    message exchange. We’ll talk a little bit more about this in the assignment
+                    description.
+                </p>
             </Section.Main>
             <Section.Side>
                 <Section.Sticky center>

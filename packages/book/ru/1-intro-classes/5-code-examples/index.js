@@ -6,13 +6,12 @@ import Example from '../../../common/1/class-examples';
 export default () => (
     <>
         <Section>
-            <Section.Main>
+            <Section.Main narrow>
                 <p>
                     !Не обращайте внимания на слова, которых вы не знаете. Просто заметьте как текст
                     из описания превращается в код!
                 </p>
             </Section.Main>
-            <Section.Side />
         </Section>
         <Section>
             <Section.Main>
@@ -20,11 +19,10 @@ export default () => (
             </Section.Main>
         </Section>
         <Section>
-            <Section.Main>
+            <Section.Main narrow>
                 <p>Текст → Структура → Описание через код</p>
                 <p>ЭТО И ЕСТЬ ПРОГРАММИРОВАНИЕ!</p>
             </Section.Main>
-            <Section.Side />
         </Section>
         <Skill>
             То, чему ты сейчас научился пригодится тебе для составления технических спецификаций

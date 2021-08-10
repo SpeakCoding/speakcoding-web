@@ -16,7 +16,7 @@ const Example = () => {
             </HL>{' '}
             that we call{' '}
             <HL color='orange' active={slide >= 1}>
-                “Add Like”
+                "Add Like"
             </HL>
             ;{' '}
             <HL color='aquamarine' active={slide >= 4}>
@@ -42,33 +42,26 @@ export default () => (
     <>
         <Slides>
             <Section>
-                <Section.Main>
+                <Section.Main hlactive>
                     <h2>The definition of a function</h2>
                     <p>Defining all functions consists of the following:</p>
                     <Slides.Item>
                         <div className={s.message}>
-                            <HL color='orange' active>
-                                The Title
-                            </HL>
+                            <HL color='orange'>The Title</HL>
                         </div>
                         The particular name that the user selected for their convenience has no
                         bearing on the execution of the function
                     </Slides.Item>
                     <Slides.Item>
                         <div className={s.message}>
-                            <HL color='green' active>
-                                The class
-                            </HL>{' '}
-                            to which the function relates
+                            <HL color='green'>The class</HL> to which the function relates
                         </div>
                         There are some functions that are not specific to a particular class; we
                         will revisit these later in this text
                     </Slides.Item>
                     <Slides.Item>
                         <div className={s.message}>
-                            <HL color='plum' active>
-                                The sequence/list of operations
-                            </HL>
+                            <HL color='plum'>The sequence/list of operations</HL>
                             executed when performing this function for a particular instance
                         </div>
                         The sequence/list of operations is no different than if you were to draw up
@@ -76,22 +69,18 @@ export default () => (
                     </Slides.Item>
                     <Slides.Item>
                         <div className={s.message}>
-                            <HL color='aquamarine' active>
-                                The inputs (arguments)
-                            </HL>{' '}
-                            essential to perform this function
+                            <HL color='aquamarine'>The inputs (arguments)</HL> essential to perform
+                            this function
                         </div>
                         In some cases the function may not require arguments, in which case that
                         section will not appear in the definition
                     </Slides.Item>
                     <Slides.Item>
                         <div className={s.message}>
-                            <HL color='light-sky-blue' active>
-                                The class of the value
-                            </HL>{' '}
-                            that the function returns
+                            <HL color='light-sky-blue'>The class of the value</HL> that the function
+                            returns
                         </div>
-                        For example, a number or the text “The answer is yes”
+                        For example, a number or the text "The answer is yes"
                     </Slides.Item>
                 </Section.Main>
                 <Section.Side>
@@ -120,7 +109,7 @@ export default () => (
                         </Grid.Cell>
                         <Grid.Cell hlactive>
                             A function of the class <HL color='green'>Post</HL>, that we call{' '}
-                            <HL color='orange'>“Archive Post”</HL>;{' '}
+                            <HL color='orange'>"Archive Post"</HL>;{' '}
                             <HL color='aquamarine'>given a user</HL>, the function{' '}
                             <HL color='plum'>archives an instance of a Post</HL> and{' '}
                             <HL color='light-sky-blue'>does not return anything as a result</HL>.
@@ -128,43 +117,32 @@ export default () => (
                     </Grid>
                 </Section.Main>
             </Section.Block>
-        </Section>
-
-        <Section>
-            <Section.Main narrow>
-                <p>
-                    Therefore each <Term id='function'>function</Term>, whether it appears within a
-                    component <Term id='class'>class</Term> or independently, will include the
-                    following elements in its definition:
-                </p>
-                <ul>
-                    <li>
-                        <HL color='orange' active>
-                            Title
-                        </HL>
-                    </li>
-                    <li>
-                        <HL color='green' active>
-                            Class to which it belongs
-                        </HL>
-                    </li>
-                    <li>
-                        <HL color='plum' active>
-                            Sequences/list of operations that it performs
-                        </HL>
-                    </li>
-                    <li>
-                        <HL color='aquamarine' active>
-                            Arguments
-                        </HL>
-                    </li>
-                    <li>
-                        <HL color='light-sky-blue' active>
-                            Value that it returns (if any)
-                        </HL>
-                    </li>
-                </ul>
-            </Section.Main>
+            <Section.Block>
+                <Section.Main narrow hlactive>
+                    <p>
+                        Therefore each <Term id='function'>function</Term>, whether it appears
+                        within a component <Term id='class'>class</Term> or independently, will
+                        include the following elements in its definition:
+                    </p>
+                    <ul>
+                        <li>
+                            <HL color='orange'>Title</HL>
+                        </li>
+                        <li>
+                            <HL color='green'>Class to which it belongs</HL>
+                        </li>
+                        <li>
+                            <HL color='plum'>Sequences/list of operations that it performs</HL>
+                        </li>
+                        <li>
+                            <HL color='aquamarine'>Arguments</HL>
+                        </li>
+                        <li>
+                            <HL color='light-sky-blue'>Value that it returns (if any)</HL>
+                        </li>
+                    </ul>
+                </Section.Main>
+            </Section.Block>
         </Section>
 
         <Section>

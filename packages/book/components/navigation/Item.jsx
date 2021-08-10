@@ -5,10 +5,10 @@ import { useLocationState } from '@sc/ui/hooks';
 import { Link } from '@sc/ui';
 import s from './navigation.css';
 
-const Item = ({ href, children }) => {
+const Item = ({ disabled, href, children }) => {
     const [{ match }] = useLocationState({ path: href });
 
-    if (!href) return <div className={classNames(s.item, s.text, s.disabled)}>{children}</div>;
+    if (disabled) return <div className={classNames(s.item, s.text, s.disabled)}>{children}</div>;
 
     return (
         <div className={s.item}>
@@ -20,10 +20,12 @@ const Item = ({ href, children }) => {
 };
 
 Item.propTypes = {
+    disabled: pt.bool,
     href: pt.string
 };
 
 Item.defaultProps = {
+    disabled: false,
     href: undefined
 };
 

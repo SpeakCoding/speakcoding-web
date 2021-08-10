@@ -6,7 +6,7 @@ import Example from '../../../common/1/class-examples';
 export default () => (
     <>
         <Section>
-            <Section.Main>
+            <Section.Main narrow>
                 <p>
                     Please ignore unfamiliar words. Instead,{' '}
                     <b>
@@ -16,7 +16,6 @@ export default () => (
                     ; this is the essence of programming.
                 </p>
             </Section.Main>
-            <Section.Side />
         </Section>
         <Section>
             <Section.Main>
@@ -24,11 +23,10 @@ export default () => (
             </Section.Main>
         </Section>
         <Section>
-            <Section.Main>
+            <Section.Main narrow>
                 <p>Text → Structure → Definition using code</p>
                 <p>Again, this is the essence of programming.</p>
             </Section.Main>
-            <Section.Side />
         </Section>
         <Skill>
             What you have learnt in this chapter will help you create a PRD - product requirement

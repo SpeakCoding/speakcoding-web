@@ -23,7 +23,7 @@ export default () => (
                 .json", authorized: false, parameters: requestParameters)
             </Pre>
             <p>
-                The server is constantly “waiting” for such requests, and when it receives one, it
+                The server is constantly "waiting" for such requests, and when it receives one, it
                 performs the following actions:
             </p>
             <ol>

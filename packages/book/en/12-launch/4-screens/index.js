@@ -79,7 +79,7 @@ export default () => (
                     We’ve covered how each tab is an instance of the UINavigationController class.
                     The rootViewController component of this class contains an instance of the class
                     of one of our main ViewControllers. For example, for the first tab, this is
-                    FeedViewController. We have, so to speak, “wrapped” the ViewController into the
+                    FeedViewController. We have, so to speak, "wrapped" the ViewController into the
                     NavigationController. Now to each tab we need to assign a tabBarItem (an
                     instance of the UITabBarItem class), to which we then transfer two images (for
                     when the tab is active and when it’s not), and to assign an identification tag.

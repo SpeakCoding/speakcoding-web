@@ -16,7 +16,7 @@ class [[User]](orange) {
 export default () => (
     <>
         <Section>
-            <Section.Main>
+            <Section.Main narrow>
                 <h2>Пример записи обращения/вызова функции</h2>
                 <p>Общий вид обращения:</p>
                 <Pre>имя_функции(список_вводных)</Pre>

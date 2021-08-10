@@ -67,7 +67,7 @@ export default () => (
                         <b>In writing</b>
                     </Grid.Cell>
                     <Grid.Cell border='bottom'>
-                        <b>What it looks like in code</b>
+                        <b>How this is rendered in code</b>
                     </Grid.Cell>
 
                     <Grid.Cell border='right' hlactive>

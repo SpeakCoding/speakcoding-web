@@ -24,7 +24,8 @@ const PageHeader = ({ chapter, chapters }) => {
                                 {chapters.map(item => (
                                     <Navigation.Item
                                         key={item.title}
-                                        href={item.free || profile.is_paid ? item.href : undefined}
+                                        href={item.href}
+                                        disabled={!item.free && !profile.is_paid}
                                     >
                                         {item.prefix && (
                                             <span className={s.prefix}>{item.prefix}.&nbsp;</span>

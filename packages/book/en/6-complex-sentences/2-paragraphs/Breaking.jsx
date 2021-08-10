@@ -109,7 +109,7 @@ export default () => (
                         <HL color='red'>If so</HL>,{' '}
                         <HL color='plum'>it displays a photo from their profile</HL>{' '}
                         <HL color='wheat'>
-                            with the caption "Liked by {'{user}'}" or “Liked by [user] and others”
+                            with the caption "Liked by {'{user}'}" or "Liked by [user] and others"
                         </HL>
                         , <HL color='aquamarine'>if there is more than one such like</HL>.
                     </Grid.Cell>

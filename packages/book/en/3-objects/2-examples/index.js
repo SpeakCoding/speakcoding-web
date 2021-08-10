@@ -47,7 +47,7 @@ export default () => (
                             state can be specified as the default value. Instagram’s default value
                             for an object of the Comment class is 0. (Example: we are all born
                             without an education. The default value for the Education characteristic
-                            of the Person class here would be “no education”.)
+                            of the Person class here would be "no education".)
                         </li>
                     </ul>
                 </Callout>

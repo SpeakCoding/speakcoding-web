@@ -43,7 +43,7 @@ export default () => (
                             <b>The description of the function in text</b>
                         </Grid.Cell>
                         <Grid.Cell border='bottom'>
-                            <b>What it looks like in code</b>
+                            <b>How this is rendered in code</b>
                         </Grid.Cell>
 
                         <Grid.Cell border='right' hlactive>
@@ -74,10 +74,10 @@ export default () => (
                             </HL>{' '}
                             and the{' '}
                             <HL color='plum'>
-                                caption “Liked by {'{user}'} and {'{others}'}”
+                                caption "Liked by {'{user}'} and {'{others}'}"
                             </HL>
                             , <HL color='green-yellow'>if there is more than one like</HL>, or{' '}
-                            <HL color='plum'>“Liked by {'{user}'}”</HL>
+                            <HL color='plum'>"Liked by {'{user}'}"</HL>
                         </Grid.Cell>
                         <Grid.Cell dense='top' hlactive>
                             <Code value={code3} />

@@ -20,10 +20,10 @@ end
 const code2 = `
 let request = makeRequest(method: HTTPMethod.POST, endpoint: "/[[posts]](light-sky-blue).json", authorized: true, parameters: requestParameters)
 
-create_table (“posts”) do |table_posts|
-    table_posts.[[bigint]](sandy-brown)(“user_id”)
-    table_posts.string(“caption”)
-    table_posts.string(“location”)
+create_table ("posts") do |table_posts|
+    table_posts.[[bigint]](sandy-brown)("user_id")
+    table_posts.string("caption")
+    table_posts.string("location")
 
     table_posts.timestamps()
 end

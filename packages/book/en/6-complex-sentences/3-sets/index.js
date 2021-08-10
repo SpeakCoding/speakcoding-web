@@ -101,12 +101,12 @@ export default () => (
                 <HL color='aquamarine' active>
                     workMembers
                 </HL>{' '}
-                = [“developer”: User(userName: “John”)];
+                = ["developer": User(userName: "John")];
             </Pre>
             <p>Now we add some of their colleagues:</p>
             <Pre>
-                workMembers[“designer”] = User(userName: “Jess”); <br />
-                workMembers[“product”] = User(userName: “Beck”);
+                workMembers["designer"] = User(userName: "Jess"); <br />
+                workMembers["product"] = User(userName: "Beck");
             </Pre>
             <p>
                 Now we can call any of the elements in the set by its name, which is known in
@@ -114,7 +114,7 @@ export default () => (
                 and product. For example, let’s say we need to discover the name of the product
                 manager from the user’s team. We simply write:
             </p>
-            <Pre>workMembers[“product”].userName</Pre>
+            <Pre>workMembers["product"].userName</Pre>
             <p>
                 As we can see, there are no numbers, and we don’t need to remember where in the
                 dictionary (set) we have stored the objects. Instead, we call their elements by key.

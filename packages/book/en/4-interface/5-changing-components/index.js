@@ -37,7 +37,7 @@ export default () => (
                         <li>Its size is 64х64 pixels</li>
                         <li>
                             If there is no picture (or if we haven’t yet loaded it from the memory
-                            or server), we use a “placeholder”
+                            or server), we use a "placeholder"
                         </li>
                         <li>
                             The picture needs to be cropped into a circle (more about this later)
@@ -90,7 +90,7 @@ export default () => (
                             <b>The description of the Like function and its elements in text</b>
                         </Grid.Cell>
                         <Grid.Cell border='bottom'>
-                            <b>What it looks like in code</b>
+                            <b>How this is rendered in code</b>
                         </Grid.Cell>
                         <Grid.Cell border='right' hlactive>
                             <p>

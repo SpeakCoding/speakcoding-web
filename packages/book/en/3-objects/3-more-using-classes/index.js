@@ -11,7 +11,7 @@ export default () => (
                 which we discussed in the first part, we don’t need to launch the constructor
                 function; instead, we can write the corresponding value directly into the code. For
                 example, for a text string, we can simply write the value in quote marks
-                (“example”), while for numerical values we can write the number.
+                ("example"), while for numerical values we can write the number.
             </p>
             <p>Example code:</p>
             <Pre>

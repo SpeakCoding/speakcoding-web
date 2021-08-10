@@ -54,16 +54,20 @@
     letter-spacing: 1px;
 }
 
-.main > h1 {
+.main h1 {
     margin-bottom: 24px;
 }
 
-.main > h2 {
+.main h2 {
     margin-bottom: 16px;
 }
 
 .main p {
     margin: 0 0 16px;
+}
+
+.block:last-child .main p:last-child {
+    margin: 0;
 }
 
 .main ul,

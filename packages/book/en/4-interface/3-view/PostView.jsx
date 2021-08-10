@@ -65,8 +65,8 @@ export default () => {
                             </ul>
                             <br />
                             <li>
-                                <HL c='grey'>Post Caption</HL> (shortened if too long, with “...
-                                more” to see full text)
+                                <HL c='grey'>Post Caption</HL> (shortened if too long, with "...
+                                more" to see full text)
                             </li>
                             <li>
                                 <HL c='orange'>View all comments</HL> (with a number of comments)

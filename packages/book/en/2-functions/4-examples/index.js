@@ -28,7 +28,7 @@ export default () => (
                     <b>In writing</b>
                 </Grid.Cell>
                 <Grid.Cell border='bottom'>
-                    <b>What it looks like in code</b>
+                    <b>How this is rendered in code</b>
                 </Grid.Cell>
 
                 <Grid.Cell border='right' />
@@ -65,7 +65,7 @@ export default () => (
                 </Grid.Cell>
                 <Grid.Cell border='right' hlactive>
                     A function of the class <HL color='orange'>Post</HL> that we call{' '}
-                    <HL color='green'>“Add Like”</HL>; <HL color='aquamarine'>given a user</HL>, the
+                    <HL color='green'>"Add Like"</HL>; <HL color='aquamarine'>given a user</HL>, the
                     function{' '}
                     <HL color='plum'>
                         creates a like from that user and adds it to that post’s list of likes, and
@@ -81,7 +81,7 @@ export default () => (
                 <Grid.Cell border='right' />
                 <Grid.Cell border='right' hlactive>
                     Or a function of the class <HL color='orange'>Post</HL> that we call{' '}
-                    <HL color='green'>“Number of Likes”</HL>;{' '}
+                    <HL color='green'>"Number of Likes"</HL>;{' '}
                     <HL color='aquamarine'>it does not require any inputs</HL>,{' '}
                     <HL color='plum'>it determines how many likes a post has</HL>{' '}
                     <HL color='light-sky-blue'>and communicates that number</HL>.

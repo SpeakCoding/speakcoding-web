@@ -6,7 +6,7 @@ import Term from '../../glossary/Term';
 export default () => (
     <>
         <Section>
-            <Section.Main>
+            <Section.Main narrow>
                 <h2>Класс</h2>
                 <p>
                     Для того чтобы программа позволила вам создавать <i>конкретный</i> пост или,
@@ -34,7 +34,6 @@ export default () => (
                     записывается на разных языках программирования.
                 </p>
             </Section.Main>
-            <Section.Side />
         </Section>
         <Section>
             <Section.Main>

@@ -27,7 +27,7 @@ export default () => (
                     <b>Описание функции текстом</b>
                 </Grid.Cell>
                 <Grid.Cell border='bottom'>
-                    <b>Описание функции кодом</b>
+                    <b>Как это выглядит в коде</b>
                 </Grid.Cell>
 
                 <Grid.Cell border='right' />

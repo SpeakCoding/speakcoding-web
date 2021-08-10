@@ -3,7 +3,7 @@ import { Code, Grid, HL, Pre, Section } from '@sc/ui';
 
 const code1 = `
 hasTable(name: String) -> Bool {
-    let result = database.[[executeQuery(sqlQuery: SELECT]](green-yellow) [[count]](red)[[(*)]](floral-white) FROM [[sqlite_master]](wheat) [[WHERE type=”table” AND name=”post”]](steel-blue);
+    let result = database.[[executeQuery(sqlQuery: SELECT]](green-yellow) [[count]](red)[[(*)]](floral-white) FROM [[sqlite_master]](wheat) [[WHERE type="table" AND name="post"]](steel-blue);
 `;
 
 const code2 = `
@@ -14,7 +14,7 @@ const code3 = `func hasTable ([[inputName]](orange): String) {
     let query = """
         SELECT count(*) 
         FROM sqlite_master 
-        WHERE type=”table” AND [[name=?]](orange)
+        WHERE type="table" AND [[name=?]](orange)
         """
     let result = database.executeQuery(
         sqlQuery: query,

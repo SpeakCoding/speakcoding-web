@@ -32,9 +32,9 @@ export default () => (
                     </div>
                 </div>
                 <div className={s.slide}>
-                    <div className={s.title}>Keyword “func”</div>
+                    <div className={s.title}>Keyword "func"</div>
                     <div>
-                        In many programming languages, the keyword “func” is written before the
+                        In many programming languages, the keyword "func" is written before the
                         function title.
                     </div>
                 </div>

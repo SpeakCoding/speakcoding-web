@@ -53,7 +53,7 @@ export default () => (
                     When you open Instagram, you see a screen with a form (shown here to the right).
                     It consists of <b>Username</b>, <b>Email</b>, and <b>Password</b> fields, and a{' '}
                     <b>Submit</b> button. As we discussed previously (and we’ll cover this again in
-                    this section), this form is a separate display class (called “view”), which
+                    this section), this form is a separate display class (called "view"), which
                     defines the components needed to register a new user. To this class, we now add
                     the sequence of steps taken by the function that is called when the user presses
                     the Submit button. This sequence is needed for the information the User entered

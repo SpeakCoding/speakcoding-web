@@ -6,7 +6,7 @@ import Term from '../../glossary/Term';
 export default () => (
     <>
         <Section>
-            <Section.Main>
+            <Section.Main narrow>
                 <h2>Classes</h2>
                 <p>
                     Instagram allows users to create specific instances of certain elements,
@@ -33,7 +33,6 @@ export default () => (
                     similar to programming. <b>Let’s look at the table below.</b>
                 </p>
             </Section.Main>
-            <Section.Side />
         </Section>
         <Section>
             <Section.Main>

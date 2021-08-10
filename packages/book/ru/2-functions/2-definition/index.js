@@ -41,7 +41,7 @@ export default () => (
     <>
         <Slides>
             <Section>
-                <Section.Main>
+                <Section.Main hlactive>
                     <h2>Описание (определение) функции</h2>
                     <p>Описание всех функций состоит из:</p>
                     <Slides.Item>
@@ -103,7 +103,7 @@ export default () => (
 
         <Section>
             <Section.Block>
-                <Section.Main>
+                <Section.Main narrow>
                     <p>
                         Есть функции, которые не передают/возвращают никакого значения в результате
                         своего исполнения. Это значит, что она изменяет состояние экземпляра, но нам
@@ -127,48 +127,47 @@ export default () => (
                     </Grid>
                 </Section.Main>
             </Section.Block>
+            <Section.Block>
+                <Section.Main narrow hlactive>
+                    <p>
+                        Таким образом, у каждой <Term id='function'>функции</Term>, будь она внутри
+                        описания какого-то <Term id='class'>класса</Term> или сама по себе, будут
+                        следующие элементы описания:
+                    </p>
+                    <ul>
+                        <li>
+                            <HL color='orange' active>
+                                Название
+                            </HL>
+                        </li>
+                        <li>
+                            <HL color='green' active>
+                                Класс к которому она относится
+                            </HL>
+                        </li>
+                        <li>
+                            <HL color='plum' active inline={3}>
+                                Последовательность/список операций, которые она совершает
+                            </HL>
+                        </li>
+                        <li>
+                            <HL color='aquamarine' active>
+                                Вводные
+                            </HL>
+                        </li>
+                        <li>
+                            <HL color='light-sky-blue' active>
+                                Значение, которое она передает
+                            </HL>
+                        </li>
+                    </ul>
+                </Section.Main>
+                <Section.Side />
+            </Section.Block>
         </Section>
 
         <Section>
-            <Section.Main>
-                <p>
-                    Таким образом, у каждой <Term id='function'>функции</Term>, будь она внутри
-                    описания какого-то <Term id='class'>класса</Term> или сама по себе, будут
-                    следующие элементы описания:
-                </p>
-                <ul>
-                    <li>
-                        <HL color='orange' active>
-                            Название
-                        </HL>
-                    </li>
-                    <li>
-                        <HL color='green' active>
-                            Класс к которому она относится
-                        </HL>
-                    </li>
-                    <li>
-                        <HL color='plum' active inline={3}>
-                            Последовательность/список операций, которые она совершает
-                        </HL>
-                    </li>
-                    <li>
-                        <HL color='aquamarine' active>
-                            Вводные
-                        </HL>
-                    </li>
-                    <li>
-                        <HL color='light-sky-blue' active>
-                            Значение, которое она передает
-                        </HL>
-                    </li>
-                </ul>
-            </Section.Main>
-            <Section.Side />
-        </Section>
-
-        <Section>
-            <Section.Main>
+            <Section.Main narrow>
                 <h2>Обращение к /вызов функции</h2>
                 <p>
                     После того как мы описали функцию, мы можем обратиться к ней/вызвать ее в разных
