@@ -19,7 +19,7 @@ const Payment = () => {
                     secure payment. SpeakCoding does not store your information
                 </div>
                 <div className={s.action}>
-                    <Button block onClick={pay}>
+                    <Button block onClick={() => pay('extensive')}>
                         Proceed to payment
                     </Button>
                 </div>

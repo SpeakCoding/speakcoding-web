@@ -32,6 +32,10 @@
     padding: 10px 12px;
 }
 
+.box.large {
+    font: 500 var(--t-base);
+}
+
 .box.rounded {
     padding: 0 12px;
     border-radius: 16px;

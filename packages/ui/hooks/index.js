@@ -1,3 +1,4 @@
+export useClickOutside from './clickoutside';
 export useKeyPress from './keypress';
 export useLocationState from './location';
 export useSafeTimeout from './safetimeout';

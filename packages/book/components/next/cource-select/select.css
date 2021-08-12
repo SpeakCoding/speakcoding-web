@@ -1,0 +1,61 @@
+.box {
+    position: relative;
+    width: 100%;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 56px;
+    padding: 0 16px 0 24px;
+    box-sizing: border-box;
+    border: 1px solid var(--c-black);
+    border-radius: 8px;
+    background: none;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    transition: border-color var(--animation);
+}
+
+.control:focus {
+    border-color: var(--c-primary-500);
+}
+
+.options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    margin-top: 4px;
+    padding: 8px 0;
+    background-color: var(--c-white);
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--animation);
+    transition-property: margin-top, opacity, visibility;
+    z-index: var(--l-dropdown);
+}
+
+.options.opened {
+    margin-top: 8px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 24px;
+    cursor: pointer;
+}
+
+.option:hover,
+.option.selected {
+    background-color: var(--c-grey-100);
+}

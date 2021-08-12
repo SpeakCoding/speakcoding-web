@@ -31,3 +31,31 @@ export function injectScript(src, dest = document.body) {
         dest.appendChild(script);
     });
 }
+
+export function isElementFixed($node) {
+    return $node instanceof Element && getComputedStyle($node)?.position === 'fixed';
+}
+
+export function getWindowSize() {
+    return {
+        top: 0,
+        right: window.innerWidth,
+        bottom: window.innerHeight,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight
+    };
+}
+
+export function getElementSize($element) {
+    const { top = 0, right = 0, bottom = 0, left = 0 } = $element?.getBoundingClientRect() || {};
+
+    return {
+        top,
+        right,
+        bottom,
+        left,
+        width: right - left,
+        height: bottom - top
+    };
+}

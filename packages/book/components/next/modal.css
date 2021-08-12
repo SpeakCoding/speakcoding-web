@@ -13,11 +13,21 @@
 }
 
 .title {
+    margin-bottom: 8px;
     font: var(--t-h2);
     line-height: 30px;
 }
 
 .text {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     color: var(--c-grey-500);
+}
+
+.choose {
+    margin-bottom: 8px;
+}
+
+.intensity {
+    width: 100%;
+    margin-bottom: 12px;
 }

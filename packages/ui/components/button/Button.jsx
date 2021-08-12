@@ -22,7 +22,7 @@ const Button = ({ block, icon, size, variant, children, onClick }) => (
 Button.propTypes = {
     block: pt.bool,
     icon: pt.string,
-    size: pt.oneOf(['default', 'small']),
+    size: pt.oneOf(['default', 'small', 'large']),
     variant: pt.oneOf(['contained', 'rounded', 'white']),
     onClick: pt.func
 };
