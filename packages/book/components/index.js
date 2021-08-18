@@ -1,4 +1,5 @@
 export * from './cards';
+export CourseSelect from './cource-select';
 export Glossary from './glossary';
 export Header from './header';
 export L from './localize';

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@sc/ui';
-import { Logo } from '../components';
+import { CourseSelect, Logo } from '../components';
 import { usePayment } from './utils';
 import s from './payment.css';
 
 const Payment = () => {
-    const pay = usePayment();
+    const pay = usePayment(),
+        [intensity, setIntensity] = useState('extensive');
 
     return (
         <div className={s.box}>
@@ -18,8 +19,14 @@ const Payment = () => {
                     When you click the button below, you'll be redirected to our Stripe account for
                     secure payment. SpeakCoding does not store your information
                 </div>
+
+                <div className={s.choose}>Choose your course:</div>
+                <div className={s.intensity}>
+                    <CourseSelect lang='en' onChange={setIntensity} />
+                </div>
+
                 <div className={s.action}>
-                    <Button block onClick={() => pay('extensive')}>
+                    <Button block size='large' onClick={() => pay(intensity)}>
                         Proceed to payment
                     </Button>
                 </div>

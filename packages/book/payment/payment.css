@@ -13,7 +13,7 @@
 }
 
 .content {
-    width: 462px;
+    width: 570px;
     text-align: center;
 }
 
@@ -30,11 +30,19 @@
 
 .message {
     margin-bottom: 24px;
-    line-height: 22px;
     color: var(--c-grey-500);
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.choose {
+    margin-bottom: 8px;
+}
+
+.intensity {
+    margin-bottom: 12px;
 }
 
 .action {
-    display: inline-block;
-    width: 230px;
+    /*display: inline-block;*/
 }
