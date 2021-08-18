@@ -79,9 +79,9 @@ const App = () => {
                     <Route path='/en/chapter-1' component={EN.Intro} />
                     <Route path='/en/chapter-2' component={EN.Functions} />
                     <Route path='/en/chapter-3' component={EN.Objects} />
-                    {admin && <Route path='/en/chapter-4' component={EN.Interface} />}
-                    {admin && <Route path='/en/chapter-5' component={EN.Repositories} />}
-                    {admin && <Route path='/en/chapter-6' component={EN.ComplexSentences} />}
+                    <Route path='/en/chapter-4' component={EN.Interface} />
+                    <Route path='/en/chapter-5' component={EN.Repositories} />
+                    <Route path='/en/chapter-6' component={EN.ComplexSentences} />
                     {admin && <Route path='/en/chapter-7' component={EN.OnlineSearch} />}
                     {admin && <Route path='/en/chapter-8' component={EN.Storage} />}
                     {admin && <Route path='/en/chapter-9' component={EN.API} />}
@@ -94,9 +94,9 @@ const App = () => {
                     <Route path='/ru/chapter-1' component={RU.Intro} />
                     <Route path='/ru/chapter-2' component={RU.Functions} />
                     <Route path='/ru/chapter-3' component={RU.Objects} />
-                    {admin && <Route path='/ru/chapter-4' component={RU.Interface} />}
-                    {admin && <Route path='/ru/chapter-5' component={RU.Repositories} />}
-                    {admin && <Route path='/ru/chapter-6' component={RU.ComplexSentences} />}
+                    <Route path='/ru/chapter-4' component={RU.Interface} />
+                    <Route path='/ru/chapter-5' component={RU.Repositories} />
+                    <Route path='/ru/chapter-6' component={RU.ComplexSentences} />
                     {admin && <Route path='/ru/chapter-7' component={RU.OnlineSearch} />}
                     {admin && <Route path='/ru/chapter-8' component={RU.Storage} />}
                     {admin && <Route path='/ru/chapter-9' component={RU.API} />}

@@ -10,9 +10,9 @@ const chapters = [
     },
     { prefix: 2, title: 'Части речи: функции', href: '/ru/chapter-2' },
     { prefix: 3, title: 'Создание и обновление объектов', href: '/ru/chapter-3' },
-    { prefix: 4, title: 'Интерфейс', href: '/ru/chapter-4', disabled: true },
-    { prefix: 5, title: 'Репозитории и редакторы', href: '/ru/chapter-5', disabled: true },
-    { prefix: 6, title: 'Сложносочиненные предложения', href: '/ru/chapter-6', disabled: true },
+    { prefix: 4, title: 'Интерфейс', href: '/ru/chapter-4' },
+    { prefix: 5, title: 'Репозитории и редакторы', href: '/ru/chapter-5' },
+    { prefix: 6, title: 'Сложносочиненные предложения', href: '/ru/chapter-6' },
     {
         prefix: 7,
         title: 'Библиотеки и как находить то, что вам нужно',

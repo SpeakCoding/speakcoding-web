@@ -10,9 +10,9 @@ const chapters = [
     },
     { prefix: 2, title: 'Parts of speech: functions', href: '/en/chapter-2' },
     { prefix: 3, title: 'Create and update objects', href: '/en/chapter-3' },
-    { prefix: 4, title: 'Interface', href: '/en/chapter-4', disabled: true },
-    { prefix: 5, title: 'Repositories and editors', href: '/en/chapter-5', disabled: true },
-    { prefix: 6, title: 'Complex sentences', href: '/en/chapter-6', disabled: true },
+    { prefix: 4, title: 'Interface', href: '/en/chapter-4' },
+    { prefix: 5, title: 'Repositories and editors', href: '/en/chapter-5' },
+    { prefix: 6, title: 'Complex sentences', href: '/en/chapter-6' },
     {
         prefix: 7,
         title: 'Libraries and how to find what you need',
