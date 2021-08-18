@@ -22,6 +22,6 @@ export async function scrollToTop() {
     if ($content) $content.scrollTop = 0;
 }
 
-export async function navigate(name, params = {}) {
-    emit('navigate', { name, params });
+export async function navigate(name, params = {}, settings) {
+    emit('navigate', { name, params, settings });
 }

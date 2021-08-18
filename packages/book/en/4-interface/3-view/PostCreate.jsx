@@ -18,7 +18,7 @@ export default () => {
         await interceptor.on();
         await interceptor.lock();
         await interceptor.setSession(profile.instagram_app_authentication_token, { soft: true });
-        await interceptor.navigate('post-form', { image });
+        await interceptor.navigate('post-form', { image }, { screenTransitionDuration: 400 });
         interceptor.open();
     }, [profile]);
 

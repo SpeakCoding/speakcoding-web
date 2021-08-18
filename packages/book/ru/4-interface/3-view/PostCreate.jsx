@@ -18,7 +18,7 @@ export default () => {
         await interceptor.on();
         await interceptor.lock();
         await interceptor.setSession(profile.instagram_app_authentication_token, { soft: true });
-        await interceptor.navigate('post-form', { image });
+        await interceptor.navigate('post-form', { image }, { screenTransitionDuration: 400 });
         interceptor.open();
     }, [profile]);
 
@@ -26,7 +26,7 @@ export default () => {
         <Section.Block>
             <Section.Main>
                 <InterceptorView onEnter={onEnter} onExit={onExit}>
-                    <p>When creating a new post, you’ll see this screen:</p>
+                    <p>При создании нового поста вы увидите такой экран:</p>
                     <Structure>
                         <h4>PostComposerView</h4>
                         <ul>

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
 import { listen, emit } from '@sc/tools/phone-event';
@@ -9,6 +9,7 @@ import s from './router.css';
 
 const Router = ({ initialScreen, initialScreenParams, initialTab, children }) => {
     const [state, dispatch] = useRouterState(initialScreen, initialScreenParams, initialTab),
+        $display = useRef(),
         tabs = useMemo(
             () => Object.keys(state.tabs).map(name => ({ ...state.tabs[name], name })),
             [state.tabs]
@@ -38,7 +39,12 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
                     });
                     break;
                 case 'navigate': {
-                    const { name, params } = event.detail.payload;
+                    const { name, params, settings } = event.detail.payload;
+                    if (settings?.screenTransitionDuration)
+                        $display.current.style.setProperty(
+                            '--screen-transition',
+                            `transform ${settings.screenTransitionDuration}ms ease-out`
+                        );
                     navigate(name, params);
                     break;
                 }
@@ -51,7 +57,7 @@ const Router = ({ initialScreen, initialScreenParams, initialTab, children }) =>
 
     return (
         <context.Provider value={value}>
-            <div className={s.display} data-control='display'>
+            <div ref={$display} className={s.display} data-control='display'>
                 {tabs.map(({ name, history, pointer }) => (
                     <div key={name} className={classNames(s.tab, name !== state.tab && s.hidden)}>
                         {history.map((item, i) => {
