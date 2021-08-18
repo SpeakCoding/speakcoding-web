@@ -41,6 +41,10 @@ export default () => (
                                 the web interface, using the branch-selection button on the left of
                                 the screen immediately above the folders containing the code. The
                                 other is in GitHub Desktop, by pressing the Current Branch button.
+                                You can create a new branch there, too. In the web version of GitHub
+                                just start typing the name of a branch, for example your
+                                Name_LastName and click “create branch”. In GitHub Desktop click
+                                Current Branch, choose New Branch → type in your Name_LastName.
                             </p>
                         </Section.Main>
                     </Section.Block>

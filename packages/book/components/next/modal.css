@@ -2,13 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 592px;
+    width: 560px;
 }
 
 .img {
     width: 140px;
     height: 140px;
-    margin: 36px 0 12px;
+    margin: 20px 0 12px;
     background-image: url(./party.svg);
 }
 

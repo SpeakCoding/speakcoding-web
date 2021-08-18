@@ -12,13 +12,19 @@ export default () => (
                 <h1>Cloning the repository</h1>
                 <p>
                     In order to code, you will need to create a local copy of the repository (a
-                    procedure known as cloning). The simplest way to do this is to use the GitHub
-                    Desktop program, providing a link to the repository (e.g.,{' '}
+                    procedure known as cloning). Open the link to the SpeakCoding repository above.
+                    Next to the developer’s name you will see a menu with “Go to file”, “Add file”,
+                    and “Code↓” buttons. If you click on “Code↓”, you’ll see the options for adding
+                    this repository to your computer. You can either download a zip file and open it
+                    in a code editor (Xcode or Visual Studio), or use the desktop version of Github
+                    - Github Desktop application. Having installed Github Desktop, you can then copy
+                    the link to the SpeakCoding repository (
                     <Link href='https://github.com/SpeakCoding/iphone' blank>
                         https://github.com/SpeakCoding/iphone
                     </Link>
-                    ) and the local folder where files should be stored (for example your local
-                    Documents folder).
+                    ) and choose the local folder where files should be stored (for example your
+                    local Documents folder). In order to do this you’ll need to download GitHub
+                    Desktop and fill out the requested information.
                 </p>
             </Section.Main>
         </Section>

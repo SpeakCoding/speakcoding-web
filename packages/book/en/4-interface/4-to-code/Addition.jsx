@@ -7,12 +7,12 @@ export default () => (
     <Section.Main>
         <h2>
             In addition (Class inheritance){' '}
-            <Expand.Control htmlFor='2-5-1'>
+            <Expand.Control htmlFor='4-5-2'>
                 <Button variant='rounded'>⤵</Button>
             </Expand.Control>
         </h2>
 
-        <Expand id='2-5-1'>
+        <Expand id='4-5-2'>
             <Section.Block>
                 <Section.Main narrow>
                     <p>

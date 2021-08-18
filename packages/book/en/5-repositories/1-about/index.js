@@ -47,8 +47,9 @@ export default () => (
             number={6}
             href='https://docs.google.com/forms/d/e/1FAIpQLSfKBoJAr-xNjjcTmMQWRJrJRCV90A8RoSzb9SNTfFfNAj2rHg/viewform'
         >
-            Find the file that describes the controller responsible for displaying the PostFeedView,
-            and list all of its components and functions.
+            In the SpeakCoding repository (see the link in the beginning of the chapter) find a
+            controller file describing the display class of the PostFeedView, and list all of its
+            components and functions.
         </Assignment>
     </>
 );

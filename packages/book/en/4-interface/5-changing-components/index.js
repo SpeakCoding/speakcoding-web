@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, HL, Hint, Img, Section } from '@sc/ui';
+import { Button, Expand, Grid, HL, Hint, Img, Section } from '@sc/ui';
 import { Quiz } from '../../../components';
 import Term from '../../glossary/Term';
 import xcode from './xcode.png';
@@ -46,24 +46,32 @@ export default () => (
                     </ul>
                     <p>These are all components/properties of the UIImage class.</p>
                     <p>
-                        <b>Another example:</b>
+                        <b>Another example </b>
+                        <Expand.Control htmlFor='4-5-1'>
+                            <Button variant='rounded'>⤵</Button>
+                        </Expand.Control>
                     </p>
-                    <p>
-                        The picture in the Asynchronous Image View post in turn has this definition:
-                    </p>
-                    <ul>
-                        <li>Limited by a rectangular border 320 pixels wide by 300 pixels high</li>
-                        <li>
-                            The upper indentation after the previous Profile Picture element is 14
-                            pixels, while the indentation to the following Like Button element is 5
-                            pixels
-                        </li>
-                        <li>
-                            If there is no picture (or if the program hasn’t yet loaded it from the
-                            memory or server), then there will be a transparent background
-                        </li>
-                        <li>Double-clicking the picture should give it a like</li>
-                    </ul>
+                    <Expand id='4-5-1'>
+                        <p>
+                            The picture in the Asynchronous Image View post in turn has this
+                            definition:
+                        </p>
+                        <ul>
+                            <li>
+                                Limited by a rectangular border 320 pixels wide by 300 pixels high
+                            </li>
+                            <li>
+                                The upper indentation after the previous Profile Picture element is
+                                14 pixels, while the indentation to the following Like Button
+                                element is 5 pixels
+                            </li>
+                            <li>
+                                If there is no picture (or if the program hasn’t yet loaded it from
+                                the memory or server), then there will be a transparent background
+                            </li>
+                            <li>Double-clicking the picture should give it a like</li>
+                        </ul>
+                    </Expand>
                     <p>
                         <Term id='standard-classes' tooltip>
                             Standard classes

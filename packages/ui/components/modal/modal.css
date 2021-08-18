@@ -41,7 +41,7 @@
     flex-direction: column;
     position: relative;
     max-height: 80vh;
-    padding: 24px 24px 40px;
+    padding: 40px;
     box-sizing: border-box;
     border-radius: 16px;
     background-color: var(--c-white);

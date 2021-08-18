@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, HL, Hint, Img, Section } from '@sc/ui';
+import { Button, Expand, Grid, HL, Hint, Img, Section } from '@sc/ui';
 import { Quiz } from '../../../components';
 import Term from '../../glossary/Term';
 import xcode from './xcode.png';
@@ -45,26 +45,31 @@ export default () => (
                     </ul>
                     <p>Все это составляющие/характеристики класса UIImage.</p>
                     <p>
-                        <b>Еще один пример:</b>
+                        <b>Еще один пример </b>
+                        <Expand.Control htmlFor='4-5-1'>
+                            <Button variant='rounded'>⤵</Button>
+                        </Expand.Control>
                     </p>
-                    <p>
-                        Картинка поста Asynchronous Image View, в свою очередь, имеет такое
-                        описание:
-                    </p>
-                    <ul>
-                        <li>
-                            ограничена прямоугольной рамкой 320 пикселей в ширину и 300 в высоту
-                        </li>
-                        <li>
-                            отступ сверху от предыдущего элемента Profile Picture - 14 пикселей,
-                            отступ снизу от следующего элемента Like Button - 5 пикселей
-                        </li>
-                        <li>
-                            если картинки нет (или мы ее еще не загрузили ее из памяти или с
-                            сервера) прозрачный фон.
-                        </li>
-                        <li>при двойном нажатии на картинку, должен быть поставлен лайк</li>
-                    </ul>
+                    <Expand id='4-5-1'>
+                        <p>
+                            Картинка поста Asynchronous Image View, в свою очередь, имеет такое
+                            описание:
+                        </p>
+                        <ul>
+                            <li>
+                                ограничена прямоугольной рамкой 320 пикселей в ширину и 300 в высоту
+                            </li>
+                            <li>
+                                отступ сверху от предыдущего элемента Profile Picture - 14 пикселей,
+                                отступ снизу от следующего элемента Like Button - 5 пикселей
+                            </li>
+                            <li>
+                                если картинки нет (или мы ее еще не загрузили ее из памяти или с
+                                сервера) прозрачный фон.
+                            </li>
+                            <li>при двойном нажатии на картинку, должен быть поставлен лайк</li>
+                        </ul>
+                    </Expand>
                     <p>
                         Для{' '}
                         <Term id='standard-classes' tooltip>
