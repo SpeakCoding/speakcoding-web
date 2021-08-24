@@ -1,6 +1,7 @@
 import React from 'react';
 import { Callout, Img, Link, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
+import Term from '../../glossary/Term';
 import img from './google-search.png';
 
 export default () => (
@@ -61,8 +62,11 @@ export default () => (
                             том, какое действие программа должна совершить в результате
                         </li>
                         <li>
-                            Набросайте примерную структуру того, что вы хотите создать, в
-                            псевдо-коде. Вы сможете найти и добавить синтакс позже
+                            Набросайте примерную структуру того, что вы хотите создать, в{' '}
+                            <Term id='pseudocode' tooltip>
+                                псевдокоде
+                            </Term>
+                            . Вы сможете найти и добавить синтакс позже
                         </li>
                         <li>
                             Не уверены в решении? Скорее всего, вы не единственный, кто столкнулся с

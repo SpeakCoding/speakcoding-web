@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Grid, HL, Img, Pre, Section } from '@sc/ui';
+import { Callout, Code, Grid, HL, Img, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import img from './serialization.svg';
 
@@ -15,7 +15,9 @@ export default () => (
             <Section.Block>
                 <Section.Main>
                     <h2>Создание и изменение объектов</h2>
-                    <p>Для создания (записи) объектов на сервере используется запрос Post.</p>
+                    <Callout>
+                        POST - используется для создания (записи) объектов на сервере.
+                    </Callout>
                     <p>
                         Если мы хотим добавить новый пост, то информация, которую пользователь
                         введет в поля в интерфейсе: текст поста, картинка поста, и тд. (файл View

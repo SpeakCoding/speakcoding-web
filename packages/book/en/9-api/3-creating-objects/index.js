@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Grid, HL, Img, Pre, Section } from '@sc/ui';
+import { Callout, Code, Grid, HL, Img, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import img from './serialization.svg';
 
@@ -15,7 +15,9 @@ export default () => (
             <Section.Block>
                 <Section.Main>
                     <h2>Creating and changing objects</h2>
-                    <p>The Post request is used to create (write) objects on the server.</p>
+                    <Callout>
+                        POST: This request is used to create (write) objects on the server.
+                    </Callout>
                     <p>
                         Let’s say we wish to add a new post. The device first saves, to its local
                         database, the information that we enter into the interface, such as text and

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Callout, Img, Link, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
+import Term from '../../glossary/Term';
 import img from './google-search.png';
 
 export default () => (
@@ -55,7 +56,7 @@ export default () => (
                         </Link>{' '}
                         searches. To narrow the selection down to a particular resource, put a colon
                         between your search text and the resource to which you wish to limit your
-                        search, for example ‘neural networks: medium’. Google has other tricks too,
+                        search, for example ‘neural networks: medium’. Search has other tricks too,
                         such as inurl, intext, and site (we won’t cover them all here, feel free to
                         explore them for yourself).
                     </p>
@@ -66,8 +67,11 @@ export default () => (
                             should perform.
                         </li>
                         <li>
-                            Outline a rough structure in pseudocode of what you wish to create. You
-                            can add syntax later.
+                            Outline a rough structure in{' '}
+                            <Term id='pseudocode' tooltip>
+                                pseudocode
+                            </Term>{' '}
+                            of what you wish to create. You can add syntax later.
                         </li>
                         <li>
                             If you’re unsure of the solution, rest assured you’re probably not the
@@ -98,7 +102,7 @@ export default () => (
                                 quickly be found online.
                             </li>
                             <li>Focus on what you wish to create rather than on syntax.</li>
-                            <li>Google, ask, and learn from others’ mistakes.</li>
+                            <li>Search, ask, and learn from others’ mistakes.</li>
                             <li>
                                 As we know, languages’ structures are all similar. And the less time
                                 you spend on syntax, the quicker and easier you will find it to

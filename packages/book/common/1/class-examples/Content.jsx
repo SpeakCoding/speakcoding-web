@@ -29,7 +29,7 @@ const Content = ({ tab }) => (
                     <li><HL color='aquamarine' label='c1-b1-5'>Image / Set of images / Video</HL></li>
                     <li><HL color='steel-blue' label='c1-b1-8'>Set of likes</HL></li>
                     <li><HL color='grey' label='c1-b1-6'>Caption</HL></li>
-                    <li><HL color='green-yellow' label='c1-b1-7'>Set of comments</HL></li>
+                    <li><HL color='plum' label='c1-b1-7'>Set of comments</HL></li>
                 </ul>
             </Structure>
             <div>
@@ -42,8 +42,8 @@ const Content = ({ tab }) => (
             <Structure bordered={false}>
                 <HL color='aquamarine' label='c1-b1-10'>Image</HL>
                 <ul>
-                    <li><HL color='aquamarine' label='c1-b1-10'>Image Link</HL></li>
-                    <li><HL color='aquamarine' label='c1-b1-10'>Set of tags</HL></li>
+                    <li><HL color='red' label='c1-b1-11'>Image Link</HL></li>
+                    <li><HL color='blue' label='c1-b1-12'>Set of tags</HL></li>
                 </ul>
             </Structure>
             <div>
@@ -54,11 +54,11 @@ const Content = ({ tab }) => (
         <div className={s.row}>
             {/* prettier-ignore */}
             <Structure bordered={false}>
-                <HL color='wheat' label='c1-b1-11'>User</HL>
+                <HL color='wheat' label='c1-b1-13'>User</HL>
                 <ul>
-                    <li><HL color='wheat' label='c1-b1-11'>Username</HL></li>
-                    <li><HL color='wheat' label='c1-b1-11'>Profile Picture or Latest Story Image</HL></li>
-                    <li><HL color='wheat' label='c1-b1-11'>Image</HL></li>
+                    <li><HL color='turquoise' label='c1-b1-14'>Username</HL></li>
+                    <li><HL color='sandy-brown' label='c1-b1-15'>Profile Picture or Latest Story Image</HL></li>
+                    <li><HL color='powder-blue' label='c1-b1-16'>Image</HL></li>
                 </ul>
             </Structure>
             <div>

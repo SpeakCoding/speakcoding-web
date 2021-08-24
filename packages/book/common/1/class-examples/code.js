@@ -12,20 +12,20 @@ class [[Post]](green c1-b1-3) {
     [[video]](aquamarine c1-b1-5) Video
     [[setOfLikes]](steel-blue c1-b1-8) []Like
     [[caption]](grey c1-b1-6) Text
-    [[setOfComments]](green-yellow c1-b1-7) []Comment
+    [[setOfComments]](plum c1-b1-7) []Comment
 }
 \xa0
 ---
 class [[Image]](aquamarine c1-b1-10) {
-    [[imageLink]](aquamarine c1-b1-10) Text
-    [[setOfTags]](aquamarine c1-b1-10) []Tag
+    [[imageLink]](red c1-b1-11) Text
+    [[setOfTags]](blue c1-b1-12) []Tag
 }
 \xa0
 ---
-class [[User]](wheat c1-b1-11) {
-    [[username]](wheat c1-b1-11) Text
-    [[imageLink]](wheat c1-b1-11) Text
-    [[latestStoryImage]](wheat c1-b1-11) Image
+class [[User]](wheat c1-b1-13) {
+    [[username]](turquoise c1-b1-14) Text
+    [[latestStoryImage]](sandy-brown c1-b1-15) Image
+    [[imageLink]](powder-blue c1-b1-16) Text
 }`.split('---');
 
 export const python = `
@@ -43,19 +43,19 @@ class [[Post]](green c1-b1-3):
         [[self.video]](aquamarine c1-b1-5) = video
         [[self.likes]](steel-blue c1-b1-8) = []
         [[self.caption]](grey c1-b1-6) = caption
-        [[self.comments]](green-yellow c1-b1-7) = []
+        [[self.comments]](plum c1-b1-7) = []
 \xa0
 ---
 class [[Image]](aquamarine c1-b1-10):
     def __init__(self, url)
-        [[self.url]](aquamarine c1-b1-10) = url
-        [[self.tag]](aquamarine c1-b1-10) = [] // Tag()
+        [[self.url]](red c1-b1-11) = url
+        [[self.tag]](blue c1-b1-12) = [] // Tag()
 \xa0
 ---
-class [[User]](wheat c1-b1-11):
+class [[User]](wheat c1-b1-13):
     def __init__(self, url)
-        [[self.username]](wheat c1-b1-11) = username
-        [[self.picture_url]](wheat c1-b1-11)= picture_url
+        [[self.username]](turquoise c1-b1-14) = username
+        [[self.picture_url]](powder-blue c1-b1-16)= picture_url
 `.split('---');
 
 export const ruby = `
@@ -75,23 +75,23 @@ class [[Post]](green c1-b1-3)
         [[@video]](aquamarine c1-b1-5) = video
         [[@likes]](steel-blue c1-b1-8) = likes
         [[@caption]](grey c1-b1-6) = caption
-        [[@comments]](green-yellow c1-b1-7) = comments
+        [[@comments]](plum c1-b1-7) = comments
     end
 end
 \xa0
 ---
 class [[Image]](aquamarine c1-b1-10)
     def initialize(url, tags)
-        [[@url]](aquamarine c1-b1-10) = url
-        [[@tags]](aquamarine c1-b1-10) = tags
+        [[@url]](red c1-b1-11) = url
+        [[@tags]](blue c1-b1-12) = tags
        end
 end
 \xa0
 ---
-class [[User]](wheat c1-b1-11)
+class [[User]](wheat c1-b1-13)
     def initialize(username, picture_url)
-        [[@username]](wheat c1-b1-11) = username
-        [[@picture_url]](wheat c1-b1-11) = url
-       end
+        [[@username]](turquoise c1-b1-14) = username
+        [[@picture_url]](powder-blue c1-b1-16) = url
+    end
 end
 `.split('---');
