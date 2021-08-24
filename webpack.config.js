@@ -46,7 +46,7 @@ module.exports = {
         })
     ],
     devServer: {
-        before(app) {
+        onBeforeSetupMiddleware({ app }) {
             app.get('/', (req, res, next) => {
                 req.url = '/assets/index.html';
                 next();
@@ -58,6 +58,6 @@ module.exports = {
             });
         },
         port: process.env.PORT || 4000,
-        publicPath: '/assets/'
+        devMiddleware: { publicPath: '/assets/' }
     }
 };
