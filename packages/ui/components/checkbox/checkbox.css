@@ -1,0 +1,30 @@
+@import "../../theme.css";
+
+.label {
+    display: inline-block;
+    height: 20px;
+    padding: 2px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.control {
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 1px solid var(--c-black);
+    border-radius: 4px;
+    background: url(./check.svg) var(--c-white);
+    background-size: contain;
+    transition: background-color var(--animation);
+}
+
+.checkbox:checked ~ .control {
+    background-color: var(--c-black);
+}

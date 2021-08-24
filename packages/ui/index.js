@@ -2,6 +2,7 @@ export Breadcrumbs from './components/breadcrumbs';
 export Button from './components/button';
 export Callout from './components/callout';
 export Card from './components/card';
+export Checkbox from './components/checkbox';
 export Code from './components/code';
 export DateTime from './components/datetime';
 export Drawer from './components/drawer';
