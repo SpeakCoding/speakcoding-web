@@ -16,15 +16,13 @@ const chapters = [
     {
         prefix: 7,
         title: 'Libraries and how to find what you need',
-        href: '/en/chapter-7',
-        disabled: true
+        href: '/en/chapter-7'
     },
-    { prefix: 8, title: 'Long-term information storage', href: '/en/chapter-8', disabled: true },
+    { prefix: 8, title: 'Long-term information storage', href: '/en/chapter-8' },
     {
         prefix: 9,
         title: 'How programs interact with each other',
-        href: '/en/chapter-9',
-        disabled: true
+        href: '/en/chapter-9'
     },
     {
         prefix: 10,

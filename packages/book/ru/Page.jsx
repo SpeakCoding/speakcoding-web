@@ -16,15 +16,13 @@ const chapters = [
     {
         prefix: 7,
         title: 'Библиотеки и как находить то, что вам нужно',
-        href: '/ru/chapter-7',
-        disabled: true
+        href: '/ru/chapter-7'
     },
-    { prefix: 8, title: 'Долгосрочное хранение информации', href: '/ru/chapter-8', disabled: true },
+    { prefix: 8, title: 'Долгосрочное хранение информации', href: '/ru/chapter-8' },
     {
         prefix: 9,
         title: 'Как программы взаимодействуют друг с другом',
-        href: '/ru/chapter-9',
-        disabled: true
+        href: '/ru/chapter-9'
     },
     { prefix: 10, title: 'Что происходит на бекенде', href: '/ru/chapter-10', disabled: true },
     { prefix: 11, title: 'Сервер', href: '/ru/chapter-11', disabled: true },
