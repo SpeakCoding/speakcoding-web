@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import pt from 'prop-types';
-import s from './checkbox.css';
+import s from './radio.css';
 
-const Checkbox = ({ value: initial, disabled, name, onChange }) => {
+const Radio = ({ value: initial, disabled, name, onChange }) => {
     const [value, setValue] = useState(initial),
         dirty = useRef(false);
 
@@ -17,7 +17,7 @@ const Checkbox = ({ value: initial, disabled, name, onChange }) => {
     return (
         <label className={s.label}>
             <input
-                type='checkbox'
+                type='radio'
                 className={s.input}
                 checked={value}
                 disabled={disabled}
@@ -29,18 +29,18 @@ const Checkbox = ({ value: initial, disabled, name, onChange }) => {
     );
 };
 
-Checkbox.propTypes = {
+Radio.propTypes = {
     disabled: pt.bool,
-    value: pt.bool,
     name: pt.string,
+    value: pt.bool,
     onChange: pt.func
 };
 
-Checkbox.defaultProps = {
+Radio.defaultProps = {
     disabled: false,
-    value: false,
     name: undefined,
+    value: false,
     onChange: () => {}
 };
 
-export default Checkbox;
+export default Radio;

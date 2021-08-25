@@ -17,12 +17,21 @@
 .control {
     width: 20px;
     height: 20px;
+    padding: 5px;
     box-sizing: border-box;
     border: 1px solid var(--c-black);
-    border-radius: 4px;
-    background: url(./check.svg) var(--c-white);
-    background-size: contain;
+    border-radius: 10px;
+    background-color: var(--c-white);
     transition: background-color var(--animation);
+}
+
+.control::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: var(--c-white);
 }
 
 .input:checked ~ .control {

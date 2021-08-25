@@ -17,6 +17,7 @@ export Link from './components/link';
 export Lottie from './components/lottie';
 export Modal from './components/modal';
 export Pre from './components/pre';
+export Radio from './components/radio';
 export Section from './components/section';
 export Structure from './components/structure';
 export Tabs from './components/tabs';
