@@ -6,7 +6,7 @@ import s from './button.css';
 
 const Button = ({ block, children, disabled, id, loading, size, type, variant, onClick }) => (
     <button
-        className={classNames(s[variant], s[size], block && s.block)}
+        className={classNames(s.box, s[variant], s[size], block && s.block)}
         disabled={disabled || loading}
         id={id}
         type={type}

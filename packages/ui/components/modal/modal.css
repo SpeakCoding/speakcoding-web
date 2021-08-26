@@ -46,7 +46,6 @@
     border-radius: 16px;
     background-color: var(--c-white);
     font: var(--t-base);
-    text-align: center;
     opacity: 0;
     transform: scale(0.88);
 }
@@ -87,6 +86,26 @@
     width: 24px;
     height: 24px;
     line-height: 24px;
-    top: 16px;
-    right: 16px;
+    top: 24px;
+    right: 24px;
+    color: var(--c-grey-500);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 72px;
+    margin: -40px -40px 24px;
+    padding: 0 72px;
+    border-bottom: 1px solid var(--c-grey-200);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    height: 72px;
+    margin: 24px -40px -40px;
+    padding: 0 40px;
+    border-top: 1px solid var(--c-grey-200);
 }

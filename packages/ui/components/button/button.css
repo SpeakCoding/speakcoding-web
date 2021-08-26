@@ -62,3 +62,8 @@
     height: 24px;
     margin-right: 8px;
 }
+
+.box:disabled {
+    background-color: var(--c-grey-100);
+    cursor: not-allowed;
+}

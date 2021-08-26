@@ -58,6 +58,7 @@ module.exports = {
             });
         },
         port: process.env.PORT || 4000,
-        devMiddleware: { publicPath: '/assets/' }
+        devMiddleware: { publicPath: '/assets/' },
+        liveReload: false
     }
 };

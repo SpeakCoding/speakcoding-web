@@ -1,3 +1,4 @@
 export Assignment from './Assignment';
-export Quiz from './Quiz';
+export Quiz from './QuizOld';
+export QuizNew from './quiz';
 export Skill from './Skill';

@@ -28,3 +28,7 @@
 .input:checked ~ .control {
     background-color: var(--c-black);
 }
+
+.input:disabled ~ .control {
+    cursor: not-allowed;
+}

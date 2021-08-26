@@ -56,7 +56,7 @@
     color: var(--c-primary-alt-500);
 }
 
-:disabled {
+.box:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }

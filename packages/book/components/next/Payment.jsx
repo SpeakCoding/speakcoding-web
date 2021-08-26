@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Modal } from '@sc/ui';
 import L from '../localize';
-import CourseSelect from '../cource-select';
+import CourseSelect from '../course-select';
 import { usePayment } from '../../payment/utils';
 import { interceptor } from '../../phone';
 import s from './next.css';
