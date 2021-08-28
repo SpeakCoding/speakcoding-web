@@ -1,25 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import pt from 'prop-types';
 import s from './radio.css';
 
-const Radio = ({ value: initial, disabled, name, onChange }) => {
-    const [value, setValue] = useState(initial),
-        dirty = useRef(false);
-
+const Radio = ({ disabled, name, value, onChange }) => {
     const handleToggleValue = event => {
-        dirty.current = true;
-        setValue(event.target.checked);
-        onChange(event.target.checked);
+        onChange(event.target.checked, event);
     };
 
-    useEffect(() => setValue(initial), [initial]);
-
     return (
-        <label className={s.label}>
+        <label key={value} className={s.label}>
             <input
                 type='radio'
                 className={s.input}
-                checked={value}
+                defaultChecked={value}
                 disabled={disabled}
                 name={name}
                 onChange={handleToggleValue}

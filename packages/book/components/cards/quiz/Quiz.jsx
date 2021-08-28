@@ -1,8 +1,8 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import pt from 'prop-types';
 import { Button, Card, Modal } from '@sc/ui';
 import L from '../../localize';
-import MultipleChoice from './MultipleChoice';
+import { MultipleChoice, SingleChoice } from './types';
 import quizzes from '../../../quizzes';
 import s from './quiz.css';
 
@@ -68,16 +68,27 @@ const Quiz = ({ id: path }) => {
                                     onChange={handleChangeAnswer}
                                 />
                             )}
+                            {question.type === 'single-choice' && (
+                                <SingleChoice
+                                    key={i}
+                                    {...question}
+                                    answer={answers[i]}
+                                    onChange={handleChangeAnswer}
+                                />
+                            )}
                         </div>
 
                         <Modal.Footer>
-                            {!answers[i] && (
-                                <Button disabled={!currentAnswer} onClick={handleConfirmAnswer}>
+                            {answers[i] === undefined && (
+                                <Button
+                                    disabled={currentAnswer === undefined}
+                                    onClick={handleConfirmAnswer}
+                                >
                                     <L book='en'>Confirm</L>
                                     <L book='ru'>Подтвердить</L>
                                 </Button>
                             )}
-                            {!!answers[i] && (
+                            {answers[i] !== undefined && (
                                 <Button onClick={handleNext}>
                                     <L book='en'>Next</L>
                                     <L book='ru'>Далее</L>
