@@ -1,9 +1,11 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import pt from 'prop-types';
+import { useLocationState } from '@sc/ui/hooks';
 import { Button, Card, Modal } from '@sc/ui';
 import L from '../../localize';
-import { MultipleChoice, SingleChoice } from './types';
+import { useApp } from '../../../tools';
 import quizzes from '../../../quizzes';
+import { MultipleChoice, SingleChoice } from './types';
 import s from './quiz.css';
 
 const Quiz = ({ id: path }) => {
@@ -12,7 +14,9 @@ const Quiz = ({ id: path }) => {
         [opened, setOpened] = useState(false),
         [i, setI] = useState(0),
         [currentAnswer, setCurrentAnswer] = useState(),
-        [answers, setAnswers] = useState({});
+        { courses, updateCourse } = useApp(),
+        [{ params }] = useLocationState({ path: '/:id' }),
+        answers = courses[params.id]?.quizzes?.[id] || [];
 
     const openModal = useCallback(() => {
         if (quizzes[book]?.[id]) {
@@ -28,8 +32,8 @@ const Quiz = ({ id: path }) => {
     }, []);
 
     const handleConfirmAnswer = useCallback(() => {
-        setAnswers(current => ({ ...current, [i]: currentAnswer }));
-    }, [i, currentAnswer]);
+        updateCourse(params.id, 'quiz', { id, answers: [...answers, currentAnswer] });
+    }, [i, currentAnswer, answers, params.id, id]);
 
     const handleNext = useCallback(() => {
         setCurrentAnswer(undefined);

@@ -27,6 +27,12 @@ export function useCourses() {
         setCourses(next);
     }, []);
 
+    const save = (id, data) =>
+        fetch(`/courses/${id}.json`, {
+            method: 'PATCH',
+            body: { course: { data: JSON.stringify(data) } }
+        });
+
     const updateCourse = useCallback(
         (id, field, payload) => {
             const course = { ...(courses[id] || {}) };
@@ -36,12 +42,15 @@ export function useCourses() {
                     const { chapter, top } = payload;
                     if (course.pos?.chapter === chapter && course.pos?.top === top) return;
                     course.pos = { chapter, top };
-                    fetch(`/courses/${id}.json`, {
-                        method: 'PATCH',
-                        body: { course: { data: JSON.stringify(course) } }
-                    });
+                    save(id, course);
                     break;
                 }
+
+                case 'quiz':
+                    course.quizzes = course.quizzes || {};
+                    course.quizzes[payload.id] = payload.answers;
+                    save(id, course);
+                    break;
 
                 default:
             }
