@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section, Structure } from '@sc/ui';
-import { Quiz } from '../../../components';
+import { QuizNew as Quiz } from '../../../components';
 import { interceptor, InterceptorView } from '../../../phone';
 import HL from '../../../common/1/post-highlight';
 
@@ -80,11 +80,6 @@ export default () => (
             <Section.Side />
         </Section>
 
-        <Quiz
-            number={1}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSfZaUtfoPUolluT-ZUi32JG0rhzSdnmDlWYozt1Iafac6Ru7Q/viewform?usp=sf_link'
-        >
-            Введение: проверьте, удалось ли разобраться
-        </Quiz>
+        <Quiz id='ru/1' />
     </>
 );

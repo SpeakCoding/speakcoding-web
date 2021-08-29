@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, HL, Section } from '@sc/ui';
-import { Quiz } from '../../../components';
+import { QuizNew as Quiz } from '../../../components';
 import Term from '../../glossary/Term';
 import Slides, { useSlide } from '../../../common/2/function-definition-slides';
 import s from './style.css';
@@ -110,7 +110,6 @@ export default () => (
                         не нужно его запоминать для дальнейшей работы программы.
                     </p>
                 </Section.Main>
-                <Section.Side />
             </Section.Block>
             <Section.Block>
                 <Section.Main>
@@ -162,7 +161,6 @@ export default () => (
                         </li>
                     </ul>
                 </Section.Main>
-                <Section.Side />
             </Section.Block>
         </Section>
 
@@ -179,11 +177,6 @@ export default () => (
             <Section.Side />
         </Section>
 
-        <Quiz
-            number={3}
-            href='https://docs.google.com/forms/d/e/1FAIpQLScefPJNRkiqL9gZEMlNK7I17lkLEo-LsehIvDGUIsVsQ-jc7A/viewform?usp=sf_link'
-        >
-            Определение и описание функций
-        </Quiz>
+        <Quiz id='ru/3' />
     </>
 );

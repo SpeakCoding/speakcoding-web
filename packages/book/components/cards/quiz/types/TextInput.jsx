@@ -3,10 +3,12 @@ import pt from 'prop-types';
 import { debounce } from '@sc/tools/function';
 import { Textarea } from '@sc/ui';
 import { useLocale } from '../../../localize';
+import quizzes from '../../../../quizzes';
 import s from './types.css';
 
-const TextInput = ({ answer, comment, title, onChange }) => {
-    const { choose } = useLocale();
+const TextInput = ({ answer, asset, comment, title, onChange }) => {
+    const { choose } = useLocale(),
+        Asset = quizzes.assets[asset];
 
     const handleChange = useCallback(
         debounce(value => {
@@ -18,6 +20,12 @@ const TextInput = ({ answer, comment, title, onChange }) => {
     return (
         <>
             <h2 className={s.label}>{title}</h2>
+
+            {Asset && (
+                <div className={s.asset}>
+                    <Asset />
+                </div>
+            )}
 
             <Textarea
                 placeholder={choose({
@@ -36,6 +44,7 @@ const TextInput = ({ answer, comment, title, onChange }) => {
 
 TextInput.propTypes = {
     answer: pt.string,
+    asset: pt.string,
     comment: pt.string,
     title: pt.string,
     onChange: pt.func
@@ -43,6 +52,7 @@ TextInput.propTypes = {
 
 TextInput.defaultProps = {
     answer: undefined,
+    asset: undefined,
     comment: undefined,
     title: undefined,
     onChange: () => {}

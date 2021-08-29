@@ -1,6 +1,6 @@
 import React from 'react';
 import { Code, Grid, HL, Section } from '@sc/ui';
-import { Quiz, Skill } from '../../../components';
+import { QuizNew as Quiz, Skill } from '../../../components';
 import Term from '../../glossary/Term';
 
 const code1 = `func onClickCreateButton() {
@@ -34,12 +34,7 @@ export default () => (
             Чтобы изменять объекты в коде, писать приложения, вам всегда нужно будет создавать
             конкретные экземпляры (объекты) класса.
         </Skill>
-        <Quiz
-            number={4}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdaegA6liC9_pNhJomVNT4WSeuk2wB6q2ePW7xRZD59JbAZ3w/viewform?usp=sf_link'
-        >
-            Создание объектов и использование классов
-        </Quiz>
+        <Quiz id='ru/4' />
 
         <Section>
             <Section.Block>
@@ -158,11 +153,11 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Quiz
-            number={5}
-            href='https://docs.google.com/forms/d/e/1FAIpQLScM50jfN89h754fv9PUvzn4Bo5ROEjO9ZzyaMuB57oS4g2R8g/viewform?usp=sf_link'
-        >
-            Временное хранение объектов
-        </Quiz>
+        {/*<Quiz*/}
+        {/*    number={5}*/}
+        {/*    href='https://docs.google.com/forms/d/e/1FAIpQLScM50jfN89h754fv9PUvzn4Bo5ROEjO9ZzyaMuB57oS4g2R8g/viewform?usp=sf_link'*/}
+        {/*>*/}
+        {/*    Временное хранение объектов*/}
+        {/*</Quiz>*/}
     </>
 );

@@ -19,11 +19,11 @@ const Quiz = ({ id: path }) => {
         answers = courses[params.id]?.quizzes?.[id] || [];
 
     const openModal = useCallback(() => {
-        if (quizzes[book]?.[id]) {
+        if (quiz) {
             setI(0);
             setOpened(true);
         }
-    }, [path]);
+    }, [quiz]);
 
     const closeModal = useCallback(() => setOpened(false), []);
 

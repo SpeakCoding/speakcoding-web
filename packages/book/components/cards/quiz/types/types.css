@@ -3,6 +3,10 @@
     line-height: 32px;
 }
 
+.asset {
+    margin-bottom: 24px;
+}
+
 .option {
     display: grid;
     grid-template-columns: 24px auto;

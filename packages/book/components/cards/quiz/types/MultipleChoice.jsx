@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
 import { Checkbox } from '@sc/ui';
+import quizzes from '../../../../quizzes';
 import s from './types.css';
 
-const MultipleChoice = ({ answer, comment, options, title, onChange }) => {
-    const [state, setState] = useState(Array(options.length).fill(false));
+const MultipleChoice = ({ answer, asset, comment, options, title, onChange }) => {
+    const [state, setState] = useState(Array(options.length).fill(false)),
+        Asset = quizzes.assets[asset];
 
     const handleChange = i => checked => {
         const next = [...state];
@@ -28,6 +30,12 @@ const MultipleChoice = ({ answer, comment, options, title, onChange }) => {
     return (
         <>
             <h2 className={s.label}>{title}</h2>
+
+            {Asset && (
+                <div className={s.asset}>
+                    <Asset />
+                </div>
+            )}
 
             {options.map((option, i) => (
                 <label
@@ -54,6 +62,7 @@ const MultipleChoice = ({ answer, comment, options, title, onChange }) => {
 
 MultipleChoice.propTypes = {
     answer: pt.array,
+    asset: pt.string,
     comment: pt.string,
     options: pt.array,
     title: pt.string,
@@ -62,6 +71,7 @@ MultipleChoice.propTypes = {
 
 MultipleChoice.defaultProps = {
     answer: undefined,
+    asset: undefined,
     comment: undefined,
     options: [],
     title: undefined,
