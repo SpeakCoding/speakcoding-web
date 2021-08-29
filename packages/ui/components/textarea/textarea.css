@@ -1,0 +1,21 @@
+.input {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border: 1px solid var(--c-grey-200);
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 24px;
+    resize: none;
+    outline: none;
+    transition: border-color var(--animation);
+}
+
+.input:focus {
+    border: 1px solid var(--c-grey-300);
+}
+
+.item:disabled {
+    cursor: not-allowed;
+}

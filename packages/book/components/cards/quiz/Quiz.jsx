@@ -5,7 +5,7 @@ import { Button, Card, Modal } from '@sc/ui';
 import L from '../../localize';
 import { useApp } from '../../../tools';
 import quizzes from '../../../quizzes';
-import { MultipleChoice, SingleChoice } from './types';
+import { MultipleChoice, SingleChoice, TextInput } from './types';
 import s from './quiz.css';
 
 const Quiz = ({ id: path }) => {
@@ -74,6 +74,14 @@ const Quiz = ({ id: path }) => {
                             )}
                             {question.type === 'single-choice' && (
                                 <SingleChoice
+                                    key={i}
+                                    {...question}
+                                    answer={answers[i]}
+                                    onChange={handleChangeAnswer}
+                                />
+                            )}
+                            {question.type === 'text' && (
+                                <TextInput
                                     key={i}
                                     {...question}
                                     answer={answers[i]}
