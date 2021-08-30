@@ -2,10 +2,8 @@ import React from 'react';
 import { Code, Structure } from '@sc/ui';
 
 const code = `
-func editCaption(newCaption Text) {
-    currentCaption = newCaption
-    post.edit.changecaption(newCaption)
-}`;
+var lastFollower User
+lastFollower = myAccount.getFollowers().last.getUserName()`;
 
 const Asset = () => (
     <Structure>

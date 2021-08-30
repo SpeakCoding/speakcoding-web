@@ -7,6 +7,14 @@
     margin-bottom: 24px;
 }
 
+.asset > * {
+    margin: 0;
+}
+
+.asset pre {
+    white-space: pre-wrap;
+}
+
 .option {
     display: grid;
     grid-template-columns: 24px auto;

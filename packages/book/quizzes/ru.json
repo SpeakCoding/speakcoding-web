@@ -268,5 +268,86 @@
                 "comment": "Кроме описания класса в файле [PostEditorController](https://github.com/SpeakCoding/iphone/blob/main/App/PostEditorController.swift), вы также можете проверить это, зайдя в приложение."
             }
         ]
+    },
+    "9": {
+        "title": "Тест №9",
+        "description": "Изменения составляющих и взаимодействие с классами",
+        "questions": [
+            {
+                "type": "single-choice",
+                "title": "1. Для какого элемента интерфейса PostFeedView необходимо добавить исполнение функции при двойном быстром нажатии на этот элемент?",
+                "options": [
+                    { "title": "Like Button" },
+                    { "title": "Image", "correct": true },
+                    { "title": "Add a Comment" },
+                    { "title": "User Picture" }
+                ],
+                "comment": "Image. Вы можете проверить это самостоятельно, зайдя в Инстаграм."
+            }
+        ]
+    },
+    "10": {
+        "title": "Тест №10",
+        "description": "Файлы и папки",
+        "questions": [
+            {
+                "type": "multiple-choice",
+                "title": "1. Какие из перечисленных файлов описывают наши основные (Model) классы?",
+                "options": [
+                    { "title": "User.swift", "correct": true },
+                    { "title": "UserProfileView.swift" },
+                    { "title": "PostTileCell.swift" },
+                    { "title": "Post.swift", "correct": true }
+                ],
+                "comment": "Обычно в названии файлов model классов присутствует только имя основного структурного элемента, который они описывают - поста, пользователя, комментария. Правильный ответ - User.swift, Post.swift."
+            },
+            {
+                "type": "multiple-choice",
+                "title": "2. Сколько файлов, описывающих View и/или Controller классы для нашего основного класса User, находится в нашем репозитории?",
+                "options": [
+                    { "title": "7", "correct": true },
+                    { "title": "3" },
+                    { "title": "10" },
+                    { "title": "1" }
+                ],
+                "comment": "Вы можете сосчитать их самостоятельно, открыв список всех файлов по ссылке на гитхаб, которой мы с вами поделились. Должно получиться семь: UserProfileView, UserSearchView, UserProfileEditorController, UsersListsViewController, UsersLookupViewController, UserCellView, UserCellView+FollowButton."
+            }
+        ]
+    },
+    "11": {
+        "title": "Тест №11",
+        "description": "Сложноподчиненные предложения",
+        "questions": [
+            {
+                "type": "text",
+                "title": "1. Что мы пытаемся сделать в коде ниже?",
+                "asset": "11-1",
+                "comment": "Получить имя последнего подписавшегося на конкретный профиль пользователя."
+            },
+            {
+                "type": "text",
+                "title": "2. Что мы пытаемся сделать в коде ниже?",
+                "asset": "11-2",
+                "comment": "Получить последние лайки к последнему посту конкретного пользователя."
+            },
+            {
+                "type": "text",
+                "title": "3. Какая функция отсутствует в строчке ниже?",
+                "asset": "11-3",
+                "comment": "getFollowers"
+            },
+            {
+                "type": "text",
+                "title": "4. К какому классу принадлежит commentReply?",
+                "asset": "11-4",
+                "comment": "К классу Comment."
+            },
+            {
+                "type": "text",
+                "title": "5. Что нужно добавить к коду ниже, чтобы получить ответы на ваши последние сториз?",
+                "asset": "11-5",
+                "comment": "myAccount.getStories().**last.getReply()**"
+            }
+        ]
     }
 }

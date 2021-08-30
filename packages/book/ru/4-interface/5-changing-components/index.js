@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Expand, Grid, HL, Hint, Img, Section } from '@sc/ui';
-import { Quiz } from '../../../components';
+import { QuizNew as Quiz } from '../../../components';
 import Term from '../../glossary/Term';
 import xcode from './xcode.png';
 
@@ -186,11 +186,6 @@ export default () => (
                 </Section.Main>
             </Section.Block>
         </Section>
-        <Quiz
-            number={9}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSfECKIHL7PORLfMNL5mHydhozGXhtr7t9uPPV8Nofx7ZV6pcQ/viewform?usp=sf_link'
-        >
-            Изменения составляющих и взаимодействие с классами
-        </Quiz>
+        <Quiz id='ru/9' />
     </>
 );

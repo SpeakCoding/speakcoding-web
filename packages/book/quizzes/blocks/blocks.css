@@ -1,0 +1,12 @@
+.hover {
+    position: relative;
+}
+
+.new-tab {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    color: var(--c-grey-500);
+}

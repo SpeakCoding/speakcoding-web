@@ -1,0 +1,1 @@
+export OpenNewTab from './OpenNewTab';

@@ -2,15 +2,8 @@ import React from 'react';
 import { Code, HL, Structure } from '@sc/ui';
 
 const code = `
-[[User]](steel-blue)(
-    [[inputUsername Text]](orange),
-    [[inputEmail Text]](orange),
-    [[inputPassword Text]](orange)
-) {
-    [[self.username = inputUsername]](red)
-    [[self.password = inputPassword]](red)
-    [[???]](red)
-}`;
+var commentReply [[???]](red)
+commentReply = myLastPost.getComment().last.getReply()`;
 
 const Asset = () => (
     <Structure>
