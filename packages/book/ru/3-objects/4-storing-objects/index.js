@@ -153,11 +153,6 @@ export default () => (
             </Section.Block>
         </Section>
 
-        {/*<Quiz*/}
-        {/*    number={5}*/}
-        {/*    href='https://docs.google.com/forms/d/e/1FAIpQLScM50jfN89h754fv9PUvzn4Bo5ROEjO9ZzyaMuB57oS4g2R8g/viewform?usp=sf_link'*/}
-        {/*>*/}
-        {/*    Временное хранение объектов*/}
-        {/*</Quiz>*/}
+        <Quiz id='ru/5' />
     </>
 );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section } from '@sc/ui';
-import { Assignment, Quiz } from '../../../components';
+import { Assignment, QuizNew as Quiz } from '../../../components';
 import PostView from './PostView';
 import PostCreate from './PostCreate';
 
@@ -37,12 +37,7 @@ export default () => (
                 </Section.Main>
             </Section.Block>
         </Section>
-        <Quiz
-            number={8}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSes8wiuwJBig7RH1-mXAKVApqxGKbu2QYZ7YrQkWzr34Jk4UQ/viewform?usp=sf_link'
-        >
-            Разбор экрана: из чего состоит view
-        </Quiz>
+        <Quiz id='ru/8' />
         <Assignment
             number={5}
             href='https://docs.google.com/forms/d/e/1FAIpQLSc9-3_FXw4SG82oQGaB_UXTSh7NPOqxC-1zfgtvA2gMEpPnSA/viewform?usp=sf_link'

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Expand, Img, Section, Structure } from '@sc/ui';
-import { Assignment, Quiz } from '../../../components';
+import { Assignment, QuizNew as Quiz } from '../../../components';
 import img1 from './instagram-1.png';
 import img2 from './instagram-2.png';
 import img3 from './instagram-3.png';
@@ -139,12 +139,7 @@ export default () => (
                 </Section.Main>
             </Section.Block>
         </Section>
-        <Quiz
-            number={7}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdnMQLx7E6rPSbdsjDpu0BAo6U0gf3KjY3fum0ebJJqmWLrkA/viewform?usp=sf_link'
-        >
-            Все отображения поста
-        </Quiz>
+        <Quiz id='ru/7' />
         <Assignment
             number={4}
             href='https://docs.google.com/forms/d/e/1FAIpQLScbJu75eB9onNbTtN9eY4rRSlyinpICU16SBy0XDq1I3XVrMg/viewform?usp=sf_link'

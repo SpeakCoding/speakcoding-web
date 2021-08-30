@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { Radio } from '@sc/ui';
 import s from './types.css';
 
-const MultipleChoice = ({ answer, comment, options, title, onChange }) => {
+const SingleChoice = ({ answer, comment, options, title, onChange }) => {
     const [state, setState] = useState(answer);
 
     const handleChange = i => () => {
@@ -44,7 +44,7 @@ const MultipleChoice = ({ answer, comment, options, title, onChange }) => {
     );
 };
 
-MultipleChoice.propTypes = {
+SingleChoice.propTypes = {
     answer: pt.number,
     comment: pt.string,
     options: pt.array,
@@ -52,7 +52,7 @@ MultipleChoice.propTypes = {
     onChange: pt.func
 };
 
-MultipleChoice.defaultProps = {
+SingleChoice.defaultProps = {
     answer: undefined,
     comment: undefined,
     options: [],
@@ -60,4 +60,4 @@ MultipleChoice.defaultProps = {
     onChange: () => {}
 };
 
-export default MultipleChoice;
+export default SingleChoice;
