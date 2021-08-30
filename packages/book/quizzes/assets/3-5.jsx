@@ -1,7 +1,8 @@
 import React from 'react';
 import { Code, Structure } from '@sc/ui';
 
-const code = `func editCaption(newCaption Text) {
+const code = `
+func editCaption(newCaption Text) {
     currentCaption = newCaption;
     post.edit.changecaption(newCaption);
 }`;

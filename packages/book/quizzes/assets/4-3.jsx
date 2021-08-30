@@ -9,7 +9,7 @@ const code = `
 ) {
     [[self.username = inputUsername;]](red)
     [[self.password = inputPassword;]](red)
-    [[??]](red)
+    [[???]](red)
 }`;
 
 const Asset = () => (

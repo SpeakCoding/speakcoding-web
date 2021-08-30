@@ -257,14 +257,15 @@
         "questions": [
             {
                 "type": "single-choice",
-                "title": "1. Ниже описан класс PostEditorController - экрана редактирования поста.. Что из перечисленного НЕ является составляющей этого класса?",
+                "title": "1. Ниже описан класс PostEditorController - экрана редактирования поста. Что из перечисленного НЕ является составляющей этого класса?",
+                "asset": "8-1",
                 "options": [
                     { "title": "Post Image" },
                     { "title": "Post CaptionField" },
                     { "title": "Like Button", "correct": true },
                     { "title": "Location Field" }
                 ],
-                "comment": "Кроме описания класса в файле PostEditorController, вы также можете проверить это, зайдя в приложение."
+                "comment": "Кроме описания класса в файле [PostEditorController](https://github.com/SpeakCoding/iphone/blob/main/App/PostEditorController.swift), вы также можете проверить это, зайдя в приложение."
             }
         ]
     }
