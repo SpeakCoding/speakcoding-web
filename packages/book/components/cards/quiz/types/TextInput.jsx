@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import pt from 'prop-types';
 import { debounce } from '@sc/tools/function';
 import { Textarea } from '@sc/ui';
+import Comment from './Comment';
 import { useLocale } from '../../../localize';
 import quizzes from '../../../../quizzes';
 import s from './types.css';
@@ -28,16 +29,15 @@ const TextInput = ({ answer, asset, comment, title, onChange }) => {
             )}
 
             <Textarea
-                placeholder={choose({
-                    en: 'Your answer...',
-                    ru: 'Ваш ответ...'
-                })}
+                autoheight
+                placeholder={choose({ en: 'Your answer', ru: 'Ваш ответ' })}
                 readonly={!!answer}
+                rows={1}
                 value={answer}
                 onChange={handleChange}
             />
 
-            {answer !== undefined && <div className={s.comment}>{comment}</div>}
+            {answer !== undefined && <Comment>{comment}</Comment>}
         </>
     );
 };

@@ -63,32 +63,34 @@ const Quiz = ({ id: path }) => {
 
                 {question && (
                     <>
-                        <div className={s.modal}>
-                            {question.type === 'multiple-choice' && (
-                                <MultipleChoice
-                                    key={i}
-                                    {...question}
-                                    answer={answers[i]}
-                                    onChange={handleChangeAnswer}
-                                />
-                            )}
-                            {question.type === 'single-choice' && (
-                                <SingleChoice
-                                    key={i}
-                                    {...question}
-                                    answer={answers[i]}
-                                    onChange={handleChangeAnswer}
-                                />
-                            )}
-                            {question.type === 'text' && (
-                                <TextInput
-                                    key={i}
-                                    {...question}
-                                    answer={answers[i]}
-                                    onChange={handleChangeAnswer}
-                                />
-                            )}
-                        </div>
+                        <Modal.ScrollView>
+                            <div className={s.modal}>
+                                {question.type === 'multiple-choice' && (
+                                    <MultipleChoice
+                                        key={i}
+                                        {...question}
+                                        answer={answers[i]}
+                                        onChange={handleChangeAnswer}
+                                    />
+                                )}
+                                {question.type === 'single-choice' && (
+                                    <SingleChoice
+                                        key={i}
+                                        {...question}
+                                        answer={answers[i]}
+                                        onChange={handleChangeAnswer}
+                                    />
+                                )}
+                                {question.type === 'text' && (
+                                    <TextInput
+                                        key={i}
+                                        {...question}
+                                        answer={answers[i]}
+                                        onChange={handleChangeAnswer}
+                                    />
+                                )}
+                            </div>
+                        </Modal.ScrollView>
 
                         <Modal.Footer>
                             {answers[i] === undefined && (

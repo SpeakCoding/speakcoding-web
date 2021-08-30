@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
 import { Checkbox } from '@sc/ui';
+import Comment from './Comment';
 import quizzes from '../../../../quizzes';
 import s from './types.css';
 
@@ -55,7 +56,7 @@ const MultipleChoice = ({ answer, asset, comment, options, title, onChange }) =>
                 </label>
             ))}
 
-            {!!answer && <div className={s.comment}>{comment}</div>}
+            {!!answer && <Comment>{comment}</Comment>}
         </>
     );
 };
