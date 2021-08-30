@@ -27,11 +27,14 @@ export function useCourses() {
         setCourses(next);
     }, []);
 
-    const save = (id, data) =>
-        fetch(`/courses/${id}.json`, {
+    const save = async (id, data) => {
+        const res = await fetch(`/courses/${id}.json`, {
             method: 'PATCH',
             body: { course: { data: JSON.stringify(data) } }
         });
+
+        if (res?.data?.id) setCourses({ ...courses, [res.data.id]: JSON.parse(res.data.data) });
+    };
 
     const updateCourse = useCallback(
         (id, field, payload) => {

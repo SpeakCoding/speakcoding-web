@@ -19,7 +19,7 @@ const Header = ({ chapter, children }) => {
             if (params.id && chapter)
                 updateCourse(params.id, 'pos', { chapter, top: $html.scrollTop });
         }, 500),
-        []
+        [updateCourse]
     );
 
     const handleScroll = useCallback(
@@ -29,19 +29,16 @@ const Header = ({ chapter, children }) => {
             $bar.current.style.width = `${width}%`;
             savePosition();
         }, 25),
-        []
+        [savePosition]
     );
 
     useEffect(() => {
         if (typeof chapter !== 'number') return undefined;
-
         window.addEventListener('scroll', handleScroll);
-        handleScroll();
-
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [chapter]);
+    }, [chapter, handleScroll]);
 
     useEffect(() => {
         if (chapter && chapter === course?.pos?.chapter) window.scrollTo(0, course.pos.top);
@@ -49,6 +46,8 @@ const Header = ({ chapter, children }) => {
 
         if (chapter && params.id !== profile.last_course_id)
             updateProfile({ last_course_id: params.id });
+
+        if (typeof chapter === 'number') handleScroll();
     }, []);
 
     return (
