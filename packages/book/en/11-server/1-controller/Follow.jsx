@@ -16,7 +16,7 @@ export default () => (
         <Section.Block>
             <Section.Main narrow>
                 <h2>
-                    (Additional) Custom requests - follow{' '}
+                    (Additional) Custom requests: Follow{' '}
                     <Expand.Control htmlFor='11-1-3'>
                         <Button variant='rounded'>⤵</Button>
                     </Expand.Control>

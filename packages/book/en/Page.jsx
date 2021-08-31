@@ -33,7 +33,7 @@ const chapters = [
     { prefix: 11, title: 'Server', href: '/en/chapter-11', disabled: true },
     {
         prefix: 12,
-        title: 'Launch your program: where does all processes start',
+        title: 'Launch your program: where do all processes start',
         href: '/en/chapter-12',
         disabled: true
     },

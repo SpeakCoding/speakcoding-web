@@ -16,7 +16,7 @@ export default () => (
         <Section.Block>
             <Section.Main narrow>
                 <h2>
-                    (Дополнительно) Нестандартные запросы - follow{' '}
+                    (Дополнительно) Нестандартные запросы: Follow{' '}
                     <Expand.Control htmlFor='11-1-3'>
                         <Button variant='rounded'>⤵</Button>
                     </Expand.Control>

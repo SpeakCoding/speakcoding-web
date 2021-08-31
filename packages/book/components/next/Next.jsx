@@ -5,19 +5,29 @@ import { Link } from '@sc/ui';
 import L from '../localize';
 import s from './next.css';
 
-const Next = ({ disabled, href }) => (
+const Next = ({ disabled, href, children }) => (
     <div className={s.box}>
         {disabled && (
             <div className={classNames(s.button, s.disabled)}>
-                <L book='en'>Next chapter</L>
-                <L book='ru'>Следующая часть</L>
+                {children}
+                {!children && (
+                    <>
+                        <L book='en'>Next chapter</L>
+                        <L book='ru'>Следующая часть</L>
+                    </>
+                )}
             </div>
         )}
         {!disabled && (
             <Link href={href}>
                 <div className={s.button}>
-                    <L book='en'>Next chapter</L>
-                    <L book='ru'>Следующая часть</L>
+                    {children}
+                    {!children && (
+                        <>
+                            <L book='en'>Next chapter</L>
+                            <L book='ru'>Следующая часть</L>
+                        </>
+                    )}
                 </div>
             </Link>
         )}

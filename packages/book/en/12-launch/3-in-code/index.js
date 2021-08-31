@@ -32,7 +32,8 @@ export default () => (
                 >
                     read the AppDelegate code
                 </Link>{' '}
-                from the 29th line. Here we see the description of the application function, with
+                from the 29th line. Here we see the description of the application function (whose
+                inputs are the instance of UIApplication and the didFinishLaunching function), with
                 the two standard inputs defined in the UIApplication class – we inherit this class:{' '}
                 <HL color='aquamarine'>instance of application of the UIApplication class</HL>. We
                 also see the function didFinishLaunchingWithOptions with a set of launch options –

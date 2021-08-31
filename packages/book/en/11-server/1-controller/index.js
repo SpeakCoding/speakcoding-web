@@ -96,7 +96,7 @@ export default () => (
                         <HL color='sandy-brown'>find</HL> function, which searches through the
                         entries in the users table.
                     </p>
-                    <ul>
+                    <ol>
                         <li>
                             This function finds an entry with an id that matches the one from the
                             client.
@@ -120,7 +120,7 @@ export default () => (
                             list entitled 'data' under the heading 'data’, as this is what our
                             client is expecting.
                         </li>
-                    </ul>
+                    </ol>
                     <Callout>
                         The <b>ActiveRecord</b> class adds various static functions that let us
                         search for users in a database. These functions include <b>find</b> and{' '}
