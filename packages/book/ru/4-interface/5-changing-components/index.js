@@ -186,6 +186,13 @@ export default () => (
                 </Section.Main>
             </Section.Block>
         </Section>
-        <Quiz id='ru/9' />
+
+        <Quiz
+            id='ru/9'
+            number={9}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSfECKIHL7PORLfMNL5mHydhozGXhtr7t9uPPV8Nofx7ZV6pcQ/viewform?usp=sf_link'
+        >
+            Изменения составляющих и взаимодействие с классами
+        </Quiz>
     </>
 );

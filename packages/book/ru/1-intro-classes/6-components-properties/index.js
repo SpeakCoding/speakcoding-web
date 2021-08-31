@@ -140,7 +140,15 @@ export default () => (
                 </Section.Sticky>
             </Section.Side>
         </Section>
-        <Quiz id='ru/2' />
+
+        <Quiz
+            id='ru/2'
+            number={2}
+            href='https://docs.google.com/forms/d/e/1FAIpQLScoo1vkiq4bAjJsU5kyDeLAr4PnHPIFssLbOXpYURCfrBOIiA/viewform?usp=sf_link'
+        >
+            Описание класса, составляющие и характеристики
+        </Quiz>
+
         <Assignment
             number={2}
             href='https://docs.google.com/forms/d/e/1FAIpQLSf30DDnjNqIXlkSQ4rrlpifm_mF96mcD0WfYKTTcDnaZ5Gniw/viewform?usp=sf_link'

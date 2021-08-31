@@ -25,6 +25,12 @@ export default () => (
             <Example2 />
         </Section>
 
-        <Quiz id='ru/11' />
+        <Quiz
+            id='ru/11'
+            number={11}
+            href='https://docs.google.com/forms/d/e/1FAIpQLScAJ-rZMOyc0lZrMthND09A_BYDOEb8hH-gHP0zpPW88GD19A/viewform?usp=sf_link'
+        >
+            Сложноподчиненные предложения
+        </Quiz>
     </>
 );

@@ -54,7 +54,13 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Quiz id='ru/10' />
+        <Quiz
+            id='ru/10'
+            number={10}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSdbFnHxv3qYgxcyb1LHlYYBrzyB_TZi5HhbdFlKCHVcTRVhZQ/viewform?usp=sf_link'
+        >
+            Файлы и папки
+        </Quiz>
 
         <Section>
             <Section.Main narrow>

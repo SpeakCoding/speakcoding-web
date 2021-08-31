@@ -139,7 +139,15 @@ export default () => (
                 </Section.Main>
             </Section.Block>
         </Section>
-        <Quiz id='ru/7' />
+
+        <Quiz
+            id='ru/7'
+            number={7}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSdnMQLx7E6rPSbdsjDpu0BAo6U0gf3KjY3fum0ebJJqmWLrkA/viewform?usp=sf_link'
+        >
+            Все отображения поста
+        </Quiz>
+
         <Assignment
             number={4}
             href='https://docs.google.com/forms/d/e/1FAIpQLScbJu75eB9onNbTtN9eY4rRSlyinpICU16SBy0XDq1I3XVrMg/viewform?usp=sf_link'

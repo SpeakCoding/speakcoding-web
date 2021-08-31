@@ -177,6 +177,12 @@ export default () => (
             <Section.Side />
         </Section>
 
-        <Quiz id='ru/3' />
+        <Quiz
+            id='ru/3'
+            number={3}
+            href='https://docs.google.com/forms/d/e/1FAIpQLScefPJNRkiqL9gZEMlNK7I17lkLEo-LsehIvDGUIsVsQ-jc7A/viewform?usp=sf_link'
+        >
+            Определение и описание функций
+        </Quiz>
     </>
 );

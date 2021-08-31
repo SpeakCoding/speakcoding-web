@@ -129,8 +129,11 @@ const Quiz = ({ id: path }) => {
         </>
     );
 };
+
 Quiz.propTypes = {
     id: pt.string.isRequired
 };
 
-export default Quiz;
+import QuizOld from '../QuizOld';
+
+export default QuizOld;

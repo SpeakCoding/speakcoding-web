@@ -80,6 +80,12 @@ export default () => (
             <Section.Side />
         </Section>
 
-        <Quiz id='ru/1' />
+        <Quiz
+            id='ru/1'
+            number={1}
+            href='https://docs.google.com/forms/d/e/1FAIpQLSfZaUtfoPUolluT-ZUi32JG0rhzSdnmDlWYozt1Iafac6Ru7Q/viewform?usp=sf_link'
+        >
+            Введение: проверьте, удалось ли разобраться
+        </Quiz>
     </>
 );
