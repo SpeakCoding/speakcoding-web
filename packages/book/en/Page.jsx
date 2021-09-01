@@ -27,17 +27,15 @@ const chapters = [
     {
         prefix: 10,
         title: 'What’s happening on the backend',
-        href: '/en/chapter-10',
-        disabled: true
+        href: '/en/chapter-10'
     },
-    { prefix: 11, title: 'Server', href: '/en/chapter-11', disabled: true },
+    { prefix: 11, title: 'Server', href: '/en/chapter-11' },
     {
         prefix: 12,
         title: 'Launch your program: where do all processes start',
-        href: '/en/chapter-12',
-        disabled: true
+        href: '/en/chapter-12'
     },
-    { prefix: 'Bonus', title: 'Handbook', href: '/en/handbook', disabled: true }
+    { prefix: 'Bonus', title: 'Handbook', href: '/en/handbook' }
 ];
 
 const EnPage = props => <Page {...props} chapters={chapters} />;

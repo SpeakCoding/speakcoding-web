@@ -85,10 +85,10 @@ const App = () => {
                     <Route path='/en/chapter-7' component={EN.OnlineSearch} />
                     <Route path='/en/chapter-8' component={EN.Storage} />
                     <Route path='/en/chapter-9' component={EN.API} />
-                    {admin && <Route path='/en/chapter-10' component={EN.Backend} />}
-                    {admin && <Route path='/en/chapter-11' component={EN.Server} />}
-                    {admin && <Route path='/en/chapter-12' component={EN.Launch} />}
-                    {admin && <Route path='/en/handbook' component={EN.Handbook} />}
+                    <Route path='/en/chapter-10' component={EN.Backend} />
+                    <Route path='/en/chapter-11' component={EN.Server} />
+                    <Route path='/en/chapter-12' component={EN.Launch} />
+                    <Route path='/en/handbook' component={EN.Handbook} />
                     <Route path='/en/glossary' component={EN.Glossary} />
 
                     <Route path='/ru/chapter-1' component={RU.Intro} />
@@ -100,10 +100,10 @@ const App = () => {
                     <Route path='/ru/chapter-7' component={RU.OnlineSearch} />
                     <Route path='/ru/chapter-8' component={RU.Storage} />
                     <Route path='/ru/chapter-9' component={RU.API} />
-                    {admin && <Route path='/ru/chapter-10' component={RU.Backend} />}
-                    {admin && <Route path='/ru/chapter-11' component={RU.Server} />}
-                    {admin && <Route path='/ru/chapter-12' component={RU.Launch} />}
-                    {admin && <Route path='/ru/handbook' component={RU.Handbook} />}
+                    <Route path='/ru/chapter-10' component={RU.Backend} />
+                    <Route path='/ru/chapter-11' component={RU.Server} />
+                    <Route path='/ru/chapter-12' component={RU.Launch} />
+                    <Route path='/ru/handbook' component={RU.Handbook} />
                     <Route path='/ru/glossary' component={RU.Glossary} />
 
                     <Route component={Home} />

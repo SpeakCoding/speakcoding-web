@@ -12,6 +12,6 @@ export default () => (
         <Part2 />
         <Part3 />
         <Part4 />
-        <Next href='/en/chapter-10' disabled />
+        <Next href='/en/chapter-10' />
     </Page>
 );

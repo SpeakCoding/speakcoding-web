@@ -24,15 +24,14 @@ const chapters = [
         title: 'Как программы взаимодействуют друг с другом',
         href: '/ru/chapter-9'
     },
-    { prefix: 10, title: 'Что происходит на бекенде', href: '/ru/chapter-10', disabled: true },
-    { prefix: 11, title: 'Сервер', href: '/ru/chapter-11', disabled: true },
+    { prefix: 10, title: 'Что происходит на бекенде', href: '/ru/chapter-10' },
+    { prefix: 11, title: 'Сервер', href: '/ru/chapter-11' },
     {
         prefix: 12,
         title: 'Запуск программы: где запускаются все процессы',
-        href: '/ru/chapter-12',
-        disabled: true
+        href: '/ru/chapter-12'
     },
-    { prefix: 'Бонус', title: 'Справочник', href: '/ru/handbook', disabled: true }
+    { prefix: 'Бонус', title: 'Справочник', href: '/ru/handbook' }
 ];
 
 const RuPage = props => <Page {...props} chapters={chapters} />;
