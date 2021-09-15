@@ -85,9 +85,9 @@ export default () => (
                         </Term>{' '}
                         of a given request and launches the corresponding function of the indicated
                         class. The server then begins reading the components of these objects. If
-                        the URL endpoint contains user.<i>auth</i>.json, then the server launches
-                        the <i>login</i> function. If the URL endpoint contains user.<i>id</i>
-                        .posts, then the server looks in the posts table and finds all posts from
+                        the URL endpoint contains user/<i>auth</i>.json, then the server launches
+                        the <i>login</i> function. If the URL endpoint contains user/<i>id</i>
+                        /posts, then the server looks in the posts table and finds all posts from
                         this particular user by the user’s id.
                     </p>
                     <p>We will now take a closer look at server requests.</p>
