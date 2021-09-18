@@ -16,6 +16,7 @@
     margin-bottom: 8px;
     font: var(--t-h2);
     line-height: 30px;
+    text-align: center;
 }
 
 .text {

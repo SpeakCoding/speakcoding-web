@@ -12,11 +12,14 @@ import * as RU from './ru';
 // FIXME: remove it when no longer needed
 const admin = localStorage.getItem('admin');
 
+let forcedLang;
+
 const App = () => {
     const api = useAPI(),
         auth = !!localStorage.getItem('book_auth_token'),
         [profile, setProfile] = useState(null),
-        { courses, loadCourses, updateCourse } = useCourses();
+        { courses, loadCourses, updateCourse } = useCourses(),
+        [ready, setReady] = useState(false);
 
     const updateProfile = async payload => {
         const { data } = await api.put('/users/me.json', { user: payload });
@@ -34,8 +37,7 @@ const App = () => {
     );
 
     const initProfile = async () => {
-        const [{ data }] = await Promise.all([api.get('/users/me.json'), loadCourses()]),
-            lang = fixLang(data.last_course_id);
+        const [{ data }] = await Promise.all([api.get('/users/me.json'), loadCourses()]);
 
         if (!data) {
             localStorage.removeItem('book_auth_token');
@@ -43,18 +45,31 @@ const App = () => {
             return;
         }
 
-        localStorage.setItem('lang', lang);
-
-        if (data.last_course_id === lang) setProfile(data);
-        else updateProfile({ last_course_id: lang });
+        if (forcedLang) updateProfile({ last_course_id: forcedLang });
+        else {
+            const lang = fixLang(data.last_course_id);
+            localStorage.setItem('lang', lang);
+            if (data.last_course_id === lang) setProfile(data);
+            else updateProfile({ last_course_id: lang });
+        }
     };
+
+    useEffect(() => {
+        const [, param] = window.location.pathname.split('/');
+        if (param && param === fixLang(param)) {
+            forcedLang = param;
+            localStorage.setItem('lang', param);
+        }
+        setReady(true);
+    }, []);
 
     useEffect(() => {
         if (auth && !profile) initProfile();
     }, [auth, profile]);
 
+    if (!ready || (auth && !profile)) return null;
+
     if (!auth) return <Login onSuccess={initProfile} />;
-    if (!profile) return null;
 
     if (!profile.is_paid)
         return (

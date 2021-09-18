@@ -4,14 +4,12 @@ import { useApp } from './tools';
 
 const Home = () => {
     const { courses } = useApp(),
-        [{ params }, , replace] = useLocationState({ path: '/:lang' }),
-        lang = params.lang || localStorage.getItem('lang');
+        [, , replace] = useLocationState();
 
     useEffect(() => {
-        const course = courses[lang],
-            n = course?.pos?.chapter || 1;
+        const lang = localStorage.getItem('lang'),
+            n = courses[lang]?.pos?.chapter || 1;
 
-        localStorage.setItem('lang', lang);
         replace(`/${lang}/chapter-${n}`);
     }, [courses]);
 
