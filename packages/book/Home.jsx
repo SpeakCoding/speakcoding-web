@@ -3,18 +3,19 @@ import { useLocationState } from '@sc/ui/hooks';
 import { useApp } from './tools';
 
 const Home = () => {
-    const { profile, courses } = useApp(),
-        [, , replace] = useLocationState();
+    const { courses } = useApp(),
+        [{ params }, , replace] = useLocationState({ path: '/:lang' }),
+        lang = params.lang || localStorage.getItem('lang');
 
     useEffect(() => {
-        const course = courses[profile.last_course_id];
+        const course = courses[lang],
+            n = course?.pos?.chapter || 1;
 
-        if (profile.last_course_id) {
-            const n = course?.pos?.chapter || 1;
-            replace(`/${profile.last_course_id}/chapter-${n}`);
-        }
-    }, [profile, courses]);
+        localStorage.setItem('lang', lang);
+        replace(`/${lang}/chapter-${n}`);
+    }, [courses]);
 
     return null;
 };
+
 export default Home;

@@ -1,5 +1,5 @@
 export function createAPI({ apigw, tokenName }) {
-    return async function fetch(url, options) {
+    async function fetch(resource, options) {
         const { body, anonymous, ...rest } = options || {},
             token = localStorage.getItem(tokenName);
 
@@ -16,8 +16,20 @@ export function createAPI({ apigw, tokenName }) {
         if (token) init.headers['Authentication-Token'] = token;
         if (body) init.body = JSON.stringify(body);
 
-        const res = await window.fetch(`${apigw}${url}`, init);
+        const res = await window.fetch(`${apigw}${resource}`, init);
 
         return res.json();
-    };
+    }
+
+    function create(method) {
+        return (resource, body, options = {}) => fetch(resource, { method, body, ...options });
+    }
+
+    fetch.get = create('GET');
+    fetch.post = create('POST');
+    fetch.put = create('PUT');
+    fetch.patch = create('PATCH');
+    fetch.delete = create('DELETE');
+
+    return fetch;
 }

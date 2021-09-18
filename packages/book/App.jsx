@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useAPI, useCourses } from './tools';
 import { app } from './tools/app';
+import { fixLang } from './tools/system';
 import Home from './Home';
 import Login from './auth';
 import Payment from './payment';
@@ -12,16 +13,13 @@ import * as RU from './ru';
 const admin = localStorage.getItem('admin');
 
 const App = () => {
-    const fetch = useAPI(),
+    const api = useAPI(),
         auth = !!localStorage.getItem('book_auth_token'),
         [profile, setProfile] = useState(null),
-        { courses, defaultCourse, loadCourses, updateCourse } = useCourses();
+        { courses, loadCourses, updateCourse } = useCourses();
 
     const updateProfile = async payload => {
-        const { data } = await fetch('/users/me.json', {
-            method: 'PUT',
-            body: { user: payload }
-        });
+        const { data } = await api.put('/users/me.json', { user: payload });
         setProfile(data);
     };
 
@@ -36,10 +34,8 @@ const App = () => {
     );
 
     const initProfile = async () => {
-        const [{ data }] = await Promise.all([
-            fetch('/users/me.json', { method: 'GET' }),
-            loadCourses()
-        ]);
+        const [{ data }] = await Promise.all([api.get('/users/me.json'), loadCourses()]),
+            lang = fixLang(data.last_course_id);
 
         if (!data) {
             localStorage.removeItem('book_auth_token');
@@ -47,8 +43,10 @@ const App = () => {
             return;
         }
 
-        if (data.last_course_id) setProfile(data);
-        else updateProfile({ last_course_id: defaultCourse });
+        localStorage.setItem('lang', lang);
+
+        if (data.last_course_id === lang) setProfile(data);
+        else updateProfile({ last_course_id: lang });
     };
 
     useEffect(() => {
