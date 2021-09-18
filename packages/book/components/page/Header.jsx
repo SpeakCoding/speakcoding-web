@@ -16,8 +16,8 @@ const PageHeader = ({ chapter, chapters }) => {
             <Breadcrumbs>
                 <Breadcrumbs.Item>
                     <Navigation>
-                        <L book='en'>All chapters</L>
-                        <L book='ru'>Все главы</L>
+                        <L lang='en'>All chapters</L>
+                        <L lang='ru'>Все главы</L>
 
                         <Navigation.Content>
                             <Navigation.Items>

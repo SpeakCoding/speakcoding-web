@@ -16,18 +16,18 @@ const GlossaryLink = () => {
         <>
             {glossary && (
                 <div className={s.glossary} onClick={goBack}>
-                    <L book='en'>Go back</L>
-                    <L book='ru'>Назад</L>
+                    <L lang='en'>Go back</L>
+                    <L lang='ru'>Назад</L>
                 </div>
             )}
             {!glossary && (
                 <>
-                    <L book='en'>
+                    <L lang='en'>
                         <Link href='/en/glossary'>
                             <div className={s.glossary}>Glossary</div>
                         </Link>
                     </L>
-                    <L book='ru'>
+                    <L lang='ru'>
                         <Link href='/ru/glossary'>
                             <div className={s.glossary}>Глоссарий</div>
                         </Link>

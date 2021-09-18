@@ -30,8 +30,8 @@ const Payment = () => {
         <>
             <div ref={$ref} className={s.box}>
                 <div className={s.button} onClick={() => setOpened(true)}>
-                    <L book='en'>Continue</L>
-                    <L book='ru'>Далее</L>
+                    <L lang='en'>Continue</L>
+                    <L lang='ru'>Далее</L>
                 </div>
             </div>
 
@@ -40,20 +40,20 @@ const Payment = () => {
                     <div className={m.img} />
 
                     <div className={m.title}>
-                        <L book='en'>
+                        <L lang='en'>
                             You've reached the end of the introduction of Chapter&nbsp;I
                         </L>
-                        <L book='ru'>Поздравляем, вы закончили вводную часть первой&nbsp;главы</L>
+                        <L lang='ru'>Поздравляем, вы закончили вводную часть первой&nbsp;главы</L>
                     </div>
 
                     <div className={m.text}>
-                        <L book='en'>Proceed to payment to unlock the whole course</L>
-                        <L book='ru'>Перейдите к оплате, чтобы получить полный доступ к курсу</L>
+                        <L lang='en'>Proceed to payment to unlock the whole course</L>
+                        <L lang='ru'>Перейдите к оплате, чтобы получить полный доступ к курсу</L>
                     </div>
 
                     <div className={m.choose}>
-                        <L book='en'>Choose your course:</L>
-                        <L book='ru'>Выберите курс:</L>
+                        <L lang='en'>Choose your course:</L>
+                        <L lang='ru'>Выберите курс:</L>
                     </div>
 
                     <div className={m.intensity}>
@@ -61,8 +61,8 @@ const Payment = () => {
                     </div>
 
                     <Button size='large' block onClick={() => pay(intensity)}>
-                        <L book='en'>Proceed to payment</L>
-                        <L book='ru'>Перейти к оплате</L>
+                        <L lang='en'>Proceed to payment</L>
+                        <L lang='ru'>Перейти к оплате</L>
                     </Button>
                 </div>
             </Modal>

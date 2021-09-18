@@ -10,8 +10,8 @@ const Step = ({ active, current, hint, onClick }) => (
         <div className={s.circle}>
             {hint && (
                 <div className={s.hint}>
-                    <L book='en'>Click here</L>
-                    <L book='ru'>Нажми сюда</L>
+                    <L lang='en'>Click here</L>
+                    <L lang='ru'>Нажми сюда</L>
                 </div>
             )}
         </div>

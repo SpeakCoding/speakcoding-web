@@ -32,8 +32,8 @@ const Profile = () => {
                     <div className={s.email}>{profile.email}</div>
                     <Dev />
                     <div className={s.logout} onClick={logout}>
-                        <L book='en'>Log out</L>
-                        <L book='ru'>Выйти</L>
+                        <L lang='en'>Log out</L>
+                        <L lang='ru'>Выйти</L>
                     </div>
                 </div>
             </Drawer>

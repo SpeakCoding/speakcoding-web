@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '@sc/ui';
-import { CourseSelect, Logo } from '../components';
+import { CourseSelect, L, Logo } from '../components';
 import { usePayment } from './utils';
 import s from './payment.css';
 
@@ -14,20 +14,33 @@ const Payment = () => {
                 Speak <Logo size={80} /> Coding
             </div>
             <div className={s.content}>
-                <div className={s.title}>Payment processing</div>
+                <div className={s.title}>
+                    <L lang='en'>Payment processing</L>
+                    <L lang='ru'>Оплата</L>
+                </div>
                 <div className={s.message}>
-                    When you click the button below, you'll be redirected to our Stripe account for
-                    secure payment. SpeakCoding does not store your information
+                    <L lang='en'>
+                        When you click the button below, you'll be redirected to our Stripe account
+                        for secure payment. SpeakCoding does not store your information.
+                    </L>
+                    <L lang='ru'>
+                        После нажатия кнопки ниже вы будете перенаправлены на нашу страницу в Stripe
+                        для безопасной оплаты. SpeakCoding не хранит вашу платежную информацию.
+                    </L>
                 </div>
 
-                <div className={s.choose}>Choose your course:</div>
+                <div className={s.choose}>
+                    <L lang='en'>Choose your course:</L>
+                    <L lang='ru'>Выберите курс:</L>
+                </div>
                 <div className={s.intensity}>
                     <CourseSelect lang='en' onChange={setIntensity} />
                 </div>
 
                 <div className={s.action}>
                     <Button block size='large' onClick={() => pay(intensity)}>
-                        Proceed to payment
+                        <L lang='en'>Proceed to payment</L>
+                        <L lang='ru'>Перейти к оплате</L>
                     </Button>
                 </div>
             </div>

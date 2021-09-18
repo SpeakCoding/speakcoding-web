@@ -5,10 +5,10 @@ import s from './placeholder.css';
 const MobilePlaceholder = () => (
     <div className={s.box}>
         <div className={s.content}>
-            <L book='en'>
+            <L lang='en'>
                 This product was created for desktop. Mobile version is yet to be released.
             </L>
-            <L book='ru'>
+            <L lang='ru'>
                 This product was created for desktop. Mobile version is yet to be released.
             </L>
         </div>

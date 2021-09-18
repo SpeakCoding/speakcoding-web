@@ -10,8 +10,8 @@ const Examples = () => (
             <div className={s.row}>
                 <div>
                     <Tag>
-                        <L book='en'>In writing</L>
-                        <L book='ru'>Описание текстом</L>
+                        <L lang='en'>In writing</L>
+                        <L lang='ru'>Описание текстом</L>
                     </Tag>
                 </div>
                 <div className={s.tabs}>

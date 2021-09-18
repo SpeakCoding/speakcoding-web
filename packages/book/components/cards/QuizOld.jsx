@@ -6,13 +6,13 @@ import L from '../localize';
 const Quiz = ({ number, href, children }) => (
     <Card mode='quiz'>
         <h2>
-            <L book='en'>Quiz #{number}</L>
-            <L book='ru'>Тест №{number}</L>
+            <L lang='en'>Quiz #{number}</L>
+            <L lang='ru'>Тест №{number}</L>
         </h2>
         {children}
         <Card.Button href={href}>
-            <L book='en'>Complete</L>
-            <L book='ru'>Пройти</L>
+            <L lang='en'>Complete</L>
+            <L lang='ru'>Пройти</L>
         </Card.Button>
     </Card>
 );

@@ -12,8 +12,8 @@ const Next = ({ disabled, href, children }) => (
                 {children}
                 {!children && (
                     <>
-                        <L book='en'>Next chapter</L>
-                        <L book='ru'>Следующая часть</L>
+                        <L lang='en'>Next chapter</L>
+                        <L lang='ru'>Следующая часть</L>
                     </>
                 )}
             </div>
@@ -24,8 +24,8 @@ const Next = ({ disabled, href, children }) => (
                     {children}
                     {!children && (
                         <>
-                            <L book='en'>Next chapter</L>
-                            <L book='ru'>Следующая часть</L>
+                            <L lang='en'>Next chapter</L>
+                            <L lang='ru'>Следующая часть</L>
                         </>
                     )}
                 </div>

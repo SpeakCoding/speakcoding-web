@@ -6,42 +6,28 @@ import { Icon } from '@sc/ui';
 import L from '../localize';
 import s from './select.css';
 
-const Label = ({ value, lang }) => {
-    if (lang === 'en')
-        return (
+const Label = ({ value }) => (
+    <>
+        {value === 'extensive' && (
             <>
-                {value === 'extensive' && 'Original course'}
-                {value === 'intensive' && 'Intensive course'}
+                <L lang='en'>Original course</L>
+                <L lang='ru'>Обычный</L>
             </>
-        );
+        )}
+        {value === 'intensive' && (
+            <>
+                <L lang='en'>Intensive course</L>
+                <L lang='ru'>Интенсив</L>
+            </>
+        )}
+    </>
+);
 
-    return (
-        <>
-            {value === 'extensive' && (
-                <>
-                    <L book='en'>Original course</L>
-                    <L book='ru'>Обычный</L>
-                </>
-            )}
-            {value === 'intensive' && (
-                <>
-                    <L book='en'>Intensive course</L>
-                    <L book='ru'>Интенсив</L>
-                </>
-            )}
-        </>
-    );
-};
 Label.propTypes = {
-    lang: pt.string,
     value: pt.string.isRequired
 };
 
-Label.defaultProps = {
-    lang: undefined
-};
-
-const CourseSelect = ({ lang, onChange }) => {
+const CourseSelect = ({ onChange }) => {
     const [opened, setOpened] = useState(false),
         [value, setValue] = useState('extensive'),
         $ref = useRef();
@@ -66,7 +52,7 @@ const CourseSelect = ({ lang, onChange }) => {
                 type='button'
                 onClick={() => setOpened(current => !current)}
             >
-                <Label value={value} lang={lang} />
+                <Label value={value} />
                 <Icon name='chevron-up-down' size={32} />
             </button>
 
@@ -75,13 +61,13 @@ const CourseSelect = ({ lang, onChange }) => {
                     className={classNames(s.option, value === 'extensive' && s.selected)}
                     onClick={() => handleSelect('extensive')}
                 >
-                    <Label value='extensive' lang={lang} />
+                    <Label value='extensive' />
                 </div>
                 <div
                     className={classNames(s.option, value === 'intensive' && s.selected)}
                     onClick={() => handleSelect('intensive')}
                 >
-                    <Label value='intensive' lang={lang} />
+                    <Label value='intensive' />
                 </div>
             </div>
         </div>
@@ -89,12 +75,10 @@ const CourseSelect = ({ lang, onChange }) => {
 };
 
 CourseSelect.propTypes = {
-    lang: pt.string,
     onChange: pt.func
 };
 
 CourseSelect.defaultProps = {
-    lang: undefined,
     onChange: () => {}
 };
 
