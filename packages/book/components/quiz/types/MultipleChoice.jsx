@@ -3,7 +3,7 @@ import pt from 'prop-types';
 import classNames from 'classnames';
 import { Checkbox } from '@sc/ui';
 import Comment from './Comment';
-import quizzes from '../../../../quizzes';
+import quizzes from '../../../quizzes';
 import s from './types.css';
 
 const MultipleChoice = ({ answer, asset, comment, options, title, onChange }) => {

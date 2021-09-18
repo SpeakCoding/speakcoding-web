@@ -2,9 +2,9 @@ import React, { useCallback, useMemo, useState } from 'react';
 import pt from 'prop-types';
 import { useLocationState } from '@sc/ui/hooks';
 import { Button, Card, Modal } from '@sc/ui';
-import L from '../../localize';
-import { useApp } from '../../../tools';
-import quizzes from '../../../quizzes';
+import L from '../localize';
+import { useApp } from '../../tools';
+import quizzes from '../../quizzes';
 import { MultipleChoice, SingleChoice, TextInput } from './types';
 import s from './quiz.css';
 
@@ -53,8 +53,8 @@ const Quiz = ({ id: path }) => {
                 {description}
 
                 <Card.Button onClick={openModal}>
-                    <L book='en'>Complete</L>
-                    <L book='ru'>Пройти</L>
+                    <L lang='en'>Complete</L>
+                    <L lang='ru'>Пройти</L>
                 </Card.Button>
             </Card>
 
@@ -98,14 +98,14 @@ const Quiz = ({ id: path }) => {
                                     disabled={currentAnswer === undefined}
                                     onClick={handleConfirmAnswer}
                                 >
-                                    <L book='en'>Confirm</L>
-                                    <L book='ru'>Подтвердить</L>
+                                    <L lang='en'>Confirm</L>
+                                    <L lang='ru'>Подтвердить</L>
                                 </Button>
                             )}
                             {answers[i] !== undefined && (
                                 <Button onClick={handleNext}>
-                                    <L book='en'>Next</L>
-                                    <L book='ru'>Далее</L>
+                                    <L lang='en'>Next</L>
+                                    <L lang='ru'>Далее</L>
                                 </Button>
                             )}
                         </Modal.Footer>
@@ -116,12 +116,12 @@ const Quiz = ({ id: path }) => {
                     <div className={s.finish}>
                         <div className={s.img} />
                         <h2 className={s.message}>
-                            <L book='en'>You’ve completed {title}!</L>
-                            <L book='ru'>Вы завершили {title}!</L>
+                            <L lang='en'>You’ve completed {title}!</L>
+                            <L lang='ru'>Вы завершили {title}!</L>
                         </h2>
                         <Button size='large' onClick={closeModal}>
-                            <L book='en'>Back to chapter</L>
-                            <L book='ru'>Вернуться к главе</L>
+                            <L lang='en'>Back to chapter</L>
+                            <L lang='ru'>Вернуться к главе</L>
                         </Button>
                     </div>
                 )}
@@ -134,6 +134,6 @@ Quiz.propTypes = {
     id: pt.string.isRequired
 };
 
-import QuizOld from '../QuizOld';
+import QuizOld from '../cards/QuizOld';
 
-export default QuizOld;
+export default Quiz;

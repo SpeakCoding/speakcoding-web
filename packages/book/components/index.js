@@ -8,3 +8,4 @@ export Logo from './logo';
 export Navigation from './navigation';
 export Next from './next';
 export Page from './page';
+export QuizNew from './quiz';

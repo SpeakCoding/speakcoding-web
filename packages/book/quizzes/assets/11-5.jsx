@@ -2,7 +2,7 @@ import React from 'react';
 import { Code, HL, Structure } from '@sc/ui';
 
 const code = `
-var storyReplies [[???]](red)
+var storyReplies Set[Comment]
 storyReplies = myAccount.getStories().[[???]](red)`;
 
 const Asset = () => (

@@ -2,7 +2,7 @@ import React, { useCallback, useEffect } from 'react';
 import pt from 'prop-types';
 import { init, signIn } from '../tools/auth';
 import { useAPI } from '../tools';
-import { Logo } from '../components';
+import { L, Logo } from '../components';
 import s from './login.css';
 
 let ready = false;
@@ -41,13 +41,21 @@ const Login = ({ onSuccess }) => {
                 Speak <Logo size={80} /> Coding
             </div>
             <div className={s.content}>
-                <div className={s.title}>Sign in</div>
+                <div className={s.title}>
+                    <L lang='en'>Sign in</L>
+                    <L lang='ru'>Вход</L>
+                </div>
                 <div className={s.message}>
-                    Learn how to read and understand code by exploring how the real apps are built
+                    <L lang='en'>
+                        Learn how to read and understand code by exploring how the real apps are
+                        built
+                    </L>
+                    <L lang='ru'>Научитесь читать и понимать код, исследуя настоящие приложения.</L>
                 </div>
                 <button type='button' className={s.login} onClick={handleSignIn}>
                     <div className={s.google} />
-                    Sign in with Google
+                    <L lang='en'>Sign in with Google</L>
+                    <L lang='ru'>Войти через Google</L>
                 </button>
             </div>
         </div>
