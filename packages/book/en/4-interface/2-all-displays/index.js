@@ -131,12 +131,7 @@ export default () => (
                 </Section.Main>
             </Section.Block>
         </Section>
-        <Quiz
-            number={7}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSfKomjRalw-S51hz2WZGHqeufzHMUe9DiOa1IDqfW9WSn7h_w/viewform?usp=sf_link'
-        >
-            All post displays
-        </Quiz>
+        <Quiz id='en/7' />
         <Assignment
             number={4}
             href='https://docs.google.com/forms/d/e/1FAIpQLSdELTGy7hi7DOUZhotEf1Y-jPu8pIcx1x6My_v3AycUySnyhQ/viewform?usp=sf_link'

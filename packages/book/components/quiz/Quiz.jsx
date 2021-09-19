@@ -134,6 +134,4 @@ Quiz.propTypes = {
     id: pt.string.isRequired
 };
 
-import QuizOld from '../cards/QuizOld';
-
 export default Quiz;

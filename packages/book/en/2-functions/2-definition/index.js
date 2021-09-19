@@ -158,11 +158,6 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Quiz
-            number={3}
-            href='https://docs.google.com/forms/d/e/1FAIpQLScQ0LcYbFp-br6S2mweAjw5M74El_nyzPDq5OoX9yFde6RcDw/viewform?usp=sf_link'
-        >
-            The definition and description of functions
-        </Quiz>
+        <Quiz id='en/3' />
     </>
 );

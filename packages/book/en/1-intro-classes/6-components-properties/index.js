@@ -134,12 +134,7 @@ export default () => (
                 </Section.Sticky>
             </Section.Side>
         </Section>
-        <Quiz
-            number={2}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdapr5hZAVYw3OUgk3t7gfVNJ43eyiV25vtk5wTxYDVjHNAeg/viewform?usp=sf_link'
-        >
-            Class description, components, and properties
-        </Quiz>
+        <Quiz id='en/2' />
         <Assignment
             number={2}
             href='https://docs.google.com/forms/d/e/1FAIpQLSdrSAB4zTnD-Qzyy-V5E8KdHM5qCbWWIghQC5JD7C6H7S3dNw/viewform?usp=sf_link'

@@ -13,11 +13,6 @@ export default () => (
             <ReplaceCaption />
         </Section>
 
-        <Quiz
-            number={6}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSe8JQt1-zAID7_pevMCiFYmcyPKs65qBE7VMeJz-kbidHyLDg/viewform?usp=sf_link'
-        >
-            Changing objects’ states
-        </Quiz>
+        <Quiz id='en/6' />
     </>
 );

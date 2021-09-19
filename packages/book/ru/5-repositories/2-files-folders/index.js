@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Expand, Hint, Link, Section } from '@sc/ui';
-import { QuizNew as Quiz } from '../../../components';
+import { Quiz } from '../../../components';
 import Term from '../../glossary/Term';
 
 export default () => (
@@ -54,13 +54,7 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Quiz
-            id='ru/10'
-            number={10}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdbFnHxv3qYgxcyb1LHlYYBrzyB_TZi5HhbdFlKCHVcTRVhZQ/viewform?usp=sf_link'
-        >
-            Файлы и папки
-        </Quiz>
+        <Quiz id='ru/10' />
 
         <Section>
             <Section.Main narrow>

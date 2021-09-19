@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react';
 import { HL, Img, Section, Structure } from '@sc/ui';
-import { Assignment, QuizNew as Quiz } from '../../../components';
+import { Assignment, Quiz } from '../../../components';
 import Term from '../../glossary/Term';
 import img1 from './class-period.svg';
 import img2 from './human.svg';
@@ -141,13 +141,7 @@ export default () => (
             </Section.Side>
         </Section>
 
-        <Quiz
-            id='ru/2'
-            number={2}
-            href='https://docs.google.com/forms/d/e/1FAIpQLScoo1vkiq4bAjJsU5kyDeLAr4PnHPIFssLbOXpYURCfrBOIiA/viewform?usp=sf_link'
-        >
-            Описание класса, составляющие и характеристики
-        </Quiz>
+        <Quiz id='ru/2' />
 
         <Assignment
             number={2}

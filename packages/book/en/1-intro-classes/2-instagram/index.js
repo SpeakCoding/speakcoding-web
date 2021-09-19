@@ -84,11 +84,7 @@ export default () => (
             </Section.Main>
             <Section.Side />
         </Section>
-        <Quiz
-            number={1}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdKbOrIBfp5k7wzn9PVI--NIuGwCCDxS6YLZBMYNrTpFEimYw/viewform?usp=sf_link'
-        >
-            Introduction: see if you got it right
-        </Quiz>
+
+        <Quiz id='en/1' />
     </>
 );

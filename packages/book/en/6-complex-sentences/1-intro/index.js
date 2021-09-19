@@ -26,11 +26,6 @@ export default () => (
             <Example2 />
         </Section>
 
-        <Quiz
-            number={11}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSfzkLWetSxFS9t6ZvKNspeJbVwvSbCA9p_dAV4bOHyCdK0WNA/viewform?usp=sf_link'
-        >
-            Complex sentences
-        </Quiz>
+        <Quiz id='en/11' />
     </>
 );

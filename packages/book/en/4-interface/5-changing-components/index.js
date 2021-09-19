@@ -184,11 +184,6 @@ export default () => (
                 </Section.Main>
             </Section.Block>
         </Section>
-        <Quiz
-            number={9}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSf4UHPNeAYQb8LW8V3y33-Q5pnVo7Y-GkdaheZ7IpUcQN594Q/viewform?usp=sf_link'
-        >
-            Changing components and interacting with classes
-        </Quiz>
+        <Quiz id='en/9' />
     </>
 );

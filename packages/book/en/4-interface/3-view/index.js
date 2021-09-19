@@ -36,12 +36,7 @@ export default () => (
                 </Section.Main>
             </Section.Block>
         </Section>
-        <Quiz
-            number={8}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdpI4z2RvMo1rFxU_YSc20Id2p7DCe5CJVU1WBaUHBIZ1YQ3Q/viewform?usp=sf_link'
-        >
-            Breaking down the screen: what the View consists of
-        </Quiz>
+        <Quiz id='en/8' />
         <Assignment
             number={5}
             href='https://docs.google.com/forms/d/e/1FAIpQLSfbevn7Ejqw9hjz9Cn3iHtcdASGI3HDgTcxtgyFRLFSjTrZ4g/viewform?usp=sf_link'

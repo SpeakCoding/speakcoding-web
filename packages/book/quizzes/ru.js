@@ -71,7 +71,7 @@ export default {
             },
             {
                 type: 'multiple-choice',
-                title: '4: Перечислите все элементы, которые могут быть классами:',
+                title: '4. Перечислите все элементы, которые могут быть классами:',
                 options: [
                     { title: 'Comment', correct: true },
                     { title: 'Сохранение story' },
@@ -239,7 +239,7 @@ export default {
                     'Как вы помните, у переменных есть название и класс объектов, которые в ней можно хранить. Обычно название идет первым, с маленькой буквы, а класс вторым, с большой - названиеКласс.'
             },
             {
-                type: 'multiple-choice',
+                type: 'single-choice',
                 title: '2. Какое значение нужно вставить вместо знаков вопроса ниже?',
                 code: `
                 func addLike(user User) {
@@ -387,7 +387,7 @@ export default {
                 code: `
                 var mutedSubscriptions Set[User]
                 mutedSubscriptions = myAccount.[[???]](red).muted()`,
-                comment: 'getFollowers'
+                comment: 'getFollowers.'
             },
             {
                 type: 'text',
