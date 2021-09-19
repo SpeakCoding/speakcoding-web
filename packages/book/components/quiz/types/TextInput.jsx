@@ -2,14 +2,13 @@ import React, { useCallback } from 'react';
 import pt from 'prop-types';
 import { debounce } from '@sc/tools/function';
 import { Textarea } from '@sc/ui';
-import Comment from './Comment';
 import { useLocale } from '../../localize';
-import quizzes from '../../../quizzes';
+import Assets from '../blocks/Assets';
+import Comment from '../blocks/Comment';
 import s from './types.css';
 
-const TextInput = ({ answer, asset, comment, title, onChange }) => {
-    const { choose } = useLocale(),
-        Asset = quizzes.assets[asset];
+const TextInput = ({ answer, comment, title, onChange, ...props }) => {
+    const { choose } = useLocale();
 
     const handleChange = useCallback(
         debounce(value => {
@@ -22,11 +21,7 @@ const TextInput = ({ answer, asset, comment, title, onChange }) => {
         <>
             <h2 className={s.label}>{title}</h2>
 
-            {Asset && (
-                <div className={s.asset}>
-                    <Asset />
-                </div>
-            )}
+            <Assets {...props} />
 
             <Textarea
                 autoheight
@@ -44,7 +39,6 @@ const TextInput = ({ answer, asset, comment, title, onChange }) => {
 
 TextInput.propTypes = {
     answer: pt.string,
-    asset: pt.string,
     comment: pt.string,
     title: pt.string,
     onChange: pt.func
@@ -52,7 +46,6 @@ TextInput.propTypes = {
 
 TextInput.defaultProps = {
     answer: undefined,
-    asset: undefined,
     comment: undefined,
     title: undefined,
     onChange: () => {}

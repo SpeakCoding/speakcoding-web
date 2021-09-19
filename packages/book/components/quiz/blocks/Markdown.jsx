@@ -1,7 +1,7 @@
 import React from 'react';
 import MarkdownToJSX from 'markdown-to-jsx';
 import { Link } from '@sc/ui';
-import s from './types.css';
+import s from './blocks.css';
 
 const options = {
     overrides: {

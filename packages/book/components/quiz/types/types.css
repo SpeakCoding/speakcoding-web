@@ -49,21 +49,3 @@
 .option.disabled {
     cursor: not-allowed;
 }
-
-.comment {
-    margin-top: 24px;
-    padding: 16px;
-    border: 1px solid var(--c-green-500);
-    border-radius: 8px;
-    line-height: 24px;
-}
-
-.right {
-    margin-bottom: 4px;
-    color: var(--c-grey-500);
-}
-
-.markdown a:is(:link, :visited, :hover, :active) {
-    color: var(--c-primary-alt-500);
-    text-decoration: underline;
-}

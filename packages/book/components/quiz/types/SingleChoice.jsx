@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
 import { Radio } from '@sc/ui';
-import Comment from './Comment';
-import quizzes from '../../../quizzes';
+import Assets from '../blocks/Assets';
+import Comment from '../blocks/Comment';
 import s from './types.css';
 
-const SingleChoice = ({ answer, asset, comment, options, title, onChange }) => {
-    const [state, setState] = useState(answer),
-        Asset = quizzes.assets[asset];
+const SingleChoice = ({ answer, comment, options, title, onChange, ...props }) => {
+    const [state, setState] = useState(answer);
 
     const handleChange = i => () => {
         setState(i);
@@ -23,11 +22,7 @@ const SingleChoice = ({ answer, asset, comment, options, title, onChange }) => {
         <>
             <h2 className={s.label}>{title}</h2>
 
-            {Asset && (
-                <div className={s.asset}>
-                    <Asset />
-                </div>
-            )}
+            <Assets {...props} />
 
             {options.map((option, i) => (
                 <label
@@ -55,7 +50,6 @@ const SingleChoice = ({ answer, asset, comment, options, title, onChange }) => {
 
 SingleChoice.propTypes = {
     answer: pt.number,
-    asset: pt.string,
     comment: pt.string,
     options: pt.array,
     title: pt.string,
@@ -64,7 +58,6 @@ SingleChoice.propTypes = {
 
 SingleChoice.defaultProps = {
     answer: undefined,
-    asset: undefined,
     comment: undefined,
     options: [],
     title: undefined,

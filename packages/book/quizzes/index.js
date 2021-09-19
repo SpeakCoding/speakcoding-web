@@ -1,12 +1,4 @@
-import en from './en.json';
-import ru from './ru.json';
+import en from './en';
+import ru from './ru';
 
-const context = require.context('./assets', false, /\.jsx$/);
-
-const assets = context.keys().reduce((res, name) => {
-    const module = context(name),
-        [, id] = /\.\/(.+?)\.jsx$/.exec(name);
-    return { ...res, [id]: module.default };
-}, {});
-
-export default { en, ru, assets };
+export default { en, ru };

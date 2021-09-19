@@ -41,7 +41,7 @@
     flex-direction: column;
     position: relative;
     max-height: 80vh;
-    padding: 40px;
+    padding: 32px;
     box-sizing: border-box;
     border-radius: 16px;
     background-color: var(--c-white);
@@ -97,7 +97,7 @@
     justify-content: center;
     flex: 0 0 72px;
     height: 72px;
-    margin: -40px -40px 24px;
+    margin: -32px -32px 24px;
     padding: 0 72px;
     border-bottom: 1px solid var(--c-grey-200);
 }
@@ -107,7 +107,7 @@
     align-items: center;
     flex: 0 0 72px;
     height: 72px;
-    margin: 24px -40px -40px;
+    margin: 24px -32px -32px;
     padding: 0 40px;
     border-top: 1px solid var(--c-grey-200);
 }
