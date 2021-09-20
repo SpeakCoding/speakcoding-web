@@ -143,13 +143,6 @@ export default () => (
 
         <Quiz id='ru/2' />
 
-        <Assignment
-            number={2}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSf30DDnjNqIXlkSQ4rrlpifm_mF96mcD0WfYKTTcDnaZ5Gniw/viewform?usp=sf_link'
-        >
-            Опишите в структурном виде максимально детальный список составляющих и характеристик{' '}
-            <b>для класса Post</b> в Инстаграме. Для всех составляющих и характеристик придумайте их
-            названия и классы.
-        </Assignment>
+        <Assignment id='ru/2' />
     </>
 );

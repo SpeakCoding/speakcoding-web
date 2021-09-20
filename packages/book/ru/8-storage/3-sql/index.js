@@ -88,12 +88,6 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment
-            number={19}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdGR5wQ6YrTm_MzE06yaI76LKUTge-i1ImA6y9EvsDv7JwZ8w/viewform?usp=sf_link'
-        >
-            Опишите словами, какой запрос в БД необходимо написать для редактирования поста c id=1.
-            Попробуйте записать его как SQL запрос.
-        </Assignment>
+        <Assignment id='ru/19' />
     </>
 );

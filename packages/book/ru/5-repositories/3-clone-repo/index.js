@@ -29,12 +29,7 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Assignment
-            number={7}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSd7gEAYgH21_rC21AXRNeENhMl5t2g7ahKfxoBy7iSPHmsOMQ/viewform?usp=sf_link'
-        >
-            Сделайте локальную копию репозитория
-        </Assignment>
+        <Assignment id='ru/7' />
 
         <Section>
             <Section.Block>

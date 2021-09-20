@@ -109,27 +109,10 @@ export default () => (
             <Example2 />
         </Section>
 
-        <Assignment
-            number={20}
-            href='https://docs.google.com/forms/d/e/1FAIpQLScm1I2TOIx6QwGPpl1Hy9DmcG39bY_9VyZSICUOr0702xG6Ng/viewform?usp=sf_link'
-        >
-            В репозитории SpeakCoding откройте файл Cache.swift и составьте список перечисленных в
-            нем функций, а также опишите, что они делают
-        </Assignment>
+        <Assignment id='ru/20' />
 
-        <Assignment
-            number={21}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSf4CluyFUIcXQR4Q7X6HFuHFFZTMwIP5qyl64bp1tAPwfSNGQ/viewform?usp=sf_link'
-        >
-            Найдите в коде учебной копии Instagram, где создается таблица Post
-        </Assignment>
+        <Assignment id='ru/21' />
 
-        <Assignment
-            number={22}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdvC_B9U92dTwpjJz3hnxbqqMosuAX1KKwT_HN0qXJJ4Mvh4A/viewform?usp=sf_link'
-        >
-            В Cache.swift найдите функцию, отвечающую за редактирование поста, и попробуйте описать
-            словами шаги функции
-        </Assignment>
+        <Assignment id='ru/22' />
     </>
 );

@@ -42,17 +42,13 @@ export default () => (
                 </Lottie.IntersectionBox>
             </Section.Side>
         </Section>
+
         <Skill>
             Понимание функций позволит тебе подумать и описать, как классы, которые ты определил в
             структуре, могут взаимодействовать между собой, какие действия можно производить с этими
             классами, как можно изменять изменять их экземпляры.
         </Skill>
-        <Assignment
-            number={3}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdXL_PUc4UUiEIXsRX_s-zhT4UxH1ZWgD6UoXMOIiItJ0buKA/viewform?usp=sf_link'
-        >
-            В дополнение к описанию класса Post, которое вы делали в предыдущем задании, запишите
-            все функции этого класса
-        </Assignment>
+
+        <Assignment id='ru/3' />
     </>
 );

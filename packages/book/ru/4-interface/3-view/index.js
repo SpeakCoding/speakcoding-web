@@ -40,11 +40,6 @@ export default () => (
 
         <Quiz id='ru/8' />
 
-        <Assignment
-            number={5}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSc9-3_FXw4SG82oQGaB_UXTSh7NPOqxC-1zfgtvA2gMEpPnSA/viewform?usp=sf_link'
-        >
-            Опишите, из чего состоит экран профиля пользователя (списком)
-        </Assignment>
+        <Assignment id='ru/5' />
     </>
 );

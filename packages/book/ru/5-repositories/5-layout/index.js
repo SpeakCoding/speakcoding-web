@@ -93,12 +93,7 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment
-            number={14}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSd3cWxPb0ZJoHarcqwBYEKt4DNKeU7QPNO3iGqkEn0km2vxtA/viewform?usp=sf_link'
-        >
-            Разберите на элементы .xib файл для User Profile (UserProfileView.xib)
-        </Assignment>
+        <Assignment id='ru/14' />
 
         <Section>
             <Terminal />

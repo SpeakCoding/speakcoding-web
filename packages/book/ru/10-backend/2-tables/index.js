@@ -155,10 +155,7 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment number={26} href='https://forms.gle/fUhZB24NPJqLAvzq6'>
-            Найдите файл, в котором определено создание таблицы Comments, и подробно опишите, какие
-            и какого типа поля мы в нем создаем.
-        </Assignment>
+        <Assignment id='ru/26' />
 
         <Section>
             <Section.Main narrow>

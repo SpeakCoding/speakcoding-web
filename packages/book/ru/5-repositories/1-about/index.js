@@ -44,13 +44,6 @@ export default () => (
             </Section.Side>
         </Section>
 
-        <Assignment
-            number={6}
-            href='https://docs.google.com/forms/d/e/1FAIpQLScE2jaETYLtxlZMwULCcjSZrduav6Vyqi4lx6rF3G60twvqDA/viewform?usp=sf_link'
-        >
-            В репозитории SpeakCoding по ссылке в первой части главы найдите файл, описывающий
-            контроллер, который отвечает за отображение PostFeedView. Перечислите все его
-            составляющие и функции.
-        </Assignment>
+        <Assignment id='ru/6' />
     </>
 );

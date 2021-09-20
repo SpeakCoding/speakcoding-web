@@ -142,12 +142,6 @@ export default () => (
 
         <Quiz id='ru/7' />
 
-        <Assignment
-            number={4}
-            href='https://docs.google.com/forms/d/e/1FAIpQLScbJu75eB9onNbTtN9eY4rRSlyinpICU16SBy0XDq1I3XVrMg/viewform?usp=sf_link'
-        >
-            Подумайте о том, какие экраны нам понадобятся для отображения и взаимодействия с User.
-            Напишите список экранов и дайте им имена.
-        </Assignment>
+        <Assignment id='ru/4' />
     </>
 );

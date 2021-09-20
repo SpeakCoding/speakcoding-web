@@ -137,9 +137,7 @@ export default () => (
             <Additional1 />
         </Section>
 
-        <Assignment number={28} href='https://forms.gle/dVnirhRZa1pa9Wfx8'>
-            Разберите функции sign up и update (выше) на примере функции show.
-        </Assignment>
+        <Assignment id='ru/28' />
 
         <Section>
             <Section.Block>

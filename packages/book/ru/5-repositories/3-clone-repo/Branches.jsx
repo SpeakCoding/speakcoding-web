@@ -47,13 +47,7 @@ export default () => (
                         </Section.Main>
                     </Section.Block>
 
-                    <Assignment
-                        number={8}
-                        href='https://docs.google.com/forms/d/e/1FAIpQLSczLCE9N5_XL1nE0hrWmkXHbZelIF2Y6fcy9PMo3CKWSZy9xg/viewform?usp=sf_link'
-                    >
-                        Попробуйте создать свою ветку кода с названием Имя_Фамилия и перейдите на
-                        нее
-                    </Assignment>
+                    <Assignment id='ru/8' />
 
                     <Section.Block>
                         <Section.Main narrow>

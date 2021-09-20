@@ -132,13 +132,7 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment
-            number={18}
-            href='https://docs.google.com/forms/d/e/1FAIpQLScJQzElGfKCPC6X0y-h6v5aKSs84C1WPM6bmUgOXfWkfBOwVA/viewform?usp=sf_link'
-        >
-            Дополните таблицы выше недостающими составляющими Post и подумайте, какие таблицы нам
-            понадобится создать для записи всех данных поста
-        </Assignment>
+        <Assignment id='ru/18' />
 
         <Section>
             <Section.Main narrow>

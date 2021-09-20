@@ -88,13 +88,7 @@ export default () => (
                 </Section.Sticky>
             </Section.Side>
         </Section>
-        <Assignment
-            number={1}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSfw_KZZO4haOFXQTpYPEsxpFiNjfzioN_POt4jCbBWdAHvt5g/viewform?usp=sf_link'
-        >
-            Откройте приложение Spotify, и попробуйте описать из чего оно состоит. Вы можете сначала
-            записать это в текстовом виде, а потом, по аналогии с Инстаграмом, в структурном. Мы
-            посмотрим его и обсудим с вами по завершении этого блока.
-        </Assignment>
+
+        <Assignment id='ru/1' />
     </>
 );

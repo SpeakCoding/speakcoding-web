@@ -127,12 +127,6 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment
-            number={17}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSer8ewjh265eF39HXZ1YhltS0EoYrvnTG_Ad-x2tYjs4Deyhw/viewform?usp=sf_link'
-        >
-            Возьмите/придумайте любой комментарий и попробуйте разобрать его на данные, записав в
-            строку, в каком виде вы могли бы отправить его на сервер
-        </Assignment>
+        <Assignment id='ru/17' />
     </>
 );

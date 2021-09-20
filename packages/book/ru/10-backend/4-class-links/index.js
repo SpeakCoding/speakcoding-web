@@ -141,10 +141,7 @@ export default () => (
                         </Section.Main>
                     </Section.Block>
 
-                    <Assignment number={27} href='https://forms.gle/ScFHWwGmTkYE6WtG7'>
-                        Найдите файл описания класса User, посмотрите, какие связи определены между
-                        пользователем и другими model классами, опишите их простыми словами...
-                    </Assignment>
+                    <Assignment id='ru/27' />
                 </Expand>
             </Section.Main>
         </Section.Block>

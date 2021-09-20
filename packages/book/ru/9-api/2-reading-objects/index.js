@@ -155,9 +155,6 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Assignment number={24} href='https://forms.gle/A7Wfuu2sHZhFZfQ1A'>
-            С помощью какого запроса мы получим последние комментарии к последнему посту
-            пользователя? На основании примеров выше попробуйте написать весь запрос целиком.
-        </Assignment>
+        <Assignment id='ru/24' />
     </>
 );

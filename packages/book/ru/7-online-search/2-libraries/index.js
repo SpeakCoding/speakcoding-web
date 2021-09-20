@@ -71,11 +71,6 @@ export default () => (
             </Section.Side>
         </Section>
 
-        <Assignment
-            number={16}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSccnNDQY3quO1vTIS_P_8fr7IA1pHetcIZnUoUNnLGAeNCQTg/viewform?usp=sf_link'
-        >
-            Задания на поиск UIKit и стандартных классов интерфейса
-        </Assignment>
+        <Assignment id='ru/16' />
     </>
 );

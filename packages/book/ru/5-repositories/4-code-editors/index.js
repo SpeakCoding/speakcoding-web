@@ -29,13 +29,7 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Assignment
-            number={9}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdOA2V8AFcQojwGq2c5-azlmUqUs2YRCSgIk44RjDk4FquL7w/viewform?usp=sf_link'
-        >
-            Установите Xcode на свой компьютер. Запустите редактор и откройте проект, указав папку,
-            в которую вы скачали репозиторий (например, Documents/SpeakCoding/iphone/).
-        </Assignment>
+        <Assignment id='ru/9' />
 
         <Section>
             <Section.Block>
@@ -67,14 +61,7 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment
-            number={10}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdbf4B3ETjq2YWODuc0R9Q3_w1WVoRdycWAVeROtcJx5yONsA/viewform?usp=sf_link'
-        >
-            Откройте скачанный репозиторий в XCode. Откройте файл, содержащий описание класса Post,
-            найдите составляющую, в которой хранится пользователь - автор поста, и перейдите к
-            описанию класса этой составляющей внутри редактора.
-        </Assignment>
+        <Assignment id='ru/10' />
 
         <Section>
             <Section.Main narrow>
@@ -101,20 +88,9 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Assignment
-            number={11}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdBmk6AmK_ENyUD1T8ax54q8lP2Z-0KXE_GJxus6FQrfd_RRg/viewform?usp=sf_link'
-        >
-            Откройте проект SpeakCoding в Xcode и запустите эмулятор учебного приложения для
-            iPhone11 Pro
-        </Assignment>
+        <Assignment id='ru/11' />
 
-        <Assignment
-            number={12}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdDeNfDafdIeI0wMXtFGjdEW30eXJvFQ5tXLuXkm7Y3HmH0QA/viewform?usp=sf_link'
-        >
-            Откройте проект SpeakCoding в Xcode и запустите приложение на своем телефоне
-        </Assignment>
+        <Assignment id='ru/12' />
 
         <Section>
             <Section.Main narrow>
@@ -131,13 +107,6 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Assignment
-            number={13}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSfa10XrOvGORqbLfbNK0lcmEQw9z4qLxRxkQeTLHKAPSSyIVg/viewform?usp=sf_link'
-        >
-            Пройдитесь по всем файлам в списке файлов в Xcode (самая левая колонка в редакторе) и
-            коротко опишите каждый файл. Например, в файле User.swift хранится описание класса User.
-            А в файле UserProfileView - описание отображения профиля пользователя.
-        </Assignment>
+        <Assignment id='ru/13' />
     </>
 );

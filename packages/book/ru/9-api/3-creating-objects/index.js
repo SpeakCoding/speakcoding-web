@@ -105,9 +105,6 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment number={25} href='https://forms.gle/QNyPgBEa6Dm4FiW99'>
-            В ServerAPI.swift, найдите функцию, отвечающую за отправку запроса о создании поста на
-            сервер. Перечислите словами (назовите) и запишите входящие этой функции.
-        </Assignment>
+        <Assignment id='ru/25' />
     </>
 );

@@ -101,9 +101,6 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment number={23} href='https://forms.gle/bbqgbeir6XCx2ipN9'>
-            Какой endpoint нужно добавить в запрос для того, чтобы прочитать список читателей
-            (фоловеров) пользователя?
-        </Assignment>
+        <Assignment id='ru/23' />
     </>
 );
