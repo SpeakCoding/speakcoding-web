@@ -28,6 +28,14 @@
     padding-bottom: 0;
 }
 
+.cell.semi-dense-top {
+    padding-top: 8px;
+}
+
+.cell.semi-dense-bottom {
+    padding-bottom: 8px;
+}
+
 .cell pre {
     white-space: pre-wrap;
 }

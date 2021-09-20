@@ -3,25 +3,25 @@ import pt from 'prop-types';
 import { Button, Card, Modal } from '@sc/ui';
 import L from '../localize';
 import { useApp } from '../../tools';
-import quizzes from '../../quizzes';
-import { MultipleChoice, SingleChoice, TextInput } from './types';
-import s from './quiz.css';
+import assignments from '../../assignments';
+import Content from './Content';
+import s from './assignment.css';
 
-const Quiz = ({ id: path }) => {
+const Assignment = ({ id: path }) => {
     const [book, id] = useMemo(() => path.split('/'), [path]),
-        quiz = quizzes[book]?.[id],
+        assignment = assignments[book]?.[id],
         [opened, setOpened] = useState(false),
         [i, setI] = useState(0),
         [currentAnswer, setCurrentAnswer] = useState(),
         { courses, updateCourse } = useApp(),
-        answers = courses[book]?.quizzes?.[id] || [];
+        answers = courses[book]?.assignments?.[id] || [];
 
     const openModal = useCallback(() => {
-        if (quiz) {
+        if (assignment) {
             setI(0);
             setOpened(true);
         }
-    }, [quiz]);
+    }, [assignment]);
 
     const closeModal = useCallback(() => setOpened(false), []);
 
@@ -30,22 +30,22 @@ const Quiz = ({ id: path }) => {
     }, []);
 
     const handleConfirmAnswer = useCallback(() => {
-        updateCourse(book, 'quiz', { id, answers: [...answers, currentAnswer] });
-    }, [i, currentAnswer, answers, book, id]);
+        updateCourse(book, 'assignment', { id, answers: [...answers, currentAnswer] });
+        if (assignment.questions.length === 1) setI(i + 1);
+    }, [i, currentAnswer, answers, book, id, assignment]);
 
     const handleNext = useCallback(() => {
         setCurrentAnswer(undefined);
         setI(i + 1);
     }, [i]);
 
-    if (!quiz) return null;
+    if (!assignment) return null;
 
-    const { title, description, questions } = quiz,
-        question = questions[i];
+    const { title, description, questions } = assignment;
 
     return (
         <>
-            <Card mode='quiz'>
+            <Card mode='assignment'>
                 <h2>{title}</h2>
 
                 {description}
@@ -59,34 +59,16 @@ const Quiz = ({ id: path }) => {
             <Modal opened={opened} onClose={closeModal}>
                 <Modal.Title>{title}</Modal.Title>
 
-                {question && (
+                {questions[i] && (
                     <>
                         <Modal.ScrollView>
                             <div className={s.modal}>
-                                {question.type === 'multiple-choice' && (
-                                    <MultipleChoice
-                                        key={i}
-                                        {...question}
-                                        answer={answers[i]}
-                                        onChange={handleChangeAnswer}
-                                    />
-                                )}
-                                {question.type === 'single-choice' && (
-                                    <SingleChoice
-                                        key={i}
-                                        {...question}
-                                        answer={answers[i]}
-                                        onChange={handleChangeAnswer}
-                                    />
-                                )}
-                                {question.type === 'text' && (
-                                    <TextInput
-                                        key={i}
-                                        {...question}
-                                        answer={answers[i]}
-                                        onChange={handleChangeAnswer}
-                                    />
-                                )}
+                                <Content
+                                    key={i}
+                                    {...questions[i]}
+                                    answer={answers[i]}
+                                    onChange={handleChangeAnswer}
+                                />
                             </div>
                         </Modal.ScrollView>
 
@@ -110,7 +92,7 @@ const Quiz = ({ id: path }) => {
                     </>
                 )}
 
-                {!question && (
+                {!questions[i] && (
                     <div className={s.finish}>
                         <div className={s.hat} />
                         <h2 className={s.message}>
@@ -128,8 +110,8 @@ const Quiz = ({ id: path }) => {
     );
 };
 
-Quiz.propTypes = {
+Assignment.propTypes = {
     id: pt.string.isRequired
 };
 
-export default Quiz;
+export default Assignment;

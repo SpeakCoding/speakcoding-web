@@ -1,16 +1,16 @@
 .modal {
     display: flex;
     flex-direction: column;
-    width: 560px;
+    width: 816px;
     min-height: 0;
 }
 
 .finish {
-    width: 560px;
+    width: 816px;
     text-align: center;
 }
 
-.img {
+.hat {
     height: 140px;
     margin-bottom: 24px;
     background: url(./party.svg) center no-repeat;

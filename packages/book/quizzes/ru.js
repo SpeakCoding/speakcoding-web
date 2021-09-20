@@ -202,11 +202,7 @@ export default {
                 type: 'text',
                 title: '3. Чего не хватает в функции-конструкторе ниже?',
                 code: `
-                [[User]](steel-blue)(
-                    [[inputUsername Text]](orange),
-                    [[inputEmail Text]](orange),
-                    [[inputPassword Text]](orange)
-                ) {
+                [[User]](steel-blue)([[inputUsername Text]](orange), [[inputEmail Text]](orange), [[inputPassword Text]](orange)) {
                     [[self.username = inputUsername]](red)
                     [[self.password = inputPassword]](red)
                     [[???]](red)

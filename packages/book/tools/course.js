@@ -55,6 +55,12 @@ export function useCourses() {
                     save(id, course);
                     break;
 
+                case 'assignment':
+                    course.assignments = course.assignments || {};
+                    course.assignments[payload.id] = payload.answers;
+                    save(id, course);
+                    break;
+
                 default:
             }
 

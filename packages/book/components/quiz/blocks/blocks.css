@@ -33,3 +33,15 @@
     color: var(--c-primary-alt-500);
     text-decoration: underline;
 }
+
+.markdown p {
+    margin: 0 0 12px;
+}
+
+.asset {
+    margin-bottom: 8px;
+}
+
+.asset pre {
+    white-space: pre-wrap;
+}

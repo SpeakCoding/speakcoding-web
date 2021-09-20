@@ -201,11 +201,7 @@ export default {
                 type: 'text',
                 title: "3. What's missing from the constructor below?",
                 code: `
-                [[User]](steel-blue)(
-                    [[inputUsername Text]](orange),
-                    [[inputEmail Text]](orange),
-                    [[inputPassword Text]](orange)
-                ) {
+                [[User]](steel-blue)([[inputUsername Text]](orange), [[inputEmail Text]](orange), [[inputPassword Text]](orange)) {
                     [[self.username = inputUsername]](red)
                     [[self.password = inputPassword]](red)
                     [[???]](red)
