@@ -79,16 +79,13 @@ export default () => (
                 </Lottie.IntersectionBox>
             </Section.Side>
         </Section>
+
         <Skill>
             Understanding functions lets you evaluate and describe how the classes you defined in
             the structure can interact with one another, which actions can be performed with these
             classes, and how specific instances of classes can be altered.
         </Skill>
-        <Assignment
-            number={3}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSff8V8v7z941DvCwAGAOVcNeOefRpfw3Jdw8CYAzcMBlnEyGA/viewform?usp=sf_link'
-        >
-            In addition to the definition of the Post class, list all functions of this class.
-        </Assignment>
+
+        <Assignment id='en/3' />
     </>
 );

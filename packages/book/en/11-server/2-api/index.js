@@ -71,10 +71,6 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Assignment number={29} href='https://forms.gle/x9HoMf4eNFAv9aQU6'>
-            In the server-side code, look at the controller for the User class and the corresponding
-            part of the routes.rb configuration file. List the requests that the server might
-            process for users.
-        </Assignment>
+        <Assignment id='en/29' />
     </>
 );

@@ -28,13 +28,7 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Assignment
-            number={9}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdrRxpjvEOEFBYJfKRGuOU4T4D6iRYgDKyrDPAy2Mk9mGG3Pg/viewform'
-        >
-            Install Xcode on your computer. Launch the editor and open a project, indicating the
-            folder into which you downloaded the repository (e.g., Documents/SpeakCoding/iphone/).
-        </Assignment>
+        <Assignment id='en/9' />
 
         <Section>
             <Section.Block>
@@ -67,14 +61,7 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment
-            number={10}
-            href='https://docs.google.com/forms/d/e/1FAIpQLScmT1DfeXe9IFxiO5j8NNHTt8FQ8Bu1Pt8otlPH_0yYhjjNiQ/viewform'
-        >
-            Open the downloaded repository in Xcode. Open the file containing the definition of the
-            Post class, locate the component that stores the user who created the post, and jump to
-            the description of that component’s class within the editor.
-        </Assignment>
+        <Assignment id='en/10' />
 
         <Section>
             <Section.Main narrow>
@@ -101,22 +88,9 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Assignment
-            number={11}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSckuvVfLprHCwAoPq1WuPmn56p2ev7oY6mMxLTtb5TiBTGLYA/viewform'
-        >
-            Open the Xcode project. Inside Xcode is a program-running simulator. The panel with the
-            list of devices is located above the widest field containing code, at the very top.
-        </Assignment>
+        <Assignment id='en/11' />
 
-        <Assignment
-            number={12}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdRD72ETeEVJqgbNjrjzYRNaOom5yEFvJ7jUUloyvt_szyPfg/viewform'
-        >
-            Open a copy of the downloaded repository in Xcode. Connect your phone to the device on
-            which Xcode is open. To launch the app on your phone, select your phone from the device
-            list (it should appear in the list when it is connected).
-        </Assignment>
+        <Assignment id='en/12' />
 
         <Section>
             <Section.Main narrow>
@@ -132,13 +106,6 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Assignment
-            number={13}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdvayrPX-SDm6_ni-KABwYcHB0G_sVn8tukiWGvX8fteqtOEw/viewform'
-        >
-            Go through all of the files in the file list to the left and describe briefly what each
-            file describes. For example, the User.swift file contains a description of the User
-            class.
-        </Assignment>
+        <Assignment id='en/13' />
     </>
 );

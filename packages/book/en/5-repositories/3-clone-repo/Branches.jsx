@@ -49,12 +49,7 @@ export default () => (
                         </Section.Main>
                     </Section.Block>
 
-                    <Assignment
-                        number={8}
-                        href='https://docs.google.com/forms/d/e/1FAIpQLSfNUlrkZxhsTFVDorYUKcLoLko2Mf5wx-P-i9SfqTO4pRkTkA/viewform'
-                    >
-                        Create your own code branch with the name Name_Surname and switch to it
-                    </Assignment>
+                    <Assignment id='en/8' />
 
                     <Section.Block>
                         <Section.Main narrow>

@@ -106,24 +106,10 @@ export default () => (
             <Example2 />
         </Section>
 
-        <Assignment
-            number={20}
-            href='https://docs.google.com/forms/d/e/1FAIpQLScrRU6dq7j1xwZwrJf11UAUIqoMOrk22wspH2Ypqyjz6MlXBA/viewform?usp=sf_link'
-        >
-            In SpeakCoding repository open the Cache.swift file, then list the functions and
-            describe what they do
-        </Assignment>
+        <Assignment id='en/20' />
 
-        <Assignment
-            number={21}
-            href='https://docs.google.com/forms/d/e/1FAIpQLScBtRV5khr1HtkUN2yZuHfVgUT2NmoCNX5liPCzuXnVUfH9rg/viewform?usp=sf_link'
-        >
-            Find the part of the code that creates the Post table
-        </Assignment>
+        <Assignment id='en/21' />
 
-        <Assignment number={22} href='https://forms.gle/qHACi3zsb7zLF9nDA'>
-            In Cache.swift file find the function that is responsible for editing posts, and
-            describe that function’s steps
-        </Assignment>
+        <Assignment id='en/22' />
     </>
 );

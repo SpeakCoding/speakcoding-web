@@ -279,7 +279,7 @@ export default {
                 type: 'multiple-choice',
                 title: '1. On which screen can one user follow another?',
                 options: [
-                    { title: 'List of likes' },
+                    { title: 'List of likes', correct: true },
                     { title: 'User profile', correct: true },
                     { title: "List of user's followers", correct: true },
                     { title: 'Post feed' }

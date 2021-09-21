@@ -131,10 +131,7 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment number={18} href='https://forms.gle/3R39J18BnubchmTb9'>
-            Populate the tables above with the missing Post components and consider which tables we
-            will need to create to record all of the post’s data
-        </Assignment>
+        <Assignment id='en/18' />
 
         <Section>
             <Section.Main narrow>

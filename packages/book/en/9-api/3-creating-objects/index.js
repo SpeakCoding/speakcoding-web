@@ -118,12 +118,6 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment
-            number={25}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSf5tx7hEFvDZd9F_MTfToJ5ADHB1QCdAaneoETvHkARWTvEqA/viewform?usp=sf_link'
-        >
-            In ServerAPI.swift, find the function that sends requests to create posts to the server.
-            List (name) the function’s inputs.
-        </Assignment>
+        <Assignment id='en/25' />
     </>
 );

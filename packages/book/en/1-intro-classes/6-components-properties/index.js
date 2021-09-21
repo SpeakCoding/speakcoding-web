@@ -134,14 +134,9 @@ export default () => (
                 </Section.Sticky>
             </Section.Side>
         </Section>
+
         <Quiz id='en/2' />
-        <Assignment
-            number={2}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdrSAB4zTnD-Qzyy-V5E8KdHM5qCbWWIghQC5JD7C6H7S3dNw/viewform?usp=sf_link'
-        >
-            Create a structured definition of the components and properties for the Post class in
-            Instagram, including as much detail as possible. Assign a title and class to each
-            component.
-        </Assignment>
+
+        <Assignment id='en/2' />
     </>
 );

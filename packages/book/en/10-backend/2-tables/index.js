@@ -155,10 +155,7 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment number={26} href='https://forms.gle/TjLqzbzqx6DDrBrZA'>
-            Find the file that defines how to create the Comments table, and describe which fields,
-            and what type of fields, we create in this file.
-        </Assignment>
+        <Assignment id='en/26' />
 
         <Section>
             <Section.Main narrow>

@@ -144,10 +144,7 @@ export default () => (
                         </Section.Main>
                     </Section.Block>
 
-                    <Assignment number={27} href='https://forms.gle/vtVZMfFKyxXxM7B98'>
-                        Find the file that describes the User class and see which links are defined
-                        between the user and other model classes. Describe them in basic terms...
-                    </Assignment>
+                    <Assignment id='en/27' />
                 </Expand>
             </Section.Main>
         </Section.Block>

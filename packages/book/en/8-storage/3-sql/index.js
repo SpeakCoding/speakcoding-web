@@ -89,9 +89,6 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment number={19} href='https://forms.gle/chnd79MLCYrevtvf7'>
-            Describe the request that you need to write in a database to edit a post. Try to write
-            it as an SQL request.
-        </Assignment>
+        <Assignment id='en/19' />
     </>
 );

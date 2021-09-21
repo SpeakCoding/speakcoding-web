@@ -7,7 +7,15 @@ import assignments from '../../assignments';
 import Content from './Content';
 import s from './assignment.css';
 
-const Assignment = ({ id: path }) => {
+const Assignment = ({ id: path, number, children }) => {
+    if (!path)
+        return (
+            <div style={{ padding: '40px', background: 'lightblue' }}>
+                <h1>ASSIGNMENT {number}</h1>
+                {children}
+            </div>
+        );
+
     const [book, id] = useMemo(() => path.split('/'), [path]),
         assignment = assignments[book]?.[id],
         [opened, setOpened] = useState(false),

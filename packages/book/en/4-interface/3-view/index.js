@@ -36,12 +36,9 @@ export default () => (
                 </Section.Main>
             </Section.Block>
         </Section>
+
         <Quiz id='en/8' />
-        <Assignment
-            number={5}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSfbevn7Ejqw9hjz9Cn3iHtcdASGI3HDgTcxtgyFRLFSjTrZ4g/viewform?usp=sf_link'
-        >
-            Describe (list) what the user profile screen consists of.
-        </Assignment>
+
+        <Assignment id='en/5' />
     </>
 );

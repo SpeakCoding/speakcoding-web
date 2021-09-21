@@ -128,12 +128,6 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment
-            number={17}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSemJx5uXqyknG6TX9bBi_RGAKANhZiOM5YtkAOfpd3aIbcq_Q/viewform?usp=sf_link'
-        >
-            Take any comment (or make one of your own) and break it into data; write it down in the
-            string the format in which you can transfer the comment to the server
-        </Assignment>
+        <Assignment id='en/17' />
     </>
 );

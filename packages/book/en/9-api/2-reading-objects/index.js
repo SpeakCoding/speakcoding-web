@@ -155,9 +155,6 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Assignment number={24} href='https://forms.gle/mVGWj6Pqpu8tPwAy6'>
-            Which request helps us retrieve the most recent comments to the user’s last post? Using
-            the examples above, write the entire request.
-        </Assignment>
+        <Assignment id='en/24' />
     </>
 );

@@ -29,12 +29,7 @@ export default () => (
             </Section.Main>
         </Section>
 
-        <Assignment
-            number={7}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSfp-VlR7lnIdU-bdEBwQ1xvLho2n8VrdwzHDv4bhS_FWeP2gQ/viewform'
-        >
-            Create a local copy of the repository
-        </Assignment>
+        <Assignment id='en/7' />
 
         <Section>
             <Section.Block>

@@ -93,13 +93,7 @@ export default () => (
                 </Section.Sticky>
             </Section.Side>
         </Section>
-        <Assignment
-            number={1}
-            href='https://docs.google.com/forms/d/e/1FAIpQLScl7et0belQssA8oe6dTO_gHiXyUGCmhZitHwLHFF34y6jtkQ/viewform?usp=sf_link'
-        >
-            Open the Spotify app and describe what it consists of. You could start by writing this
-            in text form, then in a structured format (in the style of Instagram, Twitter or Venmo).
-            We will then look at your description and discuss it at the end of this section.
-        </Assignment>
+
+        <Assignment id='en/1' />
     </>
 );

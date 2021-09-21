@@ -70,8 +70,6 @@ export default () => (
             </Section.Side>
         </Section>
 
-        <Assignment number={16} href='https://forms.gle/UyueBsj4fFzusQaN7'>
-            Search for a UIKit and standard interface classes
-        </Assignment>
+        <Assignment id='en/16' />
     </>
 );

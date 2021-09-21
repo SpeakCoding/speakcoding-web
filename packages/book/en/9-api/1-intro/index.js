@@ -100,9 +100,6 @@ export default () => (
             </Section.Block>
         </Section>
 
-        <Assignment number={23} href='https://forms.gle/TVQdDH3Yyxd3qo9A8'>
-            State what endpoint we need to add to a request to be able to read a list of the user’s
-            followers
-        </Assignment>
+        <Assignment id='en/23' />
     </>
 );

@@ -131,12 +131,9 @@ export default () => (
                 </Section.Main>
             </Section.Block>
         </Section>
+
         <Quiz id='en/7' />
-        <Assignment
-            number={4}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdELTGy7hi7DOUZhotEf1Y-jPu8pIcx1x6My_v3AycUySnyhQ/viewform?usp=sf_link'
-        >
-            Consider which screens the User class will require (e.g., creation, editing, lists).
-        </Assignment>
+
+        <Assignment id='en/4' />
     </>
 );

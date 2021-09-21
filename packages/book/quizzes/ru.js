@@ -280,7 +280,7 @@ export default {
                 type: 'multiple-choice',
                 title: '1. На каком экране/экранах пользователь может подписаться на другого пользователя?',
                 options: [
-                    { title: 'Список лайков' },
+                    { title: 'Список лайков', correct: true },
                     { title: 'Профиль пользователя', correct: true },
                     { title: 'Список фолловеров пользователя', correct: true },
                     { title: 'Лента постов' }
