@@ -14,7 +14,19 @@
     position: relative;
     margin: -70px 0 0;
     padding: 70px 0 64px;
+}
+
+.example::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: -41px;
+    width: 573px;
+    height: 224px;
     background-image: url(./function-parts.svg);
-    background-size: 444px 230px;
     background-repeat: no-repeat;
+}
+
+.code {
+    position: relative;
 }

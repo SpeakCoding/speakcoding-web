@@ -1,9 +1,10 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import pt from 'prop-types';
-import { Button, Card, Modal } from '@sc/ui';
+import { Button, Modal } from '@sc/ui';
 import L from '../localize';
 import { useApp } from '../../tools';
 import assignments from '../../assignments';
+import Card from '../card';
 import Content from './Content';
 import s from './assignment.css';
 
@@ -53,15 +54,10 @@ const Assignment = ({ id: path, number, children }) => {
 
     return (
         <>
-            <Card mode='assignment'>
-                <h2>{title}</h2>
-
+            <Card variant='assignment'>
+                <Card.Title>{title}</Card.Title>
                 {description}
-
-                <Card.Button onClick={openModal}>
-                    <L lang='en'>Complete</L>
-                    <L lang='ru'>Пройти</L>
-                </Card.Button>
+                <Card.Button onClick={openModal} />
             </Card>
 
             <Modal opened={opened} onClose={closeModal}>

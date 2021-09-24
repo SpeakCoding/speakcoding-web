@@ -75,5 +75,11 @@ module.exports = {
             type: 'asset',
             exclude: [/ui\/components\/icon\/glyphs/, /ui\/mobile\/icon\/glyphs/]
         };
+    },
+    video() {
+        return {
+            test: /\.mp4$/,
+            type: 'asset'
+        };
     }
 };

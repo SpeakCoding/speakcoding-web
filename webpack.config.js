@@ -26,7 +26,8 @@ module.exports = {
             loaders.glyph(),
             loaders.mobileglyph(),
             loaders.font(),
-            loaders.image()
+            loaders.image(),
+            loaders.video()
         ]
     },
     plugins: [

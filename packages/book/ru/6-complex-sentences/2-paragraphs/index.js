@@ -36,12 +36,6 @@ export default () => (
                 <Structure>
                     <div className={s.example1}>
                         <Code value={code1} tabs />
-                        <div className={s.block11}>
-                            Функция, позволяющая редактировать текст поста
-                        </div>
-                        <div className={s.block12}>
-                            Если пост уже выставлен - редактирование невозможно
-                        </div>
                     </div>
                 </Structure>
             </Section.Main>

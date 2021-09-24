@@ -1,8 +1,8 @@
 import React from 'react';
-import { Callout, Img, Link, Section } from '@sc/ui';
+import { Callout, Link, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
-import img from './google-search.png';
+import Video from '../../../common/7/search-video';
 
 export default () => (
     <>
@@ -81,7 +81,7 @@ export default () => (
                 </Section.Main>
                 <Section.Side>
                     <Section.Sticky top='60px'>
-                        <Img src={img} width={474} height={365} />
+                        <Video />
                     </Section.Sticky>
                 </Section.Side>
             </Section.Block>

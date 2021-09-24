@@ -3,7 +3,7 @@
     --font-family-mono: RobotoMono, sans-serif;
     --font-family-brand: DrukWide, sans-serif;
 
-    --t-h1: 700 32px / 40px var(--font-family);
+    --t-h1: 700 32px / 40px var(--font-family-brand);
     --t-h2: 700 24px / 40px var(--font-family);
     --t-h3: 22px / 1.4em var(--font-family);
     --t-base: 18px / 1.8em var(--font-family);

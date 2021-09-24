@@ -1,13 +1,13 @@
 import React from 'react';
-import { Card } from '@sc/ui';
+import Card from '../card';
 import L from '../localize';
 
 const Skill = ({ children }) => (
-    <Card mode='skill'>
-        <h2>
+    <Card variant='skill'>
+        <Card.Title>
             <L lang='en'>New skill!</L>
             <L lang='ru'>Новый скил добавлен!</L>
-        </h2>
+        </Card.Title>
         {children}
     </Card>
 );

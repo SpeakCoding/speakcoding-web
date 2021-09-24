@@ -10,11 +10,9 @@ import Part4 from './4-screens';
 export default () => (
     <Page chapter={12} phone={false}>
         <Part1 />
-        <Section.Divider />
         <Part2 />
         <Section.Divider />
         <Part3 />
-        <Section.Divider />
         <Part4 />
         <Next href='/en/handbook'>Now to recap and reading</Next>
     </Page>

@@ -28,6 +28,16 @@
     background-color: var(--c-white);
 }
 
+.box.black,
+.box.black:hover,
+.box.black:active {
+    padding: 12px 16px;
+    background-color: var(--c-black);
+    color: var(--c-white);
+    font-size: 16px;
+    line-height: 20px;
+}
+
 .box.small {
     padding: 10px 12px;
 }
@@ -39,17 +49,9 @@
 .box.rounded {
     padding: 0 12px;
     border-radius: 16px;
-    background-color: var(--bg-plum);
+    background-color: var(--c-primary-500);
     font: var(--t-base);
     color: var(--c-black);
-}
-
-.box.rounded:hover {
-    background-color: var(--bg-plum-hover);
-}
-
-.box.rounded:active {
-    background-color: var(--bg-plum);
 }
 
 .box.block {

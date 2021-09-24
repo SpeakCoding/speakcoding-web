@@ -25,7 +25,7 @@ Button.propTypes = {
     disabled: pt.bool,
     icon: pt.string,
     size: pt.oneOf(['default', 'small', 'large']),
-    variant: pt.oneOf(['contained', 'rounded', 'white']),
+    variant: pt.oneOf(['contained', 'rounded', 'white', 'black']),
     onClick: pt.func
 };
 

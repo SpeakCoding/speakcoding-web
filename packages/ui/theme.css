@@ -6,6 +6,10 @@
 @import "./theme/fonts.css";
 @import "./theme/layers.css";
 
+:root {
+    --max-width: 1260px;
+}
+
 body {
     font: var(--t-base);
     color: var(--c-black);

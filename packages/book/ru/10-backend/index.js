@@ -11,13 +11,10 @@ import Part5 from './5-db-read-write';
 export default () => (
     <Page chapter={10} phone={false}>
         <Part1 />
-        <Section.Divider />
         <Part2 />
-        <Section.Divider />
         <Part3 />
         <Section.Divider />
         <Part4 />
-        <Section.Divider />
         <Part5 />
         <Next href='/ru/chapter-11' />
     </Page>

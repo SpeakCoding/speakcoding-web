@@ -1,10 +1,11 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import pt from 'prop-types';
-import { Button, Card, Modal } from '@sc/ui';
+import { Button, Modal } from '@sc/ui';
 import L from '../localize';
 import { useApp } from '../../tools';
 import quizzes from '../../quizzes';
 import { MultipleChoice, SingleChoice, TextInput } from './types';
+import Card from '../card';
 import s from './quiz.css';
 
 const Quiz = ({ id: path }) => {
@@ -45,15 +46,10 @@ const Quiz = ({ id: path }) => {
 
     return (
         <>
-            <Card mode='quiz'>
-                <h2>{title}</h2>
-
+            <Card variant='quiz'>
+                <Card.Title>{title}</Card.Title>
                 {description}
-
-                <Card.Button onClick={openModal}>
-                    <L lang='en'>Complete</L>
-                    <L lang='ru'>Пройти</L>
-                </Card.Button>
+                <Card.Button onClick={openModal} />
             </Card>
 
             <Modal opened={opened} onClose={closeModal}>

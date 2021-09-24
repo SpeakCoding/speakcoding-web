@@ -15,9 +15,11 @@ const GlossaryLink = () => {
     return (
         <>
             {glossary && (
-                <div className={s.glossary} onClick={goBack}>
-                    <L lang='en'>Go back</L>
-                    <L lang='ru'>Назад</L>
+                <div className={s.link} onClick={goBack}>
+                    <div className={s.back}>
+                        <L lang='en'>Back to chapter</L>
+                        <L lang='ru'>Вернуться к главе</L>
+                    </div>
                 </div>
             )}
             {!glossary && (

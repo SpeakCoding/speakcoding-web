@@ -99,7 +99,7 @@
     height: 72px;
     margin: -32px -32px 24px;
     padding: 0 72px;
-    border-bottom: 1px solid var(--c-grey-200);
+    border-bottom: 1px solid var(--c-grey-300);
 }
 
 .footer {
@@ -109,7 +109,7 @@
     height: 72px;
     margin: 24px -32px -32px;
     padding: 0 40px;
-    border-top: 1px solid var(--c-grey-200);
+    border-top: 1px solid var(--c-grey-300);
 }
 
 .wrapper {

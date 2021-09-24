@@ -62,7 +62,9 @@ export default () => (
                         </Grid.Cell>
                         <Grid.Cell>
                             <div className={s.example}>
-                                <Code value={code3} />
+                                <div className={s.code}>
+                                    <Code value={code3} />
+                                </div>
                             </div>
                         </Grid.Cell>
                     </Grid>

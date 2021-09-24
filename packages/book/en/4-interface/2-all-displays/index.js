@@ -75,33 +75,33 @@ export default () => (
                         sees them. They are stored in the code as separate files with corresponding
                         titles.
                     </p>
+                    <p>
+                        In the display classes we list the object components that we need to display
+                        to the user, and state{' '}
+                        <Expand.Control htmlFor='2-2-1'>
+                            <Button variant='rounded'>how ⤵</Button>
+                        </Expand.Control>{' '}
+                        to display data about a specific object (e.g., about the relevant post).
+                    </p>
                     <Expand id='2-2-1'>
                         In the PostFeedView, we add a ‘heart’ into the display class; this heart is
                         highlighted if a user likes the post. We also add the number of comments
                         that the post has received.
                     </Expand>
                     <p>
-                        In the display classes we list the object components that we need to display
-                        to the user, and state{' '}
-                        <Expand.Control htmlFor='2-2-1'>
-                            <Button variant='rounded'>how ⤴︎</Button>
-                        </Expand.Control>{' '}
-                        to display data about a specific object (e.g., about the relevant post).
-                    </p>
-                    <Expand id='2-2-2'>
-                        For example, for <i>the post creation screen</i> – PostComposerView – we
-                        need to display fields for uploading images, adding text, choosing the
-                        geolocation, and adding comments, among other things.
-                    </Expand>
-                    <p>
                         <Expand.Control htmlFor='2-2-2'>
-                            <Button variant='rounded'>In the display classes ⤴︎</Button>
+                            <Button variant='rounded'>In the display classes ⤵</Button>
                         </Expand.Control>
                         , we also list the elements{' '}
                         <i>needed to perform a particular action that affects the class objects</i>:
                         creating a new post, editing the username in the user’s account, or liking a
                         comment.
                     </p>
+                    <Expand id='2-2-2'>
+                        For example, for <i>the post creation screen</i> – PostComposerView – we
+                        need to display fields for uploading images, adding text, choosing the
+                        geolocation, and adding comments, among other things.
+                    </Expand>
                     <p>
                         Let’s see what other components a post has that we want to display to the
                         user:

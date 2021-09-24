@@ -9,7 +9,7 @@ import s from './page.css';
 
 const PageHeader = ({ chapter, chapters }) => {
     const { profile } = useApp(),
-        title = typeof chapter === 'number' && chapters[chapter - 1]?.title;
+        current = typeof chapter === 'number' ? chapters[chapter - 1] : undefined;
 
     return (
         <Header chapter={chapter}>
@@ -38,7 +38,12 @@ const PageHeader = ({ chapter, chapters }) => {
                     </Navigation>
                 </Breadcrumbs.Item>
 
-                {title && <Breadcrumbs.Item>{title}</Breadcrumbs.Item>}
+                {current?.title && (
+                    <Breadcrumbs.Item>
+                        {current?.prefix && `${current?.prefix}. `}
+                        {current?.title}
+                    </Breadcrumbs.Item>
+                )}
             </Breadcrumbs>
         </Header>
     );

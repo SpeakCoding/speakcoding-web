@@ -8,12 +8,6 @@ export default () => (
         <Section>
             <Section.Main narrow>
                 <h1>Files & folders</h1>
-                <Expand id='5-2-1'>
-                    All files for our app’s code are stored in a single folder. Files are sometimes
-                    grouped so that those describing class structures are stored in one folder,
-                    while those describing display (interface) classes are stored in another (we
-                    will show you an example of this in the code for the server section of our app).
-                </Expand>
                 <p>
                     The description of each class in a{' '}
                     <Term id='repository' tooltip>
@@ -21,10 +15,16 @@ export default () => (
                     </Term>{' '}
                     or code editor is typically located in{' '}
                     <Expand.Control htmlFor='5-2-1'>
-                        <Button variant='rounded'>an individual file ⤴</Button>
+                        <Button variant='rounded'>an individual file ⤵</Button>
                     </Expand.Control>
                     . The file is usually given the same name as the class described within.
                 </p>
+                <Expand id='5-2-1'>
+                    All files for our app’s code are stored in a single folder. Files are sometimes
+                    grouped so that those describing class structures are stored in one folder,
+                    while those describing display (interface) classes are stored in another (we
+                    will show you an example of this in the code for the server section of our app).
+                </Expand>
                 <p>
                     <b>Example</b>: A description of the{' '}
                     <Link
@@ -35,20 +35,20 @@ export default () => (
                     </Link>{' '}
                     class.
                 </p>
-                <Expand id='5-2-2'>
-                    If the file you wish to use is in a different folder, some languages require
-                    keywords that allow classes to be imported. Classes can also be imported
-                    directly from online repositories (such as GitHub) using certain keywords.
-                </Expand>
                 <p>
                     Classes{' '}
                     <Expand.Control htmlFor='5-2-2'>
-                        <Button variant='rounded'>described in files in the same folder ⤴</Button>
+                        <Button variant='rounded'>described in files in the same folder ⤵</Button>
                     </Expand.Control>{' '}
                     can be used for each file in that folder. For example, in the PostFeedView.swift
                     file, which describes the Post display class in the feed, we use the Post class
                     (var post: Post) in the list of components of the PostFeedView class.
                 </p>
+                <Expand id='5-2-2'>
+                    If the file you wish to use is in a different folder, some languages require
+                    keywords that allow classes to be imported. Classes can also be imported
+                    directly from online repositories (such as GitHub) using certain keywords.
+                </Expand>
             </Section.Main>
         </Section>
 

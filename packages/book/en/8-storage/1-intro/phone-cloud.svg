@@ -5,9 +5,9 @@
         <circle cx="300.001" cy="201.71" r="14.76" stroke="white" stroke-width="14"/>
         <path d="M332.801 170.755C324.579 162.046 312.925 156.61 300.001 156.61C287.078 156.61 275.424 162.046 267.201 170.755" stroke="white" stroke-width="14" stroke-linecap="round"/>
         <path d="M359.001 145.95C344.202 130.297 323.242 120.53 300 120.53C276.759 120.53 255.799 130.297 241 145.95" stroke="white" stroke-width="14" stroke-linecap="round"/>
-        <rect x="246" y="283" width="108" height="73" rx="4" fill="#FBE582"/>
-        <rect x="246" y="366" width="108" height="73" rx="4" fill="#FBE582"/>
-        <path d="M246 453C246 450.791 247.791 449 250 449H350C352.209 449 354 450.791 354 453V475H246V453Z" fill="#FBE582"/>
+        <rect x="246" y="283" width="108" height="73" rx="4" fill="#FDDE4F"/>
+        <rect x="246" y="366" width="108" height="73" rx="4" fill="#FDDE4F"/>
+        <path d="M246 453C246 450.791 247.791 449 250 449H350C352.209 449 354 450.791 354 453V475H246V453Z" fill="#FDDE4F"/>
     </g>
     <defs>
         <clipPath id="clip0">

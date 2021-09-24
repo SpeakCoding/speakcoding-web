@@ -36,12 +36,6 @@ export default () => (
                 <Structure>
                     <div className={s.example1}>
                         <Code value={code1} tabs />
-                        <div className={s.block11}>
-                            A function that allows us to edit a post text
-                        </div>
-                        <div className={s.block12}>
-                            We cannot edit a post once it has been posted
-                        </div>
                     </div>
                 </Structure>
             </Section.Main>
