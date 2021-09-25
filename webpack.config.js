@@ -43,7 +43,10 @@ module.exports = {
             template: mobile ? 'packages/mobile/demo/index.html' : 'packages/book/index.html'
         }),
         new CopyWebpackPlugin({
-            patterns: [{ from: 'static/favicon.png', to: '.' }]
+            patterns: [
+                { from: 'static/favicon.png', to: '.' },
+                { from: 'static/email-header.png', to: '.' }
+            ]
         })
     ],
     devServer: {
