@@ -179,15 +179,15 @@ export default {
                 type: 'multiple-choice',
                 title: '2. This is a definition of the Post class (picture below). We create a new instance of the Post class: var myPost = new Post(). Which attribute is NOT a part of myPost?',
                 code: `
-                class [[Post]](steel-blue) {
-                    [[user]](light-sky-blue)            [[User]](light-sky-blue)
-                    [[time]](aquamarine)            [[Time]](aquamarine)
-                    [[image]](green-yellow)           [[Image]](green-yellow)
-                    [[setOfImages]](green)     [[[]Image]](green)
-                    [[video]](orange)           [[Video]](orange)
-                    [[setOfLikes]](sandy-brown)      [[[]Like]](sandy-brown)
-                    [[caption]](red)         [[Text]](red)
-                    [[setOfComments]](plum)   [[[]Comment]](plum)
+                class {{hl:Post}}(steel-blue) {
+                    {{hl:user}}(light-sky-blue)            {{hl:User}}(light-sky-blue)
+                    {{hl:time}}(aquamarine)            {{hl:Time}}(aquamarine)
+                    {{hl:image}}(green-yellow)           {{hl:Image}}(green-yellow)
+                    {{hl:setOfImages}}(green)     [[[]Image}}(green)
+                    {{hl:video}}(orange)           {{hl:Video}}(orange)
+                    {{hl:setOfLikes}}(sandy-brown)      [[[]Like}}(sandy-brown)
+                    {{hl:caption}}(red)         {{hl:Text}}(red)
+                    {{hl:setOfComments}}(plum)   [[[]Comment}}(plum)
                 }`,
                 options: [
                     { title: 'user' },
@@ -201,10 +201,10 @@ export default {
                 type: 'text',
                 title: "3. What's missing from the constructor below?",
                 code: `
-                [[User]](steel-blue)([[inputUsername Text]](orange), [[inputEmail Text]](orange), [[inputPassword Text]](orange)) {
-                    [[self.username = inputUsername]](red)
-                    [[self.password = inputPassword]](red)
-                    [[???]](red)
+                {{hl:User}}(steel-blue)({{hl:inputUsername Text}}(orange), {{hl:inputEmail Text}}(orange), {{hl:inputPassword Text}}(orange)) {
+                    {{hl:self.username = inputUsername}}(red)
+                    {{hl:self.password = inputPassword}}(red)
+                    {{hl:???}}(red)
                 }`,
                 comment:
                     "self.email=inputEmail. Like with other components of the User class, we should save the value of the email address returned in brackets as this particular user's email address. (self.)"
@@ -238,7 +238,7 @@ export default {
                 title: '2. Insert value instead of ???:',
                 code: `
                 func addLike(user User) {
-                    var newLike [[???]](red)
+                    var newLike {{hl:???}}(red)
                     newLike = new Like(user)
                     self.likes.add(newLike)
                 }`,
@@ -381,14 +381,14 @@ export default {
                 title: '3. Which function is missing from the following string?',
                 code: `
                 var mutedSubscriptions Set[User]
-                mutedSubscriptions = myAccount.[[???]](red).muted()`,
+                mutedSubscriptions = myAccount.{{hl:???}}(red).muted()`,
                 comment: 'getFollowers.'
             },
             {
                 type: 'text',
                 title: '4. Which class does commentReplies belong to?',
                 code: `
-                var commentReply [[???]](red)
+                var commentReply {{hl:???}}(red)
                 commentReply = myLastPost.getComment().last.getReply()`,
                 comment: 'To the Comment class.'
             },
@@ -397,7 +397,7 @@ export default {
                 title: '5. What needs to be added to the following code to receive comments to your recent stories?',
                 code: `
                 var storyReplies Set[Comment]
-                storyReplies = myAccount.getStories().[[???]](red)`,
+                storyReplies = myAccount.getStories().{{hl:???}}(red)`,
                 comment: 'myAccount.getStories().**last.getReply()**'
             }
         ]

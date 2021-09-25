@@ -2,8 +2,8 @@ import React from 'react';
 import { Code, Grid, HL, Section } from '@sc/ui';
 
 const code =
-    '[[SELECT]](thistle) [[*]](sandy-brown) FROM [[posts]](green) ' +
-    '[[ORDER BY]](plum) [[date]](aquamarine) [[DESC]](light-sky-blue);';
+    '{{hl:SELECT}}(thistle) {{hl:*}}(sandy-brown) FROM {{hl:posts}}(green) ' +
+    '{{hl:ORDER BY}}(plum) {{hl:date}}(aquamarine) {{hl:DESC}}(light-sky-blue);';
 
 export default () => (
     <>

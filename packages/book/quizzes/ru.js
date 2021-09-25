@@ -180,15 +180,15 @@ export default {
                 type: 'multiple-choice',
                 title: '2. Ниже перед вами - описание класса Post. Представьте, что мы создаем новый экземпляр класса Post: var myPost = new Post(); Какая из составляющих ниже не будет являться частью myPost?',
                 code: `
-                class [[Post]](steel-blue) {
-                    [[user]](light-sky-blue)            [[User]](light-sky-blue)
-                    [[time]](aquamarine)            [[Time]](aquamarine)
-                    [[image]](green-yellow)           [[Image]](green-yellow)
-                    [[setOfImages]](green)     [[[]Image]](green)
-                    [[video]](orange)           [[Video]](orange)
-                    [[setOfLikes]](sandy-brown)      [[[]Like]](sandy-brown)
-                    [[caption]](red)         [[Text]](red)
-                    [[setOfComments]](plum)   [[[]Comment]](plum)
+                class {{hl:Post}}(steel-blue) {
+                    {{hl:user}}(light-sky-blue)            {{hl:User}}(light-sky-blue)
+                    {{hl:time}}(aquamarine)            {{hl:Time}}(aquamarine)
+                    {{hl:image}}(green-yellow)           {{hl:Image}}(green-yellow)
+                    {{hl:setOfImages}}(green)     [[[]Image}}(green)
+                    {{hl:video}}(orange)           {{hl:Video}}(orange)
+                    {{hl:setOfLikes}}(sandy-brown)      [[[]Like}}(sandy-brown)
+                    {{hl:caption}}(red)         {{hl:Text}}(red)
+                    {{hl:setOfComments}}(plum)   [[[]Comment}}(plum)
                 }`,
                 options: [
                     { title: 'user' },
@@ -202,10 +202,10 @@ export default {
                 type: 'text',
                 title: '3. Чего не хватает в функции-конструкторе ниже?',
                 code: `
-                [[User]](steel-blue)([[inputUsername Text]](orange), [[inputEmail Text]](orange), [[inputPassword Text]](orange)) {
-                    [[self.username = inputUsername]](red)
-                    [[self.password = inputPassword]](red)
-                    [[???]](red)
+                {{hl:User}}(steel-blue)({{hl:inputUsername Text}}(orange), {{hl:inputEmail Text}}(orange), {{hl:inputPassword Text}}(orange)) {
+                    {{hl:self.username = inputUsername}}(red)
+                    {{hl:self.password = inputPassword}}(red)
+                    {{hl:???}}(red)
                 }`,
                 comment:
                     'self.email=inputEmail. По аналогии с другими составляющими User, мы должны сохранить полученное в скобках значение email как email этого конкретного пользователя. (self.)'
@@ -239,7 +239,7 @@ export default {
                 title: '2. Какое значение нужно вставить вместо знаков вопроса ниже?',
                 code: `
                 func addLike(user User) {
-                    var newLike [[???]](red)
+                    var newLike {{hl:???}}(red)
                     newLike = new Like(user)
                     self.likes.add(newLike)
                 }`,
@@ -382,14 +382,14 @@ export default {
                 title: '3. Какая функция отсутствует в строчке ниже?',
                 code: `
                 var mutedSubscriptions Set[User]
-                mutedSubscriptions = myAccount.[[???]](red).muted()`,
+                mutedSubscriptions = myAccount.{{hl:???}}(red).muted()`,
                 comment: 'getFollowers.'
             },
             {
                 type: 'text',
                 title: '4. К какому классу принадлежит commentReply?',
                 code: `
-                var commentReply [[???]](red)
+                var commentReply {{hl:???}}(red)
                 commentReply = myLastPost.getComment().last.getReply()`,
                 comment: 'К классу Comment.'
             },
@@ -398,7 +398,7 @@ export default {
                 title: '5. Что нужно добавить к коду ниже, чтобы получить ответы на ваши последние сториз?',
                 code: `
                 var storyReplies Set[Comment]
-                storyReplies = myAccount.getStories().[[???]](red)`,
+                storyReplies = myAccount.getStories().{{hl:???}}(red)`,
                 comment: 'myAccount.getStories().**last.getReply()**'
             }
         ]

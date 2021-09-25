@@ -1,19 +1,19 @@
 import React from 'react';
 import { HL, Link, Pre, Section } from '@sc/ui';
 
-const code1 = `func application(_ [[application: UIApplication]](aquamarine), didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {`;
+const code1 = `func application(_ {{hl:application: UIApplication}}(aquamarine), didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {`;
 
 const code2 = `
-\xa0   User.init[[CurrentUser()]](light-sky-blue)
+\xa0   User.init{{hl:CurrentUser()}}(light-sky-blue)
     
-    self.window = UIWindow([[frame: UIScreen.main.bounds]](orange))
+    self.window = UIWindow({{hl:frame: UIScreen.main.bounds}}(orange))
     self.window!.tintColor = UIColor(named: "sc-blue")
     
-    if [[User.current == nil]](light-sky-blue) {
-        self.[[showLoginView]](sandy-brown)()
-    } [[else]](red) {
-        self.[[setupUI]](steel-blue)()
-        self.[[window!.rootViewController = self.tabBarController]](steel-blue)
+    if {{hl:User.current == nil}}(light-sky-blue) {
+        self.{{hl:showLoginView}}(sandy-brown)()
+    } {{hl:else}}(red) {
+        self.{{hl:setupUI}}(steel-blue)()
+        self.{{hl:window!.rootViewController = self.tabBarController}}(steel-blue)
     }
     self.window!.makeKeyAndVisible()
         

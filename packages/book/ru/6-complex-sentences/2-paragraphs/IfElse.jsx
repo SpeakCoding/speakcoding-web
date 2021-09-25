@@ -3,32 +3,32 @@ import { Code, Grid, HL, Hint, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 
 const code21 = `
-class [[Post]](light-sky-blue) {
+class {{hl:Post}}(light-sky-blue) {
     ...
     ...
-    func [[showCommentSection]](wheat) () {
-        [[commentsCount =]](orange)
-        [[post.comments.count()]](orange)
+    func {{hl:showCommentSection}}(wheat) () {
+        {{hl:commentsCount =}}(orange)
+        {{hl:post.comments.count()}}(orange)
 `;
 
-const code22 = `\xa0       [[if (commentsCount > 0) {]](orange)`;
+const code22 = `\xa0       {{hl:if (commentsCount > 0) {}}(orange)`;
 
 const code23 = `
-\xa0           [[commentSection.show()]](orange)
-        [[}]](orange)
+\xa0           {{hl:commentSection.show()}}(orange)
+        {{hl:}}}(orange)
     }
 }`;
 
 const code3 = `
-[[func toggleLike]](red)() {
+{{hl:func toggleLike}}(red)() {
     if self.isLiked {
-        [[self.isLiked = false]](orange)
-        [[self.numberOfLikes -= 1]](plum)
+        {{hl:self.isLiked = false}}(orange)
+        {{hl:self.numberOfLikes -= 1}}(plum)
     } else {
-        [[self.isLiked = true]](light-sky-blue)
-        [[self.numberOfLikes += 1]](green)
+        {{hl:self.isLiked = true}}(light-sky-blue)
+        {{hl:self.numberOfLikes += 1}}(green)
     }
-    [[Cache.shared.update(post: self)]](wheat)
+    {{hl:Cache.shared.update(post: self)}}(wheat)
 }`;
 
 export default () => (

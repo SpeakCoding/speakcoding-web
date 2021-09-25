@@ -2,8 +2,8 @@ import React from 'react';
 import { Code, Grid, HL, Section } from '@sc/ui';
 
 const code =
-    '[[UPDATE]](thistle) [[posts]](green) [[SET]](plum) ' +
-    '[[number_of_comments=1]](wheat) [[WHERE id=1]](green-yellow);';
+    '{{hl:UPDATE}}(thistle) {{hl:posts}}(green) {{hl:SET}}(plum) ' +
+    '{{hl:number_of_comments=1}}(wheat) {{hl:WHERE id=1}}(green-yellow);';
 
 export default () => (
     <>

@@ -5,13 +5,13 @@ import s from './style.css';
 
 const code11 = `
 class User {
-    [[username]](orange) Text
+    {{hl:username}}(orange) Text
     ...
 }
 \xa0`;
 
 const code12 = `
-\xa0   [[newUsernameField]](turquoise)    TextField
+\xa0   {{hl:newUsernameField}}(turquoise)    TextField
     setButton            Button
     currentUser          User
 `;
@@ -19,7 +19,7 @@ const code12 = `
 const code13 = `
 \xa0
     func onClickSetButton() {
-        currentUser.[[username]](orange) = [[newUsernameField.text]](green)
+        currentUser.{{hl:username}}(orange) = {{hl:newUsernameField.text}}(green)
     }
 }`;
 
@@ -28,7 +28,7 @@ class User {
     username Text
     ...
 
-    func [[SetUserName]](aquamarine) (newUsername Text) {
+    func {{hl:SetUserName}}(aquamarine) (newUsername Text) {
         self.username = newUsername
     }
 }
@@ -43,7 +43,7 @@ class NewUsernameForm {
 
 const code22 = `
 \xa0
-        currentUser.[[SetUserName]](aquamarine)([[newUsernameField.text]](light-sky-blue))
+        currentUser.{{hl:SetUserName}}(aquamarine)({{hl:newUsernameField.text}}(light-sky-blue))
     }
 }`;
 

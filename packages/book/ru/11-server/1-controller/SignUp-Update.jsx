@@ -2,8 +2,8 @@ import React from 'react';
 import { Button, Expand, Pre, Section } from '@sc/ui';
 
 const code1 = `
-def [[create]](wheat)
-    user = [[User]](green).[[create]](wheat)([[user_params]](light-sky-blue))
+def {{hl:create}}(wheat)
+    user = {{hl:User}}(green).{{hl:create}}(wheat)({{hl:user_params}}(light-sky-blue))
     if user.save
         render json: {
             data: UserSerializer.new(user, self).serialize,
@@ -14,13 +14,13 @@ def [[create]](wheat)
     end
 end
     
-def [[user_params]](light-sky-blue)
+def {{hl:user_params}}(light-sky-blue)
     result = params.require(:user).permit(:email, :password, :user_name, :bio, :profile_picture)
 end`;
 
 const code2 = `
-def [[update]](wheat)()
-    user = [[User]](green).[[find]](wheat)([[params[:id]\u200b]](light-sky-blue)))
+def {{hl:update}}(wheat)()
+    user = {{hl:User}}(green).{{hl:find}}(wheat)({{hl:params[:id]}}(light-sky-blue)))
 
     if user != current_user()
        render_unauthorized()

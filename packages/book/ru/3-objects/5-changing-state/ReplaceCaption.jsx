@@ -5,7 +5,7 @@ import s from './style.css';
 
 const code3 = `
 func editCaption (newCaption Text)  {
-    [[currentCaption]](orange _ 1) = [[newCaption]](light-sky-blue _ 1)
+    {{hl:currentCaption}}(orange _ 1) = {{hl:newCaption}}(light-sky-blue _ 1)
 }`;
 
 export default () => (

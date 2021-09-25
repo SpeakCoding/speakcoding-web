@@ -3,22 +3,22 @@ import { Code, Grid, HL, Pre, Section } from '@sc/ui';
 
 const code1 = `
 hasTable(name: String) -> Bool {
-    let result = database.[[executeQuery(sqlQuery: SELECT]](green-yellow) [[count]](red)[[(*)]](floral-white) FROM [[sqlite_master]](wheat) [[WHERE type="table" AND name="post"]](steel-blue);
+    let result = database.{{hl:executeQuery(sqlQuery: SELECT}}(green-yellow) {{hl:count}}(red){{hl:(*)}}(floral-white) FROM {{hl:sqlite_master}}(wheat) {{hl:WHERE type="table" AND name="post"}}(steel-blue);
 `;
 
 const code2 = `
-\xa0   return result.first!["count(*)"] as! [[Int > 0]](aquamarine)
+\xa0   return result.first!["count(*)"] as! {{hl:Int > 0}}(aquamarine)
 }`;
 
-const code3 = `func hasTable ([[inputName]](orange): String) {
+const code3 = `func hasTable ({{hl:inputName}}(orange): String) {
     let query = """
         SELECT count(*) 
         FROM sqlite_master 
-        WHERE type="table" AND [[name=?]](orange)
+        WHERE type="table" AND {{hl:name=?}}(orange)
         """
     let result = database.executeQuery(
         sqlQuery: query,
-        parameters: [\u200b[[inputName]](orange)]
+        parameters: [{{hl:inputName}}(orange)]
     )
     return result.first!["count(*)"] as! Int > 0
 }`;

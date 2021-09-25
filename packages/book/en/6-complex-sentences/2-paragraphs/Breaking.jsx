@@ -3,11 +3,11 @@ import { Code, Grid, HL, Section } from '@sc/ui';
 import s from './style.css';
 
 const code6 = `
-private [[func]](orange) [[updateLikes]](sandy-brown)() {
-    let likerFollowee = [[self.post]](light-sky-blue).[[likerFollowee]](green)
-    self.[[likerFolloweeProfilePictureView]](plum).showImageAsynchronously(imageURL: likerFollowee?.profilePictureURL)
-    [[if likerFollowee != nil]](red) {
-        let textTemplate = (self.post.[[numberOfLikes > 1]](aquamarine)) ? [["Liked by {user} and {others}" : "Liked by {user}"]](wheat)
+private {{hl:func}}(orange) {{hl:updateLikes}}(sandy-brown)() {
+    let likerFollowee = {{hl:self.post}}(light-sky-blue).{{hl:likerFollowee}}(green)
+    self.{{hl:likerFolloweeProfilePictureView}}(plum).showImageAsynchronously(imageURL: likerFollowee?.profilePictureURL)
+    {{hl:if likerFollowee != nil}}(red) {
+        let textTemplate = (self.post.{{hl:numberOfLikes > 1}}(aquamarine)) ? {{hl:"Liked by {user} and {others}" : "Liked by {user}"}}(wheat)
     }
 }`;
 

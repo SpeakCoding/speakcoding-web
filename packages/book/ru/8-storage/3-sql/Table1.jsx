@@ -2,16 +2,16 @@ import React from 'react';
 import { Code, Grid, HL, Section } from '@sc/ui';
 
 const code = `
-[[CREATE]](wheat) [[TABLE]](red) [[Posts]](sandy-brown) (
-    [["id"]](orange),
-    [["date"]](aquamarine),
-    [["user_id"]](light-sky-blue),
-    [["caption"]](plum),
-    [["image_url"]](blue),
-    [["location"]](green),
-    [["number_of_likes"]](floral-white),
-    [["number_of_comments"]](thistle),
-    [["liked"]](green-yellow) 
+{{hl:CREATE}}(wheat) {{hl:TABLE}}(red) {{hl:Posts}}(sandy-brown) (
+    {{hl:"id"}}(orange),
+    {{hl:"date"}}(aquamarine),
+    {{hl:"user_id"}}(light-sky-blue),
+    {{hl:"caption"}}(plum),
+    {{hl:"image_url"}}(blue),
+    {{hl:"location"}}(green),
+    {{hl:"number_of_likes"}}(floral-white),
+    {{hl:"number_of_comments"}}(thistle),
+    {{hl:"liked"}}(green-yellow) 
 );`;
 
 export default () => (

@@ -4,15 +4,15 @@ import Post from '../../../common/2/class-post';
 import s from './style.css';
 
 const codeFn1 = `
-func (post* [[Post]](orange)) [[Add Like]](green)([[user User]](aquamarine)) { 
-    [[new_like = new Like(user)]](plum)
-    [[self.setOfLikes.add(new_like)]](plum)
+func (post* {{hl:Post}}(orange)) {{hl:Add Like}}(green)({{hl:user User}}(aquamarine)) { 
+    {{hl:new_like = new Like(user)}}(plum)
+    {{hl:self.setOfLikes.add(new_like)}}(plum)
 }`;
 
 const codeFn2 = `
-func [[NumberOfLikes]](green)() [[Number]](light-sky-blue) { 
-    [[number_of_likes = self.setOfLikes.length]](plum)
-    [[return]](plum) [[number_of_likes]](light-sky-blue)
+func {{hl:NumberOfLikes}}(green)() {{hl:Number}}(light-sky-blue) { 
+    {{hl:number_of_likes = self.setOfLikes.length}}(plum)
+    {{hl:return}}(plum) {{hl:number_of_likes}}(light-sky-blue)
 }`;
 
 export default () => (

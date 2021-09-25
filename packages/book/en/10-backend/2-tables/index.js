@@ -5,23 +5,23 @@ import s from './style.css';
 
 const code1 = `
 create_table("users") do |table_users|
-    table_users.[[string]](steel-blue)("full_name")
-    table_users.[[string]](steel-blue)("bio")
-    table_users.[[string]](steel-blue)("email")
+    table_users.{{hl:string}}(steel-blue)("full_name")
+    table_users.{{hl:string}}(steel-blue)("bio")
+    table_users.{{hl:string}}(steel-blue)("email")
 
-    table_users.[[string]](steel-blue)("password_digest")
-    table_users.[[string]](steel-blue)("authentication_token")
+    table_users.{{hl:string}}(steel-blue)("password_digest")
+    table_users.{{hl:string}}(steel-blue)("authentication_token")
 
-    table_users.[[datetime]](orange)("created_at", precision: 6, null: false)
-    table_users.[[datetime]](orange)("updated_at", precision: 6, null: false)
+    table_users.{{hl:datetime}}(orange)("created_at", precision: 6, null: false)
+    table_users.{{hl:datetime}}(orange)("updated_at", precision: 6, null: false)
 end
 `;
 
 const code2 = `
-let request = makeRequest(method: HTTPMethod.POST, endpoint: "/[[posts]](light-sky-blue).json", authorized: true, parameters: requestParameters)
+let request = makeRequest(method: HTTPMethod.POST, endpoint: "/{{hl:posts}}(light-sky-blue).json", authorized: true, parameters: requestParameters)
 
 create_table ("posts") do |table_posts|
-    table_posts.[[bigint]](sandy-brown)("user_id")
+    table_posts.{{hl:bigint}}(sandy-brown)("user_id")
     table_posts.string("caption")
     table_posts.string("location")
 

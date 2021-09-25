@@ -5,17 +5,17 @@ import Example2 from './Example2';
 import img from './app.png';
 
 const code1 = `
-func [[showLoginView]](aquamarine)() {
+func {{hl:showLoginView}}(aquamarine)() {
     self.tabBarController = nil
-    let loginViewController = [[LoginViewController]](light-sky-blue)(emailAddress: nil) {\t 
+    let loginViewController = {{hl:LoginViewController}}(light-sky-blue)(emailAddress: nil) {\t 
         self.setupUI()
         self.window!.rootViewController = self.tabBarController
     }
-    let [[loginFlowNavigationController]](steel-blue) =
-        [[UINavigationController]](orange)(rootViewController: [[loginViewController]](wheat))
-    loginFlowNavigationController.modalPresentationStyle = .[[fullScreen]](plum)
-    loginFlowNavigationController.[[isNavigationBarHidden = true]](turquoise)
-    self.window!.[[rootViewController]](sandy-brown) = [[loginFlowNavigationController]](red)
+    let {{hl:loginFlowNavigationController}}(steel-blue) =
+        {{hl:UINavigationController}}(orange)(rootViewController: {{hl:loginViewController}}(wheat))
+    loginFlowNavigationController.modalPresentationStyle = .{{hl:fullScreen}}(plum)
+    loginFlowNavigationController.{{hl:isNavigationBarHidden = true}}(turquoise)
+    self.window!.{{hl:rootViewController}}(sandy-brown) = {{hl:loginFlowNavigationController}}(red)
 }`;
 
 export default () => (

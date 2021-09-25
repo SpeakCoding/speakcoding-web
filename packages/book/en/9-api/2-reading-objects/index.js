@@ -4,9 +4,9 @@ import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
 
 const code = `
-func requestCompletion (result: Any?, metadata: [String : String]?, [[error: Error?]](steel-blue)) { 
-    if let postJSONs = result as? [[\u200b[\u200b[]](plum)[[String]](orange): Any[[]\u200b]\u200b]](plum) {
-        let posts = postJSONs.[[map]](light-sky-blue) { (postJSON) -> Post in
+func requestCompletion (result: Any?, metadata: [String : String]?, {{hl:error: Error?}}(steel-blue)) { 
+    if let postJSONs = result as? {{hl:[[}}(plum){{hl:String}}(orange): Any{{hl:]]}}(plum) {
+        let posts = postJSONs.{{hl:map}}(light-sky-blue) { (postJSON) -> Post in
             Post.instance(withJSON: postJSON)
         }
         feed.posts = posts

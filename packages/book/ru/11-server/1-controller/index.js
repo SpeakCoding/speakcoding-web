@@ -12,8 +12,8 @@ end`;
 
 const code2 = `
 def show
-    userToShow = User.[[find]](sandy-brown)([[params]](light-sky-blue)[:[[id]](steel-blue)])
-    userJson = [[UserSerializer]](plum).new([[userToShow]](green-yellow), self).[[serialize]](red)
+    userToShow = User.{{hl:find}}(sandy-brown)({{hl:params}}(light-sky-blue)[:{{hl:id}}(steel-blue)])
+    userJson = {{hl:UserSerializer}}(plum).new({{hl:userToShow}}(green-yellow), self).{{hl:serialize}}(red)
     render (json: { data: userJson })
 end`;
 

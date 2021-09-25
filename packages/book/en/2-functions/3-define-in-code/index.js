@@ -4,18 +4,19 @@ import Term from '../../glossary/Term';
 import animationData from './img-lottie.json';
 import s from './style.css';
 
+const code = `
+function function_title (list_of_inputs) {
+    block of code with a list of operations
+    that it perform
+}`;
+
 export default () => (
     <>
         <Section>
             <Section.Main>
                 <h2>Defining a function in code</h2>
                 <p>General form of a definition</p>
-                <Pre>
-                    function function_title (list_of_inputs) {'{'} <br />
-                    {'    '}block of code with a list of operations <br />
-                    {'    '}that it perform <br />
-                    {'}'}
-                </Pre>
+                <Pre value={code} />
                 <div className={s.slide}>
                     <div className={s.title}>Round brackets</div>
                     <div>

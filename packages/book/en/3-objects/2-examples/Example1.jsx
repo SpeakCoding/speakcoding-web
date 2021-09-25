@@ -2,11 +2,11 @@ import React from 'react';
 import { Code, Grid, HL, Section } from '@sc/ui';
 
 const code = `
-class [[User]](orange) {
-    [[User]](light-sky-blue)([[inputUsername Text, inputEmail Text, inputPassword Text]](aquamarine)) {
-        [[self.username = inputUsername]](plum)
-        [[self.email= inputEmail]](plum)
-        [[self.password= inputPassword]](plum)  
+class {{hl:User}}(orange) {
+    {{hl:User}}(light-sky-blue)({{hl:inputUsername Text, inputEmail Text, inputPassword Text}}(aquamarine)) {
+        {{hl:self.username = inputUsername}}(plum)
+        {{hl:self.email= inputEmail}}(plum)
+        {{hl:self.password= inputPassword}}(plum)  
     }
 }`;
 

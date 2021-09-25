@@ -3,7 +3,7 @@ import { Code, Grid, HL, Pre, Section } from '@sc/ui';
 
 const code1 = `
 var lastUserLike User
-lastUserLike = [[post]](red).[[likes]](orange).[[last]](green).[[getUser]](aquamarine)()
+lastUserLike = {{hl:post}}(red).{{hl:likes}}(orange).{{hl:last}}(green).{{hl:getUser}}(aquamarine)()
 `;
 
 export default () => (

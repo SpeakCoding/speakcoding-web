@@ -5,8 +5,8 @@ import img from './serialization.svg';
 
 const code = `
 func signUp(emailAddress: String, password: String, completion: @escaping ((User?, Error?) -> Void)) {
-    let [[requestParameters]](green) = [\u200b[["user": ["email": emailAddress, "password": password]]](light-sky-blue)\u200b]
-    let request = makeRequest(method: HTTPMethod.[[POST]](orange), endpoint: "/users.json", authorized: false, parameters: [[requestParameters]](green))
+    let {{hl:requestParameters}}(green) = [{{hl:"user": ["email": emailAddress, "password": password]]](light-sky-blue)]
+    let request = makeRequest(method: HTTPMethod.{{hl:POST}}(orange), endpoint: "/users.json", authorized: false, parameters: {{hl:requestParameters}}(green))
 }`;
 
 export default () => (

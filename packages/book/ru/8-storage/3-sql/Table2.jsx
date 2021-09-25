@@ -3,15 +3,15 @@ import { Code, Grid, HL, Section } from '@sc/ui';
 import s from './style.css';
 
 const code1 =
-    '[[INSERT]](green) [[INTO]](floral-white) [[posts]](red) ([["id"]](orange), ' +
-    '[["date"]](light-sky-blue), [["user_id"]](aquamarine), [["caption"]](plum), ' +
-    '[["image_url"]](wheat), [["location"]](blue), [["number_of_likes"]](sandy-brown), ' +
-    '[["number_of_comments"]](thistle), [["liked"]](green-yellow))';
+    '{{hl:INSERT}}(green) {{hl:INTO}}(floral-white) {{hl:posts}}(red) ({{hl:"id"}}(orange), ' +
+    '{{hl:"date"}}(light-sky-blue), {{hl:"user_id"}}(aquamarine), {{hl:"caption"}}(plum), ' +
+    '{{hl:"image_url"}}(wheat), {{hl:"location"}}(blue), {{hl:"number_of_likes"}}(sandy-brown), ' +
+    '{{hl:"number_of_comments"}}(thistle), {{hl:"liked"}}(green-yellow))';
 
 const code2 =
-    'VALUES ([[1]](orange), [[1603046189]](light-sky-blue), [[1]](aquamarine), ' +
-    '[["My first post! #welcome"]](plum), [["https://speakcoding.com/posts/1/images/square.png"]](wheat), ' +
-    '[["Anchorage, Alaska"]](blue), [[0]](sandy-brown), [[0]](thistle), [[0]](green-yellow))';
+    'VALUES ({{hl:1}}(orange), {{hl:1603046189}}(light-sky-blue), {{hl:1}}(aquamarine), ' +
+    '{{hl:"My first post! #welcome"}}(plum), {{hl:"https://speakcoding.com/posts/1/images/square.png"}}(wheat), ' +
+    '{{hl:"Anchorage, Alaska"}}(blue), {{hl:0}}(sandy-brown), {{hl:0}}(thistle), {{hl:0}}(green-yellow))';
 
 export default () => (
     <>

@@ -3,11 +3,11 @@ import { Code, Grid, HL, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 
 const code = `
-class [[Post]](orange) {
-    [[Post]](light-sky-blue)([[inputUser User, inputImage Image, inputText Text]](aquamarine)) {
-        [[self.user = inputUser]](plum)
-        [[self.image = inputImage]](plum)
-        [[self.text = inputText]](plum)  
+class {{hl:Post}}(orange) {
+    {{hl:Post}}(light-sky-blue)({{hl:inputUser User, inputImage Image, inputText Text}}(aquamarine)) {
+        {{hl:self.user = inputUser}}(plum)
+        {{hl:self.image = inputImage}}(plum)
+        {{hl:self.text = inputText}}(plum)  
     }
 }`;
 

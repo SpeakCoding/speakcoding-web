@@ -2,7 +2,7 @@ import React from 'react';
 import { Code, Grid, HL, Section } from '@sc/ui';
 
 const code =
-    '[[SELECT]](thistle) [[*]](light-sky-blue) FROM [[posts]](green) [[WHERE]](plum) [[id=1]](green-yellow);';
+    '{{hl:SELECT}}(thistle) {{hl:*}}(light-sky-blue) FROM {{hl:posts}}(green) {{hl:WHERE}}(plum) {{hl:id=1}}(green-yellow);';
 
 export default () => (
     <>

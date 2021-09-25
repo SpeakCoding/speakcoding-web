@@ -5,17 +5,17 @@ import img from './while.svg';
 
 const code4 = `
 func showComments(post Post) {
-    var comments = [[post.getComments]](wheat)()
-    [[for]](green) ([[comment in comments]](light-sky-blue)) {
-        [[comment.display]](plum)()
+    var comments = {{hl:post.getComments}}(wheat)()
+    {{hl:for}}(green) ({{hl:comment in comments}}(light-sky-blue)) {
+        {{hl:comment.display}}(plum)()
     }
 }`;
 
 const code5 = `
 func showComments(post Post) {
     var comments = post.getComments()
-    [[for]](green) ([[number = 0]](light-sky-blue); [[number < comments.length()]](thistle); number = number+1) {
-        [[comments[]](red)[[number]](light-sky-blue)[[].display()]](red)
+    {{hl:for}}(green) ({{hl:number = 0}}(light-sky-blue); {{hl:number < comments.length()}}(thistle); number = number+1) {
+        {{hl:comments[}}(red){{hl:number}}(light-sky-blue){{hl:].display()}}(red)
     }
 }`;
 

@@ -2,9 +2,9 @@ import React from 'react';
 import { Code, Grid, Hint, HL, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 
-const code = `class [[Post]](orange) {
-    [[Post]](light-sky-blue)([[inputUser User, inputImage Image, inputText Text]](aquamarine)) {
-        [[self.time = System.CurrentTime()]](plum)
+const code = `class {{hl:Post}}(orange) {
+    {{hl:Post}}(light-sky-blue)({{hl:inputUser User, inputImage Image, inputText Text}}(aquamarine)) {
+        {{hl:self.time = System.CurrentTime()}}(plum)
     }
 }`;
 

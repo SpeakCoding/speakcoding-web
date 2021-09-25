@@ -2,7 +2,7 @@ import React from 'react';
 import { Code, Grid, HL, Section } from '@sc/ui';
 
 const code = `
-if [[!]](plum)[[hasTable]](sandy-brown)(name: "post") {
+if {{hl:!}}(plum){{hl:hasTable}}(sandy-brown)(name: "post") {
     let query = """
         CREATE TABLE posts (
             "id" INTEGER PRIMARY KEY NOT NULL,

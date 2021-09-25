@@ -1,7 +1,8 @@
 import React from 'react';
 import { Code, Grid, HL, Section } from '@sc/ui';
 
-const code = '[[INSERT INTO]](thistle) [[posts]](red) ([["id"]](orange)) VALUES ([[1]](orange));';
+const code =
+    '{{hl:INSERT INTO}}(thistle) {{hl:posts}}(red) ({{hl:"id"}}(orange)) VALUES ({{hl:1}}(orange));';
 
 export default () => (
     <>

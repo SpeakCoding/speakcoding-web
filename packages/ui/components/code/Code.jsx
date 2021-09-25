@@ -10,7 +10,7 @@ function parseCode(code) {
         .split('\n')
         .map(line => {
             const re =
-                /\[\[(?<text>.+?)\]\]\((?<color>.+?)( (?<label>.+?))?( (?<active>.+?))?( (?<inline>.+?))?\)/g;
+                /{{(?<type>hl|c):(?<text>.+?)}}\((?<color>.+?)( (?<label>.+?))?( (?<active>.+?))?( (?<inline>.+?))?\)/g;
 
             const parts = [];
 
@@ -57,6 +57,17 @@ const Code = ({ value, tabs }) => {
                         }
 
                         if (typeof item === 'string') return <Fragment key={j}>{item}</Fragment>;
+
+                        if (item.type === 'c') {
+                            const color = item.color.startsWith('--')
+                                ? item.color
+                                : `--c-${item.color}`;
+                            return (
+                                <span key={j} style={{ color: `var(${color})` }}>
+                                    {item.text}
+                                </span>
+                            );
+                        }
 
                         return (
                             <HL

@@ -2,11 +2,11 @@ import React from 'react';
 import { Code, Grid, HL, Link, Section } from '@sc/ui';
 import s from './style.css';
 
-const code1 = `private func [[showAllPostsAsList]](light-sky-blue)(preselectedPostIndex: Int) {`;
+const code1 = `private func {{hl:showAllPostsAsList}}(light-sky-blue)(preselectedPostIndex: Int) {`;
 
 const code2 = `
-\xa0   let [[postsViewController]](orange) = 
-    [[UserPostsViewController]](sandy-brown)(posts: self.posts,
+\xa0   let {{hl:postsViewController}}(orange) = 
+    {{hl:UserPostsViewController}}(sandy-brown)(posts: self.posts,
     refreshClosure: nil)
     postsViewController.title = "Posts"
     postsViewController.selectedPostIndex =
@@ -14,8 +14,8 @@ const code2 = `
 `;
 
 const code3 = `
-\xa0   self.[[navigationController]](green)?.[[pushViewController]](steel-blue)(
-        [[postsViewController]](orange), animated: true
+\xa0   self.{{hl:navigationController}}(green)?.{{hl:pushViewController}}(steel-blue)(
+        {{hl:postsViewController}}(orange), animated: true
     )
 }`;
 

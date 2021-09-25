@@ -2,7 +2,7 @@ import React from 'react';
 import { Code, Grid, HL, Link, Section } from '@sc/ui';
 
 const code1 = `
-@IBAction private func [[editProfile]](plum)() {
+@IBAction private func {{hl:editProfile}}(plum)() {
     func handleUserProfileUpdate(...) {
         ...
         self.dismiss(animated: true,
@@ -10,23 +10,23 @@ const code1 = `
     }`;
 
 const code2 = `
-\xa0   let [[profileEditor]](orange) =
-        [[UserProfileEditorController]](sandy-brown)(
+\xa0   let {{hl:profileEditor}}(orange) =
+        {{hl:UserProfileEditorController}}(sandy-brown)(
             completion: handleUserProfileUpdate
         )
 `;
 
 const code3 = `
 \xa0   let navigationController =
-        [[UINavigationController]](green)(
-            rootViewController: [[profileEditor]](orange)
+        {{hl:UINavigationController}}(green)(
+            rootViewController: {{hl:profileEditor}}(orange)
         )
     ...
 `;
 
 const code4 = `
-\xa0   [[self]](steel-blue).[[present]](red)(
-        [[navigationController]](green), animated: true, completion: nil
+\xa0   {{hl:self}}(steel-blue).{{hl:present}}(red)(
+        {{hl:navigationController}}(green), animated: true, completion: nil
     )
 }`;
 

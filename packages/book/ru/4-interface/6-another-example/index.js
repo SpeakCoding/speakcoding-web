@@ -2,26 +2,26 @@ import React from 'react';
 import { Button, Code, Expand, Grid, HL, Section } from '@sc/ui';
 
 const code1 = `
-private func [[updateLikes]](red)() {
-    self.likeButton.isSelected = [[self.post.isLiked]](wheat)
+private func {{hl:updateLikes}}(red)() {
+    self.likeButton.isSelected = {{hl:self.post.isLiked}}(wheat)
 `;
 
 const code2 = `
-\xa0   let [[likerFollowee]](steel-blue) = [[self.post.likerFollowee]](green)
+\xa0   let {{hl:likerFollowee}}(steel-blue) = {{hl:self.post.likerFollowee}}(green)
 `;
 
 const code3 = `
-\xa0   [[if likerFollowee != nil]](aquamarine) {
+\xa0   {{hl:if likerFollowee != nil}}(aquamarine) {
         self.likerFolloweeProfilePictureView
-        .[[showImageAsynchronously(imageURL: likerFollowee?.profilePictureURL)]](blue)
+        .{{hl:showImageAsynchronously(imageURL: likerFollowee?.profilePictureURL)}}(blue)
 
         self.likerFolloweeProfilePictureView.isHidden = false
 
-        let textTemplate = (self.post.[[numberOfLikes > 1]](green-yellow)) ? [["Liked by {user} and {others}" : "Liked by {user}"]](plum)
+        let textTemplate = (self.post.{{hl:numberOfLikes > 1}}(green-yellow)) ? {{hl:"Liked by {user} and {others}" : "Liked by {user}"}}(plum)
 `;
 
 const code4 = `
-\xa0       let [[text]](orange) = [[NSMutableAttributedString]](sandy-brown)([[string: textTemplate]](light-sky-blue), attributes: [[[NSAttributedString.Key.font: UIFont.systemFont]](powder-blue)([[ofSize: 12]](light-sky-blue), [[weight: UIFont.Weight.regular]](grey))])
+\xa0       let {{hl:text}}(orange) = {{hl:NSMutableAttributedString}}(sandy-brown)({{hl:string: textTemplate}}(light-sky-blue), attributes: [[[NSAttributedString.Key.font: UIFont.systemFont}}(powder-blue)({{hl:ofSize: 12}}(light-sky-blue), {{hl:weight: UIFont.Weight.regular}}(grey))])
     }
 }`;
 

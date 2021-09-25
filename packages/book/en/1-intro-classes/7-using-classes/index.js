@@ -4,6 +4,17 @@ import { Skill } from '../../../components';
 import Term from '../../glossary/Term';
 import img from './var-types.svg';
 
+const code1 = `
+class Post
+    caption Text`;
+
+const code2 = `
+var numberOfLikes: Int;
+numberOfLikes = 0;
+
+var appName: String;
+appName = "Instagram"`;
+
 export default () => (
     <>
         <Section>
@@ -18,10 +29,7 @@ export default () => (
                         example, the Post class has the component Caption, which in turn belongs to
                         the Text class.
                     </p>
-                    <Pre>
-                        class Post <br />
-                        {'  '}caption Text
-                    </Pre>
+                    <Pre value={code1} />
                     <p>
                         Every programming language has a number of{' '}
                         <b>standard ("original") classes, which do not need definitions</b>. These
@@ -36,13 +44,7 @@ export default () => (
                         them as text.
                     </p>
                     <p>Examples of code:</p>
-                    <Pre>
-                        var numberOfLikes: Int; <br />
-                        numberOfLikes = 0; <br />
-                        <br />
-                        var appName: String; <br />
-                        appName = "Instagram"; <br />
-                    </Pre>
+                    <Pre value={code2} />
                     <p>
                         Like in human languages, many classes of objects were defined long ago, and
                         we can simply give a link to that class of objects (import its definition)

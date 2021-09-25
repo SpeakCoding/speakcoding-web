@@ -2,14 +2,14 @@ import React from 'react';
 import { Code, Grid, HL, Pre, Section } from '@sc/ui';
 
 const codeUser = `
-class [[User]](orange) {
+class {{hl:User}}(orange) {
     ...
 
-    func [[muteProfile]](green)() {
-        [[posts = self.getPosts()]](plum)
-        [[stories = self.getStories()]](plum)
-        [[posts.mute()]](plum)
-        [[stories.mute()]](plum)   
+    func {{hl:muteProfile}}(green)() {
+        {{hl:posts = self.getPosts()}}(plum)
+        {{hl:stories = self.getStories()}}(plum)
+        {{hl:posts.mute()}}(plum)
+        {{hl:stories.mute()}}(plum)   
     }
 }`;
 

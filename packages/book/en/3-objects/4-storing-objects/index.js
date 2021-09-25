@@ -4,8 +4,8 @@ import { Quiz, Skill } from '../../../components';
 import Term from '../../glossary/Term';
 
 const code1 = `func onClickCreateButton() {
-    [[var newUser]](aquamarine) [[User]](light-sky-blue)
-    [[newUser]](aquamarine) = new User(usernameField.text, emailField.text, passwordField.text)
+    {{hl:var newUser}}(aquamarine) {{hl:User}}(light-sky-blue)
+    {{hl:newUser}}(aquamarine) = new User(usernameField.text, emailField.text, passwordField.text)
         ...
     }
 }`;
@@ -18,8 +18,8 @@ const code21 = `Post {
 
 const code22 = `
 \xa0   func addLike(user User) {
-        var [[newLike]](turquoise) Like 
-        [[newLike]](turquoise) = new [[Like]](orange)(user)
+        var {{hl:newLike}}(turquoise) Like 
+        {{hl:newLike}}(turquoise) = new {{hl:Like}}(orange)(user)
 `;
 
 const code23 = `\xa0

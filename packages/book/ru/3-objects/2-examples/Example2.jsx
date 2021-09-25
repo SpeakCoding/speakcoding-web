@@ -2,11 +2,11 @@ import React from 'react';
 import { Code, Grid, HL, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 
-const code = `[[func onClickCreateButton()]](green) {
-    [[newUsername = textFieldUsername.text]](orange)
-    [[newEmail = textFieldEmail.text]](orange)
-    [[newPassword = textFieldPassword.text]](orange)
-    [[newUser = new User]](plum) [[(newUsername, newEmail, newPassword)]](aquamarine)
+const code = `{{hl:func onClickCreateButton()}}(green) {
+    {{hl:newUsername = textFieldUsername.text}}(orange)
+    {{hl:newEmail = textFieldEmail.text}}(orange)
+    {{hl:newPassword = textFieldPassword.text}}(orange)
+    {{hl:newUser = new User}}(plum) {{hl:(newUsername, newEmail, newPassword)}}(aquamarine)
     ...
 }`;
 
