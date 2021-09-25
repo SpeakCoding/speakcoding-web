@@ -2,11 +2,9 @@ import React from 'react';
 import { Button } from '@sc/ui';
 import { useAPI, useApp } from '../../tools';
 
-const dev = window.location.hostname === 'localhost';
-
 const Dev = () => {
     const fetch = useAPI(),
-        { courses } = useApp();
+        { courses, admin } = useApp();
 
     const resetCourses = () => {
         Object.keys(courses).forEach(id => {
@@ -14,7 +12,7 @@ const Dev = () => {
         });
     };
 
-    if (!dev) return null;
+    if (!admin) return null;
 
     return (
         <>

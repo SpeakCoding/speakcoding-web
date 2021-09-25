@@ -4,7 +4,8 @@ export const app = createContext({
     profile: null,
     updateProfile: () => {},
     courses: {},
-    updateCourse: () => {}
+    updateCourse: () => {},
+    admin: false
 });
 
 export function useApp() {

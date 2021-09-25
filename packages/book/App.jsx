@@ -31,7 +31,8 @@ const App = () => {
             profile,
             updateProfile,
             courses,
-            updateCourse
+            updateCourse,
+            admin
         }),
         [profile, courses]
     );
