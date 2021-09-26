@@ -8,15 +8,7 @@ import Card from '../card';
 import Content from './Content';
 import s from './assignment.css';
 
-const Assignment = ({ id: path, number, children }) => {
-    if (!path)
-        return (
-            <div style={{ padding: '40px', background: 'lightblue' }}>
-                <h1>ASSIGNMENT {number}</h1>
-                {children}
-            </div>
-        );
-
+const Assignment = ({ id: path }) => {
     const [book, id] = useMemo(() => path.split('/'), [path]),
         assignment = assignments[book]?.[id],
         [opened, setOpened] = useState(false),
@@ -34,14 +26,32 @@ const Assignment = ({ id: path, number, children }) => {
 
     const closeModal = useCallback(() => setOpened(false), []);
 
+    const submit = useCallback(
+        value => {
+            const payload = {
+                title: assignment.title,
+                questions: assignment.questions.map((item, j) => {
+                    let mark = '';
+                    if (item.ask) mark = `${value[j] ? '✗' : '✓'} `;
+                    return { title: item.title, answer: `${mark}${value[j]}` };
+                })
+            };
+            // TODO: Make API call here
+            console.log(payload);
+        },
+        [assignment]
+    );
+
     const handleChangeAnswer = useCallback(value => {
         setCurrentAnswer(value);
     }, []);
 
     const handleConfirmAnswer = useCallback(() => {
-        updateCourse(book, 'assignment', { id, answers: [...answers, currentAnswer] });
+        const value = [...answers, currentAnswer];
+        updateCourse(book, 'assignment', { id, answers: value });
         if (assignment.questions.length === 1) setI(i + 1);
-    }, [i, currentAnswer, answers, book, id, assignment]);
+        if (i === assignment.questions.length - 1) submit(value);
+    }, [i, currentAnswer, answers, book, id, assignment, submit]);
 
     const handleNext = useCallback(() => {
         setCurrentAnswer(undefined);
