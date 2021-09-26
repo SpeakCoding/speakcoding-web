@@ -74,8 +74,7 @@
 }
 
 .options {
-    display: flex;
-    column-gap: 16px;
+    display: inline-block;
     margin-top: 4px;
 }
 
@@ -85,4 +84,8 @@
     column-gap: 4px;
     padding: 4px 0;
     cursor: pointer;
+}
+
+.options.disabled .option {
+    cursor: not-allowed;
 }

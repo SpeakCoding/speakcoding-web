@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import pt from 'prop-types';
+import classNames from 'classnames';
 import { fixTabs } from '@sc/tools/code';
 import { debounce } from '@sc/tools/function';
 import { Code, Img, Radio, Textarea } from '@sc/ui';
@@ -75,7 +76,7 @@ const Content = ({ answer, onChange, ...props }) => {
             {ask && (
                 <div className={s.text}>
                     <div>{ask}</div>
-                    <div className={s.options}>
+                    <div className={classNames(s.options, answer !== undefined && s.disabled)}>
                         <label className={s.option}>
                             <Radio
                                 name='ask'
