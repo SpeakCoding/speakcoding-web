@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import pt from 'prop-types';
 import { Button, Modal } from '@sc/ui';
 import L from '../localize';
-import { useApp } from '../../tools';
+import { useAPI, useApp } from '../../tools';
 import assignments from '../../assignments';
 import Card from '../card';
 import Content from './Content';
@@ -15,7 +15,8 @@ const Assignment = ({ id: path }) => {
         [i, setI] = useState(0),
         [currentAnswer, setCurrentAnswer] = useState(),
         { courses, updateCourse } = useApp(),
-        answers = courses[book]?.assignments?.[id] || [];
+        answers = courses[book]?.assignments?.[id] || [],
+        api = useAPI();
 
     const openModal = useCallback(() => {
         if (assignment) {
@@ -36,8 +37,7 @@ const Assignment = ({ id: path }) => {
                     return { title: item.title, answer: `${mark}${value[j]}` };
                 })
             };
-            // TODO: Make API call here
-            console.log(payload);
+            api.post('/assignments/deliver.json', { variables: payload });
         },
         [assignment]
     );

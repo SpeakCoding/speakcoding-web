@@ -10,13 +10,13 @@ const Label = ({ value }) => (
     <>
         {value === 'extensive' && (
             <>
-                <L lang='en'>Original course</L>
-                <L lang='ru'>Обычный</L>
+                <L lang='en'>Extensive</L>
+                <L lang='ru'>Экстенсив</L>
             </>
         )}
         {value === 'intensive' && (
             <>
-                <L lang='en'>Intensive course</L>
+                <L lang='en'>Intensive</L>
                 <L lang='ru'>Интенсив</L>
             </>
         )}
