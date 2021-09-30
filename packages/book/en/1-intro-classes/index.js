@@ -38,7 +38,7 @@ export default () => {
             <Part5 />
             <Part6 />
             <Part7 />
-            <Next href='/en/chapter-2' />
+            <Next />
         </Page>
     );
 };

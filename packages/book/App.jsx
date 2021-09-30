@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useAPI, useCourses } from './tools';
 import { app } from './tools/app';
 import { fixLang } from './tools/system';
+import { parseProfile } from './tools/profile';
 import Home from './Home';
 import Login from './auth';
 import Payment from './payment';
@@ -23,7 +24,7 @@ const App = () => {
 
     const updateProfile = async payload => {
         const { data } = await api.put('/users/me.json', { user: payload });
-        setProfile(data);
+        setProfile(parseProfile(data));
     };
 
     const context = useMemo(
@@ -50,7 +51,7 @@ const App = () => {
         else {
             const lang = fixLang(data.last_course_id);
             localStorage.setItem('lang', lang);
-            if (data.last_course_id === lang) setProfile(data);
+            if (data.last_course_id === lang) setProfile(parseProfile(data));
             else updateProfile({ last_course_id: lang });
         }
     };

@@ -8,6 +8,6 @@ export default () => (
     <Page chapter={7} phone={false}>
         <Part1 />
         <Part2 />
-        <Next href='/en/chapter-8' />
+        <Next />
     </Page>
 );

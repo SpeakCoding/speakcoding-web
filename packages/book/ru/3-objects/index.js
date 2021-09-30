@@ -17,6 +17,6 @@ export default () => (
         </Section>
         <Part4 />
         <Part5 />
-        <Next href='/ru/chapter-4' />
+        <Next />
     </Page>
 );

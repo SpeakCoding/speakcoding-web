@@ -14,6 +14,6 @@ export default () => (
         <Section.Divider />
         <Part3 />
         <Part4 />
-        <Next href='/ru/chapter-9' />
+        <Next />
     </Page>
 );

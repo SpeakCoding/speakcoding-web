@@ -12,6 +12,6 @@ export default () => (
         <Part2 />
         <Part3 />
         <Part4 />
-        <Next href='/ru/chapter-10' />
+        <Next />
     </Page>
 );

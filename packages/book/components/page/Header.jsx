@@ -9,6 +9,7 @@ import s from './page.css';
 
 const PageHeader = ({ chapter, chapters }) => {
     const { profile } = useApp(),
+        maxNumber = profile.is_paid ? profile.group.last_chapter_number : 1,
         current = typeof chapter === 'number' ? chapters[chapter - 1] : undefined;
 
     return (
@@ -21,11 +22,11 @@ const PageHeader = ({ chapter, chapters }) => {
 
                         <Navigation.Content>
                             <Navigation.Items>
-                                {chapters.map(item => (
+                                {chapters.map((item, i) => (
                                     <Navigation.Item
                                         key={item.title}
                                         href={item.href}
-                                        disabled={item.disabled || (!item.free && !profile.is_paid)}
+                                        disabled={(item.number || i + 1) > maxNumber}
                                     >
                                         {item.prefix && (
                                             <span className={s.prefix}>{item.prefix}.&nbsp;</span>

@@ -9,7 +9,7 @@ import s from './header.css';
 const $html = document.getElementsByTagName('html')[0];
 
 const Header = ({ chapter, children }) => {
-    const { profile, updateProfile, courses, updateCourse } = useApp(),
+    const { profile, courses, updateCourse } = useApp(),
         $bar = useRef(),
         [{ params }] = useLocationState({ path: '/:id' }),
         course = courses[params.id];
@@ -32,6 +32,14 @@ const Header = ({ chapter, children }) => {
         [savePosition]
     );
 
+    const init = async () => {
+        const max = profile.group.last_chapter_number;
+        if (chapter > max) {
+            await updateCourse(params.id, 'pos', { chapter: max, top: 0 });
+            window.location.href = '/';
+        } else handleScroll();
+    };
+
     useEffect(() => {
         if (typeof chapter !== 'number') return undefined;
         window.addEventListener('scroll', handleScroll);
@@ -43,11 +51,7 @@ const Header = ({ chapter, children }) => {
     useEffect(() => {
         if (chapter && chapter === course?.pos?.chapter) window.scrollTo(0, course.pos.top);
         else window.scrollTo(0, 0);
-
-        if (chapter && params.id !== profile.last_course_id)
-            updateProfile({ last_course_id: params.id });
-
-        if (typeof chapter === 'number') handleScroll();
+        if (typeof chapter === 'number') init();
     }, []);
 
     return (
