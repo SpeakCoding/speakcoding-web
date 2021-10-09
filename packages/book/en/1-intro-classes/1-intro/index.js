@@ -5,7 +5,6 @@ import img from './numbers.svg';
 export default () => (
     <Section>
         <Section.Main>
-            <Section.Badge>Introduction to Software Engineering</Section.Badge>
             <h1>Introduction: from text to structure to definitions using code</h1>
             <p>
                 The language of programming is a language like any other. We use it to describe the

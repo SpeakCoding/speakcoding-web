@@ -13,7 +13,7 @@ var numberOfLikes: Int;
 numberOfLikes = 0;
 
 var appName: String;
-appName = "Instagram"`;
+appName = "Instagram";`;
 
 export default () => (
     <>
@@ -43,7 +43,9 @@ export default () => (
                         see quote marks "", it means the device will read the information inside
                         them as text.
                     </p>
-                    <p>Examples of code:</p>
+                    <p>
+                        <b>Examples of code:</b>
+                    </p>
                     <Pre value={code2} />
                     <p>
                         Like in human languages, many classes of objects were defined long ago, and

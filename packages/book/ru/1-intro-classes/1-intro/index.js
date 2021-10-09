@@ -5,7 +5,6 @@ import img from './numbers.svg';
 export default () => (
     <Section>
         <Section.Main>
-            <Section.Badge>Часть I Классы и Составляющие</Section.Badge>
             <h1>Вводное слово/ От текста к структуре к описанию через код</h1>
             <p>
                 Язык программирования - такой же язык, как и любой другой, которым мы пользуемся.

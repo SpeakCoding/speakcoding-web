@@ -1,5 +1,9 @@
 @import "../../theme.css";
 
+.box {
+    margin-bottom: 16px;
+}
+
 .controls {
     display: flex;
     align-items: center;

@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import pt from 'prop-types';
 import { context } from './utils';
+import s from './tabs.css';
 
 const Tabs = ({ value, children, onChange }) => {
     const [tab, setTab] = useState(value);
@@ -15,7 +16,7 @@ const Tabs = ({ value, children, onChange }) => {
 
     return (
         <context.Provider value={{ tab, setTab: handleChange }}>
-            <div>{children}</div>
+            <div className={s.box}>{children}</div>
         </context.Provider>
     );
 };

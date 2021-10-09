@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Img } from '@sc/ui';
 import Flags from './Flags';
-import img1 from './skeleton.png';
-import img2 from './instagram.png';
+import img from './instagram.png';
 import { context } from './utils';
 import s from './example.css';
 
@@ -15,8 +14,7 @@ const Example = ({ children }) => {
                 <div className={s.code}>{children}</div>
             </context.Provider>
             <div className={s.view}>
-                {step < 4 && <Img src={img1} className={s.img} />}
-                {step === 4 && <Img src={img2} className={s.img} />}
+                <Img src={img} className={s.img} />
             </div>
             <div className={s.flags}>
                 <Flags count={4} onChange={setStep} />

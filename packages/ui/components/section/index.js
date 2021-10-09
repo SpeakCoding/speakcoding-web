@@ -1,4 +1,3 @@
-import Badge from './Badge';
 import Block from './Block';
 import Divider from './Divider';
 import Main from './Main';
@@ -6,7 +5,6 @@ import Section from './Section';
 import Side from './Side';
 import Sticky from './Sticky';
 
-Section.Badge = Badge;
 Section.Block = Block;
 Section.Divider = Divider;
 Section.Main = Main;
