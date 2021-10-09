@@ -164,6 +164,8 @@ export default () => (
             </Section.Block>
         </Section>
 
+        <Section.Divider />
+
         <Section>
             <Section.Main narrow>
                 <h2>Обращение к /вызов функции</h2>

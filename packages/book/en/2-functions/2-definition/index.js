@@ -145,6 +145,8 @@ export default () => (
             </Section.Block>
         </Section>
 
+        <Section.Divider />
+
         <Section>
             <Section.Main narrow>
                 <h2>Function calls</h2>
