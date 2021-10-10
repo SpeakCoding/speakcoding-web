@@ -3,7 +3,7 @@ import { Pre, Section } from '@sc/ui';
 import s from './style.css';
 
 export default () => (
-    <Section.Block>
+    <Section>
         <Section.Main narrow>
             <h2>Дополнительно (об использовании классов)</h2>
             <p>
@@ -13,7 +13,9 @@ export default () => (
                 строки можно просто написать ее в кавычках “” (“пример”) или для числового значения
                 написать цифру.
             </p>
-            <p>Пример кода:</p>
+            <p>
+                <b>Пример кода:</b>
+            </p>
             <Pre>
                 var numberOfLikes: Int; <br />
                 numberOfLikes = 0;
@@ -27,5 +29,5 @@ export default () => (
                 позже при чтении кода.
             </p>
         </Section.Main>
-    </Section.Block>
+    </Section>
 );

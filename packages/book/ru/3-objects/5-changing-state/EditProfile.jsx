@@ -45,7 +45,7 @@ export default () => {
                         пользователя newUsernameField, и кнопку Save. Форма хранит{' '}
                         <Term id='instance'>объект</Term> (экземпляр) вашего профиля пользователя
                         (User) в своей <Term id='component'>составляющей</Term> currentUser{' '}
-                        <Term id='class'>класса</Term> User. И в ее <Term id='class'>классе</Term>
+                        <Term id='class'>класса</Term> User. И в ее <Term id='class'>классе</Term>{' '}
                         описана <Term id='function'>функция</Term> onClickSetButton, которая
                         вызывается при нажатии соответствующей кнопки. Эта функция изменит{' '}
                         <Term id='component'>составляющую</Term> username вашего профиля

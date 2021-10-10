@@ -3,7 +3,7 @@ import { Pre, Section } from '@sc/ui';
 import s from './style.css';
 
 export default () => (
-    <Section.Block>
+    <Section>
         <Section.Main narrow>
             <h2>More about using classes</h2>
             <p>
@@ -13,7 +13,9 @@ export default () => (
                 example, for a text string, we can simply write the value in quote marks
                 ("example"), while for numerical values we can write the number.
             </p>
-            <p>Example code:</p>
+            <p>
+                <b>Example code:</b>
+            </p>
             <Pre>
                 var numberOfLikes: Int; <br />
                 numberOfLikes = 0;
@@ -26,5 +28,5 @@ export default () => (
                 themselves, but occasionally the deinit function is required.
             </p>
         </Section.Main>
-    </Section.Block>
+    </Section>
 );

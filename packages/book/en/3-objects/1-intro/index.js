@@ -23,8 +23,8 @@ export default () => (
                     Defining a class is NOT the same as creating objects of that class
                 </Callout>
                 <p>
-                    For example, a user’s interaction with Instagram starts when they create an
-                    account in the program.
+                    <b>For example</b>, a user’s interaction with Instagram starts when they create
+                    an account in the program.
                 </p>
                 <p>
                     In a structured definition, we defined the User class and what it will consist
@@ -51,14 +51,14 @@ export default () => (
                 </p>
                 <p>
                     When you open Instagram, you see a screen with a form (shown here to the right).
-                    It consists of <b>Username</b>, <b>Email</b>, and <b>Password</b> fields, and a{' '}
-                    <b>Submit</b> button. As we discussed previously (and we’ll cover this again in
-                    this section), this form is a separate display class (called "view"), which
-                    defines the components needed to register a new user. To this class, we now add
-                    the sequence of steps taken by the function that is called when the user presses
-                    the Submit button. This sequence is needed for the information the User entered
-                    in the form to be saved and for Instagram to create a new account using the data
-                    from the form.
+                    It consists of <b>Email</b> and <b>Password</b> fields, and a <b>Submit</b>{' '}
+                    button. As we discussed previously (and we’ll cover this again in this section),
+                    this form is a separate display class (called "view"), which defines the
+                    components needed to register a new user. To this class, we now add the sequence
+                    of steps taken by the function that is called when the user presses the Submit
+                    button. This sequence is needed for the information the User entered in the form
+                    to be saved and for Instagram to create a new account using the data from the
+                    form.
                 </p>
                 <p>
                     As we described above, each <Term id='instance'>object (instance)</Term> of a

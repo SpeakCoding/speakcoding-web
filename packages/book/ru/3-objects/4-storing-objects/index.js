@@ -76,7 +76,7 @@ export default () => (
                             <b>Пояснения к примеру</b>
                         </Grid.Cell>
                         <Grid.Cell border='bottom'>
-                            <b>Пример кода</b>
+                            <b>Как это выглядит в коде</b>
                         </Grid.Cell>
                         <Grid.Cell border='right' hlactive>
                             При сохранении информации в переменную (контейнер) мы должны придумать
