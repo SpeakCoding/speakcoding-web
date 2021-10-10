@@ -84,7 +84,10 @@ export default () => (
                     <p>
                         The visual editor also allows you to link actions concerning particular
                         interface elements with functions of the class that corresponds to that
-                        element. For example, the Like button has the ‘press’ action. The visual
+                        element.
+                    </p>
+                    <p>
+                        <b>For example</b>, the Like button has the ‘press’ action. The visual
                         editor allows you simply to add this action without coding a description of
                         the link. This means that the things we covered in the previous chapter do
                         not require you to code each of these steps.
