@@ -81,7 +81,9 @@ export default () => (
                     </HL>
                     , как если бы в описании класса User на сервере была такая составляющая.
                 </p>
-                <p>Пример:</p>
+                <p>
+                    <b>Пример:</b>
+                </p>
                 <Pre>
                     <HL color='light-sky-blue'>new_user</HL> = User.new <br />
                     <HL color='light-sky-blue'>new_user</HL>.<HL color='plum'>username</HL> =
