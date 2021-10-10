@@ -18,9 +18,10 @@ export default () => (
                         table’s columns.
                     </p>
                     <p>
-                        However, not all data can be written directly into the database. For
-                        example, if we wish to save a specific post, we won’t be able to save the
-                        ‘Set of Comments’ data type directly. To save it, we do the following:
+                        However, not all data can be written directly into the database.{' '}
+                        <b>For example</b>, if we wish to save a specific post, we won’t be able to
+                        save the ‘Set of Comments’ data type directly. To save it, we do the
+                        following:
                     </p>
                     <ul>
                         <li>

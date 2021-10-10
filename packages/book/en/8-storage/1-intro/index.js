@@ -25,17 +25,20 @@ export default () => (
                     <ol>
                         <li>
                             The device we use (e.g. phone, computer etc.) is called the client, and
-                            each client has a certain amount of local memory. We can store data in
-                            the client’s local storage, i.e. the phone or computer’s memory. The
-                            data is thus saved and accessible only on that device. We don’t lose
-                            apps when we close them. Every time the program is launched, it
+                            each client has a certain amount of local memory.{' '}
+                            <b>
+                                We can store data in the client’s local storage, i.e. the phone or
+                                computer’s memory
+                            </b>
+                            . The data is thus saved and accessible only on that device. We don’t
+                            lose apps when we close them. Every time the program is launched, it
                             ‘recreates’ particular posts, users etc. from the information saved in
                             its local storage.
                         </li>
                         <li>
-                            Data can be stored on a server or in the ‘cloud’ (online storage) to
-                            avoid losing it if the device itself is lost, and to make it accessible
-                            to other users if need be.
+                            <b>Data can be stored on a server or in the ‘cloud’</b> (online storage)
+                            to avoid losing it if the device itself is lost, and to make it
+                            accessible to other users if need be.
                         </li>
                     </ol>
                     <p>
@@ -70,7 +73,9 @@ export default () => (
                         both of these operations, we need to write ‘save and restore’ functions for
                         the objects.
                     </p>
-                    <p>An example of how to write post as a string:</p>
+                    <p>
+                        <b>An example of how to write post as a string:</b>
+                    </p>
                     <Pre>
                         {
                             '\'{ "post": { "caption": "This is my first post!", "user": "liberman1984", "comments": [] } }\''

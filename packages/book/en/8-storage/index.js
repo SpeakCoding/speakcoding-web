@@ -13,6 +13,7 @@ export default () => (
         <Part2 />
         <Section.Divider />
         <Part3 />
+        <Section.Divider />
         <Part4 />
         <Next />
     </Page>

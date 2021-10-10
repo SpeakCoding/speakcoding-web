@@ -69,15 +69,16 @@ export default () => (
             <Section.Block>
                 <Section.Main narrow>
                     <p>
-                        You may have noticed that, in addition to words that determine the request{' '}
-                        <b>type</b> (INSERT, UPDATE, SELECT, DELETE), requests also contain request{' '}
-                        <b>condition keywords</b> (WHERE, SET etc.). Both have traditionally been
-                        written in capital (upper case) letters to distinguish them visually from
-                        table and column titles; it makes no difference to the database which case
-                        you use. The choice of <b>condition keywords</b> depends on the <b>type</b>{' '}
-                        of request you are describing. There are courses and literature dedicated to
-                        working with databases, but knowing the following four basic commands will
-                        be sufficient to let you work with data in tables:
+                        You may have noticed that, in addition to{' '}
+                        <b>words that determine the request type</b> (INSERT, UPDATE, SELECT,
+                        DELETE), requests also contain request <b>condition keywords</b> (WHERE, SET
+                        etc.). Both have traditionally been written in capital (upper case) letters
+                        to distinguish them visually from table and column titles; it makes no
+                        difference to the database which case you use. The choice of{' '}
+                        <b>condition keywords</b> depends on the <b>type</b> of request you are
+                        describing. There are courses and literature dedicated to working with
+                        databases, but knowing the following four basic commands will be sufficient
+                        to let you work with data in tables:
                     </p>
                     <ol>
                         <li>SELECT to read rows from a table</li>
@@ -90,5 +91,7 @@ export default () => (
         </Section>
 
         <Assignment id='en/19' />
+
+        <div className={s.gap} />
     </>
 );
