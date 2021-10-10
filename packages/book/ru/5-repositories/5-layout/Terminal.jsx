@@ -11,7 +11,7 @@ export default () => (
                 <h2>
                     (Дополнительно) Консоль (Terminal) - командная строка{' '}
                     <Expand.Control htmlFor='5-5-1'>
-                        <Button variant='rounded'>⤵</Button>
+                        <Button variant='rounded'>читать ⤵</Button>
                     </Expand.Control>
                 </h2>
             </Section.Main>

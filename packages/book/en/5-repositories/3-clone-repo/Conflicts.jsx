@@ -8,7 +8,7 @@ export default () => (
                 <h2>
                     (Additional) Conflicts when uploading changes to the cloud{' '}
                     <Expand.Control htmlFor='5-3-2'>
-                        <Button variant='rounded'>⤵</Button>
+                        <Button variant='rounded'>read ⤵</Button>
                     </Expand.Control>
                 </h2>
             </Section.Main>

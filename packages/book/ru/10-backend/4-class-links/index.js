@@ -44,7 +44,7 @@ export default () => (
                 <h2>
                     (Дополнительно) Many to many{' '}
                     <Expand.Control htmlFor='10-4-1'>
-                        <Button variant='rounded'>⤵</Button>
+                        <Button variant='rounded'>читать ⤵</Button>
                     </Expand.Control>
                 </h2>
             </Section.Main>

@@ -86,7 +86,7 @@ export default () => (
             <h2>
                 (Additional) Post feed{' '}
                 <Expand.Control htmlFor='11-3-1'>
-                    <Button variant='rounded'>⤵</Button>
+                    <Button variant='rounded'>read ⤵</Button>
                 </Expand.Control>
             </h2>
             <Expand id='11-3-1'>

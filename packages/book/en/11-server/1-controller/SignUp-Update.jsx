@@ -54,7 +54,7 @@ export default () => (
                 <h2>
                     (Additional) Creating a new user profile (or Sign up){' '}
                     <Expand.Control htmlFor='11-1-1'>
-                        <Button variant='rounded'>⤵</Button>
+                        <Button variant='rounded'>read ⤵</Button>
                     </Expand.Control>
                 </h2>
 
@@ -65,7 +65,7 @@ export default () => (
                 <h2>
                     (Additional) Changing user parameters{' '}
                     <Expand.Control htmlFor='11-1-2'>
-                        <Button variant='rounded'>⤵</Button>
+                        <Button variant='rounded'>read ⤵</Button>
                     </Expand.Control>
                 </h2>
 

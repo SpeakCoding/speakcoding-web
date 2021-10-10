@@ -23,13 +23,15 @@ export default () => (
                     </p>
                 </Section.Main>
             </Section.Block>
+
             <Section.Block>
                 <Section.Main>
                     <p>
-                        <Img src={xcode} width='100%' />
+                        <Img src={xcode} />
                     </p>
                 </Section.Main>
             </Section.Block>
+
             <Section.Block>
                 <Section.Main narrow>
                     <ul>
@@ -48,7 +50,7 @@ export default () => (
                     <p>
                         <b>Another example </b>
                         <Expand.Control htmlFor='4-5-1'>
-                            <Button variant='rounded'>⤵</Button>
+                            <Button variant='rounded'>read ⤵</Button>
                         </Expand.Control>
                     </p>
                     <Expand id='4-5-1'>
@@ -87,10 +89,14 @@ export default () => (
                         UIButton class, functions are already present to which we can transfer the
                         title (as an input) of the function that should be executed in a particular
                         instance. We define this transferrable function here in the PostFeedView
-                        function. Let’s look at an example:
+                        function.
+                    </p>
+                    <p>
+                        <b>Let’s look at an example:</b>
                     </p>
                 </Section.Main>
             </Section.Block>
+
             <Section.Block>
                 <Section.Main>
                     <Grid>
@@ -184,6 +190,7 @@ export default () => (
                 </Section.Main>
             </Section.Block>
         </Section>
+
         <Quiz id='en/9' />
     </>
 );

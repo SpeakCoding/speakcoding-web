@@ -5,10 +5,7 @@ import img from './mvc.svg';
 export default () => (
     <Section>
         <Section.Main>
-            <h1>
-                Inputs and outputs: how to translate user actions into program operations, and how
-                the screen display works.
-            </h1>
+            <h1>Inputs and outputs: how to translate user actions into program operations</h1>
             <h2>Display</h2>
             <p>
                 The interface displays examples of our structural classes (e.g., a post, its

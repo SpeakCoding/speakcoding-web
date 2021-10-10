@@ -8,7 +8,7 @@ export default () => (
                 <h2>
                     (Additional) Creating repositories{' '}
                     <Expand.Control htmlFor='5-3-3'>
-                        <Button variant='rounded'>⤵</Button>
+                        <Button variant='rounded'>read ⤵</Button>
                     </Expand.Control>
                 </h2>
             </Section.Main>

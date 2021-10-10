@@ -29,13 +29,12 @@ export default () => (
     <Section>
         <Section.Block>
             <Section.Main>
-                <p>
-                    Another{' '}
+                <h2>
+                    Another example in which we define visual element parameters in the code{' '}
                     <Expand.Control htmlFor='2-7-1'>
-                        <Button variant='rounded'>example ⤵</Button>
+                        <Button variant='rounded'>read ⤵</Button>
                     </Expand.Control>
-                    ︎ in which we define visual element parameters in the code.
-                </p>
+                </h2>
 
                 <Expand id='2-7-1'>
                     <Grid cols='40% 1fr'>

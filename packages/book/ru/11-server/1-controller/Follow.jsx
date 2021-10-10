@@ -18,7 +18,7 @@ export default () => (
                 <h2>
                     (Дополнительно) Нестандартные запросы: Follow{' '}
                     <Expand.Control htmlFor='11-1-3'>
-                        <Button variant='rounded'>⤵</Button>
+                        <Button variant='rounded'>читать ⤵</Button>
                     </Expand.Control>
                 </h2>
             </Section.Main>

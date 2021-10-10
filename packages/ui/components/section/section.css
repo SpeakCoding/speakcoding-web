@@ -66,8 +66,8 @@
     margin: 0 0 16px;
 }
 
-.block:last-child .main p:last-child,
-.box > .main p:last-child {
+.block:last-child > .main > p:last-child,
+.box > .main > p:last-child {
     margin: 0;
 }
 

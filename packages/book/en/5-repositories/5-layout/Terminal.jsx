@@ -9,9 +9,9 @@ export default () => (
         <Section.Block>
             <Section.Main narrow>
                 <h2>
-                    (Additional ) Console (Terminal) – command line{' '}
+                    (Additional) Console (Terminal) – command line{' '}
                     <Expand.Control htmlFor='5-5-1'>
-                        <Button variant='rounded'>⤵</Button>
+                        <Button variant='rounded'>read ⤵</Button>
                     </Expand.Control>
                 </h2>
             </Section.Main>

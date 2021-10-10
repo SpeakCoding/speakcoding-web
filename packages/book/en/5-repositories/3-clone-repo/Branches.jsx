@@ -9,7 +9,7 @@ export default () => (
                 <h2>
                     (Additional) Branches{' '}
                     <Expand.Control htmlFor='5-3-1'>
-                        <Button variant='rounded'>⤵</Button>
+                        <Button variant='rounded'>read ⤵</Button>
                     </Expand.Control>
                 </h2>
             </Section.Main>

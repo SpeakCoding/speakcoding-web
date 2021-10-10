@@ -9,7 +9,7 @@ export default () => (
                 <h2>
                     (Дополнительно) Ветки{' '}
                     <Expand.Control htmlFor='5-3-1'>
-                        <Button variant='rounded'>⤵</Button>
+                        <Button variant='rounded'>читать ⤵</Button>
                     </Expand.Control>
                 </h2>
             </Section.Main>

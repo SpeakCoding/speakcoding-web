@@ -22,13 +22,15 @@ export default () => (
                     </p>
                 </Section.Main>
             </Section.Block>
+
             <Section.Block>
                 <Section.Main>
                     <p>
-                        <Img src={xcode} width='100%' />
+                        <Img src={xcode} />
                     </p>
                 </Section.Main>
             </Section.Block>
+
             <Section.Block>
                 <Section.Main narrow>
                     <ul>
@@ -47,7 +49,7 @@ export default () => (
                     <p>
                         <b>Еще один пример </b>
                         <Expand.Control htmlFor='4-5-1'>
-                            <Button variant='rounded'>⤵</Button>
+                            <Button variant='rounded'>читать ⤵</Button>
                         </Expand.Control>
                     </p>
                     <Expand id='4-5-1'>
@@ -86,10 +88,14 @@ export default () => (
                         составляющей объекта. То есть в файлах типа View в стандартном классе
                         UIButton уже заданы функции, в которых мы можем вызвать функцию, которая
                         должна быть выполнена при том или ином событии. Эту передаваемую функцию мы
-                        описываем здесь же в классе PostFeedView. Посмотрите на пример:
+                        описываем здесь же в классе PostFeedView.
+                    </p>
+                    <p>
+                        <b>Посмотрите на пример:</b>
                     </p>
                 </Section.Main>
             </Section.Block>
+
             <Section.Block>
                 <Section.Main>
                     <Grid>

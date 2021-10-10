@@ -85,7 +85,7 @@ export default () => (
             <h2>
                 (Дополнительно) Лента постов{' '}
                 <Expand.Control htmlFor='11-3-1'>
-                    <Button variant='rounded'>⤵</Button>
+                    <Button variant='rounded'>читать ⤵</Button>
                 </Expand.Control>
             </h2>
             <Expand id='11-3-1'>

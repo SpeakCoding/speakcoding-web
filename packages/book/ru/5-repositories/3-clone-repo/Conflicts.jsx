@@ -8,7 +8,7 @@ export default () => (
                 <h2>
                     (Дополнительно) Возможные конфликты при отправке изменений в “облачный” сервис{' '}
                     <Expand.Control htmlFor='5-3-2'>
-                        <Button variant='rounded'>⤵</Button>
+                        <Button variant='rounded'>читать ⤵</Button>
                     </Expand.Control>
                 </h2>
             </Section.Main>
