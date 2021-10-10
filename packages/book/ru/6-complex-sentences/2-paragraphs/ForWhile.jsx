@@ -55,12 +55,9 @@ export default () => (
                     <Img src={img} width='70%' />
                 </p>
                 <p>
-                    <HL.Context active>
-                        <HL color='green'>for</HL> используется в тех случаях, когда мы хотим
-                        выполнить блок кода, для каждого экземпляра некоторого набора. Например,{' '}
-                        <HL color='green'>for</HL>{' '}
-                        <HL color='light-sky-blue'>each comment in Set of comments</HL>.
-                    </HL.Context>
+                    <b>for</b> используется в тех случаях, когда мы хотим выполнить блок кода, для
+                    каждого экземпляра некоторого набора. Например, for each comment in Set of
+                    comments.
                 </p>
             </Section.Main>
         </Section.Block>
@@ -93,12 +90,9 @@ export default () => (
         <Section.Block>
             <Section.Main narrow>
                 <p>
-                    <HL color='green' active>
-                        for
-                    </HL>{' '}
-                    так же имеет другую форму записи, через которую мы можем указать номер (number)
-                    элемента списка, с которого надо начать, и до какого надо продолжать выполнять
-                    блок кода.
+                    for так же имеет другую форму записи, через которую мы можем указать номер
+                    (number) элемента списка, с которого надо начать, и до какого надо продолжать
+                    выполнять блок кода.
                 </p>
             </Section.Main>
         </Section.Block>

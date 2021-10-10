@@ -2,8 +2,6 @@ import React from 'react';
 import { Hint, HL, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 
-const comment = '//';
-
 export default () => (
     <Section>
         <Section.Main narrow>
@@ -121,13 +119,12 @@ export default () => (
             </p>
             <h2>Code comments</h2>
             <p>
-                {comment} <br />
                 Comments are textual notes in code that programmers leave for themselves or other
                 programmers. These comments are not read by the machine; they are not executed, and
                 are there solely for convenience. To tell the machine that there is a comment and
                 that it needs to ignore it, the comment text is enclosed in special symbols.
-                Standard comments are denoted with <b>{comment}</b> or <b>#</b>, which relate only
-                to a particular code string. Long comments are denoted with ‘
+                Standard comments are denoted with <b>//</b> or <b>#</b>, which relate only to a
+                particular code string. Long comments are denoted with ‘
                 <b>{'/* text comment */'}</b>’. Comment denotations for specific programming
                 languages can easily be found online. Modern programming editors often highlight
                 comments in color.

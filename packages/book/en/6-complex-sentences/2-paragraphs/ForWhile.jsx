@@ -55,11 +55,8 @@ export default () => (
                     <Img src={img} width='70%' />
                 </p>
                 <p>
-                    <HL.Context active>
-                        <HL color='green'>for</HL> is used when we wish to execute a code block for
-                        each instance of a particular set. For example, <HL color='green'>for</HL>{' '}
-                        <HL color='light-sky-blue'>each comment in Set of comments</HL>.
-                    </HL.Context>
+                    <b>for</b> is used when we wish to execute a code block for each instance of a
+                    particular set. For example, "for each comment in Set of comments".
                 </p>
             </Section.Main>
         </Section.Block>
@@ -90,12 +87,9 @@ export default () => (
         <Section.Block>
             <Section.Main narrow>
                 <p>
-                    <HL color='green' active>
-                        for
-                    </HL>{' '}
-                    can also be written another way, whereby we can indicate the number of the list
-                    element from which to start and the number until which the code block should be
-                    executed.
+                    'for' can also be written another way, whereby we can indicate the number of the
+                    list element from which to start and the number until which the code block
+                    should be executed.
                 </p>
             </Section.Main>
         </Section.Block>

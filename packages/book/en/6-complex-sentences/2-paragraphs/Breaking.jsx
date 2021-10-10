@@ -77,11 +77,11 @@ export default () => (
                     the entire paragraph loop.
                 </p>
                 <p>
-                    Return is like break, except that it’s for functions. If the function does not
-                    need to relay anything, then we do not write anything after return. If there is
-                    a specific value that we need to return in order to use later in the code, then
-                    after return we write a variable containing this value/object of a particular
-                    class.
+                    <b>Return</b> is like break, except that it’s for functions. If the function
+                    does not need to relay anything, then we do not write anything after return. If
+                    there is a specific value that we need to return in order to use later in the
+                    code, then after return we write a variable containing this value/object of a
+                    particular class.
                 </p>
                 <p>
                     <b>Example</b>: Find and display your friends’ likes for a specific Instagram
