@@ -8,7 +8,7 @@ export default () => (
         <Section>
             <Section.Block>
                 <Section.Main>
-                    <h2>Log In</h2>
+                    <h1>Log In</h1>
                     <p>
                         Much of the information that programs exchange with servers is linked to a
                         specific user and their id. Just as you may give an online store permission

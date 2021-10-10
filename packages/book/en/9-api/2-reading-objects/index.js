@@ -67,7 +67,7 @@ export default () => (
                     </ul>
                     <Pre>
                         let <HL color='green'>request</HL> = makeRequest(method:{' '}
-                        <HL color='light-sky-blue'>HTTPMethod</HL>.GET,{' '}
+                        <HL color='light-sky-blue'>HTTPMethod.GET</HL>,{' '}
                         <HL color='sandy-brown'>endpoint:</HL> "
                         <HL color='sandy-brown'>
                             /users/

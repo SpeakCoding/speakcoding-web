@@ -5,7 +5,7 @@ import img from './serialization.svg';
 
 const code = `
 func signUp(emailAddress: String, password: String, completion: @escaping ((User?, Error?) -> Void)) {
-    let {{hl:requestParameters}}(green) = [{{hl:"user": ["email": emailAddress, "password": password]]](light-sky-blue)]
+    let {{hl:requestParameters}}(green) = [{{hl:"user": ["email": emailAddress, "password": password]}}(light-sky-blue)]
     let request = makeRequest(method: HTTPMethod.{{hl:POST}}(orange), endpoint: "/users.json", authorized: false, parameters: {{hl:requestParameters}}(green))
 }`;
 
@@ -33,8 +33,8 @@ export default () => (
                     </p>
                     <Pre>
                         <HL.Context active>
-                            let request = makeRequest(method: HTTP
-                            <HL color='light-sky-blue'>Method.POST</HL>, endpoint: "/
+                            let request = makeRequest(method:{' '}
+                            <HL color='light-sky-blue'>HTTPMethod.POST</HL>, endpoint: "/
                             <HL color='green'>posts</HL>.json", authorized: true, parameters:
                             requestParameters)
                         </HL.Context>
@@ -58,8 +58,8 @@ export default () => (
                     </p>
                     <Pre>
                         <HL.Context active>
-                            let request = makeRequest(method: HTTP
-                            <HL color='light-sky-blue'>Method.POST</HL>, endpoint: "/
+                            let request = makeRequest(method:{' '}
+                            <HL color='light-sky-blue'>HTTPMethod.POST</HL>, endpoint: "/
                             <HL color='green'>posts/\(post.id)</HL>.json", authorized: true,
                             parameters: requestParameters)
                         </HL.Context>
