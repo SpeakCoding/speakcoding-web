@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@sc/ui';
 import { useAPI, useApp } from '../../tools';
 
-const Dev = () => {
+const AdminPanel = () => {
     const fetch = useAPI(),
         { courses, admin } = useApp();
 
@@ -24,4 +24,4 @@ const Dev = () => {
     );
 };
 
-export default Dev;
+export default AdminPanel;

@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { Drawer } from '@sc/ui';
 import { useApp } from '../../tools';
 import L from '../localize';
-import Dev from './Dev';
+import AdminPanel from './AdminPanel';
 import s from './profile.css';
 
 const Profile = () => {
@@ -30,7 +30,9 @@ const Profile = () => {
                     <img src={profile.picture} alt='' className={s.ava} />
                     <div className={s.name}>{profile.name}</div>
                     <div className={s.email}>{profile.email}</div>
-                    <Dev />
+                    <div>{profile.group?.title || null}</div>
+                    <div className={s.gap} />
+                    <AdminPanel />
                     <div className={s.logout} onClick={logout}>
                         <L lang='en'>Log out</L>
                         <L lang='ru'>Выйти</L>

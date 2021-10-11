@@ -36,10 +36,14 @@
 }
 
 .email {
-    flex: 1;
+    margin-bottom: 8px;
     font-size: 20px;
     line-height: 24px;
     color: var(--c-grey-500);
+}
+
+.gap {
+    flex: 1;
 }
 
 .logout {
