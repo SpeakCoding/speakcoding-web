@@ -1,5 +1,6 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import pt from 'prop-types';
+import { logEvent } from '@sc/tools/amplitude';
 import { Button, Modal } from '@sc/ui';
 import L from '../localize';
 import { useAPI, useApp } from '../../tools';
@@ -7,6 +8,8 @@ import assignments from '../../assignments';
 import Card from '../card';
 import Content from './Content';
 import s from './assignment.css';
+
+let start = 0;
 
 const Assignment = ({ id: path }) => {
     const [book, id] = useMemo(() => path.split('/'), [path]),
@@ -38,6 +41,10 @@ const Assignment = ({ id: path }) => {
                 })
             };
             api.post('/assignments/deliver.json', { variables: payload });
+            logEvent('AssignmentSubmission', {
+                id: path,
+                duration: Date.now() - start
+            });
         },
         [assignment]
     );
@@ -57,6 +64,10 @@ const Assignment = ({ id: path }) => {
         setCurrentAnswer(undefined);
         setI(i + 1);
     }, [i]);
+
+    useEffect(() => {
+        if (opened) start = Date.now();
+    }, [opened]);
 
     if (!assignment) return null;
 

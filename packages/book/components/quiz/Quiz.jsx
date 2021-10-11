@@ -1,5 +1,6 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import pt from 'prop-types';
+import { logEvent } from '@sc/tools/amplitude';
 import { Button, Modal } from '@sc/ui';
 import L from '../localize';
 import { useApp } from '../../tools';
@@ -7,6 +8,8 @@ import quizzes from '../../quizzes';
 import { MultipleChoice, SingleChoice, TextInput } from './types';
 import Card from '../card';
 import s from './quiz.css';
+
+let start = 0;
 
 const Quiz = ({ id: path }) => {
     const [book, id] = useMemo(() => path.split('/'), [path]),
@@ -26,18 +29,30 @@ const Quiz = ({ id: path }) => {
 
     const closeModal = useCallback(() => setOpened(false), []);
 
+    const submit = useCallback(() => {
+        logEvent('QuizSubmission', {
+            id: path,
+            duration: Date.now() - start
+        });
+    }, []);
+
     const handleChangeAnswer = useCallback(value => {
         setCurrentAnswer(value);
     }, []);
 
     const handleConfirmAnswer = useCallback(() => {
         updateCourse(book, 'quiz', { id, answers: [...answers, currentAnswer] });
+        if (i === quiz.questions.length - 1) submit();
     }, [i, currentAnswer, answers, book, id]);
 
     const handleNext = useCallback(() => {
         setCurrentAnswer(undefined);
         setI(i + 1);
     }, [i]);
+
+    useEffect(() => {
+        if (opened) start = Date.now();
+    }, [opened]);
 
     if (!quiz) return null;
 
