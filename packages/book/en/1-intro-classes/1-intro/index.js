@@ -1,11 +1,13 @@
 import React from 'react';
 import { Callout, Img, Section } from '@sc/ui';
+import { Time } from '../../../components';
 import img from './numbers.svg';
 
 export default () => (
     <Section>
         <Section.Main>
             <h1>Introduction: from text to structure to definitions using code</h1>
+            <Time.Chapter value='~20 min' />
             <p>
                 The language of programming is a language like any other. We use it to describe the
                 world around us, to define objects and events.

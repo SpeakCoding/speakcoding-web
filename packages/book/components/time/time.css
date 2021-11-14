@@ -1,0 +1,15 @@
+.box {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    color: var(--c-grey-500);
+    font: var(--t-small);
+}
+
+.chapter {
+    margin-bottom: 16px;
+}
+
+.icon {
+    margin-right: 16px;
+}

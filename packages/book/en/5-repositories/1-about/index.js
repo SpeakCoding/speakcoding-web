@@ -1,6 +1,6 @@
 import React from 'react';
 import { Img, Link, Section } from '@sc/ui';
-import { Assignment } from '../../../components';
+import { Assignment, Time } from '../../../components';
 import img from './git.svg';
 
 export default () => (
@@ -8,6 +8,7 @@ export default () => (
         <Section>
             <Section.Main>
                 <h1>Repositories</h1>
+                <Time.Chapter value='~45 min' />
                 <p>
                     When you first start programming, you will probably spend most of your time
                     looking at code written by somebody else. Code for a specific app or project is

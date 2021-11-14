@@ -1,11 +1,13 @@
 import React from 'react';
 import { HL, Img, Link, Pre, Section } from '@sc/ui';
+import { Time } from '../../../components';
 import img from './how-it-works.svg';
 
 export default () => (
     <Section.Block>
         <Section.Main hlactive>
             <h1>The server side of the program</h1>
+            <Time.Chapter value='~30 min' />
             <p>
                 To understand how server-side program code is constructed, let’s think back to how
                 we create and store information about objects on the server.

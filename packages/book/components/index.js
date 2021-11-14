@@ -10,3 +10,4 @@ export Next from './next';
 export Page from './page';
 export Quiz from './quiz';
 export Skill from './skill';
+export Time from './time';

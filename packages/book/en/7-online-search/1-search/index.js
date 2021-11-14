@@ -1,6 +1,6 @@
 import React from 'react';
 import { Callout, Link, Section } from '@sc/ui';
-import { Assignment } from '../../../components';
+import { Assignment, Time } from '../../../components';
 import Term from '../../glossary/Term';
 import Video from '../../../common/7/search-video';
 
@@ -10,6 +10,7 @@ export default () => (
             <Section.Block>
                 <Section.Main>
                     <h1>How to search for information online</h1>
+                    <Time.Chapter value='~5 min' />
                     <p>
                         When working with code, you will often need to discover whether a particular
                         class has already been defined, check what certain system commands are

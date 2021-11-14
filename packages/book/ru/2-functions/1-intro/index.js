@@ -1,12 +1,14 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
+import { Time } from '../../../components';
 import img from './post-people.svg';
 
 export default () => (
     <Section>
         <Section.Main>
             <h1>Функции и зачем они нужны</h1>
+            <Time.Chapter value='~25 мин' />
             <p>
                 Давайте предположим, что мы хотим лайкнуть пост. На языке кода это действие звучит
                 как “добавить лайк к конкретному посту”. Чтобы программа могла это сделать, ей нужно

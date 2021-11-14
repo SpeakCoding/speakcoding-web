@@ -1,11 +1,13 @@
 import React from 'react';
 import { HL, Img, Link, Pre, Section } from '@sc/ui';
+import { Time } from '../../../components';
 import img from './how-it-works.svg';
 
 export default () => (
     <Section.Block>
         <Section.Main hlactive>
             <h1>Серверная часть программы</h1>
+            <Time.Chapter value='~30 мин' />
             <p>
                 Чтобы разобраться в том, как устроен код серверной части программы, давайте
                 вспомним, как мы создаем и храним информацию об объектах на сервере.

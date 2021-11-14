@@ -1,11 +1,13 @@
 import React from 'react';
 import { Callout, Img, Section } from '@sc/ui';
 import img from './numbers.svg';
+import { Time } from '../../../components';
 
 export default () => (
     <Section>
         <Section.Main>
             <h1>Вводное слово/ От текста к структуре к описанию через код</h1>
+            <Time.Chapter value='~20 мин' />
             <p>
                 Язык программирования - такой же язык, как и любой другой, которым мы пользуемся.
                 Его задача - описывать мир вокруг нас, называть предметы и явления.

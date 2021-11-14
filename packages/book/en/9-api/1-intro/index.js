@@ -1,6 +1,6 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
-import { Assignment } from '../../../components';
+import { Assignment, Time } from '../../../components';
 import Term from '../../glossary/Term';
 import img1 from './client-server.svg';
 import img2 from './methods.svg';
@@ -11,6 +11,7 @@ export default () => (
             <Section.Block>
                 <Section.Main>
                     <h1>API (Application Programming Interface) servers</h1>
+                    <Time.Chapter value='~25 min' />
                     <p>
                         We know that a client and a server communicate with each other by way of two
                         programs cooperating.

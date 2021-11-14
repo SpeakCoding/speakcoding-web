@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, HL, Img, Pre, Section } from '@sc/ui';
-import { Assignment } from '../../../components';
+import { Assignment, Time } from '../../../components';
 import Term from '../../glossary/Term';
 import img from './phone-cloud.svg';
 
@@ -10,6 +10,7 @@ export default () => (
             <Section.Block>
                 <Section.Main>
                     <h1>Storing information about objects long-term</h1>
+                    <Time.Chapter value='~15 min' />
                     <p>
                         We have covered how to save class objects to enable us to work with them in
                         code. Storing information in variables is only a temporary measure, as these

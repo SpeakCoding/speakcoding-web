@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, HL, Img, Pre, Section } from '@sc/ui';
-import { Assignment } from '../../../components';
+import { Assignment, Time } from '../../../components';
 import Term from '../../glossary/Term';
 import img from './phone-cloud.svg';
 
@@ -10,6 +10,7 @@ export default () => (
             <Section.Block>
                 <Section.Main>
                     <h1>Долгосрочное хранение информации об объектах</h1>
+                    <Time.Chapter value='~15 мин' />
                     <p>
                         Вы уже знаете, как сохранять объекты классов для работы с ними в коде.
                         Хранение информации в переменных временное, важно помнить, что они

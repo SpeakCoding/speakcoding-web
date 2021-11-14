@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section } from '@sc/ui';
-import { Quiz } from '../../../components';
+import { Quiz, Time } from '../../../components';
 import Example1 from './Example1';
 import Example2 from './Example2';
 
@@ -10,6 +10,7 @@ export default () => (
             <Section.Block>
                 <Section.Main narrow>
                     <h1>Complex sentences</h1>
+                    <Time.Chapter value='~30 min' />
                     <p>
                         As you may remember, a code string usually equates to a particular action,
                         and in the chapter on functions, we decided to treat these as sentences.

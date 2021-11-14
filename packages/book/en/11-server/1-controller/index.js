@@ -1,6 +1,6 @@
 import React from 'react';
 import { Callout, HL, Img, Pre, Section } from '@sc/ui';
-import { Assignment } from '../../../components';
+import { Assignment, Time } from '../../../components';
 import img from './methods-functions.svg';
 import Additional1 from './SignUp-Update';
 import Additional2 from './Follow';
@@ -30,6 +30,7 @@ export default () => (
             <Section.Block>
                 <Section.Main hlactive>
                     <h1>Description of the controller class</h1>
+                    <Time.Chapter value='~30 min' />
                     <p>
                         Let’s explore further how server-side code works. Once we have a description
                         (model) of the main User class, we need to create a controller for this

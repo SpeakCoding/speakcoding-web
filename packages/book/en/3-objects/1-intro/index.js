@@ -1,6 +1,7 @@
 import React from 'react';
 import { Callout, HL, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
+import { Time } from '../../../components';
 import { interceptor, InterceptorView } from '../../../phone';
 
 async function onEnter() {
@@ -13,6 +14,7 @@ export default () => (
         <Section.Main>
             <InterceptorView onEnter={onEnter} onExit={interceptor.close}>
                 <h1>Creating Objects (Instances)</h1>
+                <Time.Chapter value='~35 min' />
                 <p>
                     Let’s return to defining structures using code. What we were doing above was
                     defining <b>classes of objects</b>, their <Term id='property'>properties</Term>{' '}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Callout, HL, Img, Pre, Section } from '@sc/ui';
-import { Assignment } from '../../../components';
+import { Assignment, Time } from '../../../components';
 import img from './methods-functions.svg';
 import Additional1 from './SignUp-Update';
 import Additional2 from './Follow';
@@ -30,6 +30,7 @@ export default () => (
             <Section.Block>
                 <Section.Main hlactive>
                     <h1>Описание класса controller</h1>
+                    <Time.Chapter value='~30 мин' />
                     <p>
                         Продолжим разбираться с тем, как устроен код на сервере. После того как у
                         нас появилось описание (model) основного класса User, нам нужно создать для

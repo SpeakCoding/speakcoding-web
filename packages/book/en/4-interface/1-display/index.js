@@ -1,11 +1,13 @@
 import React from 'react';
 import { Callout, Img, Section } from '@sc/ui';
+import { Time } from '../../../components';
 import img from './mvc.svg';
 
 export default () => (
     <Section>
         <Section.Main>
             <h1>Inputs and outputs: how to translate user actions into program operations</h1>
+            <Time.Chapter value='~30 min' />
             <h2>Display</h2>
             <p>
                 The interface displays examples of our structural classes (e.g., a post, its

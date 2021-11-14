@@ -1,6 +1,7 @@
 import React from 'react';
 import { Callout, HL, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
+import { Time } from '../../../components';
 import { interceptor, InterceptorView } from '../../../phone';
 
 async function onEnter() {
@@ -13,6 +14,7 @@ export default () => (
         <Section.Main>
             <InterceptorView onEnter={onEnter} onExit={interceptor.close}>
                 <h1>Создание Объектов (Экземпляров)</h1>
+                <Time.Chapter value='~35 мин' />
                 <p>
                     Вернемся к описанию структуры через код. То, что мы делали в предыдущей главе -
                     это <b>описание</b> <Term id='class'>классов</Term> объектов, их{' '}

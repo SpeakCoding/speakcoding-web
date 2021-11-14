@@ -1,5 +1,6 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
+import { Time } from '../../../components';
 import img1 from './xcode.png';
 import img2 from './layers-1.png';
 import img3 from './layers-2.png';
@@ -11,6 +12,7 @@ export default () => (
         <Section.Block>
             <Section.Main narrow>
                 <h1>Launching AppDelegate and Main</h1>
+                <Time.Chapter value='~20 min' />
                 <p>
                     Every application has a file from which the program starts. This file typically
                     needs to contain a function with a standard name (such as ‘main’). This is the

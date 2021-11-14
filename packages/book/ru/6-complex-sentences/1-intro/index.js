@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section } from '@sc/ui';
-import { Quiz } from '../../../components';
+import { Quiz, Time } from '../../../components';
 import Example1 from './Example1';
 import Example2 from './Example2';
 
@@ -10,6 +10,7 @@ export default () => (
             <Section.Block>
                 <Section.Main narrow>
                     <h1>Сложноподчиненные предложения</h1>
+                    <Time.Chapter value='~30 мин' />
                     <p>
                         Вы помните, что в коде одна строка обычно равна одному действию. В главе о
                         функциях мы договорились считать это предложениями. Но бывают и более
