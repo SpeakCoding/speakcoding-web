@@ -4,7 +4,7 @@ import img_8_1 from './img/8-1.png';
 export default {
     1: {
         title: 'Тест №1',
-        description: 'Введение: проверьте, удалось ли разобраться',
+        description: 'Введение: как описать программу',
         questions: [
             {
                 type: 'multiple-choice',
@@ -312,7 +312,7 @@ export default {
                     { title: 'Location Field' }
                 ],
                 comment:
-                    'Кроме описания класса в файле [PostEditorController](https://github.com/SpeakCoding/iphone/blob/main/App/PostEditorController.swift), вы также можете проверить это, зайдя в приложение.'
+                    'Кроме описания класса в файле [PostEditorController](https://github.com/SpeakCoding/iphone/blob/main/App/PostEditorController.swift), вы также можете проверить это, зайдя в Инстаграм.'
             }
         ],
         time: '~3 мин'

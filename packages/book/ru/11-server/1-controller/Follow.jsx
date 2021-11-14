@@ -33,8 +33,9 @@ export default () => (
                         endpoint, а в контроллере на сервере добавляем функцию с этим же именем.
                     </p>
                     <p>
-                        Например, для запроса follow, endpoint “"/users/\(id)/follow.json", и на
-                        стороне сервера добавляем функцию UserController follow.
+                        Примером такого запроса может быть follow. Мы добавляем его в endpoint
+                        “"/users/\(id)/follow.json", и на стороне сервера описываем функцию
+                        UserController follow.
                     </p>
                     <Pre value={code1} />
                     <p>

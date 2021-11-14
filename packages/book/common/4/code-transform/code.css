@@ -1,0 +1,12 @@
+.hl {
+    background-color: var(--bg-orange);
+}
+
+.name {
+    display: inline-block;
+    min-width: 141px;
+}
+
+.hint {
+    margin-top: 40px;
+}

@@ -14,6 +14,12 @@ has_many (:following_records, class_name: 'Followship', foreign_key: 'follower_i
 has_many :followers, through: :followers_records, source: :follower
 has_many :followees, through: :following_records, source: :followee`;
 
+const code3 = `def create()
+    @post = {{hl:Post.new}}(light-sky-blue)({{hl:post_params}}(green))
+    @post.user = current_user
+    @{{hl:post.save}}(light-sky-blue)
+end`;
+
 export default () => (
     <Section>
         <Section.Block>
@@ -33,8 +39,8 @@ export default () => (
                     созданный на основе отфильтрованных строк таблицы posts. Это записи постов
                     пользователя, которые <b>ActiveRecord</b> найдет в таблице posts по
                     соответствующему id. Как вы помните, в таблице posts для каждой записи есть
-                    столбец user_id, и именно он будет использован. Тем самым, при помощи функций
-                    класса <b>ActiveRecord</b> мы “свяжем” таблицу users с таблицей posts.
+                    столбец user_id, и именно он будет использован при поиске. Тем самым, при помощи
+                    функций класса <b>ActiveRecord</b> мы “свяжем” таблицу users с таблицей posts.
                 </p>
                 <p>
                     Симметрично в классе Post мы используем функцию has_one(“user”), которая добавит
@@ -160,11 +166,7 @@ export default () => (
                     Представим, что мы хотим создать новый пост. Вот как будет выглядеть эта функция
                     на стороне сервера.
                 </p>
-                <Pre>
-                    @post = <HL color='light-sky-blue'>Post.new</HL>(
-                    <HL color='green'>post_params</HL>) <br />
-                    @post.user = current_user <br />@<HL color='light-sky-blue'>post.save</HL>
-                </Pre>
+                <Pre value={code3} />
                 <p>
                     Здесь сервер получит <HL color='green'>набор параметров поста</HL> (данные,
                     которые пользователь ввел в форму на клиенте) и, вызвав автоматическую функцию{' '}

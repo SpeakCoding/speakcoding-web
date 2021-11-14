@@ -91,7 +91,7 @@ export default () => (
                                 стандартный системный шрифт UIFont.systemFont
                             </HL>{' '}
                             <HL color='light-sky-blue'>12 размера</HL> и{' '}
-                            <HL color='grey'>стандартной толщины</HL> и сохранить в нем
+                            <HL color='grey'>стандартной толщины</HL>, и сохранить их в нем
                         </Grid.Cell>
                         <Grid.Cell dense='top' hlactive>
                             <Code value={code4} />

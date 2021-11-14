@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
-import { L } from '../../../components';
+import L from '../localize';
 import s from './flags.css';
 
 const Step = ({ active, current, hint, onClick }) => (

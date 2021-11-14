@@ -48,31 +48,29 @@ def render_unauthorized()
 end`;
 
 export default () => (
-    <>
-        <Section.Block>
-            <Section.Main hlactive narrow>
-                <h2>
-                    (Дополнительно) Создание нового пользователя (или Sign up){' '}
-                    <Expand.Control htmlFor='11-1-1'>
-                        <Button variant='rounded'>читать ⤵</Button>
-                    </Expand.Control>
-                </h2>
+    <Section.Block>
+        <Section.Main hlactive narrow>
+            <h2>
+                (Дополнительный пример) Создание нового пользователя (или Sign up){' '}
+                <Expand.Control htmlFor='11-1-1'>
+                    <Button variant='rounded'>читать ⤵</Button>
+                </Expand.Control>
+            </h2>
 
-                <Expand id='11-1-1'>
-                    <Pre value={code1} />
-                </Expand>
+            <Expand id='11-1-1'>
+                <Pre value={code1} />
+            </Expand>
 
-                <h2>
-                    (Дополнительно) Изменения параметров пользователя{' '}
-                    <Expand.Control htmlFor='11-1-2'>
-                        <Button variant='rounded'>читать ⤵</Button>
-                    </Expand.Control>
-                </h2>
+            <h2>
+                (Дополнительный пример) Изменение параметров пользователя (или Update){' '}
+                <Expand.Control htmlFor='11-1-2'>
+                    <Button variant='rounded'>читать ⤵</Button>
+                </Expand.Control>
+            </h2>
 
-                <Expand id='11-1-2'>
-                    <Pre value={code2} />
-                </Expand>
-            </Section.Main>
-        </Section.Block>
-    </>
+            <Expand id='11-1-2'>
+                <Pre value={code2} />
+            </Expand>
+        </Section.Main>
+    </Section.Block>
 );

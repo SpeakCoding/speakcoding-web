@@ -14,6 +14,12 @@ has_many (:following_records, class_name: 'Followship', foreign_key: 'follower_i
 has_many :followers, through: :followers_records, source: :follower
 has_many :followees, through: :following_records, source: :followee`;
 
+const code3 = `def create()
+    @post = {{hl:Post.new}}(light-sky-blue)({{hl:post_params}}(green))
+    @post.user = current_user
+    @{{hl:post.save}}(light-sky-blue)
+end`;
+
 export default () => (
     <Section>
         <Section.Block>
@@ -161,11 +167,7 @@ export default () => (
                     Let’s assume we wish to create a new post. The server-side function looks like
                     this:
                 </p>
-                <Pre>
-                    @post = <HL color='light-sky-blue'>Post.new</HL>(
-                    <HL color='green'>post_params</HL>) <br />
-                    @post.user = current_user <br />@<HL color='light-sky-blue'>post.save</HL>
-                </Pre>
+                <Pre value={code3} />
                 <p>
                     The server receives <HL color='green'>a set of post parameters</HL> (data that
                     the user entered into the form on the client), calls the ActiveRecord class’s

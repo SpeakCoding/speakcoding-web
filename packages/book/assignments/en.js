@@ -304,10 +304,10 @@ export default {
     25: {
         title: 'Assignment #25',
         description:
-            'In ServerAPI.swift, find the function that sends requests to create posts to the server. List (name) the function’s inputs.',
+            'In [ServerAPI.swift](https://github.com/SpeakCoding/iphone/blob/main/App/ServerAPI.swift), find the function that sends requests to create posts to the server. List (name) the function’s inputs.',
         questions: [
             {
-                title: 'In ServerAPI.swift, find the function that sends requests to create posts to the server. List (name) the function’s inputs.'
+                title: 'In [ServerAPI.swift](https://github.com/SpeakCoding/iphone/blob/main/App/ServerAPI.swift), find the function that sends requests to create posts to the server. List (name) the function’s inputs.'
             },
             {
                 title: 'In the temporary variable requestParameters, we store the post components in a format that can be written as a string. List the post components that we save in this variable.'

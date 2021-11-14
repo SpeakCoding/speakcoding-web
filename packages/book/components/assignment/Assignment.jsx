@@ -6,6 +6,7 @@ import L from '../localize';
 import { useAPI, useApp } from '../../tools';
 import assignments from '../../assignments';
 import Card from '../card';
+import Markdown from '../quiz/blocks/Markdown';
 import Content from './Content';
 import s from './assignment.css';
 
@@ -77,7 +78,7 @@ const Assignment = ({ id: path }) => {
         <>
             <Card variant='assignment'>
                 <Card.Title>{title}</Card.Title>
-                {description}
+                <Markdown>{description}</Markdown>
                 <Card.Button onClick={openModal} />
             </Card>
 

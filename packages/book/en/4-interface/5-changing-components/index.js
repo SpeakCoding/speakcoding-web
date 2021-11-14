@@ -55,7 +55,7 @@ export default () => (
                     </p>
                     <Expand id='4-5-1'>
                         <p>
-                            The picture in the Asynchronous Image View post in turn has this
+                            The picture in the AsynchronousImageView post in turn has this
                             definition:
                         </p>
                         <ul>

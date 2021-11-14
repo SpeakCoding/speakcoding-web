@@ -1,0 +1,16 @@
+.box {
+    margin-bottom: 16px;
+    padding: 32px 56px;
+    border: 1px solid var(--c-grey-300);
+    border-radius: 12px;
+}
+
+.code {
+    width: 360px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.flags {
+    margin: 24px 0 56px;
+}

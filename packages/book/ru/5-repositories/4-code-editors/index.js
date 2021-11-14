@@ -1,5 +1,5 @@
 import React from 'react';
-import { Img, Section } from '@sc/ui';
+import { Img, Link, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import xcode from './xcode.png';
 
@@ -23,8 +23,11 @@ export default () => (
                     устройствах.
                 </p>
                 <p>
-                    Как мы уже упоминали, для создания программ для iPhone необходимо использовать
-                    редактор Xcode от Apple. Вы можете найти его в AppStore.
+                    Как мы уже упоминали, для создания программ для iPhone необходимо использовать{' '}
+                    <Link href='https://apps.apple.com/us/app/xcode/id497799835?mt=12' blank>
+                        редактор Xcode
+                    </Link>{' '}
+                    от Apple.
                 </p>
             </Section.Main>
         </Section>
@@ -85,15 +88,6 @@ export default () => (
                     выбрать эмулятор одной из версий операционной системы iPhone или подключить по
                     кабелю свой телефон.
                 </p>
-            </Section.Main>
-        </Section>
-
-        <Assignment id='ru/11' />
-
-        <Assignment id='ru/12' />
-
-        <Section>
-            <Section.Main narrow>
                 <p>
                     Чтобы установить получившееся приложение на ваш телефон, его необходимо
                     подключить через кабель. После чего он появится в списке выбора устройств.
@@ -106,6 +100,10 @@ export default () => (
                 </p>
             </Section.Main>
         </Section>
+
+        <Assignment id='ru/11' />
+
+        <Assignment id='ru/12' />
 
         <Assignment id='ru/13' />
     </>

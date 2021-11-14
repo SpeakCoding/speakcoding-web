@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Expand, Hint, Icon, Pre, Section, Structure } from '@sc/ui';
+import { Button, Expand, Hint, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
-import s from './style.css';
+import CodeTransform from '../../../common/4/code-transform';
 
 export default () => (
     <Section.Block>
@@ -27,7 +27,7 @@ export default () => (
                             таблицы), которые имеют все необходимые составляющие и функции. И нам
                             необходимо, чтобы эти составляющие и функции были также у наших классов
                             PostFeedView и FeedView. Для этого в программировании используется
-                            “наследование классов”.
+                            наследование классов.
                         </p>
                         <p>
                             Существуют дочерние и материнские классы.{' '}
@@ -60,61 +60,7 @@ export default () => (
                     </Section.Main>
                 </Section.Block>
 
-                <div className={s.transformation}>
-                    <Structure>
-                        <h4>FeedView</h4>
-                        <ul>
-                            <li>ProfilePicture</li>
-                            <li>userName</li>
-                            <li>Location</li>
-                            <li>Post Image</li>
-                            <li>Like Button</li>
-                            <li>Comment</li>
-                            <li>Bookmark</li>
-                            <li>@username liked</li>
-                            <li>likeCount</li>
-                            <li>postText</li>
-                            <li>commentCount</li>
-                            <li>Date</li>
-                        </ul>
-                    </Structure>
-                    <Icon name='arrow-right' size={16} />
-                    <Structure>
-                        <h4>PostFeedView</h4>
-                        <ul>
-                            <li>ProfilePictureView</li>
-                            <li>userNameLabel</li>
-                            <li>userLocationLabel</li>
-                            <li>PostImageView</li>
-                            <li>likeButton</li>
-                            <li>commentButton</li>
-                            <li>bookmarkButton</li>
-                            <li>likerProfilePictureView</li>
-                            <li>likeCountLabel</li>
-                            <li>postTextLabel</li>
-                            <li>commentCountLabel</li>
-                            <li>postDateLabel</li>
-                        </ul>
-                    </Structure>
-                    <Icon name='arrow-right' size={16} />
-                    <Structure>
-                        <h4>PostFeedView: UITableViewCell</h4>
-                        <ul>
-                            <li>ProfilePictureView: UlImage</li>
-                            <li>userNameLabel: UILabel</li>
-                            <li>userLocationLabel: UILabel</li>
-                            <li>postImageView: UIImage</li>
-                            <li>likeButton: UIButton</li>
-                            <li>commentButton: UIButton</li>
-                            <li>bookmarkButton: UIButton</li>
-                            <li>likerProfilePictureView: Image</li>
-                            <li>likeCountLabel: UILabel</li>
-                            <li>postTextLabel: UILabel</li>
-                            <li>commentCountLabel: UILabel</li>
-                            <li>postDateLabel: UILabel</li>
-                        </ul>
-                    </Structure>
-                </div>
+                <CodeTransform />
 
                 <Section.Block>
                     <Section.Main narrow>

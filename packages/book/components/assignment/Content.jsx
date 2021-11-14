@@ -34,7 +34,9 @@ const Content = ({ answer, onChange, ...props }) => {
 
     return (
         <>
-            <h2 className={s.label}>{title}</h2>
+            <h2 className={s.label}>
+                <Markdown>{title}</Markdown>
+            </h2>
 
             {details && (
                 <div className={s.text}>
