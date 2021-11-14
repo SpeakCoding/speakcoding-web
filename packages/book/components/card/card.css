@@ -58,3 +58,9 @@
 .box.skill .icon {
     background-image: url(./skill.svg);
 }
+
+.time {
+    position: absolute;
+    top: 12px;
+    left: 32px;
+}

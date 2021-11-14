@@ -56,7 +56,7 @@ const Quiz = ({ id: path }) => {
 
     if (!quiz) return null;
 
-    const { title, description, questions } = quiz,
+    const { title, description, questions, time } = quiz,
         question = questions[i];
 
     return (
@@ -68,7 +68,10 @@ const Quiz = ({ id: path }) => {
             </Card>
 
             <Modal opened={opened} onClose={closeModal}>
-                <Modal.Title>{title}</Modal.Title>
+                <Modal.Title>
+                    {time && <Card.Time value={time} />}
+                    {title}
+                </Modal.Title>
 
                 {question && (
                     <>

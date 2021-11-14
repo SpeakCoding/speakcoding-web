@@ -30,7 +30,8 @@ export default {
                 ],
                 comment: 'Stories are not post components, but rather a separate class.'
             }
-        ]
+        ],
+        time: '~1 min'
     },
     2: {
         title: 'Quiz #2',
@@ -82,7 +83,8 @@ export default {
                 comment:
                     "Any 'category' of thing or type of object can be a class, though actions performed with these objects (such as saving a story or sending a message) do not belong to the object's class."
             }
-        ]
+        ],
+        time: '~2 min'
     },
     3: {
         title: 'Quiz #3',
@@ -154,7 +156,8 @@ export default {
                 comment:
                     'The correct answer is Text, as the caption component belongs to the Text class.'
             }
-        ]
+        ],
+        time: '~3 min'
     },
     4: {
         title: 'Quiz #4',
@@ -215,7 +218,8 @@ export default {
                 comment:
                     "In the constructor function, we specify the inputs needed to create an example of the Post class, i.e. user, text, picture and/or video, creation date, and location. The date is usually assigned automatically, while the location can be determined using the device's automatic location capability. When you come to work with SpeakCoding's app code, you will see how this is written in code."
             }
-        ]
+        ],
+        time: '~3 min'
     },
     5: {
         title: 'Quiz #5',
@@ -251,7 +255,8 @@ export default {
                 comment:
                     "As a post can have many likes, the correct answer is the []Likes class (set of likes). But Like could also be considered a correct answer; we'll look more closely at sets in later chapters."
             }
-        ]
+        ],
+        time: '~1 min'
     },
     6: {
         title: 'Quiz #6',
@@ -269,7 +274,8 @@ export default {
                 comment:
                     'Posts contain a caption component that we can access (entries with a period . mean we are accessing the components or functions of an object, in our case a specific post), and storing a new value (new text) in the component; this value is called newCaption.'
             }
-        ]
+        ],
+        time: '~30 sec'
     },
     7: {
         title: 'Quiz #7',
@@ -287,7 +293,8 @@ export default {
                 comment:
                     "You can easily check this by locating the 'follow' button on Instagram's interface. The screens between which you are navigating are all defined in the corresponding classes' interface files."
             }
-        ]
+        ],
+        time: '~1 min'
     },
     8: {
         title: 'Quiz #8',
@@ -306,7 +313,8 @@ export default {
                 comment:
                     'In addition to the class description in the [PostEditorController](https://github.com/SpeakCoding/iphone/blob/main/App/PostEditorController.swift) file, you can also check this in the app.'
             }
-        ]
+        ],
+        time: '~3 min'
     },
     9: {
         title: 'Quiz #9',
@@ -323,7 +331,8 @@ export default {
                 ],
                 comment: 'Image. You can check this yourself in Instagram.'
             }
-        ]
+        ],
+        time: '~15 sec'
     },
     10: {
         title: 'Quiz #10',
@@ -353,7 +362,8 @@ export default {
                 comment:
                     'You can count these yourself in the file list that is accessible via the GitHub link that we shared with you. There should be seven – UserProfileView, UserSearchView, UserProfileEditorController, UsersListsViewController, UsersLookupViewController, UserCellView, and UserCellView+FollowButton.'
             }
-        ]
+        ],
+        time: '~7 min'
     },
     11: {
         title: 'Quiz #11',
@@ -400,6 +410,7 @@ export default {
                 storyReplies = myAccount.getStories().{{hl:???}}(red)`,
                 comment: 'myAccount.getStories().**last.getReply()**'
             }
-        ]
+        ],
+        time: '~5 min'
     }
 };
