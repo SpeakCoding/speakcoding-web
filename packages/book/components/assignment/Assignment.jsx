@@ -71,7 +71,7 @@ const Assignment = ({ id: path }) => {
 
     if (!assignment) return null;
 
-    const { title, description, questions } = assignment;
+    const { title, description, questions, time } = assignment;
 
     return (
         <>
@@ -82,7 +82,10 @@ const Assignment = ({ id: path }) => {
             </Card>
 
             <Modal opened={opened} onClose={closeModal}>
-                <Modal.Title>{title}</Modal.Title>
+                <Modal.Title>
+                    {time && <Card.Time value={time} />}
+                    {title}
+                </Modal.Title>
 
                 {questions[i] && (
                     <>
