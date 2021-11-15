@@ -42,7 +42,7 @@ export default () => (
                                     Функция GetLatestPost() всегда возвращает Post
                                 </Hint.Tooltip>
                             </Hint>
-                            ().GetLatestComment().GetUser().
+                            ()&#8203;.GetLatestComment()&#8203;.GetUser().
                             <HL color='plum'>username</HL>{' '}
                             <Hint>
                                 + " " +
@@ -54,8 +54,8 @@ export default () => (
                                 </Hint.Tooltip>
                             </Hint>{' '}
                             my_feed.
-                            <HL color='aquamarine'>GetLatestPost</HL>().
-                            <HL color='aquamarine'>GetLatestComment</HL>().
+                            <HL color='aquamarine'>GetLatestPost</HL>()&#8203;.
+                            <HL color='aquamarine'>GetLatestComment</HL>()&#8203;.
                             <HL color='orange'>text</HL>
                         </pre>
                     </Grid.Cell>

@@ -114,7 +114,8 @@ export default {
                 title: 'Install Xcode on your computer. Launch the editor and open a project, indicating the folder into which you downloaded the repository (e.g., Documents/SpeakCoding/iphone/).',
                 ask: 'Were you able to install Xcode on your computer, launch the editor, and open the downloaded project?'
             }
-        ]
+        ],
+        time: '~3 min'
     },
     10: {
         title: 'Assignment #10',
