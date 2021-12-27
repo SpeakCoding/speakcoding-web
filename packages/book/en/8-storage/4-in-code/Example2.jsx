@@ -10,15 +10,16 @@ const code2 = `
 \xa0   return result.first!["count(*)"] as! {{hl:Int > 0}}(aquamarine)
 }`;
 
-const code3 = `func hasTable ({{hl:inputName}}(orange): String) {
+const code3 = `
+func hasTable ({{inputName}}(hl:orange): String) {
     let query = """
-        SELECT count(*) 
-        FROM sqlite_master 
-        WHERE type="table" AND {{hl:name=?}}(orange)
+        SELECT count(*)
+        FROM sqlite_master
+        WHERE type="table" AND {{name=?}}(hl:orange)
         """
     let result = database.executeQuery(
         sqlQuery: query,
-        parameters: [{{hl:inputName}}(orange)]
+        parameters: [{{inputName}}(hl:orange)]
     )
     return result.first!["count(*)"] as! Int > 0
 }`;
@@ -80,7 +81,7 @@ export default () => (
                         We now do the same thing again, only this time in a way that lets us put in{' '}
                         <HL color='orange'>various table names</HL>.
                     </p>
-                    <Pre value={code3} />
+                    <Pre>{code3}</Pre>
                 </HL.Context>
             </Section.Main>
         </Section.Block>

@@ -94,7 +94,7 @@ export default () => (
         <p>
             <b>Calling functions</b>
         </p>
-        <Pre>functionname(inputName: valueForInput)</Pre>
+        <Pre>{`{{functionname}}(t:func)(inputName: valueForInput)`}</Pre>
         <p>
             A function is called by writing the function name with no keyword before it, after which
             the values (instances of the requisite classes) for these inputs (the value itself or a
@@ -108,7 +108,7 @@ export default () => (
 
             }
 
-            functionname(addInputName: valueForInput)`}
+            {{functionname}}(t:func)(addInputName: valueForInput)`}
         </Pre>
         <p>
             By default, each of these inputs has the same name and value that we specified when we
@@ -122,7 +122,7 @@ export default () => (
 
             }
 
-            functionname(valueForInput)`}
+            {{functionname}}(t:func)(valueForInput)`}
         </Pre>
         <p>
             We can write an _ underscore in place of the additional name. In this case you don’t

@@ -3,7 +3,11 @@ import { Callout, Code, Grid, HL, Img, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import img from './serialization.svg';
 
-const code = `
+const code1 = `let request = makeRequest(method: {{HTTPMethod.POST}}(hl:light-sky-blue), endpoint: "/ {{posts}}(hl:green).json", authorized: true, parameters: requestParameters)`;
+
+const code2 = `let request = makeRequest(method: {{HTTPMethod.POST}}(hl:light-sky-blue), endpoint: "/ {{posts/\\(post.id)}}(hl:green).json", authorized: true, parameters: requestParameters)`;
+
+const code3 = `
 func signUp(emailAddress: String, password: String, completion: @escaping ((User?, Error?) -> Void)) {
     let {{hl:requestParameters}}(green) = [{{hl:"user": ["email": emailAddress, "password": password]}}(light-sky-blue)]
     let request = makeRequest(method: HTTPMethod.{{hl:POST}}(orange), endpoint: "/users.json", authorized: false, parameters: {{hl:requestParameters}}(green))
@@ -29,14 +33,7 @@ export default () => (
                         </HL>
                         .
                     </p>
-                    <Pre>
-                        <HL.Context active>
-                            let request = makeRequest(method:{' '}
-                            <HL color='light-sky-blue'>HTTPMethod.POST</HL>, endpoint: "/
-                            <HL color='green'>posts</HL>.json", authorized: true, parameters:
-                            requestParameters)
-                        </HL.Context>
-                    </Pre>
+                    <Pre>{code1}</Pre>
                     <p>
                         Похожий процесс происходит при изменении объекта. Для него используется тот
                         же запрос - POST, но параметры в нем будут заменены на новую информацию об
@@ -47,14 +44,7 @@ export default () => (
                         </HL>
                         .
                     </p>
-                    <Pre>
-                        <HL.Context active>
-                            let request = makeRequest(method:{' '}
-                            <HL color='light-sky-blue'>HTTPMethod.POST</HL>, endpoint: "/
-                            <HL color='green'>posts/\(post.id)</HL>.json", authorized: true,
-                            parameters: requestParameters)
-                        </HL.Context>
-                    </Pre>
+                    <Pre>{code2}</Pre>
                     <p>
                         Если мы вернемся к примеру с формой, которую видит пользователь, процесс
                         будет выглядеть так: на основании введенных в поля данных программа (клиент)
@@ -98,7 +88,7 @@ export default () => (
                             <HL color='light-sky-blue'>имейл, пароль, юзернейм</HL> (форма sign up).
                         </Grid.Cell>
                         <Grid.Cell hlactive>
-                            <Code value={code} />
+                            <Code value={code3} />
                         </Grid.Cell>
                     </Grid>
                 </Section.Main>

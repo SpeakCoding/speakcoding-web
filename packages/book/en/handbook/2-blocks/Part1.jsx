@@ -19,14 +19,14 @@ export default () => (
         <p>
             <b>Class definition (description)</b>
         </p>
-        <Pre>class ClassName {'{}'}</Pre>
+        <Pre>{`class ClassName {}`}</Pre>
         <p>
             The word ‘class’ appears, followed by the class title (each word in the class title is
             capitalized). The body of the class is written in curly {'{ }'} brackets. Clicking on
             the class name or one of the {'{ }'} brackets while pressing the Command key (or the
             Windows/Start key on laptop keyboards) displays all strings relating to the description.
         </p>
-        <Pre>class ClassName : Inherited_Class, Another_Inherited_Class {'{}'}</Pre>
+        <Pre>{`class ClassName : Inherited_Class, Another_Inherited_Class {}`}</Pre>
         <p>
             The classes from which the current class is inherited are listed after a colon and
             before the {'{'} brackets, with each class being separated by a comma (the current class

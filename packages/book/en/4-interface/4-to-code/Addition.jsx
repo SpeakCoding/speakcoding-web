@@ -1,7 +1,16 @@
 import React from 'react';
-import { Button, Expand, Hint, Pre, Section } from '@sc/ui';
+import { Button, Expand, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 import CodeTransform from '../../../common/4/code-transform';
+
+const code1 = `
+override func awakeFromNib() { 
+    {{super.awakeFromNib()}}(h:hint)
+    ... 
+}`;
+
+const hint1 =
+    'In Swift, to call actions of the parent function in order to correct/add something after the word "super", we indicate the function’s full title. However, in some languages it is sufficient to write "super ( )" in the first line of the function that we wish to edit using override.';
 
 export default () => (
     <Section.Block>
@@ -92,23 +101,7 @@ export default () => (
                             separated by a full stop). This word calls all of the actions defined in
                             the function of the parent class.
                         </p>
-                        <Pre>
-                            override func awakeFromNib() {'{'} <br />
-                            {'    '}
-                            <Hint>
-                                super.awakeFromNib()
-                                <Hint.Tooltip>
-                                    In Swift, to call actions of the parent function in order to
-                                    correct/add something after the word "super", we indicate the
-                                    function’s full title. However, in some languages it is
-                                    sufficient to write "super ( )" in the first line of the
-                                    function that we wish to edit using override.
-                                </Hint.Tooltip>
-                            </Hint>
-                            <br />
-                            {'    '}... <br />
-                            {'}'}
-                        </Pre>
+                        <Pre hint={hint1}>{code1}</Pre>
                         <p>
                             <b>Super</b> means ‘include everything that is described in the parent
                             class’. Add this word if: 1) you do not know the exact definition of a

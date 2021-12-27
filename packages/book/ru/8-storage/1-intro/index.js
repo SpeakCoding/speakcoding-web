@@ -4,6 +4,8 @@ import { Assignment, Time } from '../../../components';
 import Term from '../../glossary/Term';
 import img from './phone-cloud.svg';
 
+const code1 = `'{ "post": { "caption": "This is my first post!", "user": "liberman1984", "comments": [] } }'`;
+
 export default () => (
     <>
         <Section>
@@ -77,11 +79,7 @@ export default () => (
                     <p>
                         <b>Пример способа записи поста в виде строки:</b>
                     </p>
-                    <Pre>
-                        {
-                            '\'{ "post": { "caption": "This is my first post!", "user": "liberman1984", "comments": [] } }\''
-                        }
-                    </Pre>
+                    <Pre>{code1}</Pre>
                 </Section.Main>
                 <Section.Side>
                     <Section.Sticky>

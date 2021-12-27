@@ -5,7 +5,13 @@ import Term from '../../glossary/Term';
 import Example1 from './Example1';
 import Example2 from './Example2';
 
-const code = `    CREATE TABLE posts (
+const code1 = `
+var database: SQLiteDatabase
+database = SQLiteDatabase(filePath: {{databasePath}}(hl:light-sky-blue))`;
+
+const code2 = `
+let query = {{"""}}(hl:orange)
+    CREATE TABLE posts (
         "id" ,
         "date",
         "user_id",
@@ -14,9 +20,13 @@ const code = `    CREATE TABLE posts (
         "location",
         "number_of_likes",
         "number_of_comments",
-        "liked" 
+        "liked"
     )
-`;
+    {{"""}}(hl:orange)`;
+
+const code3 = `let query = "CREATE TABLE posts (\\"id\\", \\"date\\", \\"user_id\\", \\"caption\\", \\"image_url\\", \\"location\\", \\"number_of_likes\\", \\"number_of_comments\\", \\"liked\\")"`;
+
+const code4 = `database.executeQuery(sqlQuery: query, values: nil)`;
 
 export default () => (
     <>
@@ -34,14 +44,7 @@ export default () => (
                         . Для работы с базой данных, нам необходимо создать экземпляр этого класса.
                         Мы сохраним его в переменную database.
                     </p>
-                    <Pre>
-                        var database: SQLiteDatabase <br />
-                        database = SQLiteDatabase(filePath:{' '}
-                        <HL color='light-sky-blue' active>
-                            databasePath
-                        </HL>
-                        ).
-                    </Pre>
+                    <Pre>{code1}</Pre>
                     <p>
                         Здесь нужно указать{' '}
                         <HL color='light-sky-blue' active>
@@ -63,18 +66,7 @@ export default () => (
                         (Post table). Для этого мы запишем в строку SQL запрос Create Table,
                         описанный выше:
                     </p>
-                    <Pre>
-                        let query ={' '}
-                        <HL color='orange' active>
-                            """
-                        </HL>{' '}
-                        <br />
-                        {code}
-                        {'    '}
-                        <HL color='orange' active>
-                            """
-                        </HL>
-                    </Pre>
+                    <Pre>{code2}</Pre>
                     <p>
                         Для наглядности и удобства вместо записи в одну строку мы используем запись,
                         позволяющую сохранить многострочную строку в переменной query (поэтому
@@ -85,16 +77,12 @@ export default () => (
                         ).
                     </p>
                     <p>Вот так выглядела бы запись этой операции одной строкой:</p>
-                    <Pre>
-                        let query = "CREATE TABLE posts (\"id\", \"date\", \"user_id\", \"caption\",
-                        \"image_url\", \"location\", \"number_of_likes\", \"number_of_comments\",
-                        \"liked\" )"
-                    </Pre>
+                    <Pre>{code3}</Pre>
                     <p>
                         Теперь мы можем отправить этот запрос в базу данных через еще одну
                         стандартную функцию executeUpdate класса SQLiteDatabase.
                     </p>
-                    <Pre>database.executeQuery(sqlQuery: query, values: nil)</Pre>
+                    <Pre>{code4}</Pre>
                     <p>
                         После первого запуска приложения в этой базе данных уже будет создана
                         таблица постов. Чтобы не потерять данные или не вызвать нежелательную

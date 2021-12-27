@@ -5,7 +5,13 @@ import Term from '../../glossary/Term';
 import Example1 from './Example1';
 import Example2 from './Example2';
 
-const code = `    CREATE TABLE posts (
+const code1 = `
+var database: SQLiteDatabase
+database = SQLiteDatabase(filePath: {{databasePath}}(hl:light-sky-blue))`;
+
+const code2 = `
+let query = {{"""}}(hl:orange)
+    CREATE TABLE posts (
         "id" ,
         "date",
         "user_id",
@@ -14,9 +20,13 @@ const code = `    CREATE TABLE posts (
         "location",
         "number_of_likes",
         "number_of_comments",
-        "liked" 
+        "liked"
     )
-`;
+    {{"""}}(hl:orange)`;
+
+const code3 = `let query = "CREATE TABLE posts (\\"id\\", \\"date\\", \\"user_id\\", \\"caption\\", \\"image_url\\", \\"location\\", \\"number_of_likes\\", \\"number_of_comments\\", \\"liked\\")"`;
+
+const code4 = `database.executeQuery(sqlQuery: query, values: nil)`;
 
 export default () => (
     <>
@@ -33,14 +43,7 @@ export default () => (
                         create an example of this class, which we then save in the database
                         variable.
                     </p>
-                    <Pre>
-                        var database: SQLiteDatabase <br />
-                        database = SQLiteDatabase(filePath:{' '}
-                        <HL color='light-sky-blue' active>
-                            databasePath
-                        </HL>
-                        ).
-                    </Pre>
+                    <Pre>{code1}</Pre>
                     <p>
                         Here we need to indicate the{' '}
                         <HL color='light-sky-blue' active>
@@ -60,18 +63,7 @@ export default () => (
                         as one in which to store post data (Post table). To do this, we write a
                         Create Table request (covered earlier in this chapter) in an SQL string:
                     </p>
-                    <Pre>
-                        let query ={' '}
-                        <HL color='orange' active>
-                            """
-                        </HL>{' '}
-                        <br />
-                        {code}
-                        {'    '}
-                        <HL color='orange' active>
-                            """
-                        </HL>
-                    </Pre>
+                    <Pre>{code2}</Pre>
                     <p>
                         For clarity and convenience, instead of writing on one line, we make an
                         entry that lets us store a multiline string in the query variable (hence the
@@ -82,16 +74,12 @@ export default () => (
                         ).
                     </p>
                     <p>The entry for this operation would look like this if written on one line:</p>
-                    <Pre>
-                        let query = "CREATE TABLE posts (\"id\", \"date\", \"user_id\", \"caption\",
-                        \"image_url\", \"location\", \"number_of_likes\", \"number_of_comments\",
-                        \"liked\" )"
-                    </Pre>
+                    <Pre>{code3}</Pre>
                     <p>
                         Now we can send this request to the database via another standard function,
                         namely executeUpdate of the SQLiteDatabase class.
                     </p>
-                    <Pre>database.executeQuery(sqlQuery: query, values: nil)</Pre>
+                    <Pre>{code4}</Pre>
                     <p>
                         When the app is first opened, a post table is created in this database. It
                         is important to avoid creating the table repeatedly, as doing so could cause

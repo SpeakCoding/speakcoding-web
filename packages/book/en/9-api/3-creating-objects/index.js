@@ -3,7 +3,11 @@ import { Callout, Code, Grid, HL, Img, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import img from './serialization.svg';
 
-const code = `
+const code1 = `let request = makeRequest(method: {{HTTPMethod.POST}}(hl:light-sky-blue), endpoint: "/ {{posts}}(hl:green).json", authorized: true, parameters: requestParameters)`;
+
+const code2 = `let request = makeRequest(method: {{HTTPMethod.POST}}(hl:light-sky-blue), endpoint: "/ {{posts/\\(post.id)}}(hl:green).json", authorized: true, parameters: requestParameters)`;
+
+const code3 = `
 func signUp(emailAddress: String, password: String, completion: @escaping ((User?, Error?) -> Void)) {
     let {{hl:requestParameters}}(green) = [{{hl:"user": ["email": emailAddress, "password": password]}}(light-sky-blue)]
     let request = makeRequest(method: HTTPMethod.{{hl:POST}}(orange), endpoint: "/users.json", authorized: false, parameters: {{hl:requestParameters}}(green))
@@ -31,14 +35,7 @@ export default () => (
                         </HL>{' '}
                         request.
                     </p>
-                    <Pre>
-                        <HL.Context active>
-                            let request = makeRequest(method:{' '}
-                            <HL color='light-sky-blue'>HTTPMethod.POST</HL>, endpoint: "/
-                            <HL color='green'>posts</HL>.json", authorized: true, parameters:
-                            requestParameters)
-                        </HL.Context>
-                    </Pre>
+                    <Pre>{code1}</Pre>
                     <p>
                         Let’s repeat the steps: we first create a post on the client. The client
                         writes this information into a local database, then immediately converts it
@@ -56,14 +53,7 @@ export default () => (
                         </HL>
                         .
                     </p>
-                    <Pre>
-                        <HL.Context active>
-                            let request = makeRequest(method:{' '}
-                            <HL color='light-sky-blue'>HTTPMethod.POST</HL>, endpoint: "/
-                            <HL color='green'>posts/\(post.id)</HL>.json", authorized: true,
-                            parameters: requestParameters)
-                        </HL.Context>
-                    </Pre>
+                    <Pre>{code2}</Pre>
                     <p>
                         Returning to the example of the form that the user sees, the process goes
                         thus: the program (client) creates a new object based on the data entered
@@ -111,7 +101,7 @@ export default () => (
                             the signup form).
                         </Grid.Cell>
                         <Grid.Cell hlactive>
-                            <Code value={code} />
+                            <Code value={code3} />
                         </Grid.Cell>
                     </Grid>
                 </Section.Main>

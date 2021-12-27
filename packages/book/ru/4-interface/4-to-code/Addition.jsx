@@ -1,7 +1,16 @@
 import React from 'react';
-import { Button, Expand, Hint, Pre, Section } from '@sc/ui';
+import { Button, Expand, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 import CodeTransform from '../../../common/4/code-transform';
+
+const code1 = `
+override func awakeFromNib() { 
+    {{super.awakeFromNib()}}(h:hint)
+    ... 
+}`;
+
+const hint1 =
+    'В Swift для вызова действий материнской функции с целью исправления/добавления после super мы указываем полное название функции. Но в некоторых языках достаточно написать super ( ) в первой строке функции, которую мы хотим редактировать через override';
 
 export default () => (
     <Section.Block>
@@ -88,23 +97,7 @@ export default () => (
                             функции через точку). Это слово вызовет все действия, описанные в
                             функции материнского класса.
                         </p>
-                        <Pre>
-                            override func awakeFromNib() {'{'} <br />
-                            {'    '}
-                            <Hint>
-                                super.awakeFromNib()
-                                <Hint.Tooltip>
-                                    В Swift для вызова действий материнской функции с целью
-                                    исправления/добавления после super мы указываем полное название
-                                    функции. Но в некоторых языках достаточно написать super ( ) в
-                                    первой строке функции, которую мы хотим редактировать через
-                                    override
-                                </Hint.Tooltip>
-                            </Hint>
-                            <br />
-                            {'    '}... <br />
-                            {'}'}
-                        </Pre>
+                        <Pre hint={hint1}>{code1}</Pre>
                         <p>
                             <b>Super</b> означает “включить все, что описано в материнском классе”.
                             Добавляйте это слово, если: 1) вы не знаете точного описания класса 2)

@@ -3,6 +3,8 @@ import { HL, Img, Link, Pre, Section } from '@sc/ui';
 import { Time } from '../../../components';
 import img from './how-it-works.svg';
 
+const code1 = `let request = makeRequest(method: {{HTTPMethod.POST}}(hl:green), endpoint: "/ {{users}}(hl:light-sky-blue).json", authorized: false, parameters: requestParameters)`;
+
 export default () => (
     <Section.Block>
         <Section.Main hlactive>
@@ -18,12 +20,7 @@ export default () => (
                 (e.g. your mobile phone). It then converts this data into text and sends it to the
                 server via a <HL color='green'>POST</HL> request:
             </p>
-            <Pre>
-                let request = makeRequest(method: HTTPMethod.
-                <HL color='green'>POST</HL>, endpoint: "/
-                <HL color='light-sky-blue'>users</HL>
-                .json", authorized: false, parameters: requestParameters)
-            </Pre>
+            <Pre>{code1}</Pre>
             <p>
                 The server is constantly "waiting" for such requests, and when it receives one, it
                 performs the following actions:

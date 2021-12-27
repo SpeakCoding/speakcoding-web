@@ -1,7 +1,22 @@
 import React from 'react';
-import { HL, Pre, Section } from '@sc/ui';
+import { Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 import Addition from './Addition';
+
+const code1 = `
+profilePictureView: Image 
+userNameLabel: Label 
+userLocationLabel: Label 
+postImageView: Image 
+likeButton: Button 
+commentButton: Button 
+bookmarkButton: Button 
+showLikersButton: Button 
+likerFolloweeProfilePictureView: Image 
+likesLabel: Label 
+captionLabel: Label 
+commentCountLabel: Label 
+postDateLabel: Labels`;
 
 export default () => (
     <Section>
@@ -24,23 +39,7 @@ export default () => (
                     elements that will represent them. As you can see, they all belong to standard
                     classes such as Label and Button.
                 </p>
-                <Pre>
-                    <HL.Context active>
-                        <HL color='orange'>profilePictureView</HL>: Image <br />
-                        <HL color='orange'>userNameLabel</HL>: Label <br />
-                        <HL color='orange'>userLocationLabel</HL>: Label <br />
-                        <HL color='orange'>postImageView</HL>: Image <br />
-                        <HL color='orange'>likeButton</HL>: Button <br />
-                        <HL color='orange'>commentButton</HL>: Button <br />
-                        <HL color='orange'>bookmarkButton</HL>: Button <br />
-                        <HL color='orange'>showLikersButton</HL>: Button <br />
-                        <HL color='orange'>likerFolloweeProfilePictureView</HL>: Image <br />
-                        <HL color='orange'>likesLabel</HL>: Label <br />
-                        <HL color='orange'>captionLabel</HL>: Label <br />
-                        <HL color='orange'>commentCountLabel</HL>: Label <br />
-                        <HL color='orange'>postDateLabel</HL>: Label
-                    </HL.Context>
-                </Pre>
+                <Pre>{code1}</Pre>
                 <p>
                     As we just mentioned, these classes have already been defined somewhere and are
                     usually imported along with the libraries for the language in which the program

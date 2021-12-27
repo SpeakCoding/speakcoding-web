@@ -11,3 +11,36 @@
 .box pre {
     white-space: pre-wrap;
 }
+
+.box [data-type=spec],
+.box [data-type=comment] {
+    color: var(--c-grey-500);
+}
+
+.box [data-type=keyword] {
+    color: var(--c-blue);
+}
+
+.box [data-type=math] {
+    color: var(--c-primary-800);
+}
+
+.box [data-type=number],
+.box [data-type=sql],
+.box [data-type=reserved] {
+    color: var(--c-red-700);
+}
+
+.box [data-type=func] {
+    color: var(--c-red-500);
+}
+
+.box [data-type=prop],
+.box [data-type=string],
+.box [data-type=class] {
+    color: var(--c-green-600);
+}
+
+.box [data-type=method] {
+    color: var(--c-red-500);
+}

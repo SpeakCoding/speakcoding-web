@@ -4,37 +4,37 @@ import Example1 from './Example1';
 import Example2 from './Example2';
 import img from './app.png';
 
-const code1 = `func application(_ {{hl:application: UIApplication}}(aquamarine), didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {`;
+const code1 = `func application(_ {{application: UIApplication}}(hl:aquamarine), didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {`;
 
 const code2 = `
-\xa0   User.init{{hl:CurrentUser()}}(light-sky-blue)
-    
-    self.window = UIWindow({{hl:frame: UIScreen.main.bounds}}(orange))
-    self.window!.tintColor = UIColor(named: "sc-blue")
-    
-    if {{hl:User.current == nil}}(light-sky-blue) {
-        self.{{hl:showLoginView}}(sandy-brown)()
-    } {{hl:else}}(red) {
-        self.{{hl:setupUI}}(steel-blue)()
-        self.{{hl:window!.rootViewController = self.tabBarController}}(steel-blue)
+    User.{{initCurrentUser}}(hl:light-sky-blue)()
+
+    self.window = UIWindow({{frame: UIScreen.main.bounds}}(hl:orange))
+    self.window!.tintColor = UIColor(named: {{"sc-blue"}}(hl:powder-blue))
+
+    if {{User.current == nil}}(hl:light-sky-blue) {
+        self.{{showLoginView}}(hl:sandy-brown)()
+    } {{else}}(hl:red) {
+        self.{{setupUI}}(hl:steel-blue)()
+        self.{{window!.rootViewController = self.tabBarController}}(hl:steel-blue)
     }
     self.window!.makeKeyAndVisible()
-        
+
     return true
 }`;
 
 const code3 = `
-func {{hl:showLoginView}}(aquamarine)() {
+func {{showLoginView}}(hl:aquamarine)() {
     self.tabBarController = nil
-    let loginViewController = {{hl:LoginViewController}}(light-sky-blue)(emailAddress: nil) {\t 
+    let loginViewController = {{LoginViewController}}(hl:light-sky-blue)(emailAddress: nil) {
         self.setupUI()
         self.window!.rootViewController = self.tabBarController
     }
-    let {{hl:loginFlowNavigationController}}(steel-blue) =
-        {{hl:UINavigationController}}(orange)(rootViewController: {{hl:loginViewController}}(wheat))
-    loginFlowNavigationController.modalPresentationStyle = .{{hl:fullScreen}}(plum)
-    loginFlowNavigationController.{{hl:isNavigationBarHidden = true}}(turquoise)
-    self.window!.{{hl:rootViewController}}(sandy-brown) = {{hl:loginFlowNavigationController}}(red)
+    let {{loginFlowNavigationController}}(hl:steel-blue) =
+        {{UINavigationController}}(hl:orange)(rootViewController: {{loginViewController}}(hl:wheat))
+    loginFlowNavigationController.modalPresentationStyle = .{{fullScreen}}(hl:plum)
+    loginFlowNavigationController.{{isNavigationBarHidden = true}}(hl:turquoise)
+    self.window!.{{rootViewController}}(hl:sandy-brown) = {{loginFlowNavigationController}}(hl:red)
 }`;
 
 export default () => (
@@ -56,11 +56,11 @@ export default () => (
                     функцию didFinishLaunchingWithOptions с набором возможных опций для запуска -
                     launchOptions.
                 </p>
-                <Pre value={code1} />
+                <Pre>{code1}</Pre>
                 <p>
-                    Первым шагом эта функция вызовет User.init
-                    <HL color='light-sky-blue'>CurrentUser()</HL>, которая определена в классе User
-                    (соответственно, в файле User.swift). Она проверит, сохранен ли{' '}
+                    Первым шагом эта функция вызовет User.
+                    <HL color='light-sky-blue'>initCurrentUser()</HL>, которая определена в классе
+                    User (соответственно, в файле User.swift). Она проверит, сохранен ли{' '}
                     <HL color='light-sky-blue'>текущий пользователь</HL> и загрузит его в
                     User.current (“статическая” составляющая класса User). И, если нет -{' '}
                     <HL color='sandy-brown'>покажет пользователю экран логина</HL>, а{' '}
@@ -70,7 +70,7 @@ export default () => (
                     </HL>{' '}
                     (в нашем случае, это пять табов и лента постов).
                 </p>
-                <Pre value={code2} />
+                <Pre>{code2}</Pre>
                 <p>
                     Как вы помните, для отображения содержимого окна мы должны создать экземпляр
                     стандартного класса UIWindow (
@@ -128,7 +128,7 @@ export default () => (
                     email и передаем completion функцию, которая выполнится, когда человек успешно
                     войдет в систему.
                 </p>
-                <Pre value={code3} />
+                <Pre>{code3}</Pre>
                 <p>
                     Затем создаем экземпляр <HL color='orange'>UINavigationController</HL> -{' '}
                     <HL color='steel-blue'>loginFlowNavigationController</HL>, в который мы

@@ -2,8 +2,8 @@ import React from 'react';
 import { Button, Expand, Pre, Section } from '@sc/ui';
 
 const code1 = `
-def {{hl:create}}(wheat)
-    user = {{hl:User}}(green).{{hl:create}}(wheat)({{hl:user_params}}(light-sky-blue))
+def {{create}}(hl:wheat)
+    user = {{User}}(hl:green).{{create}}(hl:wheat)({{user_params}}(hl:light-sky-blue))
     if user.save
         render json: {
             data: UserSerializer.new(user, self).serialize,
@@ -13,19 +13,19 @@ def {{hl:create}}(wheat)
         render_errors(user.errors)
     end
 end
-    
-def {{hl:user_params}}(light-sky-blue)
+
+def {{user_params}}(hl:light-sky-blue)
     result = params.require(:user).permit(:email, :password, :user_name, :bio, :profile_picture)
 end`;
 
 const code2 = `
-def {{hl:update}}(wheat)()
-    user = {{hl:User}}(green).{{hl:find}}(wheat)({{hl:params[:id]}}(light-sky-blue)))
+def {{update}}(hl:wheat)()
+    user = {{User}}(hl:green).{{find}}(hl:wheat)({{params[:id]}}(hl:light-sky-blue))
 
     if user != current_user()
        render_unauthorized()
        return
-    end 
+    end
 
     user.attributes = user_params
     if user.save
@@ -48,31 +48,29 @@ def render_unauthorized()
 end`;
 
 export default () => (
-    <>
-        <Section.Block>
-            <Section.Main hlactive narrow>
-                <h2>
-                    (Additional) Creating a new user profile (or Sign up){' '}
-                    <Expand.Control htmlFor='11-1-1'>
-                        <Button variant='rounded'>read ⤵</Button>
-                    </Expand.Control>
-                </h2>
+    <Section.Block>
+        <Section.Main hlactive narrow>
+            <h2>
+                (Additional) Creating a new user profile (or Sign up){' '}
+                <Expand.Control htmlFor='11-1-1'>
+                    <Button variant='rounded'>read ⤵</Button>
+                </Expand.Control>
+            </h2>
 
-                <Expand id='11-1-1'>
-                    <Pre value={code1} />
-                </Expand>
+            <Expand id='11-1-1'>
+                <Pre>{code1}</Pre>
+            </Expand>
 
-                <h2>
-                    (Additional) Changing user parameters{' '}
-                    <Expand.Control htmlFor='11-1-2'>
-                        <Button variant='rounded'>read ⤵</Button>
-                    </Expand.Control>
-                </h2>
+            <h2>
+                (Additional) Changing user parameters{' '}
+                <Expand.Control htmlFor='11-1-2'>
+                    <Button variant='rounded'>read ⤵</Button>
+                </Expand.Control>
+            </h2>
 
-                <Expand id='11-1-2'>
-                    <Pre value={code2} />
-                </Expand>
-            </Section.Main>
-        </Section.Block>
-    </>
+            <Expand id='11-1-2'>
+                <Pre>{code2}</Pre>
+            </Expand>
+        </Section.Main>
+    </Section.Block>
 );

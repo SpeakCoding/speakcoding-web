@@ -37,7 +37,7 @@ export default () => (
                         "/users/\(id)/follow.json", and on the server side we add the UserController
                         follow function
                     </p>
-                    <Pre value={code1} />
+                    <Pre>{code1}</Pre>
                     <p>
                         Standard functions responsible for interacting with the user are written in
                         the Controller, just as they are in the client. In the Controller, we define

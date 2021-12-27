@@ -2,23 +2,35 @@ import React from 'react';
 import { Button, Expand, Grid, HL, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 
-const code1 = `create_table ("followships") do |table_followeship|
+const code1 = `
+{{create_table}}(t:func)("followships") do |table_followeship|
     table_followeship.bigint("follower_id")
     table_followeship.bigint("followee_id")
     table_followeship.datetime("created_at")
     table_followeship.datetime("updated_at")
 end`;
 
-const code2 = `has_many (:followers_records, class_name: 'Followship', foreign_key: 'followee_id', dependent: :destroy)
-has_many (:following_records, class_name: 'Followship', foreign_key: 'follower_id', dependent: :destroy)
+const code2 = `
+has_many (:followers_records, class_name: "Followship", foreign_key: "followee_id", dependent: :destroy)
+has_many (:following_records, class_name: "Followship", foreign_key: "follower_id", dependent: :destroy)
 has_many :followers, through: :followers_records, source: :follower
 has_many :followees, through: :following_records, source: :followee`;
 
-const code3 = `def create()
-    @post = {{hl:Post.new}}(light-sky-blue)({{hl:post_params}}(green))
+const code3 = `
+def create()
+    @post = {{Post.new}}(hl:light-sky-blue)({{post_params}}(hl:green))
     @post.user = current_user
-    @{{hl:post.save}}(light-sky-blue)
+    {{@post.save}}(hl:light-sky-blue)
 end`;
+
+const code4 = `@post = Post.{{find}}(hl:red)(params[{{:id}}(hl:light-sky-blue)])`;
+
+const code5 = `
+@post = current_user.posts.find(params[:id])
+@post.attributes = {{post_params}}(hl:orange)
+{{@post.save}}(hl:light-sky-blue)`;
+
+const code6 = `@posts = Post.preload(:comments).where(user: users).order("created_at desc")`;
 
 export default () => (
     <Section>
@@ -167,7 +179,7 @@ export default () => (
                     Let’s assume we wish to create a new post. The server-side function looks like
                     this:
                 </p>
-                <Pre value={code3} />
+                <Pre>{code3}</Pre>
                 <p>
                     The server receives <HL color='green'>a set of post parameters</HL> (data that
                     the user entered into the form on the client), calls the ActiveRecord class’s
@@ -179,10 +191,7 @@ export default () => (
                 <p>
                     <b>Another example:</b>
                 </p>
-                <Pre>
-                    @post = Post.<HL color='red'>find</HL>(params[
-                    <HL color='light-sky-blue'>:id</HL>])
-                </Pre>
+                <Pre>{code4}</Pre>
                 <p>
                     Here the server receives parameters (namely <HL color='light-sky-blue'>id</HL>)
                     from the client, and using the <HL color='red'>find</HL> function (inherited
@@ -198,11 +207,7 @@ export default () => (
                     </HL>
                     :
                 </p>
-                <Pre>
-                    @post = current_user.posts.find(params[:id]) <br />
-                    @post.attributes = <HL color='orange'>post_params</HL> <br />@
-                    <HL color='light-sky-blue'>post.save</HL>
-                </Pre>
+                <Pre>{code5}</Pre>
                 <p>
                     Summarizing the characteristics of model-class descriptions on the server, we
                     observe the following:
@@ -225,9 +230,7 @@ export default () => (
                         per the example below:
                     </li>
                 </ul>
-                <Pre>
-                    @posts = Post.preload(:comments).where(user: users).order('created_at desc')
-                </Pre>
+                <Pre>{code6}</Pre>
             </Section.Main>
         </Section.Block>
     </Section>

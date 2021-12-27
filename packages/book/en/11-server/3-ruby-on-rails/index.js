@@ -4,28 +4,28 @@ import Term from '../../glossary/Term';
 
 const code1 = `
 User
-    Username
-    Password`;
+    {{Username}}(t:text)
+    {{Password}}(t:text)`;
 
 const code2 = `
-User 
-    [] Post (set of posts created by the user)`;
+User
+    [] {{Post}}(t:text) {{(set of posts created by the user)}}(t:comment)`;
 
 const code3 = `
 User
-    Followers [] User (profiles of the users following you)
-    Following [] User (profiles of the users you follow)`;
+    {{Followers}}(t:text) [] {{User}}(t:text) {{(profiles of the users following you)}}(t:comment)
+    {{Following}}(t:text) [] {{User}}(t:text) {{(profiles of the users you follow)}}(t:comment)`;
 
 const code4 = `
-Personal Feed 
-    [] Post (a feed of posts created by the users you follow)`;
+Personal Feed
+    [] {{Post}}(t:text) {{(a feed of posts created by the users you follow)}}(t:comment)`;
 
 const code5 = `
 User
-    [] Posts (set of posts created by the user)
-    [] Followers (profiles of users who follow that user)
-    [] Followers you follow (profile of users whom that user follows)
-    Personal Feed (feed of posts created by users whom that user follows)`;
+    [] {{Posts}}(t:text) {{(set of posts created by the user)}}(t:comment)
+    [] {{Followers}}(t:text) {{(profiles of users who follow that user)}}(t:comment)
+    [] {{Followers you follow}}(t:text) {{(profile of users whom that user follows)}}(t:comment)
+    {{Personal Feed}}(t:text) {{(feed of posts created by users whom that user follows)}}(t:comment)`;
 
 export default () => (
     <Section>
@@ -99,26 +99,26 @@ export default () => (
                     profile (User). Your account information is stored in your device’s memory and
                     on the program server:
                 </p>
-                <Pre value={code1} />
+                <Pre>{code1}</Pre>
                 <p>
                     Having installed the app, you begin creating posts, information about which is
                     also stored:
                 </p>
-                <Pre value={code2} />
+                <Pre>{code2}</Pre>
                 <p>A list of the people you follow and who follow you is added to these posts:</p>
-                <Pre value={code3} />
+                <Pre>{code3}</Pre>
                 <p>
                     Thus you create your personal feed – a feed of posts created by the users you
                     follow
                 </p>
-                <Pre value={code4} />
+                <Pre>{code4}</Pre>
                 <p>
                     So we can think of a personal feed as a component of the User class or an
                     additional element of the Feed class in which we temporarily store a set of
                     filtered posts. As you may remember, these links are described thus in
                     server-side code:
                 </p>
-                <Pre value={code5} />
+                <Pre>{code5}</Pre>
                 <p>
                     Every time you open the program or update your post feed, you request your
                     personal feed (<Term id='instance'>an object of the Feed class</Term>) from the

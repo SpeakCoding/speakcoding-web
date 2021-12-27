@@ -29,7 +29,7 @@ export default () => (
                         example, the Post class has the component Caption, which in turn belongs to
                         the Text class.
                     </p>
-                    <Pre value={code1} />
+                    <Pre>{code1}</Pre>
                     <p>
                         Every programming language has a number of{' '}
                         <b>standard ("original") classes, which do not need definitions</b>. These
@@ -46,7 +46,7 @@ export default () => (
                     <p>
                         <b>Examples of code:</b>
                     </p>
-                    <Pre value={code2} />
+                    <Pre>{code2}</Pre>
                     <p>
                         Like in human languages, many classes of objects were defined long ago, and
                         we can simply give a link to that class of objects (import its definition)

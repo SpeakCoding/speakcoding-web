@@ -1,6 +1,26 @@
 import React from 'react';
-import { Hint, HL, Pre, Section } from '@sc/ui';
+import { HL, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
+
+const code1 = `var comments = Comment[10];`;
+
+const code2 = `var lastPost = posts[9];`;
+
+const code3 = `
+userStories = user.getStories();
+numberOfStories = userStories.length();
+lastStory = userStories[{{numberOfStories - 1}}(h:hint)];`;
+
+const hint3 =
+    'As you can see, numberOfStories is the name of the variable that tells us the number of stories. We then subtract 1 from this number to get the most recent story.';
+
+const code4 = `var {{workMembers}}(hl:aquamarine) = ["developer": User(userName: "John")];`;
+
+const code5 = `
+workMembers["designer"] = User(userName: "Jess");
+workMembers["product"] = User(userName: "Beck");`;
+
+const code6 = `workMembers["product"].userName`;
 
 export default () => (
     <Section>
@@ -26,7 +46,7 @@ export default () => (
                 example to 10 <Term id='instance'>objects</Term>, then when creating the{' '}
                 <Term id='set'>set</Term>, this number is entered inside square brackets:
             </p>
-            <Pre>var comments = Comment[10];</Pre>
+            <Pre>{code1}</Pre>
             <p>
                 You may find the serial number of the <Term id='instance'>object</Term> from this
                 set useful for temporarily storing an object in the set or reading a particular
@@ -39,25 +59,12 @@ export default () => (
                 maximum number of objects in the Set will be 10.
             </p>
             <p>If we want access to the most recent post in a feed, we write:</p>
-            <Pre>var lastPost = posts[9];</Pre>
+            <Pre>{code2}</Pre>
             <p>
                 For example, when viewing stories from the people you follow, the story set will
                 always show the last Story in the set first, as it is the most recent:
             </p>
-            <Pre>
-                userStories = user.getStories(); <br />
-                numberOfStories = userStories.length(); <br />
-                lastStory = userStories
-                <Hint>
-                    [numberOfStories - 1]
-                    <Hint.Tooltip>
-                        As you can see, numberOfStories is the name of the variable that tells us
-                        the number of stories. We then subtract 1 from this number to get the most
-                        recent story.
-                    </Hint.Tooltip>
-                </Hint>
-                ;
-            </Pre>
+            <Pre hint={hint3}>{code3}</Pre>
             <p>
                 There is one particular set type in which each cell has a name rather than a number
                 in square brackets [1]. This allows us to call it by name.
@@ -94,25 +101,16 @@ export default () => (
                 </HL>{' '}
                 to the program. We create a dictionary (set) that contains their details:
             </p>
-            <Pre>
-                var{' '}
-                <HL color='aquamarine' active>
-                    workMembers
-                </HL>{' '}
-                = ["developer": User(userName: "John")];
-            </Pre>
+            <Pre>{code4}</Pre>
             <p>Now we add some of their colleagues:</p>
-            <Pre>
-                workMembers["designer"] = User(userName: "Jess"); <br />
-                workMembers["product"] = User(userName: "Beck");
-            </Pre>
+            <Pre>{code5}</Pre>
             <p>
                 Now we can call any of the elements in the set by its name, which is known in
                 programming as a key. The dictionary currently has three keys: developer, designer,
                 and product. For example, let’s say we need to discover the name of the product
                 manager from the user’s team. We simply write:
             </p>
-            <Pre>workMembers["product"].userName</Pre>
+            <Pre>{code6}</Pre>
             <p>
                 As we can see, there are no numbers, and we don’t need to remember where in the
                 dictionary (set) we have stored the objects. Instead, we call their elements by key.

@@ -2,6 +2,10 @@ import React from 'react';
 import { Pre, Section } from '@sc/ui';
 import s from './style.css';
 
+const code1 = `
+var numberOfLikes: Int;
+numberOfLikes = 0;`;
+
 export default () => (
     <Section>
         <Section.Main narrow>
@@ -16,10 +20,7 @@ export default () => (
             <p>
                 <b>Example code:</b>
             </p>
-            <Pre>
-                var numberOfLikes: Int; <br />
-                numberOfLikes = 0;
-            </Pre>
+            <Pre>{code1}</Pre>
             <p className={s.heading}>Deinit</p>
             <p>
                 When we delete a particular object belonging to a class, we sometimes need to clean

@@ -12,8 +12,8 @@ end`;
 
 const code2 = `
 def show
-    userToShow = User.{{hl:find}}(sandy-brown)({{hl:params}}(light-sky-blue)[:{{hl:id}}(steel-blue)])
-    userJson = {{hl:UserSerializer}}(plum).new({{hl:userToShow}}(green-yellow), self).{{hl:serialize}}(red)
+    userToShow = User.{{find}}(hl:sandy-brown)({{params}}(hl:light-sky-blue)[{{:id}}(hl:steel-blue)])
+    userJson = {{UserSerializer}}(hl:plum).new({{userToShow}}(hl:green-yellow), self).{{serialize}}(hl:red)
     render (json: { data: userJson })
 end`;
 
@@ -37,7 +37,7 @@ export default () => (
                         него контроллер, который определит, каким образом сервер будет отвечать на
                         отправляемые с клиента запросы.
                     </p>
-                    <Pre value={code1} />
+                    <Pre>{code1}</Pre>
                     <p>Его мы наследуем от стандартного класса ApplicationController.</p>
                     <p>
                         В этом классе мы должны задать функции, которые будут вызываться в ответ на
@@ -77,7 +77,7 @@ export default () => (
                         получит запрос method.GET и если в endpoint указан user_id:
                         "/users/\(id).json", то будет вызвана функция show.
                     </p>
-                    <Pre value={code2} />
+                    <Pre>{code2}</Pre>
                 </Section.Main>
                 <Section.Side>
                     <Section.Sticky>
@@ -150,7 +150,7 @@ export default () => (
                         authentication/access token поможет нам найти и отправить всю информацию о
                         текущем пользователе:
                     </p>
-                    <Pre value={code3} />
+                    <Pre>{code3}</Pre>
                 </Section.Main>
             </Section.Block>
 

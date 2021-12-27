@@ -2,23 +2,35 @@ import React from 'react';
 import { Button, Expand, Grid, HL, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 
-const code1 = `create_table ("followships") do |table_followeship|
+const code1 = `
+{{create_table}}(t:func)("followships") do |table_followeship|
     table_followeship.bigint("follower_id")
     table_followeship.bigint("followee_id")
     table_followeship.datetime("created_at")
     table_followeship.datetime("updated_at")
 end`;
 
-const code2 = `has_many (:followers_records, class_name: 'Followship', foreign_key: 'followee_id', dependent: :destroy)
-has_many (:following_records, class_name: 'Followship', foreign_key: 'follower_id', dependent: :destroy)
+const code2 = `
+has_many (:followers_records, class_name: "Followship", foreign_key: "followee_id", dependent: :destroy)
+has_many (:following_records, class_name: "Followship", foreign_key: "follower_id", dependent: :destroy)
 has_many :followers, through: :followers_records, source: :follower
 has_many :followees, through: :following_records, source: :followee`;
 
-const code3 = `def create()
-    @post = {{hl:Post.new}}(light-sky-blue)({{hl:post_params}}(green))
+const code3 = `
+def create()
+    @post = {{Post.new}}(hl:light-sky-blue)({{post_params}}(hl:green))
     @post.user = current_user
-    @{{hl:post.save}}(light-sky-blue)
+    {{@post.save}}(hl:light-sky-blue)
 end`;
+
+const code4 = `@post = Post.{{find}}(hl:red)(params[{{:id}}(hl:light-sky-blue)])`;
+
+const code5 = `
+@post = current_user.posts.find(params[:id])
+@post.attributes = {{post_params}}(hl:orange)
+{{@post.save}}(hl:light-sky-blue)`;
+
+const code6 = `@posts = Post.preload(:comments).where(user: users).order("created_at desc")`;
 
 export default () => (
     <Section>
@@ -166,7 +178,7 @@ export default () => (
                     Представим, что мы хотим создать новый пост. Вот как будет выглядеть эта функция
                     на стороне сервера.
                 </p>
-                <Pre value={code3} />
+                <Pre>{code3}</Pre>
                 <p>
                     Здесь сервер получит <HL color='green'>набор параметров поста</HL> (данные,
                     которые пользователь ввел в форму на клиенте) и, вызвав автоматическую функцию{' '}
@@ -178,10 +190,7 @@ export default () => (
                 <p>
                     <b>Еще один пример:</b>
                 </p>
-                <Pre>
-                    @post = Post.<HL color='red'>find</HL>(params[
-                    <HL color='light-sky-blue'>:id</HL>])
-                </Pre>
+                <Pre>{code4}</Pre>
                 <p>
                     Здесь сервер получил от клиента параметры, в частности,{' '}
                     <HL color='light-sky-blue'>id</HL> и, с помощью функции{' '}
@@ -196,11 +205,7 @@ export default () => (
                     </HL>
                     :
                 </p>
-                <Pre>
-                    @post = current_user.posts.find(params[:id]) <br />
-                    @post.attributes = <HL color='orange'>post_params</HL> <br />@
-                    <HL color='light-sky-blue'>post.save</HL>
-                </Pre>
+                <Pre>{code5}</Pre>
                 <p>Резюмируя отличия описания model классов на сервере, можно отметить, что:</p>
                 <ul>
                     <li>
@@ -219,9 +224,7 @@ export default () => (
                         примере ниже:
                     </li>
                 </ul>
-                <Pre>
-                    @posts = Post.preload(:comments).where(user: users).order('created_at desc')
-                </Pre>
+                <Pre>{code6}</Pre>
             </Section.Main>
         </Section.Block>
     </Section>

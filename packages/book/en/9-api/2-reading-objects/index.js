@@ -1,12 +1,19 @@
 import React from 'react';
-import { Callout, HL, Hint, Link, Pre, Section } from '@sc/ui';
+import { Callout, HL, Link, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
 
-const code = `
-func requestCompletion (result: Any?, metadata: [String : String]?, {{hl:error: Error?}}(steel-blue)) { 
-    if let postJSONs = result as? {{hl:[[}}(plum){{hl:String}}(orange): Any{{hl:]]}}(plum) {
-        let posts = postJSONs.{{hl:map}}(light-sky-blue) { (postJSON) -> Post in
+const code1 = `{{func getPostsOf}}(hl:orange)({{user: User}}(hl:thistle)) -> {{[Post]}}(hl:light-sky-blue)`;
+
+const code2 = `let {{request}}(hl:green) = makeRequest(method: {{HTTPMethod.GET}}(hl:light-sky-blue), {{endpoint}}(hl:sandy-brown): " {{/users/\\(user.id)/posts}}(hl:sandy-brown).json", authorized: true, {{parameters: nil}}(hl:turquoise))`;
+const hint2 = `In previous chapters, we combined various text values in a string using the '+' symbol; here we have done so using the backslash '\\' symbol. This combines textual and numerical designations and places them in the \\ string. After the backslash, brackets (...) sometimes appear, within which a particular operation can be performed.`;
+
+const code3 = `{{performRequest}}(hl:red)(request: request, completion: requestCompletion)`;
+
+const code4 = `
+func requestCompletion (result: Any?, metadata: [String : String]?, {{error: Error?}}(hl:steel-blue)) {
+    if let postJSONs = result as? {{[[}}(hl:plum) {{String}}(hl:orange): Any {{]]}}(hl:plum) {
+        let posts = postJSONs.{{map}}(hl:light-sky-blue) { (postJSON) -> Post in
             Post.instance(withJSON: postJSON)
         }
         feed.posts = posts
@@ -16,6 +23,10 @@ func requestCompletion (result: Any?, metadata: [String : String]?, {{hl:error: 
         completion(nil, error)
     }
 }`;
+
+const code5 = `
+Json == String -> [String : Any] 
+[Json == String] -> [ [String : Any] ]`;
 
 export default () => (
     <>
@@ -38,10 +49,7 @@ export default () => (
                         </Link>
                         ).
                     </p>
-                    <Pre>
-                        <HL color='orange'>func getPostsOf</HL>(<HL color='thistle'>user: User</HL>)
-                        -> <HL color='light-sky-blue'>[Post]</HL>
-                    </Pre>
+                    <Pre>{code1}</Pre>
                     <p>
                         We start by formulating our <HL color='green'>request</HL>, which consists
                         of various parts.
@@ -65,27 +73,7 @@ export default () => (
                             authorised (more on this later).
                         </li>
                     </ul>
-                    <Pre>
-                        let <HL color='green'>request</HL> = makeRequest(method:{' '}
-                        <HL color='light-sky-blue'>HTTPMethod.GET</HL>,{' '}
-                        <HL color='sandy-brown'>endpoint:</HL> "
-                        <HL color='sandy-brown'>
-                            /users/
-                            <Hint>
-                                \(user.id)
-                                <Hint.Tooltip>
-                                    In previous chapters, we combined various text values in a
-                                    string using the '+' symbol; here we have done so using the
-                                    backslash '\' symbol. This combines textual and numerical
-                                    designations and places them in the \ string. After the
-                                    backslash, brackets (...) sometimes appear, within which a
-                                    particular operation can be performed.
-                                </Hint.Tooltip>
-                            </Hint>
-                            /posts
-                        </HL>
-                        .json", authorized: true, <HL color='turquoise'>parameters: nil</HL>)
-                    </Pre>
+                    <Pre>{code2}</Pre>
                     <p>
                         The GET request describes the operation that the server needs to perform,
                         and the server has a function that describes how it should react to such
@@ -96,16 +84,13 @@ export default () => (
                         Having formulated our request, we describe the function that will{' '}
                         <HL color='red'>perform it</HL>.
                     </p>
-                    <Pre>
-                        <HL color='red'>performRequest</HL>(request: request, completion:
-                        requestCompletion)
-                    </Pre>
+                    <Pre>{code3}</Pre>
                     <p>
                         To this function we assign the requestCompletion function, which will be
                         performed when the server returns the information about the object (result)
                         or reports an <HL color='steel-blue'>error</HL> if no such object exists.
                     </p>
-                    <Pre value={code} />
+                    <Pre>{code4}</Pre>
                 </HL.Context>
                 <p>
                     The information that the server returns is first presented as a text string
@@ -126,10 +111,7 @@ export default () => (
                     post is presented as a named set, the result we receive from the server is
                     presented as a set of named sets.
                 </p>
-                <Pre>
-                    Json == String -> [String : Any] <br />
-                    [Json == String] -> [ [String : Any] ]
-                </Pre>
+                <Pre>{code5}</Pre>
                 <p>
                     We could communicate with the server differently, but thinking of data in
                     conjunction with a particular object makes working with the data simpler.

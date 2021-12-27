@@ -30,7 +30,7 @@ export default () => (
             wish to save the instances in a variable or as a component of an instance of a
             particular class
         </p>
-        <Pre>functionname(inputFunctionName: ClassName(...))</Pre>
+        <Pre>{`{{functionname}}(t:func)(inputFunctionName: ClassName(...))`}</Pre>
         <p>or when indicating the value of one of the function components.</p>
         <div className={s.gap} />
 
@@ -95,7 +95,7 @@ export default () => (
             If the function returns a value, then we can immediately refer to the ‘sub’-components
             of that value’s class.
         </p>
-        <Pre>functionname(inputName: self.functionname().subComponentName)</Pre>
+        <Pre>{`{{functionname}}(t:func)(inputName: self.functionname().subComponentName)`}</Pre>
         <p>
             You may remember from the chapter on complex sentences that this sequence can be
             continuous.

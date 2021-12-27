@@ -12,8 +12,8 @@ end`;
 
 const code2 = `
 def show
-    userToShow = User.{{hl:find}}(sandy-brown)({{hl:params}}(light-sky-blue)[:{{hl:id}}(steel-blue)])
-    userJson = {{hl:UserSerializer}}(plum).new({{hl:userToShow}}(green-yellow), self).{{hl:serialize}}(red)
+    userToShow = User.{{find}}(hl:sandy-brown)({{params}}(hl:light-sky-blue)[{{:id}}(hl:steel-blue)])
+    userJson = {{UserSerializer}}(hl:plum).new({{userToShow}}(hl:green-yellow), self).{{serialize}}(hl:red)
     render (json: { data: userJson })
 end`;
 
@@ -36,7 +36,7 @@ export default () => (
                         (model) of the main User class, we need to create a controller for this
                         class that determines how the server responds to client requests.
                     </p>
-                    <Pre value={code1} />
+                    <Pre>{code1}</Pre>
                     <p>We inherit this controller from the standard ApplicationController class.</p>
                     <p>
                         We need to define the functions in this class that are called in response to
@@ -73,7 +73,7 @@ export default () => (
                         ‘/users/\(id).json is indicated in the endpoint, then the server calls the
                         show function.
                     </p>
-                    <Pre value={code2} />
+                    <Pre>{code2}</Pre>
                 </Section.Main>
                 <Section.Side>
                     <Section.Sticky>
@@ -145,7 +145,7 @@ export default () => (
                         authentication/access token, and helps us find and send all information
                         about the current user:
                     </p>
-                    <Pre value={code3} />
+                    <Pre>{code3}</Pre>
                 </Section.Main>
             </Section.Block>
 

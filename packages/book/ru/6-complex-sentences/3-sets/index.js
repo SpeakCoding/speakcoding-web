@@ -1,6 +1,26 @@
 import React from 'react';
-import { Hint, HL, Pre, Section } from '@sc/ui';
+import { HL, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
+
+const code1 = `var comments = Comment[10];`;
+
+const code2 = `var lastPost = posts[9];`;
+
+const code3 = `
+userStories = user.getStories();
+numberOfStories = userStories.length();
+lastStory = userStories[{{numberOfStories - 1}}(h:hint)];`;
+
+const hint3 =
+    'Как вы видите, numberOfStories - название переменной, которая передаст нам цифру количества stories. Затем мы отнимаем от нее единицу и получаем последнюю story.';
+
+const code4 = `var {{workMembers}}(hl:aquamarine) = ["developer": User(userName: "John")];`;
+
+const code5 = `
+workMembers["designer"] = User(userName: "Jess");
+workMembers["product"] = User(userName: "Beck");`;
+
+const code6 = `workMembers["product"].userName`;
 
 export default () => (
     <Section>
@@ -26,7 +46,7 @@ export default () => (
                 десятью <Term id='instance'>объектами</Term>, то, при создании{' '}
                 <Term id='set'>набора</Term>, это число вписывается в эти квадратные скобки:
             </p>
-            <Pre>var comments = Comment[10];</Pre>
+            <Pre>{code1}</Pre>
             <p>
                 Порядковый номер <Term id='instance'>объекта</Term> из этого набора может пригодится
                 вам для временного хранения объекта в наборе или чтения конкретного объекта из этого
@@ -39,26 +59,13 @@ export default () => (
                 максимальное количество объектов в этом Наборе - 10.
             </p>
             <p>Если мы хотим получить доступ к последнему посту в ленте, мы напишем:</p>
-            <Pre>var lastPost = posts[9];</Pre>
+            <Pre>{code2}</Pre>
             <p>
                 <b>Например</b>, для просмотра stories людей, на которых вы подписаны, в наборе
                 сториз Инстаграм вам всегда будет показывать последнюю Story в наборе, так как она
                 наиболее свежая:
             </p>
-            <Pre>
-                userStories = user.getStories(); <br />
-                numberOfStories = userStories.length(); <br />
-                lastStory = userStories
-                <Hint>
-                    [numberOfStories - 1]
-                    <Hint.Tooltip>
-                        Как вы видите, numberOfStories - название переменной, которая передаст нам
-                        цифру количества stories. Затем мы отнимаем от нее единицу и получаем
-                        последнюю story.
-                    </Hint.Tooltip>
-                </Hint>
-                ;
-            </Pre>
+            <Pre hint={hint3}>{code3}</Pre>
             <p>
                 Есть особенный тип наборов, в котором каждая клетка будет иметь не номер в скобках -
                 [1] - а, имя. Это позволит нам обратиться к ней по имени.
@@ -96,25 +103,16 @@ export default () => (
                 </HL>
                 . Создадим словарь (набор), который будет их содержать:
             </p>
-            <Pre>
-                var{' '}
-                <HL color='aquamarine' active>
-                    workMembers
-                </HL>{' '}
-                = [“developer”: User(userName: “John”)];
-            </Pre>
+            <Pre>{code4}</Pre>
             <p>Добавим нескольких членов команды:</p>
-            <Pre>
-                workMembers[“designer”] = User(userName: “Jess”); <br />
-                workMembers[“product”] = User(userName: “Beck”);
-            </Pre>
+            <Pre>{code5}</Pre>
             <p>
                 Теперь мы можем обратиться к любому из элементов набора по его названию, которое в
                 программировании называется ключом. В данный момент у словаря три ключа: developer,
                 designer, product. Например, нам понадобилось узнать, как зовут продакт менеджера из
                 команды пользователя. Мы просто напишем:
             </p>
-            <Pre>workMembers[“product”].userName</Pre>
+            <Pre>{code6}</Pre>
             <p>
                 Как видно, тут нет никаких чисел, и нам не надо помнить, на каком месте в
                 словаре(наборе) мы храним объекты. Вместо этого мы обращаемся к его элементам по

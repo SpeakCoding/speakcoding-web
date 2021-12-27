@@ -28,6 +28,8 @@ class {{hl:User}}(orange) {
     }
 }`;
 
+const code4 = `{{function_title}}(t:func) (list_of_inputs)`;
+
 export default () => (
     <Section>
         <Section.Block>
@@ -110,7 +112,7 @@ export default () => (
             <Section.Main narrow>
                 <h2>Calling a function</h2>
                 <p>General form of calling a function in code:</p>
-                <Pre>function_title (list_of_inputs)</Pre>
+                <Pre>{code4}</Pre>
                 <ol>
                     <li>
                         Calling a function shares some common aspects with the function definition:

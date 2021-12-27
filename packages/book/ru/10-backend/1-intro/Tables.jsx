@@ -4,30 +4,28 @@ import Term from '../../glossary/Term';
 import s from './style.css';
 
 const code1 = `
-create_table("users") do |table_users|
-    table_users.{{hl:string}}(steel-blue)("full_name")
-    table_users.{{hl:string}}(steel-blue)("bio")
-    table_users.{{hl:string}}(steel-blue)("email")
+{{create_table}}(t:func)("users") do |table_users|
+    table_users.{{string}}(hl:steel-blue)("full_name")
+    table_users.{{string}}(hl:steel-blue)("bio")
+    table_users.{{string}}(hl:steel-blue)("email")
 
-    table_users.{{hl:string}}(steel-blue)("password_digest")
-    table_users.{{hl:string}}(steel-blue)("authentication_token")
+    table_users.{{string}}(hl:steel-blue)("password_digest")
+    table_users.{{string}}(hl:steel-blue)("authentication_token")
 
-    table_users.{{hl:datetime}}(orange)("created_at", precision: 6, null: false)
-    table_users.{{hl:datetime}}(orange)("updated_at", precision: 6, null: false)
-end
-`;
+    table_users.{{datetime}}(hl:orange)("created_at", precision: 6, null: false)
+    table_users.{{datetime}}(hl:orange)("updated_at", precision: 6, null: false)
+end`;
 
 const code2 = `
-let request = makeRequest(method: HTTPMethod.POST, endpoint: "/{{hl:posts}}(light-sky-blue).json", authorized: true, parameters: requestParameters)
+let request = makeRequest(method: HTTPMethod.POST, endpoint: "/posts.json", authorized: true, parameters: requestParameters)
 
-create_table (“posts”) do |table_posts|
-    table_posts.{{hl:bigint}}(sandy-brown)(“user_id”)
-    table_posts.string(“caption”)
-    table_posts.string(“location”)
+{{create_table}}(t:func)("posts") do |table_posts|
+    table_posts.{{bigint}}(hl:sandy-brown)("user_id")
+    table_posts.string("caption")
+    table_posts.string("location")
 
     table_posts.timestamps()
-end
-`;
+end`;
 
 export default () => (
     <>
@@ -63,7 +61,7 @@ export default () => (
                     Если вы откроете файл db/migrate/create_users.rb в коде, то увидите описание
                     создания таблицы Users и ее столбцов в базе данных серверной части.
                 </p>
-                <Pre value={code1} />
+                <Pre>{code1}</Pre>
                 <p>
                     <b>Разбор этой части кода</b>
                 </p>
@@ -119,7 +117,7 @@ export default () => (
                     пользователя, аналогично User, мы создадим таблицу для класса{' '}
                     <HL color='light-sky-blue'>Post</HL>.
                 </p>
-                <Pre value={code2} />
+                <Pre>{code1}</Pre>
                 <p>
                     Как видите, есть поля, которые совпадают с составляющими класса (caption,
                     location), но ряд полей не сами значения, а id, которые ссылаются на другие

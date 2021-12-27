@@ -3,6 +3,19 @@ import { HL, Img, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 import img from './active-record.svg';
 
+const code1 = `
+class User < ActiveRecord
+    has_many("posts")
+end`;
+
+const code2 = `
+{{ключевое слово}}(hl:red) {{название функции}}(hl:steel-blue) (вводные)
+    {{шаги функциии}}(t:text)`;
+
+const code3 = `
+{{new_user}}(hl:light-sky-blue) = User.new
+{{new_user}}(hl:light-sky-blue).{{username}}(hl:plum) = "libermans"`;
+
 export default () => (
     <Section>
         <Section.Block>
@@ -10,11 +23,7 @@ export default () => (
                 <h2>Описание model классов на сервере</h2>
                 <p>Разберем это на примере описания класса User.</p>
                 <p>Класс User описан в файле app/models/user.rb серверной части кода программы.</p>
-                <Pre>
-                    class User {'<'} <b>ActiveRecord</b> <br />
-                    {'    '}has_many("posts") <br />
-                    end
-                </Pre>
+                <Pre>{code1}</Pre>
                 <p>
                     В этом классе мы ожидаем увидеть описание составляющих класса User и функций,
                     отвечающих за запись и чтение данных о пользователях из базы данных. Однако, с
@@ -32,11 +41,7 @@ export default () => (
                     Кроме этого, внутри файла вы можете заметить много записей, начинающихся со
                     слова <b>def</b>. По структуре это может напомнить вам функции:
                 </p>
-                <Pre>
-                    <HL color='red'>ключевое слово</HL> <HL color='steel-blue'>название функции</HL>{' '}
-                    (вводные) <br />
-                    шаги функциии
-                </Pre>
+                <Pre>{code2}</Pre>
                 <p>
                     и это абсолютно верно. <b>def</b> здесь - ключевое слово вместо знакомого вам{' '}
                     <b>func</b>, которое пишется перед определением функции во многих языках,
@@ -58,11 +63,7 @@ export default () => (
                 <p>
                     Итак, серверный класс User унаследован от класса <b>ActiveRecord</b>.
                 </p>
-                <Pre>
-                    class User {'<'} <b>ActiveRecord</b> <br />
-                    {'    '}has_many("posts") <br />
-                    end
-                </Pre>
+                <Pre>{code1}</Pre>
                 <p>
                     В файле model/User мы не видим таких составляющих как username или email.{' '}
                     <b>ActiveRecord</b> отвечает за то, чтобы все составляющие, указанные как
@@ -84,11 +85,7 @@ export default () => (
                 <p>
                     <b>Пример:</b>
                 </p>
-                <Pre>
-                    <HL color='light-sky-blue'>new_user</HL> = User.new <br />
-                    <HL color='light-sky-blue'>new_user</HL>.<HL color='plum'>username</HL> =
-                    "libermans"
-                </Pre>
+                <Pre>{code3}</Pre>
                 <p>
                     Таким образом, все составляющие, которые можно сохранить в базе данных в
                     текстовом или числовом виде напрямую, - например, ссылка на картинку user

@@ -6,6 +6,15 @@ var lastUserLike User
 lastUserLike = {{hl:post}}(red).{{hl:likes}}(orange).{{hl:last}}(green).{{hl:getUser}}(aquamarine)()
 `;
 
+const code2 = `
+var postLikes [Like]
+var lastLike Like
+var user User
+
+var postLikes = post.likes
+var lastLike = postLikes.last
+var user = lastLike.getUser()`;
+
 export default () => (
     <>
         <Section.Block>
@@ -59,15 +68,7 @@ export default () => (
                         подробно:
                     </b>
                 </p>
-                <Pre>
-                    var postLikes [Like] <br />
-                    var lastLike Like <br />
-                    var user User <br />
-                    <br />
-                    var postLikes = post.likes <br />
-                    var lastLike = postLikes.last <br />
-                    var user = lastLike.getUser() <br />
-                </Pre>
+                <Pre>{code2}</Pre>
             </Section.Main>
         </Section.Block>
     </>

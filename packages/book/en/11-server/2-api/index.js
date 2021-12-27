@@ -3,13 +3,15 @@ import { Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
 
-const code1 = `
+const code1 = `resources :posts, only: [:create, :show, :index, :update, :destroy]`;
+
+const code2 = `
 member do
     post :like, :unlike, :save, :unsave
     get :likers
 end`;
 
-const code2 = `
+const code3 = `
 collection do
     get :saved, :tagged
 end`;
@@ -44,7 +46,7 @@ export default () => (
                     respond) and the actions required.
                 </p>
                 <p>In the config/routes.rb file, we define all of these URLs:</p>
-                <Pre>resources :posts, only: [:create, :show, :index, :update, :destroy]</Pre>
+                <Pre>{code1}</Pre>
                 <p>
                     Calling the resources function informs the server that we have posts that can be
                     created, displayed, viewed in a list, updated, or deleted. This implies that you
@@ -59,11 +61,11 @@ export default () => (
                     We need to indicate what custom functions apply to: the <b>member</b> function
                     indicates that the actions described will be applied to a particular instance.
                 </p>
-                <Pre value={code1} />
+                <Pre>{code2}</Pre>
                 <p>
                     The <b>collection</b> function will be applied to an entire array of objects.
                 </p>
-                <Pre value={code2} />
+                <Pre>{code3}</Pre>
                 <p>
                     Always ensure that all classes (users, posts etc.) and their controllers have
                     the same names that you indicated in the function (save/unsave).

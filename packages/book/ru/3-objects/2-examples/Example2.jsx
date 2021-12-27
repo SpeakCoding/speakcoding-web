@@ -2,7 +2,9 @@ import React from 'react';
 import { Code, Grid, HL, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 
-const code = `{{hl:func onClickCreateButton()}}(green) {
+const code1 = `{{new}}(hl:orange) User(usernameText, emailText, passwordText)`;
+
+const code2 = `{{hl:func onClickCreateButton()}}(green) {
     {{hl:newUsername = textFieldUsername.text}}(orange)
     {{hl:newEmail = textFieldEmail.text}}(orange)
     {{hl:newPassword = textFieldPassword.text}}(orange)
@@ -33,12 +35,7 @@ export default () => (
                     </HL>
                     .
                 </p>
-                <Pre>
-                    <HL color='orange' active>
-                        new
-                    </HL>{' '}
-                    User(usernameText, emailText, passwordText)
-                </Pre>
+                <Pre>{code1}</Pre>
                 <p>
                     Выше, в примере с формой, мы добавим шаг создания экземпляра(объекта) в функцию,
                     которая будет вызываться при нажатии кнопки Submit. Она возьмет данные из формы
@@ -64,7 +61,7 @@ export default () => (
                         <HL color='aquamarine'>экземпляр класса User</HL>.
                     </Grid.Cell>
                     <Grid.Cell hlactive>
-                        <Code value={code} />
+                        <Code value={code2} />
                     </Grid.Cell>
                 </Grid>
             </Section.Main>

@@ -3,13 +3,15 @@ import { Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
 
-const code1 = `
+const code1 = `resources :posts, only: [:create, :show, :index, :update, :destroy]`;
+
+const code2 = `
 member do
     post :like, :unlike, :save, :unsave
     get :likers
 end`;
 
-const code2 = `
+const code3 = `
 collection do
     get :saved, :tagged
 end`;
@@ -42,7 +44,7 @@ export default () => (
                     реагировать) и назвать сами действия.
                 </p>
                 <p>В файле config/routes.rb мы описываем все эти URL:</p>
-                <Pre>resources :posts, only: [:create, :show, :index, :update, :destroy]</Pre>
+                <Pre>{code1}</Pre>
                 <p>
                     Вызвав функцию resources, мы сообщаем, что у нас есть посты и их можно
                     создавать, отображать, просматривать списком, обновлять и удалять.
@@ -58,11 +60,11 @@ export default () => (
                     должны будем указать, к чему они применимы: функция <b>member</b> будет
                     означать, что описанные действия будут применены к конкретному экземпляру:
                 </p>
-                <Pre value={code1} />
+                <Pre>{code2}</Pre>
                 <p>
                     функция <b>collection</b> - ко всему множеству объектов.
                 </p>
-                <Pre value={code2} />
+                <Pre>{code3}</Pre>
                 <p>
                     Обязательно убедитесь, что все классы (users/posts/ etc) и их контроллеры
                     называются так, как вы описали в функции (save/unsave).

@@ -3,10 +3,17 @@ import { Callout, Hint, HL, Link, Pre, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
 import Term from '../../glossary/Term';
 
-const code = `
-func requestCompletion (result: Any?, metadata: [String : String]?, {{hl:error: Error?}}(steel-blue)) { 
-    if let postJSONs = result as? {{hl:[[}}(plum){{hl:String}}(orange): Any{{hl:]]}}(plum) {
-        let posts = postJSONs.{{hl:map}}(light-sky-blue) { (postJSON) -> Post in
+const code1 = `{{func getPostsOf}}(hl:orange)({{user: User}}(hl:thistle)) -> {{[Post]}}(hl:light-sky-blue)`;
+
+const code2 = `let {{request}}(hl:green) = makeRequest(method: {{HTTPMethod.GET}}(hl:light-sky-blue), {{endpoint}}(hl:sandy-brown): " {{/users/\\(user.id)/posts}}(hl:sandy-brown).json", authorized: true, {{parameters: nil}}(hl:turquoise))`;
+const hint2 = `В предыдущих главах мы объединяли разные текстовые значения в строку с помощью символа "+", а здесь через обратный знак дроби "\\" Он объединит текстовое и цифровое обозначение и вставит их в строку \\ Иногда после него могут стоять скобки (...), в них могут выполняться те или иные операции.`;
+
+const code3 = `{{performRequest}}(hl:red)(request: request, completion: requestCompletion)`;
+
+const code4 = `
+func requestCompletion (result: Any?, metadata: [String : String]?, {{error: Error?}}(hl:steel-blue)) {
+    if let postJSONs = result as? {{[[}}(hl:plum) {{String}}(hl:orange): Any {{]]}}(hl:plum) {
+        let posts = postJSONs.{{map}}(hl:light-sky-blue) { (postJSON) -> Post in
             Post.instance(withJSON: postJSON)
         }
         feed.posts = posts
@@ -16,6 +23,10 @@ func requestCompletion (result: Any?, metadata: [String : String]?, {{hl:error: 
         completion(nil, error)
     }
 }`;
+
+const code5 = `
+Json == String -> [String : Any] 
+[Json == String] -> [ [String : Any] ]`;
 
 export default () => (
     <>
@@ -39,10 +50,7 @@ export default () => (
                         </Link>
                         ).
                     </p>
-                    <Pre>
-                        <HL color='orange'>func getPostsOf</HL>(<HL color='thistle'>user: User</HL>)
-                        -> <HL color='light-sky-blue'>[Post]</HL>
-                    </Pre>
+                    <Pre>{code1}</Pre>
                     <p>
                         Для начала нам нужно сформулировать <HL color='green'>запрос</HL>. Он будет
                         состоять из нескольких частей
@@ -66,26 +74,7 @@ export default () => (
                             авторизован (об этом расскажем дальше):
                         </li>
                     </ul>
-                    <Pre>
-                        let <HL color='green'>request</HL> = makeRequest(method:{' '}
-                        <HL color='light-sky-blue'>HTTPMethod.GET</HL>,{' '}
-                        <HL color='sandy-brown'>endpoint:</HL> "
-                        <HL color='sandy-brown'>
-                            /users/
-                            <Hint>
-                                \(user.id)
-                                <Hint.Tooltip>
-                                    В предыдущих главах мы объединяли разные текстовые значения в
-                                    строку с помощью символа "+", а здесь через обратный знак дроби
-                                    "\" Он объединит текстовое и цифровое обозначение и вставит их в
-                                    строку \ Иногда после него могут стоять скобки (...), в них
-                                    могут выполняться те или иные операции.
-                                </Hint.Tooltip>
-                            </Hint>
-                            /posts
-                        </HL>
-                        .json", authorized: true, <HL color='turquoise'>parameters: nil</HL>)
-                    </Pre>
+                    <Pre>{code2}</Pre>
                     <p>
                         Запрос GET является описанием операции, которую должен произвести сервер, и
                         на этот запрос на сервере существует функция с описанием того, как на него
@@ -96,16 +85,13 @@ export default () => (
                         После того как мы сформировали наш запрос, мы опишем функцию, которая{' '}
                         <HL color='red'>выполнит запрос</HL>.
                     </p>
-                    <Pre>
-                        <HL color='red'>performRequest</HL>(request: request, completion:
-                        requestCompletion)
-                    </Pre>
+                    <Pre>{code3}</Pre>
                     <p>
                         Этой функции мы передадим функцию requestCompletion, которая будет выполнена
                         в тот момент, когда сервер вернет нам информацию об объекте (объект (result)
                         или выдаст <HL color='steel-blue'>ошибку</HL>, если такого объекта нет.
                     </p>
-                    <Pre value={code} />
+                    <Pre>{code3}</Pre>
                 </HL.Context>
                 <p>
                     Как мы обсуждали, информация, которую возвращает сервер, будет изначально
@@ -126,10 +112,7 @@ export default () => (
                     представлен в виде проименнованного набора) результат, полученный с сервера,
                     будет представлен в виде набора проименнованных наборов [ [String : Any] ]
                 </p>
-                <Pre>
-                    Json == String -> [String : Any] <br />
-                    [Json == String] -> [ [String : Any] ]
-                </Pre>
+                <Pre>{code5}</Pre>
                 <p>
                     Вы могли бы общаться с сервером по-другому, но когда вы думаете о данных в
                     связке с каким-то конкретным объектом, формат JSON сильно упрощает работу с

@@ -3,6 +3,8 @@ import { HL, Img, Link, Pre, Section } from '@sc/ui';
 import { Time } from '../../../components';
 import img from './how-it-works.svg';
 
+const code1 = `let request = makeRequest(method: {{HTTPMethod.POST}}(hl:green), endpoint: "/ {{users}}(hl:light-sky-blue).json", authorized: false, parameters: requestParameters)`;
+
 export default () => (
     <Section.Block>
         <Section.Main hlactive>
@@ -18,12 +20,7 @@ export default () => (
                 вашем мобильном). Затем, превратив их в текстовую строку, отправит на сервер с
                 помощью запроса <HL color='green'>POST</HL>:
             </p>
-            <Pre>
-                let request = makeRequest(method: HTTPMethod.
-                <HL color='green'>POST</HL>, endpoint: "/
-                <HL color='light-sky-blue'>users</HL>
-                .json", authorized: false, parameters: requestParameters)
-            </Pre>
+            <Pre>{code1}</Pre>
             <p>
                 Сервер непрерывно “ожидает” получения таких запросов. Получив запрос, он произведет
                 следующие действия:

@@ -2,7 +2,9 @@ import React from 'react';
 import { Code, Grid, HL, Pre, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
 
-const code = `{{hl:func onClickCreateButton()}}(green) {
+const code1 = `{{new}}(hl:orange) User(usernameText, emailText, passwordText)`;
+
+const code2 = `{{hl:func onClickCreateButton()}}(green) {
     {{hl:newUsername = textFieldUsername.text}}(orange)
     {{hl:newEmail = textFieldEmail.text}}(orange)
     {{hl:newPassword = textFieldPassword.text}}(orange)
@@ -31,12 +33,7 @@ export default () => (
                     </HL>
                     .
                 </p>
-                <Pre>
-                    <HL color='orange' active>
-                        new
-                    </HL>{' '}
-                    User(usernameText, emailText, passwordText)
-                </Pre>
+                <Pre>{code1}</Pre>
                 <p>
                     Taking the example from the form above, we now add the step of creating an{' '}
                     <Term id='instance'>object (instance)</Term> to the function that is called when
@@ -63,7 +60,7 @@ export default () => (
                         <HL color='aquamarine'>an instance of the User class</HL>.
                     </Grid.Cell>
                     <Grid.Cell hlactive>
-                        <Code value={code} />
+                        <Code value={code2} />
                     </Grid.Cell>
                 </Grid>
             </Section.Main>
