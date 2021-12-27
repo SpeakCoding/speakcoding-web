@@ -63,4 +63,10 @@
     --bg-plum: #F9BFFF;
     --bg-plum-hover: #F9B2FF;
     --bg-grey: var(--c-grey-500);
+
+    --c-sc-red: #FF315D;
+    --c-sc-green: #1EC1A1;
+    --c-sc-purple: #7833FF;
+    --c-sc-yellow: #FFE000;
+    --c-sc-aero: #C1FCF0;
 }
