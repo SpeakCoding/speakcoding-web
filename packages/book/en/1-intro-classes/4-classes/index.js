@@ -31,12 +31,18 @@ export default () => (
                         actual instance of the car Class and write down its properties and
                         characteristics.
                     </p>
+                </Section.Main>
+            </Section.Block>
+
+            <Section.Block>
+                <Section.Main>
                     <h2>Defining classes in code</h2>
                     <p>
                         This definition mirrors the structure that we mapped out above, which is
                         quite similar to programming. <b>Let’s look at the table below.</b>
                     </p>
                 </Section.Main>
+                <Section.Side />
             </Section.Block>
 
             <Section.Block>

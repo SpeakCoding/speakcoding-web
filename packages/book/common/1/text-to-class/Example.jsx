@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Img } from '@sc/ui';
 import { FlagSteps } from '../../../components';
-import img from './instagram.png';
+import img from './phone.svg';
 import { context } from './utils';
 import s from './example.css';
 

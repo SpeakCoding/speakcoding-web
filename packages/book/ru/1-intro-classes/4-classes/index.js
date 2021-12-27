@@ -30,6 +30,11 @@ export default () => (
                         <Term id='instance'>экземпляр класса</Term> Машина и записать для нее эти
                         конкретные характеристики.
                     </p>
+                </Section.Main>
+            </Section.Block>
+
+            <Section.Block>
+                <Section.Main>
                     <h2>Описание классов в коде</h2>
                     <p>
                         Описание классов выглядит совсем как структура выше. То, что мы только что
@@ -37,6 +42,7 @@ export default () => (
                         записывается на разных языках программирования.
                     </p>
                 </Section.Main>
+                <Section.Side />
             </Section.Block>
 
             <Section.Block>
