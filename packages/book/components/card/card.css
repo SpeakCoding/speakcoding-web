@@ -6,56 +6,59 @@
 
 .box {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     column-gap: 40px;
     margin-right: 80px;
     padding: 32px 40px;
-    border-radius: 12px;
 }
 
 .box.quiz {
-    background-color: var(--c-green-200);
+    background-color: var(--c-sc-yellow);
 }
 
 .box.assignment {
-    background-color: #EDF5FF;
+    background-color: var(--c-sc-aero);
 }
 
 .box.skill {
-    background-color: var(--c-primary-300);
+    background-color: var(--c-sc-purple);
+    color: var(--c-white);
 }
 
 .content {
+    max-width: 70%;
     font-size: 18px;
     line-height: 24px;
 }
 
 .title {
     margin-bottom: 8px;
-    font-size: 32px;
-    line-height: 38px;
-    font-weight: 700;
+    font-family: var(--font-family-brand);
 }
 
 .action {
     margin-top: 16px;
 }
 
-.icon {
-    flex: 0 0 96px;
-    width: 96px;
-    height: 96px;
-}
-
 .box.quiz .icon {
+    flex: 0 0 126px;
+    width: 126px;
+    height: 96px;
     background-image: url(./quiz.svg);
 }
 
 .box.assignment .icon {
+    flex: 0 0 80px;
+    width: 80px;
+    height: 112px;
     background-image: url(./assignment.svg);
 }
 
 .box.skill .icon {
+    flex: 0 0 133px;
+    width: 133px;
+    height: 115px;
     background-image: url(./skill.svg);
 }
 
