@@ -1,12 +1,21 @@
 .box {
     display: flex;
     align-items: center;
-    height: 48px;
-    color: var(--c-grey-500);
     font: var(--t-small);
 }
 
+.box.grey {
+    color: var(--c-grey-500);
+}
+
+.box.black {
+    color: var(--c-black);
+}
+
 .chapter {
+    display: flex;
+    align-items: center;
+    height: 48px;
     margin-bottom: 16px;
 }
 

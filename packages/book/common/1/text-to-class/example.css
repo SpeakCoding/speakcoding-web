@@ -5,7 +5,7 @@
             "flags flags";
     grid-template-columns: 1fr 400px;
     grid-template-rows: 480px auto;
-    margin-bottom: 16px;
+    margin: 16px 0;
 }
 
 .code {
@@ -18,7 +18,7 @@
 }
 
 .img {
-    margin-top: -160px;
+    margin-top: -144px;
 }
 
 .flags {

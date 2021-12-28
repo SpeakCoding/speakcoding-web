@@ -65,7 +65,7 @@ export default () => (
                     User.current (“статическая” составляющая класса User). И, если нет -{' '}
                     <HL color='sandy-brown'>покажет пользователю экран логина</HL>, а{' '}
                     <HL color='red'>если да</HL> -{' '}
-                    <HL color='steel-blue' inline={3}>
+                    <HL color='steel-blue' inline>
                         окно основного "корневого" интерфейса - window
                     </HL>{' '}
                     (в нашем случае, это пять табов и лента постов).
@@ -74,7 +74,7 @@ export default () => (
                 <p>
                     Как вы помните, для отображения содержимого окна мы должны создать экземпляр
                     стандартного класса UIWindow (
-                    <HL color='orange' inline={3}>
+                    <HL color='orange' inline>
                         согласно параметрам экрана устройства, на котором работает программа
                     </HL>
                     ), сохранить его в self.window и дальше изменять его составляющую{' '}
@@ -141,7 +141,7 @@ export default () => (
                     И именно <HL color='red'>loginFlowNavigationController</HL> мы помещаем в{' '}
                     <HL color='sandy-brown'>rootViewController</HL> нашего окна, предварительно
                     установив его параметры: экран займет{' '}
-                    <HL color='plum' inline={3}>
+                    <HL color='plum' inline>
                         все отведенное под него пространство (full screen)
                     </HL>
                     , и его <HL color='turquoise'>верхнее меню меню будет по умолчанию спрятано</HL>

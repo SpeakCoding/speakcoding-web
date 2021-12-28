@@ -1,5 +1,6 @@
 import React from 'react';
 import pt from 'prop-types';
+import classNames from 'classnames';
 import { Icon } from '@sc/ui';
 import L from '../localize';
 import s from './time.css';
@@ -19,8 +20,8 @@ const messages = {
     )
 };
 
-const Value = ({ mode, value }) => (
-    <div className={s.box}>
+const Value = ({ color, mode, value }) => (
+    <div className={classNames(s.box, s[color])}>
         <div className={s.icon}>
             <Icon name='clock' size={24} />
         </div>
@@ -31,11 +32,13 @@ const Value = ({ mode, value }) => (
 );
 
 Value.propTypes = {
+    color: pt.oneOf(['grey', 'black']),
     mode: pt.oneOf(['chapter', 'task']),
     value: pt.string
 };
 
 Value.defaultProps = {
+    color: 'grey',
     mode: 'chapter',
     value: ''
 };

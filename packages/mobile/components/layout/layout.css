@@ -1,10 +1,13 @@
 @import "~@sc/ui/theme.css";
 
 .box {
+    --font-family: var(--font-family-system);
+
     display: inline-block;
     position: relative;
     padding: 25px 27px;
     user-select: none;
+    font-family: var(--font-family);
 }
 
 .box::after {

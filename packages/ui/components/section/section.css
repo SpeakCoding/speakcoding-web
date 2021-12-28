@@ -29,7 +29,7 @@
 }
 
 .divider {
-    height: 8px;
+    height: 4px;
     background-color: var(--c-grey-100);
 }
 
@@ -59,7 +59,13 @@
 }
 
 .main h2 {
-    margin-bottom: 16px;
+    margin: 48px 0 24px;
+}
+
+.block:first-child > .main > h2:first-child,
+.box > .main > h2:first-child,
+.box ~ .box h1 {
+    margin-top: 30px;
 }
 
 .main p {

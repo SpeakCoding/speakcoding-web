@@ -23,7 +23,7 @@ const Example = () => {
                 given a user
             </HL>
             , the function{' '}
-            <HL color='plum' active={slide >= 3} inline={5}>
+            <HL color='plum' active={slide >= 3} inline>
                 creates a like from that user and adds it to that post’s list of likes, and
                 communicates
             </HL>{' '}

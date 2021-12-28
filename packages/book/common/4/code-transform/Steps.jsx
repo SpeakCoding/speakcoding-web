@@ -17,28 +17,6 @@ Content.defaultProps = {
     step: 1
 };
 
-// export const Step1 = () => (
-//     <Content step={1}>
-//         <Structure>
-//             <h4>FeedView</h4>
-//             <ul>
-//                 <li>ProfilePicture</li>
-//                 <li>userName</li>
-//                 <li>Location</li>
-//                 <li>Post Image</li>
-//                 <li>Like Button</li>
-//                 <li>Comment</li>
-//                 <li>Bookmark</li>
-//                 <li>@username liked</li>
-//                 <li>likeCount</li>
-//                 <li>postText</li>
-//                 <li>commentCount</li>
-//                 <li>Date</li>
-//             </ul>
-//         </Structure>
-//     </Content>
-// );
-
 export const Step1 = () => (
     <Content step={1}>
         <pre>

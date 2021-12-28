@@ -76,11 +76,11 @@ export default () => (
                 <p>
                     So if the table in the server-side database contains the component columns that
                     we need, we can refer to the{' '}
-                    <HL color='plum' inline={3}>
+                    <HL color='plum' inline>
                         components with the same name
                     </HL>{' '}
                     for a{' '}
-                    <HL color='light-sky-blue' inline={3}>
+                    <HL color='light-sky-blue' inline>
                         specific User instance
                     </HL>
                     , as if the description of the User class on the server contained that

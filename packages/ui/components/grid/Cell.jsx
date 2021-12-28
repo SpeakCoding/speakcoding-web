@@ -16,7 +16,7 @@ const Cell = ({ border, dense, hlactive, semidense, children }) => (
                 semidense && (semidense === true || semidense.indexOf('bottom') > -1)
         })}
     >
-        <HL.Context active={hlactive} inline={3}>
+        <HL.Context active={hlactive} inline>
             {children}
         </HL.Context>
     </div>

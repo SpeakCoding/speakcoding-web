@@ -2,11 +2,10 @@
 
 .box {
     margin: 24px 0;
-    padding: 16px 24px;
+    padding: 24px;
     box-sizing: border-box;
-    border: 2px solid var(--c-primary-500);
-    border-left-width: 13px;
-    border-radius: 6px;
+    border: 2px solid var(--c-sc-purple);
+    box-shadow: -12px 12px 0 0 var(--c-sc-purple);
     font: var(--t-base);
     line-height: 30px;
 }

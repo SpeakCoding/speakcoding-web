@@ -1,9 +1,9 @@
-import Button from './Button';
 import Card from './Card';
+import Footer from './Footer';
 import Time from './Time';
 import Title from './Title';
 
-Card.Button = Button;
+Card.Footer = Footer;
 Card.Time = Time;
 Card.Title = Title;
 

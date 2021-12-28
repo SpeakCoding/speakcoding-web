@@ -23,7 +23,7 @@ const Example = () => {
                 указать пользователя
             </HL>
             ,{' '}
-            <HL color='plum' active={slide >= 3} inline={5}>
+            <HL color='plum' active={slide >= 3} inline>
                 создает лайк от этого пользователя и добавляет его в список лайков этого поста, и
                 сообщает
             </HL>{' '}
@@ -146,7 +146,7 @@ export default () => (
                             </HL>
                         </li>
                         <li>
-                            <HL color='plum' active inline={3}>
+                            <HL color='plum' active inline>
                                 Последовательность/список операций, которые она совершает
                             </HL>
                         </li>

@@ -75,7 +75,7 @@ const Code = ({ value, tabs }) => {
                                 color={item.color}
                                 label={item.label}
                                 active={!!parseInt(item.active, 10)}
-                                inline={item.inline && parseInt(item.inline, 10)}
+                                inline={!!parseInt(item.inline, 10)}
                             >
                                 {item.text}
                             </HL>

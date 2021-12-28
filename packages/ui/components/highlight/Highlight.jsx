@@ -4,20 +4,25 @@ import classNames from 'classnames';
 import { hl } from './utils';
 import s from './highlight.css';
 
+const contrast = {
+    'sc-green': true,
+    'sc-purple': true
+};
+
 const Highlight = ({ color, label, children, ...props }) => {
     const context = useContext(hl),
         active = context.active || props.active,
-        inline = context.inline || props.inline;
+        inline = context.inline || props.inline,
+        colorVar = /^sc/.test(color) ? `--c-${color}` : `--bg-${color}`;
 
     const handleMouseEnter = useCallback(() => {
         if (!label) return;
         const items = document.querySelectorAll(`[data-highlight-label="${label}"]`);
         [...items].forEach($item => {
-            if ($item.dataset.passive)
-                $item.setAttribute('style', `--bg-color: var(--bg-${color})`);
+            if ($item.dataset.passive) $item.setAttribute('style', `--bg-color: var(${colorVar})`);
             $item.classList.add(s.hover);
         });
-    }, [color, label]);
+    }, [colorVar, label]);
 
     const handleMouseLeave = useCallback(() => {
         if (!label) return;
@@ -33,9 +38,8 @@ const Highlight = ({ color, label, children, ...props }) => {
             })}
             data-highlight-label={label}
             style={{
-                '--bg-color': `var(--bg-${color})`,
-                paddingTop: inline && `${inline}px`,
-                paddingBottom: inline && `${inline}px`
+                '--bg-color': `var(${colorVar})`,
+                color: contrast[color] ? 'var(--c-white)' : 'inherit'
             }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -64,16 +68,21 @@ Highlight.propTypes = {
         'floral-white',
         'plum',
         'plum-hover',
-        'grey'
+        'grey',
+        'sc-red',
+        'sc-green',
+        'sc-purple',
+        'sc-yellow',
+        'sc-aero'
     ]),
-    inline: pt.number,
+    inline: pt.bool,
     label: pt.string
 };
 
 Highlight.defaultProps = {
     active: false,
     color: 'orange',
-    inline: undefined,
+    inline: false,
     label: undefined
 };
 

@@ -5,7 +5,7 @@ import Term from '../../glossary/Term';
 
 const code1 = `{{func getPostsOf}}(hl:orange)({{user: User}}(hl:thistle)) -> {{[Post]}}(hl:light-sky-blue)`;
 
-const code2 = `let {{request}}(hl:green) = makeRequest(method: {{HTTPMethod.GET}}(hl:light-sky-blue), {{endpoint}}(hl:sandy-brown): " {{/users/\\(user.id)/posts}}(hl:sandy-brown).json", authorized: true, {{parameters: nil}}(hl:turquoise))`;
+const code2 = `let {{request}}(hl:green) = makeRequest(method: {{HTTPMethod.GET}}(hl:light-sky-blue), {{endpoint}}(hl:sandy-brown): " {{/users/}}(hl:sandy-brown) {{\\(user.id)}}(h:hint) {{/posts}}(hl:sandy-brown).json", authorized: true, {{parameters: nil}}(hl:turquoise))`;
 const hint2 = `In previous chapters, we combined various text values in a string using the '+' symbol; here we have done so using the backslash '\\' symbol. This combines textual and numerical designations and places them in the \\ string. After the backslash, brackets (...) sometimes appear, within which a particular operation can be performed.`;
 
 const code3 = `{{performRequest}}(hl:red)(request: request, completion: requestCompletion)`;
@@ -73,7 +73,7 @@ export default () => (
                             authorised (more on this later).
                         </li>
                     </ul>
-                    <Pre>{code2}</Pre>
+                    <Pre hint={hint2}>{code2}</Pre>
                     <p>
                         The GET request describes the operation that the server needs to perform,
                         and the server has a function that describes how it should react to such

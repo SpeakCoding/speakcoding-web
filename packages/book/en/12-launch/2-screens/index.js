@@ -68,7 +68,7 @@ export default () => (
                     not saved, then User.initCurrentUser(){' '}
                     <HL color='sandy-brown'>takes the user to the login screen</HL>;{' '}
                     <HL color='red'>if it is saved</HL>, then the function{' '}
-                    <HL color='steel-blue' inline={3}>
+                    <HL color='steel-blue' inline>
                         takes the user to the window of the main, ‘root’ window of the interface
                     </HL>{' '}
                     (in our case this is the five tabs and the post feed).
@@ -77,7 +77,7 @@ export default () => (
                 <p>
                     As you may remember, to display a window’s contents, we need to create an
                     instance of the standard UIWindow class (
-                    <HL color='orange' inline={3}>
+                    <HL color='orange' inline>
                         in accordance with the screen parameters of the device running the program
                     </HL>
                     ), save the instance in self.window, then change its component{' '}
@@ -86,7 +86,7 @@ export default () => (
                 </p>
                 <p>
                     Further to these main steps is an additional step that defines the{' '}
-                    <HL color='powder-blue' inline={3}>
+                    <HL color='powder-blue' inline>
                         color of the screen to which the user switches when the program is opened
                         (before the required ViewController is loaded)
                     </HL>
@@ -151,7 +151,7 @@ export default () => (
                     We place the <HL color='red'>loginFlowNavigationController</HL> in our window’s{' '}
                     <HL color='sandy-brown'>rootViewController</HL>, having first set
                     loginFlowNavigationController’s parameters: The screen takes up{' '}
-                    <HL color='plum' inline={3}>
+                    <HL color='plum' inline>
                         the entire full screen space allocated to it
                     </HL>
                     , and its <HL color='turquoise'>top menu is hidden by default</HL>.

@@ -200,7 +200,7 @@ export default () => (
                 <p>
                     Если мы изменяем конкретный пост, то статическая функция <b>update</b> класса
                     ActiveRecord произведет SQL запрос UPDATE в базу данных и заменит значения на{' '}
-                    <HL color='orange' inline={3}>
+                    <HL color='orange' inline>
                         полученные от клиента параметры
                     </HL>
                     :

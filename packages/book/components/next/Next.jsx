@@ -20,7 +20,7 @@ const Next = ({ href, children }) => {
     return (
         <div className={s.box}>
             {disabled && (
-                <div className={classNames(s.button, s.disabled)}>
+                <h3 className={classNames(s.button, s.disabled)}>
                     {children}
                     {!children && (
                         <>
@@ -28,11 +28,12 @@ const Next = ({ href, children }) => {
                             <L lang='ru'>Следующая часть</L>
                         </>
                     )}
-                </div>
+                </h3>
             )}
+
             {!disabled && (
                 <Link href={url}>
-                    <div className={s.button}>
+                    <h3 className={s.button}>
                         {children}
                         {!children && (
                             <>
@@ -40,7 +41,7 @@ const Next = ({ href, children }) => {
                                 <L lang='ru'>Следующая часть</L>
                             </>
                         )}
-                    </div>
+                    </h3>
                 </Link>
             )}
         </div>

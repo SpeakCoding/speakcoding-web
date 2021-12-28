@@ -202,7 +202,7 @@ export default () => (
                     If we change a specific post, the static function <b>update</b> of the
                     ActiveRecord class makes an SQL UPDATE request to the database and replaces the
                     values with the{' '}
-                    <HL color='orange' inline={3}>
+                    <HL color='orange' inline>
                         parameters received from the client
                     </HL>
                     :

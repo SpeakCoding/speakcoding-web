@@ -79,12 +79,18 @@ const Assignment = ({ id: path }) => {
             <Card variant='assignment'>
                 <Card.Title>{title}</Card.Title>
                 <Markdown>{description}</Markdown>
-                <Card.Button onClick={openModal} />
+                <Card.Footer>
+                    <Button variant='black' onClick={openModal}>
+                        <L lang='en'>Complete assignment</L>
+                        <L lang='ru'>Выполнить задание</L>
+                    </Button>
+                    {time && <Card.Time color='black' value={time} />}
+                </Card.Footer>
             </Card>
 
             <Modal opened={opened} onClose={closeModal}>
                 <Modal.Title>
-                    {time && <Card.Time value={time} />}
+                    {time && <Card.Time absolute value={time} />}
                     {title}
                 </Modal.Title>
 

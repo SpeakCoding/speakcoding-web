@@ -120,7 +120,7 @@ export default () => (
                     some fields are not actual values, but rather ids that link to other tables. So
                     the table where the server stores the set of posts that it has received contains
                     a cell with the{' '}
-                    <HL color='orange' inline={3}>
+                    <HL color='orange' inline>
                         id of the user who created the posts
                     </HL>
                     :

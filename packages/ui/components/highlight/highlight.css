@@ -2,9 +2,9 @@
 
 .box {
     display: inline-block;
-    padding: 0 6px;
+    padding: 0 8px;
     background-color: var(--c-grey-200);
-    line-height: 1.6;
+    line-height: 30px;
     transition: background-color var(--animation);
 
     --bg-color: var(--c-white);

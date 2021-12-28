@@ -93,14 +93,14 @@ export default () => (
                     <div className={s.people}>
                         <HL.Context active>
                             <div>
-                                <HL color='light-sky-blue'>People</HL>
+                                <HL color='sc-yellow'>People</HL>
                             </div>
                             <div>// Components</div>
                             <div>
-                                <HL color='plum'>Arms</HL>
+                                <HL color='sc-green'>Arms</HL>
                             </div>
                             <div>
-                                <HL color='orange'>Legs</HL>
+                                <HL color='sc-purple'>Legs</HL>
                             </div>
                             <div>...</div>
                             <div>// Properties (recorded the same way as components)</div>

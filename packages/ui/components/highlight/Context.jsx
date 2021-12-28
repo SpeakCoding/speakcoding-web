@@ -8,12 +8,12 @@ const Context = ({ active, inline, children }) => (
 
 Context.propTypes = {
     active: pt.bool,
-    inline: pt.number
+    inline: pt.bool
 };
 
 Context.defaultProps = {
     active: false,
-    inline: undefined
+    inline: false
 };
 
 export default Context;

@@ -14,9 +14,8 @@
 }
 
 .title {
-    margin-bottom: 40px;
-    font: var(--t-h2);
-    line-height: 30px;
+    margin: 0 0 40px !important;
+    font: 700 24px / 30px var(--font-family);
 }
 
 .tile img {

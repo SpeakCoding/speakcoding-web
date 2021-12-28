@@ -37,10 +37,6 @@
     font-family: var(--font-family-brand);
 }
 
-.action {
-    margin-top: 16px;
-}
-
 .box.quiz .icon {
     flex: 0 0 126px;
     width: 126px;
@@ -62,8 +58,16 @@
     background-image: url(./skill.svg);
 }
 
-.time {
+.time.absolute {
     position: absolute;
-    top: 12px;
+    top: 24px;
     left: 32px;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    column-gap: 16px;
+    align-items: center;
+    margin-top: 16px;
 }
