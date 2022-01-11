@@ -51,7 +51,7 @@ const ProfileEdit = () => {
                 <Header.Right>
                     <HL.Shape variant='caption' caption='setButton' active>
                         <Button type='submit' variant='text'>
-                            Done
+                            <span className={s.nav}>Done</span>
                         </Button>
                     </HL.Shape>
                 </Header.Right>

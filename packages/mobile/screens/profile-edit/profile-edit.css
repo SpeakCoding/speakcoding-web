@@ -25,6 +25,8 @@
     display: flex;
     align-items: center;
     height: 48px;
+    font-size: 16px;
+    line-height: 19px;
 }
 
 .label {
@@ -56,4 +58,8 @@
 .input::placeholder {
     opacity: 1;
     color: var(--c-grey-500);
+}
+
+.nav {
+    font-size: 17px;
 }
