@@ -11,8 +11,13 @@ export default () => (
     <>
         <Section>
             <Section.Block>
-                <Section.Main>
+                <Section.Main narrow>
                     <h1>Составляющие/Характеристики Класса</h1>
+                </Section.Main>
+            </Section.Block>
+
+            <Section.Block>
+                <Section.Main>
                     <p>
                         Давайте рассмотрим <Term id='class'>класс</Term> на примере Поста.
                     </p>

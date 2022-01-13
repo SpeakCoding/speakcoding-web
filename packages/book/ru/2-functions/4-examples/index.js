@@ -145,7 +145,6 @@ export default () => (
                     </li>
                 </ol>
             </Section.Main>
-            <Section.Side />
         </Section.Block>
 
         <Section.Block>

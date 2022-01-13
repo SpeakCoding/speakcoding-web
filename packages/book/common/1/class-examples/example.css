@@ -1,7 +1,7 @@
 .row {
     display: grid;
-    grid-template-columns: minmax(30%, 400px) 1fr;
-    column-gap: 120px;
+    grid-template-columns: minmax(30%, 420px) 1fr;
+    column-gap: 100px;
     width: 100%;
 }
 

@@ -14,7 +14,7 @@ export default () => (
             </p>
             <p>
                 Human language is rich, with speakers generally having active vocabularies of over{' '}
-                <b>10,000 words</b> in their native tongue. Programming languages are much more
+                <b>10,000&nbsp;words</b> in their native tongue. Programming languages are much more
                 basic, with each word being more specific and precise. This allows us to write
                 richer narratives using fewer characters.
             </p>
@@ -26,7 +26,7 @@ export default () => (
                 If we start by using words to describe what we see, then put this narrative into a
                 structured format, the result begins to resemble computer code. A few stages later
                 and we see clearly that programming language is similar to human language, only
-                simpler (always consisting of fewer than <b>1,000 words</b>).
+                simpler (always consisting of fewer than <b>1,000&nbsp;words</b>).
             </p>
             <p>
                 Anybody can write a structured description of the world around them. A capable
