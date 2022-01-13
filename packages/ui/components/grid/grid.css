@@ -3,7 +3,6 @@
 .box {
     display: grid;
     margin: 8px 0 24px;
-    border-radius: 8px;
     border: 1px solid var(--c-grey-300);
 }
 

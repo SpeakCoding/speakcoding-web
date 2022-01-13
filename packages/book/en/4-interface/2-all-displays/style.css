@@ -8,7 +8,6 @@
 .tile {
     min-width: 0;
     padding: 40px;
-    border-radius: 20px;
     background-color: var(--c-grey-100);
     text-align: center;
 }
