@@ -1,0 +1,54 @@
+:root {
+    --editor-side-width: 40%;
+}
+
+.box {
+    position: relative;
+}
+
+.content {
+    position: relative;
+    padding-bottom: 16px;
+    padding-right: 80px;
+}
+
+.placeholder {
+    opacity: 0;
+}
+
+.pic {
+    position: absolute;
+    top: 0;
+    right: 80px;
+    width: calc(100% - 80px);
+    transition: var(--animation);
+    transition-property: top, left, right, width;
+}
+
+.pic.minimized {
+    top: 105%;
+    width: var(--editor-side-width);
+}
+
+.part {
+    position: absolute;
+    background-image: url(./xcode.png);
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: var(--animation);
+    transition-property: transform, box-shadow;
+    pointer-events: initial;
+}
+
+.part:hover,
+.part[data-active] {
+    transform: scale(1.11);
+    box-shadow: 0 0 0 2px var(--c-sc-yellow);
+}
+
+.link {
+    background-color: rgba(var(--c-primary-500-rgb), 0.2);
+    border-bottom: 1px dashed var(--c-primary-500);
+    cursor: pointer;
+}

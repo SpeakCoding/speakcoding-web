@@ -1,7 +1,7 @@
 import React from 'react';
-import { Img, Link, Section } from '@sc/ui';
+import { Link, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
-import xcode from './xcode.png';
+import EditorExample from '../../../common/5/editor';
 
 export default () => (
     <>
@@ -35,33 +35,34 @@ export default () => (
         <Assignment id='ru/9' />
 
         <Section>
-            <Section.Block>
-                <Section.Main>
-                    <p>
-                        <Img src={xcode} width='100%' />
-                    </p>
-                </Section.Main>
-            </Section.Block>
-            <Section.Block>
-                <Section.Main narrow>
-                    <p>
-                        Слева в редакторе отображается дерево файлов вашего проекта. В процессе
-                        работы вы часто будете переходить от одного файла к другому, и эта панель
-                        позволит легко переключаться, выбрав файл из списка. Вы увидите файлы с
-                        названиями наших основных классов (User.swift, Post.swift, etc), а также
-                        файлы с названием классов контроллеров нашего приложения
-                        (FeedViewController.swift, etc).
-                    </p>
-                    <p>
-                        После того, как вы выбрали файл, его содержимое отобразится в основной
-                        центральной части - редакторе кода. Все строки в редакторе пронумерованы,
-                        чтобы разработчикам легче было читать код и находить в нем ошибки. Также
-                        редактор подсвечивает функциональные слова. Кликнув мышкой/правой кнопкой на
-                        любой класс, можно найти опцию Jump to Definition и быстро перейти на
-                        описание этого класса (или кликнув левой кнопкой, зажав Control+Command).
-                    </p>
-                </Section.Main>
-            </Section.Block>
+            <EditorExample>
+                <Section.Block>
+                    <Section.Main>
+                        <p>
+                            <EditorExample.Link name='tree'>Слева в редакторе</EditorExample.Link>{' '}
+                            отображается дерево файлов вашего проекта. В процессе работы вы часто
+                            будете переходить от одного файла к другому, и эта панель позволит легко
+                            переключаться, выбрав файл из списка. Вы увидите файлы с названиями
+                            наших основных классов (User.swift, Post.swift, etc), а также файлы с
+                            названием классов контроллеров нашего приложения
+                            (FeedViewController.swift, etc).
+                        </p>
+                        <p>
+                            После того, как вы выбрали файл, его содержимое отобразится в{' '}
+                            <EditorExample.Link name='main'>
+                                основной центральной части
+                            </EditorExample.Link>{' '}
+                            - редакторе кода. Все строки в редакторе пронумерованы, чтобы
+                            разработчикам легче было читать код и находить в нем ошибки. Также
+                            редактор подсвечивает функциональные слова. Кликнув мышкой/правой
+                            кнопкой на любой класс, можно найти опцию Jump to Definition и быстро
+                            перейти на описание этого класса (или кликнув левой кнопкой, зажав
+                            Control+Command).
+                        </p>
+                    </Section.Main>
+                    <Section.Side />
+                </Section.Block>
+            </EditorExample>
         </Section>
 
         <Assignment id='ru/10' />

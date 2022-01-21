@@ -1,7 +1,7 @@
 import React from 'react';
-import { Img, Section } from '@sc/ui';
+import { Link, Section } from '@sc/ui';
 import { Assignment } from '../../../components';
-import xcode from './xcode.png';
+import EditorExample from '../../../common/5/editor';
 
 export default () => (
     <>
@@ -22,8 +22,11 @@ export default () => (
                     program testing on various devices.
                 </p>
                 <p>
-                    As we mentioned above, creating a program for the iPhone entails using Apple’s
-                    Xcode editor, available in the Apple store.
+                    As we mentioned above, creating a program for the iPhone entails using Apple’s{' '}
+                    <Link href='https://apps.apple.com/us/app/xcode/id497799835?mt=12' blank>
+                        Xcode editor
+                    </Link>
+                    , available in the Apple store.
                 </p>
             </Section.Main>
         </Section>
@@ -31,34 +34,34 @@ export default () => (
         <Assignment id='en/9' />
 
         <Section>
-            <Section.Block>
-                <Section.Main>
-                    <p>
-                        <Img src={xcode} width='100%' />
-                    </p>
-                </Section.Main>
-            </Section.Block>
-            <Section.Block>
-                <Section.Main narrow>
-                    <p>
-                        The editor displays a file tree for your project on the left. You will
-                        frequently need to switch from one file to another while working, and this
-                        panel allows you to do so easily by selecting a file from the list. Here you
-                        will see files with the names of our main classes (User.swift, Post.swift,
-                        etc), as well as files with the names of the classes of our app’s
-                        controllers (FeedViewController.swift, etc).
-                    </p>
-                    <p>
-                        When you select a file, its contents are displayed in the main central
-                        section, i.e., in the code editor. Every line in the editor is numbered to
-                        make it easier for developers to read the code and spot any mistakes. The
-                        editor also highlights function words. Right-clicking on any class gives the
-                        option to Jump to Definition, which quickly takes you to the definition of
-                        that class. (Alternatively you can left-click while pressing
-                        Control+Command).
-                    </p>
-                </Section.Main>
-            </Section.Block>
+            <EditorExample>
+                <Section.Block>
+                    <Section.Main>
+                        <p>
+                            The editor displays a file tree for your project{' '}
+                            <EditorExample.Link name='tree'>on the left</EditorExample.Link>. You
+                            will frequently need to switch from one file to another while working,
+                            and this panel allows you to do so easily by selecting a file from the
+                            list. Here you will see files with the names of our main classes
+                            (User.swift, Post.swift, etc), as well as files with the names of the
+                            classes of our app’s controllers (FeedViewController.swift, etc).
+                        </p>
+                        <p>
+                            When you select a file, its contents are displayed in{' '}
+                            <EditorExample.Link name='main'>
+                                the main central section
+                            </EditorExample.Link>
+                            , i.e., in the code editor. Every line in the editor is numbered to make
+                            it easier for developers to read the code and spot any mistakes. The
+                            editor also highlights function words. Right-clicking on any class gives
+                            the option to Jump to Definition, which quickly takes you to the
+                            definition of that class. (Alternatively you can left-click while
+                            pressing Control+Command).
+                        </p>
+                    </Section.Main>
+                    <Section.Side />
+                </Section.Block>
+            </EditorExample>
         </Section>
 
         <Assignment id='en/10' />
