@@ -30,7 +30,8 @@ export default () => (
         <Section.Block>
             <Section.Main>
                 <h2>
-                    Another example in which we define visual element parameters in the code{' '}
+                    (Additional) Another example in which we define visual element parameters in the
+                    code{' '}
                     <Expand.Control htmlFor='2-7-1'>
                         <Button variant='rounded'>read ⤵</Button>
                     </Expand.Control>
