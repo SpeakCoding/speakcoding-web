@@ -1,6 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import pt from 'prop-types';
-import classNames from 'classnames';
 import { fixTabs } from '@sc/tools/code';
 import { debounce } from '@sc/tools/function';
 import { Code, Img, Radio, Textarea } from '@sc/ui';
@@ -78,24 +77,18 @@ const Content = ({ answer, onChange, ...props }) => {
             {ask && (
                 <div className={s.text}>
                     <div>{ask}</div>
-                    <div className={classNames(s.options, answer !== undefined && s.disabled)}>
+                    <div className={s.options}>
                         <label className={s.option}>
                             <Radio
                                 name='ask'
                                 value={!answer && answer !== undefined}
-                                disabled={answer !== undefined}
                                 onChange={handleChangeAsk('yes')}
                             />
                             <L lang='en'>Yes</L>
                             <L lang='ru'>Да</L>
                         </label>
                         <label className={s.option}>
-                            <Radio
-                                name='ask'
-                                value={!!answer}
-                                disabled={answer !== undefined}
-                                onChange={handleChangeAsk('no')}
-                            />
+                            <Radio name='ask' value={!!answer} onChange={handleChangeAsk('no')} />
                             <L lang='en'>No</L>
                             <L lang='ru'>Нет</L>
                         </label>
@@ -107,7 +100,6 @@ const Content = ({ answer, onChange, ...props }) => {
                 <Textarea
                     autoheight
                     placeholder={placeholder}
-                    readonly={answer !== undefined}
                     rows={1}
                     value={answer}
                     onChange={handleChange}

@@ -5,8 +5,7 @@ import Term from '../../glossary/Term';
 
 const code1 = `{{func getPostsOf}}(hl:orange)({{user: User}}(hl:thistle)) -> {{[Post]}}(hl:light-sky-blue)`;
 
-const code2 = `let {{request}}(hl:green) = makeRequest(method: {{HTTPMethod.GET}}(hl:light-sky-blue), {{endpoint}}(hl:sandy-brown): " {{/users/}}(hl:sandy-brown) {{\\(user.id)}}(h:hint) {{/posts}}(hl:sandy-brown).json", authorized: true, {{parameters: nil}}(hl:turquoise))`;
-const hint2 = `В предыдущих главах мы объединяли разные текстовые значения в строку с помощью символа "+", а здесь через обратный знак дроби "\\" Он объединит текстовое и цифровое обозначение и вставит их в строку \\ Иногда после него могут стоять скобки (...), в них могут выполняться те или иные операции.`;
+const code2 = `let {{request}}(hl:green) = makeRequest(method: {{HTTPMethod.GET}}(hl:light-sky-blue), {{endpoint}}(hl:sandy-brown): " {{/users/\\(user.id)/posts}}(hl:sandy-brown).json", authorized: true, {{parameters: nil}}(hl:turquoise))`;
 
 const code3 = `{{performRequest}}(hl:red)(request: request, completion: requestCompletion)`;
 
@@ -74,7 +73,13 @@ export default () => (
                             авторизован (об этом расскажем дальше):
                         </li>
                     </ul>
-                    <Pre hint={hint2}>{code2}</Pre>
+                    <Pre>{code2}</Pre>
+                    <p>
+                        В предыдущих главах мы объединяли разные текстовые значения в строку с
+                        помощью символа "+", а здесь через обратный знак дроби "\". Он объединит
+                        текстовое и цифровое обозначение и вставит их в строку \ Иногда после него
+                        могут стоять скобки (...), в них могут выполняться те или иные операции.
+                    </p>
                     <p>
                         Запрос GET является описанием операции, которую должен произвести сервер, и
                         на этот запрос на сервере существует функция с описанием того, как на него

@@ -10,6 +10,11 @@
     text-align: center;
 }
 
+.modal h2,
+.finish h2 {
+    font-family: var(--font-family);
+}
+
 .hat {
     height: 140px;
     margin-bottom: 24px;
