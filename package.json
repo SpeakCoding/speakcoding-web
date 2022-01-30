@@ -15,7 +15,7 @@
     "dependencies": {
         "@stripe/stripe-js": "1.22.0",
         "@tippyjs/react": "4.2.6",
-        "amplitude-js": "8.15.1",
+        "amplitude-js": "8.16.1",
         "classnames": "2.3.1",
         "dayjs": "1.10.7",
         "lottie-web": "5.8.1",
@@ -29,7 +29,7 @@
         "tippy.js": "6.3.7"
     },
     "devDependencies": {
-        "@babel/core": "7.16.10",
+        "@babel/core": "7.16.12",
         "@babel/eslint-parser": "7.16.5",
         "@babel/eslint-plugin": "7.16.5",
         "@babel/node": "7.16.8",
@@ -47,10 +47,10 @@
         "browserslist": "4.19.1",
         "clean-webpack-plugin": "4.0.0",
         "compression-webpack-plugin": "9.2.0",
-        "copy-webpack-plugin": "10.2.1",
+        "copy-webpack-plugin": "10.2.3",
         "css-loader": "6.5.1",
-        "cssnano": "5.0.15",
-        "eslint": "8.7.0",
+        "cssnano": "5.0.16",
+        "eslint": "8.8.0",
         "eslint-config-airbnb": "19.0.4",
         "eslint-config-prettier": "8.3.0",
         "eslint-plugin-babel": "5.3.1",
@@ -61,7 +61,7 @@
         "express": "4.17.2",
         "html-webpack-plugin": "5.5.0",
         "lerna": "4.0.0",
-        "mini-css-extract-plugin": "2.5.2",
+        "mini-css-extract-plugin": "2.5.3",
         "postcss": "8.4.5",
         "postcss-loader": "6.2.1",
         "postcss-normalize": "10.0.1",
@@ -71,8 +71,8 @@
         "raw-loader": "4.0.2",
         "style-loader": "3.3.1",
         "svg-sprite-loader": "6.0.11",
-        "webpack": "5.66.0",
-        "webpack-cli": "4.9.1",
+        "webpack": "5.67.0",
+        "webpack-cli": "4.9.2",
         "webpack-dev-server": "4.7.3"
     },
     "browserslist": [
