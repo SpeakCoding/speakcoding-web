@@ -1,22 +1,22 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import pt from 'prop-types';
-import { updateZIndex } from './utils';
+import { context, zoomIn, zoomOut } from './utils';
 import s from './editor.css';
 
-const getPart = name => document.querySelector(`[data-editor-part="${name}"]`);
+const getPart = (editorID, name) =>
+    document.querySelector(`#${editorID} [data-editor-part="${name}"]`);
 
 const Link = ({ name, children }) => {
+    const { id } = useContext(context);
+
     const handleMouseOver = useCallback(() => {
-        const $part = getPart(name);
-        if ($part) {
-            updateZIndex($part);
-            $part.dataset.active = 'true';
-        }
+        const $part = getPart(id, name);
+        if ($part) zoomIn($part);
     }, [name]);
 
     const handleMouseLeave = useCallback(() => {
-        const $part = getPart(name);
-        if ($part) delete $part.dataset.active;
+        const $part = getPart(id, name);
+        if ($part) zoomOut($part);
     }, [name]);
 
     return (

@@ -34,22 +34,28 @@ export default () => (
         <Assignment id='en/9' />
 
         <Section>
-            <EditorExample>
+            <EditorExample variant={1}>
                 <Section.Block>
                     <Section.Main>
                         <p>
-                            The editor displays a file tree for your project{' '}
-                            <EditorExample.Link name='tree'>on the left</EditorExample.Link>. You
-                            will frequently need to switch from one file to another while working,
-                            and this panel allows you to do so easily by selecting a file from the
-                            list. Here you will see files with the names of our main classes
-                            (User.swift, Post.swift, etc), as well as files with the names of the
-                            classes of our app’s controllers (FeedViewController.swift, etc).
+                            The editor displays a file tree for your project on the{' '}
+                            <EditorExample.Link name='tree'>left</EditorExample.Link>. You will
+                            frequently need to switch from one file to another while working, and
+                            this panel allows you to do so easily by selecting a file from the list.
+                            Here you will see{' '}
+                            <EditorExample.Link name='classes'>
+                                files with the names of our main classes
+                            </EditorExample.Link>{' '}
+                            (User.swift, Post.swift, etc), as well as{' '}
+                            <EditorExample.Link name='controllers'>
+                                files with the names of the classes of our app’s controllers
+                            </EditorExample.Link>{' '}
+                            (FeedViewController.swift, etc).
                         </p>
                         <p>
-                            When you select a file, its contents are displayed in{' '}
+                            When you select a file, its contents are displayed in the{' '}
                             <EditorExample.Link name='main'>
-                                the main central section
+                                main central section
                             </EditorExample.Link>
                             , i.e., in the code editor. Every line in the editor is numbered to make
                             it easier for developers to read the code and spot any mistakes. The

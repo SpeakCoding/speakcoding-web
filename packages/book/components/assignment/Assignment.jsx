@@ -82,8 +82,18 @@ const Assignment = ({ id: path }) => {
                 <Markdown>{description}</Markdown>
                 <Card.Footer>
                     <Button variant='black' onClick={openModal}>
-                        <L lang='en'>Complete assignment</L>
-                        <L lang='ru'>Выполнить задание</L>
+                        {answers.length === 0 && (
+                            <>
+                                <L lang='en'>Complete assignment</L>
+                                <L lang='ru'>Выполнить задание</L>
+                            </>
+                        )}
+                        {answers.length > 0 && (
+                            <>
+                                <L lang='en'>Edit answer</L>
+                                <L lang='ru'>Редактировать ответ</L>
+                            </>
+                        )}
                     </Button>
                     {time && <Card.Time color='black' value={time} />}
                 </Card.Footer>

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Img, Section } from '@sc/ui';
+import { Section } from '@sc/ui';
 import { Assignment } from '../../../components';
-import xcode from './xcode.png';
 import Term from '../../glossary/Term';
 import Terminal from './Terminal';
+import EditorExample from '../../../common/5/editor';
 import s from './style.css';
 
 export default () => (
@@ -14,31 +14,43 @@ export default () => (
                     <h1>Visual editors: layout and work</h1>
                 </Section.Main>
             </Section.Block>
-            <Section.Block>
-                <Section.Main>
-                    <p>
-                        <Img src={xcode} width='100%' />
-                    </p>
-                </Section.Main>
-            </Section.Block>
+
+            <EditorExample variant={2}>
+                <Section.Block>
+                    <Section.Main>
+                        <p>
+                            To the <EditorExample.Link name='tree'>left</EditorExample.Link> you
+                            will see a list of files containing descriptions of classes. The{' '}
+                            <EditorExample.Link name='xib'>
+                                file with the visual editor
+                            </EditorExample.Link>{' '}
+                            for interface elements has the extension{' '}
+                            <Term id='xib' tooltip>
+                                .xml/.html/.xib
+                            </Term>{' '}
+                            (.xib are the same as .xml/html files – the .xib extension is
+                            specifically for iOS). These files allow you to define and edit the
+                            visual layout of the elements of a particular view.
+                        </p>
+                        <p>
+                            Clicking on any{' '}
+                            <EditorExample.Link name='interface'>
+                                element of the PostFeedView interface
+                            </EditorExample.Link>{' '}
+                            (in the image or in the list) brings up a{' '}
+                            <EditorExample.Link name='parameters'>menu</EditorExample.Link> to the
+                            right that describes that element’s parameters. As the interface
+                            comprises standard classes, the elements’ parameters are also standard.
+                            You can change them as you see fit.
+                        </p>
+                    </Section.Main>
+                    <Section.Side />
+                </Section.Block>
+                <Section.Block />
+            </EditorExample>
+
             <Section.Block>
                 <Section.Main narrow>
-                    <p>
-                        To the left you will see a list of files containing descriptions of classes.
-                        The file with the visual editor for interface elements has the extension{' '}
-                        <Term id='xib' tooltip>
-                            .xml/.html/.xib
-                        </Term>{' '}
-                        (.xib are the same as .xml/html files – the .xib extension is specifically
-                        for iOS). These files allow you to define and edit the visual layout of the
-                        elements of a particular view.
-                    </p>
-                    <p>
-                        Clicking on any element of the PostFeedView interface (in the image or in
-                        the list) brings up a menu to the right that describes that element’s
-                        parameters. As the interface comprises standard classes, the elements’
-                        parameters are also standard. You can change them as you see fit.
-                    </p>
                     <p>
                         .xib is essentially an additional view file. It contains all the display
                         elements that we have described, though they are displayed graphically,

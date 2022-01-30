@@ -50,7 +50,7 @@
     --bg-green: var(--c-green-500);
     --bg-blue: #C8E0FF;
     --bg-red: #FFA492;
-    --bg-aquamarine: #73FFE5;
+    --bg-aquamarine: #C1FCF0;
     --bg-steel-blue: #CEC0FF;
     --bg-turquoise: #97EEFF;
     --bg-light-sky-blue: #AFDAFF;
@@ -68,5 +68,4 @@
     --c-sc-green: #1EC1A1;
     --c-sc-purple: #7833FF;
     --c-sc-yellow: #FFE000;
-    --c-sc-aero: #C1FCF0;
 }

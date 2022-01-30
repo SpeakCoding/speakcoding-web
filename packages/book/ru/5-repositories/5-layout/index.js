@@ -1,9 +1,9 @@
 import React from 'react';
-import { Img, Section } from '@sc/ui';
+import { Section } from '@sc/ui';
 import { Assignment } from '../../../components';
-import xcode from './xcode.png';
 import Term from '../../glossary/Term';
 import Terminal from './Terminal';
+import EditorExample from '../../../common/5/editor';
 import s from './style.css';
 
 export default () => (
@@ -14,31 +14,43 @@ export default () => (
                     <h1>Layout и работа с визуальными редакторами</h1>
                 </Section.Main>
             </Section.Block>
-            <Section.Block>
-                <Section.Main>
-                    <p>
-                        <Img src={xcode} width='100%' />
-                    </p>
-                </Section.Main>
-            </Section.Block>
+
+            <EditorExample variant={2}>
+                <Section.Block>
+                    <Section.Main>
+                        <p>
+                            Здесь <EditorExample.Link name='tree'>слева</EditorExample.Link> вы
+                            видите список файлов, в которых хранится описание классов.{' '}
+                            <EditorExample.Link name='xib'>
+                                Файл с визуальным редактором
+                            </EditorExample.Link>{' '}
+                            элементов интерфейса имеет расширение{' '}
+                            <Term id='xib' tooltip>
+                                .xml/.html/.xib
+                            </Term>{' '}
+                            (.xib - это то же самое, что xml/html, расширение .xib специфично для
+                            iOS). Как вы помните, это файлы, позволяющие вам задавать и
+                            редактировать визуальное расположение элементов какого-либо view.
+                        </p>
+                        <p>
+                            Кликнув на любой{' '}
+                            <EditorExample.Link name='interface'>
+                                элемент интерфейса
+                            </EditorExample.Link>{' '}
+                            PostFeedView (на картинке или в списке), вы увидите{' '}
+                            <EditorExample.Link name='parameters'>меню</EditorExample.Link> справа,
+                            где будут описаны его параметры. Так как интерфейс состоит из
+                            стандартных классов, параметры элементов будут стандартными. По
+                            необходимости вы можете менять их так, как посчитаете нужным.
+                        </p>
+                    </Section.Main>
+                    <Section.Side />
+                </Section.Block>
+                <Section.Block />
+            </EditorExample>
+
             <Section.Block>
                 <Section.Main narrow>
-                    <p>
-                        Здесь слева вы видите список файлов, в которых хранится описание классов.
-                        Файл с визуальным редактором элементов интерфейса имеет расширение{' '}
-                        <Term id='xib' tooltip>
-                            .xml/.html/.xib
-                        </Term>{' '}
-                        (.xib - это то же самое, что xml/html, расширение .xib специфично для iOS).
-                        Как вы помните, это файлы, позволяющие вам задавать и редактировать
-                        визуальное расположение элементов какого-либо view.
-                    </p>
-                    <p>
-                        Кликнув на любой элемент интерфейса PostFeedView (на картинке или в списке),
-                        вы увидите меню справа, где будут описаны его параметры. Так как интерфейс
-                        состоит из стандартных классов, параметры элементов будут стандартными. По
-                        необходимости вы можете менять их так, как посчитаете нужным.
-                    </p>
                     <p>
                         По сути, .xib является дополнением файла view - в нем будут все те элементы
                         отображения, которые мы уже описали, но они будут представлены графически,
