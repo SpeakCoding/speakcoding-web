@@ -27,10 +27,15 @@ export default () => {
     }, [profile]);
 
     return (
-        <Section.Block>
-            <Section.Main>
-                <InterceptorView onEnter={onEnter} onExit={onExit}>
+        <InterceptorView onEnter={onEnter} onExit={onExit}>
+            <Section.Block>
+                <Section.Main narrow>
                     <h1>Изменение состояния объектов</h1>
+                </Section.Main>
+            </Section.Block>
+
+            <Section.Block>
+                <Section.Main>
                     <p>
                         Когда у нас появились <i>конкретные</i> <Term id='instance'>объекты</Term>{' '}
                         какого-то <Term id='class'>класса</Term> и мы научились их сохранять, мы
@@ -59,9 +64,9 @@ export default () => {
                             onClickSetButton.
                         </li>
                     </ul>
-                </InterceptorView>
-            </Section.Main>
-            <Section.Side />
-        </Section.Block>
+                </Section.Main>
+                <Section.Side />
+            </Section.Block>
+        </InterceptorView>
     );
 };
