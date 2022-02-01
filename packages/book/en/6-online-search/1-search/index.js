@@ -2,7 +2,7 @@ import React from 'react';
 import { Callout, Link, Section } from '@sc/ui';
 import { Assignment, Time } from '../../../components';
 import Term from '../../glossary/Term';
-import Video from '../../../common/7/search-video';
+import Video from '../../../common/6/search-video';
 
 export default () => (
     <>

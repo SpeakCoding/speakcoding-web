@@ -96,8 +96,8 @@ const App = () => {
                     <Route path='/en/chapter-3' component={EN.Objects} />
                     <Route path='/en/chapter-4' component={EN.Interface} />
                     <Route path='/en/chapter-5' component={EN.Repositories} />
-                    <Route path='/en/chapter-6' component={EN.ComplexSentences} />
-                    <Route path='/en/chapter-7' component={EN.OnlineSearch} />
+                    <Route path='/en/chapter-6' component={EN.OnlineSearch} />
+                    <Route path='/en/chapter-7' component={EN.ComplexSentences} />
                     <Route path='/en/chapter-8' component={EN.Storage} />
                     <Route path='/en/chapter-9' component={EN.API} />
                     <Route path='/en/chapter-10' component={EN.Backend} />
@@ -111,8 +111,8 @@ const App = () => {
                     <Route path='/ru/chapter-3' component={RU.Objects} />
                     <Route path='/ru/chapter-4' component={RU.Interface} />
                     <Route path='/ru/chapter-5' component={RU.Repositories} />
-                    <Route path='/ru/chapter-6' component={RU.ComplexSentences} />
-                    <Route path='/ru/chapter-7' component={RU.OnlineSearch} />
+                    <Route path='/ru/chapter-6' component={RU.OnlineSearch} />
+                    <Route path='/ru/chapter-7' component={RU.ComplexSentences} />
                     <Route path='/ru/chapter-8' component={RU.Storage} />
                     <Route path='/ru/chapter-9' component={RU.API} />
                     <Route path='/ru/chapter-10' component={RU.Backend} />
