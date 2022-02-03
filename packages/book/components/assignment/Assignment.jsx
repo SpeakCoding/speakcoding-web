@@ -48,7 +48,11 @@ const Assignment = ({ id: path }) => {
                     return { title: item.title, answer: `${mark}${value[j]}` };
                 })
             };
-            api.post('/assignments/deliver.json', { variables: payload });
+            api.post('/assignments/deliver.json', {
+                course_id: book,
+                assignment_id: id,
+                variables: payload
+            });
             logEvent('AssignmentSubmission', {
                 id: path,
                 duration: Date.now() - start
