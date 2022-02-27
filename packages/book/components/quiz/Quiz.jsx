@@ -65,7 +65,7 @@ const Quiz = ({ id: path }) => {
                 <Card.Title>{title}</Card.Title>
                 {description}
                 <Card.Footer>
-                    <Button variant='black' onClick={openModal}>
+                    <Button color='black' onClick={openModal}>
                         <L lang='en'>Complete quiz</L>
                         <L lang='ru'>Пройти тест</L>
                     </Button>
@@ -137,7 +137,7 @@ const Quiz = ({ id: path }) => {
                             <L lang='en'>You’ve completed {title}!</L>
                             <L lang='ru'>Вы завершили {title}!</L>
                         </h2>
-                        <Button size='large' onClick={closeModal}>
+                        <Button onClick={closeModal}>
                             <L lang='en'>Back to chapter</L>
                             <L lang='ru'>Вернуться к главе</L>
                         </Button>

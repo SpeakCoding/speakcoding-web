@@ -4,9 +4,9 @@ import classNames from 'classnames';
 import Icon from '../icon';
 import s from './button.css';
 
-const Button = ({ block, disabled, icon, size, variant, children, onClick }) => (
+const Button = ({ block, color, disabled, icon, size, variant, children, onClick }) => (
     <button
-        className={classNames(s.box, s[size], s[variant], block && s.block)}
+        className={classNames(s.box, s[color], s[size], s[variant], block && s.block)}
         disabled={disabled}
         type='button'
         onClick={onClick}
@@ -22,15 +22,17 @@ const Button = ({ block, disabled, icon, size, variant, children, onClick }) => 
 
 Button.propTypes = {
     block: pt.bool,
+    color: pt.oneOf(['yellow', 'black']),
     disabled: pt.bool,
     icon: pt.string,
-    size: pt.oneOf(['default', 'small', 'large']),
-    variant: pt.oneOf(['contained', 'rounded', 'white', 'black']),
+    size: pt.oneOf(['default', 'large']),
+    variant: pt.oneOf(['contained', 'outlined', 'rounded', 'arrow', 'text']),
     onClick: pt.func
 };
 
 Button.defaultProps = {
     block: false,
+    color: 'yellow',
     disabled: false,
     icon: undefined,
     size: 'default',

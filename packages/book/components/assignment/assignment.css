@@ -90,3 +90,8 @@
     padding: 4px 0;
     cursor: pointer;
 }
+
+.space {
+    display: inline-block;
+    width: 16px;
+}

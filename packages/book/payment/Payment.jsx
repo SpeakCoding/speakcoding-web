@@ -38,7 +38,7 @@ const Payment = () => {
                 </div>
 
                 <div className={s.action}>
-                    <Button block size='large' onClick={() => pay(intensity)}>
+                    <Button block onClick={() => pay(intensity)}>
                         <L lang='en'>Proceed to payment</L>
                         <L lang='ru'>Перейти к оплате</L>
                     </Button>

@@ -60,7 +60,7 @@ const Payment = () => {
                         <CourseSelect onChange={setIntensity} />
                     </div>
 
-                    <Button size='large' block onClick={() => pay(intensity)}>
+                    <Button block onClick={() => pay(intensity)}>
                         <L lang='en'>Proceed to payment</L>
                         <L lang='ru'>Перейти к оплате</L>
                     </Button>

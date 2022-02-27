@@ -85,7 +85,7 @@ const Assignment = ({ id: path }) => {
                 <Card.Title>{title}</Card.Title>
                 <Markdown>{description}</Markdown>
                 <Card.Footer>
-                    <Button variant='black' onClick={openModal}>
+                    <Button color='black' onClick={openModal}>
                         {answers.length === 0 && (
                             <>
                                 <L lang='en'>Complete assignment</L>
@@ -94,12 +94,12 @@ const Assignment = ({ id: path }) => {
                         )}
                         {answers.length > 0 && (
                             <>
-                                <L lang='en'>Edit answer</L>
+                                <L lang='en'>Change your answer</L>
                                 <L lang='ru'>Редактировать ответ</L>
                             </>
                         )}
                     </Button>
-                    {time && <Card.Time color='black' value={time} />}
+                    {time && answers.length === 0 && <Card.Time color='black' value={time} />}
                 </Card.Footer>
             </Card>
 
@@ -124,9 +124,11 @@ const Assignment = ({ id: path }) => {
 
                         <Modal.Footer>
                             <Button
+                                color='black'
                                 disabled={currentAnswer === undefined}
                                 onClick={handleConfirmAnswer}
                             >
+                                <div className={s.space} />
                                 {i === assignment.questions.length - 1 && (
                                     <>
                                         <L lang='en'>Confirm</L>
@@ -151,7 +153,7 @@ const Assignment = ({ id: path }) => {
                             <L lang='en'>You’ve completed {title}!</L>
                             <L lang='ru'>Вы завершили {title}!</L>
                         </h2>
-                        <Button size='large' onClick={closeModal}>
+                        <Button onClick={closeModal}>
                             <L lang='en'>Back to chapter</L>
                             <L lang='ru'>Вернуться к главе</L>
                         </Button>
