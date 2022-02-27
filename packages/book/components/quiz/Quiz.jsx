@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import pt from 'prop-types';
 import { logEvent } from '@sc/tools/amplitude';
 import { Button, Modal } from '@sc/ui';
@@ -16,9 +16,10 @@ const Quiz = ({ id: path }) => {
         quiz = quizzes[book]?.[id],
         [opened, setOpened] = useState(false),
         [i, setI] = useState(0),
-        [currentAnswer, setCurrentAnswer] = useState(),
         { courses, updateCourse } = useApp(),
-        answers = courses[book]?.quizzes?.[id] || [];
+        answers = courses[book]?.quizzes?.[id] || [],
+        memo = useRef(answers),
+        [currentAnswer, setCurrentAnswer] = useState(memo.current[i]);
 
     const openModal = useCallback(() => {
         if (quiz) {
@@ -41,13 +42,22 @@ const Quiz = ({ id: path }) => {
     }, []);
 
     const handleConfirmAnswer = useCallback(() => {
-        updateCourse(book, 'quiz', { id, answers: [...answers, currentAnswer] });
+        const value = [...memo.current];
+        value[i] = currentAnswer;
+        memo.current = value;
+
+        updateCourse(book, 'quiz', { id, answers: value });
         if (i === quiz.questions.length - 1) submit();
     }, [i, currentAnswer, answers, book, id]);
 
     const handleNext = useCallback(() => {
-        setCurrentAnswer(undefined);
         setI(i + 1);
+        setCurrentAnswer(memo.current[i + 1]);
+    }, [i]);
+
+    const handleBack = useCallback(() => {
+        setI(i - 1);
+        setCurrentAnswer(memo.current[i - 1]);
     }, [i]);
 
     useEffect(() => {
@@ -83,11 +93,16 @@ const Quiz = ({ id: path }) => {
                     <>
                         <Modal.ScrollView>
                             <div className={s.modal}>
+                                {questions.length > 1 && (
+                                    <h3 className={s.counter}>
+                                        {i + 1}/{questions.length}
+                                    </h3>
+                                )}
                                 {question.type === 'multiple-choice' && (
                                     <MultipleChoice
                                         key={i}
                                         {...question}
-                                        answer={answers[i]}
+                                        answer={memo.current[i]}
                                         onChange={handleChangeAnswer}
                                     />
                                 )}
@@ -95,7 +110,7 @@ const Quiz = ({ id: path }) => {
                                     <SingleChoice
                                         key={i}
                                         {...question}
-                                        answer={answers[i]}
+                                        answer={memo.current[i]}
                                         onChange={handleChangeAnswer}
                                     />
                                 )}
@@ -103,7 +118,7 @@ const Quiz = ({ id: path }) => {
                                     <TextInput
                                         key={i}
                                         {...question}
-                                        answer={answers[i]}
+                                        answer={memo.current[i]}
                                         onChange={handleChangeAnswer}
                                     />
                                 )}
@@ -111,19 +126,51 @@ const Quiz = ({ id: path }) => {
                         </Modal.ScrollView>
 
                         <Modal.Footer>
-                            {answers[i] === undefined && (
+                            <div className={s.back}>
+                                {i > 0 && (
+                                    <Button
+                                        icon='arrow-left'
+                                        size='large'
+                                        variant='text'
+                                        onClick={handleBack}
+                                    >
+                                        <L lang='en'>Back</L>
+                                        <L lang='ru'>Назад</L>
+                                    </Button>
+                                )}
+                            </div>
+
+                            {memo.current[i] === undefined && (
                                 <Button
                                     disabled={currentAnswer === undefined}
+                                    size='large'
                                     onClick={handleConfirmAnswer}
                                 >
                                     <L lang='en'>Confirm</L>
                                     <L lang='ru'>Подтвердить</L>
                                 </Button>
                             )}
-                            {answers[i] !== undefined && (
-                                <Button onClick={handleNext}>
-                                    <L lang='en'>Next</L>
-                                    <L lang='ru'>Далее</L>
+                            {memo.current[i] !== undefined && (
+                                <Button
+                                    color='black'
+                                    size='large'
+                                    variant={
+                                        i === quiz.questions.length - 1 ? 'contained' : 'arrow'
+                                    }
+                                    onClick={handleNext}
+                                >
+                                    {i === quiz.questions.length - 1 && (
+                                        <>
+                                            <L lang='en'>Finish quiz</L>
+                                            <L lang='ru'>Завершить тест</L>
+                                        </>
+                                    )}
+                                    {i !== quiz.questions.length - 1 && (
+                                        <>
+                                            <L lang='en'>Next question</L>
+                                            <L lang='ru'>Следующий вопрос</L>
+                                        </>
+                                    )}
                                 </Button>
                             )}
                         </Modal.Footer>

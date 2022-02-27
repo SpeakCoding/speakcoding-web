@@ -25,3 +25,16 @@
     margin-bottom: 24px;
     line-height: 32px;
 }
+
+.back {
+    flex: 1;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    margin: -24px 0 24px;
+    color: var(--c-grey-500);
+}

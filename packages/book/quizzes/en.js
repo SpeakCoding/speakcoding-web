@@ -8,7 +8,7 @@ export default {
         questions: [
             {
                 type: 'multiple-choice',
-                title: '1. The Instagram app consists of:',
+                title: 'The Instagram app consists of:',
                 options: [
                     { title: 'Comments' },
                     { title: 'Posts' },
@@ -21,7 +21,7 @@ export default {
             },
             {
                 type: 'multiple-choice',
-                title: '2. A Post consists of:',
+                title: 'A Post consists of:',
                 options: [
                     { title: 'Users', correct: true },
                     { title: 'Images/Videos', correct: true },
@@ -39,7 +39,7 @@ export default {
         questions: [
             {
                 type: 'multiple-choice',
-                title: '1. The properties of a User in Instagram are:',
+                title: 'The properties of a User in Instagram are:',
                 options: [
                     { title: 'Comment' },
                     { title: "The account having a 'Business' status", correct: true },
@@ -52,13 +52,13 @@ export default {
             },
             {
                 type: 'text',
-                title: '2. Class is ...',
+                title: 'Class is ...',
                 comment:
                     "While you could have chosen different words for the description, the important thing here is to clarify the principle by which we define a class. It is a 'type' of element, a template that gives a general description of the composition of all specific objects of this type (all instances of this class)."
             },
             {
                 type: 'multiple-choice',
-                title: "3. Imagine an office desk. Let's say 'Desk' is a class. What are some of the properties of this class?",
+                title: "Imagine an office desk. Let's say 'Desk' is a class. What are some of the properties of this class?",
                 options: [
                     { title: 'Color', correct: true },
                     { title: 'My computer, which is sitting on the desk' },
@@ -71,7 +71,7 @@ export default {
             },
             {
                 type: 'multiple-choice',
-                title: '4. List all elements that can be categorized as a class:',
+                title: 'List all elements that can be categorized as a class:',
                 options: [
                     { title: 'Comment', correct: true },
                     { title: 'Save a story' },
@@ -92,13 +92,13 @@ export default {
         questions: [
             {
                 type: 'text',
-                title: '1. What is a function?',
+                title: 'What is a function?',
                 comment:
                     'You could have chosen other words for the description. But the important thing is learning to differentiate a function from a class in code. A function defines which actions can be performed with examples of classes and lists the steps that a computer must take to perform these actions.'
             },
             {
                 type: 'multiple-choice',
-                title: '2. Which one of the options below is a function?',
+                title: 'Which one of the options below is a function?',
                 options: [
                     { title: "Liking a friend's Instagram post" },
                     { title: 'Messaging a friend' },
@@ -111,7 +111,7 @@ export default {
             },
             {
                 type: 'multiple-choice',
-                title: '3. Which one is NOT a function?',
+                title: 'Which one is NOT a function?',
                 options: [
                     { title: 'Number of comments', correct: true },
                     { title: 'Creating an Instagram Story' },
@@ -123,7 +123,7 @@ export default {
             },
             {
                 type: 'multiple-choice',
-                title: '4. What is the order of actions to tag a friend in a post?',
+                title: 'What is the order of actions to tag a friend in a post?',
                 options: [
                     {
                         title: 'Select a friend, Click on the button “Create post”, Add an Image, Click "Save", Click on “Tag friend”'
@@ -147,7 +147,7 @@ export default {
             },
             {
                 type: 'text',
-                title: '5. This is the function for editing a Post. What is the class type that the function returns?',
+                title: 'This is the function for editing a Post. What is the class type that the function returns?',
                 code: `
                 func editCaption(newCaption Text) {
                     currentCaption = newCaption
@@ -165,7 +165,7 @@ export default {
         questions: [
             {
                 type: 'multiple-choice',
-                title: '1. Why do we need to create class instances?',
+                title: 'Why do we need to create class instances?',
                 options: [
                     {
                         title: 'To be able to manipulate an instance of a class',
@@ -180,7 +180,7 @@ export default {
             },
             {
                 type: 'multiple-choice',
-                title: '2. This is a definition of the Post class (picture below). We create a new instance of the Post class: var myPost = new Post(). Which attribute is NOT a part of myPost?',
+                title: 'This is a definition of the Post class (picture below). We create a new instance of the Post class: var myPost = new Post(). Which attribute is NOT a part of myPost?',
                 code: `
                 class {{hl:Post}}(steel-blue) {
                     {{hl:user}}(light-sky-blue)            {{hl:User}}(light-sky-blue)
@@ -202,7 +202,7 @@ export default {
             },
             {
                 type: 'text',
-                title: "3. What's missing from the constructor below?",
+                title: "What's missing from the constructor below?",
                 code: `
                 {{hl:User}}(steel-blue)({{hl:inputUsername Text}}(orange), {{hl:inputEmail Text}}(orange), {{hl:inputPassword Text}}(orange)) {
                     {{hl:self.username = inputUsername}}(red)
@@ -214,7 +214,7 @@ export default {
             },
             {
                 type: 'text',
-                title: '4. Write a constructor function for the Post class based on the User example you saw in Chapter III.',
+                title: 'Write a constructor function for the Post class based on the User example you saw in Chapter III.',
                 comment:
                     "In the constructor function, we specify the inputs needed to create an example of the Post class, i.e. user, text, picture and/or video, creation date, and location. The date is usually assigned automatically, while the location can be determined using the device's automatic location capability. When you come to work with SpeakCoding's app code, you will see how this is written in code."
             }
@@ -227,7 +227,7 @@ export default {
         questions: [
             {
                 type: 'multiple-choice',
-                title: '1. What class type is stored in this variable?',
+                title: 'What class type is stored in this variable?',
                 options: [
                     { title: 'Post' },
                     { title: 'User', correct: true },
@@ -239,7 +239,7 @@ export default {
             },
             {
                 type: 'single-choice',
-                title: '2. Insert value instead of ???:',
+                title: 'Insert value instead of ???:',
                 code: `
                 func addLike(user User) {
                     var newLike {{hl:???}}(red)
@@ -264,7 +264,7 @@ export default {
         questions: [
             {
                 type: 'single-choice',
-                title: '1. You have the currentPost variable, which stores an instance of a Post, and the newCaption variable, which stores new text for this post. What operation can be performed to refresh the text of this post?',
+                title: 'You have the currentPost variable, which stores an instance of a Post, and the newCaption variable, which stores new text for this post. What operation can be performed to refresh the text of this post?',
                 options: [
                     { title: 'currentPost = newCaption' },
                     { title: 'newCaption = currentPost' },
@@ -283,7 +283,7 @@ export default {
         questions: [
             {
                 type: 'multiple-choice',
-                title: '1. On which screen can one user follow another?',
+                title: 'On which screen can one user follow another?',
                 options: [
                     { title: 'List of likes', correct: true },
                     { title: 'User profile', correct: true },
@@ -302,7 +302,7 @@ export default {
         questions: [
             {
                 type: 'single-choice',
-                title: '1. The edit-post screen is defined in the PostEditorController class. What on the list is NOT a component of this class?',
+                title: 'The edit-post screen is defined in the PostEditorController class. What on the list is NOT a component of this class?',
                 img: img_8_1,
                 options: [
                     { title: 'Post Image' },
@@ -322,7 +322,7 @@ export default {
         questions: [
             {
                 type: 'single-choice',
-                title: '1. For which element of the PostFeedView interface do we need to add function execution when we double-click on that element?',
+                title: 'For which element of the PostFeedView interface do we need to add function execution when we double-click on that element?',
                 options: [
                     { title: 'Like Button' },
                     { title: 'Image', correct: true },
@@ -340,7 +340,7 @@ export default {
         questions: [
             {
                 type: 'multiple-choice',
-                title: '1. Which of these files describes our main structural (modal) classes?',
+                title: 'Which of these files describes our main structural (modal) classes?',
                 options: [
                     { title: 'User.swift', correct: true },
                     { title: 'UserProfileView.swift' },
@@ -352,7 +352,7 @@ export default {
             },
             {
                 type: 'single-choice',
-                title: '2. How many classes in our repository describe the View and/or Controller classes for our User class?',
+                title: 'How many classes in our repository describe the View and/or Controller classes for our User class?',
                 options: [
                     { title: '7', correct: true },
                     { title: '3' },
@@ -371,7 +371,7 @@ export default {
         questions: [
             {
                 type: 'text',
-                title: '1. What are we aiming to achieve with the following code?',
+                title: 'What are we aiming to achieve with the following code?',
                 code: `
                 var lastFollower User
                 lastFollower = myAccount.getFollowers().last.getUserName()`,
@@ -380,7 +380,7 @@ export default {
             },
             {
                 type: 'text',
-                title: '2. What are we aiming to achieve with the following code?',
+                title: 'What are we aiming to achieve with the following code?',
                 code: `
                 var lastPostLikes Set[Like]
                 lastPostLikes = myAccount.getLastPost().getLikes()`,
@@ -388,7 +388,7 @@ export default {
             },
             {
                 type: 'text',
-                title: '3. Which function is missing from the following string?',
+                title: 'Which function is missing from the following string?',
                 code: `
                 var mutedSubscriptions Set[User]
                 mutedSubscriptions = myAccount.{{hl:???}}(red).muted()`,
@@ -396,7 +396,7 @@ export default {
             },
             {
                 type: 'text',
-                title: '4. Which class does commentReplies belong to?',
+                title: 'Which class does commentReplies belong to?',
                 code: `
                 var commentReply {{hl:???}}(red)
                 commentReply = myLastPost.getComment().last.getReply()`,
@@ -404,7 +404,7 @@ export default {
             },
             {
                 type: 'text',
-                title: '5. What needs to be added to the following code to receive comments to your recent stories?',
+                title: 'What needs to be added to the following code to receive comments to your recent stories?',
                 code: `
                 var storyReplies Set[Comment]
                 storyReplies = myAccount.getStories().{{hl:???}}(red)`,

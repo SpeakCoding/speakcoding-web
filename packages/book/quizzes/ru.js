@@ -8,7 +8,7 @@ export default {
         questions: [
             {
                 type: 'multiple-choice',
-                title: '1. Инстаграм состоит из:',
+                title: 'Инстаграм состоит из:',
                 options: [
                     { title: 'Comments' },
                     { title: 'Posts' },
@@ -21,7 +21,7 @@ export default {
             },
             {
                 type: 'multiple-choice',
-                title: '2. Пост состоит из:',
+                title: 'Пост состоит из:',
                 options: [
                     { title: 'Users', correct: true },
                     { title: 'Images/Videos', correct: true },
@@ -40,7 +40,7 @@ export default {
         questions: [
             {
                 type: 'multiple-choice',
-                title: '1. К характеристикам профилей пользователей в Инстаграме относятся:',
+                title: 'К характеристикам профилей пользователей в Инстаграме относятся:',
                 options: [
                     { title: 'Comment' },
                     { title: "'Business' статус профиля пользователя", correct: true },
@@ -53,13 +53,13 @@ export default {
             },
             {
                 type: 'text',
-                title: '2. Класс - это...',
+                title: 'Класс - это...',
                 comment:
                     'Вы могли выбрать для описания какие-то другие слова, здесь важно уяснить принцип, по которому мы определяем класс. Это "тип" сущностей, шаблон, который в общем виде описывает то, из чего будут состоять все конкретные объекты такого типа (экземпляры этого класса).'
             },
             {
                 type: 'multiple-choice',
-                title: '3. Представьте свой рабочий стол. Давайте считать, что стол - это класс. Что из списка ниже относится к характеристикам этого класса?',
+                title: 'Представьте свой рабочий стол. Давайте считать, что стол - это класс. Что из списка ниже относится к характеристикам этого класса?',
                 options: [
                     { title: 'Цвет', correct: true },
                     { title: 'Компьютер, который стоит на столе' },
@@ -72,7 +72,7 @@ export default {
             },
             {
                 type: 'multiple-choice',
-                title: '4. Перечислите все элементы, которые могут быть классами:',
+                title: 'Перечислите все элементы, которые могут быть классами:',
                 options: [
                     { title: 'Comment', correct: true },
                     { title: 'Сохранение story' },
@@ -93,13 +93,13 @@ export default {
         questions: [
             {
                 type: 'text',
-                title: '1. Что такое функция?',
+                title: 'Что такое функция?',
                 comment:
                     'Вы могли выбрать для описания какие-то другие слова, главное - научиться отличать функцию от класса в коде. Функция описывает то, какие действия можно совершать с экземплярами классов и является перечислением шагов, которые машина должна выполнить для осуществления этих действий.'
             },
             {
                 type: 'multiple-choice',
-                title: '2. Какой из вариантов ответа ниже является функцией?',
+                title: 'Какой из вариантов ответа ниже является функцией?',
                 options: [
                     { title: 'Лайк поста друга в Инстаграме' },
                     { title: 'Отправка сообщения другу' },
@@ -112,7 +112,7 @@ export default {
             },
             {
                 type: 'multiple-choice',
-                title: '3. Какой из вариантов ниже НЕ является функцией?',
+                title: 'Какой из вариантов ниже НЕ является функцией?',
                 options: [
                     { title: 'Число комментариев', correct: true },
                     { title: 'Создание Story в Инстаграме' },
@@ -124,7 +124,7 @@ export default {
             },
             {
                 type: 'multiple-choice',
-                title: '4. Какой порядок действий программа должна совершить, чтобы отметить друга в посте?',
+                title: 'Какой порядок действий программа должна совершить, чтобы отметить друга в посте?',
                 options: [
                     {
                         title: 'Нажать "создать пост", выбрать друга, нажать "отметить друга", добавить картинку, сохранить'
@@ -148,7 +148,7 @@ export default {
             },
             {
                 type: 'text',
-                title: '5. Ниже описана функция editCaption класса Post. К какому классу принадлежит значение, которое мы получим в результате исполнения функции?',
+                title: 'Ниже описана функция editCaption класса Post. К какому классу принадлежит значение, которое мы получим в результате исполнения функции?',
                 code: `
                 func editCaption(newCaption Text) {
                     currentCaption = newCaption
@@ -166,7 +166,7 @@ export default {
         questions: [
             {
                 type: 'multiple-choice',
-                title: '1. Зачем мы создаем экземпляры классов?',
+                title: 'Зачем мы создаем экземпляры классов?',
                 options: [
                     {
                         title: 'Чтобы иметь возможность изменять конкретный экземпляр',
@@ -181,7 +181,7 @@ export default {
             },
             {
                 type: 'multiple-choice',
-                title: '2. Ниже перед вами - описание класса Post. Представьте, что мы создаем новый экземпляр класса Post: var myPost = new Post(); Какая из составляющих ниже не будет являться частью myPost?',
+                title: 'Ниже перед вами - описание класса Post. Представьте, что мы создаем новый экземпляр класса Post: var myPost = new Post(); Какая из составляющих ниже не будет являться частью myPost?',
                 code: `
                 class {{hl:Post}}(steel-blue) {
                     {{hl:user}}(light-sky-blue)            {{hl:User}}(light-sky-blue)
@@ -203,7 +203,7 @@ export default {
             },
             {
                 type: 'text',
-                title: '3. Чего не хватает в функции-конструкторе ниже?',
+                title: 'Чего не хватает в функции-конструкторе ниже?',
                 code: `
                 {{hl:User}}(steel-blue)({{hl:inputUsername Text}}(orange), {{hl:inputEmail Text}}(orange), {{hl:inputPassword Text}}(orange)) {
                     {{hl:self.username = inputUsername}}(red)
@@ -215,7 +215,7 @@ export default {
             },
             {
                 type: 'text',
-                title: '4. На примере с User, описанном в главе, напишите функцию-конструктор для класса Post.',
+                title: 'На примере с User, описанном в главе, напишите функцию-конструктор для класса Post.',
                 comment:
                     'В функции-конструкторе мы указываем те вводные, которые потребуются для создания экземпляра класса пост - пользователь, текст поста, картинка и/или видео поста, дата создания, локация. В большинстве случаев дата присваивается автоматически, а локацию можно выбрать относительно автоматически определяющего положение устройства. Позже, при работе с кодом приложения SpeakCoding, вы увидите, как это записывается в коде.'
             }
@@ -228,7 +228,7 @@ export default {
         questions: [
             {
                 type: 'multiple-choice',
-                title: '1. Какому классу принадлежит экземпляр, который мы сохранили в переменной: var nameUser?',
+                title: 'Какому классу принадлежит экземпляр, который мы сохранили в переменной: var nameUser?',
                 options: [
                     { title: 'Post' },
                     { title: 'User', correct: true },
@@ -240,7 +240,7 @@ export default {
             },
             {
                 type: 'single-choice',
-                title: '2. Какое значение нужно вставить вместо знаков вопроса ниже?',
+                title: 'Какое значение нужно вставить вместо знаков вопроса ниже?',
                 code: `
                 func addLike(user User) {
                     var newLike {{hl:???}}(red)
@@ -265,7 +265,7 @@ export default {
         questions: [
             {
                 type: 'single-choice',
-                title: '1. У вас есть переменная currentPost, хранящая экземпляр Поста, и переменная newCaption, хранящая новый текст для этого поста. Какой операцией можно обновить текст этого поста?',
+                title: 'У вас есть переменная currentPost, хранящая экземпляр Поста, и переменная newCaption, хранящая новый текст для этого поста. Какой операцией можно обновить текст этого поста?',
                 options: [
                     { title: 'currentPost = newCaption' },
                     { title: 'newCaption = currentPost' },
@@ -284,7 +284,7 @@ export default {
         questions: [
             {
                 type: 'multiple-choice',
-                title: '1. На каком экране/экранах пользователь может подписаться на другого пользователя?',
+                title: 'На каком экране/экранах пользователь может подписаться на другого пользователя?',
                 options: [
                     { title: 'Список лайков', correct: true },
                     { title: 'Профиль пользователя', correct: true },
@@ -303,7 +303,7 @@ export default {
         questions: [
             {
                 type: 'single-choice',
-                title: '1. Ниже описан класс PostEditorController - экрана редактирования поста. Что из перечисленного НЕ является составляющей этого класса?',
+                title: 'Ниже описан класс PostEditorController - экрана редактирования поста. Что из перечисленного НЕ является составляющей этого класса?',
                 img: img_8_1,
                 options: [
                     { title: 'Post Image' },
@@ -323,7 +323,7 @@ export default {
         questions: [
             {
                 type: 'single-choice',
-                title: '1. Для какого элемента интерфейса PostFeedView необходимо добавить исполнение функции при двойном быстром нажатии на этот элемент?',
+                title: 'Для какого элемента интерфейса PostFeedView необходимо добавить исполнение функции при двойном быстром нажатии на этот элемент?',
                 options: [
                     { title: 'Like Button' },
                     { title: 'Image', correct: true },
@@ -341,7 +341,7 @@ export default {
         questions: [
             {
                 type: 'multiple-choice',
-                title: '1. Какие из перечисленных файлов описывают наши основные (Model) классы?',
+                title: 'Какие из перечисленных файлов описывают наши основные (Model) классы?',
                 options: [
                     { title: 'User.swift', correct: true },
                     { title: 'UserProfileView.swift' },
@@ -353,7 +353,7 @@ export default {
             },
             {
                 type: 'single-choice',
-                title: '2. Сколько файлов, описывающих View и/или Controller классы для нашего основного класса User, находится в нашем репозитории?',
+                title: 'Сколько файлов, описывающих View и/или Controller классы для нашего основного класса User, находится в нашем репозитории?',
                 options: [
                     { title: '7', correct: true },
                     { title: '3' },
@@ -372,7 +372,7 @@ export default {
         questions: [
             {
                 type: 'text',
-                title: '1. Что мы пытаемся сделать в коде ниже?',
+                title: 'Что мы пытаемся сделать в коде ниже?',
                 code: `
                 var lastFollower User
                 lastFollower = myAccount.getFollowers().last.getUserName()`,
@@ -381,7 +381,7 @@ export default {
             },
             {
                 type: 'text',
-                title: '2. Что мы пытаемся сделать в коде ниже?',
+                title: 'Что мы пытаемся сделать в коде ниже?',
                 code: `
                 var lastPostLikes Set[Like]
                 lastPostLikes = myAccount.getLastPost().getLikes()`,
@@ -389,7 +389,7 @@ export default {
             },
             {
                 type: 'text',
-                title: '3. Какая функция отсутствует в строчке ниже?',
+                title: 'Какая функция отсутствует в строчке ниже?',
                 code: `
                 var mutedSubscriptions Set[User]
                 mutedSubscriptions = myAccount.{{hl:???}}(red).muted()`,
@@ -397,7 +397,7 @@ export default {
             },
             {
                 type: 'text',
-                title: '4. К какому классу принадлежит commentReply?',
+                title: 'К какому классу принадлежит commentReply?',
                 code: `
                 var commentReply {{hl:???}}(red)
                 commentReply = myLastPost.getComment().last.getReply()`,
@@ -405,7 +405,7 @@ export default {
             },
             {
                 type: 'text',
-                title: '5. Что нужно добавить к коду ниже, чтобы получить ответы на ваши последние сториз?',
+                title: 'Что нужно добавить к коду ниже, чтобы получить ответы на ваши последние сториз?',
                 code: `
                 var storyReplies Set[Comment]
                 storyReplies = myAccount.getStories().{{hl:???}}(red)`,

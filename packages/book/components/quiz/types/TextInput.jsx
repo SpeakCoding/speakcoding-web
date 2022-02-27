@@ -19,7 +19,7 @@ const TextInput = ({ answer, comment, title, onChange, ...props }) => {
 
     return (
         <>
-            <h2 className={s.label}>{title}</h2>
+            <h3 className={s.label}>{title}</h3>
 
             <Assets {...props} />
 
