@@ -1,7 +1,6 @@
 import React from 'react';
 import pt from 'prop-types';
-import classNames from 'classnames';
-import { Link } from '@sc/ui';
+import { Button, Link } from '@sc/ui';
 import L from '../localize';
 import { useApp } from '../../tools';
 import s from './next.css';
@@ -20,7 +19,7 @@ const Next = ({ href, children }) => {
     return (
         <div className={s.box}>
             {disabled && (
-                <h3 className={classNames(s.button, s.disabled)}>
+                <Button color='black' size='large' variant='arrow'>
                     {children}
                     {!children && (
                         <>
@@ -28,12 +27,12 @@ const Next = ({ href, children }) => {
                             <L lang='ru'>Следующая часть</L>
                         </>
                     )}
-                </h3>
+                </Button>
             )}
 
             {!disabled && (
                 <Link href={url}>
-                    <h3 className={s.button}>
+                    <Button color='black' size='large' variant='arrow'>
                         {children}
                         {!children && (
                             <>
@@ -41,7 +40,7 @@ const Next = ({ href, children }) => {
                                 <L lang='ru'>Следующая часть</L>
                             </>
                         )}
-                    </h3>
+                    </Button>
                 </Link>
             )}
         </div>

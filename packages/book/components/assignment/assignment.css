@@ -91,7 +91,19 @@
     cursor: pointer;
 }
 
-.space {
-    display: inline-block;
-    width: 16px;
+.back {
+    flex: 1;
+}
+
+.cancel {
+    margin-right: 24px;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    margin: -24px 0 24px;
+    color: var(--c-grey-500);
 }
