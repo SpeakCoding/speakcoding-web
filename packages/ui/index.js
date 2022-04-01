@@ -1,3 +1,4 @@
+export Accordion from './components/accordion';
 export Breadcrumbs from './components/breadcrumbs';
 export Button from './components/button';
 export Callout from './components/callout';
