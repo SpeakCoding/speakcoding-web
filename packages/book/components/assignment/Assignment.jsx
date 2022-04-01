@@ -6,27 +6,21 @@ import { useApp } from '../../tools';
 import assignments from '../../assignments';
 import Card from '../card';
 import Markdown from '../quiz/blocks/Markdown';
+import Review from '../review';
 import Questions from './Questions';
 
 const Assignment = ({ id: path }) => {
     const [book, id] = useMemo(() => path.split('/'), [path]),
         assignment = assignments[book]?.[id],
-        [modal, setModal] = useState({ opened: false }),
+        [modal, setModal] = useState(undefined),
         { courses } = useApp(),
         answers = courses[book]?.assignments?.[id] || [],
         firstTime = answers.length === 0;
 
-    const openModal = useCallback(
-        mode => {
-            if (assignment) setModal({ opened: true, mode });
-        },
-        [assignment]
-    );
+    const closeModal = useCallback(() => setModal(undefined), []);
 
-    const closeModal = useCallback(() => setModal(current => ({ ...current, opened: false })), []);
-
-    const handleEdit = useCallback(() => openModal('change'), [openModal]),
-        handleReview = useCallback(() => openModal('review'), [openModal]);
+    const handleEdit = useCallback(() => setModal('change'), []),
+        handleReview = useCallback(() => setModal('review'), []);
 
     if (!assignment) return null;
 
@@ -38,6 +32,12 @@ const Assignment = ({ id: path }) => {
                 <Card.Title>{title}</Card.Title>
                 <Markdown>{description}</Markdown>
                 <Card.Footer>
+                    {!firstTime && (
+                        <Button color='black' onClick={handleReview}>
+                            <L lang='en'>Watch your review</L>
+                            <L lang='ru'>Посмотреть обзор</L>
+                        </Button>
+                    )}
                     <Button
                         color='black'
                         variant={firstTime ? 'contained' : 'outlined'}
@@ -60,24 +60,24 @@ const Assignment = ({ id: path }) => {
                 </Card.Footer>
             </Card>
 
-            <Modal opened={modal.opened} onClose={closeModal}>
+            <Modal opened={modal === 'change'} onClose={closeModal}>
                 <Modal.Title>
                     {time && firstTime && <Card.Time absolute value={time} />}
                     {title}
                 </Modal.Title>
 
-                {modal.mode === 'change' && (
-                    <Questions
-                        book={book}
-                        id={id}
-                        assignment={assignment}
-                        answers={answers}
-                        firstTime={firstTime}
-                        opened={modal.opened}
-                        closeModal={closeModal}
-                    />
-                )}
+                <Questions
+                    book={book}
+                    id={id}
+                    assignment={assignment}
+                    answers={answers}
+                    firstTime={firstTime}
+                    opened={modal === 'change'}
+                    closeModal={closeModal}
+                />
             </Modal>
+
+            <Review id={path} opened={modal === 'review'} onClose={closeModal} />
         </>
     );
 };

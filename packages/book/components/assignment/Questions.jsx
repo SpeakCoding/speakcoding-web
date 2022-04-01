@@ -83,7 +83,7 @@ const Questions = ({ book, id, opened, closeModal }) => {
                             )}
                             <Content
                                 key={i}
-                                {...questions[i]}
+                                question={questions[i]}
                                 answer={memo.current[i]}
                                 onChange={handleChangeAnswer}
                             />

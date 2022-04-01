@@ -43,7 +43,7 @@
     max-height: 80vh;
     padding: 32px;
     box-sizing: border-box;
-    border-radius: 16px;
+    border-radius: 12px;
     background-color: var(--c-white);
     font: var(--t-base);
     opacity: 0;

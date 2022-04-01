@@ -13,6 +13,14 @@
     padding: 32px 40px;
 }
 
+[data-expand-content] .wrapper {
+    padding-left: 0;
+}
+
+[data-expand-content] .box {
+    margin-right: 0;
+}
+
 .box.quiz {
     background-color: var(--c-sc-yellow);
 }
@@ -32,8 +40,8 @@
     line-height: 24px;
 }
 
-.title {
-    margin-bottom: 8px;
+.content .title {
+    margin: 0 0 8px;
     font-family: var(--font-family-brand);
 }
 

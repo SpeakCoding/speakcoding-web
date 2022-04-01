@@ -8,8 +8,8 @@ import Markdown from '../quiz/blocks/Markdown';
 import OpenNewTab from '../quiz/blocks/OpenNewTab';
 import s from './assignment.css';
 
-const Content = ({ answer, onChange, ...props }) => {
-    const { ask, code, details, example, img, title, Asset } = props,
+const Content = ({ question, answer, hideAnswer, hideLabel, onChange }) => {
+    const { ask, code, details, example, img, title, Asset } = question,
         formattedCode = useMemo(() => (code ? fixTabs(code) : null), [code]),
         { choose } = useLocale(),
         [showField, setShowField] = useState(!ask || !!answer);
@@ -33,9 +33,11 @@ const Content = ({ answer, onChange, ...props }) => {
 
     return (
         <>
-            <h3 className={s.label}>
-                <Markdown>{title}</Markdown>
-            </h3>
+            {!hideLabel && (
+                <h3 className={s.label}>
+                    <Markdown>{title}</Markdown>
+                </h3>
+            )}
 
             {details && (
                 <div className={s.text}>
@@ -96,7 +98,7 @@ const Content = ({ answer, onChange, ...props }) => {
                 </div>
             )}
 
-            {showField && (
+            {!hideAnswer && showField && (
                 <Textarea
                     autoheight
                     placeholder={placeholder}
@@ -111,25 +113,16 @@ const Content = ({ answer, onChange, ...props }) => {
 
 Content.propTypes = {
     answer: pt.string,
-    ask: pt.string,
-    code: pt.string,
-    details: pt.string,
-    example: pt.string,
-    img: pt.string,
-    title: pt.string,
-    Asset: pt.func,
+    hideAnswer: pt.bool,
+    hideLabel: pt.bool,
+    question: pt.object.isRequired,
     onChange: pt.func
 };
 
 Content.defaultProps = {
     answer: undefined,
-    ask: undefined,
-    code: undefined,
-    details: undefined,
-    example: undefined,
-    img: undefined,
-    title: undefined,
-    Asset: undefined,
+    hideAnswer: false,
+    hideLabel: false,
     onChange: () => {}
 };
 

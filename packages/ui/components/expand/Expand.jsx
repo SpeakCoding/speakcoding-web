@@ -33,7 +33,9 @@ const Expand = ({ id, opened: initial, children }) => {
             }}
         >
             <div ref={$ref}>
-                <div className={s.content}>{children}</div>
+                <div className={s.content} data-expand-content='yes'>
+                    {children}
+                </div>
             </div>
         </div>
     );

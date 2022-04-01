@@ -1,12 +1,11 @@
-import React, { useCallback, useContext, useEffect } from 'react';
+import React, { useCallback, useContext, useEffect, useMemo } from 'react';
 import pt from 'prop-types';
-import classNames from 'classnames';
-import Icon from '../icon';
-import { context } from './utils';
+import { context, item } from './utils';
 import s from './accordion.css';
 
 const Label = ({ name, expanded: initial, children }) => {
-    const { expanded, setExpanded } = useContext(context);
+    const { expanded, setExpanded } = useContext(context),
+        value = useMemo(() => ({ name, expanded }), [name, expanded]);
 
     const handleClick = useCallback(() => setExpanded(name), [name, setExpanded]);
 
@@ -16,10 +15,7 @@ const Label = ({ name, expanded: initial, children }) => {
 
     return (
         <div className={s.label} onClick={handleClick}>
-            <div className={s.control}>{children}</div>
-            <div className={classNames(s.icon, expanded === name && s.expanded)}>
-                <Icon name='chevron-right' size={24} />
-            </div>
+            <item.Provider value={value}>{children}</item.Provider>
         </div>
     );
 };
