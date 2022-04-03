@@ -3,7 +3,7 @@ import pt from 'prop-types';
 import { debounce, throttle } from '@sc/tools/function';
 import { useLocationState } from '@sc/ui/hooks';
 import { useApp } from '../../tools';
-import Profile from './Profile';
+import Profile from './profile';
 import s from './header.css';
 
 const $html = document.getElementsByTagName('html')[0];

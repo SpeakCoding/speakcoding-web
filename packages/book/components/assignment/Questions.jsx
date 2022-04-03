@@ -2,16 +2,14 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import pt from 'prop-types';
 import { Button, Modal } from '@sc/ui';
 import L from '../localize';
-import { useAPI, useApp } from '../../tools';
-import assignments from '../../assignments';
+import { useAPI, useApp, useAssignment } from '../../tools';
 import Content from './Content';
 import s from './assignment.css';
 
-const Questions = ({ book, id, opened, closeModal }) => {
+const Questions = ({ id, opened, closeModal }) => {
     const [i, setI] = useState(0),
-        { courses, updateCourse } = useApp(),
-        assignment = assignments[book]?.[id],
-        answers = courses[book]?.assignments?.[id] || [],
+        { courseID, assignmentID, assignment, answers } = useAssignment(id),
+        { updateCourse } = useApp(),
         memo = useRef(answers),
         [currentAnswer, setCurrentAnswer] = useState(memo.current[i]),
         api = useAPI(),
@@ -21,7 +19,7 @@ const Questions = ({ book, id, opened, closeModal }) => {
         value => {
             if (JSON.stringify(answers) === JSON.stringify(value)) return;
 
-            updateCourse(book, 'assignment', { id, answers: value });
+            updateCourse(courseID, 'assignment', { id: assignmentID, answers: value });
 
             const payload = {
                 title: assignment.title,
@@ -32,12 +30,12 @@ const Questions = ({ book, id, opened, closeModal }) => {
                 })
             };
             api.post('/assignments/deliver.json', {
-                course_id: book,
-                assignment_id: id,
+                course_id: courseID,
+                assignment_id: assignmentID,
                 variables: payload
             });
         },
-        [assignment, book, id, answers]
+        [assignment, courseID, assignmentID, answers]
     );
 
     const handleChangeAnswer = useCallback(value => {
@@ -166,14 +164,12 @@ const Questions = ({ book, id, opened, closeModal }) => {
 };
 
 Questions.propTypes = {
-    book: pt.string,
     id: pt.string,
     opened: pt.bool,
     closeModal: pt.func
 };
 
 Questions.defaultProps = {
-    book: undefined,
     id: undefined,
     opened: false,
     closeModal: () => {}

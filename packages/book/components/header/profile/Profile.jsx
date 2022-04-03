@@ -1,8 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import { Drawer } from '@sc/ui';
-import { useApp } from '../../tools';
-import L from '../localize';
+import { useApp } from '../../../tools';
+import L from '../../localize';
 import AdminPanel from './AdminPanel';
+import Progress from '../progress';
 import s from './profile.css';
 
 const Profile = () => {
@@ -25,18 +26,18 @@ const Profile = () => {
                 {profile.name}
                 <img src={profile.picture} alt='' className={s.userpic} />
             </div>
+
             <Drawer opened={opened} onClose={close}>
                 <div className={s.content}>
                     <img src={profile.picture} alt='' className={s.ava} />
                     <div className={s.name}>{profile.name}</div>
-                    <div className={s.email}>{profile.email}</div>
-                    <div>{profile.group?.title || null}</div>
-                    <div className={s.gap} />
-                    <AdminPanel />
+                    <div className={s.text}>{profile.group?.title || null}</div>
                     <div className={s.logout} onClick={logout}>
                         <L lang='en'>Log out</L>
                         <L lang='ru'>Выйти</L>
                     </div>
+                    <Progress />
+                    <AdminPanel />
                 </div>
             </Drawer>
         </>

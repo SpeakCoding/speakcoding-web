@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@sc/ui';
-import { useAPI, useApp } from '../../tools';
+import { useAPI, useApp } from '../../../tools';
 
 const AdminPanel = () => {
     const fetch = useAPI(),
@@ -15,12 +15,12 @@ const AdminPanel = () => {
     if (!admin) return null;
 
     return (
-        <>
-            <div>
-                <Button onClick={resetCourses}>Reset courses</Button>
-                <br /> <br />
-            </div>
-        </>
+        <div>
+            <br />
+            <Button onClick={resetCourses}>Reset courses</Button>
+            <br />
+            <br />
+        </div>
     );
 };
 

@@ -1,0 +1,55 @@
+.overall {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.bar {
+    position: relative;
+    height: 8px;
+    margin-bottom: 40px;
+    background-color: var(--c-grey-200);
+}
+
+.done {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--c-sc-purple);
+}
+
+.label {
+    margin-bottom: 16px;
+}
+
+.label.disabled {
+    display: flex;
+    align-items: center;
+    color: var(--c-grey-300);
+    cursor: not-allowed;
+}
+
+.chapter {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 16px;
+}
+
+.assignment {
+    display: grid;
+    grid-template-columns: 24px 1fr auto;
+    column-gap: 16px;
+    align-items: center;
+    margin-bottom: 8px;
+    color: var(--c-grey-500);
+}
+
+.assignment:last-child {
+    margin-bottom: 40px;
+}
+
+.action {
+    text-decoration: underline;
+}

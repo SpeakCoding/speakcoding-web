@@ -1,26 +1,41 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import pt from 'prop-types';
+import { useLocationState } from '@sc/ui/hooks';
 import { Button, Modal } from '@sc/ui';
 import L from '../localize';
-import { useApp } from '../../tools';
-import assignments from '../../assignments';
+import { useAssignment } from '../../tools';
 import Card from '../card';
 import Markdown from '../quiz/blocks/Markdown';
 import Review from '../review';
 import Questions from './Questions';
+import s from './assignment.css';
 
-const Assignment = ({ id: path }) => {
-    const [book, id] = useMemo(() => path.split('/'), [path]),
-        assignment = assignments[book]?.[id],
+const Assignment = ({ id }) => {
+    const { assignmentID, assignment, answers } = useAssignment(id),
         [modal, setModal] = useState(undefined),
-        { courses } = useApp(),
-        answers = courses[book]?.assignments?.[id] || [],
-        firstTime = answers.length === 0;
+        firstTime = answers.length === 0,
+        [{ query }, , replaceState] = useLocationState(),
+        $ref = useRef();
 
     const closeModal = useCallback(() => setModal(undefined), []);
 
     const handleEdit = useCallback(() => setModal('change'), []),
         handleReview = useCallback(() => setModal('review'), []);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (query.assignment && assignmentID === query.assignment && $ref.current) {
+                $ref.current.scrollIntoView();
+                if (query.action === 'edit') handleEdit();
+                if (query.action === 'review') handleReview();
+                replaceState('?');
+            }
+        }, 100);
+
+        return () => {
+            clearTimeout(timer);
+        };
+    }, [query]);
 
     if (!assignment) return null;
 
@@ -28,6 +43,7 @@ const Assignment = ({ id: path }) => {
 
     return (
         <>
+            <div ref={$ref} className={s.anchor} />
             <Card variant='assignment'>
                 <Card.Title>{title}</Card.Title>
                 <Markdown>{description}</Markdown>
@@ -35,7 +51,7 @@ const Assignment = ({ id: path }) => {
                     {!firstTime && (
                         <Button color='black' onClick={handleReview}>
                             <L lang='en'>Watch your review</L>
-                            <L lang='ru'>Посмотреть обзор</L>
+                            <L lang='ru'>Посмотреть разбор</L>
                         </Button>
                     )}
                     <Button
@@ -67,7 +83,6 @@ const Assignment = ({ id: path }) => {
                 </Modal.Title>
 
                 <Questions
-                    book={book}
                     id={id}
                     assignment={assignment}
                     answers={answers}
@@ -77,7 +92,7 @@ const Assignment = ({ id: path }) => {
                 />
             </Modal>
 
-            <Review id={path} opened={modal === 'review'} onClose={closeModal} />
+            <Review id={id} opened={modal === 'review'} onClose={closeModal} />
         </>
     );
 };

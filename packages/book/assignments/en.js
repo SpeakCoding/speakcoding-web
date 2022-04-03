@@ -18,7 +18,8 @@ export default {
                     'You can choose to open another app that you use regularly, and define its composition.'
             }
         ],
-        time: '~30-40 min'
+        time: '~30-40 min',
+        chapter: 1
     },
     2: {
         title: 'Assignment #2',
@@ -36,7 +37,8 @@ export default {
                     replies (class Set of Comments)`
             }
         ],
-        time: '~30-40 min'
+        time: '~30-40 min',
+        chapter: 1
     },
     3: {
         title: 'Assignment #3',
@@ -49,7 +51,8 @@ export default {
                 Asset: Asset_3_1
             }
         ],
-        time: '~30-40 min'
+        time: '~30-40 min',
+        chapter: 2
     },
     4: {
         title: 'Assignment #4',
@@ -60,7 +63,8 @@ export default {
                 title: 'Consider which screens the User class will require (e.g. creation, editing, lists).'
             }
         ],
-        time: '~20-30 min'
+        time: '~20-30 min',
+        chapter: 4
     },
     5: {
         title: 'Assignment #5',
@@ -70,7 +74,8 @@ export default {
                 title: 'Describe (list) what the user profile screen consists of.'
             }
         ],
-        time: '~15-20 min'
+        time: '~15-20 min',
+        chapter: 4
     },
     6: {
         title: 'Assignment #6',
@@ -81,7 +86,8 @@ export default {
                 title: 'In the SpeakCoding repository (see the link at the beginning of Chapter V), find a controller file describing the display class of the PostFeedView, and list all of its components and functions.'
             }
         ],
-        time: '~30-40 min'
+        time: '~30-40 min',
+        chapter: 5
     },
     7: {
         title: 'Assignment #7',
@@ -92,7 +98,8 @@ export default {
                 ask: 'Were you able to create a local copy of the repository?'
             }
         ],
-        time: '~5 min'
+        time: '~5 min',
+        chapter: 5
     },
     8: {
         title: 'Assignment #8',
@@ -103,7 +110,8 @@ export default {
                 ask: 'Were you able to create your own code branch with the Name_Surname title and switch to it?'
             }
         ],
-        time: '~3 min'
+        time: '~3 min',
+        chapter: 5
     },
     9: {
         title: 'Assignment #9',
@@ -115,7 +123,8 @@ export default {
                 ask: 'Were you able to install Xcode on your computer, launch the editor, and open the downloaded project?'
             }
         ],
-        time: '~3 min'
+        time: '~3 min',
+        chapter: 5
     },
     10: {
         title: 'Assignment #10',
@@ -127,7 +136,8 @@ export default {
                 ask: 'Were you able to complete the assignment?'
             }
         ],
-        time: '~5 min'
+        time: '~5 min',
+        chapter: 5
     },
     11: {
         title: 'Assignment #11',
@@ -142,7 +152,8 @@ export default {
                 ask: 'Were you able to complete the assignment?'
             }
         ],
-        time: '~5 min'
+        time: '~5 min',
+        chapter: 5
     },
     12: {
         title: 'Assignment #12',
@@ -157,7 +168,8 @@ export default {
                 ask: 'Were you able to complete the assignment?'
             }
         ],
-        time: '~3 min'
+        time: '~3 min',
+        chapter: 5
     },
     13: {
         title: 'Assignment #13',
@@ -168,7 +180,8 @@ export default {
                 title: 'Go through all of the files in the file list to the left and state briefly what each one describes. For example, the User.swift file contains a description of the User class.'
             }
         ],
-        time: '~30 min'
+        time: '~30 min',
+        chapter: 5
     },
     14: {
         title: 'Assignment #14',
@@ -179,7 +192,8 @@ export default {
                 title: 'Unpack the .xib file for User Profile (UserProfileView.xib) into its constituent elements.'
             }
         ],
-        time: '~20 min'
+        time: '~20 min',
+        chapter: 5
     },
     15: {
         title: 'Assignment #15',
@@ -195,7 +209,9 @@ export default {
                 title: 'Find out how to create an element feed in a Swift app. Paste the link to the article you found here.'
             }
         ],
-        time: '~5 min'
+        time: '~5 min',
+        review: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        chapter: 6
     },
     16: {
         title: 'Assignment #16',
@@ -208,7 +224,8 @@ export default {
                 title: 'Find a description of Swift’s standard Label class and discover how to import the class. Paste the link to the article you found into the field below.'
             }
         ],
-        time: '~5 min'
+        time: '~5 min',
+        chapter: 6
     },
     17: {
         title: 'Assignment #17',
@@ -221,7 +238,8 @@ export default {
                 code: `'{"post": {"caption": "This is my first post!", "user": "liberman1984", "comments": []}}'`
             }
         ],
-        time: '~5 min'
+        time: '~5 min',
+        chapter: 8
     },
     18: {
         title: 'Assignment #18',
@@ -233,7 +251,8 @@ export default {
                 Asset: Asset_18_1
             }
         ],
-        time: '~30 min'
+        time: '~30 min',
+        chapter: 8
     },
     19: {
         title: 'Assignment #19',
@@ -246,7 +265,8 @@ export default {
                 Asset: Asset_19_1
             }
         ],
-        time: '~15 min'
+        time: '~15 min',
+        chapter: 8
     },
     20: {
         title: 'Assignment #20',
@@ -257,7 +277,8 @@ export default {
                 title: 'In the SpeakCoding repository, open the Cache.swift file, then list the functions and describe briefly what they do.'
             }
         ],
-        time: '~30 min'
+        time: '~30 min',
+        chapter: 8
     },
     21: {
         title: 'Assignment #21',
@@ -267,7 +288,8 @@ export default {
                 title: 'In the code of the SpeakCoding app, find the part of the code that creates the Post table and paste it here.'
             }
         ],
-        time: '~3 min'
+        time: '~3 min',
+        chapter: 8
     },
     22: {
         title: 'Assignment #22',
@@ -278,7 +300,8 @@ export default {
                 title: 'In Cache.swift file, find the function that is responsible for editing Posts and describe that function’s steps.'
             }
         ],
-        time: '~30 min'
+        time: '~30 min',
+        chapter: 8
     },
     23: {
         title: 'Assignment #23',
@@ -289,7 +312,8 @@ export default {
                 title: 'State what endpoint we need to add to a request to be able to read a list of the user’s followers.'
             }
         ],
-        time: '~5 min'
+        time: '~5 min',
+        chapter: 9
     },
     24: {
         title: 'Assignment #24',
@@ -300,7 +324,8 @@ export default {
                 title: 'Which request helps us retrieve the most recent comments to the user’s last post? Write the entire request using the examples from Chapter IX.'
             }
         ],
-        time: '~20 min'
+        time: '~20 min',
+        chapter: 9
     },
     25: {
         title: 'Assignment #25',
@@ -314,7 +339,8 @@ export default {
                 title: 'In the temporary variable requestParameters, we store the post components in a format that can be written as a string. List the post components that we save in this variable.'
             }
         ],
-        time: '~15 min'
+        time: '~15 min',
+        chapter: 9
     },
     26: {
         title: 'Assignment #26',
@@ -325,7 +351,8 @@ export default {
                 title: 'Find the file that defines how to create the Comments table on the server, and describe which fields, and what type of fields, we create in this file.'
             }
         ],
-        time: '~20 min'
+        time: '~20 min',
+        chapter: 10
     },
     27: {
         title: 'Assignment #27',
@@ -336,7 +363,8 @@ export default {
                 title: 'On the server, find the file that describes the User class and see which links are defined between the user and other model classes. Describe them in basic terms. Next, find all the functions that we define for this class (User), and describe in basic terms (in your own words) what you understand these functions to do.'
             }
         ],
-        time: '~15 min'
+        time: '~15 min',
+        chapter: 10
     },
     28: {
         title: 'Assignment #28',
@@ -347,7 +375,8 @@ export default {
                 title: 'Unpack the sign-up and update functions (defined in the first part of Chapter XI), following the show function example in the text. Paste the link to the document you have created here.'
             }
         ],
-        time: '~30-45 min'
+        time: '~30-45 min',
+        chapter: 11
     },
     29: {
         title: 'Assignment #29',
@@ -358,6 +387,7 @@ export default {
                 title: 'In the server-side code, look at the controller for the User class and the corresponding part of the routes.rb configuration file. List the requests that the server might process for users, the URLs for these requests, and the request types (GET, POST, etc.).'
             }
         ],
-        time: '~15 min'
+        time: '~15 min',
+        chapter: 11
     }
 };

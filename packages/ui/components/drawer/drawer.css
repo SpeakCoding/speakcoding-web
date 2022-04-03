@@ -75,3 +75,19 @@
 .close:hover {
     opacity: 1;
 }
+
+
+.wrapper {
+    flex: 1;
+    display: flex;
+    margin: 0 -40px;
+    padding: 0 40px;
+    overflow: hidden;
+}
+
+.scroll {
+    flex: 1;
+    margin-right: -100px;
+    padding-right: 100px;
+    overflow-y: auto;
+}

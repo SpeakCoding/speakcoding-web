@@ -1,18 +1,14 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import pt from 'prop-types';
-import { Accordion, Icon, Modal } from '@sc/ui';
+import { Accordion, Modal } from '@sc/ui';
 import L from '../localize';
-import { useApp } from '../../tools';
-import assignments from '../../assignments';
+import { useAssignment } from '../../tools';
 import Markdown from '../quiz/blocks/Markdown';
 import Question from '../assignment/Content';
 import s from './review.css';
 
-const Review = ({ id: path, opened, onClose }) => {
-    const [book, id] = useMemo(() => path.split('/'), [path]),
-        assignment = assignments[book]?.[id],
-        { courses } = useApp(),
-        answers = courses[book]?.assignments?.[id] || [];
+const Review = ({ id, opened, onClose }) => {
+    const { assignment, answers } = useAssignment(id);
 
     if (!assignment) return null;
 

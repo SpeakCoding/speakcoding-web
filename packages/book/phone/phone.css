@@ -26,7 +26,7 @@
     transition: var(--animation);
     transition-property: right, bottom, transform, opacity;
     pointer-events: none;
-    z-index: var(--l-modal);
+    z-index: var(--l-drawer);
     --scale: 1;
 }
 
