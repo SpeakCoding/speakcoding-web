@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { Drawer } from '@sc/ui';
+import { Drawer, Link } from '@sc/ui';
 import { useApp } from '../../../tools';
 import L from '../../localize';
 import AdminPanel from './AdminPanel';
@@ -31,7 +31,16 @@ const Profile = () => {
                 <div className={s.content}>
                     <img src={profile.picture} alt='' className={s.ava} />
                     <div className={s.name}>{profile.name}</div>
-                    <div className={s.text}>{profile.group?.title || null}</div>
+
+                    {profile.group?.chat_url && (
+                        <Link href={profile.group.chat_url} blank>
+                            <div className={s.link}>{profile.group?.title || null}</div>
+                        </Link>
+                    )}
+                    {!profile.group?.chat_url && (
+                        <div className={s.text}>{profile.group?.title || null}</div>
+                    )}
+
                     <div className={s.logout} onClick={logout}>
                         <L lang='en'>Log out</L>
                         <L lang='ru'>Выйти</L>

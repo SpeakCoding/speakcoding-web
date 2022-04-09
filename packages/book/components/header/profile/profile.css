@@ -41,14 +41,18 @@
     color: var(--c-grey-500);
 }
 
-.logout {
+.link {
     composes: text;
-    display: inline-block;
-    margin-bottom: 48px;
     cursor: pointer;
     transition: color var(--animation);
 }
 
-.logout:hover {
+.link:hover {
     color: var(--c-primary-500);
+}
+
+.logout {
+    composes: link;
+    display: inline-block;
+    margin-bottom: 48px;
 }
