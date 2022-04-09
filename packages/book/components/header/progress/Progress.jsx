@@ -22,11 +22,14 @@ const Progress = () => {
 
         const groups = structure.map(chapter => {
             const items = chapter.items.map(item => {
-                let done = false;
+                let done = false,
+                    review = false;
 
                 if (item.type === 'assignment') {
+                    const assignment = assignments[lang][item.id];
+                    review = !!assignment.review;
                     done =
-                        assignments[lang][item.id].questions.length ===
+                        assignment.questions.length ===
                         (courses[lang]?.assignments?.[item.id] || []).length;
                 }
 
@@ -41,9 +44,10 @@ const Progress = () => {
                     id: item.id,
                     type: item.type,
                     done,
+                    review,
                     link: `/${lang}/chapter-${chapter.id}?${qs.stringify({
                         [item.type]: item.id,
-                        action: item.type === 'quiz' || !done ? 'edit' : 'review'
+                        action: !review || !done ? 'edit' : 'review'
                     })}`
                 };
             });
@@ -135,10 +139,26 @@ const Progress = () => {
 
                                             <Link href={item.link}>
                                                 <div className={s.action}>
-                                                    {item.done && (
+                                                    {item.done && item.type === 'assignment' && (
                                                         <>
-                                                            <L lang='en'>See review</L>
-                                                            <L lang='ru'>Разбор</L>
+                                                            {item.review && (
+                                                                <>
+                                                                    <L lang='en'>See review</L>
+                                                                    <L lang='ru'>Разбор</L>
+                                                                </>
+                                                            )}
+                                                            {!item.review && (
+                                                                <>
+                                                                    <L lang='en'>Change</L>
+                                                                    <L lang='ru'>Изменить</L>
+                                                                </>
+                                                            )}
+                                                        </>
+                                                    )}
+                                                    {item.done && item.type === 'quiz' && (
+                                                        <>
+                                                            <L lang='en'>See answers</L>
+                                                            <L lang='ru'>Посмотреть</L>
                                                         </>
                                                     )}
                                                     {!item.done && (

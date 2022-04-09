@@ -34,7 +34,7 @@ const Assignment = ({ id }) => {
                 <Card.Title>{title}</Card.Title>
                 <Markdown>{description}</Markdown>
                 <Card.Footer>
-                    {!firstTime && (
+                    {!firstTime && assignment.review && (
                         <Button color='black' onClick={handleReview}>
                             <L lang='en'>Watch your review</L>
                             <L lang='ru'>Посмотреть разбор</L>
