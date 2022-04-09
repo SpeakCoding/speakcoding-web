@@ -107,8 +107,3 @@
     margin: -24px 0 24px;
     color: var(--c-grey-500);
 }
-
-.anchor {
-    position: absolute;
-    margin-top: -100px;
-}

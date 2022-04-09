@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import pt from 'prop-types';
-import { expanded } from './utils';
+import { context, expanded } from './utils';
 import s from './expand.css';
 
 const Expand = ({ id, opened: initial, children }) => {
     const [height, setHeight] = useState(),
+        $box = useRef(),
         $ref = useRef();
 
     if (!expanded.has(id)) expanded.set(id, initial);
@@ -14,6 +15,23 @@ const Expand = ({ id, opened: initial, children }) => {
         const { height: next } = $ref.current.getBoundingClientRect();
         setHeight(next);
     };
+
+    const value = useMemo(
+        () => ({
+            expand: () => {
+                if (!$box.current) return null;
+
+                const current = $box.current.dataset.expanded === 'false';
+                expanded.set(id, true);
+                $box.current.dataset.expanded = true;
+
+                return new Promise(r => {
+                    setTimeout(r, current ? 240 : 0);
+                });
+            }
+        }),
+        [id]
+    );
 
     useEffect(() => {
         window.addEventListener('resize', init);
@@ -25,6 +43,7 @@ const Expand = ({ id, opened: initial, children }) => {
 
     return (
         <div
+            ref={$box}
             className={s.box}
             data-expanded={opened}
             id={id}
@@ -34,7 +53,7 @@ const Expand = ({ id, opened: initial, children }) => {
         >
             <div ref={$ref}>
                 <div className={s.content} data-expand-content='yes'>
-                    {children}
+                    <context.Provider value={value}>{children}</context.Provider>
                 </div>
             </div>
         </div>

@@ -37,7 +37,7 @@
     margin-left: 16px;
 }
 
-.assignment {
+.item {
     display: grid;
     grid-template-columns: 24px 1fr auto;
     column-gap: 16px;
@@ -46,7 +46,7 @@
     color: var(--c-grey-500);
 }
 
-.assignment:last-child {
+.item:last-child {
     margin-bottom: 40px;
 }
 

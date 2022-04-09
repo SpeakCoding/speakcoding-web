@@ -1,6 +1,5 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import pt from 'prop-types';
-import { useLocationState } from '@sc/ui/hooks';
 import { Button, Modal } from '@sc/ui';
 import L from '../localize';
 import { useAssignment } from '../../tools';
@@ -8,34 +7,16 @@ import Card from '../card';
 import Markdown from '../quiz/blocks/Markdown';
 import Review from '../review';
 import Questions from './Questions';
-import s from './assignment.css';
 
 const Assignment = ({ id }) => {
-    const { assignmentID, assignment, answers } = useAssignment(id),
+    const { assignment, answers } = useAssignment(id),
         [modal, setModal] = useState(undefined),
-        firstTime = answers.length === 0,
-        [{ query }, , replaceState] = useLocationState(),
-        $ref = useRef();
+        firstTime = answers.length === 0;
 
     const closeModal = useCallback(() => setModal(undefined), []);
 
     const handleEdit = useCallback(() => setModal('change'), []),
         handleReview = useCallback(() => setModal('review'), []);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            if (query.assignment && assignmentID === query.assignment && $ref.current) {
-                $ref.current.scrollIntoView();
-                if (query.action === 'edit') handleEdit();
-                if (query.action === 'review') handleReview();
-                replaceState('?');
-            }
-        }, 100);
-
-        return () => {
-            clearTimeout(timer);
-        };
-    }, [query]);
 
     if (!assignment) return null;
 
@@ -43,7 +24,12 @@ const Assignment = ({ id }) => {
 
     return (
         <>
-            <div ref={$ref} className={s.anchor} />
+            <Card.Anchor
+                id={id}
+                type='assignment'
+                openEdit={handleEdit}
+                openReview={handleReview}
+            />
             <Card variant='assignment'>
                 <Card.Title>{title}</Card.Title>
                 <Markdown>{description}</Markdown>

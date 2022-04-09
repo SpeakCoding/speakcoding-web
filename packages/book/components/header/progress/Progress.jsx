@@ -1,10 +1,13 @@
 import React, { Fragment, useMemo } from 'react';
 import classNames from 'classnames';
+import qs from 'qs';
 import { Accordion, Drawer, Icon, Link } from '@sc/ui';
 import { round } from '@sc/tools/number';
 import { useApp } from '../../../tools';
 import L from '../../localize';
 import assignments from '../../../assignments';
+import quizzes from '../../../quizzes';
+import { structure } from './constants';
 import s from './progress.css';
 
 const percents = value => Math.min(100, round(value * 100, 0));
@@ -15,36 +18,47 @@ const Progress = () => {
         lang = localStorage.getItem('lang');
 
     const progress = useMemo(() => {
-        let groups = Object.keys(assignments[lang]).reduce((memo, id) => {
-            const assignment = assignments[lang][id],
-                answers = courses[lang]?.assignments?.[id] || [],
-                group = memo[assignment.chapter] || [];
-
-            group.push({
-                id,
-                done: answers.length === assignment.questions.length
-            });
-
-            return { ...memo, [assignment.chapter]: group };
-        }, {});
-
         const overall = { total: 0, done: 0 };
 
-        groups = Object.keys(groups)
-            .sort((a, b) => a - b)
-            .map(chapter => {
-                const items = groups[chapter],
-                    countDone = items.filter(item => item.done).length;
+        const groups = structure.map(chapter => {
+            const items = chapter.items.map(item => {
+                let done = false;
 
-                overall.total += items.length;
-                overall.done += countDone;
+                if (item.type === 'assignment') {
+                    done =
+                        assignments[lang][item.id].questions.length ===
+                        (courses[lang]?.assignments?.[item.id] || []).length;
+                }
+
+                if (item.type === 'quiz') {
+                    done =
+                        quizzes[lang][item.id].questions.length ===
+                        (courses[lang]?.quizzes?.[item.id] || []).length;
+                }
 
                 return {
-                    chapter: parseInt(chapter, 10),
-                    progress: percents(countDone / items.length),
-                    items
+                    key: `${item.type}-${item.id}`,
+                    id: item.id,
+                    type: item.type,
+                    done,
+                    link: `/${lang}/chapter-${chapter.id}?${qs.stringify({
+                        [item.type]: item.id,
+                        action: item.type === 'quiz' || !done ? 'edit' : 'review'
+                    })}`
                 };
             });
+
+            const countDone = items.filter(item => item.done).length;
+
+            overall.total += items.length;
+            overall.done += countDone;
+
+            return {
+                chapter: chapter.id,
+                progress: items.length > 0 ? percents(countDone / items.length) : 100,
+                items
+            };
+        });
 
         return {
             groups,
@@ -54,9 +68,6 @@ const Progress = () => {
             expanded: courses[lang]?.pos?.chapter
         };
     }, [courses, maxNumber]);
-
-    const getLink = ({ chapter }, { id, done }) =>
-        `/${lang}/chapter-${chapter}?assignment=${id}&action=${done ? 'review' : 'edit'}`;
 
     return (
         <>
@@ -96,30 +107,41 @@ const Progress = () => {
 
                             <Accordion.Content name={group.chapter}>
                                 <div>
-                                    {group.items.map(assignment => (
-                                        <div key={assignment.id} className={s.assignment}>
+                                    {group.items.map(item => (
+                                        <div key={item.key} className={s.item}>
                                             <Icon
                                                 name={
-                                                    assignment.done
+                                                    item.done
                                                         ? 'check-circle'
                                                         : 'exclamation-circle-filled'
                                                 }
                                                 size={24}
                                             />
-                                            <div>
-                                                <L lang='en'>Assignment #</L>
-                                                <L lang='ru'>Задание №</L>
-                                                {assignment.id}
-                                            </div>
-                                            <Link href={getLink(group, assignment)}>
+
+                                            {item.type === 'assignment' && (
+                                                <div>
+                                                    <L lang='en'>Assignment #</L>
+                                                    <L lang='ru'>Задание №</L>
+                                                    {item.id}
+                                                </div>
+                                            )}
+                                            {item.type === 'quiz' && (
+                                                <div>
+                                                    <L lang='en'>Quiz #</L>
+                                                    <L lang='ru'>Тест №</L>
+                                                    {item.id}
+                                                </div>
+                                            )}
+
+                                            <Link href={item.link}>
                                                 <div className={s.action}>
-                                                    {assignment.done && (
+                                                    {item.done && (
                                                         <>
                                                             <L lang='en'>See review</L>
                                                             <L lang='ru'>Разбор</L>
                                                         </>
                                                     )}
-                                                    {!assignment.done && (
+                                                    {!item.done && (
                                                         <>
                                                             <L lang='en'>Do now</L>
                                                             <L lang='ru'>Пройти</L>

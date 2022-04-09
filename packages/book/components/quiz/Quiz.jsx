@@ -71,6 +71,7 @@ const Quiz = ({ id: path }) => {
 
     return (
         <>
+            <Card.Anchor id={path} type='quiz' openEdit={openModal} />
             <Card variant='quiz'>
                 <Card.Title>{title}</Card.Title>
                 {description}
