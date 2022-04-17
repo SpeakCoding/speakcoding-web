@@ -1,8 +1,10 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { checkLang } from './tools/system';
 import App from './App';
 
 checkLang();
 
-render(<App />, document.getElementById('app'));
+const root = createRoot(document.getElementById('app'));
+
+root.render(<App />);
