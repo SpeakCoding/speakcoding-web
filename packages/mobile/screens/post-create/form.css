@@ -50,3 +50,7 @@
 .arrow {
     color: var(--c-grey-400);
 }
+
+.share {
+    font-size: 17px;
+}

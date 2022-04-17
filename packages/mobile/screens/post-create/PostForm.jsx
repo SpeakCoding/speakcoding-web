@@ -56,7 +56,9 @@ const PostForm = () => {
                 New post
                 <Header.Right onClick={handleSubmit}>
                     <HL.Shape label='post-create-share'>
-                        <Button variant='text'>Share</Button>
+                        <Button variant='text'>
+                            <span className={s.share}>Share</span>
+                        </Button>
                     </HL.Shape>
                 </Header.Right>
             </Header>

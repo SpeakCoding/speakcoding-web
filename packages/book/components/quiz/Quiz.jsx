@@ -19,7 +19,8 @@ const Quiz = ({ id: path }) => {
         { courses, updateCourse } = useApp(),
         answers = courses[book]?.quizzes?.[id] || [],
         memo = useRef(answers),
-        [currentAnswer, setCurrentAnswer] = useState(memo.current[i]);
+        [currentAnswer, setCurrentAnswer] = useState(memo.current[i]),
+        done = quiz.questions.length === answers.length;
 
     const openModal = useCallback(() => {
         if (quiz) {
@@ -76,11 +77,25 @@ const Quiz = ({ id: path }) => {
                 <Card.Title>{title}</Card.Title>
                 {description}
                 <Card.Footer>
-                    <Button color='black' onClick={openModal}>
-                        <L lang='en'>Complete quiz</L>
-                        <L lang='ru'>Пройти тест</L>
+                    <Button
+                        color='black'
+                        variant={done ? 'outlined' : 'contained'}
+                        onClick={openModal}
+                    >
+                        {done && (
+                            <>
+                                <L lang='en'>Watch your review</L>
+                                <L lang='ru'>Посмотреть разбор</L>
+                            </>
+                        )}
+                        {!done && (
+                            <>
+                                <L lang='en'>Complete quiz</L>
+                                <L lang='ru'>Пройти тест</L>
+                            </>
+                        )}
                     </Button>
-                    {time && <Card.Time color='black' value={time} />}
+                    {time && !done && <Card.Time color='black' value={time} />}
                 </Card.Footer>
             </Card>
 

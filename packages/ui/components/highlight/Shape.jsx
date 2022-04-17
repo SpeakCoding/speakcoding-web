@@ -54,7 +54,7 @@ const Shape = ({ active, caption, label, variant, children }) => {
     useEffect(() => {
         setTimeout(() => {
             setRand(Math.random());
-        }, 300);
+        }, 500);
     }, [scale, refresh]);
 
     if (basic) return cloneElement(children, { ref: $ref });

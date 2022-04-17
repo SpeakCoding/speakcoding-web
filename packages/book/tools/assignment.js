@@ -15,6 +15,6 @@ export function useAssignment(id) {
             assignment,
             answers
         }),
-        [id]
+        [courseID, assignmentID, answers]
     );
 }

@@ -157,8 +157,8 @@ const Progress = () => {
                                                     )}
                                                     {item.done && item.type === 'quiz' && (
                                                         <>
-                                                            <L lang='en'>See answers</L>
-                                                            <L lang='ru'>Посмотреть</L>
+                                                            <L lang='en'>See review</L>
+                                                            <L lang='ru'>Разбор</L>
                                                         </>
                                                     )}
                                                     {!item.done && (

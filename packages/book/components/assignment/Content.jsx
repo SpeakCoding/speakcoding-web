@@ -79,22 +79,28 @@ const Content = ({ question, answer, hideAnswer, hideLabel, onChange }) => {
             {ask && (
                 <div className={s.text}>
                     <div>{ask}</div>
-                    <div className={s.options}>
-                        <label className={s.option}>
-                            <Radio
-                                name='ask'
-                                value={!answer && answer !== undefined}
-                                onChange={handleChangeAsk('yes')}
-                            />
-                            <L lang='en'>Yes</L>
-                            <L lang='ru'>Да</L>
-                        </label>
-                        <label className={s.option}>
-                            <Radio name='ask' value={!!answer} onChange={handleChangeAsk('no')} />
-                            <L lang='en'>No</L>
-                            <L lang='ru'>Нет</L>
-                        </label>
-                    </div>
+                    {!hideAnswer && (
+                        <div className={s.options}>
+                            <label className={s.option}>
+                                <Radio
+                                    name='ask'
+                                    value={!answer && answer !== undefined}
+                                    onChange={handleChangeAsk('yes')}
+                                />
+                                <L lang='en'>Yes</L>
+                                <L lang='ru'>Да</L>
+                            </label>
+                            <label className={s.option}>
+                                <Radio
+                                    name='ask'
+                                    value={!!answer}
+                                    onChange={handleChangeAsk('no')}
+                                />
+                                <L lang='en'>No</L>
+                                <L lang='ru'>Нет</L>
+                            </label>
+                        </div>
+                    )}
                 </div>
             )}
 

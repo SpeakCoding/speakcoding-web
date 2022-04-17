@@ -1,9 +1,8 @@
 import React from 'react';
 import pt from 'prop-types';
-import { Accordion, Modal } from '@sc/ui';
+import { Modal } from '@sc/ui';
 import L from '../localize';
 import { useAssignment } from '../../tools';
-import Markdown from '../quiz/blocks/Markdown';
 import Question from '../assignment/Content';
 import s from './review.css';
 
@@ -14,55 +13,35 @@ const Review = ({ id, opened, onClose }) => {
 
     return (
         <Modal opened={opened} onClose={onClose}>
-            <Modal.Title>{assignment.title}</Modal.Title>
-            <Modal.ScrollView>
-                <div className={s.box}>
+            <div className={s.box}>
+                <div className={s.left}>
+                    <h2 className={s.title}>{assignment.title}</h2>
                     <iframe src={assignment.review} className={s.frame} title={assignment.title} />
-
-                    {assignment.questions.length > 1 && (
-                        <Accordion>
-                            {assignment.questions.map((item, i) => (
-                                <div key={item.title} className={s.item}>
-                                    <Accordion.Label name={i} expanded={i === 0}>
-                                        <h3 className={s.label}>
-                                            <Markdown>{item.title}</Markdown>
-                                        </h3>
-                                        <Accordion.Arrow />
-                                    </Accordion.Label>
-                                    <Accordion.Content name={i}>
-                                        <div className={s.space} />
-                                        <Question question={item} hideAnswer hideLabel />
-                                        <div className={s.answer}>
-                                            <b>
-                                                <L lang='en'>Your answer:</L>
-                                                <L lang='ru'>Ваш ответ:</L>
-                                            </b>
-                                            <div className={s.value}>{answers[i]}</div>
-                                        </div>
-                                    </Accordion.Content>
-                                </div>
-                            ))}
-                        </Accordion>
-                    )}
-
-                    {assignment.questions.length === 1 && (
-                        <div key={assignment.questions[0].title} className={s.item}>
-                            <h3 className={s.label}>
-                                <Markdown>{assignment.questions[0].title}</Markdown>
-                            </h3>
-                            <div className={s.space} />
-                            <Question question={assignment.questions[0]} hideAnswer hideLabel />
-                            <div className={s.answer}>
+                </div>
+                <div className={s.right}>
+                    <div className={s.content}>
+                        {assignment.questions.map((item, i) => (
+                            <div key={item.title} className={s.item}>
+                                <Question question={item} answer={answers[i]} hideAnswer />
                                 <b>
                                     <L lang='en'>Your answer:</L>
                                     <L lang='ru'>Ваш ответ:</L>
                                 </b>
-                                <div className={s.value}>{answers[0]}</div>
+                                <div className={s.answer}>
+                                    {item.ask &&
+                                        (answers[i] || (
+                                            <>
+                                                <L lang='en'>Yes</L>
+                                                <L lang='ru'>Да</L>
+                                            </>
+                                        ))}
+                                    {!item.ask && answers[i]}
+                                </div>
                             </div>
-                        </div>
-                    )}
+                        ))}
+                    </div>
                 </div>
-            </Modal.ScrollView>
+            </div>
         </Modal>
     );
 };

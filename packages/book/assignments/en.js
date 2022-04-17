@@ -195,8 +195,7 @@ export default {
                 title: 'Find out how to create an element feed in a Swift app. Paste the link to the article you found here.'
             }
         ],
-        time: '~5 min',
-        review: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+        time: '~5 min'
     },
     16: {
         title: 'Assignment #16',
