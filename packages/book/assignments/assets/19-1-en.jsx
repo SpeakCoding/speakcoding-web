@@ -6,7 +6,7 @@ const code =
     '{{hl:number_of_comments=1}}(wheat) {{hl:WHERE id=1}}(green-yellow);';
 
 const Asset = () => (
-    <Grid cols='1fr 1fr 1fr'>
+    <Grid cols='repeat(3, auto)'>
         <Grid.Cell border='right bottom'>
             <b>Request description</b>
         </Grid.Cell>

@@ -38,3 +38,10 @@
 .cell pre {
     white-space: pre-wrap;
 }
+
+@media (max-width: 1366px) {
+    [data-context=modal-review] .cell {
+        padding: 4px 8px;
+        font-size: 14px;
+    }
+}

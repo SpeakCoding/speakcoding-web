@@ -16,10 +16,18 @@ const Review = ({ id, opened, onClose }) => {
             <div className={s.box}>
                 <div className={s.left}>
                     <h2 className={s.title}>{assignment.title}</h2>
-                    <iframe src={assignment.review} className={s.frame} title={assignment.title} />
+                    <div className={s.video}>
+                        <iframe
+                            allow='autoplay; fullscreen; picture-in-picture; encrypted-media;'
+                            allowFullScreen
+                            className={s.frame}
+                            src={assignment.review}
+                            title={assignment.title}
+                        />
+                    </div>
                 </div>
                 <div className={s.right}>
-                    <div className={s.content}>
+                    <div className={s.content} data-context='modal-review'>
                         {assignment.questions.map((item, i) => (
                             <div key={item.title} className={s.item}>
                                 <Question question={item} answer={answers[i]} hideAnswer />

@@ -6,7 +6,7 @@ const Asset = () => (
         <p>
             <b>Comments</b> Table
         </p>
-        <Grid cols='repeat(5, 1fr)'>
+        <Grid cols='repeat(5, auto)'>
             <Grid.Cell border='right bottom' semidense='top bottom'>
                 id
             </Grid.Cell>
@@ -31,7 +31,7 @@ const Asset = () => (
         <p>
             <b>Posts</b> Table
         </p>
-        <Grid cols='repeat(4, 1fr)'>
+        <Grid cols='repeat(4, auto)'>
             <Grid.Cell border='right bottom' semidense='top bottom' hlactive>
                 <HL color='green'>id</HL>
             </Grid.Cell>
@@ -52,7 +52,7 @@ const Asset = () => (
         <p>
             <b>Users</b> Table
         </p>
-        <Grid cols='repeat(4, 1fr)'>
+        <Grid cols='repeat(4, auto)'>
             <Grid.Cell border='right bottom' semidense='top bottom' hlactive>
                 <HL color='orange'>id</HL>
             </Grid.Cell>

@@ -84,7 +84,7 @@ const Quiz = ({ id: path }) => {
                     >
                         {done && (
                             <>
-                                <L lang='en'>Watch your review</L>
+                                <L lang='en'>See review</L>
                                 <L lang='ru'>Посмотреть разбор</L>
                             </>
                         )}

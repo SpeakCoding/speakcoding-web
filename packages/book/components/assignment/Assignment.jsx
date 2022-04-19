@@ -20,8 +20,6 @@ const Assignment = ({ id }) => {
 
     if (!assignment) return null;
 
-    // assignment.review = 'https://www.youtube.com/embed/dQw4w9WgXcQ';
-
     const { title, description, time } = assignment;
 
     return (
@@ -38,7 +36,7 @@ const Assignment = ({ id }) => {
                 <Card.Footer>
                     {!firstTime && assignment.review && (
                         <Button color='black' onClick={handleReview}>
-                            <L lang='en'>Watch your review</L>
+                            <L lang='en'>Watch review</L>
                             <L lang='ru'>Посмотреть разбор</L>
                         </Button>
                     )}
