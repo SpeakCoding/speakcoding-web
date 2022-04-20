@@ -1,7 +1,8 @@
 import React from 'react';
 import { Callout, Img, Section } from '@sc/ui';
 import img from './numbers.svg';
-import { Time } from '../../../components';
+import { Intro, Time } from '../../../components';
+import intro from './intro.png';
 
 export default () => (
     <Section>
@@ -14,6 +15,7 @@ export default () => (
         <Section.Block>
             <Section.Main>
                 <Time.Chapter value='~20 мин' />
+                <Intro pic={intro} video='https://kinescope.io/embed/201125767' />
                 <p>
                     Язык программирования - такой же язык, как и любой другой, которым мы
                     пользуемся. Его задача - описывать мир вокруг нас, называть предметы и явления.

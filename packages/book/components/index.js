@@ -3,6 +3,7 @@ export CourseSelect from './course-select';
 export FlagSteps from './flag-steps';
 export Glossary from './glossary';
 export Header from './header';
+export Intro from './intro';
 export L from './localize';
 export Layout from './layout';
 export Logo from './logo';
