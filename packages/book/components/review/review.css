@@ -17,13 +17,15 @@
 }
 
 .title {
-    margin-bottom: 32px;
+    padding-bottom: 32px;
 }
 
 .video {
     flex: 1;
     display: flex;
     align-items: center;
+    justify-content: center;
+    min-height: 0;
 }
 
 .frame {

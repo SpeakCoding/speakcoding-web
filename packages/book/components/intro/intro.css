@@ -8,12 +8,28 @@
 }
 
 .content {
+    margin: -32px;
+    padding: 56px 32px 32px;
+    box-sizing: border-box;
+}
+
+.content.width {
     width: 80vw;
-    padding-top: 24px;
+}
+
+.content.height {
+    height: 80vh;
 }
 
 .frame {
-    width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
     border: none;
+}
+
+.content.width .frame {
+    width: 100%;
+}
+
+.content.height .frame {
+    height: 100%;
 }
