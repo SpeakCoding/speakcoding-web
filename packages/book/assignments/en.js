@@ -205,7 +205,7 @@ export default {
                 title: 'Find a standard UIKit library and discover how to import it when writing code. Paste the link to the article you found into the field below.'
             },
             {
-                title: 'Find a description of Swift’s standard Label class and discover how to import the class. Paste the link to the article you found into the field below.'
+                title: 'Find a description of Swift’s standard UILabel class and discover how to import the class. Paste the link to the article you found into the field below.'
             }
         ],
         time: '~5 min'
@@ -261,10 +261,10 @@ export default {
     },
     21: {
         title: 'Assignment #21',
-        description: 'Find the part of the code that creates the Post table',
+        description: 'Find the part of the code that creates the Posts table',
         questions: [
             {
-                title: 'In the code of the SpeakCoding app, find the part of the code that creates the Post table and paste it here.'
+                title: 'In the code of the SpeakCoding app, find the part of the code that creates the Posts table and paste it here.'
             }
         ],
         time: '~3 min'

@@ -91,11 +91,6 @@ export default () => (
                         code.
                     </li>
                     <li>
-                        Storyboard, an embedded editor which we can use to lay out designs for
-                        various screens (views), schematically describe the transition between them,
-                        and add buttons.
-                    </li>
-                    <li>
                         .plist - a file describing the <Term id='compiler'>compiler’s</Term>{' '}
                         parameters.
                     </li>

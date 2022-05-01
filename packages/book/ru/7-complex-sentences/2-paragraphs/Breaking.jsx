@@ -5,9 +5,10 @@ import s from './style.css';
 const code6 = `
 private {{hl:func}}(orange) {{hl:updateLikes}}(sandy-brown)() {
     let likerFollowee = {{hl:self.post}}(light-sky-blue).{{hl:likerFollowee}}(green)
-    self.{{hl:likerFolloweeProfilePictureView}}(plum).showImageAsynchronously(imageURL: likerFollowee?.profilePictureURL)
     {{hl:if likerFollowee != nil}}(red) {
+\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0self.{{hl:likerFolloweeProfilePictureView}}(plum).showImageAsynchronously(imageURL: likerFollowee?.profilePictureURL)
         let textTemplate = (self.post.{{hl:numberOfLikes > 1}}(aquamarine)) ? {{hl:"Liked by {user} and {others}" : "Liked by {user}"}}(wheat)
+        self.likesLabel.text = textTemplate
     }
 }`;
 
