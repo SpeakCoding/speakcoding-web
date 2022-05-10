@@ -29,10 +29,10 @@ const Payment = () => {
     return (
         <>
             <div ref={$ref} className={s.box}>
-                <div className={s.button} onClick={() => setOpened(true)}>
+                <Button color='black' size='large' variant='arrow' onClick={() => setOpened(true)}>
                     <L lang='en'>Continue</L>
                     <L lang='ru'>Далее</L>
-                </div>
+                </Button>
             </div>
 
             <Modal opened={opened} onClose={() => setOpened(false)}>
