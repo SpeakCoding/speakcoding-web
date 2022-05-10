@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { useLocationState } from '@sc/ui/hooks';
 import { Link } from '@sc/ui';
 import L from '../localize';
@@ -7,8 +7,10 @@ import s from './layout.css';
 
 const GlossaryLink = () => {
     const { profile } = useApp(),
-        [{ pathname }, , , goBack] = useLocationState(),
+        [{ pathname }, navigate] = useLocationState(),
         glossary = useMemo(() => /\/(en|ru)\/glossary/.test(pathname), [pathname]);
+
+    const goBack = useCallback(() => navigate(-1), []);
 
     if (!profile.is_paid) return null;
 

@@ -6,7 +6,7 @@ import { Link } from '@sc/ui';
 import s from './navigation.css';
 
 const Item = ({ disabled, href, children }) => {
-    const [{ match }] = useLocationState({ path: href });
+    const [{ match }] = useLocationState({ pattern: href });
 
     if (disabled) return <div className={classNames(s.item, s.text, s.disabled)}>{children}</div>;
 

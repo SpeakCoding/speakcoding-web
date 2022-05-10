@@ -6,7 +6,7 @@ import s from './card.css';
 
 const Anchor = ({ id, type, openEdit, openReview }) => {
     const [, itemId] = useMemo(() => id.split('/'), [id]),
-        [{ query }, , replaceState] = useLocationState(),
+        [{ query }, navigate] = useLocationState(),
         $ref = useRef(),
         { expand } = useContext(context);
 
@@ -17,7 +17,7 @@ const Anchor = ({ id, type, openEdit, openReview }) => {
                 $ref.current.scrollIntoView();
                 if (query.action === 'edit') openEdit();
                 if (query.action === 'review') openReview();
-                replaceState('?');
+                navigate('?', { replace: true });
             }
         }, 100);
 

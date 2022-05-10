@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
-import { useLocation, useHistory, useRouteMatch } from 'react-router-dom';
+import { useLocation, useNavigate, useMatch, useParams } from 'react-router-dom';
 import qs from 'qs';
 
-const parts = {
+const originParts = {
     origin: window.location.origin,
     protocol: window.location.protocol,
     host: window.location.host,
@@ -10,24 +10,26 @@ const parts = {
     port: window.location.port
 };
 
-function useLocationState({ path } = {}) {
+function useLocationState({ pattern = '' } = {}) {
     const location = useLocation(),
-        query = useMemo(() => qs.parse(location.search.replace(/^\?/, '')), [location.search]),
-        history = useHistory(),
-        match = useRouteMatch(path);
+        params = useParams(),
+        navigate = useNavigate(),
+        match = useMatch(pattern);
 
-    return [
-        {
-            ...parts,
+    const query = useMemo(() => qs.parse(location.search.replace(/^\?/, '')), [location.search]);
+
+    const state = useMemo(
+        () => ({
+            ...originParts,
             ...location,
             query,
-            params: match?.params || {},
-            match: !!match
-        },
-        history.push,
-        history.replace,
-        history.goBack
-    ];
+            params,
+            match
+        }),
+        [location, query, params]
+    );
+
+    return [state, navigate];
 }
 
 export default useLocationState;

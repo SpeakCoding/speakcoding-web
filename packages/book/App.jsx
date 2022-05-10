@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useAPI, useCourses } from './tools';
 import { app } from './tools/app';
 import { fixLang } from './tools/system';
@@ -77,12 +77,12 @@ const App = () => {
         return (
             <app.Provider value={context}>
                 <BrowserRouter>
-                    <Switch>
-                        <Route path='/' exact component={Home} />
-                        <Route path='/en/chapter-1' component={EN.Preview} />
-                        <Route path='/ru/chapter-1' component={RU.Preview} />
-                        <Route component={Payment} />
-                    </Switch>
+                    <Routes>
+                        <Route path='/' exact element={<Home />} />
+                        <Route path='/en/chapter-1' element={<EN.Preview />} />
+                        <Route path='/ru/chapter-1' element={<RU.Preview />} />
+                        <Route path='*' element={<Payment />} />
+                    </Routes>
                 </BrowserRouter>
             </app.Provider>
         );
@@ -90,39 +90,39 @@ const App = () => {
     return (
         <app.Provider value={context}>
             <BrowserRouter>
-                <Switch>
-                    <Route path='/en/chapter-1' component={EN.Intro} />
-                    <Route path='/en/chapter-2' component={EN.Functions} />
-                    <Route path='/en/chapter-3' component={EN.Objects} />
-                    <Route path='/en/chapter-4' component={EN.Interface} />
-                    <Route path='/en/chapter-5' component={EN.Repositories} />
-                    <Route path='/en/chapter-6' component={EN.OnlineSearch} />
-                    <Route path='/en/chapter-7' component={EN.ComplexSentences} />
-                    <Route path='/en/chapter-8' component={EN.Storage} />
-                    <Route path='/en/chapter-9' component={EN.API} />
-                    <Route path='/en/chapter-10' component={EN.Backend} />
-                    <Route path='/en/chapter-11' component={EN.Server} />
-                    <Route path='/en/chapter-12' component={EN.Launch} />
-                    <Route path='/en/handbook' component={EN.Handbook} />
-                    <Route path='/en/glossary' component={EN.Glossary} />
+                <Routes>
+                    <Route path='/en/chapter-1' element={<EN.Intro />} />
+                    <Route path='/en/chapter-2' element={<EN.Functions />} />
+                    <Route path='/en/chapter-3' element={<EN.Objects />} />
+                    <Route path='/en/chapter-4' element={<EN.Interface />} />
+                    <Route path='/en/chapter-5' element={<EN.Repositories />} />
+                    <Route path='/en/chapter-6' element={<EN.OnlineSearch />} />
+                    <Route path='/en/chapter-7' element={<EN.ComplexSentences />} />
+                    <Route path='/en/chapter-8' element={<EN.Storage />} />
+                    <Route path='/en/chapter-9' element={<EN.API />} />
+                    <Route path='/en/chapter-10' element={<EN.Backend />} />
+                    <Route path='/en/chapter-11' element={<EN.Server />} />
+                    <Route path='/en/chapter-12' element={<EN.Launch />} />
+                    <Route path='/en/handbook' element={<EN.Handbook />} />
+                    <Route path='/en/glossary' element={<EN.Glossary />} />
 
-                    <Route path='/ru/chapter-1' component={RU.Intro} />
-                    <Route path='/ru/chapter-2' component={RU.Functions} />
-                    <Route path='/ru/chapter-3' component={RU.Objects} />
-                    <Route path='/ru/chapter-4' component={RU.Interface} />
-                    <Route path='/ru/chapter-5' component={RU.Repositories} />
-                    <Route path='/ru/chapter-6' component={RU.OnlineSearch} />
-                    <Route path='/ru/chapter-7' component={RU.ComplexSentences} />
-                    <Route path='/ru/chapter-8' component={RU.Storage} />
-                    <Route path='/ru/chapter-9' component={RU.API} />
-                    <Route path='/ru/chapter-10' component={RU.Backend} />
-                    <Route path='/ru/chapter-11' component={RU.Server} />
-                    <Route path='/ru/chapter-12' component={RU.Launch} />
-                    <Route path='/ru/handbook' component={RU.Handbook} />
-                    <Route path='/ru/glossary' component={RU.Glossary} />
+                    <Route path='/ru/chapter-1' element={<RU.Intro />} />
+                    <Route path='/ru/chapter-2' element={<RU.Functions />} />
+                    <Route path='/ru/chapter-3' element={<RU.Objects />} />
+                    <Route path='/ru/chapter-4' element={<RU.Interface />} />
+                    <Route path='/ru/chapter-5' element={<RU.Repositories />} />
+                    <Route path='/ru/chapter-6' element={<RU.OnlineSearch />} />
+                    <Route path='/ru/chapter-7' element={<RU.ComplexSentences />} />
+                    <Route path='/ru/chapter-8' element={<RU.Storage />} />
+                    <Route path='/ru/chapter-9' element={<RU.API />} />
+                    <Route path='/ru/chapter-10' element={<RU.Backend />} />
+                    <Route path='/ru/chapter-11' element={<RU.Server />} />
+                    <Route path='/ru/chapter-12' element={<RU.Launch />} />
+                    <Route path='/ru/handbook' element={<RU.Handbook />} />
+                    <Route path='/ru/glossary' element={<RU.Glossary />} />
 
-                    <Route component={Home} />
-                </Switch>
+                    <Route path='*' element={<Home />} />
+                </Routes>
             </BrowserRouter>
         </app.Provider>
     );

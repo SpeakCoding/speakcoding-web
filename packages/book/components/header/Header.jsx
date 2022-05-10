@@ -11,13 +11,14 @@ const $html = document.getElementsByTagName('html')[0];
 const Header = ({ chapter, children }) => {
     const { profile, courses, updateCourse } = useApp(),
         $bar = useRef(),
-        [{ params }] = useLocationState({ path: '/:id' }),
-        course = courses[params.id];
+        [{ match }] = useLocationState({ pattern: '/:id/*' }),
+        courseID = match?.params.id,
+        course = courses[courseID];
 
     const savePosition = useCallback(
         debounce(() => {
-            if (params.id && chapter)
-                updateCourse(params.id, 'pos', { chapter, top: $html.scrollTop });
+            if (courseID && chapter)
+                updateCourse(courseID, 'pos', { chapter, top: $html.scrollTop });
         }, 500),
         [updateCourse]
     );
@@ -35,7 +36,7 @@ const Header = ({ chapter, children }) => {
     const init = async () => {
         const max = profile.group.last_chapter_number;
         if (chapter > max) {
-            await updateCourse(params.id, 'pos', { chapter: max, top: 0 });
+            await updateCourse(courseID, 'pos', { chapter: max, top: 0 });
             window.location.href = '/';
         } else handleScroll();
     };
