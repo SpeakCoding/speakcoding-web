@@ -19,8 +19,7 @@ export default {
                     'Вы можете взять другое приложение, которым регулярно пользуетесь, и разобрать его вместо Spotify.'
             }
         ],
-        time: '~30-40 мин',
-        review: 'https://kinescope.io/embed/201125768'
+        time: '~30-40 мин'
     },
     2: {
         title: 'Задание №2',
@@ -38,8 +37,7 @@ export default {
                     replies (class Set of Comments)`
             }
         ],
-        time: '~30-40 мин',
-        review: 'https://kinescope.io/embed/201125770'
+        time: '~30-40 мин'
     },
     3: {
         title: 'Задание №3',

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Callout, Lottie, Section } from '@sc/ui';
+import { Callout, Img, Section } from '@sc/ui';
 import { Assignment, Skill } from '../../../components';
 import Term from '../../glossary/Term';
-import animationData from './img-lottie.json';
+import img from './function.svg';
 
 export default () => (
     <>
@@ -42,11 +42,9 @@ export default () => (
                     </Callout>
                 </Section.Main>
                 <Section.Side>
-                    <Lottie.IntersectionBox>
-                        <Section.Sticky>
-                            <Lottie animationData={animationData} />
-                        </Section.Sticky>
-                    </Lottie.IntersectionBox>
+                    <Section.Sticky>
+                        <Img src={img} />
+                    </Section.Sticky>
                 </Section.Side>
             </Section.Block>
         </Section>
