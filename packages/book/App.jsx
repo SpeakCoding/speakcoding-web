@@ -91,35 +91,39 @@ const App = () => {
         <app.Provider value={context}>
             <BrowserRouter>
                 <Routes>
-                    <Route path='/en/chapter-1' element={<EN.Intro />} />
-                    <Route path='/en/chapter-2' element={<EN.Functions />} />
-                    <Route path='/en/chapter-3' element={<EN.Objects />} />
-                    <Route path='/en/chapter-4' element={<EN.Interface />} />
-                    <Route path='/en/chapter-5' element={<EN.Repositories />} />
-                    <Route path='/en/chapter-6' element={<EN.OnlineSearch />} />
-                    <Route path='/en/chapter-7' element={<EN.ComplexSentences />} />
-                    <Route path='/en/chapter-8' element={<EN.Storage />} />
-                    <Route path='/en/chapter-9' element={<EN.API />} />
-                    <Route path='/en/chapter-10' element={<EN.Backend />} />
-                    <Route path='/en/chapter-11' element={<EN.Server />} />
-                    <Route path='/en/chapter-12' element={<EN.Launch />} />
-                    <Route path='/en/handbook' element={<EN.Handbook />} />
-                    <Route path='/en/glossary' element={<EN.Glossary />} />
+                    <Route path='/en'>
+                        <Route path='chapter-1' element={<EN.Intro />} />
+                        <Route path='chapter-2' element={<EN.Functions />} />
+                        <Route path='chapter-3' element={<EN.Objects />} />
+                        <Route path='chapter-4' element={<EN.Interface />} />
+                        <Route path='chapter-5' element={<EN.Repositories />} />
+                        <Route path='chapter-6' element={<EN.OnlineSearch />} />
+                        <Route path='chapter-7' element={<EN.ComplexSentences />} />
+                        <Route path='chapter-8' element={<EN.Storage />} />
+                        <Route path='chapter-9' element={<EN.API />} />
+                        <Route path='chapter-10' element={<EN.Backend />} />
+                        <Route path='chapter-11' element={<EN.Server />} />
+                        <Route path='chapter-12' element={<EN.Launch />} />
+                        <Route path='handbook' element={<EN.Handbook />} />
+                        <Route path='glossary' element={<EN.Glossary />} />
+                    </Route>
 
-                    <Route path='/ru/chapter-1' element={<RU.Intro />} />
-                    <Route path='/ru/chapter-2' element={<RU.Functions />} />
-                    <Route path='/ru/chapter-3' element={<RU.Objects />} />
-                    <Route path='/ru/chapter-4' element={<RU.Interface />} />
-                    <Route path='/ru/chapter-5' element={<RU.Repositories />} />
-                    <Route path='/ru/chapter-6' element={<RU.OnlineSearch />} />
-                    <Route path='/ru/chapter-7' element={<RU.ComplexSentences />} />
-                    <Route path='/ru/chapter-8' element={<RU.Storage />} />
-                    <Route path='/ru/chapter-9' element={<RU.API />} />
-                    <Route path='/ru/chapter-10' element={<RU.Backend />} />
-                    <Route path='/ru/chapter-11' element={<RU.Server />} />
-                    <Route path='/ru/chapter-12' element={<RU.Launch />} />
-                    <Route path='/ru/handbook' element={<RU.Handbook />} />
-                    <Route path='/ru/glossary' element={<RU.Glossary />} />
+                    <Route path='/ru'>
+                        <Route path='chapter-1' element={<RU.Intro />} />
+                        <Route path='chapter-2' element={<RU.Functions />} />
+                        <Route path='chapter-3' element={<RU.Objects />} />
+                        <Route path='chapter-4' element={<RU.Interface />} />
+                        <Route path='chapter-5' element={<RU.Repositories />} />
+                        <Route path='chapter-6' element={<RU.OnlineSearch />} />
+                        <Route path='chapter-7' element={<RU.ComplexSentences />} />
+                        <Route path='chapter-8' element={<RU.Storage />} />
+                        <Route path='chapter-9' element={<RU.API />} />
+                        <Route path='chapter-10' element={<RU.Backend />} />
+                        <Route path='chapter-11' element={<RU.Server />} />
+                        <Route path='chapter-12' element={<RU.Launch />} />
+                        <Route path='handbook' element={<RU.Handbook />} />
+                        <Route path='glossary' element={<RU.Glossary />} />
+                    </Route>
 
                     <Route path='*' element={<Home />} />
                 </Routes>

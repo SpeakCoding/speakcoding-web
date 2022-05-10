@@ -14,7 +14,7 @@ const Next = ({ href, children }) => {
 
     if (!href && !current) return null;
 
-    const url = href || `chapter-${current + 1}`;
+    const url = href || `../chapter-${current + 1}`;
 
     return (
         <div className={s.box}>
