@@ -1,7 +1,8 @@
 import React from 'react';
 import { Img, Link, Section } from '@sc/ui';
-import { Assignment, Time } from '../../../components';
+import { Assignment, Intro, Time } from '../../../components';
 import img from './git.svg';
+import intro from './intro.png';
 
 export default () => (
     <>
@@ -9,6 +10,7 @@ export default () => (
             <Section.Main>
                 <h1>О репозиториях</h1>
                 <Time.Chapter value='~45 мин' />
+                <Intro pic={intro} video='https://kinescope.io/embed/201215957' />
                 <p>
                     В начале вашего знакомства с программированием вы чаще всего будете смотреть на
                     код, созданный кем-то еще. Обычно код конкретного приложения/проекта хранится в

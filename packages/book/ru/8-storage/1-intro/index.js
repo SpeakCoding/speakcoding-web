@@ -1,8 +1,9 @@
 import React from 'react';
 import { Grid, HL, Img, Pre, Section } from '@sc/ui';
-import { Assignment, Time } from '../../../components';
+import { Assignment, Intro, Time } from '../../../components';
 import Term from '../../glossary/Term';
 import img from './phone-cloud.svg';
+import intro from './intro.png';
 
 const code1 = `'{ "post": { "caption": "This is my first post!", "user": "liberman1984", "comments": [] } }'`;
 
@@ -13,6 +14,7 @@ export default () => (
                 <Section.Main>
                     <h1>Долгосрочное хранение информации об объектах</h1>
                     <Time.Chapter value='~15 мин' />
+                    <Intro pic={intro} video='https://kinescope.io/embed/201215908' />
                     <p>
                         Вы уже знаете, как сохранять объекты классов для работы с ними в коде.
                         Хранение информации в переменных временное, важно помнить, что они

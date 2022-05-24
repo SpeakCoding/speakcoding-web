@@ -15,7 +15,7 @@ export default () => (
         <Section.Block>
             <Section.Main>
                 <Time.Chapter value='~20 мин' />
-                <Intro pic={intro} video='https://kinescope.io/embed/201125767' />
+                <Intro pic={intro} video='https://kinescope.io/embed/201215973' />
                 <p>
                     Язык программирования - такой же язык, как и любой другой, которым мы
                     пользуемся. Его задача - описывать мир вокруг нас, называть предметы и явления.

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
-import { Assignment, Time } from '../../../components';
+import { Assignment, Intro, Time } from '../../../components';
 import Term from '../../glossary/Term';
 import img1 from './client-server.svg';
 import img2 from './methods.svg';
+import intro from './intro.png';
 
 export default () => (
     <>
@@ -12,6 +13,7 @@ export default () => (
                 <Section.Main>
                     <h1>Сервер API (application programming interface)</h1>
                     <Time.Chapter value='~25 мин' />
+                    <Intro pic={intro} video='https://kinescope.io/embed/201215926' />
                     <p>
                         Как вы знаете, общение между клиентом и сервером представляет собой работу
                         двух программ.

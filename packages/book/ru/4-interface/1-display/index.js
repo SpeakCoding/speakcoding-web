@@ -1,13 +1,15 @@
 import React from 'react';
 import { Callout, Img, Section } from '@sc/ui';
-import { Time } from '../../../components';
+import { Intro, Time } from '../../../components';
 import img from './mvc.svg';
+import intro from './intro.png';
 
 export default () => (
     <Section>
         <Section.Main>
             <h1>Ввод и вывод: как перевести действия пользователя в то, что программа работает</h1>
             <Time.Chapter value='~30 мин' />
+            <Intro pic={intro} video='https://kinescope.io/embed/201215935' />
             <p>
                 Интерфейс позволяет пользователю видеть экземпляры наших структурных классов
                 (например, видеть пост, его картинки и описание), а также инструменты для того,

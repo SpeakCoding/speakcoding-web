@@ -1,10 +1,11 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
-import { Time } from '../../../components';
+import { Intro, Time } from '../../../components';
 import img1 from './xcode.png';
 import img2 from './layers-1.png';
 import img3 from './layers-2.png';
 import img4 from './navigation.png';
+import intro from './intro.png';
 import s from './style.css';
 
 export default () => (
@@ -13,6 +14,7 @@ export default () => (
             <Section.Main narrow>
                 <h1>Запуск AppDelegate и Main</h1>
                 <Time.Chapter value='~20 мин' />
+                <Intro pic={intro} video='https://kinescope.io/embed/201215882' />
                 <p>
                     У каждого приложения есть файл, с которого начинается работа программы. В
                     стандартном случае в этом файле должна была быть описана функция со стандартным

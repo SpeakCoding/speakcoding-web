@@ -1,8 +1,9 @@
 import React from 'react';
 import { Callout, HL, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
-import { Time } from '../../../components';
+import { Intro, Time } from '../../../components';
 import { interceptor, InterceptorView } from '../../../phone';
+import intro from './intro.png';
 
 async function onEnter() {
     await interceptor.logout();
@@ -15,6 +16,7 @@ export default () => (
             <InterceptorView onEnter={onEnter} onExit={interceptor.close}>
                 <h1>Создание Объектов (Экземпляров)</h1>
                 <Time.Chapter value='~35 мин' />
+                <Intro pic={intro} video='https://kinescope.io/embed/201215943' />
                 <p>
                     Вернемся к описанию структуры через код. То, что мы делали в предыдущей главе -
                     это <b>описание</b> <Term id='class'>классов</Term> объектов, их{' '}

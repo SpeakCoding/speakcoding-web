@@ -1,8 +1,9 @@
 import React from 'react';
 import { Callout, Link, Section } from '@sc/ui';
-import { Assignment, Time } from '../../../components';
+import { Assignment, Intro, Time } from '../../../components';
 import Term from '../../glossary/Term';
 import Video from '../../../common/6/search-video';
+import intro from './intro.png';
 
 export default () => (
     <>
@@ -11,6 +12,7 @@ export default () => (
                 <Section.Main>
                     <h1>Как искать необходимую информацию в Интернете</h1>
                     <Time.Chapter value='~5 мин' />
+                    <Intro pic={intro} video='https://kinescope.io/embed/201215947' />
                     <p>
                         Работая с кодом, вы часто будете сталкиваться с необходимостью уточнить, был
                         ли уже описан тот или иной класс, проверить, как называются некоторые
