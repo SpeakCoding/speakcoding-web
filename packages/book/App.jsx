@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import * as Sentry from '@sentry/react';
 import { useAPI, useCourses } from './tools';
 import { app } from './tools/app';
 import { fixLang } from './tools/system';
@@ -10,8 +11,15 @@ import Payment from './payment';
 import * as EN from './en';
 import * as RU from './ru';
 
-// FIXME: remove it when no longer needed
-const admin = localStorage.getItem('admin');
+Sentry.init({
+    dsn: 'https://1453350b884840c3a0705cbd340a8154@o1261039.ingest.sentry.io/6438025',
+    release: '1'
+});
+
+Sentry.setContext('viewport', {
+    'Screen Width': window.innerWidth,
+    'Screen Height': window.innerHeight
+});
 
 let forcedLang;
 
@@ -46,6 +54,12 @@ const App = () => {
             window.location.reload();
             return;
         }
+
+        Sentry.setUser({
+            id: data.id,
+            username: data.name,
+            email: data.email
+        });
 
         if (forcedLang) updateProfile({ last_course_id: forcedLang });
         else {
