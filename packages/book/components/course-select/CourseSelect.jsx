@@ -20,6 +20,12 @@ const Label = ({ value }) => (
                 <L lang='ru'>Интенсив</L>
             </>
         )}
+        {value === 'automated' && (
+            <>
+                <L lang='en'>Automated</L>
+                <L lang='ru'>Автоматический</L>
+            </>
+        )}
     </>
 );
 
@@ -69,6 +75,12 @@ const CourseSelect = ({ onChange }) => {
                 >
                     <Label value='intensive' />
                 </div>
+                {/*<div*/}
+                {/*    className={classNames(s.option, value === 'automated' && s.selected)}*/}
+                {/*    onClick={() => handleSelect('automated')}*/}
+                {/*>*/}
+                {/*    <Label value='automated' />*/}
+                {/*</div>*/}
             </div>
         </div>
     );

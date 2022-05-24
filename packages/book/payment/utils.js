@@ -14,7 +14,7 @@ export const usePayment = () => {
         const stripe = await stripePromise,
             { data } = await fetch('/stripe/checkout_sessions.json', {
                 method: 'POST',
-                body: { course_intensity: intensity }
+                body: { course_type: intensity }
             });
 
         stripe.redirectToCheckout({ sessionId: data?.id });

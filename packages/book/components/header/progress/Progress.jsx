@@ -14,8 +14,10 @@ const percents = value => Math.min(100, round(value * 100, 0));
 
 const Progress = () => {
     const { courses, profile } = useApp(),
-        maxNumber = profile.is_paid ? profile.group.last_chapter_number : 1,
         lang = localStorage.getItem('lang');
+
+    let maxNumber = profile.group?.last_chapter_number || 1;
+    if (!profile.is_paid) maxNumber = 0;
 
     const progress = useMemo(() => {
         const overall = { total: 0, done: 0 };
