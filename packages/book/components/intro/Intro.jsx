@@ -10,7 +10,7 @@ const ratio = 16 / 9;
 const Intro = ({ pic, video }) => {
     const [opened, setOpened] = useState(false),
         [mode, setMode] = useState(''),
-        { profile } = useApp();
+        { admin } = useApp();
 
     const open = useCallback(() => setOpened(true), []),
         close = useCallback(() => setOpened(false), []);
@@ -19,7 +19,7 @@ const Intro = ({ pic, video }) => {
         if (opened) setMode(window.innerWidth > window.innerHeight * ratio ? 'height' : 'width');
     }, [opened]);
 
-    if (profile.group?.title !== 'Admins') return null;
+    if (!admin) return null;
 
     return (
         <>

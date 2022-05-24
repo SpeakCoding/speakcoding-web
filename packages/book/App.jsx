@@ -33,7 +33,7 @@ const App = () => {
             updateProfile,
             courses,
             updateCourse,
-            admin
+            admin: profile?.group?.title === 'Admins'
         }),
         [profile, courses]
     );
