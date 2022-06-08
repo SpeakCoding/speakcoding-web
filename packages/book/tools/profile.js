@@ -1,7 +1,11 @@
+// Absent group means that user has bought automatic course.
+// In this case all the chapters are available by default.
+const over9000 = 9001;
+
 export const parseProfile = data => ({
     ...data,
     group: {
         ...(data.group || {}),
-        last_chapter_number: data.group?.last_chapter_number || 1
+        last_chapter_number: data.group?.last_chapter_number || over9000
     }
 });

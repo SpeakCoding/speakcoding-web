@@ -13,11 +13,9 @@ import s from './progress.css';
 const percents = value => Math.min(100, round(value * 100, 0));
 
 const Progress = () => {
-    const { courses, profile } = useApp(),
-        lang = localStorage.getItem('lang');
-
-    let maxNumber = profile.group?.last_chapter_number || 1;
-    if (!profile.is_paid) maxNumber = 0;
+    const { courses, profile, admin } = useApp(),
+        lang = localStorage.getItem('lang'),
+        maxNumber = profile.is_paid ? profile.group?.last_chapter_number : 0;
 
     const progress = useMemo(() => {
         const overall = { total: 0, done: 0 };
@@ -29,7 +27,7 @@ const Progress = () => {
 
                 if (item.type === 'assignment') {
                     const assignment = assignments[lang][item.id];
-                    review = !!assignment.review;
+                    review = !!assignment.review && admin;
                     done =
                         assignment.questions.length ===
                         (courses[lang]?.assignments?.[item.id] || []).length;
