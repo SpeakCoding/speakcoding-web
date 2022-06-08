@@ -13,7 +13,7 @@ import * as RU from './ru';
 
 Sentry.init({
     dsn: 'https://1453350b884840c3a0705cbd340a8154@o1261039.ingest.sentry.io/6438025',
-    release: '1'
+    release: '2'
 });
 
 Sentry.setContext('viewport', {
