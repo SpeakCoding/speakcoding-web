@@ -6,7 +6,7 @@ import { useAssignment } from '../../tools';
 import Question from '../assignment/Content';
 import s from './review.css';
 
-const ratio = 4 / 3,
+const ratio = 1662 / 1080,
     verticalPadding = 72 + 32 + 72; // 72px box padding top + 32px box padding bottom + 72px title size
 
 const Review = ({ id, opened }) => {

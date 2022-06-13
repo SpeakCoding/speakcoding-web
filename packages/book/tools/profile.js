@@ -1,4 +1,4 @@
-// Absent group means that user has bought automatic course.
+// Absent group means that user has bought automated course.
 // In this case all the chapters are available by default.
 const over9000 = 9001;
 
