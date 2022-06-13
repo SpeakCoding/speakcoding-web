@@ -13,7 +13,7 @@ import s from './progress.css';
 const percents = value => Math.min(100, round(value * 100, 0));
 
 const Progress = () => {
-    const { courses, profile, admin } = useApp(),
+    const { courses, profile } = useApp(),
         lang = localStorage.getItem('lang'),
         maxNumber = profile.is_paid ? profile.group?.last_chapter_number : 0;
 
@@ -27,7 +27,7 @@ const Progress = () => {
 
                 if (item.type === 'assignment') {
                     const assignment = assignments[lang][item.id];
-                    review = !!assignment.review && admin;
+                    review = !!assignment.review;
                     done =
                         assignment.questions.length ===
                         (courses[lang]?.assignments?.[item.id] || []).length;
