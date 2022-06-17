@@ -5,16 +5,17 @@ export function getElement(selector = '', options = {}) {
 
     let attempts = 0;
 
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
         function find() {
             attempts++;
             const $node = document.querySelector(`${config.deviceSelector} ${selector}`);
-            if ($node) {
-                resolve($node);
-                return;
+
+            if ($node) resolve($node);
+            else if (attempts <= maxAttempts) setTimeout(find, 100);
+            else {
+                console.error(`getElement "${config.deviceSelector} ${selector}" timeout`);
+                resolve(null);
             }
-            if (attempts <= maxAttempts) setTimeout(find, 100);
-            else reject(new Error(`getElement "${config.deviceSelector} ${selector}" timeout`));
         }
 
         find();
