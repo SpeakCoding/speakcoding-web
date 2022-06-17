@@ -32,7 +32,7 @@ const App = () => {
 
     const updateProfile = async payload => {
         const { data } = await api.put('/users/me.json', { user: payload });
-        setProfile(parseProfile(data));
+        if (data) setProfile(parseProfile(data));
     };
 
     const context = useMemo(
@@ -120,6 +120,7 @@ const App = () => {
                         <Route path='chapter-12' element={<EN.Launch />} />
                         <Route path='handbook' element={<EN.Handbook />} />
                         <Route path='glossary' element={<EN.Glossary />} />
+                        <Route index element={<Home />} />
                     </Route>
 
                     <Route path='/ru'>
@@ -137,6 +138,7 @@ const App = () => {
                         <Route path='chapter-12' element={<RU.Launch />} />
                         <Route path='handbook' element={<RU.Handbook />} />
                         <Route path='glossary' element={<RU.Glossary />} />
+                        <Route index element={<Home />} />
                     </Route>
 
                     <Route path='*' element={<Home />} />

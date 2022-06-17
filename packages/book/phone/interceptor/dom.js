@@ -14,7 +14,7 @@ export function getElement(selector = '', options = {}) {
                 return;
             }
             if (attempts <= maxAttempts) setTimeout(find, 100);
-            else reject(new Error(`getElement "${selector}" timeout`));
+            else reject(new Error(`getElement "${config.deviceSelector} ${selector}" timeout`));
         }
 
         find();
