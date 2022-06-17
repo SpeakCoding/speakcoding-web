@@ -60,7 +60,7 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    margin-top: 12px;
+    margin-top: 14px;
     padding: 4px 8px;
     background-color: var(--c-primary-500);
     color: var(--c-black);
@@ -72,13 +72,13 @@
 .hint::before {
     content: "";
     position: absolute;
-    top: -4px;
+    top: -5px;
     left: 50%;
-    width: 13px;
-    height: 6px;
-    margin-left: -7px;
-    background-image: url(./hint-triangle.png);
-    background-size: contain;
+    width: 10px;
+    height: 10px;
+    margin-left: -5px;
+    background-color: var(--c-primary-500);
+    transform: rotate(45deg);
 }
 
 @keyframes hint-oscillate {
