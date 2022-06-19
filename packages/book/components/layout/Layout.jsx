@@ -5,6 +5,7 @@ import Logo from '../logo';
 import { Phone } from '../../phone';
 import GlossaryLink from './GlossaryLink';
 import MobilePlaceholder from './MobilePlaceholder';
+import Tutorial from './tutorial';
 import { context } from './utils';
 import s from './layout.css';
 
@@ -41,6 +42,7 @@ const Layout = ({ phone, children }) => {
                 {phone && <Phone />}
             </div>
             <MobilePlaceholder />
+            <Tutorial />
         </>
     );
 };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
 import { createPortal } from 'react-dom';
@@ -12,7 +12,7 @@ const keys = [keyCodes.escape];
 
 document.body.append(modalRoot);
 
-const Modal = ({ opened, children, onClose }) => {
+const Modal = ({ closeTriggers, opened, children, onClose }) => {
     const [key, setKey] = useState(null),
         [state, close] = useTransitionState(opened, { duration: closingTimeout });
 
@@ -23,7 +23,19 @@ const Modal = ({ opened, children, onClose }) => {
         onClose();
     };
 
-    useKeyPress(keys, handleClose);
+    const handleClickOutside = useCallback(() => {
+        if (closeTriggers.includes('click-outside')) handleClose();
+    }, [closeTriggers, handleClose]);
+
+    const handleClickCross = useCallback(() => {
+        if (closeTriggers.includes('cross')) handleClose();
+    }, [closeTriggers, handleClose]);
+
+    const handleClickEsc = useCallback(() => {
+        if (closeTriggers.includes('esc')) handleClose();
+    }, [closeTriggers, handleClose]);
+
+    useKeyPress(keys, handleClickEsc);
 
     useEffect(() => {
         if (opened) setKey(Math.random());
@@ -38,11 +50,11 @@ const Modal = ({ opened, children, onClose }) => {
                 [s.out]: state === 'exit'
             })}
         >
-            <div className={s.overlay} onClick={handleClose} />
+            <div className={s.overlay} onClick={handleClickOutside} />
 
             <div key={key} className={s.content}>
                 {children}
-                <div className={s.close} onClick={onClose}>
+                <div className={s.close} onClick={handleClickCross}>
                     <Icon data-ui-role='close' name='times' size={24} />
                 </div>
             </div>
@@ -52,11 +64,13 @@ const Modal = ({ opened, children, onClose }) => {
 };
 
 Modal.propTypes = {
+    closeTriggers: pt.array,
     opened: pt.bool,
     onClose: pt.func
 };
 
 Modal.defaultProps = {
+    closeTriggers: ['click-outside', 'cross', 'esc'],
     opened: false,
     onClose: () => {}
 };
