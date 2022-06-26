@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 import React, { useCallback, useEffect, useRef } from 'react';
 import pt from 'prop-types';
+import classNames from 'classnames';
 import s from './textarea.css';
 
 const autoGrow = $el => {
@@ -8,7 +9,17 @@ const autoGrow = $el => {
     $el.style.height = `${$el.scrollHeight + 2}px`; // 2 x 1px borders
 };
 
-const Textarea = ({ autoheight, disabled, name, placeholder, readonly, rows, value, onChange }) => {
+const Textarea = ({
+    autoheight,
+    disabled,
+    name,
+    placeholder,
+    readonly,
+    rows,
+    value,
+    variant,
+    onChange
+}) => {
     const $ref = useRef();
 
     const handleChange = useCallback(
@@ -26,7 +37,7 @@ const Textarea = ({ autoheight, disabled, name, placeholder, readonly, rows, val
     return (
         <textarea
             ref={$ref}
-            className={s.input}
+            className={classNames(s.input, s[variant])}
             defaultValue={value}
             disabled={disabled}
             name={name}
@@ -37,6 +48,7 @@ const Textarea = ({ autoheight, disabled, name, placeholder, readonly, rows, val
         />
     );
 };
+
 Textarea.propTypes = {
     autoheight: pt.bool,
     disabled: pt.bool,
@@ -45,6 +57,7 @@ Textarea.propTypes = {
     readonly: pt.bool,
     rows: pt.number,
     value: pt.string,
+    variant: pt.oneOf(['default', 'bordered']),
     onChange: pt.func
 };
 
@@ -56,6 +69,7 @@ Textarea.defaultProps = {
     readonly: false,
     rows: 3,
     value: undefined,
+    variant: 'default',
     onChange: () => {}
 };
 

@@ -1,5 +1,6 @@
 export Assignment from './assignment';
 export CourseSelect from './course-select';
+export Feedback from './feedback';
 export FlagSteps from './flag-steps';
 export Glossary from './glossary';
 export Header from './header';

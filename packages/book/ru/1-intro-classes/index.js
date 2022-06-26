@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Section } from '@sc/ui';
-import { Next } from '../../components';
+import { Feedback, Next } from '../../components';
 import { useApp } from '../../tools';
 import { interceptor } from '../../phone';
 import Page from '../Page';
@@ -35,6 +35,7 @@ export default () => {
             <Part4 />
             <Part5 />
             <Part6 />
+            <Feedback />
             <Next />
         </Page>
     );

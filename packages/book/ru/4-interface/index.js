@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section } from '@sc/ui';
-import { Next } from '../../components';
+import { Feedback, Next } from '../../components';
 import Page from '../Page';
 import Part1 from './1-display';
 import Part2 from './2-all-displays';
@@ -19,6 +19,7 @@ export default () => (
         <Section.Divider />
         <Part5 />
         <Part6 />
+        <Feedback />
         <Next />
     </Page>
 );

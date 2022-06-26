@@ -19,3 +19,8 @@
 .input:disabled {
     cursor: not-allowed;
 }
+
+.input.bordered {
+    padding: 16px 24px;
+    border: 1px solid var(--c-black);
+}
