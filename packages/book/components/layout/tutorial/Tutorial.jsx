@@ -10,13 +10,14 @@ const closeTriggers = [],
 const Tutorial = () => {
     const { profile } = useApp(),
         newUser = new Date(threshold) < new Date(profile.created_at),
-        skipped = localStorage.getItem('flag/skip-tutorial') === 'true',
-        initial = newUser && profile.is_paid && !skipped,
+        skipped = localStorage.getItem('flag/tutorial') === 'skip',
+        forced = localStorage.getItem('flag/tutorial') === 'forced',
+        initial = forced || (newUser && profile.is_paid && !skipped),
         [opened, setOpened] = useState(initial);
 
     const handleClose = useCallback(() => {
         setOpened(false);
-        localStorage.setItem('flag/skip-tutorial', 'true');
+        localStorage.setItem('flag/tutorial', 'skip');
     }, []);
 
     return (
