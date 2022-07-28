@@ -1,14 +1,18 @@
 .input {
     display: block;
     width: 100%;
-    padding: 12px 0;
+    padding: 1px 0;
     box-sizing: border-box;
     border: none;
-    border-bottom: 2px solid var(--c-grey-300);
     font-size: 18px;
     line-height: 24px;
     resize: none;
     outline: none;
+}
+
+.input.styled {
+    padding: 12px 0;
+    border-bottom: 2px solid var(--c-grey-300);
 }
 
 .input::placeholder {

@@ -6,7 +6,7 @@ import s from './textarea.css';
 
 const autoGrow = $el => {
     $el.style.height = '5px';
-    $el.style.height = `${$el.scrollHeight + 2}px`; // 2 x 1px borders
+    $el.style.height = `${$el.scrollHeight}px`;
 };
 
 const Textarea = ({
@@ -14,6 +14,7 @@ const Textarea = ({
     disabled,
     name,
     placeholder,
+    pure,
     readonly,
     rows,
     value,
@@ -37,7 +38,7 @@ const Textarea = ({
     return (
         <textarea
             ref={$ref}
-            className={classNames(s.input, s[variant])}
+            className={classNames(s.input, !pure && s.styled, s[variant])}
             defaultValue={value}
             disabled={disabled}
             name={name}
@@ -54,6 +55,7 @@ Textarea.propTypes = {
     disabled: pt.bool,
     name: pt.string,
     placeholder: pt.string,
+    pure: pt.bool,
     readonly: pt.bool,
     rows: pt.number,
     value: pt.string,
@@ -66,6 +68,7 @@ Textarea.defaultProps = {
     disabled: false,
     name: undefined,
     placeholder: undefined,
+    pure: false,
     readonly: false,
     rows: 3,
     value: undefined,
