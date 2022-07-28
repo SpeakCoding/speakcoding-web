@@ -6,7 +6,7 @@ import { useAPI, useApp, useAssignment } from '../../tools';
 import Content from './Content';
 import s from './assignment.css';
 
-const Questions = ({ id, opened, closeModal }) => {
+const Questions = ({ id, hideAnswer, opened, closeModal }) => {
     const [i, setI] = useState(0),
         { courseID, assignmentID, assignment, answers } = useAssignment(id),
         { updateCourse } = useApp(),
@@ -21,18 +21,37 @@ const Questions = ({ id, opened, closeModal }) => {
 
             updateCourse(courseID, 'assignment', { id: assignmentID, answers: value });
 
-            const payload = {
-                title: assignment.title,
-                questions: assignment.questions.map((item, j) => {
-                    let mark = '';
-                    if (item.ask) mark = `${value[j] ? '✗' : '✓'} `;
-                    return { title: item.title, answer: `${mark}${value[j]}` };
-                })
-            };
+            let payload;
+
+            if (assignment.mod === 'final') {
+                payload = {
+                    variables: {
+                        title: assignment.title,
+                        question: assignment.questions[0].title,
+                        answers: value[0].reduce(
+                            (res, _, j) => ({ ...res, [`l${j + 1}`]: value[0][j] }),
+                            {}
+                        )
+                    },
+                    final_assignment: true
+                };
+            } else {
+                payload = {
+                    variables: {
+                        title: assignment.title,
+                        questions: assignment.questions.map((item, j) => {
+                            let mark = '';
+                            if (item.ask) mark = `${value[j] ? '✗' : '✓'} `;
+                            return { title: item.title, answer: `${mark}${value[j]}` };
+                        })
+                    }
+                };
+            }
+
             api.post('/assignments/deliver.json', {
                 course_id: courseID,
                 assignment_id: assignmentID,
-                variables: payload
+                ...payload
             });
         },
         [assignment, courseID, assignmentID, answers]
@@ -83,6 +102,7 @@ const Questions = ({ id, opened, closeModal }) => {
                                 key={i}
                                 question={questions[i]}
                                 answer={memo.current[i]}
+                                hideAnswer={hideAnswer}
                                 onChange={handleChangeAnswer}
                             />
                         </div>
@@ -164,12 +184,14 @@ const Questions = ({ id, opened, closeModal }) => {
 };
 
 Questions.propTypes = {
+    hideAnswer: pt.bool,
     id: pt.string,
     opened: pt.bool,
     closeModal: pt.func
 };
 
 Questions.defaultProps = {
+    hideAnswer: undefined,
     id: undefined,
     opened: false,
     closeModal: () => {}

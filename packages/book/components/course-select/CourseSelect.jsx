@@ -75,12 +75,12 @@ const CourseSelect = ({ onChange }) => {
                 >
                     <Label value='intensive' />
                 </div>
-                {/*<div*/}
-                {/*    className={classNames(s.option, value === 'automated' && s.selected)}*/}
-                {/*    onClick={() => handleSelect('automated')}*/}
-                {/*>*/}
-                {/*    <Label value='automated' />*/}
-                {/*</div>*/}
+                <div
+                    className={classNames(s.option, value === 'automated' && s.selected)}
+                    onClick={() => handleSelect('automated')}
+                >
+                    <Label value='automated' />
+                </div>
             </div>
         </div>
     );

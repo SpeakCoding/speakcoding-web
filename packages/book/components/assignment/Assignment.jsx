@@ -8,7 +8,7 @@ import Markdown from '../quiz/blocks/Markdown';
 import Review from '../review';
 import Questions from './Questions';
 
-const Assignment = ({ id }) => {
+const Assignment = ({ id, hideAnswer }) => {
     const { assignment, answers } = useAssignment(id),
         [modal, setModal] = useState(undefined),
         firstTime = answers.length === 0;
@@ -20,7 +20,7 @@ const Assignment = ({ id }) => {
 
     if (!assignment) return null;
 
-    const { title, description, time } = assignment;
+    const { title, description, time, mod } = assignment;
 
     return (
         <>
@@ -73,6 +73,7 @@ const Assignment = ({ id }) => {
                     assignment={assignment}
                     answers={answers}
                     firstTime={firstTime}
+                    hideAnswer={hideAnswer || !!mod}
                     opened={modal === 'change'}
                     closeModal={closeModal}
                 />
@@ -84,7 +85,12 @@ const Assignment = ({ id }) => {
 };
 
 Assignment.propTypes = {
+    hideAnswer: pt.bool,
     id: pt.string.isRequired
+};
+
+Assignment.defaultProps = {
+    hideAnswer: undefined
 };
 
 export default Assignment;

@@ -17,6 +17,6 @@ export const usePayment = () => {
                 body: { course_type: intensity }
             });
 
-        stripe.redirectToCheckout({ sessionId: data?.id });
+        if (data?.id) stripe.redirectToCheckout({ sessionId: data.id });
     }, []);
 };

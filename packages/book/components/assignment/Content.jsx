@@ -72,7 +72,7 @@ const Content = ({ question, answer, hideAnswer, hideLabel, onChange }) => {
 
             {Asset && (
                 <div className={s.asset}>
-                    <Asset />
+                    <Asset answer={answer} onChange={handleChange} />
                 </div>
             )}
 
@@ -118,7 +118,7 @@ const Content = ({ question, answer, hideAnswer, hideLabel, onChange }) => {
 };
 
 Content.propTypes = {
-    answer: pt.string,
+    answer: pt.oneOfType([pt.string, pt.array]),
     hideAnswer: pt.bool,
     hideLabel: pt.bool,
     question: pt.object.isRequired,

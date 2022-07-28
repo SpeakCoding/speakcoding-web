@@ -4,6 +4,7 @@ import img_12_1 from './img/12-1.png';
 import Asset_3_1 from './assets/3-1-en';
 import Asset_18_1 from './assets/18-1';
 import Asset_19_1 from './assets/19-1-en';
+import Asset_30_1 from './assets/30-1';
 
 export default {
     1: {
@@ -359,5 +360,22 @@ export default {
             }
         ],
         time: '~15 min'
+    },
+    30: {
+        title: 'Assignment #30',
+        description:
+            'For the final reading and analysis assignment we propose to work with the PostFeedView.swift file from the SpeakCoding repository.',
+        mod: 'final',
+        questions: [
+            {
+                title: 'For the final reading and analysis assignment we propose to work with the PostFeedView.swift file from the SpeakCoding repository.',
+                details:
+                    'Open [the file](https://github.com/SpeakCoding/iphone/blob/main/App/PostFeedView.swift) in any code editor that you feel comfortable using or else just use an internet browser (note that it is easier to read any file of code in an Xcode/Visual Studio since the syntax is color-coded and structured there). \n\n' +
+                    'Then copy the code into any text editor. Try first breaking the code up into blocks, as you have already done in previous course assignments: highlighting the definition of the class and functions. \n\n' +
+                    'Having done that, begin analyzing code line by line, defining what happens in each of them. Even if not all words will be known to you, try abstracting from this and look at the code in its entirety, imagine and describe in your own words what, in your opinion, happens in a line of code. If it is a function, then, based on its name, presume what it could possibly be doing, and afterwards go on with defining the steps inside of the function. \n\n' +
+                    'For this reading exercise we have prepared a handbook for you, you can find it at the end of the chapter list at book.speakcoding.co. It will help you revisit the syntactic constructions and find definitions for the keywords you have not encountered before.',
+                Asset: Asset_30_1
+            }
+        ]
     }
 };
