@@ -197,6 +197,7 @@ export default () => (
                         to assign an identification tag.
                     </p>
                 </Section.Main>
+
                 <Section.Side>
                     <Section.Sticky>
                         <Img src={img} />
@@ -208,6 +209,6 @@ export default () => (
             <Example2 />
         </Section>
 
-        {/*<Assignment id='en/30' />*/}
+        <Assignment id='en/30' />
     </>
 );

@@ -24,8 +24,7 @@ const createLine = (line, i) => `<div style="
     white-space: nowrap;
     vertical-align: top;
   ">
-    ${line.substring(0, 51).replace(/\s/g, '\xa0')}
-    ${line.length > 51 ? '…' : ''}
+    ${line.substring(0, 51).replace(/\s/g, '\xa0')}${line.length > 51 ? '…' : ''}
   </div>
 </div>
 
