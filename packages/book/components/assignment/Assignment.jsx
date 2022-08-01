@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import pt from 'prop-types';
 import { Button, Modal } from '@sc/ui';
 import L from '../localize';
-import { useAssignment } from '../../tools';
+import { useApp, useAssignment } from '../../tools';
 import Card from '../card';
 import Markdown from '../quiz/blocks/Markdown';
 import Review from '../review';
@@ -11,6 +11,7 @@ import Questions from './Questions';
 const Assignment = ({ id, hideAnswer }) => {
     const { assignment, answers } = useAssignment(id),
         [modal, setModal] = useState(undefined),
+        { admin } = useApp(),
         firstTime = answers.length === 0;
 
     const closeModal = useCallback(() => setModal(undefined), []);
@@ -21,6 +22,9 @@ const Assignment = ({ id, hideAnswer }) => {
     if (!assignment) return null;
 
     const { title, description, time, mod } = assignment;
+
+    if (assignment.mod === 'final' && !admin) return null;
+    // Open packages/book/components/header/progress/constants.js later
 
     return (
         <>
