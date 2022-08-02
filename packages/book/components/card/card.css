@@ -22,7 +22,7 @@
 }
 
 .box.quiz {
-    background-color: var(--c-sc-yellow);
+    background-color: var(--c-primary-500);
 }
 
 .box.assignment {
@@ -30,7 +30,7 @@
 }
 
 .box.skill {
-    background-color: var(--c-sc-purple);
+    background-color: var(--c-purple-500);
     color: var(--c-white);
 }
 

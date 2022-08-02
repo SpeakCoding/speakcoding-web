@@ -4,8 +4,8 @@
     margin: 24px 0;
     padding: 24px;
     box-sizing: border-box;
-    border: 2px solid var(--c-sc-purple);
-    box-shadow: -12px 12px 0 0 var(--c-sc-purple);
+    border: 2px solid var(--c-purple-500);
+    box-shadow: -12px 12px 0 0 var(--c-purple-500);
     font: var(--t-base);
     line-height: 30px;
 }

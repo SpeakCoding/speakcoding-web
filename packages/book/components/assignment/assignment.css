@@ -5,6 +5,10 @@
     min-height: 0;
 }
 
+.modal.final {
+    width: 90vw;
+}
+
 .finish {
     width: 816px;
     text-align: center;

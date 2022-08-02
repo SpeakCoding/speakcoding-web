@@ -5,7 +5,7 @@
     padding: 64px;
     box-sizing: border-box;
     background-color: var(--c-white);
-    box-shadow: -12px 12px 0 0 var(--c-sc-purple);
+    box-shadow: -12px 12px 0 0 var(--c-purple-500);
     z-index: 1;
 }
 
@@ -19,7 +19,7 @@
     width: 52px;
     height: 52px;
     border-radius: 26px;
-    background-color: var(--c-sc-purple);
+    background-color: var(--c-purple-500);
     color: var(--c-white);
     cursor: pointer;
 }

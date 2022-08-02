@@ -1,11 +1,11 @@
 :root {
     --c-primary-100: #FEFCE6;
     --c-primary-200: #FEF8CD;
-    --c-primary-300: #FDF3B4;
-    --c-primary-400: #FCEDA1;
-    --c-primary-500: #FDDE4F;
-    --c-primary-600: #D7BF5F;
-    --c-primary-700: #B49B41;
+    --c-primary-300: #FFF5AF;
+    --c-primary-400: #FFEE75;
+    --c-primary-500: #FFE000;
+    --c-primary-600: #F4D153;
+    --c-primary-700: #CDB046;
     --c-primary-800: #917829;
     --c-primary-900: #785F18;
 
@@ -13,25 +13,35 @@
 
     --c-primary-alt-500: #5A80FF;
 
-    --c-red-100: #FFEBE2;
-    --c-red-200: #FFCEC2;
-    --c-red-300: #FD9183;
-    --c-red-400: #FB6864;
-    --c-red-500: #F9323F;
-    --c-red-600: #D62440;
-    --c-red-700: #B3193E;
-    --c-red-800: #900F3A;
-    --c-red-900: #770938;
+    --c-red-100: #FFE8ED;
+    --c-red-200: #FFAABC;
+    --c-red-300: #FF708E;
+    --c-red-400: #FA4D6C;
+    --c-red-500: #FF315D;
+    --c-red-600: #F01947;
+    --c-red-700: #CE1940;
+    --c-red-800: #A81434;
+    --c-red-900: #68071C;
 
-    --c-green-100: #F1FCE8;
-    --c-green-200: #D1FAB7;
-    --c-green-300: #ADF190;
-    --c-green-400: #8BE371;
-    --c-green-500: #5AD145;
-    --c-green-600: #3BB332;
-    --c-green-700: #229623;
-    --c-green-800: #16791E;
-    --c-green-900: #0D641B;
+    --c-green-100: #E6FFFA;
+    --c-green-200: #C1FCF0;
+    --c-green-300: #65EED3;
+    --c-green-400: 8#30D8B7;
+    --c-green-500: #1EC1A1;
+    --c-green-600: #13B393;
+    --c-green-700: #088F75;
+    --c-green-800: #046653;
+    --c-green-900: #023F33;
+
+    --c-purple-100: #EEE6FF;
+    --c-purple-200: #CAAEFF;
+    --c-purple-300: #A87BFF;
+    --c-purple-400: #8C52FF;
+    --c-purple-500: #7833FF;
+    --c-purple-600: #6018EB;
+    --c-purple-700: #4D12BF;
+    --c-purple-800: #31008F;
+    --c-purple-900: #220065;
 
     --c-grey-100: #F4F7FA;
     --c-grey-200: #EDF1F5;
@@ -63,9 +73,4 @@
     --bg-plum: #F9BFFF;
     --bg-plum-hover: #F9B2FF;
     --bg-grey: var(--c-grey-500);
-
-    --c-sc-red: #FF315D;
-    --c-sc-green: #1EC1A1;
-    --c-sc-purple: #7833FF;
-    --c-sc-yellow: #FFE000;
 }

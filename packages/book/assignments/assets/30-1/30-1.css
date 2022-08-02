@@ -44,7 +44,7 @@
     margin-left: 4px;
     padding: 8px;
     cursor: pointer;
-    background-color: var(--c-sc-purple);
+    background-color: var(--c-purple-500);
     color: var(--c-white);
 }
 

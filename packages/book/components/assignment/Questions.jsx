@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import pt from 'prop-types';
+import classNames from 'classnames';
 import { Button, Modal } from '@sc/ui';
 import L from '../localize';
 import { useAPI, useApp, useAssignment } from '../../tools';
@@ -85,14 +86,14 @@ const Questions = ({ id, hideAnswer, opened, closeModal }) => {
 
     if (!assignment) return null;
 
-    const { title, questions } = assignment;
+    const { title, questions, mod } = assignment;
 
     return (
         <>
             {questions[i] && (
                 <>
                     <Modal.ScrollView>
-                        <div className={s.modal}>
+                        <div className={classNames(s.modal, s[mod])}>
                             {questions.length > 1 && (
                                 <h3 className={s.counter}>
                                     {i + 1}/{questions.length}
