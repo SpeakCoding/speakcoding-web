@@ -94,6 +94,6 @@ export const structure = [
     },
     {
         id: 12,
-        items: []
+        items: [{ id: 30, type: 'assignment' }]
     }
 ];

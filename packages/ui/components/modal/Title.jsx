@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './modal.css';
 
-const Title = ({ children }) => <div className={s.title}>{children}</div>;
+const Title = ({ children }) => <h2 className={s.title}>{children}</h2>;
 
 export default Title;

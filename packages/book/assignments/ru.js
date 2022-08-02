@@ -383,7 +383,7 @@ export default {
         review: 'https://kinescope.io/embed/201261414'
     },
     30: {
-        title: 'Задание №30',
+        title: 'Финальное задание',
         description:
             'Для финального разбора и чтения предлагаем вам взять файл PostFeedView.swift репозитория SpeakCoding.',
         mod: 'final',

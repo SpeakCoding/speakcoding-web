@@ -362,7 +362,7 @@ export default {
         time: '~15 min'
     },
     30: {
-        title: 'Assignment #30',
+        title: 'Final assignment',
         description:
             'For the final reading and analysis assignment we propose to work with the PostFeedView.swift file from the SpeakCoding repository.',
         mod: 'final',
