@@ -45,6 +45,7 @@
     color: var(--c-black);
     cursor: pointer;
     transition: border-color var(--animation);
+    text-decoration: none;
 }
 
 .login:last-child {
@@ -59,16 +60,4 @@
     width: 24px;
     height: 24px;
     margin-right: 16px;
-}
-
-.icon.google {
-    background-image: url(./svg/google.svg);
-}
-
-.icon.facebook {
-    background-image: url(./svg/facebook.svg);
-}
-
-.icon.apple {
-    background-image: url(./svg/apple.svg);
 }
