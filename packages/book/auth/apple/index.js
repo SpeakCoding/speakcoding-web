@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import pt from 'prop-types';
 import qs from 'qs';
 import { useAPI } from '../../tools';
@@ -17,18 +17,24 @@ const appleURL = `https://appleid.apple.com/auth/authorize?${qs.stringify({
 const Apple = ({ onSubmit }) => {
     const fetch = useAPI();
 
-    const handleSignIn = useCallback(async () => {
-        console.log('apple');
-    }, [onSubmit]);
+    const signIn = async () => {
+        const data = qs.parse(window.location.hash.replace(/^#/, ''));
+
+        console.log(data);
+
+        if (!data.id_token) return;
+
+        const res = await fetch('/sign_in/apple.json', {
+            method: 'POST',
+            body: { id_token: data.id_token }
+        });
+
+        onSubmit(res);
+    };
 
     useEffect(() => {
-        const { search, hash } = window.location,
-            query = qs.parse(search.replace(/^\?/, ''));
-
-        if (query.auth_callback === 'apple') {
-            const data = qs.parse(hash.replace(/^#/, ''));
-            console.log(data);
-        }
+        const query = qs.parse(window.location.search.replace(/^\?/, ''));
+        if (query.auth_callback === 'apple') signIn();
     }, []);
 
     return (
