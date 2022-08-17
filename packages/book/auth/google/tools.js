@@ -2,7 +2,7 @@ import { injectScript } from '@sc/tools/dom';
 
 const clientid = '42320260727-j3epvmkvjq64ir4fhju6brhiiviqophu.apps.googleusercontent.com';
 
-export async function init() {
+export const init = async () => {
     await injectScript('https://apis.google.com/js/platform.js');
 
     const { gapi } = window;
@@ -10,19 +10,14 @@ export async function init() {
     gapi.load('auth2', () => {
         gapi.auth2.init({ client_id: clientid });
     });
-}
+};
 
-export async function signIn() {
+export const signIn = async () => {
     const { gapi } = window,
-        GoogleAuth = gapi.auth2.getAuthInstance();
-
-    const user = await GoogleAuth.signIn({
-        scope: 'profile email'
-    });
+        GoogleAuth = gapi.auth2.getAuthInstance(),
+        user = await GoogleAuth.signIn({ scope: 'profile email' });
 
     return user.getAuthResponse().id_token;
-}
+};
 
-export function signOut() {
-    return window.gapi.auth2.getAuthInstance().signOut();
-}
+export const signOut = () => window.gapi.auth2.getAuthInstance().signOut();

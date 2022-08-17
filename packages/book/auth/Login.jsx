@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import pt from 'prop-types';
 import { L, Logo } from '../components';
 import Apple from './apple';
+import Facebook from './facebook';
 import Google from './google';
 import s from './login.css';
 
@@ -34,11 +35,7 @@ const Login = ({ onSuccess }) => {
                     <L lang='ru'>Научитесь читать и понимать код, исследуя настоящие приложения</L>
                 </div>
                 <Google onSubmit={handleSubmit} />
-                {/*<button type='button' className={s.login} onClick={handleSignInFacebook}>*/}
-                {/*    <div className={classNames(s.icon, s.facebook)} />*/}
-                {/*    <L lang='en'>Sign in with Facebook</L>*/}
-                {/*    <L lang='ru'>Войти через Facebook</L>*/}
-                {/*</button>*/}
+                <Facebook onSubmit={handleSubmit} />
                 <Apple onSubmit={handleSubmit} />
             </div>
         </div>

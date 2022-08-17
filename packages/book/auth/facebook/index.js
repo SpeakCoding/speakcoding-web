@@ -8,16 +8,16 @@ import logo from './logo.svg';
 
 let ready = false;
 
-const Google = ({ onSubmit }) => {
+const Facebook = ({ onSubmit }) => {
     const fetch = useAPI();
 
     const handleSignIn = useCallback(async () => {
         try {
             const token = await signIn();
 
-            const res = await fetch('/sign_in/google.json', {
+            const res = await fetch('/sign_in/facebook.json', {
                 method: 'POST',
-                body: { id_token: token }
+                body: { access_token: token }
             });
 
             onSubmit(res);
@@ -36,14 +36,18 @@ const Google = ({ onSubmit }) => {
     return (
         <LoginButton onClick={handleSignIn}>
             <LoginButton.Logo pic={logo} />
-            <L lang='en'>Sign in with Google</L>
-            <L lang='ru'>Войти через Google</L>
+            <L lang='en'>Sign in with Facebook</L>
+            <L lang='ru'>Войти через Facebook</L>
         </LoginButton>
     );
 };
 
-Google.propTypes = {
-    onSubmit: pt.func.isRequired
+Facebook.propTypes = {
+    onSubmit: pt.func
 };
 
-export default Google;
+Facebook.defaultProps = {
+    onSubmit: () => {}
+};
+
+export default Facebook;
