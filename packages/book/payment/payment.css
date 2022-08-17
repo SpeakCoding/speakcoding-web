@@ -24,15 +24,11 @@
 
 .title {
     margin-bottom: 12px;
-    font: var(--t-brand);
-    font-size: 48px;
 }
 
 .message {
     margin-bottom: 24px;
     color: var(--c-grey-500);
-    font-size: 20px;
-    line-height: 28px;
 }
 
 .choose {

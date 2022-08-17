@@ -14,10 +14,10 @@ const Payment = () => {
                 Speak <Logo size={80} /> Coding
             </div>
             <div className={s.content}>
-                <div className={s.title}>
+                <h1 className={s.title}>
                     <L lang='en'>Payment processing</L>
                     <L lang='ru'>Оплата</L>
-                </div>
+                </h1>
                 <div className={s.message}>
                     <L lang='en'>
                         When you click the button below, you'll be redirected to our Stripe account
