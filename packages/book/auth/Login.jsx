@@ -6,6 +6,8 @@ import Facebook from './facebook';
 import Google from './google';
 import s from './login.css';
 
+const showAll = window.localStorage.getItem('flag/all-auth');
+
 const Login = ({ onSuccess }) => {
     const handleSubmit = useCallback(
         res => {
@@ -35,8 +37,12 @@ const Login = ({ onSuccess }) => {
                     <L lang='ru'>Научитесь читать и понимать код, исследуя настоящие приложения</L>
                 </div>
                 <Google onSubmit={handleSubmit} />
-                <Facebook onSubmit={handleSubmit} />
-                <Apple onSubmit={handleSubmit} />
+                {showAll && (
+                    <>
+                        <Facebook onSubmit={handleSubmit} />
+                        <Apple onSubmit={handleSubmit} />
+                    </>
+                )}
             </div>
         </div>
     );
