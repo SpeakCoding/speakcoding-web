@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
 import { useClickOutside } from '@sc/ui/hooks';
@@ -33,9 +33,15 @@ Label.propTypes = {
     value: pt.string.isRequired
 };
 
+const optionsByLang = {
+    en: ['extensive', 'intensive', 'automated'],
+    ru: ['intensive', 'automated']
+};
+
 const CourseSelect = ({ onChange }) => {
     const [opened, setOpened] = useState(false),
-        [value, setValue] = useState('extensive'),
+        lang = localStorage.getItem('lang'),
+        [value, setValue] = useState(optionsByLang[lang]?.[0]),
         $ref = useRef();
 
     const handleSelect = useCallback(
@@ -51,6 +57,10 @@ const CourseSelect = ({ onChange }) => {
 
     useClickOutside($ref, handleClickOutside);
 
+    useEffect(() => {
+        onChange(value);
+    }, []);
+
     return (
         <div ref={$ref} className={s.box}>
             <button
@@ -63,24 +73,15 @@ const CourseSelect = ({ onChange }) => {
             </button>
 
             <div className={classNames(s.options, opened && s.opened)}>
-                <div
-                    className={classNames(s.option, value === 'extensive' && s.selected)}
-                    onClick={() => handleSelect('extensive')}
-                >
-                    <Label value='extensive' />
-                </div>
-                <div
-                    className={classNames(s.option, value === 'intensive' && s.selected)}
-                    onClick={() => handleSelect('intensive')}
-                >
-                    <Label value='intensive' />
-                </div>
-                <div
-                    className={classNames(s.option, value === 'automated' && s.selected)}
-                    onClick={() => handleSelect('automated')}
-                >
-                    <Label value='automated' />
-                </div>
+                {optionsByLang[lang]?.map(item => (
+                    <div
+                        key={item}
+                        className={classNames(s.option, value === item && s.selected)}
+                        onClick={() => handleSelect(item)}
+                    >
+                        <Label value={item} />
+                    </div>
+                ))}
             </div>
         </div>
     );

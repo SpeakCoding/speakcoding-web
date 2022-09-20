@@ -6,7 +6,7 @@ import s from './payment.css';
 
 const Payment = () => {
     const pay = usePayment(),
-        [intensity, setIntensity] = useState('extensive');
+        [intensity, setIntensity] = useState();
 
     return (
         <div className={s.box}>
@@ -34,11 +34,11 @@ const Payment = () => {
                     <L lang='ru'>Выберите курс:</L>
                 </div>
                 <div className={s.intensity}>
-                    <CourseSelect lang='en' onChange={setIntensity} />
+                    <CourseSelect onChange={setIntensity} />
                 </div>
 
                 <div className={s.action}>
-                    <Button block onClick={() => pay(intensity)}>
+                    <Button block disabled={!intensity} onClick={() => pay(intensity)}>
                         <L lang='en'>Proceed to payment</L>
                         <L lang='ru'>Перейти к оплате</L>
                     </Button>

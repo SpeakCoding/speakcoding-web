@@ -8,15 +8,19 @@ const key =
 const stripePromise = loadStripe(key);
 
 export const usePayment = () => {
-    const fetch = useAPI();
+    const fetch = useAPI(),
+        lang = localStorage.getItem('lang');
 
-    return useCallback(async intensity => {
-        const stripe = await stripePromise,
-            { data } = await fetch('/stripe/checkout_sessions.json', {
-                method: 'POST',
-                body: { course_type: intensity }
-            });
+    return useCallback(
+        async intensity => {
+            const stripe = await stripePromise,
+                { data } = await fetch('/stripe/checkout_sessions.json', {
+                    method: 'POST',
+                    body: { course_type: intensity, locale: lang }
+                });
 
-        if (data?.id) stripe.redirectToCheckout({ sessionId: data.id });
-    }, []);
+            if (data?.id) stripe.redirectToCheckout({ sessionId: data.id });
+        },
+        [lang]
+    );
 };

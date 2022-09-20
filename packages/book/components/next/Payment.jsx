@@ -9,7 +9,7 @@ import m from './modal.css';
 
 const Payment = () => {
     const [opened, setOpened] = useState(false),
-        [intensity, setIntensity] = useState('extensive'),
+        [intensity, setIntensity] = useState(),
         pay = usePayment(),
         $ref = useRef();
 
@@ -60,7 +60,7 @@ const Payment = () => {
                         <CourseSelect onChange={setIntensity} />
                     </div>
 
-                    <Button block onClick={() => pay(intensity)}>
+                    <Button block disabled={!intensity} onClick={() => pay(intensity)}>
                         <L lang='en'>Proceed to payment</L>
                         <L lang='ru'>Перейти к оплате</L>
                     </Button>
