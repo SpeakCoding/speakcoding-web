@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import pt from 'prop-types';
+import { useLocationState } from '@sc/ui/hooks';
 import { L, Logo } from '../components';
 import Apple from './apple';
 import Facebook from './facebook';
@@ -7,12 +8,17 @@ import Google from './google';
 import s from './login.css';
 
 const Login = ({ onSuccess }) => {
+    const [, navigate] = useLocationState();
+
     const handleSubmit = useCallback(
         res => {
             if (res.meta?.authentication_token)
                 localStorage.setItem('book_auth_token', res.meta.authentication_token);
 
-            if (res.data) onSuccess();
+            if (res.data) {
+                onSuccess();
+                navigate('/');
+            }
         },
         [onSuccess]
     );

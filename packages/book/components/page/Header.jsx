@@ -9,7 +9,7 @@ import s from './page.css';
 
 const PageHeader = ({ chapter, chapters }) => {
     const { profile } = useApp(),
-        maxNumber = profile.is_paid ? profile.group.last_chapter_number : 1,
+        maxNumber = profile.group.last_chapter_number,
         current = typeof chapter === 'number' ? chapters[chapter - 1] : undefined;
 
     return (

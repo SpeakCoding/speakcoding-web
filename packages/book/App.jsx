@@ -85,9 +85,16 @@ const App = () => {
 
     if (!ready || (auth && !profile)) return null;
 
-    if (!auth) return <Login onSuccess={initProfile} />;
+    if (!auth)
+        return (
+            <BrowserRouter>
+                <Routes>
+                    <Route path='*' element={<Login onSuccess={initProfile} />} />
+                </Routes>
+            </BrowserRouter>
+        );
 
-    if (!profile.is_paid)
+    if (!profile.is_paid && !profile.group?.id)
         return (
             <app.Provider value={context}>
                 <BrowserRouter>

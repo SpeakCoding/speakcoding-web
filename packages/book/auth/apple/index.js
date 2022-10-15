@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import pt from 'prop-types';
+import { useLocationState } from '@sc/ui/hooks';
 import { useAPI } from '../../tools';
 import { init, signIn } from './tools';
 import { L } from '../../components';
@@ -9,7 +10,8 @@ import logo from './logo.svg';
 let ready = false;
 
 const Apple = ({ onSubmit }) => {
-    const fetch = useAPI();
+    const fetch = useAPI(),
+        [{ query }] = useLocationState();
 
     const handleSignIn = useCallback(async () => {
         const data = await signIn();
@@ -21,7 +23,8 @@ const Apple = ({ onSubmit }) => {
             body: {
                 code: data.authorization.code,
                 first_name: data.user?.name?.firstName || '',
-                last_name: data.user?.name?.lastName || ''
+                last_name: data.user?.name?.lastName || '',
+                promo_code: query.promo_code
             }
         });
 

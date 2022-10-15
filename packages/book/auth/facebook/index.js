@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import pt from 'prop-types';
+import { useLocationState } from '@sc/ui/hooks';
 import { useAPI } from '../../tools';
 import { init, signIn } from './tools';
 import { L } from '../../components';
@@ -9,7 +10,8 @@ import logo from './logo.svg';
 let ready = false;
 
 const Facebook = ({ onSubmit }) => {
-    const fetch = useAPI();
+    const fetch = useAPI(),
+        [{ query }] = useLocationState();
 
     const handleSignIn = useCallback(async () => {
         try {
@@ -17,7 +19,7 @@ const Facebook = ({ onSubmit }) => {
 
             const res = await fetch('/sign_in/facebook.json', {
                 method: 'POST',
-                body: { access_token: token }
+                body: { access_token: token, promo_code: query.promo_code }
             });
 
             onSubmit(res);

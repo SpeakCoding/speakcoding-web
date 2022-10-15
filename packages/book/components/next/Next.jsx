@@ -3,6 +3,7 @@ import pt from 'prop-types';
 import { Button, Link } from '@sc/ui';
 import L from '../localize';
 import { useApp } from '../../tools';
+import Payment from './Payment';
 import s from './next.css';
 
 const Next = ({ href, children }) => {
@@ -15,6 +16,8 @@ const Next = ({ href, children }) => {
     if (!href && !current) return null;
 
     const url = href || `../chapter-${current + 1}`;
+
+    if (!profile.is_paid && current >= max) return <Payment />;
 
     return (
         <div className={s.box}>

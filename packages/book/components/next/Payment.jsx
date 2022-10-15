@@ -40,10 +40,8 @@ const Payment = () => {
                     <div className={m.img} />
 
                     <div className={m.title}>
-                        <L lang='en'>
-                            You've reached the end of the introduction of Chapter&nbsp;I
-                        </L>
-                        <L lang='ru'>Поздравляем, вы закончили вводную часть первой&nbsp;главы</L>
+                        <L lang='en'>You’ve reached the end of the introductory&nbsp;part</L>
+                        <L lang='ru'>Поздравляем, вы закончили вводную&nbsp;часть</L>
                     </div>
 
                     <div className={m.text}>
