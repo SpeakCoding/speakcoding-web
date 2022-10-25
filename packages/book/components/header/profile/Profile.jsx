@@ -41,7 +41,7 @@ const Profile = () => {
                             <h3>{profile.name}</h3>
                             <div className={s.text}>{profile.email}</div>
 
-                            {profile.group?.chat_url && (
+                            {profile.group?.chat_url && profile.group?.title && (
                                 <Link href={profile.group.chat_url} blank>
                                     <div className={s.link}>
                                         <div className={s.icon}>
@@ -52,7 +52,7 @@ const Profile = () => {
                                 </Link>
                             )}
 
-                            {!profile.group?.chat_url && (
+                            {!profile.group?.chat_url && profile.group?.title && (
                                 <div className={s.line}>
                                     <div className={s.icon}>
                                         <Icon name='bubble' size={24} />

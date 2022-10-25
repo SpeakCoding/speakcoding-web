@@ -1,16 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Button, Modal } from '@sc/ui';
+import { Button } from '@sc/ui';
 import L from '../localize';
-import CourseSelect from '../course-select';
-import { usePayment } from '../../payment/utils';
+import PaymentModal from './PaymentModal';
 import { interceptor } from '../../phone';
 import s from './next.css';
-import m from './modal.css';
 
 const Payment = () => {
     const [opened, setOpened] = useState(false),
-        [intensity, setIntensity] = useState(),
-        pay = usePayment(),
         $ref = useRef();
 
     useEffect(() => {
@@ -35,35 +31,7 @@ const Payment = () => {
                 </Button>
             </div>
 
-            <Modal opened={opened} onClose={() => setOpened(false)}>
-                <div className={m.box}>
-                    <div className={m.img} />
-
-                    <div className={m.title}>
-                        <L lang='en'>You’ve reached the end of the introductory&nbsp;part</L>
-                        <L lang='ru'>Поздравляем, вы закончили вводную&nbsp;часть</L>
-                    </div>
-
-                    <div className={m.text}>
-                        <L lang='en'>Proceed to payment to unlock the whole course</L>
-                        <L lang='ru'>Перейдите к оплате, чтобы получить полный доступ к курсу</L>
-                    </div>
-
-                    <div className={m.choose}>
-                        <L lang='en'>Choose your course:</L>
-                        <L lang='ru'>Выберите курс:</L>
-                    </div>
-
-                    <div className={m.intensity}>
-                        <CourseSelect onChange={setIntensity} />
-                    </div>
-
-                    <Button block disabled={!intensity} onClick={() => pay(intensity)}>
-                        <L lang='en'>Proceed to payment</L>
-                        <L lang='ru'>Перейти к оплате</L>
-                    </Button>
-                </div>
-            </Modal>
+            <PaymentModal opened={opened} onClose={() => setOpened(false)} />
         </>
     );
 };
