@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import { Drawer, Link } from '@sc/ui';
-import { useApp } from '../../../tools';
+import { Drawer, Icon, Link } from '@sc/ui';
+import { useAPI, useApp } from '../../../tools';
 import L from '../../localize';
 import AdminPanel from './AdminPanel';
 import Progress from '../progress';
@@ -8,7 +8,8 @@ import s from './profile.css';
 
 const Profile = () => {
     const [opened, setOpened] = useState(false),
-        { profile } = useApp();
+        { profile } = useApp(),
+        api = useAPI();
 
     const open = useCallback(() => setOpened(true), []),
         close = useCallback(() => setOpened(false), []);
@@ -16,6 +17,11 @@ const Profile = () => {
     const logout = useCallback(async () => {
         localStorage.removeItem('book_auth_token');
         window.location.href = '/';
+    }, []);
+
+    const goToStripeSubscription = useCallback(async () => {
+        const res = await api.post('/stripe/customer_portal_sessions.json');
+        if (res?.data?.redirect_url) window.location.href = res.data.redirect_url;
     }, []);
 
     if (!profile) return null;
@@ -29,22 +35,52 @@ const Profile = () => {
 
             <Drawer opened={opened} onClose={close}>
                 <div className={s.content}>
-                    <img src={profile.picture} alt='' className={s.ava} />
-                    <div className={s.name}>{profile.name}</div>
+                    <div className={s.header}>
+                        <img src={profile.picture} alt='' className={s.ava} />
+                        <div className={s.info}>
+                            <h3>{profile.name}</h3>
+                            <div className={s.text}>{profile.email}</div>
 
-                    {profile.group?.chat_url && (
-                        <Link href={profile.group.chat_url} blank>
-                            <div className={s.link}>{profile.group?.title || null}</div>
-                        </Link>
-                    )}
-                    {!profile.group?.chat_url && (
-                        <div className={s.text}>{profile.group?.title || null}</div>
-                    )}
+                            {profile.group?.chat_url && (
+                                <Link href={profile.group.chat_url} blank>
+                                    <div className={s.link}>
+                                        <div className={s.icon}>
+                                            <Icon name='bubble' size={24} />
+                                        </div>
+                                        {profile.group?.title}
+                                    </div>
+                                </Link>
+                            )}
 
-                    <div className={s.logout} onClick={logout}>
-                        <L lang='en'>Log out</L>
-                        <L lang='ru'>Выйти</L>
+                            {!profile.group?.chat_url && (
+                                <div className={s.line}>
+                                    <div className={s.icon}>
+                                        <Icon name='bubble' size={24} />
+                                    </div>
+                                    {profile.group?.title}
+                                </div>
+                            )}
+
+                            {profile.first_checkout_subscription_session_at && (
+                                <div className={s.link} onClick={goToStripeSubscription}>
+                                    <div className={s.icon}>
+                                        <Icon name='gear' size={24} />
+                                    </div>
+                                    <L lang='en'>Manage subscription</L>
+                                    <L lang='ru'>Управлять подпиской</L>
+                                </div>
+                            )}
+
+                            <div className={s.link} onClick={logout}>
+                                <div className={s.icon}>
+                                    <Icon name='logout' size={24} />
+                                </div>
+                                <L lang='en'>Log out</L>
+                                <L lang='ru'>Выйти</L>
+                            </div>
+                        </div>
                     </div>
+
                     <Progress />
                     <AdminPanel />
                 </div>
