@@ -8,6 +8,7 @@ import L from '../../localize';
 import assignments from '../../../assignments';
 import quizzes from '../../../quizzes';
 import { structure } from './constants';
+import Circle from './Circle';
 import s from './progress.css';
 
 const percents = value => Math.min(100, round(value * 100, 0));
@@ -46,9 +47,15 @@ const Progress = () => {
                     type: item.type,
                     done,
                     review,
-                    link: `/${lang}/chapter-${chapter.id}?${qs.stringify({
+                    linkReview:
+                        review &&
+                        `/${lang}/chapter-${chapter.id}?${qs.stringify({
+                            [item.type]: item.id,
+                            action: 'review'
+                        })}`,
+                    linkEdit: `/${lang}/chapter-${chapter.id}?${qs.stringify({
                         [item.type]: item.id,
-                        action: !review || !done ? 'edit' : 'review'
+                        action: 'edit'
                     })}`
                 };
             });
@@ -78,7 +85,7 @@ const Progress = () => {
         <>
             <h3 className={s.overall}>
                 <div>
-                    <L lang='en'>Overall progress:</L>
+                    <L lang='en'>Your progress:</L>
                     <L lang='ru'>Общий прогресс:</L>
                 </div>
                 <div>{progress.overall}%</div>
@@ -105,7 +112,7 @@ const Progress = () => {
                                             <L lang='ru'>Глава №</L>
                                             {group.chapter}
                                         </div>
-                                        <div>{group.progress}%</div>
+                                        <Circle value={group.progress} />
                                     </h3>
                                 </Accordion.Label>
                             </div>
@@ -114,14 +121,11 @@ const Progress = () => {
                                 <div>
                                     {group.items.map(item => (
                                         <div key={item.key} className={s.item}>
-                                            <Icon
-                                                name={
-                                                    item.done
-                                                        ? 'check-circle'
-                                                        : 'exclamation-circle-filled'
-                                                }
-                                                size={24}
-                                            />
+                                            <div className={s.status}>
+                                                {item.done && (
+                                                    <Icon name='check-circle' size={24} />
+                                                )}
+                                            </div>
 
                                             {item.type === 'assignment' && (
                                                 <div>
@@ -138,38 +142,39 @@ const Progress = () => {
                                                 </div>
                                             )}
 
-                                            <Link href={item.link}>
-                                                <div className={s.action}>
-                                                    {item.done && item.type === 'assignment' && (
-                                                        <>
-                                                            {item.review && (
-                                                                <>
-                                                                    <L lang='en'>See review</L>
-                                                                    <L lang='ru'>Разбор</L>
-                                                                </>
-                                                            )}
-                                                            {!item.review && (
-                                                                <>
-                                                                    <L lang='en'>Change</L>
-                                                                    <L lang='ru'>Изменить</L>
-                                                                </>
-                                                            )}
-                                                        </>
-                                                    )}
-                                                    {item.done && item.type === 'quiz' && (
-                                                        <>
-                                                            <L lang='en'>See review</L>
-                                                            <L lang='ru'>Разбор</L>
-                                                        </>
-                                                    )}
-                                                    {!item.done && (
-                                                        <>
+                                            <div className={s.actions}>
+                                                {item.done && item.type === 'assignment' && (
+                                                    <>
+                                                        <Link href={item.linkEdit}>
+                                                            <Icon name='pencil' size={24} />
+                                                        </Link>
+
+                                                        {item.review && (
+                                                            <Link href={item.linkReview}>
+                                                                <Icon
+                                                                    name='play-circle'
+                                                                    size={24}
+                                                                />
+                                                            </Link>
+                                                        )}
+                                                    </>
+                                                )}
+
+                                                {item.done && item.type === 'quiz' && (
+                                                    <Link href={item.linkEdit}>
+                                                        <Icon name='play-circle' size={24} />
+                                                    </Link>
+                                                )}
+
+                                                {!item.done && (
+                                                    <Link href={item.linkEdit}>
+                                                        <span className={s.do}>
                                                             <L lang='en'>Do now</L>
                                                             <L lang='ru'>Пройти</L>
-                                                        </>
-                                                    )}
-                                                </div>
-                                            </Link>
+                                                        </span>
+                                                    </Link>
+                                                )}
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
