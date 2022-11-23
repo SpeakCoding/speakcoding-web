@@ -16,3 +16,7 @@
     height: 64px;
     color: var(--c-green-500);
 }
+
+.svg.empty {
+    color: var(--c-grey-200);
+}
