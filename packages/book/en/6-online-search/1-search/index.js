@@ -11,6 +11,11 @@ export default () => (
                 <Section.Main>
                     <h1>How to search for information online</h1>
                     <Time.Chapter value='~5 min' />
+                </Section.Main>
+            </Section.Block>
+
+            <Section.Block>
+                <Section.Main>
                     <p>
                         When working with code, you will often need to discover whether a particular
                         class has already been defined, check what certain system commands are

@@ -13,6 +13,11 @@ export default () => (
                 <Section.Main>
                     <h1>Storing information about objects long-term</h1>
                     <Time.Chapter value='~15 min' />
+                </Section.Main>
+            </Section.Block>
+
+            <Section.Block>
+                <Section.Main>
                     <p>
                         We have covered how to save class objects to enable us to work with them in
                         code. Storing information in variables is only a temporary measure, as these
@@ -126,7 +131,7 @@ export default () => (
                     <p>
                         Having written the information about the object in the form of strings, we
                         can save it in the local memory of the device on which the program is
-                        running. Data written like this is saved in a normal text file
+                        running. Data written like this is saved in a normal text file.
                     </p>
                 </Section.Main>
             </Section.Block>

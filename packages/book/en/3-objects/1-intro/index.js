@@ -79,8 +79,9 @@ export default () => (
                     </Term>{' '}
                     that lets us transfer the inputs needed to create this{' '}
                     <Term id='instance'>object (instance)</Term>. This constructor function is
-                    executed when the object is created, and the data is transferred to it as
-                    inputs.
+                    executed when the object is created, and the data is transferred to it as inputs
+                    (for example, we will pass the text as an input, and it will be used as the post
+                    caption).
                 </p>
                 <p>
                     In the case of the Instagram user, we know a specific User always has a

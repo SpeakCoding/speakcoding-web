@@ -33,7 +33,7 @@ export default () => (
         <Section>
             <Section.Block>
                 <Section.Main narrow>
-                    <h2>Now let’s look at how database work is done in program code.</h2>
+                    <h2>Now let’s look at how database work is done in program code</h2>
                     <p>
                         There is a standard class called{' '}
                         <Term id='sqlite' tooltip>

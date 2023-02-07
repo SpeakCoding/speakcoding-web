@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, HL, Hint, Pre, Section } from '@sc/ui';
+import Term from '../../glossary/Term';
 import s from './style.css';
 
 const code1 = `
@@ -84,13 +85,16 @@ export default () => (
                 </p>
                 <p>
                     The create_table function has two input parameters: one is the name of the
-                    ‘users’ table, the other is the ‘closure’ function. ‘Closure’ is a function used
-                    within the create_table function. In this case, it helps to specify some of the
-                    table’s parameters. To add the ‘closure’ definition to a function, we use the
-                    keyword ‘do’, after which inside | | we write the table_users input, which is an
-                    instance of the special class with the help of whose function we indicate which
-                    columns (fields) this table should have. To indicate this, we call the functions
-                    of the{' '}
+                    ‘users’ table, the other is the{' '}
+                    <Term id='closure' tooltip>
+                        ‘closure’ function
+                    </Term>
+                    . ‘Closure’ is a function used within the create_table function. In this case,
+                    it helps to specify some of the table’s parameters. To add the ‘closure’
+                    definition to a function, we use the keyword ‘do’, after which inside | | we
+                    write the table_users input, which is an instance of the special class with the
+                    help of whose function we indicate which columns (fields) this table should
+                    have. To indicate this, we call the functions of the{' '}
                     <Hint>
                         table_users
                         <Hint.Tooltip>

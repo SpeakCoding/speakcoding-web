@@ -31,6 +31,11 @@ export default () => (
                 <Section.Main hlactive>
                     <h1>Description of the controller class</h1>
                     <Time.Chapter value='~30 min' />
+                </Section.Main>
+            </Section.Block>
+
+            <Section.Block>
+                <Section.Main hlactive>
                     <p>
                         Let’s explore further how server-side code works. Once we have a description
                         (model) of the main User class, we need to create a controller for this

@@ -27,7 +27,7 @@ export default () => (
                     <Section.Main narrow>
                         <p>
                             We’ll display the Post (or, specifically, one of its display classes -
-                            PostFeedView)in the Feed (or, in its view file FeedView, to be exact).
+                            PostFeedView) in the Feed (or, in its view file FeedView, to be exact).
                             PostFeedView can be thought of as a cell in a vertical table with a
                             single column.
                         </p>

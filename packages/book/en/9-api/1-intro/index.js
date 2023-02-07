@@ -12,6 +12,11 @@ export default () => (
                 <Section.Main>
                     <h1>API (Application Programming Interface) servers</h1>
                     <Time.Chapter value='~25 min' />
+                </Section.Main>
+            </Section.Block>
+
+            <Section.Block>
+                <Section.Main>
                     <p>
                         We know that a client and a server communicate with each other by way of two
                         programs cooperating.

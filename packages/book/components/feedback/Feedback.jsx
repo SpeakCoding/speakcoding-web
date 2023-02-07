@@ -74,9 +74,56 @@ const Feedback = () => {
                         {view === 'final' && (
                             <>
                                 <h3 className={s.title}>Спасибо за вопрос!</h3>
-                                <p className={s.block}>Мы вернемся с ответом в течение недели</p>
+                                <p className={s.block}>Мы вернемся с ответом в течение недели.</p>
                                 <Button color='black' size='large' onClick={handleOpenForm}>
                                     Задать вопрос
+                                </Button>
+                            </>
+                        )}
+                    </L>
+                    <L lang='en'>
+                        {/init|form/.test(view) && (
+                            <>
+                                <h3 className={s.title}>Have questions?</h3>
+                                <p className={s.block}>
+                                    If you have any questions about the tasks or have technical
+                                    difficulties with the task, please write us a message and we
+                                    will contact you.
+                                </p>
+                                {view === 'init' && (
+                                    <Button color='black' size='large' onClick={handleOpenForm}>
+                                        Ask
+                                    </Button>
+                                )}
+                                {view === 'form' && (
+                                    <>
+                                        <div className={s.block}>
+                                            <Textarea
+                                                placeholder='Your question...'
+                                                variant='bordered'
+                                            />
+                                        </div>
+                                        <Button
+                                            color='black'
+                                            size='large'
+                                            disabled={loading}
+                                            onClick={handleSubmit}
+                                        >
+                                            Send
+                                        </Button>
+                                    </>
+                                )}
+                            </>
+                        )}
+
+                        {view === 'final' && (
+                            <>
+                                <h3 className={s.title}>Thank you!</h3>
+                                <p className={s.block}>
+                                    We will get back with an answer within a week.
+                                </p>
+                                <Button color='black' size='large' onClick={handleOpenForm}>
+                                    Ask
                                 </Button>
                             </>
                         )}

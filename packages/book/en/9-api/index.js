@@ -1,6 +1,6 @@
 import React from 'react';
 import Page from '../Page';
-import { Next } from '../../components';
+import { Feedback, Next } from '../../components';
 import Part1 from './1-intro';
 import Part2 from './2-reading-objects';
 import Part3 from './3-creating-objects';
@@ -12,6 +12,7 @@ export default () => (
         <Part2 />
         <Part3 />
         <Part4 />
+        <Feedback />
         <Next />
     </Page>
 );

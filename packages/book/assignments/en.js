@@ -10,10 +10,10 @@ export default {
     1: {
         title: 'Assignment #1',
         description:
-            'Open the Spotify app and describe what it consists of. You could start by writing this in text form, then in a structured format (in the style of Instagram, Twitter or Venmo). We will then look at your description and discuss it at the end of this section.',
+            'Open the Spotify app and describe what it consists of. You could start by writing this in text form, then in a structured format (in the style of Instagram, Twitter or Venmo). We will then look at a proposed description and discuss it once you complete your assignment.',
         questions: [
             {
-                title: 'Open the Spotify app and describe what it consists of. You could start by writing this in text form, then in a structural format (in the style of Instagram, Twitter, or Venmo). We will then look at your description and discuss it at the end of this section.',
+                title: 'Open the Spotify app and describe what it consists of. You could start by writing this in text form, then in a structural format (in the style of Instagram, Twitter, or Venmo). We will then look at a proposed description and discuss it once you complete your assignment.',
                 details:
                     'A structural description does not include everything that you see on your screen or in the program’s interface. Looking closely at what a Post comprises, you will notice new ‘components’ that were not present in the structural description of a Post from the first chapter. For example, the interface contains a comment counter or a bookmark icon. These components are specific to what we want to show to the user on the display, though when creating a structural description of an app, we need to focus on what the program is structured around: a set of audio files that can later be saved or bundled together to create an album, payments made from one user to another, or a message exchange. All additional functions, such as showing which friends liked a post or displaying a heart icon, are usually added at later stages of product development on the initiative of the product manager rather than the developer.\n\n' +
                     'You can choose to open another app that you use regularly, and define its composition.'
@@ -76,10 +76,10 @@ export default {
     6: {
         title: 'Assignment #6',
         description:
-            'In the SpeakCoding repository (see the link in the beginning of the chapter) find a controller file describing the display class of the PostFeedView, and list all of its components and functions',
+            'In the SpeakCoding repository (see the link above) find a controller file describing the display class of the PostFeedView, and list all of its components and functions',
         questions: [
             {
-                title: 'In the SpeakCoding repository (see the link at the beginning of Chapter V), find a controller file describing the display class of the PostFeedView, and list all of its components and functions.'
+                title: 'In the SpeakCoding repository (see the link above), find a controller file describing the display class of the PostFeedView, and list all of its components and functions.'
             }
         ],
         time: '~30-40 min'

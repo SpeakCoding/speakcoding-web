@@ -50,7 +50,8 @@ export default () => (
                     In our Instagram example, the definition of the Post class contains the
                     component Set of Comments, and when a post is created, this Set of Comments is
                     always empty. Therefore, the program can create the post without needing any
-                    inputs.
+                    inputs. Creating an empty set in the code will look like [Comments](). Using the
+                    equal sign, we will need to save this set in the corresponding component.
                 </p>
             </Section.Main>
         </Section.Block>

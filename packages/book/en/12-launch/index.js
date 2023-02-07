@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section } from '@sc/ui';
-import { Next } from '../../components';
+import { Feedback, Next } from '../../components';
 import Page from '../Page';
 import Part1 from './1-on-launch';
 import Part2 from './2-screens';
@@ -10,6 +10,7 @@ export default () => (
         <Part1 />
         <Section.Divider />
         <Part2 />
+        <Feedback />
         <Next href='/en/handbook'>Now to recap and reading</Next>
     </Page>
 );

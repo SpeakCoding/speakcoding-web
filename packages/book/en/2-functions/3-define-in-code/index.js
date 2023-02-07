@@ -66,7 +66,7 @@ export default () => (
             </p>
             <p>
                 A <Term id='function'>function</Term> typically relates to a specific{' '}
-                <Term id='class'>class</Term> (for example, the ‘edit post caption function relates
+                <Term id='class'>class</Term> (for example, the Edit Post Caption function relates
                 to the Post class). Therefore, a <Term id='function'>function</Term> should be
                 written in the same place where its <Term id='class'>class</Term> is defined.
             </p>

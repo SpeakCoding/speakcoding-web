@@ -25,7 +25,7 @@ export default () => (
                     <p>
                         Let’s say we wish to add a new post. The device first saves, to its local
                         database, the information that we enter into the interface, such as text and
-                        pictures for the post. As you remember, The files with which users interact
+                        pictures for the post. As you remember, the files with which users interact
                         are part of the interface, and are usually called 'view' files'; in this
                         instance, the device saves the information to the View post file. To create
                         the post (write information about the post) on the server, we convert it
@@ -36,14 +36,6 @@ export default () => (
                         request.
                     </p>
                     <Pre>{code1}</Pre>
-                    <p>
-                        Let’s repeat the steps: we first create a post on the client. The client
-                        writes this information into a local database, then immediately converts it
-                        into text form and sends it via a Post request to the server. The server
-                        then writes the information into its corresponding database. As creating a
-                        post on the client entails saving the object's data on the server, these two
-                        aspects can be thought of as one and the same process
-                    </p>
                     <p>
                         The process of changing an object is similar. The same POST request is used,
                         though the parameters are changed for the new information about the object.

@@ -36,7 +36,7 @@ export default () => (
                         include: string (text string); int [integer]/uint (unsigned, cannot be
                         negative); float (number with a fractional part after the punctuator); and
                         bool (true or false). It is worth memorizing these, though they can be found
-                        using an Internet search.
+                        on the Internet.
                     </p>
                     <p>
                         Int/uint, float, and byte are usually denoted in code by characters. If you
@@ -48,12 +48,13 @@ export default () => (
                     </p>
                     <Pre>{code2}</Pre>
                     <p>
-                        Like in human languages, many classes of objects were defined long ago, and
-                        we can simply give a link to that class of objects (import its definition)
-                        rather than revisiting its definition. Over time, you will develop a sense
-                        of what can be imported and what needs to be defined from scratch. Then, you
-                        will need to define from scratch only those classes that have not yet been
-                        defined and those that are unique to your program.
+                        Like in human languages, many classes of objects were defined long ago: you
+                        know what a car, a house, a table is, you do not need to describe them anew
+                        each time. You can simply give a link to that class of objects (import its
+                        definition) rather than revisiting its definition. Over time, you will
+                        develop a sense of what can be imported and what needs to be defined from
+                        scratch. Then, you will need to define from scratch only those classes that
+                        have not yet been defined and those that are unique to your program.
                     </p>
                     <p>
                         <b>

@@ -133,7 +133,11 @@ export default () => (
                     <li>
                         Meanwhile, there are also some differences versus the function definition:
                         <ul>
-                            <li>No keyword appears before the function title.</li>
+                            <li>
+                                No keyword appears before the function title. Sometimes nothing is
+                                written before the name, but by the structure of the block you can
+                                understand that you have a function in front of you.
+                            </li>
                             <li>The title used has already been used earlier in the definition.</li>
                             <li>The input listing does not include classes.</li>
                             <li>

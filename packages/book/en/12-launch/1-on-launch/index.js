@@ -10,9 +10,14 @@ import s from './style.css';
 export default () => (
     <Section>
         <Section.Block>
-            <Section.Main narrow>
+            <Section.Main>
                 <h1>Launching AppDelegate and Main</h1>
                 <Time.Chapter value='~20 min' />
+            </Section.Main>
+        </Section.Block>
+
+        <Section.Block>
+            <Section.Main narrow>
                 <p>
                     Every application has a file from which the program starts. This file typically
                     needs to contain a function with a standard name (such as ‘main’). This is the
