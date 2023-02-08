@@ -1,7 +1,8 @@
 import React from 'react';
 import { Callout, Img, Section } from '@sc/ui';
-import { Time } from '../../../components';
+import { Intro, Time } from '../../../components';
 import img from './numbers.svg';
+import intro from './intro.png';
 
 export default () => (
     <Section>
@@ -14,6 +15,7 @@ export default () => (
 
         <Section.Block>
             <Section.Main>
+                <Intro pic={intro} video='https://kinescope.io/embed/202448172' />
                 <p>
                     The language of programming is a language like any other. We use it to describe
                     the world around us, to define objects and events.

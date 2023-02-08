@@ -1,10 +1,11 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
-import { Time } from '../../../components';
+import { Intro, Time } from '../../../components';
 import img1 from './xcode.png';
 import img2 from './layers-1.png';
 import img3 from './layers-2.png';
 import img4 from './navigation.png';
+import intro from './intro.png';
 import s from './style.css';
 
 export default () => (
@@ -18,6 +19,7 @@ export default () => (
 
         <Section.Block>
             <Section.Main narrow>
+                <Intro pic={intro} video='https://kinescope.io/embed/202448162' />
                 <p>
                     Every application has a file from which the program starts. This file typically
                     needs to contain a function with a standard name (such as ‘main’). This is the

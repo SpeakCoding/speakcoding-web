@@ -1,8 +1,9 @@
 import React from 'react';
 import { Callout, HL, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
-import { Time } from '../../../components';
+import { Intro, Time } from '../../../components';
 import { interceptor, InterceptorView } from '../../../phone';
+import intro from './intro.png';
 
 async function onEnter() {
     await interceptor.logout();
@@ -15,6 +16,7 @@ export default () => (
             <InterceptorView onEnter={onEnter} onExit={interceptor.close}>
                 <h1>Creating Objects (Instances)</h1>
                 <Time.Chapter value='~35 min' />
+                <Intro pic={intro} video='https://kinescope.io/embed/202448171' />
                 <p>
                     Let’s return to defining structures using code. What we were doing above was
                     defining <b>classes of objects</b>, their <Term id='property'>properties</Term>{' '}

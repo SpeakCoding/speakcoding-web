@@ -1,9 +1,10 @@
 import React from 'react';
 import { Callout, HL, Img, Pre, Section } from '@sc/ui';
-import { Assignment, Time } from '../../../components';
+import { Assignment, Intro, Time } from '../../../components';
 import img from './methods-functions.svg';
 import Additional1 from './SignUp-Update';
 import Additional2 from './Follow';
+import intro from './intro.png';
 import s from './style.css';
 
 const code1 = `
@@ -36,6 +37,7 @@ export default () => (
 
             <Section.Block>
                 <Section.Main hlactive>
+                    <Intro pic={intro} video='https://kinescope.io/embed/202448166' />
                     <p>
                         Let’s explore further how server-side code works. Once we have a description
                         (model) of the main User class, we need to create a controller for this

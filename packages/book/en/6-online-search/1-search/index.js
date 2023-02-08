@@ -1,8 +1,9 @@
 import React from 'react';
 import { Callout, Link, Section } from '@sc/ui';
-import { Assignment, Time } from '../../../components';
+import { Assignment, Intro, Time } from '../../../components';
 import Term from '../../glossary/Term';
 import Video from '../../../common/6/search-video';
+import intro from './intro.png';
 
 export default () => (
     <>
@@ -16,6 +17,7 @@ export default () => (
 
             <Section.Block>
                 <Section.Main>
+                    <Intro pic={intro} video='https://kinescope.io/embed/202448168' />
                     <p>
                         When working with code, you will often need to discover whether a particular
                         class has already been defined, check what certain system commands are

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Callout, Img, Section } from '@sc/ui';
-import { Time } from '../../../components';
+import { Intro, Time } from '../../../components';
 import img from './mvc.svg';
+import intro from './intro.png';
 
 export default () => (
     <Section>
@@ -14,6 +15,7 @@ export default () => (
 
         <Section.Block>
             <Section.Main>
+                <Intro pic={intro} video='https://kinescope.io/embed/202448164' />
                 <h2>Display</h2>
                 <p>
                     The interface displays examples of our structural classes (e.g., a post, its

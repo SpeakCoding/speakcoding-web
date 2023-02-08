@@ -2,13 +2,17 @@ import React, { useCallback, useEffect, useState } from 'react';
 import pt from 'prop-types';
 import classNames from 'classnames';
 import { Modal } from '@sc/ui';
+import { useLocale } from '../localize';
 import s from './intro.css';
 
-const ratio = 16 / 9;
+const ratios = { en: 19 / 10, ru: 16 / 9 };
 
 const Intro = ({ pic, video }) => {
     const [opened, setOpened] = useState(false),
         [mode, setMode] = useState('');
+
+    const { choose } = useLocale(),
+        ratio = choose(ratios);
 
     const open = useCallback(() => setOpened(true), []),
         close = useCallback(() => setOpened(false), []);

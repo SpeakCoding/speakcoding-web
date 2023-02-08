@@ -1,9 +1,10 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
-import { Assignment, Time } from '../../../components';
+import { Assignment, Intro, Time } from '../../../components';
 import Term from '../../glossary/Term';
 import img1 from './client-server.svg';
 import img2 from './methods.svg';
+import intro from './intro.png';
 
 export default () => (
     <>
@@ -17,6 +18,7 @@ export default () => (
 
             <Section.Block>
                 <Section.Main>
+                    <Intro pic={intro} video='https://kinescope.io/embed/202448174' />
                     <p>
                         We know that a client and a server communicate with each other by way of two
                         programs cooperating.

@@ -1,14 +1,16 @@
 import React from 'react';
 import { Img, Section } from '@sc/ui';
 import Term from '../../glossary/Term';
-import { Time } from '../../../components';
+import { Intro, Time } from '../../../components';
 import img from './post-people.svg';
+import intro from './intro.png';
 
 export default () => (
     <Section>
         <Section.Main>
             <h1>Functions and what they are for</h1>
             <Time.Chapter value='~25 min' />
+            <Intro pic={intro} video='https://kinescope.io/embed/202448167' />
             <p>
                 Let’s assume that we want to like a post. In programming language, this action is
                 expressed as ‘add a like to a particular post’. To do this, the program needs to

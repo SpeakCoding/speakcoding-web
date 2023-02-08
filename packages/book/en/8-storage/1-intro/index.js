@@ -1,8 +1,9 @@
 import React from 'react';
 import { Grid, HL, Img, Pre, Section } from '@sc/ui';
-import { Assignment, Time } from '../../../components';
+import { Assignment, Intro, Time } from '../../../components';
 import Term from '../../glossary/Term';
 import img from './phone-cloud.svg';
+import intro from './intro.png';
 
 const code1 = `'{ "post": { "caption": "This is my first post!", "user": "liberman1984", "comments": [] } }'`;
 
@@ -18,6 +19,7 @@ export default () => (
 
             <Section.Block>
                 <Section.Main>
+                    <Intro pic={intro} video='https://kinescope.io/embed/202448165' />
                     <p>
                         We have covered how to save class objects to enable us to work with them in
                         code. Storing information in variables is only a temporary measure, as these

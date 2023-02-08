@@ -1,7 +1,8 @@
 import React from 'react';
 import { HL, Img, Link, Pre, Section } from '@sc/ui';
-import { Time } from '../../../components';
+import { Intro, Time } from '../../../components';
 import img from './how-it-works.svg';
+import intro from './intro.png';
 
 const code1 = `let request = makeRequest(method: {{HTTPMethod.POST}}(hl:green), endpoint: "/ {{users}}(hl:light-sky-blue).json", authorized: false, parameters: requestParameters)`;
 
@@ -10,6 +11,7 @@ export default () => (
         <Section.Main hlactive>
             <h1>The server side of the program</h1>
             <Time.Chapter value='~30 min' />
+            <Intro pic={intro} video='https://kinescope.io/embed/202448173' />
             <p>
                 To understand how server-side program code is constructed, let’s think back to how
                 we create and store information about objects on the server.
