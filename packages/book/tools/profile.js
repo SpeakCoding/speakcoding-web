@@ -6,6 +6,6 @@ export const parseProfile = data => ({
     ...data,
     group: {
         ...(data.group || {}),
-        last_chapter_number: data.group?.last_chapter_number || (data.is_paid ? over9000 : 1)
+        last_chapter_number: data.group?.last_chapter_number || over9000
     }
 });

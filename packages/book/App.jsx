@@ -1,25 +1,13 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import * as Sentry from '@sentry/react';
 import { useAPI, useCourses } from './tools';
 import { app } from './tools/app';
 import { fixLang } from './tools/system';
 import { parseProfile } from './tools/profile';
 import Home from './Home';
 import Login from './auth';
-import Payment from './payment';
 import * as EN from './en';
 import * as RU from './ru';
-
-Sentry.init({
-    dsn: 'https://1453350b884840c3a0705cbd340a8154@o1261039.ingest.sentry.io/6438025',
-    release: '2'
-});
-
-Sentry.setContext('viewport', {
-    'Screen Width': window.innerWidth,
-    'Screen Height': window.innerHeight
-});
 
 let forcedLang;
 
@@ -55,12 +43,6 @@ const App = () => {
             return;
         }
 
-        Sentry.setUser({
-            id: data.id,
-            username: data.name,
-            email: data.email
-        });
-
         if (forcedLang) updateProfile({ last_course_id: forcedLang });
         else {
             const lang = fixLang(data.last_course_id);
@@ -92,20 +74,6 @@ const App = () => {
                     <Route path='*' element={<Login onSuccess={initProfile} />} />
                 </Routes>
             </BrowserRouter>
-        );
-
-    if (!profile.is_paid && !profile.group?.id)
-        return (
-            <app.Provider value={context}>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path='/' exact element={<Home />} />
-                        <Route path='/en/chapter-1' element={<EN.Preview />} />
-                        <Route path='/ru/chapter-1' element={<RU.Preview />} />
-                        <Route path='*' element={<Payment />} />
-                    </Routes>
-                </BrowserRouter>
-            </app.Provider>
         );
 
     return (

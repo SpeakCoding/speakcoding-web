@@ -12,7 +12,7 @@ const Tutorial = () => {
         newUser = new Date(threshold) < new Date(profile.created_at),
         skipped = localStorage.getItem('flag/tutorial') === 'skip',
         forced = localStorage.getItem('flag/tutorial') === 'forced',
-        initial = forced || (newUser && profile.is_paid && !skipped),
+        initial = forced || (newUser && !skipped),
         [opened, setOpened] = useState(initial);
 
     const handleClose = useCallback(() => {

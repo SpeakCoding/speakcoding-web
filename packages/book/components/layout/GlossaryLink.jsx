@@ -6,13 +6,10 @@ import { useApp } from '../../tools';
 import s from './layout.css';
 
 const GlossaryLink = () => {
-    const { profile } = useApp(),
-        [{ pathname }, navigate] = useLocationState(),
+    const [{ pathname }, navigate] = useLocationState(),
         glossary = useMemo(() => /\/(en|ru)\/glossary/.test(pathname), [pathname]);
 
     const goBack = useCallback(() => navigate(-1), []);
-
-    if (!profile.is_paid) return null;
 
     return (
         <>
